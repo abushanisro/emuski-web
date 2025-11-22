@@ -62,7 +62,7 @@ const serviceItems = [
     fullDescription: "Next-generation AI-driven engineering platform acting as digital backbone for OEMs, transforming workflows into smart ecosystems with 30% faster sourcing and 15% cost savings.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80",
     link: "/blog"
-  }
+  },
 ];
 
 export const DataCenterSection = () => {
