@@ -3,20 +3,17 @@ import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark, Twitter, Linkedin, Facebook, Mail, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { blogPosts, relatedPosts, BlogPost } from "../data/blogData";
+import { useBlogPost, useRelatedPosts } from "../hooks/useBlogApi";
+import { BlogPost } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
+import { BlogNotFoundPage, LoadingPage } from "./ui/error-pages";
 
-export const BlogPost = () => {
+export const BlogPostComponent = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
-
-  useEffect(() => {
-    if (slug) {
-      const foundPost = blogPosts.find(p => p.slug === slug);
-      setPost(foundPost || null);
-    }
-  }, [slug]);
+  
+  const { post, loading, error } = useBlogPost(slug || '');
+  const { relatedPosts, loading: relatedLoading } = useRelatedPosts(post?.id || 0, 3);
 
   // Update document title and meta tags
   useEffect(() => {
@@ -68,20 +65,12 @@ export const BlogPost = () => {
     }
   }, [post]);
 
-  if (!post) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <h2 className="text-2xl font-bold text-gray-900">Article Not Found</h2>
-          <p className="text-gray-600">The article you're looking for doesn't exist.</p>
-          <Link to="/blog">
-            <Button className="bg-emuski-teal hover:bg-emuski-teal/90 text-white">
-              Back to Blog
-            </Button>
-          </Link>
-        </div>
-      </div>
-    );
+  if (loading) {
+    return <LoadingPage title="Loading Article" description="Please wait while we fetch this article..." />;
+  }
+
+  if (error || !post) {
+    return <BlogNotFoundPage description={error} />;
   }
 
   const handleShare = (platform: string) => {
@@ -259,7 +248,7 @@ export const BlogPost = () => {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Articles</h3>
                   <div className="space-y-4">
                     {relatedPosts.map((relatedPost) => (
-                      <Link key={relatedPost.id} to={`/blog/${blogPosts.find(p => p.id === relatedPost.id)?.slug}`} className="block group">
+                      <Link key={relatedPost.id} to={relatedPost.link} className="block group">
                         <div className="flex space-x-3">
                           <img
                             src={relatedPost.image}

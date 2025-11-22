@@ -1,5 +1,5 @@
 import { Navbar } from "../components/Navbar";
-import { BlogPost as BlogPostComponent } from "../components/BlogPost";
+import { BlogPostComponent } from "../components/BlogPost";
 import { Footer } from "../components/Footer";
 
 const BlogPost = () => {

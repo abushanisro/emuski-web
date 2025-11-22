@@ -1,23 +1,4 @@
-export interface BlogPost {
-  id: number;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  fullContent: string;
-  category: string;
-  author: string;
-  authorBio: string;
-  authorImage: string;
-  publishDate: string;
-  readTime: string;
-  image: string;
-  tags: string[];
-  featured: boolean;
-  seoTitle: string;
-  metaDescription: string;
-  keywords: string[];
-}
+import { BlogPost, RelatedPost } from '../api/types';
 
 export const blogPosts: BlogPost[] = [
   {
@@ -2779,35 +2760,40 @@ The convergence of **advanced AI algorithms**, **comprehensive data integration*
   }
 ];
 
-export const relatedPosts = [
+export const relatedPosts: RelatedPost[] = [
   {
     id: 3,
     title: "Strategic Sourcing: Building Resilient Supply Chains",
     image: "https://images.unsplash.com/photo-1566207474742-de921626ad0c?w=400&q=80",
-    excerpt: "Learn best practices for supplier selection and risk management."
+    excerpt: "Learn best practices for supplier selection and risk management.",
+    link: "/blog/strategic-sourcing-resilient-supply-chains"
   },
   {
     id: 4,
     title: "Expert Engineering Support: Scaling Technical Capabilities",
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80",
-    excerpt: "How embedded expertise accelerates project delivery."
+    excerpt: "How embedded expertise accelerates project delivery.",
+    link: "/blog/expert-engineering-support-technical-capabilities"
   },
   {
     id: 5,
     title: "Rapid Prototyping: Accelerating Innovation",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
-    excerpt: "Transform concepts into products faster than ever."
+    excerpt: "Transform concepts into products faster than ever.",
+    link: "/blog/rapid-prototyping-accelerating-innovation"
   },
   {
     id: 6,
     title: "On-Demand Manufacturing: Flexible Production Solutions",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80",
-    excerpt: "Achieve ultimate production flexibility and responsiveness."
+    excerpt: "Achieve ultimate production flexibility and responsiveness.",
+    link: "/blog/on-demand-manufacturing-flexible-production"
   },
   {
     id: 7,
     title: "Mithran AI Platform: Intelligent Manufacturing",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80",
-    excerpt: "AI-powered solutions for manufacturing excellence."
+    excerpt: "AI-powered solutions for manufacturing excellence.",
+    link: "/blog/mithran-ai-platform-intelligent-manufacturing"
   }
 ];

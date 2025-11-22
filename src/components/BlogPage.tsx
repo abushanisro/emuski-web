@@ -3,31 +3,32 @@ import { Link } from "react-router-dom";
 import { Search, Filter, Calendar, User, Clock, ChevronRight, Tag } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { blogPosts, BlogPost } from "../data/blogData";
+import { useBlogPosts, useBlogCategories, useBlogTags } from "../hooks/useBlogApi";
+import { BlogPostSummary } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
+import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
 
 export const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedTag, setSelectedTag] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const categories = ["All", ...Array.from(new Set(blogPosts.map(post => post.category)))];
-  const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
+  const { categories } = useBlogCategories();
+  const { tags: allTags } = useBlogTags();
+  
+  const filters = useMemo(() => ({
+    search: searchTerm || undefined,
+    category: selectedCategory !== "All" ? selectedCategory : undefined,
+    tag: selectedTag || undefined,
+    page: currentPage,
+    limit: 10
+  }), [searchTerm, selectedCategory, selectedTag, currentPage]);
 
-  const filteredPosts = useMemo(() => {
-    return blogPosts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          post.author.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-      const matchesTag = !selectedTag || post.tags.includes(selectedTag);
-      
-      return matchesSearch && matchesCategory && matchesTag;
-    });
-  }, [searchTerm, selectedCategory, selectedTag]);
-
-  const featuredPosts = filteredPosts.filter(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  const { posts: allPosts, loading, error, meta } = useBlogPosts(filters);
+  
+  const featuredPosts = allPosts.filter(post => post.featured);
+  const regularPosts = allPosts.filter(post => !post.featured);
 
   // Set SEO meta tags for blog page
   useEffect(() => {
@@ -51,6 +52,15 @@ export const BlogPage = () => {
     }
     metaKeywords.setAttribute('content', 'manufacturing blog, engineering precision, cost optimization, VAVE methodology, rapid prototyping, strategic sourcing, AI manufacturing, industrial engineering');
   }, []);
+
+  // Handle loading and error states
+  if (loading) {
+    return <LoadingPage title="Loading Articles" description="Please wait while we fetch the latest insights..." />;
+  }
+
+  if (error) {
+    return <ServerErrorPage description={error} />;
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -284,7 +294,7 @@ export const BlogPage = () => {
       )}
 
       {/* No Results */}
-      {filteredPosts.length === 0 && (
+      {allPosts.length === 0 && (
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center space-y-4">
