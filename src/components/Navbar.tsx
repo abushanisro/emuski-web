@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Home } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
@@ -23,6 +23,12 @@ const navigationConfig = {
     { name: "Contact", path: "/contact", hideOnMobile: true }
   ],
   mobileMenuSections: [
+    {
+      title: "Navigation",
+      items: [
+        { name: "Home", path: "/" }
+      ]
+    },
     {
       title: "Services",
       items: [
@@ -99,15 +105,27 @@ export const Navbar = () => {
 
   return (
 <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-<div className="container mx-auto px-6">
+<div className="container mx-auto px-4 sm:px-6">
 <div className="flex items-center justify-between h-16">
 <div className="flex items-center space-x-8">
 <Link to="/" className="flex items-center space-x-2 group">
-<img src={emuskiLogo} alt="EMUSKI Logo" className="h-10 w-auto" />
-<span className="text-xl font-bold text-foreground group-hover:text-emuski-teal-darker transition-colors">EMUSKI</span>
+<img 
+  src={emuskiLogo} 
+  alt="EMUSKI Logo" 
+  className="h-8 sm:h-10 w-auto object-contain" 
+  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.1) brightness(1.05)' }}
+/>
+<span className="text-lg sm:text-xl font-bold text-foreground group-hover:text-emuski-teal-darker transition-colors">EMUSKI</span>
 </Link>
 
 <div className="hidden md:flex items-center space-x-6">
+<Link 
+to="/" 
+className={`${getLinkClasses("/")} flex items-center space-x-1`}
+>
+<Home className="h-4 w-4" />
+<span>Home</span>
+</Link>
 {navigationConfig.leftMenu.map((item) => (
 <Link 
 key={item.path}
@@ -121,11 +139,23 @@ className={getLinkClasses(item.path)}
 </div>
 
 <div className="flex items-center space-x-4">
-<span className="transition-colors text-sm font-medium text-emuski-teal-darker">
+<div className="hidden md:flex items-center space-x-6">
+{navigationConfig.rightMenu.map((item) => (
+<Link 
+key={item.path}
+to={item.path} 
+className={getLinkClasses(item.path)}
+>
+{item.name}
+</Link>
+))}
+</div>
+
+<span className="hidden sm:inline-block transition-colors text-sm font-medium text-emuski-teal-darker">
 {getCurrentPageName()}
 </span>
 
-<div className="flex items-center space-x-2 ml-4 relative" ref={menuRef}>
+<div className="flex items-center space-x-2 ml-4 relative md:hidden" ref={menuRef}>
 <button 
 onClick={() => setIsMenuOpen(!isMenuOpen)}
 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-foreground hover:text-emuski-teal-darker">
@@ -137,7 +167,12 @@ className="inline-flex items-center justify-center gap-2 whitespace-nowrap round
 <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[9999]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
 <div className="p-6 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-b border-gray-100">
 <div className="flex items-center space-x-3">
-<img src={emuskiLogo} alt="EMUSKI Logo" className="h-8 w-auto opacity-40" />
+<img 
+  src={emuskiLogo} 
+  alt="EMUSKI Logo" 
+  className="h-8 w-auto object-contain" 
+  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1)', opacity: 0.8 }}
+/>
 <div>
 <h3 className="font-bold text-gray-900">EMUSKI</h3>
 <p className="text-xs text-gray-600">One-stop solution for OEMs</p>

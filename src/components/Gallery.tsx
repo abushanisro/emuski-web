@@ -73,7 +73,7 @@ export const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Set SEO meta tags for gallery page
@@ -97,7 +97,7 @@ export const Gallery = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const openLightbox = (item: any, index: number) => {
+  const openLightbox = (item: typeof galleryItems[0], index: number) => {
     setSelectedImage(item);
     setCurrentImageIndex(index);
   };
@@ -125,12 +125,12 @@ export const Gallery = () => {
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               EMUSKI <span className="text-white/80">Gallery</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed">
               Explore our comprehensive showcase of manufacturing interfaces, dashboards, and design components.
             </p>
             <div className="flex items-center justify-center text-sm text-white/70">
@@ -142,11 +142,11 @@ export const Gallery = () => {
 
       {/* Filter and Search Section */}
       <section className="py-12 bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {/* Search */}
-              <div className="md:col-span-2">
+              <div className="sm:col-span-2">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                   <input
@@ -173,7 +173,7 @@ export const Gallery = () => {
               </div>
 
               {/* View Mode */}
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 sm:col-span-2 lg:col-span-1">
                 <Button
                   variant={viewMode === "grid" ? "default" : "outline"}
                   size="sm"
@@ -181,6 +181,7 @@ export const Gallery = () => {
                   className="flex-1"
                 >
                   <Grid className="h-4 w-4" />
+                  <span className="hidden sm:inline ml-2">Grid</span>
                 </Button>
                 <Button
                   variant={viewMode === "list" ? "default" : "outline"}
@@ -189,6 +190,7 @@ export const Gallery = () => {
                   className="flex-1"
                 >
                   <List className="h-4 w-4" />
+                  <span className="hidden sm:inline ml-2">List</span>
                 </Button>
               </div>
             </div>
@@ -217,10 +219,10 @@ export const Gallery = () => {
 
       {/* Gallery Grid/List */}
       <section className="py-16">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             {viewMode === "grid" ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {filteredItems.map((item, index) => (
                   <Card key={item.id} className="group overflow-hidden bg-white hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="relative h-48 overflow-hidden">
@@ -269,8 +271,8 @@ export const Gallery = () => {
               <div className="space-y-6">
                 {filteredItems.map((item, index) => (
                   <Card key={item.id} className="group overflow-hidden bg-white hover:shadow-lg transition-all duration-300">
-                    <div className="flex flex-col md:flex-row">
-                      <div className="relative w-full md:w-64 h-48 md:h-32 overflow-hidden flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row">
+                      <div className="relative w-full sm:w-64 h-48 sm:h-32 overflow-hidden flex-shrink-0">
                         <img
                           src={item.thumbnail}
                           alt={item.title}
@@ -341,26 +343,26 @@ export const Gallery = () => {
 
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4">
           <div className="relative max-w-4xl w-full">
             {/* Navigation */}
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-colors"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-colors"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-2 sm:p-3 rounded-full transition-colors"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors text-lg sm:text-xl"
             >
               ×
             </button>
@@ -370,24 +372,24 @@ export const Gallery = () => {
               <img
                 src={selectedImage.image}
                 alt={selectedImage.title}
-                className="w-full h-auto max-h-[60vh] object-contain"
+                className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain"
               />
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 space-y-3 sm:space-y-0">
                   <div>
-                    <span className="px-3 py-1 bg-emuski-teal/10 text-emuski-teal text-sm font-medium rounded-full">
+                    <span className="px-3 py-1 bg-emuski-teal/10 text-emuski-teal text-xs sm:text-sm font-medium rounded-full">
                       {selectedImage.category}
                     </span>
-                    <h3 className="text-2xl font-bold text-gray-900 mt-2">{selectedImage.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">{selectedImage.title}</h3>
                   </div>
                   <Button variant="outline" size="sm">
                     <Download className="h-4 w-4 mr-2" />
-                    Download
+                    <span className="hidden sm:inline">Download</span>
                   </Button>
                 </div>
                 <p className="text-gray-700 mb-4">{selectedImage.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {selectedImage.tags.map((tag: string) => (
+                  {selectedImage.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
                       {tag}
                     </span>

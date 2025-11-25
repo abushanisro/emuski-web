@@ -3,7 +3,7 @@ import emuskiLogo from "../assets/Emuski Logo.svg";
 export const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-12">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 text-left">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h4 className="text-foreground font-semibold mb-4">Services</h4>
@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
             <div className="flex items-center space-x-2">
               <img src={emuskiLogo} alt="EMUSKI Logo" className="h-6 w-auto" />

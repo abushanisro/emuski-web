@@ -65,14 +65,14 @@ export const FeaturedTabs = () => {
 
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full justify-start bg-secondary border-b border-border rounded-none h-auto p-0 mb-8">
+          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center sm:justify-start bg-secondary border-b border-border rounded-none h-auto p-0 mb-8">
             {featuredContent.map((tab) => (
               <TabsTrigger
                 key={tab.id}
                 value={tab.id}
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-6 py-4 text-base font-medium"
+                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 sm:px-6 py-4 text-sm sm:text-base font-medium"
               >
                 {tab.label}
               </TabsTrigger>
@@ -101,7 +101,7 @@ export const FeaturedTabs = () => {
                     </div>
                     
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-emuski-teal-darker transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-emuski-teal-darker transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-muted-foreground mb-4 leading-relaxed">

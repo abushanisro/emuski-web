@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -60,85 +60,38 @@ const newsItems = [
 ];
 
 export const NewsCarousel = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const cardWidth = 380;
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
-    const container = document.getElementById("news-container");
-    if (container) {
-      const scrollAmount = direction === "left" ? -cardWidth * 2 : cardWidth * 2;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      setScrollPosition(container.scrollLeft + scrollAmount);
+    if (containerRef.current) {
+      const scrollAmount = direction === "left" ? -containerRef.current.offsetWidth : containerRef.current.offsetWidth;
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   return (
     <>
-      {/* Separator */}
-      <div className="separator-spacer">
-        <style jsx>{`
-          .separator-spacer {
-            height: 60px;
-          }
-          
-          @media screen and (min-width: 1350px) {
-            .separator-spacer {
-              height: 60px;
-            }
-          }
-          
-          @media screen and (min-width: 1024px) and (max-width: 1349px) {
-            .separator-spacer {
-              height: 60px;
-            }
-          }
-          
-          @media screen and (min-width: 640px) and (max-width: 1023px) {
-            .separator-spacer {
-              height: 60px;
-            }
-          }
-          
-          @media screen and (max-width: 639px) {
-            .separator-spacer {
-              height: 60px;
-            }
-          }
-        `}</style>
-      </div>
+      <div className="h-16" />
 
       {/* Trusted by Clients Section */}
       <section className="py-8 border-b border-border/30 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
-        {/* Background Elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-8">
             <h2 className="text-lg font-semibold text-white/80 mb-4">Trusted by Industry Leaders</h2>
           </div>
           
-          {/* Animated Logo Carousel */}
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll space-x-12 items-center">
-              {/* First set of logos */}
-              {clientLogos.map((client, index) => (
+              {[...clientLogos, ...clientLogos].map((client, index) => (
                 <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="h-12 w-auto object-contain filter brightness-0 invert"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {clientLogos.map((client, index) => (
-                <div key={`duplicate-${index}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-12 w-auto object-contain filter brightness-0 invert"
+                    className="h-8 sm:h-12 w-auto object-contain filter brightness-0 invert"
                   />
                 </div>
               ))}
@@ -146,7 +99,6 @@ export const NewsCarousel = () => {
           </div>
         </div>
         
-        {/* Add custom CSS for animation */}
         <style jsx>{`
           @keyframes scroll {
             0% {
@@ -163,16 +115,15 @@ export const NewsCarousel = () => {
       </section>
 
       <section className="py-12 border-b border-border relative overflow-hidden bg-white">
-        {/* Background Elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Latest News & Updates</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Latest News & Updates</h2>
           
-          <div className="flex space-x-2">
+          <div className="hidden sm:flex space-x-2">
             <Button
               variant="outline"
               size="icon"
@@ -193,14 +144,13 @@ export const NewsCarousel = () => {
         </div>
 
         <div
-          id="news-container"
-          className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          ref={containerRef}
+          className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
         >
           {newsItems.map((item, index) => (
             <Card
               key={index}
-              className="flex-shrink-0 w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               <a href={item.link} className="block h-full hover:no-underline">
                 <div className="relative h-48 overflow-hidden">
@@ -218,7 +168,7 @@ export const NewsCarousel = () => {
                     <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">News</span>
                   </div>
                   
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-tight">
                     {item.title}
                   </h3>
                   

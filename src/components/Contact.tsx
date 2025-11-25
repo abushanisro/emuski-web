@@ -148,17 +148,17 @@ export const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-emuski-teal-darker text-white pt-20 pb-16 overflow-hidden">
+      <section className="relative bg-emuski-teal-darker text-white pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <span className="text-white/80 text-sm font-semibold tracking-wider uppercase">Get In Touch</span>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
               Contact <span className="text-white/80">Us</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
               Ready to transform your manufacturing? Let's discuss how we can help bring your vision to life.
             </p>
             <div className="h-1 w-16 sm:w-20 md:w-24 bg-white rounded-full mx-auto"></div>
@@ -167,26 +167,26 @@ export const Contact = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2">How to Reach Us</h2>
-              <p className="text-xl text-gray-600 mt-4">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-2">How to Reach Us</h2>
+              <p className="text-lg sm:text-xl text-gray-600 mt-4">
                 Choose the method that works best for you. We're here to help.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (
-                  <Card key={index} className="p-8 text-center border-2 border-gray-200 hover:border-emuski-teal hover:bg-emuski-teal/5 transition-all duration-300 group">
-                    <div className="w-16 h-16 bg-emuski-teal/10 group-hover:bg-emuski-teal rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
-                      <Icon className="h-8 w-8 text-emuski-teal group-hover:text-white transition-colors" />
+                  <Card key={index} className="p-6 sm:p-8 text-center border-2 border-gray-200 hover:border-emuski-teal hover:bg-emuski-teal/5 transition-all duration-300 group">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emuski-teal/10 group-hover:bg-emuski-teal rounded-full flex items-center justify-center mx-auto mb-6 transition-colors">
+                      <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-emuski-teal group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
-                    <p className="font-semibold text-emuski-teal mb-2">{method.details}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                    <p className="font-semibold text-emuski-teal mb-2 text-sm sm:text-base">{method.details}</p>
                     <p className="text-gray-600 text-sm mb-4">{method.description}</p>
                     <Button variant="outline" size="sm" className="group-hover:border-emuski-teal group-hover:text-emuski-teal">
                       {method.action}
@@ -200,14 +200,14 @@ export const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
               {/* Contact Form */}
               <div>
                 <div className="mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     Send Us a Message
                   </h2>
                   <p className="text-gray-600">
@@ -380,7 +380,7 @@ export const Contact = () => {
                   <Button 
                     type="submit"
                     disabled={isSubmitting || submitStatus === "success"}
-                    className="w-full bg-emuski-teal hover:bg-emuski-teal/90 text-white font-semibold py-4 text-lg"
+                    className="w-full bg-emuski-teal hover:bg-emuski-teal/90 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg"
                   >
                     {isSubmitting ? (
                       "Sending..."
@@ -418,7 +418,7 @@ export const Contact = () => {
               {/* Contact Information */}
               <div>
                 <div className="mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     Our Locations
                   </h2>
                   <p className="text-gray-600">
@@ -426,7 +426,7 @@ export const Contact = () => {
                   </p>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   {offices.map((office, index) => (
                     <Card key={index} className="p-6 border-2 border-gray-200 hover:border-emuski-teal/50 transition-colors">
                       <h3 className="text-xl font-bold text-gray-900 mb-4">{office.city}</h3>
@@ -453,7 +453,7 @@ export const Contact = () => {
                 {/* Social Links */}
                 <div className="mt-12">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Connect With Us</h3>
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-4">
                     <Button variant="outline" size="sm" className="flex items-center space-x-2">
                       <Linkedin className="h-4 w-4" />
                       <span>LinkedIn</span>

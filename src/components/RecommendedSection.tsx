@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -37,30 +37,26 @@ const recommendations = [
 ];
 
 export const RecommendedSection = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const cardWidth = 320; // Approximate card width including gap
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
-    const container = document.getElementById("recommendations-container");
-    if (container) {
-      const scrollAmount = direction === "left" ? -cardWidth * 2 : cardWidth * 2;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      setScrollPosition(container.scrollLeft + scrollAmount);
+    if (containerRef.current) {
+      const scrollAmount = direction === "left" ? -containerRef.current.offsetWidth : containerRef.current.offsetWidth;
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   return (
     <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#111827'}}>
-      {/* Background Elements */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-white">Recommended For You</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">Recommended For You</h2>
           
-          <div className="flex space-x-2">
+          <div className="hidden sm:flex space-x-2">
             <Button
               variant="outline"
               size="icon"
@@ -81,14 +77,13 @@ export const RecommendedSection = () => {
         </div>
 
         <div
-          id="recommendations-container"
-          className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          ref={containerRef}
+          className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
         >
           {recommendations.map((item, index) => (
             <Card
               key={index}
-              className="flex-shrink-0 w-80 group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 w-72 sm:w-80 group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -100,7 +95,7 @@ export const RecommendedSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

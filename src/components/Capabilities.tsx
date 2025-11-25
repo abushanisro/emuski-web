@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useIsMobile } from "../hooks/use-mobile";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { 
@@ -116,6 +117,7 @@ export const Capabilities = () => {
   const [is3DView, setIs3DView] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     document.title = "EMUSKI Capabilities | Manufacturing Excellence & Engineering Services";
@@ -129,8 +131,10 @@ export const Capabilities = () => {
     metaDescription.setAttribute('content', 'Discover EMUSKI\'s comprehensive manufacturing capabilities including precision engineering, AI-powered solutions, and advanced analytics. One-stop solution for OEMs.');
   }, []);
 
-  // Mouse tracking for VR-style movement
+  // Mouse tracking for VR-style movement (disabled on mobile)
   useEffect(() => {
+    if (isMobile) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
@@ -139,16 +143,16 @@ export const Capabilities = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with 3D VR-style Facility View */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen lg:h-screen overflow-hidden">
         {/* 3D VR Background */}
         <div 
           className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-          style={{
+          style={isMobile ? {} : {
             transform: `translate(${(mousePosition.x - 50) * 0.02}px, ${(mousePosition.y - 50) * 0.02}px)`,
             transition: 'transform 0.1s ease-out'
           }}
@@ -158,26 +162,26 @@ export const Capabilities = () => {
             {/* Main Factory Complex */}
             <div 
               className="relative"
-              style={{
+              style={isMobile ? {} : {
                 transform: `rotateX(${(mousePosition.y - 50) * 0.1}deg) rotateY(${(mousePosition.x - 50) * 0.2}deg) translateZ(0px)`,
                 transition: 'transform 0.15s ease-out',
                 transformStyle: 'preserve-3d'
               }}
             >
               {/* Main Building */}
-              <div className="relative w-96 h-80 mx-auto">
+              <div className="relative w-72 h-60 sm:w-96 sm:h-80 mx-auto">
                 {/* Primary Structure */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-700 rounded-xl shadow-2xl"
-                  style={{
+                  style={isMobile ? {} : {
                     transform: `translateZ(50px) rotateY(${15 + (mousePosition.x - 50) * 0.05}deg)`,
                     transformStyle: 'preserve-3d'
                   }}
                 >
                   {/* Windows */}
-                  <div className="absolute top-8 left-8 right-8 h-12 bg-yellow-300 rounded opacity-80 shadow-inner"></div>
-                  <div className="absolute top-24 left-8 right-8 h-32 bg-blue-200 rounded opacity-60 shadow-inner"></div>
-                  <div className="absolute bottom-8 left-8 right-8 h-16 bg-orange-300 rounded opacity-70 shadow-inner"></div>
+                  <div className="absolute top-4 sm:top-8 left-4 sm:left-8 right-4 sm:right-8 h-8 sm:h-12 bg-yellow-300 rounded opacity-80 shadow-inner"></div>
+                  <div className="absolute top-12 sm:top-24 left-4 sm:left-8 right-4 sm:right-8 h-20 sm:h-32 bg-blue-200 rounded opacity-60 shadow-inner"></div>
+                  <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 h-10 sm:h-16 bg-orange-300 rounded opacity-70 shadow-inner"></div>
                   
                   {/* Building Details */}
                   <div className="absolute top-4 left-4 w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
@@ -186,26 +190,26 @@ export const Capabilities = () => {
                 
                 {/* Side Building */}
                 <div 
-                  className="absolute top-16 -right-24 w-40 h-56 bg-gradient-to-b from-gray-400 to-gray-600 rounded-lg shadow-xl"
-                  style={{
+                  className="absolute top-12 sm:top-16 -right-16 sm:-right-24 w-24 sm:w-40 h-40 sm:h-56 bg-gradient-to-b from-gray-400 to-gray-600 rounded-lg shadow-xl"
+                  style={isMobile ? {} : {
                     transform: `translateZ(30px) rotateY(${-15 + (mousePosition.x - 50) * 0.03}deg)`,
                     transformStyle: 'preserve-3d'
                   }}
                 >
-                  <div className="absolute top-4 left-4 right-4 h-8 bg-gray-300 rounded opacity-80"></div>
-                  <div className="absolute top-16 left-4 right-4 h-24 bg-gray-200 rounded opacity-60"></div>
+                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 h-4 sm:h-8 bg-gray-300 rounded opacity-80"></div>
+                  <div className="absolute top-8 sm:top-16 left-2 sm:left-4 right-2 sm:right-4 h-12 sm:h-24 bg-gray-200 rounded opacity-60"></div>
                 </div>
 
                 {/* Manufacturing Wing */}
                 <div 
-                  className="absolute top-32 -left-32 w-48 h-40 bg-gradient-to-b from-green-400 to-green-600 rounded-lg shadow-xl"
-                  style={{
+                  className="absolute top-24 sm:top-32 -left-20 sm:-left-32 w-32 sm:w-48 h-28 sm:h-40 bg-gradient-to-b from-green-400 to-green-600 rounded-lg shadow-xl"
+                  style={isMobile ? {} : {
                     transform: `translateZ(25px) rotateY(${25 + (mousePosition.x - 50) * 0.04}deg)`,
                     transformStyle: 'preserve-3d'
                   }}
                 >
-                  <div className="absolute top-4 left-4 right-4 h-6 bg-green-300 rounded opacity-80"></div>
-                  <div className="absolute top-14 left-4 right-4 h-16 bg-green-200 rounded opacity-60"></div>
+                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 h-3 sm:h-6 bg-green-300 rounded opacity-80"></div>
+                  <div className="absolute top-8 sm:top-14 left-2 sm:left-4 right-2 sm:right-4 h-8 sm:h-16 bg-green-200 rounded opacity-60"></div>
                 </div>
 
                 {/* Ground Plane */}
@@ -242,107 +246,111 @@ export const Capabilities = () => {
         </div>
 
         {/* Hero Content Overlay */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="relative z-10 h-full flex items-center py-20 lg:py-0">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
               <span className="text-blue-300 text-sm font-semibold tracking-wider uppercase">Manufacturing Excellence</span>
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Advanced <span className="text-blue-400">Manufacturing</span><br/>
                 <span className="text-white/80">Capabilities</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto">
-                Explore our cutting-edge manufacturing facility in immersive 3D. Discover precision engineering, AI-powered automation, and world-class quality systems.
+              <p className="text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto">
+                Explore our cutting-edge manufacturing facility{!isMobile && ' in immersive 3D'}. Discover precision engineering, AI-powered automation, and world-class quality systems.
               </p>
               
               {/* Facility Stats */}
-              <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">50,000</div>
-                  <div className="text-white/70 text-sm">sq ft facility</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">50,000</div>
+                  <div className="text-white/70 text-xs sm:text-sm">sq ft facility</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">25+</div>
-                  <div className="text-white/70 text-sm">CNC machines</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400">25+</div>
+                  <div className="text-white/70 text-xs sm:text-sm">CNC machines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">100+</div>
-                  <div className="text-white/70 text-sm">expert staff</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-yellow-400">100+</div>
+                  <div className="text-white/70 text-xs sm:text-sm">expert staff</div>
                 </div>
               </div>
 
               <div className="h-1 w-16 sm:w-20 md:w-24 bg-blue-400 rounded-full mx-auto"></div>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
                 <Button 
                   onClick={() => window.location.href = 'mailto:abushan.isro@gmail.com?subject=Facility Tour Request&body=Hello, I would like to schedule a virtual or in-person tour of the EMUSKI manufacturing facility.'}
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 text-lg shadow-xl"
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg shadow-xl w-full sm:w-auto"
                 >
-                  <Factory className="mr-2 h-5 w-5" />
-                  Virtual Facility Tour
+                  <Factory className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  {isMobile ? 'Facility Tour' : 'Virtual Facility Tour'}
                 </Button>
                 <Button 
                   onClick={() => window.location.href = 'mailto:abushan.isro@gmail.com?subject=Service Inquiry&body=Hello, I would like to learn more about EMUSKI services.'}
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-8 py-4 text-lg"
+                  className="border-white text-white hover:bg-white hover:text-gray-900 font-semibold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
                 >
                   Explore Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* VR Controls */}
-        <div className="absolute top-6 right-6 z-20 flex space-x-2">
-          <Button
-            onClick={() => setIs3DView(!is3DView)}
-            variant="outline"
-            size="sm"
-            className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
-          >
-            <Map className="h-4 w-4 mr-2" />
-            {is3DView ? '2D View' : '3D View'}
-          </Button>
-          <Button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            variant="outline"
-            size="sm"
-            className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
-          >
-            <Maximize2 className="h-4 w-4" />
-          </Button>
-        </div>
+        {/* VR Controls - Hidden on mobile */}
+        {!isMobile && (
+          <div className="absolute top-6 right-6 z-20 flex space-x-2">
+            <Button
+              onClick={() => setIs3DView(!is3DView)}
+              variant="outline"
+              size="sm"
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+            >
+              <Map className="h-4 w-4 mr-2" />
+              {is3DView ? '2D View' : '3D View'}
+            </Button>
+            <Button
+              onClick={() => setIsFullscreen(!isFullscreen)}
+              variant="outline"
+              size="sm"
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+            >
+              <Maximize2 className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
 
-        {/* VR Instructions */}
-        <div className="absolute bottom-6 left-6 z-20 text-white/70 text-sm">
-          <div className="bg-black/30 backdrop-blur-sm rounded-lg px-4 py-2">
-            <div className="flex items-center space-x-2">
-              <Navigation className="h-4 w-4" />
-              <span>Move your mouse to explore the facility in VR mode</span>
+        {/* VR Instructions - Hidden on mobile */}
+        {!isMobile && (
+          <div className="absolute bottom-6 left-6 z-20 text-white/70 text-sm">
+            <div className="bg-black/30 backdrop-blur-sm rounded-lg px-4 py-2">
+              <div className="flex items-center space-x-2">
+                <Navigation className="h-4 w-4" />
+                <span>Move your mouse to explore the facility in VR mode</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Core Capabilities */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Manufacturing Excellence Across Industries</h2>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Manufacturing Excellence Across Industries</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Comprehensive manufacturing solutions combining precision engineering, advanced automation, and intelligent quality systems to deliver exceptional results.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12 lg:mb-16">
               {capabilities.map((capability, index) => {
                 const Icon = capability.icon;
                 return (
                   <Card 
                     key={index}
-                    className={`p-8 cursor-pointer transition-all duration-300 border-2 ${
+                    className={`p-4 sm:p-6 lg:p-8 cursor-pointer transition-all duration-300 border-2 ${
                       activeCapability === index 
                         ? 'border-emuski-teal bg-emuski-teal/5' 
                         : 'border-gray-200 hover:border-emuski-teal/50'
@@ -356,11 +364,11 @@ export const Capabilities = () => {
                         <Icon className="h-8 w-8" />
                       </div>
                       <div className="flex-1">
-                        <div className="flex justify-between items-start mb-3">
-                          <h3 className="text-2xl font-bold text-gray-900">{capability.title}</h3>
-                          <div className="text-right">
-                            <div className="text-2xl font-bold text-emuski-teal">{capability.stats.value}</div>
-                            <div className="text-sm text-gray-500">{capability.stats.label}</div>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 space-y-2 sm:space-y-0">
+                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">{capability.title}</h3>
+                          <div className="text-left sm:text-right">
+                            <div className="text-xl sm:text-2xl font-bold text-emuski-teal">{capability.stats.value}</div>
+                            <div className="text-xs sm:text-sm text-gray-500">{capability.stats.label}</div>
                           </div>
                         </div>
                         <p className="text-gray-600 mb-4">{capability.description}</p>
@@ -383,12 +391,12 @@ export const Capabilities = () => {
       </section>
 
       {/* Technologies & Expertise */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="py-16 lg:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   Technology Excellence
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
@@ -414,18 +422,18 @@ export const Capabilities = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   Quality Standards & Certifications
                 </h2>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   Certified to international standards ensuring consistent quality, environmental responsibility, and regulatory compliance across all manufacturing operations.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                   {certifications.map((cert, index) => {
                     const Icon = cert.icon;
                     return (
-                      <Card key={index} className="p-6 border-2 border-gray-200 hover:border-emuski-teal/50 transition-colors">
+                      <Card key={index} className="p-4 sm:p-6 border-2 border-gray-200 hover:border-emuski-teal/50 transition-colors">
                         <div className="flex items-center space-x-4">
                           <div className="p-3 bg-emuski-teal/10 rounded-lg">
                             <Icon className="h-6 w-6 text-emuski-teal" />
@@ -446,24 +454,24 @@ export const Capabilities = () => {
       </section>
 
       {/* Industries Served */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Industry Experience
             </h2>
             <p className="text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               Trusted by leading companies across diverse industries, we deliver specialized manufacturing solutions tailored to unique sector requirements.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
               {industries.map((industry, index) => (
-                <Card key={index} className="p-6 border-2 border-gray-200 hover:border-emuski-teal hover:bg-emuski-teal/5 transition-all duration-300 group">
+                <Card key={index} className="p-4 lg:p-6 border-2 border-gray-200 hover:border-emuski-teal hover:bg-emuski-teal/5 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-gray-100 group-hover:bg-emuski-teal/10 rounded-lg flex items-center justify-center mx-auto mb-4 transition-colors">
                       <Factory className="h-6 w-6 text-gray-600 group-hover:text-emuski-teal transition-colors" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 group-hover:text-emuski-teal transition-colors">
+                    <h3 className="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-emuski-teal transition-colors">
                       {industry}
                     </h3>
                   </div>
@@ -475,28 +483,28 @@ export const Capabilities = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
+      <section className="py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
               Partner With Manufacturing Experts
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Ready to optimize your manufacturing process? Connect with our team to discuss custom solutions that drive efficiency, quality, and innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 sm:pt-6">
               <Button 
                 onClick={() => window.location.href = 'mailto:abushan.isro@gmail.com?subject=New Project Inquiry&body=Hello, I would like to discuss a new project with EMUSKI.'}
-                className="bg-white text-emuski-teal-darker hover:bg-gray-100 font-semibold px-8 py-4 text-lg"
+                className="bg-white text-emuski-teal-darker hover:bg-gray-100 font-semibold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
               >
                 Start Your Project
               </Button>
               <button 
                 onClick={() => window.open('mailto:abushan.isro@gmail.com?subject=Capabilities Brochure Request&body=Hello, I would like to request the EMUSKI capabilities brochure.', '_blank')}
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-white bg-transparent text-white hover:bg-white hover:text-emuski-teal-darker font-medium px-4 py-2 text-sm"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-white bg-transparent text-white hover:bg-white hover:text-emuski-teal-darker font-medium px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
               >
                 Get Brochure
               </button>
