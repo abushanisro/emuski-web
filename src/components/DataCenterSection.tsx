@@ -99,9 +99,24 @@ const quickLineupServices = [
 export const DataCenterSection = () => {
   const [showQuickLineup, setShowQuickLineup] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleQuickLineup = () => {
     setShowQuickLineup(prev => !prev);
+  };
+
+  const handleMouseEnter = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    setShowQuickLineup(true);
+  };
+
+  const handleMouseLeave = () => {
+    hideTimeoutRef.current = setTimeout(() => {
+      setShowQuickLineup(false);
+    }, 200);
   };
 
   const scrollLeft = () => {
@@ -132,6 +147,8 @@ export const DataCenterSection = () => {
               {/* Quick Lineup */}
               <button
                 onClick={toggleQuickLineup}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 className="mt-4 text-emuski-teal-darker hover:text-emuski-teal-dark font-medium flex items-center transition-colors"
               >
                 Quick Lineup
@@ -139,7 +156,11 @@ export const DataCenterSection = () => {
               </button>
               
               {showQuickLineup && (
-                <div className="mt-3 space-y-1">
+                <div 
+                  className="mt-3 space-y-1"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   {quickLineupServices.map((service, index) => (
                     <a 
                       key={index}

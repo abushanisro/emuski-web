@@ -31,23 +31,12 @@ const servicesDropdown = {
       { name: "Quality Control", path: "/precision-engineering#quality" },
       { name: "Engineering Consultation", path: "/precision-engineering#consultation" }
     ]
-  },
-  industries: {
-    name: "Industries",
-    path: "/industries",
-    subItems: [
-      { name: "Automotive", path: "/industries#automotive" },
-      { name: "Aerospace", path: "/industries#aerospace" },
-      { name: "Medical Devices", path: "/industries#medical" },
-      { name: "Electronics", path: "/industries#electronics" },
-      { name: "Defense", path: "/industries#defense" },
-      { name: "Success Stories", path: "/industries#success-stories" }
-    ]
   }
 };
 
 const navigationConfig = {
   leftMenu: [
+    { name: "Industries", path: "/industries" },
     { name: "Blog", path: "/blog" }
   ],
   rightMenu: [
