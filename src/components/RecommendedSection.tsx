@@ -20,8 +20,8 @@ const recommendations = [
     image: "/assets/componets/Matica-Photos2/DSC_1006.JPG"
   },
   {
-    title: "Defense Contract Achievement",
-    description: "Our quality systems exceeded military specifications, earning EMUSKI a 5-year contract for critical defense components valued at $12M annually",
+    title: "Defense Partnership Achievement",
+    description: "Our quality systems exceeded military specifications, earning EMUSKI a 5-year partnership for critical defense components valued at $12M annually",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg"
   },
   {
@@ -95,7 +95,7 @@ export const RecommendedSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-emuski-teal-dark transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

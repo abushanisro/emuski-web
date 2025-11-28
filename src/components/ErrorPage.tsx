@@ -26,37 +26,30 @@ export const ErrorPage = ({
     switch (errorType) {
       case "404":
         return {
-          icon: <FileX className="h-24 w-24 text-emuski-teal" />,
           defaultTitle: "Page Not Found",
           defaultDescription: "The page you're looking for doesn't exist or has been moved.",
           errorCode: "404"
         };
       case "500":
         return {
-          icon: <AlertCircle className="h-24 w-24 text-error" />,
           defaultTitle: "Internal Server Error",
           defaultDescription: "Something went wrong on our end. Please try again later.",
           errorCode: "500"
         };
       case "loading":
         return {
-          icon: (
-            <div className="animate-spin rounded-full h-24 w-24 border-4 border-emuski-teal border-t-transparent" />
-          ),
           defaultTitle: "Loading Content",
           defaultDescription: "Please wait while we fetch your content...",
           errorCode: ""
         };
       case "network":
         return {
-          icon: <AlertCircle className="h-24 w-24 text-warning" />,
           defaultTitle: "Connection Error",
           defaultDescription: "Unable to connect to our servers. Please check your internet connection.",
           errorCode: "Network"
         };
       default:
         return {
-          icon: <FileX className="h-24 w-24 text-emuski-teal" />,
           defaultTitle: "Something went wrong",
           defaultDescription: "An unexpected error occurred.",
           errorCode: "Error"
@@ -86,29 +79,24 @@ export const ErrorPage = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-emuski-teal/5 flex items-center justify-center px-4 py-16">
+    <div className="flex items-center justify-center px-4 py-16">
       <div className="max-w-4xl mx-auto w-full">
         {/* Main Error Content */}
         <div className="text-center mb-12">
           {/* Error Code */}
           {config.errorCode && (
-            <div className="text-8xl md:text-9xl font-bold text-emuski-teal/20 mb-4 select-none">
+            <div className="text-8xl md:text-9xl font-bold mb-8 select-none" style={{color: '#4fd3d4', opacity: 0.3}}>
               {config.errorCode}
             </div>
           )}
-          
-          {/* Icon */}
-          <div className="flex justify-center mb-8">
-            {config.icon}
-          </div>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-5xl font-bold text-dark-text mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white">
             {displayTitle}
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-text-gray max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed text-white/80">
             {displayDescription}
           </p>
 
@@ -117,7 +105,7 @@ export const ErrorPage = ({
             {showBackButton && (
               <Button 
                 variant="outline" 
-                className="border-emuski-teal text-emuski-teal hover:bg-emuski-teal hover:text-white"
+                className="border-white/20 text-white hover:bg-white hover:text-gray-900"
                 onClick={handleGoBack}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -127,7 +115,7 @@ export const ErrorPage = ({
             
             {showHomeButton && (
               <Link to="/">
-                <Button className="bg-emuski-teal hover:bg-emuski-teal-dark text-white">
+                <Button className="text-white hover:opacity-80" style={{backgroundColor: '#4fd3d4'}}>
                   <Home className="mr-2 h-4 w-4" />
                   Back to Home
                 </Button>
@@ -140,12 +128,12 @@ export const ErrorPage = ({
 
         {/* Popular Pages Section */}
         {showSearchSuggestions && (
-          <Card className="p-8 bg-white/80 backdrop-blur-sm border-border-gray shadow-lg">
+          <Card className="p-8 bg-white/10 backdrop-blur-sm border-white/20 shadow-lg">
             <div className="text-center mb-6">
-              <h2 className="text-xl font-semibold text-dark-text mb-2">
+              <h2 className="text-xl font-semibold text-white mb-2">
                 Popular Pages
               </h2>
-              <p className="text-text-gray">
+              <p className="text-white/70">
                 Maybe you're looking for one of these pages instead?
               </p>
             </div>
@@ -155,23 +143,23 @@ export const ErrorPage = ({
                 <Link
                   key={page.href}
                   to={page.href}
-                  className="group flex items-center justify-between p-4 rounded-lg bg-white hover:bg-emuski-teal/5 border border-transparent hover:border-emuski-teal/20 transition-all duration-200"
+                  className="group flex items-center justify-between p-4 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/30 transition-all duration-200"
                 >
-                  <span className="font-medium text-dark-text group-hover:text-emuski-teal">
+                  <span className="font-medium text-white group-hover:text-white" style={{'--hover-color': '#4fd3d4'} as React.CSSProperties}>
                     {page.label}
                   </span>
-                  <ChevronRight className="h-4 w-4 text-text-gray group-hover:text-emuski-teal transition-colors" />
+                  <ChevronRight className="h-4 w-4 text-white/60 group-hover:text-white transition-colors" />
                 </Link>
               ))}
             </div>
 
             {/* Search Suggestion */}
             <div className="mt-8 text-center">
-              <div className="inline-flex items-center gap-2 text-text-gray">
+              <div className="inline-flex items-center gap-2 text-white/70">
                 <Search className="h-4 w-4" />
                 <span className="text-sm">
                   Still can't find what you're looking for? Try searching from our{" "}
-                  <Link to="/" className="text-emuski-teal hover:text-emuski-teal-dark font-medium">
+                  <Link to="/" className="font-medium hover:opacity-80" style={{color: '#4fd3d4'}}>
                     homepage
                   </Link>
                 </span>

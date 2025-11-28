@@ -1,39 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Maximum Priority -->
   <url>
-    <loc>https://emuski.com/</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.emuski.com/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.emuski.com/assets/hero-manufacturing.jpg</image:loc>
+      <image:title>EMUSKI Manufacturing Solutions</image:title>
+      <image:caption>Leading OEM Manufacturing and Precision Engineering Services in Bangalore</image:caption>
+    </image:image>
   </url>
+
+  <!-- Core Service Pages - High Priority -->
   <url>
-    <loc>https://emuski.com/logo</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://www.emuski.com/manufacturing-services</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.emuski.com/assets/manufacturing-services.jpg</image:loc>
+      <image:title>OEM Manufacturing Services</image:title>
+      <image:caption>Comprehensive OEM manufacturing solutions for automotive, aerospace, and electronics industries</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/precision-engineering</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/solutions/ai</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Industry Pages -->
+  <url>
+    <loc>https://www.emuski.com/industries</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://emuski.com/typography</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://www.emuski.com/industries/automotive</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/industries/aerospace</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/industries/medical-devices</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/industries/electronics</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Content Pages -->
+  <url>
+    <loc>https://www.emuski.com/blog</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/gallery</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://emuski.com/color</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://www.emuski.com/contact</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://emuski.com/art-direction</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://www.emuski.com/faq</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- SEO Landing Pages -->
   <url>
-    <loc>https://emuski.com/brand</loc>
-    <lastmod>2024-11-19</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://www.emuski.com/oem-manufacturing-bangalore</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.emuski.com/precision-engineering-india</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- International Market Pages -->
+  <url>
+    <loc>https://www.emuski.com/us/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/uk/</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/manufacturing-services-uk</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/oem-manufacturing-usa</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/ai-manufacturing-solutions</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/cnc-machining-services</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/rapid-prototyping-bangalore</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/design-for-manufacturing</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Posts (Sample - would be dynamically generated) -->
+  <url>
+    <loc>https://www.emuski.com/blog/cost-optimization-manufacturing</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/blog/vave-methodology-explained</loc>
+    <lastmod>2025-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/blog/ai-powered-manufacturing</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.emuski.com/blog/lean-manufacturing-principles</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

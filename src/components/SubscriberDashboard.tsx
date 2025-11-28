@@ -139,7 +139,7 @@ export const SubscriberDashboard = () => {
               <Download className="h-4 w-4" />
               <span>Export</span>
             </Button>
-            <Button onClick={sendTestEmail} className="bg-emuski-teal hover:bg-emuski-teal/90 text-white flex items-center space-x-2">
+            <Button onClick={sendTestEmail} className="bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white flex items-center space-x-2">
               <Mail className="h-4 w-4" />
               <span>Send Test Email</span>
             </Button>
@@ -155,7 +155,7 @@ export const SubscriberDashboard = () => {
                 <p className="text-3xl font-bold text-gray-900">{totalSubscribers.toLocaleString()}</p>
                 <p className="text-sm text-gray-500 mt-1">All time</p>
               </div>
-              <Users className="h-8 w-8 text-emuski-teal" />
+              <Users className="h-8 w-8 text-emuski-teal-darker" />
             </div>
           </Card>
 
@@ -262,13 +262,13 @@ export const SubscriberDashboard = () => {
                   placeholder="Search subscribers..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal"
+                  className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal-darker"
                 />
               </div>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value as any)}
-                className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal"
+                className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal-darker"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>

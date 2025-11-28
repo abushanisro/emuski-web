@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Inter Variable', 'Inter', 'SF Pro', 'Segoe UI', 'Roboto', 'sans-serif'],
+        inter: ['Inter Variable', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,5 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { FAQSection } from "../components/FAQSection";
+import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 
 const engineeringServices = [
   {
@@ -63,25 +65,28 @@ export default function PrecisionEngineering() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 mt-8">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Engineering Precision with Cost Focus
+              Ultra-Precision Engineering | ±0.0025mm Tolerances
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Precision engineering with core focus on cost engineering - optimizing manufacturing processes and reducing production costs while maintaining the highest quality standards.
+            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Advanced precision engineering with documented capabilities: 5-axis CNC machining, Six Sigma quality (Cpk 2.1), 99.5% first-pass yield, and cost engineering methodologies delivering 25-45% cost reductions while maintaining ISO 9001:2015 standards.
             </p>
-            <div className="h-1 w-24 bg-emuski-teal rounded-full mx-auto"></div>
+            <div className="h-1 w-24 bg-emuski-teal-dark rounded-full mx-auto"></div>
           </div>
         </div>
       </section>
+
+      {/* Technical Specifications & Equipment */}
+      <TechnicalSpecsSection focus="all" compact={false} />
 
       {/* Engineering Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Engineering Services
+              Precision Engineering Capabilities
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive engineering solutions focused on cost optimization and manufacturing excellence.
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Advanced engineering solutions with documented tolerances ±0.0025mm, certified processes, and measurable Six Sigma quality performance (Cpk ≥ 1.67).
             </p>
           </div>
           
@@ -97,7 +102,7 @@ export default function PrecisionEngineering() {
                 </div>
                 
                 <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-emuski-teal-dark transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground">
@@ -107,13 +112,13 @@ export default function PrecisionEngineering() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-emuski-teal rounded-full"></div>
+                        <div className="w-2 h-2 bg-emuski-teal-dark rounded-full"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <button className="text-primary hover:text-primary/80 font-semibold transition-colors">
+                  <button className="text-emuski-teal-darker hover:text-emuski-teal-dark font-semibold transition-colors">
                     Learn More →
                   </button>
                 </div>
@@ -137,7 +142,7 @@ export default function PrecisionEngineering() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-emuski-teal/20 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-emuski-teal">1</span>
+                  <span className="text-2xl font-bold text-emuski-teal-darker">1</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white">Cost Analysis</h3>
                 <p className="text-gray-400">Comprehensive cost breakdown and optimization opportunities identification.</p>
@@ -145,7 +150,7 @@ export default function PrecisionEngineering() {
               
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-emuski-teal/20 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-emuski-teal">2</span>
+                  <span className="text-2xl font-bold text-emuski-teal-darker">2</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white">Process Optimization</h3>
                 <p className="text-gray-400">Streamlining manufacturing processes for maximum efficiency and cost reduction.</p>
@@ -153,7 +158,7 @@ export default function PrecisionEngineering() {
               
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 bg-emuski-teal/20 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-emuski-teal">3</span>
+                  <span className="text-2xl font-bold text-emuski-teal-darker">3</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white">Value Engineering</h3>
                 <p className="text-gray-400">Delivering the same functionality at reduced costs through smart engineering.</p>
@@ -183,6 +188,14 @@ export default function PrecisionEngineering() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection 
+        compact={true} 
+        maxItems={8} 
+        showCategories={false}
+        usePageSpecific={true}
+      />
 
       <Footer />
     </div>

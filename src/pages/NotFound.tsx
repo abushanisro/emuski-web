@@ -15,7 +15,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
       <Navbar />
       <ErrorPage 
         errorType="404"

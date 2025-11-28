@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { FAQSection } from "../components/FAQSection";
+import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 import { Upload, X, FileText, AlertTriangle, Send } from "lucide-react";
 
 const services = [
@@ -51,6 +53,175 @@ const services = [
 ];
 
 export default function ManufacturingServices() {
+  // SEO Meta Tags and Structured Data
+  useEffect(() => {
+    // Update document title for SEO
+    document.title = "OEM Manufacturing Services in Bangalore | Precision Engineering Solutions | EMUSKI";
+    
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Leading OEM manufacturing services in Bangalore, India. Expert precision engineering, rapid prototyping, custom manufacturing, and AI-powered production solutions for automotive, aerospace, medical devices, and electronics industries. ISO certified manufacturing partner with 15+ years experience.');
+
+    // Update keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'OEM manufacturing Bangalore, precision engineering services, custom manufacturing India, rapid prototyping Bangalore, CNC machining services, injection molding, sheet metal fabrication, automotive manufacturing, aerospace manufacturing, medical device manufacturing, electronics manufacturing, manufacturing automation, lean manufacturing, Industry 4.0, smart manufacturing, manufacturing consulting, supply chain optimization, quality assurance manufacturing, ISO certified manufacturing, design for manufacturing, VAVE methodology, cost optimization manufacturing');
+
+    // Add canonical URL
+    let canonicalUrl = document.querySelector('link[rel="canonical"]');
+    if (!canonicalUrl) {
+      canonicalUrl = document.createElement('link');
+      canonicalUrl.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalUrl);
+    }
+    canonicalUrl.setAttribute('href', 'https://www.emuski.com/manufacturing-services');
+
+    // Add hreflang for international SEO
+    let hreflangEn = document.querySelector('link[hreflang="en"]');
+    if (!hreflangEn) {
+      hreflangEn = document.createElement('link');
+      hreflangEn.setAttribute('rel', 'alternate');
+      hreflangEn.setAttribute('hreflang', 'en');
+      document.head.appendChild(hreflangEn);
+    }
+    hreflangEn.setAttribute('href', 'https://www.emuski.com/manufacturing-services');
+
+    // Add Open Graph tags
+    const ogTags = [
+      { property: 'og:title', content: 'OEM Manufacturing Services in Bangalore | Precision Engineering | EMUSKI' },
+      { property: 'og:description', content: 'Leading OEM manufacturing services in Bangalore, India. Expert precision engineering, rapid prototyping, and custom manufacturing solutions for automotive, aerospace, medical, and electronics industries.' },
+      { property: 'og:url', content: 'https://www.emuski.com/manufacturing-services' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: 'https://www.emuski.com/assets/manufacturing-services-og.jpg' },
+      { property: 'og:locale', content: 'en_US' }
+    ];
+
+    ogTags.forEach(({ property, content }) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    });
+
+    // Add Twitter Card tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'OEM Manufacturing Services in Bangalore | EMUSKI' },
+      { name: 'twitter:description', content: 'Leading OEM manufacturing services in Bangalore. Expert precision engineering, rapid prototyping, and custom manufacturing solutions.' },
+      { name: 'twitter:image', content: 'https://www.emuski.com/assets/manufacturing-services-twitter.jpg' }
+    ];
+
+    twitterTags.forEach(({ name, content }) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('name', name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    });
+
+    // Add structured data for SEO
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "OEM Manufacturing Services",
+      "description": "Comprehensive OEM manufacturing services including precision engineering, rapid prototyping, custom manufacturing, and production scaling solutions",
+      "provider": {
+        "@type": "Organization",
+        "name": "EMUSKI Manufacturing Solutions",
+        "url": "https://www.emuski.com/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "126, RNS Plaza, KIADB Industrial Area, Electronic City Phase 2",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560100",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-83444-74556",
+          "contactType": "Customer Service"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "serviceType": "Manufacturing",
+      "category": "OEM Manufacturing",
+      "offers": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "OEM Manufacturing",
+            "description": "Complete manufacturing solutions from concept to production"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Manufacturing",
+            "description": "Tailored manufacturing services meeting specific requirements"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Rapid Prototyping",
+            "description": "Fast and efficient prototyping services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Production Scaling",
+            "description": "Seamless scaling from prototype to full production"
+          }
+        }
+      ],
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": "https://www.emuski.com/contact"
+      }
+    };
+
+    let scriptTag = document.querySelector('script[type="application/ld+json"][data-page="manufacturing-services"]');
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.setAttribute('type', 'application/ld+json');
+      scriptTag.setAttribute('data-page', 'manufacturing-services');
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(structuredData);
+
+    // Cleanup function
+    return () => {
+      // Remove page-specific structured data when component unmounts
+      const pageScript = document.querySelector('script[data-page="manufacturing-services"]');
+      if (pageScript) {
+        pageScript.remove();
+      }
+    };
+  }, []);
+
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [uploadError, setUploadError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -227,8 +398,8 @@ export default function ManufacturingServices() {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative bg-industrial-dark text-white overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
+      {/* Hero Section - SEO Optimized */}
+      <section className="relative bg-industrial-dark text-white overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24" itemScope itemType="https://schema.org/Organization">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
@@ -236,20 +407,47 @@ export default function ManufacturingServices() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 mt-8">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Complete Manufacturing Solutions
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight" itemProp="name">
+              Leading OEM Manufacturing Services in Bangalore | Precision Engineering Solutions
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              From concept to production, we provide comprehensive manufacturing services that bring your designs to life with precision and excellence.
+            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto" itemProp="description">
+              EMUSKI delivers world-class OEM manufacturing solutions, precision engineering, rapid prototyping, and AI-powered production systems in Bangalore, India. Expert design-for-manufacturing services for automotive, aerospace, medical devices, and electronics industries. ISO certified manufacturing partner with 15+ years experience serving global clients.
             </p>
-            <div className="h-1 w-24 bg-emuski-teal rounded-full mx-auto"></div>
+            <div className="h-1 w-24 bg-emuski-teal-dark rounded-full mx-auto"></div>
+            
+            {/* Key Benefits for AEO */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold text-emuski-teal-darker">15+ Years Experience</h3>
+                <p className="text-sm text-gray-300">Trusted manufacturing partner for industry leaders</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold text-emuski-teal-darker">ISO Certified Quality</h3>
+                <p className="text-sm text-gray-300">International quality standards and certifications</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold text-emuski-teal-darker">AI-Powered Manufacturing</h3>
+                <p className="text-sm text-gray-300">Industry 4.0 solutions and smart manufacturing</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Technical Performance Metrics */}
+      <TechnicalSpecsSection focus="metrics" compact={true} />
+
       {/* Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Manufacturing Services Portfolio
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Precision-engineered solutions with documented capabilities, certified processes, and measurable performance metrics
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 group">
@@ -262,7 +460,7 @@ export default function ManufacturingServices() {
                 </div>
                 
                 <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-emuski-teal-dark transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground">
@@ -272,13 +470,13 @@ export default function ManufacturingServices() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-emuski-teal rounded-full"></div>
+                        <div className="w-2 h-2 bg-emuski-teal-dark rounded-full"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <button className="text-primary hover:text-primary/80 font-semibold transition-colors">
+                  <button className="text-emuski-teal-darker hover:text-emuski-teal-dark font-semibold transition-colors">
                     Learn More →
                   </button>
                 </div>
@@ -287,6 +485,9 @@ export default function ManufacturingServices() {
           </div>
         </div>
       </section>
+
+      {/* Technical Capabilities Section */}
+      <TechnicalSpecsSection focus="capabilities" compact={true} showTitle={true} />
 
       {/* Request Quote Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
@@ -313,25 +514,29 @@ export default function ManufacturingServices() {
             <form onSubmit={handleQuoteSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                  <label htmlFor="quote-name" className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
                   <input
                     type="text"
+                    id="quote-name"
                     name="name"
                     value={quoteData.name}
                     onChange={handleInputChange}
                     required
+                    autoComplete="name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                  <label htmlFor="quote-email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                   <input
                     type="email"
+                    id="quote-email"
                     name="email"
                     value={quoteData.email}
                     onChange={handleInputChange}
                     required
+                    autoComplete="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     placeholder="your.email@company.com"
                   />
@@ -340,23 +545,27 @@ export default function ManufacturingServices() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                  <label htmlFor="quote-company" className="block text-sm font-medium text-gray-700 mb-2">Company</label>
                   <input
                     type="text"
+                    id="quote-company"
                     name="company"
                     value={quoteData.company}
                     onChange={handleInputChange}
+                    autoComplete="organization"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     placeholder="Your company name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                  <label htmlFor="quote-phone" className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                   <input
                     type="tel"
+                    id="quote-phone"
                     name="phone"
                     value={quoteData.phone}
                     onChange={handleInputChange}
+                    autoComplete="tel"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     placeholder="+1 (555) 123-4567"
                   />
@@ -365,22 +574,26 @@ export default function ManufacturingServices() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
+                  <label htmlFor="quote-quantity" className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
                   <input
                     type="text"
+                    id="quote-quantity"
                     name="quantity"
                     value={quoteData.quantity}
                     onChange={handleInputChange}
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     placeholder="e.g., 100 units, 50-200 pieces"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+                  <label htmlFor="quote-timeline" className="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
                   <select
+                    id="quote-timeline"
                     name="timeline"
                     value={quoteData.timeline}
                     onChange={handleInputChange}
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                   >
                     <option value="">Select timeline</option>
@@ -394,12 +607,14 @@ export default function ManufacturingServices() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
+                <label htmlFor="project-description" className="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
                 <textarea
+                  id="project-description"
                   name="projectDescription"
                   value={quoteData.projectDescription}
                   onChange={handleInputChange}
                   required
+                  autoComplete="off"
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent resize-vertical"
                   placeholder="Describe your manufacturing requirements, specifications, materials, and any specific needs..."
@@ -456,7 +671,7 @@ export default function ManufacturingServices() {
                         className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border"
                       >
                         <div className="flex items-center space-x-3">
-                          <FileText className="h-5 w-5 text-emuski-teal" />
+                          <FileText className="h-5 w-5 text-emuski-teal-darker" />
                           <div>
                             <p className="text-sm font-medium text-gray-900">{file.name}</p>
                             <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
@@ -478,7 +693,7 @@ export default function ManufacturingServices() {
               <button
                 type="submit"
                 disabled={isSubmitting || submitStatus === "success"}
-                className="w-full bg-emuski-teal hover:bg-emuski-teal/90 text-white font-semibold py-4 px-6 rounded-lg transition-colors text-lg flex items-center justify-center space-x-2"
+                className="w-full bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold py-4 px-6 rounded-lg transition-colors text-lg flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <span>Submitting Quote...</span>
@@ -511,6 +726,14 @@ export default function ManufacturingServices() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection 
+        compact={true} 
+        maxItems={8} 
+        showCategories={false}
+        usePageSpecific={true}
+      />
 
       <Footer />
     </div>

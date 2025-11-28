@@ -3,152 +3,186 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Search, Filter, Grid, List, Eye, Download, Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Complete EMUSKI component gallery with consolidated manufacturing images
+// Helper function to dynamically load industry images
+const loadIndustryImages = (industryPath: string, companyName: string) => {
+  const basePath = `/assets/indutry-componets/${industryPath}`;
+  // This would need to be populated dynamically in a real implementation
+  // For now, we'll use placeholder structure
+  return [];
+};
+
+// Industry-based gallery structure
+const industryData = {
+  "Space": {
+    description: "Advanced space technology components and satellite manufacturing solutions",
+    color: "bg-emuski-teal"
+  },
+  "Medical": {
+    description: "Precision medical device components and healthcare manufacturing solutions",
+    color: "bg-emuski-teal"
+  },
+  "Aerospace": {
+    description: "Aerospace engineering components and aviation manufacturing expertise",
+    color: "bg-emuski-teal"
+  },
+  "Automotive": {
+    description: "Automotive manufacturing components and vehicle systems engineering", 
+    color: "bg-emuski-teal"
+  },
+  "Defense": {
+    description: "Defense technology components and military-grade manufacturing solutions",
+    color: "bg-emuski-teal"
+  }
+};
+
+// Updated gallery items with industry categorization
 const galleryItems = [
-  // October 2025 Manufacturing Excellence Story - Consolidated
+  // Space Industry - Dhigantara
   {
     id: 1,
-    title: "October 2025 Production Excellence Initiative",
-    category: "Recent Work",
+    title: "Space Technology Components",
+    category: "Space",
     type: "gallery",
-    thumbnail: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
+    thumbnail: "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
     images: [
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.36.22 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 11.05.36 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-09-03 at 11.58.16 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-09-03 at 11.58.40 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-09-03 at 11.58.58 AM.jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-09-15 at 12.00.26 PM (1).jpeg",
-      "/assets/componets/3-Oct-25/WhatsApp Image 2025-09-15 at 12.00.26 PM.jpeg"
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-08-28 at 10.36.22 AM.jpeg", 
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-08-28 at 11.05.36 AM.jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-09-03 at 11.58.16 AM.jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-09-03 at 11.58.40 AM.jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-09-03 at 11.58.58 AM.jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-09-15 at 12.00.26 PM (1).jpeg",
+      "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-09-15 at 12.00.26 PM.jpeg"
     ],
-    image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
-    description: "EMUSKI's October 2025 manufacturing excellence initiative showcased our partnership with leading automotive OEMs, delivering critical components with unprecedented precision and speed. This comprehensive project included streamlined assembly operations, advanced quality validation systems, and seamless production transitions, resulting in 40% faster production cycles while maintaining ISO 9001:2015 quality standards.",
-    tags: ["October", "Production", "Excellence", "Components"]
+    image: "/assets/indutry-componets/dhigantara - Space/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
+    description: "Advanced space technology manufacturing for satellite components and space exploration equipment. Our precision engineering capabilities deliver critical components for space mission applications.",
+    tags: ["Space", "Satellite", "Technology", "Precision"]
   },
-  
-  // Centering Fixtures - Consolidated
+
+  // Medical Industry - Forus  
   {
     id: 2,
-    title: "Precision Centering Fixtures Collection",
-    category: "Fixtures & Tooling",
-    type: "gallery",
-    thumbnail: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
+    title: "Medical Device Manufacturing",
+    category: "Medical",
+    type: "gallery", 
+    thumbnail: "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
     images: [
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.56 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.22.40 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.23.17 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.23.56 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.24.36 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.25.16 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.26.01 PM.jpeg",
-      "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.26.20 PM.jpeg"
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.07.21 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.07.57 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.08.38 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.09.26 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.10.05 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.10.52 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.11.16 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.11.53 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.12.21 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.13.05 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.13.35 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.14.09 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.14.34 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.15.13 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.15.37 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.16.05 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.16.51 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-28 at 2.07.05 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-09-10 at 2.53.06 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-09-10 at 9.02.28 AM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.50 PM (1).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.50 PM (2).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.50 PM (3).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.50 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.51 PM (1).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.51 PM (2).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.51 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.52 PM (1).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.52 PM (2).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.52 PM (3).jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.52 PM.jpeg",
+      "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-10-10 at 3.21.53 PM.jpeg"
     ],
-    image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
-    description: "Comprehensive collection of custom-designed centering fixtures showcasing EMUSKI's precision manufacturing capabilities. These fixtures demonstrate our expertise in advanced tooling design, specialized manufacturing requirements, and integration of tooling systems for comprehensive manufacturing solutions. From initial design through final assembly, each fixture represents our commitment to manufacturing excellence.",
-    tags: ["Fixtures", "Centering", "Precision", "Custom"]
+    image: "/assets/indutry-componets/forus - Medical/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+    description: "Precision medical device components and healthcare manufacturing solutions. Our expertise ensures compliance with strict medical industry standards and regulatory requirements.",
+    tags: ["Medical", "Healthcare", "Devices", "Compliance"]
   },
 
-  // Innaccel Project - Consolidated
+  // Aerospace Industry - Kadet
   {
     id: 3,
-    title: "Innaccel Project Manufacturing Solutions",
-    category: "Client Projects",
+    title: "Aerospace Engineering Components",
+    category: "Aerospace",
     type: "gallery",
-    thumbnail: "/assets/componets/3-Oct-25/innaccel/WhatsApp Image 2025-10-22 at 10.33.50 AM.jpeg",
+    thumbnail: "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-26 at 11.04.27 AM.jpeg",
     images: [
-      "/assets/componets/3-Oct-25/innaccel/WhatsApp Image 2025-10-22 at 10.33.50 AM.jpeg",
-      "/assets/componets/3-Oct-25/innaccel/WhatsApp Image 2025-10-22 at 10.34.03 AM.jpeg"
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-26 at 11.04.27 AM.jpeg",
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-27 at 1.23.28 PM.jpeg",
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-27 at 7.40.06 PM.jpeg",
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-28 at 10.20.42 AM.jpeg",
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-28 at 10.33.21 AM.jpeg",
+      "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-28 at 12.35.54 AM.jpeg"
     ],
-    image: "/assets/componets/3-Oct-25/innaccel/WhatsApp Image 2025-10-22 at 10.33.50 AM.jpeg",
-    description: "Specialized manufacturing solutions developed for Innaccel project requirements, showcasing EMUSKI's ability to deliver custom engineering solutions for unique industrial applications.",
-    tags: ["Innaccel", "Project", "Specialized", "Manufacturing"]
+    image: "/assets/indutry-componets/kadet - Aerospace/WhatsApp Image 2025-08-26 at 11.04.27 AM.jpeg",
+    description: "Aerospace engineering components and aviation manufacturing expertise. Our capabilities deliver critical aerospace components meeting stringent aviation industry standards.",
+    tags: ["Aerospace", "Aviation", "Engineering", "Critical"]
   },
 
-  // Matica Production Collection - Consolidated
+  // Automotive Industry - Moon Rider
   {
     id: 4,
-    title: "Matica Production Line Excellence",
-    category: "Production Systems",
+    title: "Automotive Manufacturing",
+    category: "Automotive",
     type: "gallery",
-    thumbnail: "/assets/componets/Matica-Photos2/DSC_1006.JPG",
+    thumbnail: "/assets/indutry-componets/moon rider - Automotive/WhatsApp Image 2025-09-07 at 1.14.42 PM.jpeg",
     images: [
-      "/assets/componets/Matica-Photos2/DSC_1006.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1008.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1009.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1010.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1011.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1012.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1013.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1014.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1015.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1016.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1017.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1018.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1019.JPG",
-      "/assets/componets/Matica-Photos2/DSC_1020.JPG"
+      "/assets/indutry-componets/moon rider - Automotive/WhatsApp Image 2025-09-07 at 1.14.42 PM.jpeg"
     ],
-    image: "/assets/componets/Matica-Photos2/DSC_1006.JPG",
-    description: "Professional production line setup and manufacturing excellence for Matica project. This comprehensive collection showcases our advanced assembly stations, quality assurance processes, manufacturing workflow optimization, and cutting-edge production technology implementation, demonstrating EMUSKI's commitment to operational excellence and process innovation.",
-    tags: ["Matica", "Production", "Excellence", "Professional"]
+    image: "/assets/indutry-componets/moon rider - Automotive/WhatsApp Image 2025-09-07 at 1.14.42 PM.jpeg", 
+    description: "Automotive manufacturing components and vehicle systems engineering. Our expertise in automotive manufacturing delivers precision vehicle component production.",
+    tags: ["Automotive", "Vehicle", "Systems", "Manufacturing"]
   },
 
-  // Manufacturing Components Collection - Consolidated  
+  // Defense Industry - Tonbo
   {
     id: 5,
-    title: "Precision Manufacturing Components",
-    category: "CNC Machining & Parts",
+    title: "Defense Technology Solutions",
+    category: "Defense",
     type: "gallery",
-    thumbnail: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
+    thumbnail: "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.45 PM (1).jpeg",
     images: [
-      "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-      "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0017.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0018.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0019.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0020.jpg",
-      "/assets/componets/Part-Photos/IMG-20250519-WA0021.jpg"
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.45 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.45 PM (2).jpeg", 
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.45 PM.jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.46 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.46 PM (2).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.46 PM (3).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.46 PM.jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.47 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.47 PM (2).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.47 PM (3).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.47 PM.jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.48 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.48 PM (2).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.48 PM.jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.49 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.49 PM (2).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.49 PM (3).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.49 PM.jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.50 PM (1).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.50 PM (2).jpeg",
+      "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.50 PM.jpeg"
     ],
-    image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-    description: "High-precision manufactured components showcasing EMUSKI's CNC machining capabilities and quality control excellence. These components represent our partnership with automotive OEMs and industrial clients, demonstrating our ability to deliver complex geometries with tight tolerances and exceptional surface finishes.",
-    tags: ["Components", "CNC", "Precision", "Manufacturing"]
-  },
-
-  // Forus Project Collection
-  {
-    id: 6,
-    title: "Forus Partnership Engineering Excellence",
-    category: "Client Projects", 
-    type: "gallery",
-    thumbnail: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    images: [
-      "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
-    ],
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    description: "Strategic partnership with Forus showcasing EMUSKI's rapid prototyping and engineering validation capabilities, enabling accelerated product development cycles for our B2B manufacturing partners.",
-    tags: ["Forus", "Partnership", "Engineering", "Prototyping"]
+    image: "/assets/indutry-componets/tonbo - Defense/WhatsApp Image 2025-10-10 at 3.25.45 PM (1).jpeg",
+    description: "Defense technology components and military-grade manufacturing solutions. Our capabilities deliver mission-critical components meeting stringent defense standards.",
+    tags: ["Defense", "Military", "Technology", "Critical"]
   }
 ];
 
-// Category mapping for better UX
-const categoryMapping: { [key: string]: string } = {
-  "Recent Work": "Recent Work",
-  "Fixtures & Tooling": "Fixtures & Tooling", 
-  "Client Projects": "Client Projects",
-  "Production Systems": "Production Systems",
-  "CNC Machining & Parts": "CNC Machining & Parts",
-  "Assembly & Production": "Assembly & Production",
-  "Quality Control": "Quality Control"
-};
-
-// Get unique categories for filtering
-const categories = ["All", ...Object.values(categoryMapping)];
+// Industry categories for tabbed interface
+const industryCategories = ["All", "Space", "Medical", "Aerospace", "Automotive", "Defense"];
 
 export const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedIndustry, setSelectedIndustry] = useState("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -203,16 +237,16 @@ export const Gallery = () => {
     }
   };
 
-  // Filter items based on search term and category
+  // Filter items based on search term and industry
   const filteredItems = galleryItems.filter(item => {
     const matchesSearch = 
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+    const matchesIndustry = selectedIndustry === "All" || item.category === selectedIndustry;
     
-    return matchesSearch && matchesCategory;
+    return matchesSearch && matchesIndustry;
   });
 
   const getCurrentImage = () => {
@@ -233,10 +267,10 @@ export const Gallery = () => {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6 mt-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" style={{color: 'rgb(18, 26, 33)'}}>
-              Manufacturing Excellence Gallery
+              Industry Portfolio Gallery
             </h1>
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Explore EMUSKI's comprehensive portfolio of precision manufacturing, engineering solutions, and production excellence across automotive, aerospace, and industrial sectors.
+              Explore EMUSKI's comprehensive manufacturing solutions across Space, Medical, Aerospace, Automotive, and Defense industries. Discover our partnerships and precision engineering capabilities.
             </p>
             <div className="h-1 w-24 bg-white rounded-full mx-auto"></div>
           </div>
@@ -244,65 +278,15 @@ export const Gallery = () => {
       </section>
       
       <div className="container mx-auto px-4 sm:px-6 py-20">
-        {/* Content moved here */}
-        <div className="mb-12"></div>
-
-        {/* Search and Filter Controls */}
-        <div className="mb-8 space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between">
-          {/* Search Bar */}
-          <div className="relative flex-1 lg:max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Search components, manufacturing processes, technologies..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-            />
-          </div>
-
-          {/* Filters and View Controls */}
-          <div className="flex items-center space-x-4">
-            {/* Category Filter */}
-            <div className="relative">
-              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="pl-10 pr-8 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal appearance-none bg-white min-w-[180px]"
-              >
-                {categories.map(category => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* View Mode Toggle */}
-            <div className="flex border border-gray-200 rounded-lg overflow-hidden">
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`p-3 ${viewMode === "grid" ? "bg-emuski-teal text-white" : "bg-white text-gray-600 hover:bg-gray-50"} transition-colors`}
-              >
-                <Grid className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => setViewMode("list")}
-                className={`p-3 ${viewMode === "list" ? "bg-emuski-teal text-white" : "bg-white text-gray-600 hover:bg-gray-50"} transition-colors`}
-              >
-                <List className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Results Count */}
         <div className="mb-6 text-gray-600">
-          Showing {filteredItems.length} of {galleryItems.length} manufacturing portfolios
+          Showing {galleryItems.length} industry partnerships
         </div>
 
         {/* Gallery Grid */}
-        <div className={`${viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" : "space-y-6"}`}>
-          {filteredItems.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryItems.map((item, index) => (
             <Card 
               key={item.id} 
               className="group overflow-hidden bg-white hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -324,14 +308,17 @@ export const Gallery = () => {
                 </div>
                 
                 <div className="absolute top-4 left-4">
-                  <span className="inline-block px-3 py-1 bg-emuski-teal text-white text-xs font-semibold rounded-sm">
+                  <span className={`inline-block px-3 py-1 text-white text-xs font-semibold rounded-sm ${
+                    industryData[item.category as keyof typeof industryData]?.color || "bg-emuski-teal"
+                  }`}>
                     {item.category}
                   </span>
                 </div>
+                
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emuski-teal transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 line-clamp-3">
@@ -402,10 +389,12 @@ export const Gallery = () => {
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <span className="px-3 py-1 bg-emuski-teal/10 text-emuski-teal text-xs sm:text-sm font-medium rounded-full">
+                    <span className={`px-3 py-1 text-white text-xs sm:text-sm font-medium rounded-full ${
+                      industryData[selectedImage.category as keyof typeof industryData]?.color || "bg-emuski-teal"
+                    }`}>
                       {selectedImage.category}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">{selectedImage.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{selectedImage.title}</h3>
                   </div>
                   <Button variant="outline" size="sm">
                     <Download className="h-4 w-4 mr-2" />

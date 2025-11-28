@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark, Twitter, Linkedin, Facebook, Mail, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { useBlogPost, useRelatedPosts } from "../hooks/useBlogApi";
+import { useBlogPost, useRelatedPosts } from "../hooks/useBlogApiConfig";
 import { BlogPost } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
 import { BlogNotFoundPage, LoadingPage } from "./ui/error-pages";
@@ -99,7 +99,7 @@ export const BlogPostComponent = () => {
       <div className="border-b border-gray-100 py-4 bg-white sticky top-16 z-40">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
-            <Link to="/blog" className="flex items-center space-x-2 text-gray-600 hover:text-emuski-teal transition-colors">
+            <Link to="/blog" className="flex items-center space-x-2 text-gray-600 hover:text-emuski-teal-dark transition-colors">
               <ArrowLeft className="h-4 w-4" />
               <span className="text-sm font-medium">Back to Blog</span>
             </Link>
@@ -109,7 +109,7 @@ export const BlogPostComponent = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsBookmarked(!isBookmarked)}
-                className="text-gray-600 hover:text-emuski-teal"
+                className="text-gray-600 hover:text-emuski-teal-dark"
               >
                 <Bookmark className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`} />
               </Button>
@@ -145,7 +145,7 @@ export const BlogPostComponent = () => {
               {/* Article Header */}
               <div className="mb-8">
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-emuski-teal/10 text-emuski-teal text-sm font-medium rounded-full">
+                  <span className="inline-block px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker text-sm font-medium rounded-full">
                     {post.category}
                   </span>
                 </div>
@@ -231,7 +231,7 @@ export const BlogPostComponent = () => {
                   <Button
                     variant="ghost"
                     onClick={() => setIsBookmarked(!isBookmarked)}
-                    className="text-gray-600 hover:text-emuski-teal"
+                    className="text-gray-600 hover:text-emuski-teal-dark"
                   >
                     <Bookmark className={`h-4 w-4 mr-2 ${isBookmarked ? 'fill-current' : ''}`} />
                     {isBookmarked ? 'Bookmarked' : 'Bookmark'}
@@ -256,7 +256,7 @@ export const BlogPostComponent = () => {
                             className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
                           />
                           <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-medium text-gray-900 group-hover:text-emuski-teal transition-colors line-clamp-2 mb-1">
+                            <h4 className="text-sm font-medium text-gray-900 group-hover:text-emuski-teal-dark transition-colors line-clamp-2 mb-1">
                               {relatedPost.title}
                             </h4>
                             <p className="text-xs text-gray-600 line-clamp-2">
@@ -276,15 +276,15 @@ export const BlogPostComponent = () => {
                 <Card className="p-6 bg-white border-gray-200 shadow-sm">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Links</h3>
                   <div className="space-y-3">
-                    <Link to="/manufacturing-services" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal transition-colors">
+                    <Link to="/manufacturing-services" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Manufacturing Services</span>
                     </Link>
-                    <Link to="/precision-engineering" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal transition-colors">
+                    <Link to="/precision-engineering" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Precision Engineering</span>
                     </Link>
-                    <Link to="/industries" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal transition-colors">
+                    <Link to="/industries" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Industries</span>
                     </Link>

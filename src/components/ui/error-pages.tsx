@@ -40,7 +40,7 @@ export const ServerErrorPage = ({ description }: { description?: string }) => (
       <Button 
         onClick={() => window.location.reload()}
         variant="outline"
-        className="border-emuski-teal text-emuski-teal hover:bg-emuski-teal hover:text-white"
+        className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
       >
         <RefreshCw className="mr-2 h-4 w-4" />
         Refresh Page
@@ -94,7 +94,7 @@ export const MaintenancePage = () => (
       <Button 
         onClick={() => window.location.reload()}
         variant="outline"
-        className="border-emuski-teal text-emuski-teal hover:bg-emuski-teal hover:text-white"
+        className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
       >
         <RefreshCw className="mr-2 h-4 w-4" />
         Check Again

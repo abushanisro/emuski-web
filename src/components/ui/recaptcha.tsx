@@ -92,16 +92,7 @@ export const Recaptcha = ({
   }, [sitekey, onVerify]);
 
   if (!sitekey || sitekey === '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI') {
-    return (
-      <div className={`p-3 bg-blue-50 border border-blue-200 rounded-lg ${className}`}>
-        <div className="flex items-center space-x-2 text-blue-800">
-          <AlertCircle className="h-4 w-4" />
-          <span className="text-sm">
-            Development mode: reCAPTCHA verification skipped. Configure VITE_RECAPTCHA_SITE_KEY for production.
-          </span>
-        </div>
-      </div>
-    );
+    return null; // Hide in development mode
   }
 
   return (

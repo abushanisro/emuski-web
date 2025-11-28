@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import { useState, useRef } from "react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 
@@ -97,21 +97,23 @@ const quickLineupServices = [
 ];
 
 export const DataCenterSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [showQuickLineup, setShowQuickLineup] = useState(false);
-  const itemsPerView = window.innerWidth < 1024 ? 1 : 3;
-  const maxIndex = Math.max(0, serviceItems.length - itemsPerView);
-
-  const nextSlide = () => {
-    setCurrentIndex(prev => Math.min(prev + 1, maxIndex));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(prev => Math.max(prev - 1, 0));
-  };
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const toggleQuickLineup = () => {
     setShowQuickLineup(prev => !prev);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -133,7 +135,7 @@ export const DataCenterSection = () => {
               {/* Quick Lineup */}
               <button
                 onClick={toggleQuickLineup}
-                className="mt-4 text-emuski-teal hover:text-emuski-teal-dark font-medium flex items-center transition-colors"
+                className="mt-4 text-emuski-teal-darker hover:text-emuski-teal-dark font-medium flex items-center transition-colors"
               >
                 Quick Lineup
                 <ChevronDown className={`ml-2 h-4 w-4 transform transition-transform ${showQuickLineup ? 'rotate-180' : ''}`} />
@@ -145,9 +147,9 @@ export const DataCenterSection = () => {
                     <a 
                       key={index}
                       href={service.link} 
-                      className="group flex items-center py-1 px-2 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal hover:bg-emuski-teal/5 transition-all duration-200"
+                      className="group flex items-center py-1 px-2 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal-darker hover:bg-emuski-teal/5 transition-all duration-200"
                     >
-                      <span className="w-1 h-1 bg-gray-400 group-hover:bg-emuski-teal rounded-full mr-3 transition-colors"></span>
+                      <span className="w-1 h-1 bg-gray-400 group-hover:bg-emuski-teal-darker rounded-full mr-3 transition-colors"></span>
                       <span className="flex-1 flex items-center">
                         {service.title}
                         {service.title === "Mithran AI Platform" && (
@@ -165,93 +167,63 @@ export const DataCenterSection = () => {
               )}
             </div>
 
-            {/* Right Side - Carousel and Navigation */}
+            {/* Right Side - Horizontal Scroll */}
             <div className="lg:col-span-2">
               {/* Navigation Arrows */}
               <div className="hidden lg:flex justify-end mb-4">
                 <div className="flex space-x-2">
                   <Button
-                    onClick={prevSlide}
-                    disabled={currentIndex === 0}
+                    onClick={scrollLeft}
                     variant="outline"
                     size="icon"
-                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50"
+                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
                   <Button
-                    onClick={nextSlide}
-                    disabled={currentIndex === maxIndex}
+                    onClick={scrollRight}
                     variant="outline"
                     size="icon"
-                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50"
+                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
+              
+              <div 
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
+              >
+                {serviceItems.map((item, index) => (
+                  <Card key={index} className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal-darker/50 transition-all duration-300 cursor-pointer overflow-hidden">
+                    <a href={item.link} className="block h-full hover:no-underline">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
 
-              {/* Carousel Container */}
-              <div className="overflow-hidden">
-                <div
-                  className="flex transition-transform duration-300 ease-in-out"
-                  style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
-                >
-                  {serviceItems.map((item, index) => (
-                    <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
-                      <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full">
-                        <a href={item.link} className="block h-full hover:no-underline">
-                          <div className="relative h-48 overflow-hidden">
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                          </div>
+                      <div className="p-4">
+                        <div className="flex items-center space-x-2 mb-3">
+                          <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">{item.category}</span>
+                          <span className="text-gray-300">|</span>
+                          <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">Service</span>
+                        </div>
 
-                          <div className="p-4">
-                            <div className="flex items-center space-x-2 mb-3">
-                              <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">{item.category}</span>
-                              <span className="text-gray-300">|</span>
-                              <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">Service</span>
-                            </div>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-tight">
+                          {item.title}
+                        </h3>
 
-                            <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
-                              {item.title}
-                            </h3>
-
-                            <p className="text-sm text-gray-600 leading-relaxed">
-                              {item.description}
-                            </p>
-                          </div>
-                        </a>
-                      </Card>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Mobile Navigation */}
-              <div className="lg:hidden flex justify-center mt-4">
-                <div className="flex space-x-2">
-                    <Button
-                        onClick={prevSlide}
-                        disabled={currentIndex === 0}
-                        variant="outline"
-                        size="icon"
-                        className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50"
-                    >
-                        <ChevronLeft className="h-4 w-4" />
-                    </Button>
-                    <Button
-                        onClick={nextSlide}
-                        disabled={currentIndex === maxIndex}
-                        variant="outline"
-                        size="icon"
-                        className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50"
-                    >
-                        <ChevronRight className="h-4 w-4" />
-                    </Button>
-                </div>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </a>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>

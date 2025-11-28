@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
+@font-face {
+    font-family: 'Inter Variable';
+    src: url('/fonts/InterVariable.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -160,7 +169,23 @@ All colors MUST be HSL.
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-inter;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        font-variation-settings: normal;
+    }
+
+    /* Enhanced typography with Inter Variable */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-inter;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        letter-spacing: -0.025em;
+    }
+
+    /* Optimize font rendering */
+    body, button, input, textarea, select {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 }
 
@@ -187,5 +212,60 @@ All colors MUST be HSL.
     
     .animate-float {
         animation: float 3s ease-in-out infinite;
+    }
+
+    /* Inter Variable Font Weight Utilities */
+    .font-inter-thin {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 100;
+    }
+    
+    .font-inter-light {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 300;
+    }
+    
+    .font-inter-medium {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .font-inter-semibold {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 600;
+    }
+    
+    .font-inter-bold {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 700;
+    }
+    
+    .font-inter-extrabold {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 800;
+    }
+    
+    .font-inter-black {
+        font-family: 'Inter Variable', 'Inter', sans-serif;
+        font-weight: 900;
+    }
+
+    /* Typography enhancements */
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    .text-pretty {
+        text-wrap: pretty;
+    }
+
+    /* Hide scrollbar utility */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
     }
 }

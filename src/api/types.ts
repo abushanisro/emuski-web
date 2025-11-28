@@ -73,3 +73,84 @@ export interface RelatedPost {
   image: string;
   link: string;
 }
+
+// Strapi specific types
+export interface StrapiResponse<T> {
+  data: T;
+  meta: any;
+}
+
+export interface StrapiCollectionResponse<T> {
+  data: T[];
+  meta: {
+    pagination: {
+      page: number;
+      pageSize: number;
+      pageCount: number;
+      total: number;
+    };
+  };
+}
+
+export interface StrapiArticle {
+  id: number;
+  attributes: {
+    title: string;
+    slug: string;
+    excerpt?: string;
+    content?: string;
+    fullContent?: string;
+    featured?: boolean;
+    seoTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+    publishedAt: string;
+    createdAt: string;
+    updatedAt: string;
+    category?: {
+      data?: {
+        id: number;
+        attributes: {
+          name: string;
+          slug: string;
+        };
+      };
+    };
+    author?: {
+      data?: {
+        id: number;
+        attributes: {
+          name: string;
+          email?: string;
+          bio?: string;
+          avatar?: {
+            data?: {
+              attributes: {
+                url: string;
+                name: string;
+              };
+            };
+          };
+        };
+      };
+    };
+    featuredImage?: {
+      data?: {
+        attributes: {
+          url: string;
+          name: string;
+          alternativeText?: string;
+        };
+      };
+    };
+    tags?: {
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          slug: string;
+        };
+      }[];
+    };
+  };
+}

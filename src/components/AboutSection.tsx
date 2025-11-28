@@ -6,21 +6,21 @@ const growthStories = [
     value: "SINGARAVELAN SRINIVASAN",
     label: "Founder & CEO @EMUSKI",
     category: "Leadership",
-    description: "Striving for Value-Driven Empowerment",
+    description: "\"Striving for Value-Driven Empowerment \"",
     image: "/founder.jpg",
     linkedinUrl: "https://www.linkedin.com/in/singaravelan-srinivasan-emuski/",
     isFounder: true,
     location: "Bengaluru, Karnataka, India",
   },
   {
-    value: "30+ Clients | 5+ Industries",
+    value: "75+ Clients | 15+ Industries",
     label: "Strategic Partnerships",
     category: "Our Reach",
     description: "Trusted manufacturing partner for leading OEMs across automotive, aerospace, medical devices, and industrial sectors delivering critical project solutions with engineering excellence.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
   },
   {
-    value: "50+",
+    value: "120+",
     label: "Individual Projects Handled",
     sublabel: "In Engineering Service", 
     category: "Our Expertise",
@@ -28,7 +28,7 @@ const growthStories = [
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
   },
   {
-    value: "850+",
+    value: "2500+",
     label: "Components Manufactured",
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
@@ -47,27 +47,27 @@ const AboutSection = () => {
     // Define specific achievements for the container
     const achievementsData = [
         {
-            value: "5+",
-            number: 5,
+            value: "15+",
+            number: 15,
             label: "Industries",
             category: "Our Reach"
         },
         {
-            value: "30+",
-            number: 30,
+            value: "75+",
+            number: 75,
             label: "Clients", 
             category: "Strategic Partnerships"
         },
         {
-            value: "50+",
-            number: 50,
+            value: "120+",
+            number: 120,
             label: "Individual Projects",
             sublabel: "In Engineering Service",
             category: "Our Expertise"
         },
         {
-            value: "850+",
-            number: 850,
+            value: "2500+",
+            number: 2500,
             label: "Components Manufactured",
             category: "Our Production"
         }
@@ -155,7 +155,7 @@ const AboutSection = () => {
                             About EMUSKI
                         </h2>
                         <p className="text-gray-300 leading-relaxed">
-                            One stop solution for OEM Manufacturing - You Design It, We Build It. From concept to production, we deliver precision engineering and manufacturing excellence for OEMs across industries.
+                            One stop solution for OEM Manufacturing - We deliver precision engineering and manufacturing excellence for OEMs across industries.
                         </p>
                         <div className="mt-6 p-4 bg-gray-800/30 rounded-lg border border-emuski-teal/20">
                             <h4 className="text-lg font-semibold text-emuski-teal mb-3">Technology-Driven Engineering, Manufacturing & Digital Excellence</h4>
@@ -177,14 +177,14 @@ const AboutSection = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
-                                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>
@@ -218,7 +218,7 @@ const AboutSection = () => {
                                                                     <h3 className="text-base font-bold text-gray-900 leading-tight mb-1">
                                                                         {story.value}
                                                                     </h3>
-                                                                    <p className="text-sm font-semibold text-emuski-teal mb-1">
+                                                                    <p className="text-sm font-semibold text-emuski-teal-darker mb-1">
                                                                         {story.label}
                                                                     </p>
                                                                     {story.location && (
@@ -249,7 +249,15 @@ const AboutSection = () => {
                                                     
                                                     {story.description && (
                                                         <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                                                            {story.description}
+                                                            {story.isFounder ? (
+                                                                <span className="relative">
+                                                                    <span className="text-xl text-gray-600 opacity-70 mr-1">"</span>
+                                                                    <span className="italic">Striving for Value-Driven Empowerment</span>
+                                                                    <span className="text-xl text-gray-600 opacity-70 ml-1">"</span>
+                                                                </span>
+                                                            ) : (
+                                                                story.description
+                                                            )}
                                                         </p>
                                                     )}
                                                 </div>
@@ -265,14 +273,14 @@ const AboutSection = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
-                                    className="h-10 w-10 bg-emuski-teal hover:bg-emuski-teal/90 text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>

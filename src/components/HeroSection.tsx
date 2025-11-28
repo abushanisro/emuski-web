@@ -13,15 +13,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-    category: "Engineering",
-    title: "Engineering Excellence",
-    shortTitle: "Engineering",
-    description: "Driving product value, cost optimization, and supply chain strength through deep expertise and technology.",
-    link: "/precision-engineering",
-  },
-  {
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    image: "/assets/hero/manufaturing.svg",
     category: "Manufacturing",
     title: "Manufacturing Excellence", 
     shortTitle: "Manufacturing",
@@ -29,7 +21,15 @@ const slides: Slide[] = [
     link: "/manufacturing-services",
   },
   {
-    image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
+    image: "/assets/hero/engineering.svg",
+    category: "Engineering",
+    title: "Engineering Excellence",
+    shortTitle: "Engineering",
+    description: "Driving product value, cost optimization, and supply chain strength through deep expertise and technology.",
+    link: "/precision-engineering",
+  },
+  {
+    image: "/assets/hero/genai.svg",
     category: "Next-Gen AI",
     title: "Next-Gen AI - Mithran",
     shortTitle: "NextGen AI",
@@ -93,7 +93,11 @@ export const HeroSection = () => {
   };
 
   return (
-    <div className="relative min-h-screen lg:h-screen w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden"
+         style={{ 
+           minHeight: '100svh',
+           height: '100svh'
+         }}>
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -101,34 +105,44 @@ export const HeroSection = () => {
           className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
         >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="absolute inset-0 bg-black/70" />
+          {/* Background Image/SVG */}
+          <div className="absolute inset-0">
+            <div 
+              className="w-full h-full bg-no-repeat bg-center bg-cover"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundPosition: 'center center',
+                backgroundAttachment: 'scroll',
+                backgroundSize: 'cover',
+                minHeight: '100svh',
+                height: '100svh'
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
           </div>
 
           {/* Content */}
-          <div className="relative z-20 h-full flex items-center px-4 sm:px-6 md:px-12 lg:px-24 py-20 lg:py-0">
-            <div className="max-w-4xl space-y-4 sm:space-y-6 animate-fade-in">
-              <span className="text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                {slide.category}
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-                {slide.title}
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl">
-                {slide.description}
-              </p>
-              <div className="pt-4">
-                <Link 
-                  to={slide.link}
-                  className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-emuski-teal hover:bg-emuski-teal/90 text-white font-semibold text-base sm:text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Learn More
-                  <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Link>
+          <div className="relative z-20 h-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-20 sm:py-24 lg:py-0">
+            <div className="w-full max-w-7xl mx-auto">
+              <div className="text-center lg:text-left space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in">
+                <span className="inline-block text-emuski-teal text-xs sm:text-sm lg:text-base font-semibold tracking-wider uppercase">
+                  {slide.category}
+                </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight max-w-5xl mx-auto lg:mx-0">
+                  {slide.title}
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-4xl mx-auto lg:mx-0">
+                  {slide.description}
+                </p>
+                <div className="pt-4 sm:pt-6">
+                  <Link 
+                    to={slide.link}
+                    className="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base sm:text-lg lg:text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+                  >
+                    Learn More
+                    <ChevronRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -137,19 +151,32 @@ export const HeroSection = () => {
 
       {/* Bottom Navigation */}
       <div className="absolute bottom-0 left-0 right-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Mobile Navigation */}
-          <div className="sm:hidden grid grid-cols-3 items-center">
-            <button onClick={handlePrev} className="text-white p-4 flex justify-start items-center">
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <div className="text-center">
-              <div className="text-xs uppercase tracking-wider text-emuski-teal">{slides[currentSlide].category}</div>
-              <div className="text-sm font-semibold text-white">{slides[currentSlide].shortTitle}</div>
+          <div className="sm:hidden">
+            <div className="flex items-center justify-between py-4">
+              <button onClick={handlePrev} className="text-white p-3 hover:bg-white/10 rounded-full transition-colors">
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <div className="flex-1 text-center px-4">
+                <div className="text-xs uppercase tracking-wider text-emuski-teal mb-1">{slides[currentSlide].category}</div>
+                <div className="text-sm font-semibold text-white">{slides[currentSlide].shortTitle}</div>
+                <div className="flex justify-center mt-2 space-x-1">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleTabClick(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentSlide ? 'bg-emuski-teal' : 'bg-white/30'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+              <button onClick={handleNext} className="text-white p-3 hover:bg-white/10 rounded-full transition-colors">
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
-            <button onClick={handleNext} className="text-white p-4 flex justify-end items-center">
-              <ChevronRight className="h-6 w-6" />
-            </button>
           </div>
 
           {/* Desktop Navigation Tabs */}

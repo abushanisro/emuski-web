@@ -1,5 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
+import { FAQSection } from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Activity, Rocket, Shield } from "lucide-react";
@@ -79,13 +81,13 @@ const Industries = () => {
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-emuski-teal-dark transition-colors">
                       {industry.title}
                     </h3>
                     <p className="text-muted-foreground mb-4">
                       {industry.description}
                     </p>
-                    <Button variant="link" className="text-primary hover:text-primary/80 p-0 h-auto font-semibold">
+                    <Button variant="link" className="text-emuski-teal-darker hover:text-emuski-teal-dark p-0 h-auto font-semibold">
                       Learn More →
                     </Button>
                   </div>
@@ -96,60 +98,7 @@ const Industries = () => {
         </section>
 
         {/* Success Stories */}
-        <section className="py-20 bg-secondary/30">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
-              Success Stories
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  company: "Leading Medical Device Manufacturer",
-                  achievement: "FDA Approval Accelerated",
-                  description: "EMUSKI's precision manufacturing helped accelerate FDA approval by delivering medical device components that exceeded quality standards and regulatory requirements.",
-                  industry: "Healthcare"
-                },
-                {
-                  company: "Space Technology Pioneer",
-                  achievement: "Zero-Defect Mission Success",
-                  description: "Critical aerospace components manufactured by EMUSKI achieved 100% mission success rate in demanding space environments with zero component failures.",
-                  industry: "Space Technology"
-                },
-                {
-                  company: "Defense Contractor",
-                  achievement: "$12M Annual Contract",
-                  description: "EMUSKI earned a 5-year defense contract valued at $12M annually by exceeding military specifications and stringent security requirements.",
-                  industry: "Defense"
-                },
-                {
-                  company: "Aerospace OEM",
-                  achievement: "30% Weight Reduction",
-                  description: "Advanced engineering solutions reduced component weight by 30% while improving structural integrity for next-generation aircraft applications.",
-                  industry: "Aerospace"
-                }
-              ].map((story, index) => (
-                <Card
-                  key={index}
-                  className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300"
-                >
-                  <div className="inline-block px-3 py-1 bg-primary/10 border border-primary rounded-sm mb-4">
-                    <span className="text-primary text-sm font-medium">{story.industry}</span>
-                  </div>
-                  <h3 className="text-3xl font-bold text-primary mb-2">
-                    {story.achievement}
-                  </h3>
-                  <h4 className="text-xl font-semibold text-foreground mb-3">
-                    {story.company}
-                  </h4>
-                  <p className="text-muted-foreground">
-                    {story.description}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        <SuccessStoriesSection />
 
         {/* CTA Section */}
         <section className="py-16 md:py-20 lg:py-24 bg-emuski-teal-darker text-white relative overflow-hidden">
@@ -185,6 +134,14 @@ const Industries = () => {
             </div>
           </div>
         </section>
+        
+        {/* FAQ Section */}
+        <FAQSection 
+          compact={true} 
+          maxItems={6} 
+          showCategories={false}
+          usePageSpecific={true}
+        />
       </main>
       <Footer />
     </div>

@@ -1,0 +1,329 @@
+{
+  "Hero": {
+    "heading": {
+      "line1": "Collect from",
+      "highlight": "500 Million",
+      "line2": "Indians. Settle Globally."
+    },
+    "description": "The only cross-border payment infrastructure built for global merchants to accept payments from Indian customers and businesses without local entity setup.",
+    "form": {
+      "placeholder": "Enter your official email",
+      "button": "Start Collecting Now"
+    },
+    "features": [
+      {
+        "title": "$40Bn",
+        "subtitle": "Monthly UPI Volume"
+      },
+      {
+        "title": "99%+",
+        "subtitle": "success rate"
+      },
+      {
+        "title": "T+1",
+        "subtitle": "settlements"
+      },
+      {
+        "title": "No Indian",
+        "subtitle": "entity required"
+      }
+    ],
+    "dashboard": {
+      "successRate": "Success Rate",
+      "dashboardTitle": "Dashboard Dec 2025",
+      "totalPayments": "Total Payments Received",
+      "paymentMethods": {
+        "upi": "UPI Payments",
+        "netBanking": "Net Banking",
+        "wallets": "Wallets"
+      },
+      "customizeSettlement": "Customise your Settlement cycle",
+      "settlementOptions": "T+1 or Weekly or Monthly"
+    }
+  },
+  "Section2": {
+    "heading": "Why Global Merchants Lose 70% of Indian Customers",
+    "subheading": "Without local payment infrastructure, you're leaving money on the table",
+    "issues": [
+      {
+        "title": "Payment Failures",
+        "description": "International cards face 40-60% failure rates on Indian payment gateways"
+      },
+      {
+        "title": "Complex Compliance",
+        "description": "Setting up Indian entity requires 6-12 months and heavy regulatory overhead"
+      },
+      {
+        "title": "Delayed Settlements",
+        "description": "Traditional gateways hold funds for 7-15 days in Indian accounts"
+      },
+      {
+        "title": "Limited Methods",
+        "description": "Missing UPI & local wallets means losing 70% of potential customers"
+      }
+    ]
+  },
+  "Features": {
+    "heading": "Accept INR. Start in 48 Hours.",
+    "subheading": "The complete payment infrastructure designed for global businesses entering the Indian market",
+    "featuresList": [
+      {
+        "title": "Local INR Collection",
+        "description": "Accept UPI, NetBanking, cards, and wallets directly in Indian Rupees"
+      },
+      {
+        "title": "Offshore Settlement",
+        "description": "Get paid in USD, EUR, GBP, SGD, AED, HKD, CNH to your global accounts"
+      },
+      {
+        "title": "99%+ Success Rate",
+        "description": "Industry-leading payment success with intelligent routing and retry logic"
+      },
+      {
+        "title": "No Local Setup",
+        "description": "Start accepting payments without registering an Indian entity or office"
+      },
+      {
+        "title": "Subscription Ready",
+        "description": "Built-in recurring payments and subscription management for SaaS businesses"
+      },
+      {
+        "title": "Licensed Infrastructure",
+        "description": "RBI-licensed, PCI-DSS compliant, and partnered with major Indian banks"
+      }
+    ]
+  },
+  "PaymentMethods": {
+    "heading": "Supported Payment Methods"
+  },
+  "HowToStart": {
+    "heading": "How to register & start?",
+    "subheading": "Get started in 4 simple steps. From registration to going live in under 48 hours.",
+    "stepsList": [
+      {
+        "title": "Register with Company Documentation",
+        "description": "Submit your company details and business documentation. Our team reviews within 24 hours."
+      },
+      {
+        "title": "Fully Digital Verification",
+        "description": "Complete KYC verification digitally. No need for Indian entity or physical presence."
+      },
+      {
+        "title": "Integrate Payment Modes",
+        "description": "Add our SDK or API to your website. Clear documentation and dedicated support available."
+      },
+      {
+        "title": "Start Collecting",
+        "description": "Go live and start accepting payments from Indian customers. Settlements to your global account."
+      }
+    ],
+    "button": "Start Collecting Now"
+  },
+  "UPISection": {
+    "heading": "UPI: India's Payment Infrastructure Revolution",
+    "subheading": "60% of India's digital payments run on UPI. Access 900M+ internet users and 10B+ monthly transactions.",
+    "imageText": "Only 4 of many reasons why UPI is the way to go in India.",
+    "statsList": [
+      {
+        "value": "430M → 1B",
+        "description": "Middle Class Growth by 2047",
+        "subDescription": "Driving demand for global brands and premium products"
+      },
+      {
+        "value": "10B+",
+        "description": "Monthly UPI Transactions",
+        "subDescription": "More than Visa globally"
+      },
+      {
+        "value": "300%+",
+        "description": "Digital Payment Growth Since 2020",
+        "subDescription": "World's fastest-growing payment market"
+      },
+      {
+        "value": "60%+",
+        "description": "UPI Share of Digital Payments",
+        "subDescription": "India's most preferred payment method"
+      }
+    ]
+  },
+  "UPIIntegration": {
+    "heading": "Four UPI Payment Methods. One Integration.",
+    "subheading": "Accept payments through all major UPI channels with EximPe's RBI-licensed infrastructure."
+  },
+  "UpiMethodsGrid": {
+    "featuresList": [
+      {
+        "title": "UPI Intent Flow",
+        "description": "Seamlessly redirect users to their preferred UPI apps (Google Pay, PhonePe, Paytm) without needing to enter VPA or UPI ID",
+        "tag": "Best for mobile checkout"
+      },
+      {
+        "title": "QR Code Payment",
+        "description": "Give customers a familiar QR-based checkout experience on desktop. Simply scan and pay with any UPI app",
+        "tag": "Best for desktop e-commerce"
+      },
+      {
+        "title": "UPI ID / Phone Number",
+        "description": "Enable payments via UPI ID (VPA) or phone number as a reliable fallback option for all scenarios",
+        "tag": "Best for subscriptions & recurring"
+      },
+      {
+        "title": "No-Code Payment Links",
+        "description": "Create shareable payment links and QR codes for products or services. Copy, paste, and share via email, SMS, or WhatsApp—no website required.",
+        "tag": "Best for no-code solutions"
+      }
+    ]
+  },
+  "LicensedInfrastructure": {
+    "heading": "Built on Licensed Indian Payment Infrastructure",
+    "featuresList": [
+      {
+        "title": "90+ Bank Network",
+        "description": "Direct integration with India's public and private banking infrastructure"
+      },
+      {
+        "title": "UPI AutoPay Ready",
+        "description": "RBI-compliant recurring payments for subscription businesses up to ₹2.5L/month"
+      },
+      {
+        "title": "Real-Time Processing",
+        "description": "Instant payment confirmation with 99%+ success rates on UPI transactions"
+      },
+      {
+        "title": "Complete Compliance",
+        "description": "All LRS, TCS, AML requirements handled automatically at checkout"
+      }
+    ]
+  },
+  "BusinessModels": {
+    "heading": "Built for Every Business Model",
+    "subheading": "From subscriptions to marketplaces, EximPe powers payments for diverse global businesses",
+    "businessModelsList": [
+      {
+        "title": "E-Commerce",
+        "subtitle": "Via Shopify or D2C websites",
+        "challenge": "High cart abandonment due to limited payment options for Indian customers",
+        "solution": "Seamlessly integrate with Shopify or your D2C site to accept UPI, wallets, and local cards"
+      },
+      {
+        "title": "Marketplaces",
+        "subtitle": "With multiple merchants on their platform",
+        "challenge": "Complex cross-border settlement and compliance with multiple vendors",
+        "solution": "Split payments, escrow management, and automated multi-party settlements"
+      },
+      {
+        "title": "SaaS",
+        "subtitle": "For Subscription Services",
+        "challenge": "Indian customers cannot pay for international subscription services",
+        "solution": "Accept recurring payments in INR with automated billing and dunning management"
+      },
+      {
+        "title": "Payment Service Providers",
+        "subtitle": "Payment companies serving merchants globally",
+        "challenge": "Foreign payment companies struggle to offer Indian payment methods to their merchants",
+        "solution": "White-label API to extend your payment stack with comprehensive India coverage"
+      },
+      {
+        "title": "Merchant On Record",
+        "subtitle": "Entities collecting on behalf of other businesses",
+        "challenge": "Compliance complexity when collecting payments on behalf of multiple businesses in India",
+        "solution": "Comprehensive compliance coverage, tax handling, and multi-entity settlement workflows"
+      }
+    ]
+  },
+  "TrustedPartner": {
+    "heading": "Trusted Fintech Partner for Indian businesses, now going Global.",
+    "statsList": [
+      {
+        "value": "$2.1B+",
+        "description": "Transaction Volume",
+        "subDescription": "Processed annually"
+      },
+      {
+        "value": "2000+",
+        "description": "Global Merchants",
+        "subDescription": "Trust EximPe"
+      },
+      {
+        "value": "99.2%",
+        "description": "Success Rate",
+        "subDescription": "Industry leading"
+      }
+    ]
+  },
+  "TestimonialCard": {
+    "testimonial": "\"EximPe helped me with compliance and advisory services for my China import business. Their support team is always at toes to help customers.\"",
+    "author": "Sumit Suneja",
+    "role": "Co-founder | Merlin Brands"
+  },
+  "IndiaOpportunity": {
+    "heading": "The India Opportunity",
+    "quote": "\"India will be the world's third-largest consumer market by 2030.\"",
+    "source": "World Economic Forum",
+    "statsList": [
+      {
+        "value": "1.4Bn",
+        "label": "Population",
+        "subLabel": "Digital-first consumers"
+      },
+      {
+        "value": "$2.1Tn",
+        "label": "Digital Payments",
+        "subLabel": "Market size by 2028"
+      },
+      {
+        "value": "432Mn",
+        "label": "Middle Class Growth",
+        "subLabel": "New consumers by 2030"
+      },
+      {
+        "value": "2Bn+",
+        "label": "UPI Transactions",
+        "subLabel": "Monthly volume"
+      },
+      {
+        "value": "83%",
+        "label": "Mobile internet",
+        "subLabel": "Penetration rate"
+      }
+    ],
+    "bottomText": "India's digital payment revolution is creating unprecedented opportunities for global businesses. Don't let payment infrastructure hold you back from this massive market."
+  },
+  "ComparisonTable": {
+    "heading": "Why Choose EximPe?",
+    "subheading": "Compare us with alternative solutions for collecting payments from India.",
+    "featuresLabel": "Features",
+    "recommended": "Recommended",
+    "features": {
+      "feature1": { "name": "Accept UPI & Local Wallets" },
+      "feature2": { "name": "No Indian Entity Required" },
+      "feature3": { "name": "Offshore Settlement" },
+      "feature4": { "name": "Instant Onboarding (48 hours)" },
+      "feature5": { "name": "99%+ Success Rate" },
+      "feature6": { "name": "Recurring Payments" },
+      "feature7": { "name": "Settlement in Multiple Currencies" },
+      "feature8": { "name": "No Compliance Burden" }
+    },
+    "legend": {
+      "full": "Full Support",
+      "partial": "Partial/Complex",
+      "none": "Not Supported"
+    }
+  },
+  "LeadSection": {
+    "heading": "Ready to Unlock the Indian Market?",
+    "subheading": "Join 500+ global businesses already collecting payments from 500 Million Indian customers. Start in 48 hours — zero setup costs.",
+    "featureHighlights": [
+      "No Indian Entity Required",
+      "Live in 48 Hours"
+    ]
+  },
+  "ComplianceBanner": {
+    "complianceItems": [
+      { "text": "RBI Licensed" },
+      { "text": "DBS Partner" },
+      { "text": "PCI-DSS Compliant" },
+      { "text": "ISO 27001" }
+    ]
+  }
+}

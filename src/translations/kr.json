@@ -1,0 +1,326 @@
+{
+  "Hero": {
+    "heading": {
+      "line1": "인도 5억 명에게서 결제 받고,",
+      "highlight": "글로벌하게",
+      "line2": "정산하세요."
+    },
+    "description": "EximPe는 인도 고객 및 기업으로부터 현지 법인 없이 결제를 받을 수 있는 유일한 글로벌 결제 인프라입니다.",
+    "form": {
+      "placeholder": "공식 이메일을 입력하세요",
+      "button": "지금 시작하기"
+    },
+    "features": [
+      {
+        "title": "$400억",
+        "subtitle": "월간 UPI 결제 규모"
+      },
+      {
+        "title": "99%+",
+        "subtitle": "성공률"
+      },
+      {
+        "title": "T+1",
+        "subtitle": "정산 주기"
+      },
+      {
+        "title": "인도 법인",
+        "subtitle": "설립 불필요"
+      }
+    ],
+    "dashboard": {
+      "successRate": "성공률",
+      "dashboardTitle": "대시보드 2025년 12월",
+      "totalPayments": "수신된 총 결제 금액",
+      "paymentMethods": {
+        "upi": "UPI 결제",
+        "netBanking": "넷뱅킹",
+        "wallets": "전자지갑"
+      },
+      "customizeSettlement": "정산 주기 맞춤 설정",
+      "settlementOptions": "T+1, 주간, 또는 월간"
+    }
+  },
+  "Section2": {
+    "heading": "글로벌 기업이 인도 고객의 70%를 잃는 이유",
+    "subheading": "현지 결제 인프라 없이, 당신은 기회를 놓치고 있습니다.",
+    "issues": [
+      {
+        "title": "결제 실패율",
+        "description": "국제 카드의 인도 결제 게이트웨이 승인 실패율은 40~60%에 달합니다."
+      },
+      {
+        "title": "복잡한 규제 절차",
+        "description": "인도 법인 설립은 6~12개월이 걸리며 규제 부담이 큽니다."
+      },
+      {
+        "title": "지연된 정산",
+        "description": "기존 결제 게이트웨이는 인도 내 계정에 자금을 7~15일간 보류합니다."
+      },
+      {
+        "title": "제한된 결제 수단",
+        "description": "UPI 및 로컬 전자지갑이 없으면 잠재 고객의 70%를 잃게 됩니다."
+      }
+    ]
+  },
+  "Features": {
+    "heading": "48시간 내 인도 루피 결제 수락",
+    "subheading": "인도 시장 진출을 위한 완벽한 결제 인프라",
+    "featuresList": [
+      {
+        "title": "현지 INR 결제 수락",
+        "description": "UPI, 넷뱅킹, 카드, 지갑 등 다양한 방식으로 결제 수락"
+      },
+      {
+        "title": "해외 계좌 정산",
+        "description": "USD, EUR, GBP, SGD, AED, HKD, CNH 등 다양한 통화로 해외 계좌에 정산"
+      },
+      {
+        "title": "99%+ 성공률",
+        "description": "지능형 라우팅 및 재시도 로직으로 업계 최고 수준의 성공률"
+      },
+      {
+        "title": "현지 법인 불필요",
+        "description": "인도 내 법인이나 사무소 없이도 결제 시작 가능"
+      },
+      {
+        "title": "구독 결제 지원",
+        "description": "SaaS 비즈니스를 위한 자동 결제 및 구독 관리 기능 내장"
+      },
+      {
+        "title": "공식 라이선스 인프라",
+        "description": "RBI 라이선스, PCI-DSS 인증, 주요 인도 은행과의 제휴"
+      }
+    ]
+  },
+  "PaymentMethods": {
+    "heading": "지원되는 결제 수단"
+  },
+  "HowToStart": {
+    "heading": "등록 및 시작 방법",
+    "subheading": "단 4단계로 시작하세요. 48시간 이내 라이브 가능합니다.",
+    "stepsList": [
+      {
+        "title": "회사 서류 등록",
+        "description": "회사 정보와 비즈니스 문서를 제출하세요. 24시간 내 검토됩니다."
+      },
+      {
+        "title": "디지털 인증 완료",
+        "description": "인도 법인이나 현지 방문 없이 온라인으로 KYC 인증 완료."
+      },
+      {
+        "title": "결제 수단 통합",
+        "description": "SDK 또는 API를 웹사이트에 연동하세요. 명확한 문서와 전담 지원 제공."
+      },
+      {
+        "title": "결제 수락 시작",
+        "description": "라이브 상태로 전환 후 인도 고객의 결제를 수락하세요. 해외 계좌로 정산됩니다."
+      }
+    ],
+    "button": "지금 시작하기"
+  },
+  "UPISection": {
+    "heading": "UPI: 인도의 결제 인프라 혁명",
+    "subheading": "인도 디지털 결제의 60%가 UPI를 통해 처리됩니다. 9억 명 이상의 인터넷 사용자와 월 100억 건 이상의 거래를 만나보세요.",
+    "imageText": "UPI가 인도 시장의 핵심인 4가지 이유",
+    "statsList": [
+      {
+        "value": "4.3억 → 10억",
+        "description": "2047년까지 중산층 성장",
+        "subDescription": "글로벌 브랜드와 프리미엄 제품 수요 급증"
+      },
+      {
+        "value": "100억+",
+        "description": "월간 UPI 거래 수",
+        "subDescription": "비자를 능가하는 거래량"
+      },
+      {
+        "value": "300%+",
+        "description": "2020년 이후 디지털 결제 성장률",
+        "subDescription": "세계에서 가장 빠른 성장 시장"
+      },
+      {
+        "value": "60%+",
+        "description": "디지털 결제 중 UPI 비중",
+        "subDescription": "인도에서 가장 선호되는 결제 방식"
+      }
+    ]
+  },
+  "UPIIntegration": {
+    "heading": "하나의 통합으로 모든 UPI 결제 지원",
+    "subheading": "EximPe의 RBI 인가 인프라로 주요 UPI 채널 모두 수락하세요."
+  },
+  "UpiMethodsGrid": {
+    "featuresList": [
+      {
+        "title": "UPI 인텐트 플로우",
+        "description": "사용자를 선호하는 UPI 앱(Google Pay, PhonePe, Paytm)으로 직접 연결, VPA 입력 불필요",
+        "tag": "모바일 결제에 최적"
+      },
+      {
+        "title": "QR 코드 결제",
+        "description": "데스크톱에서 QR 기반 체크아웃 제공. 어떤 UPI 앱으로도 스캔 후 결제 가능",
+        "tag": "데스크톱 쇼핑몰에 적합"
+      },
+      {
+        "title": "UPI ID / 전화번호 결제",
+        "description": "UPI ID(VPA) 또는 전화번호로 결제 가능 — 안정적인 백업 옵션",
+        "tag": "구독 및 정기 결제용"
+      },
+      {
+        "title": "노코드 결제 링크",
+        "description": "링크나 QR을 생성해 이메일, SMS, WhatsApp 등으로 공유 — 웹사이트 불필요",
+        "tag": "노코드 솔루션에 적합"
+      }
+    ]
+  },
+  "LicensedInfrastructure": {
+    "heading": "공식 인도 결제 인프라 기반",
+    "featuresList": [
+      {
+        "title": "90개+ 은행 네트워크",
+        "description": "인도 주요 공공 및 민간 은행과 직접 통합"
+      },
+      {
+        "title": "UPI AutoPay 지원",
+        "description": "월 최대 ₹2.5L까지의 구독 결제에 대한 RBI 준수"
+      },
+      {
+        "title": "실시간 처리",
+        "description": "UPI 거래의 99%+ 성공률과 즉시 결제 확인"
+      },
+      {
+        "title": "완벽한 규제 준수",
+        "description": "LRS, TCS, AML 요건이 결제 시 자동 처리"
+      }
+    ]
+  },
+  "BusinessModels": {
+    "heading": "모든 비즈니스 모델을 위한 설계",
+    "subheading": "구독 서비스부터 마켓플레이스까지, EximPe는 다양한 글로벌 비즈니스를 지원합니다.",
+    "businessModelsList": [
+      {
+        "title": "이커머스",
+        "subtitle": "Shopify 또는 D2C 웹사이트",
+        "challenge": "인도 고객이 사용할 수 없는 결제 옵션으로 인한 장바구니 이탈",
+        "solution": "UPI, 전자지갑, 현지 카드 결제를 손쉽게 통합"
+      },
+      {
+        "title": "마켓플레이스",
+        "subtitle": "여러 판매자를 운영하는 플랫폼",
+        "challenge": "복잡한 크로스보더 정산 및 규제 문제",
+        "solution": "분할 결제, 에스크로, 자동 정산 기능 제공"
+      },
+      {
+        "title": "SaaS",
+        "subtitle": "구독 서비스 제공 기업",
+        "challenge": "인도 사용자가 해외 구독 서비스를 결제할 수 없음",
+        "solution": "INR 자동 청구 및 재시도 기능 지원"
+      },
+      {
+        "title": "결제 서비스 제공자",
+        "subtitle": "글로벌 상인을 위한 PSP",
+        "challenge": "인도 결제 수단 제공의 어려움",
+        "solution": "화이트라벨 API로 인도 결제 기능을 확장"
+      },
+      {
+        "title": "Merchant On Record",
+        "subtitle": "대리 수금 모델",
+        "challenge": "다수 기업의 결제를 수집할 때 발생하는 규제 복잡성",
+        "solution": "세금, 규제, 다중 정산 절차 완전 자동화"
+      }
+    ]
+  },
+  "TrustedPartner": {
+    "heading": "인도 비즈니스의 신뢰받는 핀테크 파트너, 이제 글로벌로.",
+    "statsList": [
+      {
+        "value": "$21억+",
+        "description": "연간 처리 거래액"
+      },
+      {
+        "value": "2000+",
+        "description": "글로벌 기업이 EximPe를 신뢰"
+      },
+      {
+        "value": "99.2%",
+        "description": "업계 최고 성공률"
+      }
+    ]
+  },
+  "TestimonialCard": {
+    "testimonial": "\"EximPe는 제 중국 수입 사업의 규제 및 컨설팅 지원에 큰 도움이 되었습니다. 지원팀의 응답 속도도 매우 빠릅니다.\"",
+    "author": "Sumit Suneja",
+    "role": "공동창립자 | Merlin Brands"
+  },
+  "IndiaOpportunity": {
+    "heading": "인도 시장의 기회",
+    "quote": "\"인도는 2030년까지 세계 3위 소비 시장이 될 것입니다.\"",
+    "source": "세계경제포럼 (WEF)",
+    "statsList": [
+      {
+        "value": "14억",
+        "label": "인구",
+        "subLabel": "디지털 중심 소비자"
+      },
+      {
+        "value": "$2.1조",
+        "label": "디지털 결제 시장",
+        "subLabel": "2028년까지 시장 규모"
+      },
+      {
+        "value": "4.32억",
+        "label": "중산층 성장",
+        "subLabel": "2030년까지 신규 소비자"
+      },
+      {
+        "value": "20억+",
+        "label": "월간 UPI 거래량",
+        "subLabel": "세계 최대 수준"
+      },
+      {
+        "value": "83%",
+        "label": "모바일 인터넷 보급률",
+        "subLabel": "빠르게 성장 중"
+      }
+    ],
+    "bottomText": "인도의 디지털 결제 혁명은 글로벌 기업에 엄청난 기회를 제공합니다. 결제 인프라 부족으로 이 기회를 놓치지 마세요."
+  },
+  "ComparisonTable": {
+    "heading": "왜 EximPe인가?",
+    "subheading": "인도 결제를 위한 다양한 솔루션과 비교해보세요.",
+    "featuresLabel": "기능",
+    "recommended": "추천",
+    "features": {
+      "feature1": { "name": "UPI 및 현지 전자지갑 결제 지원" },
+      "feature2": { "name": "인도 법인 불필요" },
+      "feature3": { "name": "해외 정산" },
+      "feature4": { "name": "즉시 온보딩 (48시간)" },
+      "feature5": { "name": "99%+ 성공률" },
+      "feature6": { "name": "구독 결제 지원" },
+      "feature7": { "name": "다중 통화 정산" },
+      "feature8": { "name": "규제 부담 없음" }
+    },
+    "legend": {
+      "full": "완전 지원",
+      "partial": "부분/복잡",
+      "none": "지원 안 됨"
+    }
+  },
+  "LeadSection": {
+    "heading": "인도 시장을 지금 공략하세요",
+    "subheading": "이미 500개 이상의 글로벌 기업이 인도 5억 명의 고객으로부터 결제를 받고 있습니다. 48시간 내 시작, 초기 비용 0원.",
+    "featureHighlights": [
+      "인도 법인 불필요",
+      "48시간 내 라이브"
+    ]
+  },
+  "ComplianceBanner": {
+    "complianceItems": [
+      { "text": "RBI 라이선스" },
+      { "text": "DBS 파트너" },
+      { "text": "PCI-DSS 인증" },
+      { "text": "ISO 27001" }
+    ]
+  }
+}

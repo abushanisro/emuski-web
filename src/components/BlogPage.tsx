@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, Filter, Calendar, User, Clock, ChevronRight, Tag } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { useBlogPosts, useBlogCategories, useBlogTags } from "../hooks/useBlogApi";
+import { useBlogPosts, useBlogCategories, useBlogTags } from "../hooks/useBlogApiConfig";
 import { BlogPostSummary } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
 import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
@@ -96,13 +96,19 @@ export const BlogPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
               {/* Search Bar */}
               <div className="md:col-span-2 lg:col-span-2">
+                <label htmlFor="blog-search" className="block text-sm font-medium text-white mb-2">
+                  Search Articles
+                </label>
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                   <input
                     type="text"
+                    id="blog-search"
+                    name="search"
                     placeholder="Search articles..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    autoComplete="off"
                     className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent shadow-sm"
                   />
                 </div>
@@ -110,9 +116,15 @@ export const BlogPage = () => {
 
               {/* Category Filter */}
               <div>
+                <label htmlFor="category-filter" className="block text-sm font-medium text-white mb-2">
+                  Category
+                </label>
                 <select
+                  id="category-filter"
+                  name="category"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
+                  autoComplete="off"
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent shadow-sm"
                 >
                   {categories.map(category => (
@@ -123,9 +135,15 @@ export const BlogPage = () => {
 
               {/* Tag Filter */}
               <div>
+                <label htmlFor="tag-filter" className="block text-sm font-medium text-white mb-2">
+                  Tags
+                </label>
                 <select
+                  id="tag-filter"
+                  name="tag"
                   value={selectedTag}
                   onChange={(e) => setSelectedTag(e.target.value)}
+                  autoComplete="off"
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent shadow-sm"
                 >
                   <option value="">All Tags</option>
@@ -141,19 +159,19 @@ export const BlogPage = () => {
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="text-sm text-gray-400">Active filters:</span>
                 {selectedCategory !== "All" && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
                     {selectedCategory}
                     <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
                   </span>
                 )}
                 {selectedTag && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
                     {selectedTag}
                     <button onClick={() => setSelectedTag("")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
                   </span>
                 )}
                 {searchTerm && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
                     "{searchTerm}"
                     <button onClick={() => setSearchTerm("")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
                   </span>
@@ -170,7 +188,7 @@ export const BlogPage = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center space-x-3 mb-8">
-                <div className="h-1 w-12 bg-emuski-teal rounded"></div>
+                <div className="h-1 w-12 bg-emuski-teal-dark rounded"></div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Featured Articles</h2>
               </div>
               
@@ -206,7 +224,7 @@ export const BlogPage = () => {
                         </div>
                       </div>
                       
-                      <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal transition-colors line-clamp-2">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-dark transition-colors line-clamp-2">
                         {post.title}
                       </h3>
                       
@@ -220,7 +238,7 @@ export const BlogPage = () => {
                           <span className="text-sm text-gray-600">{post.author}</span>
                         </div>
                         
-                        <div className="flex items-center text-emuski-teal font-medium text-sm">
+                        <div className="flex items-center text-emuski-teal-darker font-medium text-sm">
                           Read More
                           <ChevronRight className="h-4 w-4 ml-1" />
                         </div>
@@ -242,7 +260,7 @@ export const BlogPage = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center space-x-3 mb-8">
-                <div className="h-1 w-12 bg-emuski-teal rounded"></div>
+                <div className="h-1 w-12 bg-emuski-teal-dark rounded"></div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Latest Articles</h2>
               </div>
               
@@ -267,7 +285,7 @@ export const BlogPage = () => {
                         </div>
                       </div>
                       
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emuski-teal transition-colors line-clamp-2">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors line-clamp-2">
                         {post.title}
                       </h3>
                       
@@ -312,7 +330,7 @@ export const BlogPage = () => {
                   setSelectedCategory("All");
                   setSelectedTag("");
                 }}
-                className="bg-emuski-teal hover:bg-emuski-teal/90 text-white px-8 py-3"
+                className="bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-3"
               >
                 Clear All Filters
               </Button>

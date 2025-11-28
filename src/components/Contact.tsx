@@ -52,11 +52,25 @@ const contactMethods = [
 
 const offices = [
   {
-    city: "Headquarters & Manufacturing",
+    city: "Headquarters & Business Office",
     address: "Rudhra Coworks - Coworking Space\n126, RNS Plaza, KIADB Industrial Area, 1\nnear Tech Mahindra Gate, next to Hyderabad Magic\nElectronic City Phase 2\nBengaluru, Karnataka 560100",
     phone: "+91 83444 74556",
     email: "enquiries@emuski.com",
     mapUrl: "https://maps.google.com/maps?q=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100&t=&z=15&ie=UTF8&iwloc=&output=embed"
+  },
+  {
+    city: "Manufacturing Facility",
+    address: "Ground floor, 5/541-1, Santhapuram road,\n1st cross, Kamaraj nagar, Chinna\nelasagiri, Hosur, Krishnagiri district,\nTamil Nadu-635126",
+    phone: "+91 83444 74556",
+    email: "enquiries@emuski.com",
+    mapUrl: "https://maps.google.com/maps?q=Ground+floor+5/541-1+Santhapuram+road+1st+cross+Kamaraj+nagar+Chinna+elasagiri+Hosur+Krishnagiri+district+Tamil+Nadu+635126&t=&z=15&ie=UTF8&iwloc=&output=embed"
+  },
+  {
+    city: "Registered Office",
+    address: "3/5-264, Srinivasan, Desavilakku,\nManthivalvu, Tharamangalam,\nThuttampatti, Salem,\nTamil Nadu - 636 306",
+    phone: "+91 83444 74556",
+    email: "enquiries@emuski.com",
+    mapUrl: "https://maps.google.com/maps?q=3/5-264+Srinivasan+Desavilakku+Manthivalvu+Tharamangalam+Thuttampatti+Salem+Tamil+Nadu+636306&t=&z=15&ie=UTF8&iwloc=&output=embed"
   }
 ];
 
@@ -233,17 +247,19 @@ export const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Name *
                       </label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                         <input
                           type="text"
+                          id="name"
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
                           required
+                          autoComplete="name"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                           placeholder="Your full name"
                         />
@@ -251,17 +267,19 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email *
                       </label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                         <input
                           type="email"
+                          id="email"
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           required
+                          autoComplete="email"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                           placeholder="your.email@company.com"
                         />
@@ -271,16 +289,18 @@ export const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                         Company
                       </label>
                       <div className="relative">
                         <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                         <input
                           type="text"
+                          id="company"
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
+                          autoComplete="organization"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                           placeholder="Your company name"
                         />
@@ -288,16 +308,18 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
                         Job Title
                       </label>
                       <div className="relative">
                         <Briefcase className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                         <input
                           type="text"
+                          id="title"
                           name="title"
                           value={formData.title}
                           onChange={handleInputChange}
+                          autoComplete="organization-title"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                           placeholder="Your job title"
                         />
@@ -307,16 +329,18 @@ export const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                         Phone
                       </label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                         <input
                           type="tel"
+                          id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          autoComplete="tel"
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                           placeholder="+1 (555) 123-4567"
                         />
@@ -324,13 +348,15 @@ export const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
                         Project Type
                       </label>
                       <select
+                        id="projectType"
                         name="projectType"
                         value={formData.projectType}
                         onChange={handleInputChange}
+                        autoComplete="off"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                       >
                         <option value="">Select project type</option>
@@ -344,29 +370,33 @@ export const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                       Subject *
                     </label>
                     <input
                       type="text"
+                      id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
+                      autoComplete="off"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                       placeholder="Brief description of your project"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
                     <textarea
+                      id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
+                      autoComplete="off"
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent resize-vertical"
                       placeholder="Tell us more about your project requirements, timeline, and how we can help..."
@@ -375,13 +405,15 @@ export const Contact = () => {
 
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
                       Project Timeline
                     </label>
                     <select
+                      id="timeline"
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleInputChange}
+                      autoComplete="off"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                     >
                       <option value="">Select timeline</option>
@@ -406,7 +438,7 @@ export const Contact = () => {
                   <Button 
                     type="submit"
                     disabled={isSubmitting || submitStatus === "success" || !recaptchaToken}
-                    className="w-full bg-emuski-teal hover:bg-emuski-teal/90 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="w-full bg-emuski-teal-dark hover:bg-emuski-teal/90 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       "Sending..."
@@ -461,17 +493,17 @@ export const Contact = () => {
                       <h3 className="text-xl font-bold text-gray-900 mb-4">{office.city}</h3>
                       <div className="space-y-3">
                         <div className="flex items-start space-x-3">
-                          <MapPin className="h-5 w-5 text-emuski-teal mt-0.5 flex-shrink-0" />
+                          <MapPin className="h-5 w-5 text-emuski-teal-darker mt-0.5 flex-shrink-0" />
                           <div>
                             <p className="text-gray-700 whitespace-pre-line">{office.address}</p>
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <Phone className="h-5 w-5 text-emuski-teal flex-shrink-0" />
+                          <Phone className="h-5 w-5 text-emuski-teal-darker flex-shrink-0" />
                           <p className="text-gray-700">{office.phone}</p>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <Mail className="h-5 w-5 text-emuski-teal flex-shrink-0" />
+                          <Mail className="h-5 w-5 text-emuski-teal-darker flex-shrink-0" />
                           <p className="text-gray-700">{office.email}</p>
                         </div>
                       </div>
@@ -498,7 +530,7 @@ export const Contact = () => {
                   <div className="mt-4 text-center">
                     <Button 
                       variant="outline" 
-                      className="border-emuski-teal text-emuski-teal hover:bg-emuski-teal hover:text-white"
+                      className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
                       onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100`, '_blank')}
                     >
                       <MapPin className="h-4 w-4 mr-2" />
@@ -548,12 +580,12 @@ export const Contact = () => {
                 return (
                   <Card key={index} className="p-6 sm:p-8 text-center border-2 border-gray-200 hover:border-emuski-teal hover:bg-emuski-teal/5 transition-all duration-300 group relative hover:shadow-lg">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emuski-teal/10 group-hover:bg-emuski-teal rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
-                      <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-emuski-teal group-hover:text-white transition-colors duration-300" />
+                      <Icon className="h-7 w-7 sm:h-8 sm:w-8 text-emuski-teal-darker group-hover:text-white transition-colors duration-300" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors duration-300">{method.title}</h3>
-                    <p className="font-semibold text-emuski-teal mb-2 text-sm sm:text-base group-hover:text-emuski-teal transition-colors duration-300">{method.details}</p>
+                    <p className="font-semibold text-emuski-teal-darker mb-2 text-sm sm:text-base group-hover:text-emuski-teal transition-colors duration-300">{method.details}</p>
                     <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">{method.description}</p>
-                    <Button variant="outline" size="sm" className="group-hover:border-emuski-teal group-hover:text-emuski-teal group-hover:bg-white transition-all duration-300">
+                    <Button variant="outline" size="sm" className="group-hover:border-emuski-teal group-hover:text-emuski-teal-darker group-hover:bg-white transition-all duration-300">
                       {method.action}
                     </Button>
                   </Card>

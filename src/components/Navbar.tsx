@@ -40,7 +40,8 @@ const servicesDropdown = {
       { name: "Aerospace", path: "/industries#aerospace" },
       { name: "Medical Devices", path: "/industries#medical" },
       { name: "Electronics", path: "/industries#electronics" },
-      { name: "Defense", path: "/industries#defense" }
+      { name: "Defense", path: "/industries#defense" },
+      { name: "Success Stories", path: "/industries#success-stories" }
     ]
   }
 };
@@ -176,7 +177,11 @@ className={`${getLinkClasses("/")} flex items-center space-x-1`}
 {/* Individual Service Dropdowns */}
 {Object.entries(servicesDropdown).map(([key, service]) => (
 <div key={key} className="relative">
-<div className="flex items-center">
+<div 
+className="flex items-center"
+onMouseEnter={() => setActiveServiceDropdown(key)}
+onMouseLeave={() => setActiveServiceDropdown(null)}
+>
 <Link
 to={service.path}
 className={getLinkClasses(service.path)}
@@ -186,7 +191,6 @@ onClick={() => setActiveServiceDropdown(null)}
 </Link>
 <button
 onClick={() => setActiveServiceDropdown(activeServiceDropdown === key ? null : key)}
-onMouseEnter={() => setActiveServiceDropdown(key)}
 className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-colors"
 >
 <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeServiceDropdown === key ? 'rotate-180' : ''}`} />
@@ -196,6 +200,7 @@ className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-col
 {activeServiceDropdown === key && (
 <div 
 className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
+onMouseEnter={() => setActiveServiceDropdown(key)}
 onMouseLeave={() => setActiveServiceDropdown(null)}
 style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
 >

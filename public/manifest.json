@@ -1,15 +1,17 @@
 {
-  "name": "EMUSKI Manufacturing Brand Guidelines",
+  "name": "EMUSKI Manufacturing Solutions - Leading OEM Manufacturing Services in Bangalore",
   "short_name": "EMUSKI",
-  "description": "One Stop Solution for OEM Manufacturing - Precision Engineering and Manufacturing Excellence",
+  "description": "Leading OEM manufacturing solutions, precision engineering, rapid prototyping, and AI-powered production systems in Bangalore, India. Expert design-for-manufacturing services for automotive, aerospace, medical devices, and electronics industries.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#2d3849",
   "theme_color": "#4fd3d4",
-  "orientation": "portrait-primary",
-  "categories": ["business", "productivity", "utilities"],
+  "orientation": "any",
+  "categories": ["business", "productivity", "manufacturing", "engineering", "technology"],
   "lang": "en-US",
   "dir": "ltr",
+  "scope": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/favicon.svg",

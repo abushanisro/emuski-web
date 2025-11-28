@@ -1,0 +1,329 @@
+{
+  "Hero": {
+    "heading": {
+      "line1": "从",
+      "highlight": "5亿",
+      "line2": "印度用户收款。全球结算。"
+    },
+    "description": "唯一为全球商户构建的跨境支付基础设施，无需本地实体设置即可接受印度客户和企业的付款。",
+    "form": {
+      "placeholder": "输入您的官方邮箱",
+      "button": "立即开始收款"
+    },
+    "features": [
+      {
+        "title": "400亿美元",
+        "subtitle": "月UPI交易量"
+      },
+      {
+        "title": "99%+",
+        "subtitle": "成功率"
+      },
+      {
+        "title": "T+1",
+        "subtitle": "结算周期"
+      },
+      {
+        "title": "无需印度",
+        "subtitle": "实体"
+      }
+    ],
+    "dashboard": {
+      "successRate": "成功率",
+      "dashboardTitle": "仪表板 2025年12月",
+      "totalPayments": "总收款额",
+      "paymentMethods": {
+        "upi": "UPI支付",
+        "netBanking": "网上银行",
+        "wallets": "钱包支付"
+      },
+      "customizeSettlement": "自定义结算周期",
+      "settlementOptions": "T+1 或 每周 或 每月"
+    }
+  },
+  "Section2": {
+    "heading": "为什么全球商家失去70%的印度客户",
+    "subheading": "没有本地支付基础设施，您正在错失收入机会",
+    "issues": [
+      {
+        "title": "支付失败",
+        "description": "国际信用卡在印度支付网关上的失败率高达40-60%"
+      },
+      {
+        "title": "复杂合规要求",
+        "description": "设立印度实体需要6-12个月且监管负担重"
+      },
+      {
+        "title": "结算延迟",
+        "description": "传统网关将资金在印度账户中保留7-15天"
+      },
+      {
+        "title": "支付方式有限",
+        "description": "缺少UPI和本地钱包意味着失去70%的潜在客户"
+      }
+    ]
+  },
+  "Features": {
+    "heading": "接受印度卢比。48小时内启动。",
+    "subheading": "专为进入印度市场的全球企业设计的完整支付基础设施",
+    "featuresList": [
+      {
+        "title": "本地卢比收款",
+        "description": "直接以印度卢比接受UPI、网上银行、信用卡和钱包支付"
+      },
+      {
+        "title": "离岸结算",
+        "description": "以美元、欧元、英镑、新加坡元、阿联酋迪拉姆、港币、离岸人民币结算到您的全球账户"
+      },
+      {
+        "title": "99%+成功率",
+        "description": "行业领先的支付成功率，采用智能路由和重试逻辑"
+      },
+      {
+        "title": "无需本地设置",
+        "description": "无需注册印度实体或办公室即可开始收款"
+      },
+      {
+        "title": "订阅就绪",
+        "description": "为SaaS企业内置定期付款和订阅管理功能"
+      },
+      {
+        "title": "特许基础设施",
+        "description": "印度储备银行、PCI-DSS合规，并与主要印度银行合作"
+      }
+    ]
+  },
+  "PaymentMethods": {
+    "heading": "支持支付方式"
+  },
+  "HowToStart": {
+    "heading": "如何注册和开始？",
+    "subheading": "4个简单步骤即可开始。从注册到上线不到48小时。",
+    "stepsList": [
+      {
+        "title": "提交公司文件注册",
+        "description": "提交您的公司详情和商业文件。我们的团队在24小时内审核。"
+      },
+      {
+        "title": "完全数字验证",
+        "description": "数字化完成KYC验证。无需印度实体或实际存在。"
+      },
+      {
+        "title": "集成支付方式",
+        "description": "将我们的SDK或API添加到您的网站。提供清晰的文档和专属支持。"
+      },
+      {
+        "title": "开始收款",
+        "description": "上线并开始接受印度客户付款。结算到您的全球账户。"
+      }
+    ],
+    "button": "立即开始收款"
+  },
+  "UPISection": {
+    "heading": "UPI：印度支付基础设施革命",
+    "subheading": "印度60%的数字支付通过UPI进行。触达9亿+互联网用户和100亿+月交易量。",
+    "imageText": "这仅仅是UPI在印度成为首选支付方式的众多原因中的4个。",
+    "statsList": [
+      {
+        "value": "4.3亿 → 10亿",
+        "description": "到2047年中产阶级增长",
+        "subDescription": "推动对全球品牌和高端产品的需求"
+      },
+      {
+        "value": "100亿+",
+        "description": "月UPI交易量",
+        "subDescription": "超过全球Visa交易量"
+      },
+      {
+        "value": "300%+",
+        "description": "自2020年数字支付增长",
+        "subDescription": "全球增长最快的支付市场"
+      },
+      {
+        "value": "60%+",
+        "description": "UPI在数字支付中的份额",
+        "subDescription": "印度最受欢迎的支付方式"
+      }
+    ]
+  },
+  "UPIIntegration": {
+    "heading": "四种UPI支付方式。一次集成。",
+    "subheading": "通过EximPe的印度央行特许基础设施接受所有主要UPI渠道的付款。"
+  },
+  "UpiMethodsGrid": {
+    "featuresList": [
+      {
+        "title": "UPI意图流程",
+        "description": "无缝重定向用户到他们首选的UPI应用（Google Pay、PhonePe、Paytm），无需输入VPA或UPI ID",
+        "tag": "最适合移动端结账"
+      },
+      {
+        "title": "二维码支付",
+        "description": "在桌面上为客户提供熟悉的二维码结账体验。扫描并使用任何UPI应用支付",
+        "tag": "最适合桌面电商"
+      },
+      {
+        "title": "UPI ID/手机号",
+        "description": "通过UPI ID（VPA）或手机号启用支付，作为所有场景的可靠备选方案",
+        "tag": "最适合订阅和定期付款"
+      },
+      {
+        "title": "无代码支付链接",
+        "description": "为产品或服务创建可分享的支付链接和二维码。复制、粘贴并通过电子邮件、短信或WhatsApp分享——无需网站。",
+        "tag": "最适合无代码解决方案"
+      }
+    ]
+  },
+  "LicensedInfrastructure": {
+    "heading": "基于印度特许支付基础设施构建",
+    "featuresList": [
+      {
+        "title": "90+银行网络",
+        "description": "直接集成印度公共和私人银行基础设施"
+      },
+      {
+        "title": "UPI自动支付就绪",
+        "description": "符合印度央行规定的定期付款，适用于月限额250万卢比的订阅业务"
+      },
+      {
+        "title": "实时处理",
+        "description": "即时支付确认，UPI交易成功率99%以上"
+      },
+      {
+        "title": "完全合规",
+        "description": "所有LRS、TCS、AML要求在结账时自动处理"
+      }
+    ]
+  },
+  "BusinessModels": {
+    "heading": "为每种商业模式构建",
+    "subheading": "从订阅服务到市场平台，EximPe为多元化的全球企业提供支付支持",
+    "businessModelsList": [
+      {
+        "title": "电子商务",
+        "subtitle": "通过Shopify或D2C网站",
+        "challenge": "由于印度客户支付选项有限导致高购物车放弃率",
+        "solution": "无缝集成Shopify或您的D2C网站，接受UPI、钱包和本地信用卡"
+      },
+      {
+        "title": "市场平台",
+        "subtitle": "平台上有多个商家",
+        "challenge": "复杂的跨境结算和多供应商合规",
+        "solution": "分账支付、托管管理和自动化多方结算"
+      },
+      {
+        "title": "SaaS",
+        "subtitle": "订阅服务",
+        "challenge": "印度客户无法支付国际订阅服务",
+        "solution": "以印度卢比接受定期付款，具备自动化账单和催款管理"
+      },
+      {
+        "title": "支付服务提供商",
+        "subtitle": "为全球商家服务的支付公司",
+        "challenge": "外国支付公司难以为其商家提供印度支付方式",
+        "solution": "白标API扩展您的支付堆栈，全面覆盖印度市场"
+      },
+      {
+        "title": "记录商户",
+        "subtitle": "代表其他企业收款的实体",
+        "challenge": "在印度代表多个企业收款时的合规复杂性",
+        "solution": "全面的合规覆盖、税务处理和多实体结算工作流"
+      }
+    ]
+  },
+  "TrustedPartner": {
+    "heading": "印度企业信赖的金融科技合作伙伴，现已走向全球。",
+    "statsList": [
+      {
+        "value": "21亿美元+",
+        "description": "交易量",
+        "subDescription": "年处理量"
+      },
+      {
+        "value": "2000+",
+        "description": "全球商家",
+        "subDescription": "信任EximPe"
+      },
+      {
+        "value": "99.2%",
+        "description": "成功率",
+        "subDescription": "行业领先"
+      }
+    ]
+  },
+  "TestimonialCard": {
+    "testimonial": "\"EximPe帮助我处理中国进口业务的合规和咨询服务。他们的支持团队时刻准备帮助客户。\"",
+    "author": "Sumit Suneja",
+    "role": "联合创始人 | Merlin Brands"
+  },
+  "IndiaOpportunity": {
+    "heading": "印度市场机遇",
+    "quote": "\"到2030年，印度将成为世界第三大消费市场。\"",
+    "source": "世界经济论坛",
+    "statsList": [
+      {
+        "value": "14亿",
+        "label": "人口",
+        "subLabel": "数字优先消费者"
+      },
+      {
+        "value": "2.1万亿美元",
+        "label": "数字支付",
+        "subLabel": "2028年市场规模"
+      },
+      {
+        "value": "4.32亿",
+        "label": "中产阶级增长",
+        "subLabel": "到2030年新增消费者"
+      },
+      {
+        "value": "20亿+",
+        "label": "UPI交易",
+        "subLabel": "月交易量"
+      },
+      {
+        "value": "83%",
+        "label": "移动互联网",
+        "subLabel": "普及率"
+      }
+    ],
+    "bottomText": "印度的数字支付革命正在为全球企业创造前所未有的机遇。不要让支付基础设施阻碍您进入这个巨大市场。"
+  },
+  "ComparisonTable": {
+    "heading": "为什么选择 EximPe？",
+    "subheading": "与其他从印度收款的解决方案进行比较。",
+    "featuresLabel": "功能",
+    "recommended": "推荐",
+    "features": {
+      "feature1": { "name": "支持 UPI 和本地钱包" },
+      "feature2": { "name": "无需印度实体" },
+      "feature3": { "name": "离岸结算" },
+      "feature4": { "name": "48 小时内快速入驻" },
+      "feature5": { "name": "99%+ 成功率" },
+      "feature6": { "name": "支持定期付款" },
+      "feature7": { "name": "支持多币种结算" },
+      "feature8": { "name": "无合规负担" }
+    },
+    "legend": {
+      "full": "完全支持",
+      "partial": "部分/复杂",
+      "none": "不支持"
+    }
+  },
+  "LeadSection": {
+    "heading": "准备解锁印度市场？",
+    "subheading": "加入500+家已经从5亿印度客户收款的全球企业。48小时内启动——零设置成本。",
+    "featureHighlights": [
+      "无需印度实体",
+      "48小时内上线"
+    ]
+  },
+  "ComplianceBanner": {
+    "complianceItems": [
+      { "text": "印度储备银行" },
+      { "text": "DBS合作伙伴" },
+      { "text": "PCI-DSS合规" },
+      { "text": "ISO 27001认证" }
+    ]
+  }
+}

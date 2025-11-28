@@ -124,16 +124,19 @@ export const EmailSubscription = ({ className = "", variant = "default" }: { cla
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
         <input
           type="email"
+          id="email-compact"
+          name="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
+          autoComplete="email"
+          className="flex-1 px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal-darker focus:border-transparent"
           disabled={status === "loading" || status === "success" || !recaptchaToken}
         />
         <Button 
           type="submit"
           disabled={status === "loading" || status === "success" || !recaptchaToken}
-          className="bg-emuski-teal hover:bg-emuski-teal/90 text-white px-6 py-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white px-6 py-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
           {status === "loading" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -173,7 +176,7 @@ export const EmailSubscription = ({ className = "", variant = "default" }: { cla
   const renderSidebarForm = () => (
     <Card className={`p-6 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-emuski-teal/20 ${className}`}>
       <div className="flex items-center space-x-2 mb-3">
-        <Mail className="h-5 w-5 text-emuski-teal" />
+        <Mail className="h-5 w-5 text-emuski-teal-darker" />
         <h3 className="text-lg font-bold text-gray-900">Daily Insights</h3>
       </div>
       <p className="text-sm text-gray-600 mb-4">Get expert manufacturing insights delivered to your inbox every day.</p>
@@ -181,16 +184,19 @@ export const EmailSubscription = ({ className = "", variant = "default" }: { cla
       <form onSubmit={handleSubmit} className="space-y-3">
         <input
           type="email"
+          id="email-sidebar"
+          name="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
+          autoComplete="email"
+          className="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emuski-teal-darker focus:border-transparent"
           disabled={status === "loading" || status === "success" || !recaptchaToken}
         />
         <Button 
           type="submit"
           disabled={status === "loading" || status === "success" || !recaptchaToken}
-          className="w-full bg-emuski-teal hover:bg-emuski-teal/90 text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
+          className="w-full bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
           {status === "loading" ? (
             <>
@@ -257,16 +263,19 @@ export const EmailSubscription = ({ className = "", variant = "default" }: { cla
         <div className="flex flex-col sm:flex-row gap-4">
           <input
             type="email"
+            id="email-default"
+            name="email"
             placeholder="Enter your professional email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent shadow-sm"
+            autoComplete="email"
+            className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal-darker focus:border-transparent shadow-sm"
             disabled={status === "loading" || status === "success" || !recaptchaToken}
           />
           <Button 
             type="submit"
             disabled={status === "loading" || status === "success" || !recaptchaToken}
-            className="bg-emuski-teal hover:bg-emuski-teal/90 text-white px-12 py-4 text-lg font-semibold whitespace-nowrap h-auto min-h-[3rem] flex items-center justify-center disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white px-12 py-4 text-lg font-semibold whitespace-nowrap h-auto min-h-[3rem] flex items-center justify-center disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             {status === "loading" ? (
               <>
