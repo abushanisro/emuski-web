@@ -257,7 +257,7 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${2 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Next-Gen AI
+                    GenAI
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${2 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
                     Mithran AI
@@ -325,7 +325,7 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1 pt-2">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${2 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Next-Gen AI
+                    GenAI
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${2 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
                     Mithran AI

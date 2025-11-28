@@ -26,7 +26,7 @@ const AISolutions = () => {
           <div className="relative z-20 container mx-auto px-6 h-full flex items-center">
             <div className="max-w-3xl animate-fade-in">
               <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-                Next-Gen AI - Mithran
+                GenAI - Mithran
               </h1>
               
               
