@@ -8,9 +8,9 @@ import { OnDemandManufacturingSection } from "./OnDemandManufacturingSection";
 export function ManufacturingServicesTabs() {
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <Tabs defaultValue="oem" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5">
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             <TabsTrigger value="oem">OEM Manufacturing</TabsTrigger>
             <TabsTrigger value="custom">Custom Manufacturing</TabsTrigger>
             <TabsTrigger value="prototyping">Rapid Prototyping</TabsTrigger>

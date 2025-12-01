@@ -243,7 +243,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
           {category.models.map((model, modelIdx) => (
             <div key={modelIdx} className="mb-4">
               <h4 className="font-semibold text-emuski-teal-darker mb-3">{model.name}</h4>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(model.specifications).map(([spec, value]) => (
                   <div key={spec} className="text-sm">
                     <p className="text-gray-600">{spec}</p>
@@ -285,7 +285,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
         )}
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-8">
+        <div className="flex flex-wrap justify-center mb-8">
           <div className="bg-white rounded-lg p-1 shadow-sm border border-gray-200">
             {(['metrics', 'capabilities', 'equipment'] as const).map((tab) => (
               <button
