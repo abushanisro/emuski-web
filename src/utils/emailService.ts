@@ -24,7 +24,7 @@ export interface EmailCampaign {
 }
 
 class EmailService {
-  private baseUrl = 'https://api.emuski.com'; // Replace with your actual API endpoint
+  private baseUrl = 'https://api.EMUSKI.com'; // Replace with your actual API endpoint
 
   async subscribe(email: string, source: string = 'website'): Promise<{ success: boolean; message: string; subscriberId?: string }> {
     try {

@@ -1,7 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
-import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
+
 import { TeardownBenchmarkingSection } from "../components/TeardownBenchmarkingSection";
 import { BomDataCaptureSection } from "../components/BomDataCaptureSection";
 import { ShouldCostingSection } from "../components/ShouldCostingSection";
@@ -93,8 +93,7 @@ export default function PrecisionEngineering() {
         </div>
       </section>
 
-      {/* Technical Specifications & Equipment */}
-      <TechnicalSpecsSection focus="all" compact={false} />
+      
 
       {/* Engineering Services Grid */}
       <section className="py-20 bg-background">
@@ -157,7 +156,7 @@ export default function PrecisionEngineering() {
               Turning Data into Competitive Advantage
             </p>
             <p className="mt-6 text-gray-400 max-w-3xl mx-auto">
-              At EMuski, cost isn’t just a figure—it’s the foundation of smarter design, stronger negotiations, and competitive products. With our Product Cost Estimation expertise, OEMs across industries gain the clarity to make informed decisions throughout design, prototyping, and production—ensuring efficiency, profitability, and faster time-to-market.
+              At EMUSKI, cost isn’t just a figure—it’s the foundation of smarter design, stronger negotiations, and competitive products. With our Product Cost Estimation expertise, OEMs across industries gain the clarity to make informed decisions throughout design, prototyping, and production—ensuring efficiency, profitability, and faster time-to-market.
             </p>
           </div>
 
@@ -188,7 +187,7 @@ export default function PrecisionEngineering() {
             <div>
               <h3 className="text-2xl font-semibold text-white mb-3 text-center">A Lifecycle Approach to Costing</h3>
               <p>
-                From the earliest design sketches to full-scale production, EMuski supports OEMs with accurate, real-time cost insights. During concept design, we help teams evaluate material and process options before locking in decisions. In prototyping, our cost intelligence ensures every iteration balances innovation with affordability. As products move to production, we deliver detailed cost models that guide sourcing strategies and optimize manufacturing efficiency.
+                From the earliest design sketches to full-scale production, EMUSKI supports OEMs with accurate, real-time cost insights. During concept design, we help teams evaluate material and process options before locking in decisions. In prototyping, our cost intelligence ensures every iteration balances innovation with affordability. As products move to production, we deliver detailed cost models that guide sourcing strategies and optimize manufacturing efficiency.
               </p>
               <p className="mt-4">
                 By embedding cost thinking into each stage, OEMs avoid surprises, reduce risks, and bring better products to market with confidence.
@@ -197,16 +196,16 @@ export default function PrecisionEngineering() {
             <div>
               <h3 className="text-2xl font-semibold text-white mb-3 text-center">Global Cost Intelligence</h3>
               <p>
-                EMuski maintains its own real-time cost database spanning Western Europe, Eastern Europe, North America, Asia, and India. This global perspective allows us to evaluate manufacturing costs accurately across different geographies, empowering OEMs to optimize sourcing and production strategies.
+                EMUSKI maintains its own real-time cost database spanning Western Europe, Eastern Europe, North America, Asia, and India. This global perspective allows us to evaluate manufacturing costs accurately across different geographies, empowering OEMs to optimize sourcing and production strategies.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-3 text-center">The EMuski Advantage</h3>
+              <h3 className="text-2xl font-semibold text-white mb-3 text-center">The EMUSKI Advantage</h3>
               <p>
-                What sets EMuski apart is our blend of engineering expertise, manufacturing knowledge, and a globally benchmarked cost database. Our team of experienced should-cost and VAVE engineers act as an extension of OEM teams, delivering insights that go beyond spreadsheets. We don’t just provide numbers—we deliver intelligence that drives profitability, efficiency, and competitiveness.
+                What sets EMUSKI apart is our blend of engineering expertise, manufacturing knowledge, and a globally benchmarked cost database. Our team of experienced should-cost and VAVE engineers act as an extension of OEM teams, delivering insights that go beyond spreadsheets. We don’t just provide numbers—we deliver intelligence that drives profitability, efficiency, and competitiveness.
               </p>
               <p className="mt-4">
-                At EMuski, we believe every great product deserves a cost structure that makes it truly competitive.
+                At EMUSKI, we believe every great product deserves a cost structure that makes it truly competitive.
               </p>
             </div>
           </div>

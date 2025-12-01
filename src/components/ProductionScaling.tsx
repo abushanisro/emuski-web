@@ -11,7 +11,7 @@ export function ProductionScaling() {
           From Prototype to Full-Scale Production, Seamlessly
         </p>
         <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-          Scaling from a successful prototype to full-scale production is a critical and often challenging phase. EMuski provides the expertise and infrastructure to manage this transition smoothly, ensuring that your product can be manufactured at volume without sacrificing quality or cost-effectiveness.
+          Scaling from a successful prototype to full-scale production is a critical and often challenging phase. EMUSKI provides the expertise and infrastructure to manage this transition smoothly, ensuring that your product can be manufactured at volume without sacrificing quality or cost-effectiveness.
         </p>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
           We bridge the gap between prototyping and mass production, helping you navigate supply chain complexities, optimize manufacturing processes, and ramp up production to meet market demand.
@@ -75,7 +75,7 @@ export function ProductionScaling() {
         </div>
       </div>
       <div className="text-center max-w-4xl mx-auto mt-16">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMuski Advantage</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMUSKI Advantage</h3>
         <p className="text-muted-foreground max-w-3xl mx-auto">
           Our experience in both prototyping and high-volume manufacturing gives us a unique perspective on scaling. We anticipate the challenges of production ramp-up and address them early in the design and prototyping phases, ensuring a seamless and successful transition to mass production.
         </p>

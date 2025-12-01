@@ -10,7 +10,7 @@ export function TechnicalResourceDeploymentSection() {
             ‘Deployment of Technical Expertise in Costing, VAVE - Teardown Benchmarking Engineering Services’
           </p>
           <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-            At EMuski, we offer highly skilled technical resources to meet your business needs, whether on-site or remotely. Our team of expert engineers, analysts, and consultants is ready to assist across various areas including costing, teardown benchmarking, and design engineering, ensuring your projects are supported with the highest level of expertise.
+            At EMUSKI, we offer highly skilled technical resources to meet your business needs, whether on-site or remotely. Our team of expert engineers, analysts, and consultants is ready to assist across various areas including costing, teardown benchmarking, and design engineering, ensuring your projects are supported with the highest level of expertise.
           </p>
         </div>
 

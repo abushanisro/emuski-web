@@ -4,6 +4,8 @@ import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
 import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
+import ProductDeliverablesSection from "../components/ProductDeliverablesSection";
+import SectorsServedSection from "../components/SectorsServedSection";
 
 
 
@@ -45,7 +47,7 @@ export default function ManufacturingServices() {
       canonicalUrl.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalUrl);
     }
-    canonicalUrl.setAttribute('href', 'https://www.emuski.com/manufacturing-services');
+    canonicalUrl.setAttribute('href', 'https://www.EMUSKI.com/manufacturing-services');
 
     // Add hreflang for international SEO
     let hreflangEn = document.querySelector('link[hreflang="en"]');
@@ -55,13 +57,13 @@ export default function ManufacturingServices() {
       hreflangEn.setAttribute('hreflang', 'en');
       document.head.appendChild(hreflangEn);
     }
-    hreflangEn.setAttribute('href', 'https://www.emuski.com/manufacturing-services');
+    hreflangEn.setAttribute('href', 'https://www.EMUSKI.com/manufacturing-services');
 
     // Add Open Graph tags
     const ogTags = [
       { property: 'og:title', content: 'OEM Manufacturing Services in Bangalore | Precision Engineering | EMUSKI' },
       { property: 'og:description', content: 'Leading OEM manufacturing services in Bangalore, India. Expert precision engineering, rapid prototyping, and custom manufacturing solutions for automotive, aerospace, medical, and electronics industries.' },
-      { property: 'og:url', content: 'https://www.emuski.com/manufacturing-services' },
+      { property: 'og:url', content: 'https://www.EMUSKI.com/manufacturing-services' },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: 'https://www.emuski.com/assets/manufacturing-services-og.jpg' },
       { property: 'og:locale', content: 'en_US' }
@@ -104,7 +106,7 @@ export default function ManufacturingServices() {
       "provider": {
         "@type": "Organization",
         "name": "EMUSKI Manufacturing Solutions",
-        "url": "https://www.emuski.com/",
+        "url": "https://www.EMUSKI.com/",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "126, RNS Plaza, KIADB Industrial Area, Electronic City Phase 2",
@@ -161,7 +163,7 @@ export default function ManufacturingServices() {
       ],
       "potentialAction": {
         "@type": "ContactAction",
-        "target": "https://www.emuski.com/contact"
+        "target": "https://www.EMUSKI.com/contact"
       }
     };
 
@@ -275,7 +277,7 @@ export default function ManufacturingServices() {
     // Email configuration
     const emailData = {
       to: 'abushan.isro@gmail.com',
-      from: 'noreply@emuski.com',
+      from: 'noreply@EMUSKI.com',
       subject: `New Quote Request - ${data.projectDescription.substring(0, 50)}...`,
       html: `
         <h2>New Quote Request</h2>
@@ -397,12 +399,13 @@ export default function ManufacturingServices() {
 
       <SolutionsOfferedSection />
 
-      {/* Technical Performance Metrics */}
-      <TechnicalSpecsSection focus="metrics" compact={true} />
+      
 
       <ManufacturingServicesTabs />
 
-      
+      <ProductDeliverablesSection />
+
+      <SectorsServedSection />
 
       {/* Technical Capabilities Section */}
       <TechnicalSpecsSection focus="capabilities" compact={true} showTitle={true} />

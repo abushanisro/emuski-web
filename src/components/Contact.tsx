@@ -22,32 +22,25 @@ import {
 const contactMethods = [
   {
     icon: Phone,
-    title: "Phone",
-    details: "+91 83444 74556",
-    description: "Speak directly with our team",
-    action: "Call Now"
+    title: "Call Us",
+    details: "+91-83444-74556",
+    description: "Speak directly with our sales team for immediate assistance.",
+    link: "tel:+918344474556",
   },
   {
     icon: Mail,
-    title: "General Inquiries",
-    details: "enquiries@emuski.com",
-    description: "Send us a detailed message",
-    action: "Email Us"
+    title: "Email Us",
+    details: "enquiries@EMUSKI.com",
+    description: "Send us your inquiries and we'll respond within 24 hours.",
+    link: "mailto:enquiries@EMUSKI.com",
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    details: "Electronic City Phase 2, Bangalore, Karnataka 560100",
-    description: "Schedule an in-person meeting",
-    action: "Get Directions"
+    details: "126, RNS Plaza, Electronic City Phase 2, Bangalore",
+    description: "Find us at our state-of-the-art manufacturing facility.",
+    link: "https://maps.app.goo.gl/your-location",
   },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: "Mon - Fri: 9:00 AM - 6:00 PM IST",
-    description: "We're here when you need us",
-    action: "Schedule Meeting"
-  }
 ];
 
 const offices = [
@@ -116,7 +109,7 @@ export const Contact = () => {
     // Email configuration
     const emailData = {
       to: 'abushan.isro@gmail.com',
-      from: 'noreply@emuski.com',
+      from: 'noreply@EMUSKI.com',
       subject: type === 'contact' ? `New Contact Form Submission - ${data.subject}` : `New Quote Request - ${data.projectDescription}`,
       html: type === 'contact' ? `
         <h2>New Contact Form Submission</h2>

@@ -9,7 +9,7 @@ export function RapidPrototypingSection() {
           Accelerating Ideas into Reality
         </p>
         <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-          In today’s competitive environment, speed is everything. OEMs can no longer afford lengthy design and development cycles. That’s where EMuski’s Rapid Prototyping services make a difference—enabling teams to transform innovative concepts into functional prototypes in record time.
+          In today’s competitive environment, speed is everything. OEMs can no longer afford lengthy design and development cycles. That’s where EMUSKI’s Rapid Prototyping services make a difference—enabling teams to transform innovative concepts into functional prototypes in record time.
         </p>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
           At the heart of this capability lies our New Product Development (NPD) Center, equipped with advanced in-house machines, engineering expertise, and agile processes. From early design mock-ups to fully functional test parts, we ensure prototypes are produced quickly, accurately, and cost-effectively.
@@ -73,9 +73,9 @@ export function RapidPrototypingSection() {
         </div>
       </div>
       <div className="text-center max-w-4xl mx-auto mt-16">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMuski Advantage</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMUSKI Advantage</h3>
         <p className="text-muted-foreground max-w-3xl mx-auto">
-          Unlike typical prototyping shops, EMuski brings engineering expertise, cost modeling knowledge, and production scalability into the prototyping phase. This ensures that every prototype isn’t just a “sample,” but a step closer to a market-ready, cost-optimized product.
+          Unlike typical prototyping shops, EMUSKI brings engineering expertise, cost modeling knowledge, and production scalability into the prototyping phase. This ensures that every prototype isn’t just a “sample,” but a step closer to a market-ready, cost-optimized product.
         </p>
       </div>
     </div>

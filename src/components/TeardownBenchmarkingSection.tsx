@@ -66,7 +66,7 @@ export function TeardownBenchmarkingSection() {
             Teardown & Benchmarking - Methodology
           </h2>
           <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-            At EMuski, we recognize the importance of teardown analysis, which has enabled us to clearly define and structure the process into distinct phases. Our teardown methodology is categorized into Pre-Teardown, Teardown, and Post-Teardown activities, allowing for a systematic and efficient approach.
+            At EMUSKI, we recognize the importance of teardown analysis, which has enabled us to clearly define and structure the process into distinct phases. Our teardown methodology is categorized into Pre-Teardown, Teardown, and Post-Teardown activities, allowing for a systematic and efficient approach.
           </p>
           <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
             We approach teardown with a well-defined structure, ensuring a comprehensive and insightful analysis across three key phases:

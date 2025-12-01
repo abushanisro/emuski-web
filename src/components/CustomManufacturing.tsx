@@ -11,7 +11,7 @@ export function CustomManufacturing() {
           Your Unique Requirements, Precisely Engineered
         </p>
         <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-          When standard solutions won't do, EMuski's Custom Manufacturing services provide the tailored precision you need. We specialize in manufacturing components and products that meet unique specifications, complex geometries, and stringent quality standards.
+          When standard solutions won't do, EMUSKI's Custom Manufacturing services provide the tailored precision you need. We specialize in manufacturing components and products that meet unique specifications, complex geometries, and stringent quality standards.
         </p>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
           Our team works closely with you to understand your specific challenges and develop a manufacturing process that delivers on your vision. From one-off parts to specialized production runs, we have the expertise and equipment to get it done right.
@@ -75,7 +75,7 @@ export function CustomManufacturing() {
         </div>
       </div>
       <div className="text-center max-w-4xl mx-auto mt-16">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMuski Advantage</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMUSKI Advantage</h3>
         <p className="text-muted-foreground max-w-3xl mx-auto">
           Our advantage lies in our deep engineering expertise combined with our advanced manufacturing capabilities. We don't just follow your prints; we collaborate with you to optimize your design for manufacturability, ensuring the best possible outcome in terms of quality, cost, and performance.
         </p>

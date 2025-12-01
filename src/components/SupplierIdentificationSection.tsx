@@ -26,7 +26,7 @@ export function SupplierIdentificationSection() {
                 <img src="/assets/engineering/bullet.png" alt="bullet" className="w-6 h-6 mr-4 mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground">Supplier Nomination & Negotiation</h4>
-                  <p>EMuski supports technical evaluations, facility audits, and provides data to support vendor benchmarking and negotiation.</p>
+                  <p>EMUSKI supports technical evaluations, facility audits, and provides data to support vendor benchmarking and negotiation.</p>
                 </div>
               </li>
               <li className="flex items-start">

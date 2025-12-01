@@ -5,7 +5,7 @@ const caseStudies = [
     service: "New Product Development (NPD)",
     challenge: "The client struggled with repeated design iterations and long lead times during the development of a next-gen engine component. This delayed validation and risked missing OEM program deadlines.",
     approach: [
-      "Utilized EMuski’s NPD Center to run rapid design iterations.",
+      "Utilized EMUSKI’s NPD Center to run rapid design iterations.",
       "Conducted in-house testing and validation, eliminating third-party delays.",
       "Collaborated closely with client engineers to shorten feedback loops."
     ],
@@ -37,7 +37,7 @@ const caseStudies = [
     service: "VAVE – Teardown & Benchmarking",
     challenge: "High production costs made the client’s flagship product less competitive compared to rivals in the market.",
     approach: [
-      "Conducted detailed teardown analysis at EMuski’s Teardown Center.",
+      "Conducted detailed teardown analysis at EMUSKI’s Teardown Center.",
       "Benchmarked components against global competitors.",
       "Recommended alternative materials, part redesign, and supplier re-sourcing."
     ],
@@ -87,19 +87,19 @@ export function SuccessStoriesSection() {
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            Success Stories & Blogs
+            Success Stories
           </h2>
           <p className="text-xl text-muted-foreground">
             Real Results. Expert Insights. Lasting Impact.
           </p>
           <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-            At EMuski, we don’t just provide services—we deliver measurable outcomes. Our Success Stories showcase how OEMs have partnered with us to accelerate innovation, reduce costs, and strengthen competitiveness.
+            At EMUSKI, we don’t just provide services—we deliver measurable outcomes. Our Success Stories showcase how OEMs have partnered with us to accelerate innovation, reduce costs, and strengthen competitiveness.
           </p>
           <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
             Alongside, our Blogs bring you expert perspectives, industry trends, and actionable strategies to help your business stay ahead in a fast-changing manufacturing landscape.
           </p>
           <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-            Together, these stories and insights highlight what’s possible when OEMs collaborate with EMuski—achieving excellence in cost, quality, and speed.
+            Together, these stories and insights highlight what’s possible when OEMs collaborate with EMUSKI—achieving excellence in cost, quality, and speed.
           </p>
         </div>
 

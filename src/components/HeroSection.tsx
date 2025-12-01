@@ -34,7 +34,7 @@ const slides: Slide[] = [
   {
     image: "/assets/hero/genai.svg",
     mobileImage: "/assets/hero-mobile/genaimobile.svg",
-    category: "Next-Gen AI",
+    category: "Next-GenAI",
     title: "AI-Powered Intelligence for Tomorrow's Manufacturing",
     shortTitle: "Mithran",
     description: "Revolutionary AI solutions transforming product development, supply chain optimization, and cost engineering - where artificial intelligence meets manufacturing excellence.",

@@ -2745,7 +2745,7 @@ The convergence of **advanced AI algorithms**, **comprehensive data integration*
 
 *Ready to unlock the power of intelligent manufacturing? Our Mithran AI Platform specialists help organizations achieve 30% faster sourcing cycles and 15% cost savings through data-driven optimization. Schedule your AI transformation consultation today.*
     `,
-    category: "Next-Gen AI",
+    category: "Next-GenAI",
     author: "Dr. Raj Patel",
     authorBio: "Dr. Raj Patel is the Chief Technology Officer and lead architect of the Mithran AI Platform with 20 years of experience in artificial intelligence, machine learning, and manufacturing systems. He holds a PhD in Computer Science with specialization in AI applications for industrial systems and has published over 50 research papers in leading journals. Dr. Patel has led the development of AI solutions that have generated over $500M in value for manufacturing clients.",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0017.jpg",

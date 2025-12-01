@@ -9,42 +9,42 @@ export interface FAQItem {
 // Home page FAQs - EMUSKI company focused with brand intent and semantic matching
 export const HOME_FAQS: FAQItem[] = [
   {
-    id: 'who-is-emuski-company',
+    id: 'who-is-EMUSKI-company',
     question: 'Who is EMUSKI and what makes us different from other manufacturing companies?',
     answer: 'EMUSKI is a pioneering manufacturing company in Bangalore, India, founded in 2008 with 15+ years of proven excellence. What sets us apart is our unique combination of traditional manufacturing expertise with cutting-edge AI technology, Industry 4.0 integration, and unwavering commitment to quality. We are ISO 9001:2015 certified with state-of-the-art facilities in Electronic City, serving global clients across automotive, aerospace, medical devices, and electronics industries.',
     category: 'About EMUSKI',
     keywords: ['EMUSKI company profile', 'who is EMUSKI', 'EMUSKI manufacturing expertise', 'EMUSKI Bangalore company', 'manufacturing company since 2008', 'Industry 4.0 EMUSKI']
   },
   {
-    id: 'emuski-mission-vision-values',
+    id: 'EMUSKI-mission-vision-values',
     question: 'What is EMUSKI\'s mission and core values in manufacturing?',
     answer: 'EMUSKI\'s mission is to revolutionize manufacturing through precision engineering, AI-driven innovation, and sustainable practices while delivering exceptional value to our global clients. Our core values include: Quality Excellence (ISO certified processes), Innovation Leadership (AI-powered manufacturing), Customer Success (dedicated partnership approach), Sustainability (eco-friendly practices), and Integrity (transparent business ethics). We believe in transforming ideas into reality with precision and passion.',
     category: 'About EMUSKI',
     keywords: ['EMUSKI mission', 'EMUSKI values', 'manufacturing philosophy', 'quality excellence EMUSKI', 'innovation leadership', 'sustainable manufacturing']
   },
   {
-    id: 'emuski-leadership-team-expertise',
+    id: 'EMUSKI-leadership-team-expertise',
     question: 'What expertise does EMUSKI\'s leadership team bring to manufacturing?',
     answer: 'EMUSKI\'s leadership combines decades of manufacturing excellence with cutting-edge technology expertise. Our team includes seasoned manufacturing engineers, AI technology specialists, quality management experts, and business leaders with global experience. We have deep domain knowledge in automotive engineering, aerospace precision, medical device regulations, and electronics manufacturing, enabling us to deliver world-class solutions across diverse industries.',
     category: 'Leadership & Expertise',
     keywords: ['EMUSKI leadership', 'manufacturing expertise', 'engineering team EMUSKI', 'automotive expertise', 'aerospace engineering', 'medical device experts']
   },
   {
-    id: 'emuski-technology-innovation',
+    id: 'EMUSKI-technology-innovation',
     question: 'How does EMUSKI use technology and innovation in manufacturing?',
     answer: 'EMUSKI leverages advanced Industry 4.0 technologies with measurable performance: AI-powered quality control achieving 99.5% first-pass yield, IoT sensors monitoring 200+ process parameters in real-time, predictive maintenance with 94.2% accuracy reducing downtime by 35%, and digital twin technology covering 68% of manufacturing processes. Our OEE (Overall Equipment Effectiveness) reaches 87.3% through automation integration and machine learning algorithms.',
     category: 'Technology & Innovation',
     keywords: ['EMUSKI AI manufacturing', 'OEE 87.3%', 'IoT manufacturing', '94.2% predictive maintenance', 'digital twin technology', 'Industry 4.0 manufacturing']
   },
   {
-    id: 'emuski-global-reach-bangalore',
+    id: 'EMUSKI-global-reach-bangalore',
     question: 'How does EMUSKI serve global clients from Bangalore?',
     answer: 'From our strategic Bangalore location, EMUSKI serves clients worldwide with comprehensive global support services. We offer 24/7 communication across time zones, English-speaking project management teams, international quality certifications, seamless export logistics, and compliance with global standards including FDA, CE, and ITAR. Our Bangalore facility provides cost advantages while maintaining world-class quality standards for international markets.',
     category: 'Global Services',
     keywords: ['EMUSKI global services', 'international manufacturing Bangalore', 'global client support', '24/7 manufacturing support', 'export manufacturing India', 'worldwide quality standards']
   },
   {
-    id: 'emuski-success-stories-achievements',
+    id: 'EMUSKI-success-stories-achievements',
     question: 'What are EMUSKI\'s key achievements and success stories?',
     answer: 'EMUSKI delivers measurable results: 15+ industries served, 75+ global clients, 120+ individual engineering projects, 2500+ unique components manufactured. Technical achievements include ISO 9001:2015/14001:2015/45001:2018 certifications, 98.7% on-time delivery rate, 99.5% quality acceptance rate, 15 PPM defect rate, Cpk values >2.0 for critical processes, and OEE of 87.3%. Cost engineering delivers 25-45% reductions while maintaining precision tolerances ±0.0025mm.',
     category: 'Success Stories',
@@ -221,7 +221,7 @@ export const PRECISION_ENGINEERING_FAQS: FAQItem[] = [
 // Contact page FAQs - Focus on communication, support, getting started
 export const CONTACT_FAQS: FAQItem[] = [
   {
-    id: 'how-to-contact-emuski',
+    id: 'how-to-contact-EMUSKI',
     question: 'How can I contact EMUSKI for manufacturing inquiries?',
     answer: 'You can contact EMUSKI through multiple channels: Phone +91-83444-74556, Email abushan.isro@gmail.com, visit our facility at 126, RNS Plaza, Electronic City Phase 2, Bangalore, or use our online contact form. We respond to inquiries within 24 hours with dedicated project managers for international clients.',
     category: 'Contact Information',

@@ -71,7 +71,7 @@ export const EmailSubscription = ({ className = "", variant = "default" }: { cla
       // Send email notification for new subscription
       const emailData = {
         to: 'abushan.isro@gmail.com',
-        from: 'noreply@emuski.com',
+        from: 'noreply@EMUSKI.com',
         subject: 'New Email Subscription - EMUSKI',
         html: `
           <h2>New Email Subscription</h2>

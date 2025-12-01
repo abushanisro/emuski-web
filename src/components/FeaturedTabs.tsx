@@ -41,20 +41,20 @@ const featuredContent = [
     ]
   },
   {
-    id: "projects",
-    label: "Projects",
+    id: "ai-mithran",
+    label: "AI Mithran",
     items: [
       {
-        category: "Automotive Components",
-        title: "Tier-1 Automotive Supplier Achievement",
-        description: "EMUSKI became a trusted Tier-1 supplier for brake system components, delivering 2 million parts annually with 99.9% on-time delivery to global automotive giants.",
-        image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg"
+        category: "AI Solutions",
+        title: "AI-Powered Predictive Maintenance",
+        description: "Implemented an AI-driven predictive maintenance system for a heavy machinery manufacturer, reducing unplanned downtime by 30% and saving $500,000 annually in maintenance costs.",
+        image: "/assets/hero/genai.svg" // Placeholder image
       },
       {
-        category: "Custom Fixtures",
-        title: "Smart Manufacturing Implementation",
-        description: "Our custom fixture design reduced assembly time by 40% for an electronics manufacturer, enabling them to meet increased demand during peak season while maintaining quality standards.",
-        image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg"
+        category: "Smart Manufacturing",
+        title: "Optimized Production with Machine Learning",
+        description: "Developed a machine learning model to optimize production parameters for an electronics assembly line, increasing throughput by 15% and improving yield by 5%.",
+        image: "/assets/hero/genai.svg" // Placeholder image
       }
     ]
   }

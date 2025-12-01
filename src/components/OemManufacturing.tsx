@@ -11,7 +11,7 @@ export function OemManufacturing() {
           Your Vision, Manufactured with Precision
         </p>
         <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-          As a trusted partner to Original Equipment Manufacturers (OEMs), EMuski provides comprehensive manufacturing solutions that bring your products to life. We manage the entire production lifecycle, from sourcing raw materials to final assembly and quality assurance, allowing you to focus on innovation and market growth.
+          As a trusted partner to Original Equipment Manufacturers (OEMs), EMUSKI provides comprehensive manufacturing solutions that bring your products to life. We manage the entire production lifecycle, from sourcing raw materials to final assembly and quality assurance, allowing you to focus on innovation and market growth.
         </p>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
           Our state-of-the-art facilities and expert teams are equipped to handle complex manufacturing requirements, ensuring your products are built to exact specifications, on time, and within budget.
@@ -75,9 +75,9 @@ export function OemManufacturing() {
         </div>
       </div>
       <div className="text-center max-w-4xl mx-auto mt-16">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMuski Advantage</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMUSKI Advantage</h3>
         <p className="text-muted-foreground max-w-3xl mx-auto">
-          We act as a true extension of your team. Our integrated approach combines manufacturing excellence with engineering insights, ensuring that your products are not only well-made but also optimized for performance and cost. With EMuski, you gain a partner committed to your success.
+          We act as a true extension of your team. Our integrated approach combines manufacturing excellence with engineering insights, ensuring that your products are not only well-made but also optimized for performance and cost. With EMUSKI, you gain a partner committed to your success.
         </p>
       </div>
     </div>

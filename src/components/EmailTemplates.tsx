@@ -196,7 +196,7 @@ export const generateDailyNewsletterHTML = (date: string, featuredArticle: any, 
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <a href="https://emuski.com" class="logo">EMUSKI</a>
+            <a href="https://EMUSKI.com" class="logo">EMUSKI</a>
             <p class="tagline">Manufacturing Excellence Through Innovation</p>
         </div>
 
@@ -210,7 +210,7 @@ export const generateDailyNewsletterHTML = (date: string, featuredArticle: any, 
             <div class="featured-section">
                 <h2 class="featured-title">${featuredArticle.title}</h2>
                 <p class="featured-excerpt">${featuredArticle.excerpt}</p>
-                <a href="https://emuski.com/blog/${featuredArticle.slug}" class="read-more-btn">Read Full Article →</a>
+                <a href="https://EMUSKI.com/blog/${featuredArticle.slug}" class="read-more-btn">Read Full Article →</a>
             </div>
 
             <!-- Key Insights -->
@@ -249,24 +249,24 @@ export const generateDailyNewsletterHTML = (date: string, featuredArticle: any, 
             <div style="text-align: center; margin: 30px 0; padding: 25px; background: linear-gradient(135deg, #4fd3d4 0%, #3ba9aa 100%); border-radius: 8px;">
                 <h3 style="color: white; margin-bottom: 10px;">Ready to Transform Your Manufacturing?</h3>
                 <p style="color: #e6f9f9; margin-bottom: 20px;">Get personalized insights for your organization</p>
-                <a href="https://emuski.com/contact" style="background-color: white; color: #4fd3d4; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Schedule Consultation</a>
+                <a href="https://EMUSKI.com/contact" style="background-color: white; color: #4fd3d4; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Schedule Consultation</a>
             </div>
 
             <!-- Social Links -->
             <div class="social-links">
-                <a href="https://linkedin.com/company/emuski" class="social-link">Li</a>
-                <a href="https://twitter.com/emuski" class="social-link">Tw</a>
-                <a href="https://youtube.com/emuski" class="social-link">Yt</a>
+                <a href="https://linkedin.com/company/EMUSKI" class="social-link">Li</a>
+                <a href="https://twitter.com/EMUSKI" class="social-link">Tw</a>
+                <a href="https://youtube.com/EMUSKI" class="social-link">Yt</a>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <div class="footer-links">
-                <a href="https://emuski.com/blog" class="footer-link">Blog</a>
-                <a href="https://emuski.com/services" class="footer-link">Services</a>
-                <a href="https://emuski.com/about" class="footer-link">About</a>
-                <a href="https://emuski.com/contact" class="footer-link">Contact</a>
+                <a href="https://EMUSKI.com/blog" class="footer-link">Blog</a>
+                <a href="https://EMUSKI.com/services" class="footer-link">Services</a>
+                <a href="https://EMUSKI.com/about" class="footer-link">About</a>
+                <a href="https://EMUSKI.com/contact" class="footer-link">Contact</a>
             </div>
             
             <p style="margin: 10px 0;">
@@ -276,9 +276,9 @@ export const generateDailyNewsletterHTML = (date: string, featuredArticle: any, 
             
             <div class="unsubscribe">
                 You received this email because you subscribed to EMUSKI insights.<br>
-                <a href="https://emuski.com/unsubscribe?email={{email}}">Unsubscribe</a> | 
-                <a href="https://emuski.com/preferences?email={{email}}">Update Preferences</a> | 
-                <a href="https://emuski.com/privacy">Privacy Policy</a>
+                <a href="https://EMUSKI.com/unsubscribe?email={{email}}">Unsubscribe</a> | 
+                <a href="https://EMUSKI.com/preferences?email={{email}}">Update Preferences</a> | 
+                <a href="https://EMUSKI.com/privacy">Privacy Policy</a>
             </div>
         </div>
     </div>
@@ -440,17 +440,17 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
                 <p style="color: #e6f9f9; margin-bottom: 25px;">
                     Explore our latest insights and discover how EMUSKI can transform your manufacturing operations.
                 </p>
-                <a href="https://emuski.com/blog" class="cta-button">Read Latest Insights</a>
-                <a href="https://emuski.com/services" class="cta-button">Explore Services</a>
+                <a href="https://EMUSKI.com/blog" class="cta-button">Read Latest Insights</a>
+                <a href="https://EMUSKI.com/services" class="cta-button">Explore Services</a>
             </div>
 
             <div style="text-align: center; margin: 30px 0; color: #718096;">
                 <p>Questions? Need help? Simply reply to this email and our team will assist you.</p>
                 <p><strong>Follow us on social media for even more insights:</strong></p>
                 <div style="margin-top: 15px;">
-                    <a href="https://linkedin.com/company/emuski" style="color: #4fd3d4; margin: 0 10px;">LinkedIn</a>
-                    <a href="https://twitter.com/emuski" style="color: #4fd3d4; margin: 0 10px;">Twitter</a>
-                    <a href="https://youtube.com/emuski" style="color: #4fd3d4; margin: 0 10px;">YouTube</a>
+                    <a href="https://linkedin.com/company/EMUSKI" style="color: #4fd3d4; margin: 0 10px;">LinkedIn</a>
+                    <a href="https://twitter.com/EMUSKI" style="color: #4fd3d4; margin: 0 10px;">Twitter</a>
+                    <a href="https://youtube.com/EMUSKI" style="color: #4fd3d4; margin: 0 10px;">YouTube</a>
                 </div>
             </div>
         </div>
@@ -462,8 +462,8 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
                 Your Partner in Manufacturing Excellence
             </p>
             <div style="margin-top: 20px; font-size: 12px;">
-                <a href="https://emuski.com/unsubscribe?email=${subscriberEmail}" style="color: #a0aec0;">Unsubscribe</a> | 
-                <a href="https://emuski.com/privacy" style="color: #a0aec0;">Privacy Policy</a>
+                <a href="https://EMUSKI.com/unsubscribe?email=${subscriberEmail}" style="color: #a0aec0;">Unsubscribe</a> | 
+                <a href="https://EMUSKI.com/privacy" style="color: #a0aec0;">Privacy Policy</a>
             </div>
         </div>
     </div>

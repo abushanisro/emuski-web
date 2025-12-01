@@ -36,6 +36,7 @@ const servicesDropdown = {
 
 const navigationConfig = {
   leftMenu: [
+    { name: "Next-GenAI", path: "/solutions/ai" },
     { name: "Industries", path: "/industries" },
     { name: "Blog", path: "/blog" }
   ],
@@ -54,7 +55,8 @@ const navigationConfig = {
       title: "Services",
       items: [
         { name: "Manufacturing Services", path: "/manufacturing-services" },
-        { name: "Precision Engineering", path: "/precision-engineering" }
+        { name: "Precision Engineering", path: "/precision-engineering" },
+        { name: "Next-GenAI", path: "/solutions/ai" }
       ]
     },
     {
@@ -82,7 +84,8 @@ const routeToPageName: Record<string, string> = {
   "/industries": "Industries",
   "/blog": "Blog",
   "/gallery": "Gallery",
-  "/contact": "Contact"
+  "/contact": "Contact",
+  "/solutions/ai": "Next-GenAI"
 };
 
 export const Navbar = () => {

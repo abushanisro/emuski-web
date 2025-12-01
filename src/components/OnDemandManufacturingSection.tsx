@@ -9,7 +9,7 @@ export function OnDemandManufacturingSection() {
           Flexible Production for a Changing World
         </p>
         <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-          Modern supply chains demand adaptability. OEMs face constant pressure to respond to evolving markets, fluctuating demand, and unexpected disruptions. EMuski’s On-Demand Manufacturing—also called Agile Manufacturing—is designed to provide the flexibility and scalability OEMs need to stay ahead.
+          Modern supply chains demand adaptability. OEMs face constant pressure to respond to evolving markets, fluctuating demand, and unexpected disruptions. EMUSKI’s On-Demand Manufacturing—also called Agile Manufacturing—is designed to provide the flexibility and scalability OEMs need to stay ahead.
         </p>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
           Leveraging our NPD Center with in-house machines, expert teams, and digital-enabled processes, we deliver manufacturing solutions that adapt to changing volumes, product variations, and market timelines—without compromising on quality or precision.
@@ -73,9 +73,9 @@ export function OnDemandManufacturingSection() {
         </div>
       </div>
       <div className="text-center max-w-4xl mx-auto mt-16">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMuski Advantage</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-4">The EMUSKI Advantage</h3>
         <p className="text-muted-foreground max-w-3xl mx-auto">
-          Our approach goes beyond traditional manufacturing outsourcing. EMuski combines engineering knowledge, digital process intelligence, and in-house resources to deliver production that is:
+          Our approach goes beyond traditional manufacturing outsourcing. EMUSKI combines engineering knowledge, digital process intelligence, and in-house resources to deliver production that is:
         </p>
         <ul className="mt-4 space-y-2 text-muted-foreground text-left max-w-md mx-auto">
             <li className="flex items-start">
@@ -92,7 +92,7 @@ export function OnDemandManufacturingSection() {
             </li>
         </ul>
         <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-          This balance of flexibility and reliability makes EMuski a true partner in helping OEMs de-risk, scale, and thrive in a dynamic global market.
+          This balance of flexibility and reliability makes EMUSKI a true partner in helping OEMs de-risk, scale, and thrive in a dynamic global market.
         </p>
       </div>
     </div>

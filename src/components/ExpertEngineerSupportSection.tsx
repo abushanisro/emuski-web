@@ -10,7 +10,7 @@ export function ExpertEngineerSupportSection() {
             Extend Your Team. Accelerate Your Projects.
           </p>
           <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-            OEMs often need additional capacity or specialized expertise to keep projects on track and moving at speed. EMuski provides expert engineering professionals who integrate seamlessly with your teams, bringing the technical depth, problem-solving skills, and market intelligence needed for success.
+            OEMs often need additional capacity or specialized expertise to keep projects on track and moving at speed. EMUSKI provides expert engineering professionals who integrate seamlessly with your teams, bringing the technical depth, problem-solving skills, and market intelligence needed for success.
           </p>
         </div>
 
@@ -18,7 +18,7 @@ export function ExpertEngineerSupportSection() {
           <div>
             <h3 className="text-2xl font-semibold text-foreground text-center mb-4">Extending Your Team</h3>
             <p className="text-muted-foreground">
-              Skip the delays of lengthy recruitment cycles. With EMuski, OEMs gain immediate access to skilled engineers who act as an extension of your in-house team. Whether it’s should-costing, VAVE, supplier evaluation, or manufacturing support, our experts strengthen execution and drive results.
+              Skip the delays of lengthy recruitment cycles. With EMUSKI, OEMs gain immediate access to skilled engineers who act as an extension of your in-house team. Whether it’s should-costing, VAVE, supplier evaluation, or manufacturing support, our experts strengthen execution and drive results.
             </p>
           </div>
           <div>
@@ -41,15 +41,15 @@ export function ExpertEngineerSupportSection() {
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-foreground text-center mb-4">Why EMuski?</h3>
-            <p className="text-muted-foreground mb-4">With EMuski’s Expert Engineer Support, OEMs gain:</p>
+            <h3 className="text-2xl font-semibold text-foreground text-center mb-4">Why EMUSKI?</h3>
+            <p className="text-muted-foreground mb-4">With EMUSKI’s Expert Engineer Support, OEMs gain:</p>
             <ul className="list-disc list-inside space-y-2 pl-4 text-muted-foreground">
               <li>Flexibility to scale resources when needed</li>
               <li>Speed to accelerate project timelines</li>
               <li>Expertise that reduces risks and strengthens competitiveness</li>
             </ul>
             <p className="mt-4 text-muted-foreground">
-              When you partner with EMuski, you don’t just add engineers—you add execution power and market advantage.
+              When you partner with EMUSKI, you don’t just add engineers—you add execution power and market advantage.
             </p>
           </div>
         </div>

@@ -48,9 +48,9 @@ const serviceItems = [
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
     link: "/manufacturing-services"
   },
-  // Next-Gen AI Services
+  // Next-GenAI Services
   {
-    category: "Next-Gen AI",
+    category: "Next-GenAI",
     title: "Mithran AI Platform",
     description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization delivering measurable results for OEMs.",
     image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
@@ -91,7 +91,7 @@ const quickLineupServices = [
   },
   {
     title: "Mithran AI Platform",
-    category: "Next-Gen AI",
+    category: "Next-GenAI",
     link: "/solutions/ai"
   }
 ];
