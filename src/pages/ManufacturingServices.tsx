@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
 import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
-import { SuccessStoriesSection } from "../components/SuccessStoriesSection";
+
 
 
 
@@ -402,7 +402,7 @@ export default function ManufacturingServices() {
 
       <ManufacturingServicesTabs />
 
-      <SuccessStoriesSection />
+      
 
       {/* Technical Capabilities Section */}
       <TechnicalSpecsSection focus="capabilities" compact={true} showTitle={true} />

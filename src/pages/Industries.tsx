@@ -38,7 +38,7 @@ const Industries = () => {
             <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
           </div>
           
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight" style={{color: 'rgb(18, 26, 33)'}}>
                 Precision Manufacturing for Critical Industries
@@ -56,7 +56,7 @@ const Industries = () => {
 
         {/* Industries Grid */}
         <section className="py-20 bg-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">
                 Critical Industries We Serve
@@ -105,7 +105,7 @@ const Industries = () => {
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
           </div>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <span className="text-white/80 text-sm font-semibold tracking-wider uppercase">
                 Precision Manufacturing
