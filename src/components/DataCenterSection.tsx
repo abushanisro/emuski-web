@@ -137,9 +137,7 @@ export const DataCenterSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             {/* Left Side - Title and Description */}
             <div className="lg:col-span-1 space-y-4">
-              <h2 className="text-3xl font-bold text-foreground">
-                Our Services
-              </h2>
+              
               <p className="text-muted-foreground leading-relaxed">
                 Comprehensive engineering and manufacturing solutions designed to drive product value, cost optimization, and supply chain excellence through deep expertise and advanced technology.
               </p>
@@ -253,18 +251,7 @@ export const DataCenterSection = () => {
               </div>
             </div>
           </div>
-           {/* Mobile Services */}
-           <div className="lg:hidden mt-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">Our Services</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {serviceItems.map((item, index) => (
-                      <a key={index} href={item.link} className="bg-card p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-md font-bold text-foreground mb-1">{item.title}</h4>
-                          <p className="text-sm text-muted-foreground">{item.category}</p>
-                      </a>
-                  ))}
-              </div>
-            </div>
+           
         </div>
       </section>
   );
