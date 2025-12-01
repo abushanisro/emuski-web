@@ -8,7 +8,7 @@ import { RecommendedSection } from "@/components/RecommendedSection";
 import { TechnicalSpecsSection } from "@/components/TechnicalSpecsSection";
 import { Footer } from "@/components/Footer";
 import { FAQSection } from "@/components/FAQSection";
-import { MethodologySection } from "@/components/MethodologySection";
+import MethodologySection from "@/components/MethodologySection";
 
 const Index = () => {
   return (
