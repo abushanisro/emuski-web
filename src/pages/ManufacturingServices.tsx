@@ -11,6 +11,7 @@ import SectorsServedSection from "../components/SectorsServedSection";
 
 
 import { PartManufacturingServices } from "../components/PartManufacturingServices";
+import ManufacturingExcellenceSection from "../components/ManufacturingExcellenceSection";
 import { SolutionsOfferedSection } from "../components/SolutionsOfferedSection";
 import { Upload, X, FileText, AlertTriangle, Send } from "lucide-react";
 
@@ -396,6 +397,8 @@ export default function ManufacturingServices() {
       
 
       <PartManufacturingServices />
+
+      <ManufacturingExcellenceSection />
 
       <SolutionsOfferedSection />
 

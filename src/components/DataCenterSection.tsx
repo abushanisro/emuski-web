@@ -192,6 +192,26 @@ export const DataCenterSection = () => {
             </div>
 
             {/* Right Side - Horizontal Scroll */}
+            <div className="flex lg:hidden justify-end mb-4">
+                <div className="flex space-x-2">
+                  <Button
+                    onClick={scrollLeft}
+                    variant="outline"
+                    size="icon"
+                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    onClick={scrollRight}
+                    variant="outline"
+                    size="icon"
+                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
             <div className="lg:col-span-2">
               {/* Navigation Arrows */}
               <div className="hidden lg:flex justify-end mb-4">

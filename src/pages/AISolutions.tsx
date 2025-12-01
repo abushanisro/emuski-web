@@ -115,7 +115,8 @@ const AISolutions = () => {
             {/* Why It Matters Section */}
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Why It Matters</h2>
+                <h2 className="
+                 mb-6">Why It Matters</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Mithran is being built to:
                 </p>

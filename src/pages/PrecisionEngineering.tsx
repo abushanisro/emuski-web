@@ -9,7 +9,7 @@ import { CostReductionSection } from "../components/CostReductionSection";
 import { SupplierIdentificationSection } from "../components/SupplierIdentificationSection";
 import { BenefitsSection } from "../components/BenefitsSection";
 import { ToolsAndTechniquesSection } from "../components/ToolsAndTechniquesSection";
-import { SectorsServedSection } from "../components/SectorsServedSection";
+import SectorsServedSection from "../components/SectorsServedSection";
 import { StrategicSourcingSection } from "../components/StrategicSourcingSection";
 import { ExpertEngineerSupportSection } from "../components/ExpertEngineerSupportSection";
 import { TechnicalResourceDeploymentSection } from "../components/TechnicalResourceDeploymentSection";

@@ -85,21 +85,25 @@ export function SuccessStoriesSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Success Stories
-          </h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-4xl font-bold text-foreground">Our Success Stories</h2>
+          <div className="hidden sm:flex space-x-2">
+              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 border-border hover:bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left h-5 w-5"><path d="m15 18-6-6 6-6"></path></svg></button>
+              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 border-border hover:bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right h-5 w-5"><path d="m9 18 6-6-6-6"></path></svg></button>
+          </div>
+      </div>
+      <div className="text-center max-w-4xl mx-auto">
           <p className="text-xl text-muted-foreground">
-            Real Results. Expert Insights. Lasting Impact.
+              Real Results. Expert Insights. Lasting Impact.
           </p>
           <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-            At EMUSKI, we don’t just provide services—we deliver measurable outcomes. Our Success Stories showcase how OEMs have partnered with us to accelerate innovation, reduce costs, and strengthen competitiveness.
+              At EMUSKI, we don’t just provide services—we deliver measurable outcomes. Our Success Stories showcase how OEMs have partnered with us to accelerate innovation, reduce costs, and strengthen competitiveness.
           </p>
           <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-            Alongside, our Blogs bring you expert perspectives, industry trends, and actionable strategies to help your business stay ahead in a fast-changing manufacturing landscape.
+              Alongside, our Blogs bring you expert perspectives, industry trends, and actionable strategies to help your business stay ahead in a fast-changing manufacturing landscape.
           </p>
           <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-            Together, these stories and insights highlight what’s possible when OEMs collaborate with EMUSKI—achieving excellence in cost, quality, and speed.
+              Together, these stories and insights highlight what’s possible when OEMs collaborate with EMUSKI—achieving excellence in cost, quality, and speed.
           </p>
         </div>
 
