@@ -410,8 +410,7 @@ export default function ManufacturingServices() {
 
       <SectorsServedSection />
 
-      {/* Technical Capabilities Section */}
-      <TechnicalSpecsSection focus="capabilities" compact={true} showTitle={true} />
+      
 
       {/* Request Quote Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">

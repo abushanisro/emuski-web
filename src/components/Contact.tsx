@@ -30,16 +30,23 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    details: "enquiries@EMUSKI.com",
+    details: "enquiries@emuski.com",
     description: "Send us your inquiries and we'll respond within 24 hours.",
-    link: "mailto:enquiries@EMUSKI.com",
+    link: "mailto:enquiries@emuski.com",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
+    title: "Business Office",
     details: "126, RNS Plaza, Electronic City Phase 2, Bangalore",
-    description: "Find us at our state-of-the-art manufacturing facility.",
-    link: "https://maps.app.goo.gl/your-location",
+    description: "Visit our headquarters for business inquiries.",
+    link: "https://maps.google.com/maps?q=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100",
+  },
+  {
+    icon: Building,
+    title: "Manufacturing Facility",
+    details: "Ground floor, 5/541-1, Santhapuram road, 1st cross, Kamaraj nagar, Chinna elasagiri, Hosur, Krishnagiri district, Tamil Nadu-635126",
+    description: "Our state-of-the-art production facility in Hosur.",
+    link: "https://maps.google.com/maps?q=Ground+floor+5/541-1+Santhapuram+road+1st+cross+Kamaraj+nagar+Chinna+elasagiri+Hosur+Krishnagiri+district+Tamil+Nadu+635126",
   },
 ];
 
@@ -505,7 +512,18 @@ export const Contact = () => {
                 </div>
 
                 {/* Google Maps */}
-                <div className="mt-8">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps - Full Width Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="mt-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Find Us on Map</h3>
                   <div className="relative h-80 sm:h-96 rounded-lg overflow-hidden border-2 border-gray-200">
                     <iframe
@@ -531,27 +549,6 @@ export const Contact = () => {
                     </Button>
                   </div>
                 </div>
-
-                {/* Social Links */}
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Connect With Us</h3>
-                  <div className="flex flex-wrap gap-4">
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Linkedin className="h-4 w-4" />
-                      <span>LinkedIn</span>
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Twitter className="h-4 w-4" />
-                      <span>Twitter</span>
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Globe className="h-4 w-4" />
-                      <span>Website</span>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -578,9 +575,7 @@ export const Contact = () => {
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors duration-300">{method.title}</h3>
                     <p className="font-semibold text-emuski-teal-darker mb-2 text-sm sm:text-base group-hover:text-emuski-teal transition-colors duration-300">{method.details}</p>
                     <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">{method.description}</p>
-                    <Button variant="outline" size="sm" className="group-hover:border-emuski-teal group-hover:text-emuski-teal-darker group-hover:bg-white transition-all duration-300">
-                      {method.action}
-                    </Button>
+                    
                   </Card>
                 );
               })}

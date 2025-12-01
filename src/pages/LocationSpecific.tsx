@@ -314,7 +314,7 @@ export const LocationSpecific: React.FC = () => {
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 text-blue-600 mr-3" />
-                      <span>enquiries@EMUSKI.com</span>
+                      <span>enquiries@emuski.com</span>
                     </div>
                   </div>
                 </div>
