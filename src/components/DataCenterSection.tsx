@@ -157,7 +157,7 @@ export const DataCenterSection = () => {
               
               {showQuickLineup && (
                 <div 
-                  className="mt-3 space-y-1"
+                  className="mt-3 space-y-1 bg-white p-3 rounded-lg shadow-lg border border-gray-200"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -165,20 +165,28 @@ export const DataCenterSection = () => {
                     <a 
                       key={index}
                       href={service.link} 
-                      className="group flex items-center py-1 px-2 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal-darker hover:bg-emuski-teal/5 transition-all duration-200"
+                      className="group flex flex-col py-2 px-3 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal-darker hover:bg-emuski-teal/5 transition-all duration-200"
                     >
-                      <span className="w-1 h-1 bg-gray-400 group-hover:bg-emuski-teal-darker rounded-full mr-3 transition-colors"></span>
-                      <span className="flex-1 flex items-center">
-                        {service.title}
-                        {service.title === "Mithran AI Platform" && (
-                          <span className="ml-2 px-1.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-600 rounded border border-blue-200">
-                            BETA
-                          </span>
-                        )}
-                      </span>
-                      <svg className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" />
-                      </svg>
+                      <div className="flex items-center">
+                        <span className="w-1 h-1 bg-gray-400 group-hover:bg-emuski-teal-darker rounded-full mr-3 transition-colors"></span>
+                        <span className="flex-1 flex items-center font-medium">
+                          {service.title}
+                          {service.title === "Mithran AI Platform" && (
+                            <span className="ml-2 px-1.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-600 rounded border border-blue-200">
+                              BETA
+                            </span>
+                          )}
+                        </span>
+                        <svg className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" />
+                        </svg>
+                      </div>
+                      {/* Find the corresponding service item to get the description */}
+                      {serviceItems.find(item => item.title === service.title)?.description && (
+                        <p className="text-xs text-gray-500 mt-1 ml-6">
+                          {serviceItems.find(item => item.title === service.title)?.description}
+                        </p>
+                      )}
                     </a>
                   ))}
                 </div>
