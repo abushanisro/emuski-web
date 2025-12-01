@@ -7,7 +7,7 @@ const growthStories = [
     label: "Founder & CEO @EMUSKI",
     category: "Leadership",
     description: "\"Striving for Value-Driven Empowerment \"",
-    image: "/founder.jpg",
+    image: "/assets/team/founder.jpg",
     linkedinUrl: "https://www.linkedin.com/in/singaravelan-srinivasan-emuski/",
     isFounder: true,
     location: "Bengaluru, Karnataka, India",

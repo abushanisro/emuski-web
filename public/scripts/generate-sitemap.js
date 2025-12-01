@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch'); // npm install node-fetch
 
-const BASE_URL = 'https://eximpe.com';
+const BASE_URL = 'https://emuski.com';
 const today = new Date().toISOString().split('T')[0];
 
 const GHOST_API_URL = process.env.NEXT_PUBLIC_GHOST_API_URL;

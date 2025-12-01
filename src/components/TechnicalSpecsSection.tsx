@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Activity, Target, Zap, TrendingUp, Settings, Award } from 'lucide-react';
+import { ChevronDown, Activity, Zap, Settings } from 'lucide-react';
 import { 
   PERFORMANCE_METRICS, 
   CNC_MACHINING_SPECS, 
@@ -33,20 +33,20 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
   const MetricsGrid = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {/* Business Metrics */}
-      <div className="bg-gradient-to-br from-emuski-teal to-emuski-teal-dark p-6 rounded-lg text-white">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <Target className="h-8 w-8 mr-3" />
-          <h3 className="text-lg font-bold">Business Impact</h3>
+          <img src="/assets/infograpic/bussiness.svg" alt="Business Impact" className="h-8 w-8 mr-3" />
+          <h3 className="text-lg font-bold text-gray-900">Business Impact</h3>
         </div>
         <div className="space-y-3">
           {PERFORMANCE_METRICS.businessMetrics.map((metric, idx) => (
             <div key={idx} className="flex justify-between items-center">
               <div>
-                <p className="text-sm opacity-90">{metric.metric}</p>
-                <p className="text-xs opacity-75">{metric.period}</p>
+                <p className="text-sm text-gray-700">{metric.metric}</p>
+                <p className="text-xs text-gray-500">{metric.period}</p>
               </div>
               <div className="text-right">
-                <p className="text-xl font-bold">{metric.value}{metric.unit}</p>
+                <p className="text-xl font-bold text-gray-900">{metric.value}{metric.unit}</p>
               </div>
             </div>
           ))}
@@ -56,7 +56,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Quality Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <Award className="h-8 w-8 mr-3 text-green-600" />
+          <img src="/assets/infograpic/quality.svg" alt="Quality Performance" className="h-8 w-8 mr-3" />
           <h3 className="text-lg font-bold text-gray-900">Quality Performance</h3>
         </div>
         <div className="space-y-3">
@@ -77,7 +77,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Delivery Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <TrendingUp className="h-8 w-8 mr-3 text-blue-600" />
+          <img src="/assets/infograpic/delivery.svg" alt="Delivery Excellence" className="h-8 w-8 mr-3" />
           <h3 className="text-lg font-bold text-gray-900">Delivery Excellence</h3>
         </div>
         <div className="space-y-3">
@@ -98,7 +98,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Efficiency Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <Activity className="h-8 w-8 mr-3 text-purple-600" />
+          <img src="/assets/infograpic/operations.svg" alt="Operational Efficiency" className="h-8 w-8 mr-3" />
           <h3 className="text-lg font-bold text-gray-900">Operational Efficiency</h3>
         </div>
         <div className="space-y-3">

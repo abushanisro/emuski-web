@@ -172,6 +172,7 @@ All colors MUST be HSL.
         @apply bg-background text-foreground font-inter;
         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
         font-variation-settings: normal;
+        overflow-x: hidden;
     }
 
     /* Enhanced typography with Inter Variable */
@@ -268,4 +269,39 @@ All colors MUST be HSL.
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.5s ease-in-out;
+}
+
+.stagger-fade-in > * {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
 }

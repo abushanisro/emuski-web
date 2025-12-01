@@ -14,15 +14,6 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "/assets/hero/engineering.svg",
-    mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
-    category: "Engineering Innovation",
-    title: "Mastering Costs, Engineering Success",
-    shortTitle: "Engineering Services",
-    description: "Driving Value Engineering and maximizing cost efficiency through precision design, advanced materials science and cutting-edge manufacturing processes",
-    link: "/precision-engineering",
-  },
-  {
     image: "/assets/hero/manufaturing.svg",
     mobileImage: "/assets/hero-mobile/manufaturingmobile.svg",
     category: "Manufacturing Excellence",
@@ -30,6 +21,15 @@ const slides: Slide[] = [
     shortTitle: "Manufacturing Services",
     description: "Your One-Stop Strategic Companion for AI-Driven Manufacturing Excellence. At EMuski, where cost and quality meets profitability - delivering straight to your door",
     link: "/manufacturing-services",
+  },
+  {
+    image: "/assets/hero/engineering.svg",
+    mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
+    category: "Engineering Innovation",
+    title: "Mastering Costs, Engineering Success",
+    shortTitle: "Engineering Services",
+    description: "Driving Value Engineering and maximizing cost efficiency through precision design, advanced materials science and cutting-edge manufacturing processes",
+    link: "/precision-engineering",
   },
   {
     image: "/assets/hero/genai.svg",
@@ -169,15 +169,15 @@ export const HeroSection = () => {
 
             {/* Desktop Content */}
             <div className="relative z-20 h-full flex items-center justify-start px-12 md:px-16 lg:px-20 pt-20 pb-8">
-              <div className="w-full max-w-2xl lg:max-w-3xl ml-4 lg:ml-8">
+              <div className="w-full max-w-lg lg:max-w-xl ml-4 lg:ml-8">
                 <div className="text-left space-y-6 lg:space-y-8 animate-fade-in">
                   <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">
                     {slide.category}
                   </span>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight drop-shadow-2xl">
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-2xl">
                     {slide.title}
                   </h1>
-                  <p className="text-base md:text-lg lg:text-xl text-gray-100 leading-relaxed drop-shadow-lg">
+                  <p className="text-base text-gray-100 leading-relaxed drop-shadow-lg">
                     {slide.description}
                   </p>
                   <div className="pt-8">
@@ -229,10 +229,10 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${0 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Engineering Innovation
+                    Manufacturing Excellence
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${0 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
-                    Cost Precision
+                   On-Demand
                   </div>
                 </div>
               </button>
@@ -243,10 +243,10 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${1 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Manufacturing Excellence
+                    Engineering Innovation
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${1 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
-                   On-Demand
+                    Cost Precision
                   </div>
                 </div>
               </button>
@@ -297,10 +297,10 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1 pt-2">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${0 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Engineering Innovation
+                    Manufacturing Excellence
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${0 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
-                    Cost Precision
+                    On-Demand
                   </div>
                 </div>
               </button>
@@ -311,10 +311,10 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1 pt-2">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${1 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    Manufacturing Excellence
+                    Engineering Innovation
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${1 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
-                    On-Demand
+                    Cost Precision
                   </div>
                 </div>
               </button>

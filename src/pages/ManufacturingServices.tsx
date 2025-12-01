@@ -3,54 +3,16 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
 import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
+import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
+import { SuccessStoriesSection } from "../components/SuccessStoriesSection";
+
+
+
+import { PartManufacturingServices } from "../components/PartManufacturingServices";
+import { SolutionsOfferedSection } from "../components/SolutionsOfferedSection";
 import { Upload, X, FileText, AlertTriangle, Send } from "lucide-react";
 
-const services = [
-  {
-    title: "OEM Manufacturing",
-    description: "Complete manufacturing solutions from concept to production, ensuring quality and precision at every step.",
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
-    features: [
-      "End-to-end manufacturing process",
-      "Quality control and assurance",
-      "Scalable production capabilities",
-      "Custom specifications support"
-    ]
-  },
-  {
-    title: "Custom Manufacturing",
-    description: "Tailored manufacturing services meeting your specific requirements and quality standards.",
-    image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-    features: [
-      "Custom design solutions",
-      "Flexible production volumes",
-      "Specialized manufacturing processes",
-      "Technical consultation"
-    ]
-  },
-  {
-    title: "Rapid Prototyping",
-    description: "Fast and efficient prototyping services to bring your designs to life quickly.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    features: [
-      "Quick turnaround times",
-      "Multiple material options",
-      "Iterative design support",
-      "Cost-effective solutions"
-    ]
-  },
-  {
-    title: "Production Scaling",
-    description: "Seamless scaling from prototype to full production with optimized processes.",
-    image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
-    features: [
-      "Production optimization",
-      "Supply chain management",
-      "Volume pricing advantages",
-      "Quality consistency"
-    ]
-  }
-];
+
 
 export default function ManufacturingServices() {
   // SEO Meta Tags and Structured Data
@@ -398,93 +360,49 @@ export default function ManufacturingServices() {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section - SEO Optimized */}
-      <section className="relative bg-industrial-dark text-white overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24" itemScope itemType="https://schema.org/Organization">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      {/* Hero Section */}
+      <section className="relative bg-gray-900 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/assets/hero/manufaturing.svg" alt="Manufacturing background" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6 mt-8">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight" itemProp="name">
-              Leading OEM Manufacturing Services in Bangalore | Precision Engineering Solutions
+        <div className="container mx-auto px-6 relative z-10 py-32">
+          <div className="max-w-3xl space-y-6 animate-slide-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              Advanced Manufacturing Services
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto" itemProp="description">
-              EMUSKI delivers world-class OEM manufacturing solutions, precision engineering, rapid prototyping, and AI-powered production systems in Bangalore, India. Expert design-for-manufacturing services for automotive, aerospace, medical devices, and electronics industries. ISO certified manufacturing partner with 15+ years experience serving global clients.
+            <p className="text-xl text-gray-300 leading-relaxed" style={{ animationDelay: '0.2s' }}>
+              From rapid prototyping and on-demand production to full-scale OEM manufacturing, we provide agile, precise, and scalable solutions to bring your products to market faster.
             </p>
-            <div className="h-1 w-24 bg-emuski-teal-dark rounded-full mx-auto"></div>
-            
-            {/* Key Benefits for AEO */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-bold text-emuski-teal-darker">15+ Years Experience</h3>
-                <p className="text-sm text-gray-300">Trusted manufacturing partner for industry leaders</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-bold text-emuski-teal-darker">ISO Certified Quality</h3>
-                <p className="text-sm text-gray-300">International quality standards and certifications</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="font-bold text-emuski-teal-darker">AI-Powered Manufacturing</h3>
-                <p className="text-sm text-gray-300">Industry 4.0 solutions and smart manufacturing</p>
-              </div>
+            <div className="flex space-x-4 pt-4" style={{ animationDelay: '0.4s' }}>
+              <button className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors">
+                Get a Quote
+              </button>
+              <button className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                Explore Services
+              </button>
             </div>
           </div>
         </div>
       </section>
 
+      
+
+      
+
+      
+
+      <PartManufacturingServices />
+
+      <SolutionsOfferedSection />
+
       {/* Technical Performance Metrics */}
       <TechnicalSpecsSection focus="metrics" compact={true} />
 
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Manufacturing Services Portfolio
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Precision-engineered solutions with documented capabilities, certified processes, and measurable performance metrics
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 group">
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-emuski-teal-dark transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-emuski-teal-dark rounded-full"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <button className="text-emuski-teal-darker hover:text-emuski-teal-dark font-semibold transition-colors">
-                    Learn More →
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ManufacturingServicesTabs />
+
+      <SuccessStoriesSection />
 
       {/* Technical Capabilities Section */}
       <TechnicalSpecsSection focus="capabilities" compact={true} showTitle={true} />
