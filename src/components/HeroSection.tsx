@@ -122,8 +122,8 @@ export const HeroSection = () => {
             </div>
             
             {/* Text Content - positioned at top */}
-            <div className="relative z-20 h-full flex flex-col justify-start px-4 pt-16 pb-8">
-              <div className="space-y-3 animate-fade-in text-center">
+            <div className="relative z-20 h-full flex flex-col justify-start pt-16 pb-8">
+              <div className="space-y-3 animate-fade-in text-center px-4">
                 <span className="inline-block text-emuski-teal text-xs font-bold tracking-wider uppercase">
                   {slide.category}
                 </span>
@@ -198,9 +198,9 @@ export const HeroSection = () => {
 
       {/* Bottom Navigation - Fixed and Always Visible */}
       <div className="absolute bottom-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 md:px-8 lg:px-12">
           {/* Mobile Navigation - Desktop Style */}
-          <div className="sm:hidden">
+          <div className="sm:hidden px-4">
             {/* Progress bar track */}
             <div className="relative h-1 bg-white/20 overflow-hidden">
               {/* Background segments */}
