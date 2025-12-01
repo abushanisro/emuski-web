@@ -17,7 +17,11 @@ import BlogPost from "./pages/BlogPost";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import SubscriberDashboard from "./pages/SubscriberDashboard";
-import { WhatsAppChatbot } from "./components/WhatsAppChatbot";
+import PrivacyPolicy from "./pages/privacy-policy";
+import TermsAndConditions from "./pages/terms-and-conditions";
+import CookiePolicy from "./pages/cookie-policy";
+import Newsroom from "./pages/newsroom";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 // ScrollToTop component - ensures every page loads at the top
 const ScrollToTop = () => {
@@ -74,12 +78,17 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/newsroom" element={<Newsroom />} />
+          <Route path="/newsroom/:slug" element={<Newsroom />} />
           {/* FAQ content is now integrated into individual pages */}
           <Route path="/admin/subscribers" element={<SubscriberDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <WhatsAppChatbot />
+        <WhatsAppWidget phoneNumber="918344474556" />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

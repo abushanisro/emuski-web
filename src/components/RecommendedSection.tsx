@@ -2,36 +2,37 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { Link } from "react-router-dom";
 
 const recommendations = [
   {
-    title: "Automotive Excellence Partnership",
-    description: "EMUSKI delivered 500,000 precision brake components for a Tier-1 automotive supplier, achieving zero defects across 18 months of production",
+    title: "500K Parts. Zero Defects. 18 Months.",
+    description: "Tier-1 automotive supplier partnership delivering precision brake components with flawless quality.",
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg"
   },
   {
-    title: "Aerospace Innovation Story",
-    description: "Our 5-axis CNC capabilities enabled a aerospace client to reduce component weight by 35% while improving structural integrity for next-gen aircraft",
+    title: "35% Lighter. Stronger Structure.",
+    description: "5-axis CNC precision reducing aircraft component weight while boosting structural integrity.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg"
   },
   {
-    title: "Medical Device Success",
-    description: "EMUSKI's cleanroom assembly operations helped a medical device startup achieve FDA approval 4 months ahead of schedule, accelerating life-saving technology to market",
+    title: "FDA Approved 4 Months Early.",
+    description: "Cleanroom assembly accelerating life-saving medical devices to market faster.",
     image: "/assets/componets/Matica-Photos2/DSC_1006.JPG"
   },
   {
-    title: "Defense Partnership Achievement",
-    description: "Our quality systems exceeded military specifications, earning EMUSKI a 5-year partnership for critical defense components valued at $12M annually",
+    title: "$12M Defense Contract. 5 Years.",
+    description: "Military-spec quality systems securing critical defense component partnership.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg"
   },
   {
-    title: "Smart Factory Implementation",
-    description: "Our custom fixture design reduced cycle time by 45% for an electronics manufacturer, increasing annual capacity from 800K to 1.2M units with same workforce",
+    title: "45% Faster. 50% More Capacity.",
+    description: "Custom fixtures transforming electronics production from 800K to 1.2M units annually.",
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg"
   },
   {
-    title: "R&D Partnership Success",
-    description: "EMUSKI's rapid prototyping enabled a Fortune 500 client to test 15 design iterations in 3 weeks, accelerating product launch by 6 months in competitive market",
+    title: "15 Iterations. 3 Weeks. 6 Months Saved.",
+    description: "Rapid prototyping accelerating Fortune 500 product launches in competitive markets.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
   }
 ];
@@ -54,14 +55,14 @@ export const RecommendedSection = () => {
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">Our Manufacturing Excellence</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">Recommended For You</h2>
           
-          <div className="hidden sm:flex space-x-2">
+          <div className="flex space-x-2">
             <Button
               variant="outline"
               size="icon"
               onClick={() => scroll("left")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary"
+              className="bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 text-white border-emuski-teal-darker"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -69,7 +70,7 @@ export const RecommendedSection = () => {
               variant="outline"
               size="icon"
               onClick={() => scroll("right")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary"
+              className="bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 text-white border-emuski-teal-darker"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
@@ -81,10 +82,10 @@ export const RecommendedSection = () => {
           className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
         >
           {recommendations.map((item, index) => (
-            <Card
-              key={index}
-              className="flex-shrink-0 w-72 sm:w-80 group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
-            >
+            <Link key={index} to="/gallery">
+              <Card
+                className="flex-shrink-0 w-72 sm:w-80 h-[400px] group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              >
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={item.image}
@@ -94,7 +95,7 @@ export const RecommendedSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-[208px]">
                 <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-emuski-teal-dark transition-colors">
                   {item.title}
                 </h3>
@@ -102,7 +103,8 @@ export const RecommendedSection = () => {
                   {item.description}
                 </p>
               </div>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

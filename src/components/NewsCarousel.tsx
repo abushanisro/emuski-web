@@ -2,60 +2,57 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { Link } from "react-router-dom";
 
-const clientLogos = [
-  { name: "TechCorp", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=TechCorp" },
-  { name: "InnovateInc", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=InnovateInc" },
-  { name: "GlobalMfg", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=GlobalMfg" },
-  { name: "AutoTech", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=AutoTech" },
-  { name: "MediDevice", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=MediDevice" },
-  { name: "AeroSpace", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=AeroSpace" },
-  { name: "EnergyCorp", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=EnergyCorp" },
-  { name: "DefenseTech", logo: "https://via.placeholder.com/120x60/FFFFFF/000000?text=DefenseTech" },
-];
+const clientLogos = Array.from({ length: 16 }, (_, i) => ({
+  name: `Partner ${i + 1}`,
+  logo: `/assets/Partners/${i + 1}.svg`
+}));
+
+
 
 const successStories = [
   {
     category: "Automotive Excellence",
-    title: "Tier-1 Automotive Supplier Achievement",
-    description: "EMUSKI became a trusted Tier-1 supplier for brake system components, delivering 2 million parts annually with 99.9% on-time delivery to global automotive giants.",
+    title: "2M Parts. Zero Compromises. 99.9% On-Time.",
+    description: "From prototype to Tier-1 supplier status—delivering 2 million brake components annually to global automotive leaders. Your production deadlines met, your quality standards exceeded.",
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-    link: "/gallery"
+    link: "/industries#automotive"
   },
   {
     category: "Precision Engineering",
-    title: "October 2025 Production Excellence Initiative",
-    description: "EMUSKI launched an ambitious manufacturing excellence initiative, partnering with leading automotive OEMs to deliver critical components with unprecedented precision and speed.",
+    title: "When Precision Meets Speed: 25% Faster Production",
+    description: "Critical transmission components delivered with 99.8% quality standards while slashing production time by 25%. Your competitive edge, engineered to perfection.",
     image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
-    link: "/gallery"
+    link: "/precision-engineering#services-section"
   },
   {
     category: "Smart Manufacturing",
-    title: "Custom Fixture Implementation Success",
-    description: "Our custom fixture design reduced assembly time by 40% for an electronics manufacturer, enabling them to meet increased demand during peak season while maintaining quality standards.",
+    title: "40% Faster Assembly. Same Quality. Higher Profits.",
+    description: "Custom fixture design that transformed an electronics manufacturer's peak season from bottleneck to breakthrough. Meet demand surges without sacrificing standards.",
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
-    link: "/gallery"
+    link: "/manufacturing-services#custom"
   },
   {
     category: "Production Systems",
-    title: "Matica Production Line Excellence",
-    description: "Professional production line setup showcasing our advanced assembly stations, quality assurance processes, and manufacturing workflow optimization for operational excellence.",
+    title: "Scale Smart: 100 to 10,000 Units Without Breaking Quality",
+    description: "Zero-defect quality maintained while scaling production 100x. 30% cost reduction per unit. Your growth ambitions, our manufacturing excellence.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
-    link: "/gallery"
+    link: "/manufacturing-services#scaling"
   },
   {
     category: "CNC Machining",
-    title: "High-Precision Component Manufacturing",
-    description: "Delivered complex geometries with tight tolerances and exceptional surface finishes for automotive OEMs, demonstrating our advanced CNC machining capabilities.",
+    title: "Complex Geometries. Tight Tolerances. Flawless Finishes.",
+    description: "Advanced 5-axis CNC machining delivering aerospace-grade precision for automotive OEMs. When failure isn't an option, choose manufacturing that delivers.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-    link: "/gallery"
+    link: "/precision-engineering#cnc"
   },
   {
     category: "Client Partnership",
-    title: "Aerospace Innovation Partnership Success",
-    description: "Strategic partnership with Forus showcasing EMUSKI's rapid prototyping and engineering validation capabilities, enabling accelerated product development cycles for our B2B manufacturing partners.",
+    title: "6 Months Ahead of Schedule. Market Leadership Secured.",
+    description: "Rapid prototyping and engineering validation that accelerated product launch by half a year. Your innovation, our speed—together, unstoppable.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    link: "/gallery"
+    link: "/industries#aerospace"
   }
 ];
 
@@ -79,19 +76,19 @@ export const NewsCarousel = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="relative z-10">
           <div className="text-center mb-8">
             <h2 className="text-lg font-semibold text-white/80 mb-4">Trusted by Industry Leaders</h2>
           </div>
           
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden w-full">
             <div className="flex animate-scroll space-x-12 items-center">
-              {[...clientLogos, ...clientLogos].map((client, index) => (
+              {clientLogos.concat(clientLogos).map((client, index) => (
                 <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="h-8 sm:h-12 w-auto object-contain filter brightness-0 invert"
+                    className="h-12 sm:h-16 w-auto object-contain filter brightness-0 invert"
                   />
                 </div>
               ))}
@@ -123,14 +120,14 @@ export const NewsCarousel = () => {
         
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Our Success Stories</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Real Results. Real Impact. Real ROI.</h2>
           
-          <div className="hidden sm:flex space-x-2">
+          <div className="flex space-x-2">
             <Button
               variant="outline"
               size="icon"
               onClick={() => scroll("left")}
-              className="border-border hover:bg-secondary"
+              className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -138,7 +135,7 @@ export const NewsCarousel = () => {
               variant="outline"
               size="icon"
               onClick={() => scroll("right")}
-              className="border-border hover:bg-secondary"
+              className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
@@ -154,7 +151,7 @@ export const NewsCarousel = () => {
               key={index}
               className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <a href={item.link} className="block h-full hover:no-underline">
+              <Link to={item.link} className="block h-full hover:no-underline">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={item.image}
@@ -178,7 +175,7 @@ export const NewsCarousel = () => {
                     {item.description}
                   </p>
                 </div>
-              </a>
+              </Link>
             </Card>
           ))}
         </div>

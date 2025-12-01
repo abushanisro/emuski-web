@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const serviceItems = [
   // Engineering Services
@@ -10,28 +11,28 @@ const serviceItems = [
     title: "CNC Machining Excellence",
     description: "High-precision CNC machining capabilities delivering complex geometries with tight tolerances for automotive and aerospace applications.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-    link: "/precision-engineering"
+    link: "/precision-engineering#cnc"
   },
   {
     category: "Engineering Services",
     title: "Component Design & Validation",
     description: "Complete product development lifecycle from concept to production, including rapid prototyping and validation services.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    link: "/precision-engineering"
+    link: "/precision-engineering#design"
   },
   {
     category: "Quality Assurance",
     title: "Quality Control Systems",
     description: "Advanced quality inspection and testing protocols ensuring every component meets exact specifications and industry standards.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
-    link: "/precision-engineering"
+    link: "/precision-engineering#quality"
   },
   {
     category: "Custom Solutions",
     title: "Fixture Design & Tooling",
     description: "Custom-designed fixtures and tooling solutions to optimize manufacturing processes and ensure consistent component quality.",
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#custom"
   },
   // Manufacturing Services
   {
@@ -39,14 +40,14 @@ const serviceItems = [
     title: "Production Line Excellence",
     description: "Professional production line setup and manufacturing excellence with advanced assembly stations and workflow optimization.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#scaling"
   },
   {
     category: "Manufacturing Services",
     title: "Precision Component Manufacturing",
     description: "High-precision manufactured components showcasing our CNC machining capabilities and partnership with automotive OEMs.",
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#oem"
   },
   // Next-GenAI Services
   {
@@ -54,7 +55,7 @@ const serviceItems = [
     title: "Mithran AI Platform",
     description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization delivering measurable results for OEMs.",
     image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
-    link: "/solutions/ai"
+    link: "/solutions/ai#mithran-overview"
   },
 ];
 
@@ -62,37 +63,37 @@ const quickLineupServices = [
   {
     title: "CNC Machining Excellence",
     category: "Precision Engineering",
-    link: "/precision-engineering"
+    link: "/precision-engineering#cnc"
   },
   {
     title: "Component Design & Validation", 
     category: "Engineering Services",
-    link: "/precision-engineering"
+    link: "/precision-engineering#design"
   },
   {
     title: "Quality Control Systems",
     category: "Quality Assurance", 
-    link: "/precision-engineering"
+    link: "/precision-engineering#quality"
   },
   {
     title: "Fixture Design & Tooling",
     category: "Custom Solutions",
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#custom"
   },
   {
     title: "Production Line Excellence",
     category: "Manufacturing Services",
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#scaling"
   },
   {
     title: "Precision Component Manufacturing",
     category: "Manufacturing Services", 
-    link: "/manufacturing-services"
+    link: "/manufacturing-services#oem"
   },
   {
     title: "Mithran AI Platform",
     category: "Next-GenAI",
-    link: "/solutions/ai"
+    link: "/solutions/ai#mithran-overview"
   }
 ];
 
@@ -160,9 +161,9 @@ export const DataCenterSection = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   {quickLineupServices.map((service, index) => (
-                    <a 
+                    <Link 
                       key={index}
-                      href={service.link} 
+                      to={service.link} 
                       className="group flex flex-col py-2 px-3 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal-darker hover:bg-emuski-teal/5 transition-all duration-200"
                     >
                       <div className="flex items-center">
@@ -185,7 +186,7 @@ export const DataCenterSection = () => {
                           {serviceItems.find(item => item.title === service.title)?.description}
                         </p>
                       )}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -241,7 +242,7 @@ export const DataCenterSection = () => {
               >
                 {serviceItems.map((item, index) => (
                   <Card key={index} className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal-darker/50 transition-all duration-300 cursor-pointer overflow-hidden">
-                    <a href={item.link} className="block h-full hover:no-underline">
+                    <Link to={item.link} className="block h-full hover:no-underline">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={item.image}
@@ -265,7 +266,7 @@ export const DataCenterSection = () => {
                           {item.description}
                         </p>
                       </div>
-                    </a>
+                    </Link>
                   </Card>
                 ))}
               </div>

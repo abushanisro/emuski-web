@@ -1,6 +1,8 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import { TeardownBenchmarkingSection } from "../components/TeardownBenchmarkingSection";
 import { BomDataCaptureSection } from "../components/BomDataCaptureSection";
@@ -62,6 +64,21 @@ const engineeringServices = [
 ];
 
 export default function PrecisionEngineering() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -82,12 +99,12 @@ export default function PrecisionEngineering() {
               From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market.
             </p>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4">
-              <button className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors">
+              <a href="#services-section" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
                 Our Services
-              </button>
-              <button className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+              </a>
+              <Link to="/contact" className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center">
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -96,7 +113,7 @@ export default function PrecisionEngineering() {
       
 
       {/* Engineering Services Grid */}
-      <section className="py-20 bg-background">
+      <section id="services-section" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -108,8 +125,10 @@ export default function PrecisionEngineering() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {engineeringServices.map((service, index) => (
-              <div key={index} className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 group">
+            {engineeringServices.map((service, index) => {
+              const sectionIds = ['cnc', 'design', 'consultation', 'quality'];
+              return (
+              <div key={index} id={sectionIds[index]} className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 group">
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={service.image}
@@ -135,18 +154,18 @@ export default function PrecisionEngineering() {
                     ))}
                   </ul>
                   
-                  <button className="text-emuski-teal-darker hover:text-emuski-teal-dark font-semibold transition-colors">
+                  <Link to="/contact" className="text-emuski-teal-darker hover:text-emuski-teal-dark font-semibold transition-colors">
                     Learn More →
-                  </button>
+                  </Link>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
 
       {/* Product Cost Estimation Section */}
-      <section className="py-20" style={{backgroundColor: '#121A21'}}>
+      <section id="cost-estimation" className="py-20" style={{backgroundColor: '#121A21'}}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -212,7 +231,9 @@ export default function PrecisionEngineering() {
         </div>
       </section>
 
-      <TeardownBenchmarkingSection />
+      <div id="vave">
+        <TeardownBenchmarkingSection />
+      </div>
 
       <BomDataCaptureSection />
 
@@ -222,9 +243,13 @@ export default function PrecisionEngineering() {
 
       <SupplierIdentificationSection />
 
-      <StrategicSourcingSection />
+      <div id="sourcing">
+        <StrategicSourcingSection />
+      </div>
 
-      <ExpertEngineerSupportSection />
+      <div id="expert-support">
+        <ExpertEngineerSupportSection />
+      </div>
 
       <TechnicalResourceDeploymentSection />
 
@@ -233,6 +258,21 @@ export default function PrecisionEngineering() {
       <SectorsServedSection />
 
       <BenefitsSection />
+
+      {/* Methodology Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Our Methodology</h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              We follow a structured and transparent process to ensure the highest quality outcomes for our clients.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <img src="/assets/infograpic/methodology.svg" alt="Our Methodology" className="max-w-full h-auto" />
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
@@ -248,9 +288,9 @@ export default function PrecisionEngineering() {
               Let our precision engineering team analyze your project and identify cost optimization opportunities.
             </p>
             <div className="h-1 w-16 sm:w-20 md:w-24 bg-white rounded-full mx-auto"></div>
-            <button className="bg-white text-emuski-teal-darker px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm sm:text-base">
+            <Link to="/contact" className="bg-white text-emuski-teal-darker px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-sm sm:text-base">
               Get Engineering Consultation
-            </button>
+            </Link>
           </div>
         </div>
       </section>

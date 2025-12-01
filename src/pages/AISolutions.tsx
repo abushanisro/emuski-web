@@ -5,10 +5,26 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 const aiSolutionsHero = "/ai-solutions-hero.jpg";
 import { Brain, Sparkles, Database, Network, Code, Rocket } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AISolutions = () => {
   const [activeTab, setActiveTab] = useState("overview");
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -36,19 +52,19 @@ const AISolutions = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4">
-                <Button className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors">
+                <a href="#mithran-overview" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
                   Learn More
-                </Button>
-                <Button className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                </a>
+                <Link to="/contact" className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center">
                   Contact Sales
-                </Button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* Mithran Overview Section */}
-        <section className="py-20 bg-background">
+        <section id="mithran-overview" className="py-20 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
@@ -115,8 +131,7 @@ const AISolutions = () => {
             {/* Why It Matters Section */}
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h2 className="
-                 mb-6">Why It Matters</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-6">Why It Matters</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Mithran is being built to:
                 </p>
@@ -162,9 +177,11 @@ const AISolutions = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Discover how Mithran can revolutionize your product development, supply chain, and cost optimization.
             </p>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg">
-              Request a Demo
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg">
+                Request a Demo
+              </Button>
+            </Link>
           </div>
         </section>
       </main>

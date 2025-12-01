@@ -1,8 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import ServiceBreakdownSection from "@/components/ServiceBreakdownSection";
+import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { NewsCarousel } from "@/components/NewsCarousel";
-import { DataCenterSection } from "@/components/DataCenterSection";
 import { AboutSection } from "@/components/AboutSection";
 import { FeaturedTabs } from "@/components/FeaturedTabs";
 import { RecommendedSection } from "@/components/RecommendedSection";
@@ -17,11 +16,9 @@ const Index = () => {
       <Navbar />
       <main className="pt-16">
         <HeroSection />
-        <ServiceBreakdownSection />
-        <DataCenterSection />
+        <ServicesShowcase />
         <NewsCarousel />
         <AboutSection />
-        <MethodologySection />
         <TechnicalSpecsSection focus="metrics" compact={true} />
         <FeaturedTabs />
         <RecommendedSection />

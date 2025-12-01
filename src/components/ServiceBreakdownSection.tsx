@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const servicesData = [
   {
@@ -21,7 +22,7 @@ const servicesData = [
   {
     category: "Next-Gen AI - Mithran",
     items: [
-      { name: "Mithran AI Platform", link: "/ai-solutions" },
+      { name: "Mithran AI Platform", link: "/solutions/ai" },
     ]
   }
 ];
@@ -41,10 +42,10 @@ const ServiceBreakdownSection = () => {
               <ul className="space-y-4">
                 {serviceCategory.items.map((item, itemIndex) => (
                   <li key={itemIndex}>
-                    <a href={item.link} className="flex items-center justify-between group text-lg text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200">
+                    <Link to={item.link} className="flex items-center justify-between group text-lg text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200">
                       <span>{item.name}</span>
                       <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-emuski-teal-darker transition-colors duration-200" />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

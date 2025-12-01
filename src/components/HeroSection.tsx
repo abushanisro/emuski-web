@@ -117,29 +117,29 @@ export const HeroSection = () => {
               }}
             />
             <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-black/50 transition-all duration-1500 ease-in-out" />
-              <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/10 via-transparent to-emuski-teal-darker/5 opacity-30 transition-opacity duration-2000" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/40 transition-all duration-1500 ease-in-out" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/5 via-transparent to-transparent opacity-20 transition-opacity duration-2000" />
             </div>
             
             {/* Text Content - positioned at top */}
             <div className="relative z-20 h-full flex flex-col justify-start pt-16 pb-8">
-              <div className="space-y-3 animate-fade-in text-center px-4">
-                <span className="inline-block text-emuski-teal text-xs font-bold tracking-wider uppercase">
+              <div className="space-y-4 animate-fade-in text-center px-4">
+                <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">
                   {slide.category}
                 </span>
-                <h1 className="text-xl font-bold text-white leading-tight drop-shadow-2xl">
+                <h1 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-2xl">
                   {slide.title}
                 </h1>
-                <p className="text-sm text-gray-100 leading-relaxed drop-shadow-lg">
+                <p className="text-base text-gray-100 leading-relaxed drop-shadow-lg">
                   {slide.description}
                 </p>
-                <div className="pt-2 flex justify-center">
+                <div className="pt-4 flex justify-center">
                   <Link 
                     to={slide.link}
-                    className="inline-flex items-center px-5 py-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-sm rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+                    className="inline-flex items-center px-6 py-3 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
                   >
                     Learn More
-                    <ChevronRight className="ml-2 h-4 w-4" />
+                    <ChevronRight className="ml-2 h-5 w-5" />
                   </Link>
                 </div>
               </div>
@@ -162,31 +162,31 @@ export const HeroSection = () => {
                 }}
               />
               <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30 transition-all duration-1500 ease-in-out" />
-              <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/10 via-transparent to-emuski-teal-darker/5 opacity-30 transition-opacity duration-2000" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent transition-all duration-1500 ease-in-out" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/5 via-transparent to-transparent opacity-10 transition-opacity duration-2000" />
             </div>
             </div>
 
             {/* Desktop Content */}
-            <div className="relative z-20 h-full flex items-center justify-start px-12 md:px-16 lg:px-20 pt-20 pb-8">
-              <div className="w-full max-w-lg lg:max-w-xl ml-4 lg:ml-8">
+            <div className="relative z-20 h-full flex items-center justify-start px-8 md:px-12 lg:px-16 pt-20 pb-8">
+              <div className="w-full max-w-xl lg:max-w-2xl">
                 <div className="text-left space-y-6 lg:space-y-8 animate-fade-in">
-                  <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">
+                  <span className="inline-block text-emuski-teal text-base font-bold tracking-wider uppercase">
                     {slide.category}
                   </span>
-                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-2xl">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl">
                     {slide.title}
                   </h1>
-                  <p className="text-base text-gray-100 leading-relaxed drop-shadow-lg">
+                  <p className="text-lg md:text-xl text-gray-100 leading-relaxed drop-shadow-lg">
                     {slide.description}
                   </p>
                   <div className="pt-8">
                     <Link 
                       to={slide.link}
-                      className="inline-flex items-center px-8 py-4 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base lg:text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+                      className="inline-flex items-center px-8 py-4 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-lg lg:text-xl rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
                     >
                       Learn More
-                      <ChevronRight className="ml-2 h-5 w-5" />
+                      <ChevronRight className="ml-2 h-6 w-6" />
                     </Link>
                   </div>
                 </div>

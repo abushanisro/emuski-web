@@ -61,11 +61,11 @@ const ManufacturingExcellenceSection = () => {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">Our Manufacturing Excellence</h2>
-          <div className="hidden sm:flex space-x-2">
-            <Button onClick={scrollLeft} className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary">
+          <div className="flex space-x-2">
+            <Button onClick={scrollLeft} className="bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 text-white border-emuski-teal-darker">
               <ChevronLeft className="h-5 w-5" />
             </Button>
-            <Button onClick={scrollRight} className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary">
+            <Button onClick={scrollRight} className="bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 text-white border-emuski-teal-darker">
               <ChevronRight className="h-5 w-5" />
             </Button>
           </div>

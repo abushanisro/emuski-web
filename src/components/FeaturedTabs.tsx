@@ -2,41 +2,46 @@ import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const featuredContent = [
-  {
-    id: "engineering",
-    label: "Engineering",
-    items: [
-      {
-        category: "Precision Engineering",
-        title: "Automotive OEM Partnership Excellence",
-        description: "EMUSKI's precision engineering team delivered critical transmission components for a leading automotive OEM, achieving 99.8% quality standards while reducing production time by 25%.",
-        image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg"
-      },
-      {
-        category: "Design & Validation",
-        title: "Aerospace Innovation Partnership",
-        description: "Our engineering excellence enabled a major aerospace client to launch their next-generation aircraft component 6 months ahead of schedule through collaborative design optimization.",
-        image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
-      }
-    ]
-  },
   {
     id: "manufacturing",
     label: "Manufacturing",
     items: [
       {
-        category: "Production",
-        title: "Manufacturing Scale-Up Success Story",
-        description: "EMUSKI partnered with an industrial equipment manufacturer to scale production from 100 to 10,000 units monthly, maintaining zero-defect quality while reducing per-unit costs by 30%.",
-        image: "/assets/componets/Matica-Photos2/DSC_1008.JPG"
+        category: "OEM Manufacturing",
+        title: "Complete Manufacturing Solutions",
+        description: "Your One-Stop Strategic Companion for AI-Driven Manufacturing Excellence. At EMUSKI, where cost and quality meets profitability - delivering straight to your door.",
+        image: "/assets/manufacturing/services.svg",
+        link: "/manufacturing-services#oem"
       },
       {
-        category: "Quality Assurance",
-        title: "Medical Device Quality Excellence",
-        description: "Our advanced quality systems helped a medical device client achieve FDA compliance ahead of schedule, enabling faster market entry for life-saving equipment.",
-        image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg"
+        category: "Custom Manufacturing",
+        title: "Tailored Manufacturing Services",
+        description: "Customized manufacturing solutions meeting your specific requirements with precision engineering and quality assurance at every step.",
+        image: "/assets/manufacturing/solution.svg",
+        link: "/manufacturing-services#custom"
+      }
+    ]
+  },
+  {
+    id: "engineering",
+    label: "Engineering",
+    items: [
+      {
+        category: "Product Cost Estimation",
+        title: "End-to-End Engineering & Costing Solutions",
+        description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market.",
+        image: "/assets/engineering/car.png",
+        link: "/precision-engineering#cost-estimation"
+      },
+      {
+        category: "VAVE & Benchmarking",
+        title: "Teardown & Value Engineering",
+        description: "Comprehensive teardown analysis and value engineering services to optimize product costs while maintaining quality standards and performance requirements.",
+        image: "/assets/engineering/breadown.png",
+        link: "/precision-engineering#vave"
       }
     ]
   },
@@ -45,23 +50,25 @@ const featuredContent = [
     label: "AI Mithran",
     items: [
       {
-        category: "AI Solutions",
-        title: "AI-Powered Predictive Maintenance",
-        description: "Implemented an AI-driven predictive maintenance system for a heavy machinery manufacturer, reducing unplanned downtime by 30% and saving $500,000 annually in maintenance costs.",
-        image: "/assets/hero/genai.svg" // Placeholder image
+        category: "AI-Driven Platform",
+        title: "Next-GenAI - Mithran",
+        description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization. Transform traditional workflows into a smart, data-driven ecosystem.",
+        image: "/assets/mitran/dashboard.jpeg",
+        link: "/solutions/ai#mithran-overview"
       },
       {
-        category: "Smart Manufacturing",
-        title: "Optimized Production with Machine Learning",
-        description: "Developed a machine learning model to optimize production parameters for an electronics assembly line, increasing throughput by 15% and improving yield by 5%.",
-        image: "/assets/hero/genai.svg" // Placeholder image
+        category: "Smart Sourcing",
+        title: "Intelligent Supplier Management",
+        description: "AI-driven supplier identification, RFQ management, and quotation validation. Accelerate sourcing cycles by 30% with intelligent automation.",
+        image: "/assets/mitran/sourcing.jpeg",
+        link: "/solutions/ai#mithran-overview"
       }
     ]
   }
 ];
 
 export const FeaturedTabs = () => {
-  const [activeTab, setActiveTab] = useState("engineering");
+  const [activeTab, setActiveTab] = useState("manufacturing");
 
   return (
     <section className="py-20 bg-background">
@@ -72,7 +79,7 @@ export const FeaturedTabs = () => {
               <TabsTrigger
                 key={tab.id}
                 value={tab.id}
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 sm:px-6 py-4 text-sm sm:text-base font-medium"
+                className="data-[state=active]:bg-emuski-teal-darker/10 data-[state=active]:border-b-2 data-[state=active]:border-emuski-teal-darker data-[state=active]:text-emuski-teal-darker rounded-none px-4 sm:px-6 py-4 text-sm sm:text-base font-medium backdrop-blur-sm transition-all"
               >
                 {tab.label}
               </TabsTrigger>
@@ -91,10 +98,10 @@ export const FeaturedTabs = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className={`w-full h-full ${tab.id === 'manufacturing' ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-500`}
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 bg-primary/90 text-primary-foreground text-xs font-semibold rounded-sm">
+                        <span className="inline-block px-3 py-1 bg-emuski-teal-darker text-white text-xs font-semibold rounded-sm">
                           {item.category}
                         </span>
                       </div>
@@ -107,9 +114,11 @@ export const FeaturedTabs = () => {
                       <p className="text-muted-foreground mb-4 leading-relaxed">
                         {item.description}
                       </p>
-                      <Button variant="link" className="text-emuski-teal-darker hover:text-emuski-teal-dark p-0 h-auto font-semibold">
-                        Read More →
-                      </Button>
+                      <Link to={item.link || (tab.id === 'engineering' ? '/precision-engineering' : tab.id === 'manufacturing' ? '/manufacturing-services' : '/solutions/ai')}>
+                        <Button variant="link" className="text-emuski-teal-darker hover:text-emuski-teal-dark p-0 h-auto font-semibold">
+                          Read More →
+                        </Button>
+                      </Link>
                     </div>
                   </Card>
                 ))}

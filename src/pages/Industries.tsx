@@ -5,8 +5,24 @@ import { FAQSection } from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Activity, Rocket, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Industries = () => {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
   const industries = [
     {
       icon: <Activity className="h-12 w-12 text-primary" />,
@@ -56,6 +72,10 @@ const Industries = () => {
 
         {/* Industries Grid */}
         <section className="py-20 bg-background">
+          <div id="automotive"></div>
+          <div id="electronics"></div>
+          <div id="medical"></div>
+          <div id="aerospace"></div>
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -87,9 +107,11 @@ const Industries = () => {
                     <p className="text-muted-foreground mb-4">
                       {industry.description}
                     </p>
-                    <Button variant="link" className="text-emuski-teal-darker hover:text-emuski-teal-dark p-0 h-auto font-semibold">
-                      Learn More →
-                    </Button>
+                    <Link to="/contact">
+                      <Button variant="link" className="text-emuski-teal-darker hover:text-emuski-teal-dark p-0 h-auto font-semibold">
+                        Learn More →
+                      </Button>
+                    </Link>
                   </div>
                 </Card>
               ))}
@@ -118,18 +140,16 @@ const Industries = () => {
               </p>
               <div className="h-1 w-16 sm:w-20 md:w-24 bg-white rounded-full mx-auto"></div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button 
-                  onClick={() => window.location.href = 'mailto:abushan.isro@gmail.com?subject=Sales Inquiry&body=Hello, I would like to speak with someone from EMUSKI sales team.'}
-                  className="bg-white text-emuski-teal-darker hover:bg-gray-100 font-semibold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg"
-                >
-                  Contact Sales
-                </Button>
-                <button 
-                  onClick={() => window.open('mailto:abushan.isro@gmail.com?subject=Whitepaper Request&body=Hello, I would like to request the EMUSKI industry whitepaper.', '_blank')}
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-white bg-transparent text-white hover:bg-white hover:text-emuski-teal-darker font-semibold px-4 py-2 text-base"
-                >
-                  Download Whitepaper
-                </button>
+                <Link to="/contact">
+                  <Button className="bg-white text-emuski-teal-darker hover:bg-gray-100 font-semibold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg">
+                    Contact Sales
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button className="border border-white bg-transparent text-white hover:bg-white hover:text-emuski-teal-darker font-semibold px-4 py-2 text-base">
+                    Download Whitepaper
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -6,18 +6,49 @@ import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
 import ProductDeliverablesSection from "../components/ProductDeliverablesSection";
 import SectorsServedSection from "../components/SectorsServedSection";
-
-
-
-
 import { PartManufacturingServices } from "../components/PartManufacturingServices";
 import ManufacturingExcellenceSection from "../components/ManufacturingExcellenceSection";
 import { SolutionsOfferedSection } from "../components/SolutionsOfferedSection";
 import { Upload, X, FileText, AlertTriangle, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 
 export default function ManufacturingServices() {
+  // Handle hash navigation and tab selection
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      // Set active tab based on hash
+      const tabMap: { [key: string]: string } = {
+        'oem': 'oem',
+        'custom': 'custom',
+        'prototyping': 'prototyping',
+        'scaling': 'scaling',
+        'on-demand': 'on-demand'
+      };
+      
+      if (tabMap[hash]) {
+        // Trigger tab click
+        setTimeout(() => {
+          const tabButton = document.querySelector(`[data-state][id*="${tabMap[hash]}"]`) as HTMLButtonElement;
+          if (tabButton) {
+            tabButton.click();
+          }
+          
+          // Scroll to tabs section
+          const element = document.querySelector('#manufacturing-tabs');
+          if (element) {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }, 200);
+      }
+    }
+  }, []);
+
   // SEO Meta Tags and Structured Data
   useEffect(() => {
     // Update document title for SEO
@@ -364,56 +395,178 @@ export default function ManufacturingServices() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white overflow-hidden">
+      <section className="relative bg-gray-900 text-white overflow-hidden min-h-[600px]">
         <div className="absolute inset-0">
-          <img src="/assets/hero/manufaturing.svg" alt="Manufacturing background" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent"></div>
+          <img src="/assets/hero/manufaturing.svg" alt="Manufacturing background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/60 to-transparent"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 py-32">
-          <div className="max-w-3xl space-y-6 animate-slide-in-up">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Advanced Manufacturing Services
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed" style={{ animationDelay: '0.2s' }}>
-              From rapid prototyping and on-demand production to full-scale OEM manufacturing, we provide agile, precise, and scalable solutions to bring your products to market faster.
-            </p>
-            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4" style={{ animationDelay: '0.4s' }}>
-              <button className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors">
-                Get a Quote
-              </button>
-              <button className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-                Explore Services
-              </button>
+        <div className="relative z-20 h-full flex items-center justify-start px-12 md:px-16 lg:px-20 pt-20 pb-8">
+          <div className="w-full max-w-lg lg:max-w-xl ml-4 lg:ml-8">
+            <div className="text-left space-y-6 lg:space-y-8 animate-fade-in">
+              <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">Manufacturing Excellence</span>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                You Design It, We Build It : Justified Cost, Peerless Quality
+              </h1>
+              <p className="text-base text-gray-100 leading-relaxed">
+                Your One-Stop Strategic Companion for AI-Driven Manufacturing Excellence. At EMuski, where cost and quality meets profitability - delivering straight to your door
+              </p>
+              <div className="pt-8">
+                <a className="inline-flex items-center px-8 py-4 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base lg:text-lg rounded-lg transition-all duration-300 transform hover:scale-105" href="/manufacturing-services">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-2 h-5 w-5">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      
+      {/* Manufacturing Services Quick Access */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Manufacturing Services</h2>
+            <p className="text-lg text-gray-600">Select a service to learn more</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <a
+              href="#oem"
+              onClick={(e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                  const tabButton = document.querySelector('[data-state][id*="oem"]') as HTMLButtonElement;
+                  if (tabButton) tabButton.click();
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">OEM Manufacturing</h3>
+              <p className="text-gray-600 text-sm">Complete manufacturing solutions from concept to production</p>
+            </a>
+            <a
+              href="#custom"
+              onClick={(e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                  const tabButton = document.querySelector('[data-state][id*="custom"]') as HTMLButtonElement;
+                  if (tabButton) tabButton.click();
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Custom Manufacturing</h3>
+              <p className="text-gray-600 text-sm">Tailored manufacturing services meeting specific requirements</p>
+            </a>
+            <a
+              href="#prototyping"
+              onClick={(e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                  const tabButton = document.querySelector('[data-state][id*="prototyping"]') as HTMLButtonElement;
+                  if (tabButton) tabButton.click();
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Rapid Prototyping</h3>
+              <p className="text-gray-600 text-sm">Fast and efficient prototyping services</p>
+            </a>
+            <a
+              href="#scaling"
+              onClick={(e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                  const tabButton = document.querySelector('[data-state][id*="scaling"]') as HTMLButtonElement;
+                  if (tabButton) tabButton.click();
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Production Scaling</h3>
+              <p className="text-gray-600 text-sm">Seamless scaling from prototype to full production</p>
+            </a>
+            <a
+              href="#on-demand"
+              onClick={(e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                  const tabButton = document.querySelector('[data-state][id*="on-demand"]') as HTMLButtonElement;
+                  if (tabButton) tabButton.click();
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">On-Demand Manufacturing</h3>
+              <p className="text-gray-600 text-sm">Flexible manufacturing solutions as you need them</p>
+            </a>
+          </div>
+        </div>
+      </section>
 
-      
+      <div id="oem">
+        <PartManufacturingServices />
+      </div>
 
-      
-
-      <PartManufacturingServices />
-
-      <ManufacturingExcellenceSection />
+      <div id="custom">
+        <ManufacturingExcellenceSection />
+      </div>
 
       <SolutionsOfferedSection />
 
       
 
-      <ManufacturingServicesTabs />
+      <div id="manufacturing-tabs">
+        <ManufacturingServicesTabs />
+      </div>
 
       <ProductDeliverablesSection />
 
-      <SectorsServedSection />
+      <div id="scaling">
+        <SectorsServedSection />
+      </div>
 
       
 
       {/* Request Quote Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
+      <section id="quote-section" className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
