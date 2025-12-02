@@ -266,8 +266,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
       />
 
       <section className={`${compact ? 'py-12' : 'py-20'} bg-gradient-to-br from-slate-50 to-blue-50`}>
-        <div className="container mx-auto px-4">
-          <div className={`${compact ? 'max-w-4xl' : 'max-w-6xl'} mx-auto`}>
+        <div className="w-full px-4 sm:px-6">
+          <div className="w-full">
             {/* Header */}
             <div className={`text-center ${compact ? 'mb-8' : 'mb-16'}`}>
               <h2 className={`${compact ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'} font-bold text-gray-900 mb-4`}>

@@ -26,9 +26,9 @@ const slides: Slide[] = [
     image: "/assets/hero/engineering.svg",
     mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
     category: "Engineering Innovation",
-    title: "Mastering Costs, Engineering Success",
+    title: "Mastering Value, Cost, and Supply Advantage",
     shortTitle: "Engineering Services",
-    description: "Driving Value Engineering and maximizing cost efficiency through precision design, advanced materials science and cutting-edge manufacturing processes",
+    description: "Precision costing, teardown intelligence, sourcing strength, and expert execution — All in One",
     link: "/precision-engineering",
   },
   {
@@ -108,21 +108,21 @@ export const HeroSection = () => {
           {/* Mobile Layout - Text overlay on image */}
           <div className="sm:hidden h-full min-h-[80vh]">
             {/* Mobile Background Image */}
-            <div 
-              className="absolute inset-0 w-full h-full min-h-[80vh] bg-no-repeat bg-center bg-cover"
+            <div
+              className="absolute inset-0 w-full h-full min-h-[80vh] bg-no-repeat bg-center bg-cover pointer-events-none"
               style={{
                 backgroundImage: `url(${slide.mobileImage})`,
                 backgroundPosition: 'center center',
                 backgroundSize: 'cover'
               }}
             />
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/40 transition-all duration-1500 ease-in-out" />
               <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/5 via-transparent to-transparent opacity-20 transition-opacity duration-2000" />
             </div>
-            
+
             {/* Text Content - positioned at top */}
-            <div className="relative z-20 h-full flex flex-col justify-start pt-16 pb-8">
+            <div className="relative z-20 h-full flex flex-col justify-start pt-16 pb-32 pointer-events-none">
               <div className="space-y-4 animate-fade-in text-center px-4">
                 <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">
                   {slide.category}
@@ -133,8 +133,8 @@ export const HeroSection = () => {
                 <p className="text-base text-gray-100 leading-relaxed drop-shadow-lg">
                   {slide.description}
                 </p>
-                <div className="pt-4 flex justify-center">
-                  <Link 
+                <div className="pt-4 flex justify-center pointer-events-auto">
+                  <Link
                     to={slide.link}
                     className="inline-flex items-center px-6 py-3 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
                   >
@@ -198,7 +198,7 @@ export const HeroSection = () => {
 
       {/* Bottom Navigation - Fixed and Always Visible */}
       <div className="absolute bottom-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-0 sm:px-6 md:px-8 lg:px-12">
+        <div className="w-full px-0">
           {/* Mobile Navigation - Desktop Style */}
           <div className="sm:hidden px-4">
             {/* Progress bar track */}
@@ -222,16 +222,21 @@ export const HeroSection = () => {
             </div>
             
             {/* Tab buttons like desktop */}
-            <div className="grid grid-cols-3 gap-0">
+            <div className="grid grid-cols-3 gap-0 relative z-10">
               <button
                 onClick={() => handleTabClick(0)}
-                className={`relative py-4 px-2 text-center transition-all duration-300 group ${0 === currentSlide ? "bg-white/10" : "hover:bg-white/5"}`}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  handleTabClick(0);
+                }}
+                className={`relative min-h-[60px] py-4 px-2 text-center transition-all duration-300 group touch-manipulation cursor-pointer active:scale-95 ${0 === currentSlide ? "bg-white/10" : "active:bg-white/10"}`}
+                type="button"
               >
-                <div className="space-y-1">
-                  <div className={`text-xs uppercase tracking-wider transition-colors ${0 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
+                <div className="space-y-1 pointer-events-none">
+                  <div className={`text-xs uppercase tracking-wider transition-colors ${0 === currentSlide ? "text-emuski-teal" : "text-white"}`}>
                     Manufacturing Excellence
                   </div>
-                  <div className={`text-sm font-semibold transition-colors ${0 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
+                  <div className={`text-sm font-semibold transition-colors ${0 === currentSlide ? "text-white" : "text-white"}`}>
                    On-Demand
                   </div>
                 </div>
@@ -239,13 +244,18 @@ export const HeroSection = () => {
 
               <button
                 onClick={() => handleTabClick(1)}
-                className={`relative py-4 px-2 text-center transition-all duration-300 group ${1 === currentSlide ? "bg-white/10" : "hover:bg-white/5"}`}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  handleTabClick(1);
+                }}
+                className={`relative min-h-[60px] py-4 px-2 text-center transition-all duration-300 group touch-manipulation cursor-pointer active:scale-95 ${1 === currentSlide ? "bg-white/10" : "active:bg-white/10"}`}
+                type="button"
               >
-                <div className="space-y-1">
-                  <div className={`text-xs uppercase tracking-wider transition-colors ${1 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
+                <div className="space-y-1 pointer-events-none">
+                  <div className={`text-xs uppercase tracking-wider transition-colors ${1 === currentSlide ? "text-emuski-teal" : "text-white"}`}>
                     Engineering Innovation
                   </div>
-                  <div className={`text-sm font-semibold transition-colors ${1 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
+                  <div className={`text-sm font-semibold transition-colors ${1 === currentSlide ? "text-white" : "text-white"}`}>
                     Cost Precision
                   </div>
                 </div>
@@ -253,13 +263,18 @@ export const HeroSection = () => {
 
               <button
                 onClick={() => handleTabClick(2)}
-                className={`relative py-4 px-2 text-center transition-all duration-300 group ${2 === currentSlide ? "bg-white/10" : "hover:bg-white/5"}`}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  handleTabClick(2);
+                }}
+                className={`relative min-h-[60px] py-4 px-2 text-center transition-all duration-300 group touch-manipulation cursor-pointer active:scale-95 ${2 === currentSlide ? "bg-white/10" : "active:bg-white/10"}`}
+                type="button"
               >
-                <div className="space-y-1">
-                  <div className={`text-xs uppercase tracking-wider transition-colors ${2 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    GenAI
+                <div className="space-y-1 pointer-events-none">
+                  <div className={`text-xs uppercase tracking-wider transition-colors ${2 === currentSlide ? "text-emuski-teal" : "text-white"}`}>
+                   Next-GenAI
                   </div>
-                  <div className={`text-sm font-semibold transition-colors ${2 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
+                  <div className={`text-sm font-semibold transition-colors ${2 === currentSlide ? "text-white" : "text-white"}`}>
                     Mithran AI
                   </div>
                 </div>
@@ -325,7 +340,7 @@ export const HeroSection = () => {
               >
                 <div className="space-y-1 pt-2">
                   <div className={`text-xs uppercase tracking-wider transition-colors ${2 === currentSlide ? "text-emuski-teal" : "text-white group-hover:text-gray-300"}`}>
-                    GenAI
+                   Next-GenAI
                   </div>
                   <div className={`text-sm font-semibold transition-colors ${2 === currentSlide ? "text-white" : "text-white group-hover:text-gray-200"}`}>
                     Mithran AI
@@ -338,18 +353,18 @@ export const HeroSection = () => {
       </div>
 
       {/* Curved Bottom Animation */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
-        <svg 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none" 
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden z-0 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
           className="relative block w-full h-16"
         >
-          <path 
-            d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z" 
+          <path
+            d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z"
             className="fill-emuski-teal/20 animate-pulse"
           />
-          <path 
-            d="M0,80 C200,140 400,20 600,80 C800,140 1000,20 1200,80 L1200,120 L0,120 Z" 
+          <path
+            d="M0,80 C200,140 400,20 600,80 C800,140 1000,20 1200,80 L1200,120 L0,120 Z"
             className="fill-emuski-teal/10 animate-bounce"
             style={{ animationDuration: '3s' }}
           />

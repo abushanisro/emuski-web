@@ -25,13 +25,13 @@ const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4">
-      
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 pointer-events-none">
+
       {/* Chat Window */}
-      <div 
+      <div
         className={`
           w-80 bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out transform origin-bottom-right
-          ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-10 pointer-events-none'}
+          ${isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-95 opacity-0 translate-y-10 pointer-events-none'}
         `}
       >
         {/* Header */}
@@ -81,7 +81,7 @@ const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({
       <button
         onClick={toggleChat}
         className={`
-            relative group hover:cursor-pointer flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110
+            relative group hover:cursor-pointer flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110 pointer-events-auto
             ${isOpen ? 'bg-gray-700  rotate-90' : 'bg-[#25D366] hover:bg-[#20b85c]'}
         `}
         aria-label="Toggle Chat"

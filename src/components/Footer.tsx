@@ -6,45 +6,51 @@ const emuskiLogo = "/assets/emuskilogo.webp";
 export const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-8 sm:py-12">
-      <div className="container mx-auto px-4 sm:px-6 text-left">
+      <div className="w-full px-4 sm:px-6 lg:px-8 text-left max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          {/* Manufacturing Services */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Services</h4>
+            <h4 className="text-foreground font-semibold mb-4">Manufacturing Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/manufacturing-services#oem" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">OEM Manufacturing Solutions</Link></li>
-              <li><Link to="/precision-engineering#cnc" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Precision CNC Machining</Link></li>
-              <li><Link to="/precision-engineering#design" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Design for Manufacturing DFM</Link></li>
-              <li><Link to="/precision-engineering#quality" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">ISO Quality Control Systems</Link></li>
+              <li><Link to="/manufacturing-services" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">On-Demand Manufacturing</Link></li>
+              <li><Link to="/manufacturing-services#oem" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">OEM Manufacturing</Link></li>
+              <li><Link to="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Manufacturing</Link></li>
+              <li><Link to="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping</Link></li>
+              <li><Link to="/manufacturing-services#scaling" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Production Scaling</Link></li>
             </ul>
           </div>
-          
+
+          {/* Engineering Services */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Solutions</h4>
+            <h4 className="text-foreground font-semibold mb-4">Engineering Services</h4>
             <ul className="space-y-2">
-              <li><Link to="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Metal Fabrication</Link></li>
-              <li><Link to="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping Services</Link></li>
-              <li><Link to="/manufacturing-services#scaling" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Mass Production Manufacturing</Link></li>
+              <li><Link to="/precision-engineering" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Cost Precision</Link></li>
+              <li><Link to="/precision-engineering#cost-estimation" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Product Cost Estimation</Link></li>
+              <li><Link to="/precision-engineering#vave" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">VAVE & Benchmarking</Link></li>
+              <li><Link to="/precision-engineering#sourcing" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Strategic Sourcing</Link></li>
+              <li><Link to="/precision-engineering#expert-support" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Expert Engineer Support</Link></li>
+            </ul>
+          </div>
+
+          {/* AI & Technology */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-4">AI & Technology</h4>
+            <ul className="space-y-2">
+              <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Mithran AI Platform</Link></li>
+              <li><Link to="/solutions/ai#mithran-overview" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Smart Sourcing</Link></li>
               <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Supply Chain Optimization</Link></li>
+              <li><Link to="/industries" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Industries We Serve</Link></li>
             </ul>
           </div>
-          
+
+          {/* Company */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Industries</h4>
+            <h4 className="text-foreground font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/industries#automotive" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Automotive Parts Manufacturing</Link></li>
-              <li><Link to="/industries#electronics" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Electronics Assembly Services</Link></li>
-              <li><Link to="/industries#medical" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Medical Device Manufacturing</Link></li>
-              <li><Link to="/industries#aerospace" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Aerospace Component Production</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Manufacturing Quote Request</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Engineering Technical Support</Link></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Manufacturing Industry Blog</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Contact Manufacturing Engineers</Link></li>
+              <li><Link to="/gallery" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Gallery</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Contact Us</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Blog & Insights</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Get a Quote</Link></li>
             </ul>
           </div>
         </div>
@@ -110,27 +116,30 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-border pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 pr-24">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
-            <div className="flex items-center space-x-2">
-              <img src={emuskiLogo} alt="EMUSKI Logo" className="h-6 w-auto" />
-              <span className="text-foreground font-bold text-lg">EMUSKI</span>
+        {/* Copyright and Legal */}
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <div className="flex items-center space-x-2">
+                <img src={emuskiLogo} alt="EMUSKI Logo" className="h-6 w-auto" />
+                <span className="text-foreground font-bold text-lg">EMUSKI</span>
+              </div>
+              <span className="text-muted-foreground text-sm">© 2025 EMUSKI Corporation. All rights reserved.</span>
             </div>
-            <span className="text-muted-foreground text-sm">© 2025 EMUSKI Corporation. All rights reserved.</span>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 relative z-10">
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-2 sm:inline sm:py-0">Privacy Policy</Link>
-            <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-2 sm:inline sm:py-0">Terms of Service</Link>
-            <Link to="/cookie-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-2 sm:inline sm:py-0">Cookie Policy</Link>
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <Link to="/privacy-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Privacy Policy</Link>
+              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Terms of Service</Link>
+              <Link to="/cookie-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Cookie Policy</Link>
+            </div>
           </div>
         </div>
         
         {/* SEO Keywords Footer */}
         <div className="border-t border-border pt-6 mt-6">
-          <div className="text-center">
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              <span className="font-medium">Manufacturing Services:</span> CNC Machining Bangalore | Precision Engineering India | Sheet Metal Fabrication | Injection Molding Services | Tool & Die Making | Prototype Manufacturing | CAD Design Services | Quality Control Testing | ISO 9001 Certified Manufacturing | Lean Manufacturing Solutions | Six Sigma Quality | Industrial Automation | Smart Manufacturing | Industry 4.0 | Contract Manufacturing | OEM Production | Custom Metal Works | Mechanical Engineering Services | Production Planning | Supply Chain Management | Cost Optimization | VAVE Analysis | Design for Manufacturability | Rapid Turnaround Manufacturing
+          <div className="text-center px-2">
+            <p className="text-muted-foreground text-xs leading-relaxed max-w-5xl mx-auto">
+              <span className="font-medium">Manufacturing & Engineering Excellence:</span> CNC Machining Bangalore | Precision Engineering India | On-Demand Manufacturing | OEM Manufacturing Solutions | Custom Metal Fabrication | Rapid Prototyping Services | Mass Production Manufacturing | Product Cost Estimation | VAVE & Benchmarking Analysis | Strategic Sourcing Support | AI-Powered Supply Chain | Mithran AI Platform | ISO 9001 Certified | Six Sigma Quality | Industry 4.0 Solutions | Smart Manufacturing | Design for Manufacturability | Lean Manufacturing | Contract Manufacturing | Automotive Components | Electronics Assembly | Medical Device Manufacturing | Aerospace Parts Production
             </p>
           </div>
         </div>

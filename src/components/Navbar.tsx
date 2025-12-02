@@ -12,7 +12,7 @@ interface NavItem {
 
 const servicesDropdown = {
   manufacturingServices: {
-    name: "Manufacturing Services",
+    name: "Manufacturing Excellence",
     path: "/manufacturing-services",
     subItems: [
       { name: "OEM Manufacturing", path: "/manufacturing-services#oem" },
@@ -23,7 +23,7 @@ const servicesDropdown = {
     ]
   },
   precisionEngineering: {
-    name: "Precision Engineering",
+    name: "Engineering Innovation",
     path: "/precision-engineering",
     subItems: [
       { name: "CNC Machining", path: "/precision-engineering#cnc" },
@@ -54,8 +54,8 @@ const navigationConfig = {
     {
       title: "Services",
       items: [
-        { name: "Manufacturing Services", path: "/manufacturing-services" },
-        { name: "Precision Engineering", path: "/precision-engineering" },
+        { name: "Manufacturing Excellence", path: "/manufacturing-services" },
+        { name: "Engineering Innovation", path: "/precision-engineering" },
         { name: "Next-GenAI", path: "/solutions/ai" }
       ]
     },
@@ -79,8 +79,8 @@ const navigationConfig = {
 // Map of all routes to their display names
 const routeToPageName: Record<string, string> = {
   "/": "Home",
-  "/manufacturing-services": "Manufacturing Services",
-  "/precision-engineering": "Precision Engineering", 
+  "/manufacturing-services": "Manufacturing Excellence",
+  "/precision-engineering": "Engineering Innovation", 
   "/industries": "Industries",
   "/blog": "Blog",
   "/gallery": "Gallery",
@@ -144,7 +144,7 @@ export const Navbar = () => {
 
   return (
 <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-<div className="container mx-auto px-4 sm:px-6">
+<div className="w-full px-4 sm:px-6">
 <div className="flex items-center justify-between h-16">
 <div className="flex items-center space-x-8">
 <Link to="/" className="flex items-center space-x-2 group">

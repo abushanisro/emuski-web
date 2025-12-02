@@ -147,7 +147,7 @@ const AboutSection = () => {
                     <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
                 </div>
                 
-                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="w-full px-4 sm:px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                     {/* Left Side - Title and Description */}
                     <div className="lg:col-span-1 space-y-4">

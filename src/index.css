@@ -168,11 +168,21 @@ All colors MUST be HSL.
         @apply border-border;
     }
 
+    html {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
     body {
         @apply bg-background text-foreground font-inter;
         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
         font-variation-settings: normal;
         overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     /* Enhanced typography with Inter Variable */
@@ -191,6 +201,24 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+    /* Touch interaction improvements */
+    .touch-manipulation {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        user-select: none;
+        touch-action: manipulation;
+    }
+
+    /* Hide scrollbar */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
     @keyframes slideInLeft {
         from {
             opacity: 0;
@@ -201,7 +229,7 @@ All colors MUST be HSL.
             transform: translateX(0);
         }
     }
-    
+
     @keyframes float {
         0%, 100% {
             transform: translateY(0px);
@@ -210,7 +238,7 @@ All colors MUST be HSL.
             transform: translateY(-10px);
         }
     }
-    
+
     .animate-float {
         animation: float 3s ease-in-out infinite;
     }

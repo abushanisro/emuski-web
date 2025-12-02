@@ -118,7 +118,7 @@ export const NewsCarousel = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="w-full px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Real Results. Real Impact. Real ROI.</h2>
           
