@@ -49,7 +49,7 @@ export function PartManufacturingServices() {
             </Accordion>
           </div>
           <div>
-            <img src="/assets/manufacturing/services.svg" alt="Part Manufacturing Services" className="rounded-lg shadow-lg" />
+            <img src="/assets/manufacturing/services.svg" alt="Part Manufacturing Excellences" className="rounded-lg shadow-lg" />
           </div>
         </div>
       </div>

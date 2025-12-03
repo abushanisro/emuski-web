@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 
 const serviceItems = [
-  // Engineering Services
+  // Engineering Innovations
   {
     category: "Precision Engineering",
     title: "CNC Machining Excellence",
@@ -14,7 +14,7 @@ const serviceItems = [
     link: "/precision-engineering#cnc"
   },
   {
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     title: "Component Design & Validation",
     description: "Complete product development lifecycle from concept to production, including rapid prototyping and validation services.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
@@ -34,16 +34,16 @@ const serviceItems = [
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
     link: "/manufacturing-services#custom"
   },
-  // Manufacturing Services
+  // Manufacturing Excellences
   {
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     title: "Production Line Excellence",
     description: "Professional production line setup and manufacturing excellence with advanced assembly stations and workflow optimization.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
     link: "/manufacturing-services#scaling"
   },
   {
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     title: "Precision Component Manufacturing",
     description: "High-precision manufactured components showcasing our CNC machining capabilities and partnership with automotive OEMs.",
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
@@ -67,7 +67,7 @@ const quickLineupServices = [
   },
   {
     title: "Component Design & Validation", 
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     link: "/precision-engineering#design"
   },
   {
@@ -82,12 +82,12 @@ const quickLineupServices = [
   },
   {
     title: "Production Line Excellence",
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     link: "/manufacturing-services#scaling"
   },
   {
     title: "Precision Component Manufacturing",
-    category: "Manufacturing Services", 
+    category: "Manufacturing Excellences", 
     link: "/manufacturing-services#oem"
   },
   {

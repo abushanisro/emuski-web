@@ -36,7 +36,7 @@ export default function CookiePolicy() {
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
             <h3 className="text-xl font-bold mb-4">What Are Cookies</h3>
             <p className="text-gray-700">
-              Cookies are small text files placed on your device when you visit www.emuski.com. They help us deliver our manufacturing services platform efficiently, remember your quote requests, and improve your experience when exploring our precision engineering and manufacturing solutions.
+              Cookies are small text files placed on your device when you visit www.emuski.com. They help us deliver our Manufacturing Excellences platform efficiently, remember your quote requests, and improve your experience when exploring our precision engineering and manufacturing solutions.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export default function CookiePolicy() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-bold text-lg mb-2">Essential Cookies</h4>
                 <p className="text-gray-700">
-                  Required for core functionality including quote request forms, manufacturing service navigation, CAD file uploads, technical specification access, and secure communication with our engineering team. Without these cookies, you cannot submit manufacturing quotes or access protected areas of our platform.
+                  Required for core functionality including quote request forms, Manufacturing Excellence navigation, CAD file uploads, technical specification access, and secure communication with our engineering team. Without these cookies, you cannot submit manufacturing quotes or access protected areas of our platform.
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ export default function CookiePolicy() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-bold text-lg mb-2">Functional Cookies</h4>
                 <p className="text-gray-700">
-                  Remember your manufacturing preferences, saved quote requests, preferred measurement units (metric/imperial), industry sector selections (automotive, aerospace, medical, electronics), and language settings. These enhance your experience when returning to explore our precision engineering services.
+                  Remember your manufacturing preferences, saved quote requests, preferred measurement units (metric/imperial), industry sector selections (automotive, aerospace, medical, electronics), and language settings. These enhance your experience when returning to explore our precision Engineering Innovations.
                 </p>
               </div>
 
@@ -111,9 +111,9 @@ export default function CookiePolicy() {
           </section>
 
           <section className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Cookie Consent for Manufacturing Services</h3>
+            <h3 className="text-2xl font-bold mb-4">Cookie Consent for Manufacturing Excellences</h3>
             <p className="text-gray-700">
-              By using www.emuski.com to request manufacturing quotes, access technical specifications, or explore our precision engineering services, you consent to our cookie usage as described in this policy. Disabling cookies may limit your ability to submit quote requests, upload CAD files, or access certain manufacturing resources on our platform.
+              By using www.emuski.com to request manufacturing quotes, access technical specifications, or explore our precision Engineering Innovations, you consent to our cookie usage as described in this policy. Disabling cookies may limit your ability to submit quote requests, upload CAD files, or access certain manufacturing resources on our platform.
             </p>
           </section>
 

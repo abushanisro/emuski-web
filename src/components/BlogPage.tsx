@@ -41,7 +41,7 @@ export const BlogPage = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Discover expert insights on manufacturing excellence, engineering services, and AI-powered solutions. Learn from industry leaders about cost optimization, VAVE, rapid prototyping, and intelligent manufacturing.');
+    metaDescription.setAttribute('content', 'Discover expert insights on manufacturing excellence, Engineering Innovations, and AI-powered solutions. Learn from industry leaders about cost optimization, VAVE, rapid prototyping, and intelligent manufacturing.');
 
     // Update keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');

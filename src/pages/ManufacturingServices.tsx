@@ -42,7 +42,7 @@ export default function ManufacturingServices() {
 
   // SEO Meta Tags
   useEffect(() => {
-    document.title = "OEM Manufacturing Services in Bangalore | Precision Engineering | EMUSKI";
+    document.title = "OEM Manufacturing Excellences in Bangalore | Precision Engineering | EMUSKI";
 
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -50,7 +50,7 @@ export default function ManufacturingServices() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Leading OEM manufacturing services in Bangalore, India. Expert precision engineering, rapid prototyping, custom manufacturing, and AI-powered production solutions.');
+    metaDescription.setAttribute('content', 'Leading OEM Manufacturing Excellences in Bangalore, India. Expert precision engineering, rapid prototyping, custom manufacturing, and AI-powered production solutions.');
   }, []);
 
   return (
@@ -86,12 +86,12 @@ export default function ManufacturingServices() {
         </div>
       </section>
 
-      {/* Manufacturing Services Overview */}
+      {/* Manufacturing Excellences Overview */}
       <section id="on-demand" className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Manufacturing Services
+              Manufacturing Excellences
             </h2>
             <p className="text-lg text-gray-600">
               Transform your ideas into reality with rapid prototyping and on-demand manufacturing solutions.
@@ -116,7 +116,7 @@ export default function ManufacturingServices() {
             <ManufacturingServiceCard
               icon={Cog}
               title="Custom Manufacturing"
-              description="Tailored manufacturing services meeting specific requirements with high-precision CNC machining."
+              description="Tailored Manufacturing Excellences meeting specific requirements with high-precision CNC machining."
               link="/manufacturing-services#custom"
               variant="compact"
             />
@@ -131,7 +131,7 @@ export default function ManufacturingServices() {
         </div>
       </section>
 
-      {/* Manufacturing Services Tabs */}
+      {/* Manufacturing Excellences Tabs */}
       <div id="manufacturing-tabs">
         <ManufacturingServicesTabs />
       </div>

@@ -360,7 +360,7 @@ export const Contact = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
                       >
                         <option value="">Select project type</option>
-                        <option value="manufacturing">Manufacturing Services</option>
+                        <option value="manufacturing">Manufacturing Excellences</option>
                         <option value="engineering">Precision Engineering</option>
                         <option value="ai-solutions">AI Solutions</option>
                         <option value="consultation">Consultation</option>

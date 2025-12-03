@@ -278,7 +278,7 @@ export const BlogPostComponent = () => {
                   <div className="space-y-3">
                     <Link to="/manufacturing-services" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
-                      <span>Manufacturing Services</span>
+                      <span>Manufacturing Excellences</span>
                     </Link>
                     <Link to="/precision-engineering" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />

@@ -8,9 +8,9 @@ export const Footer = () => {
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="w-full px-4 sm:px-6 lg:px-8 text-left max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
-          {/* Manufacturing Services */}
+          {/* Manufacturing Excellences */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Manufacturing Services</h4>
+            <h4 className="text-foreground font-semibold mb-4">Manufacturing Excellences</h4>
             <ul className="space-y-2">
               <li><Link to="/manufacturing-services" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">On-Demand Manufacturing</Link></li>
               <li><Link to="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping</Link></li>
@@ -19,9 +19,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Engineering Services */}
+          {/* Engineering Innovations */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Engineering Services</h4>
+            <h4 className="text-foreground font-semibold mb-4">Engineering Innovations</h4>
             <ul className="space-y-2">
               <li><Link to="/precision-engineering" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Cost Precision</Link></li>
               <li><Link to="/precision-engineering#cost-estimation" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Product Cost Estimation</Link></li>

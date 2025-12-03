@@ -6,33 +6,33 @@ import { getFAQsForPage, getFAQMetaForPage, type FAQItem } from '../data/pageSpe
 // Remove duplicate interface - using the one from pageSpecificFAQs.ts
 
 const FAQ_DATA: FAQItem[] = [
-  // Manufacturing Services
+  // Manufacturing Excellences
   {
     id: 'what-is-oem-manufacturing',
     question: 'What is OEM manufacturing and how does EMUSKI provide it?',
-    answer: 'OEM (Original Equipment Manufacturing) is when one company manufactures products or components that are sold by another company under their brand name. EMUSKI provides comprehensive OEM manufacturing services including design consultation, prototyping, production, quality control, and logistics. We handle everything from initial concept to final delivery, allowing you to focus on your core business while we manufacture your products to exact specifications.',
-    category: 'Manufacturing Services',
+    answer: 'OEM (Original Equipment Manufacturing) is when one company manufactures products or components that are sold by another company under their brand name. EMUSKI provides comprehensive OEM Manufacturing Excellences including design consultation, prototyping, production, quality control, and logistics. We handle everything from initial concept to final delivery, allowing you to focus on your core business while we manufacture your products to exact specifications.',
+    category: 'Manufacturing Excellences',
     keywords: ['OEM manufacturing', 'original equipment manufacturer', 'custom manufacturing', 'private label manufacturing']
   },
   {
     id: 'manufacturing-capabilities',
     question: 'What manufacturing capabilities does EMUSKI offer?',
     answer: 'EMUSKI offers a complete range of manufacturing capabilities including CNC machining, injection molding, sheet metal fabrication, precision engineering, rapid prototyping, assembly services, quality testing, and packaging. Our state-of-the-art facility in Bangalore is equipped with advanced machinery and staffed by experienced engineers and technicians.',
-    category: 'Manufacturing Services',
+    category: 'Manufacturing Excellences',
     keywords: ['CNC machining', 'injection molding', 'sheet metal', 'precision engineering', 'manufacturing capabilities']
   },
   {
     id: 'minimum-order-quantity',
     question: 'What is the minimum order quantity (MOQ) for manufacturing?',
     answer: 'Our minimum order quantity varies depending on the product complexity, materials, and manufacturing process. For prototyping and small batches, we can work with quantities as low as 10-50 pieces. For full production runs, MOQs typically range from 100-1000 pieces. We work closely with each client to find the most cost-effective solution for their specific needs.',
-    category: 'Manufacturing Services',
+    category: 'Manufacturing Excellences',
     keywords: ['minimum order quantity', 'MOQ', 'small batch manufacturing', 'production quantities']
   },
   {
     id: 'lead-times',
     question: 'What are typical lead times for manufacturing projects?',
     answer: 'Lead times depend on project complexity and quantity. Rapid prototyping: 3-7 days. Small batch production (100-500 pieces): 2-3 weeks. Medium production runs (500-5000 pieces): 3-6 weeks. Large volume production: 6-12 weeks. We provide detailed timelines during the quotation process and offer expedited services when needed.',
-    category: 'Manufacturing Services',
+    category: 'Manufacturing Excellences',
     keywords: ['lead times', 'delivery time', 'production schedule', 'manufacturing timeline']
   },
 
@@ -135,7 +135,7 @@ const FAQ_DATA: FAQItem[] = [
 
 const CATEGORIES = [
   'All',
-  'Manufacturing Services',
+  'Manufacturing Excellences',
   'Quality & Certifications',
   'Industries & Applications',
   'Pricing & Business',
@@ -168,7 +168,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   const [currentFAQs, setCurrentFAQs] = useState<FAQItem[]>(FAQ_DATA);
   const [pageMetaData, setPageMetaData] = useState({ 
     title: "Frequently Asked Questions",
-    description: "Get answers to common questions about EMUSKI's manufacturing services, quality processes, and how we can help your business succeed."
+    description: "Get answers to common questions about EMUSKI's Manufacturing Excellences, quality processes, and how we can help your business succeed."
   });
 
   // Update FAQs and meta data based on current page
@@ -195,7 +195,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
 
   // Use provided title/description or page-specific ones
   const displayTitle = title || (usePageSpecific ? pageMetaData.title : "Frequently Asked Questions");
-  const displayDescription = description || (usePageSpecific ? pageMetaData.description : "Get answers to common questions about EMUSKI's manufacturing services, quality processes, and how we can help your business succeed.");
+  const displayDescription = description || (usePageSpecific ? pageMetaData.description : "Get answers to common questions about EMUSKI's Manufacturing Excellences, quality processes, and how we can help your business succeed.");
 
   let filteredFAQs = currentFAQs.filter(faq => {
     const matchesSearch = searchTerm === '' || 
@@ -238,7 +238,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             "about": {
               "@type": "Organization",
               "name": "EMUSKI Manufacturing Solutions",
-              "description": "Leading manufacturing company in Bangalore, India providing OEM manufacturing, precision engineering, and custom manufacturing services"
+              "description": "Leading manufacturing company in Bangalore, India providing OEM manufacturing, precision engineering, and custom Manufacturing Excellences"
             },
             "mainEntity": currentFAQs.map(faq => ({
               "@type": "Question",

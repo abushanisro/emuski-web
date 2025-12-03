@@ -62,7 +62,7 @@ export const ErrorPage = ({
   const displayDescription = description || config.defaultDescription;
 
   const popularPages = [
-    { label: "Manufacturing Services", href: "/manufacturing-services" },
+    { label: "Manufacturing Excellences", href: "/manufacturing-services" },
     { label: "Engineering Precision", href: "/precision-engineering" },
     { label: "AI Solutions", href: "/solutions/ai" },
     { label: "Industries", href: "/industries" },

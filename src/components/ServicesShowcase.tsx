@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const servicesData = [
   {
     id: "manufacturing",
-    category: "Manufacturing Service",
+    category: "Manufacturing Excellence",
     tagline: "Precision at Scale",
     description: "Transform your ideas into reality with rapid prototyping and on-demand manufacturing solutions that deliver quality, speed, and innovation across automotive, aerospace, and industrial sectors.",
     gradient: "from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker",
@@ -33,11 +33,11 @@ const servicesData = [
         beta: true,
       },
     ],
-    relatedCategories: ["Manufacturing Services", "Next-GenAI"]
+    relatedCategories: ["Manufacturing Excellences", "Next-GenAI"]
   },
   {
     id: "engineering",
-    category: "Engineering Service",
+    category: "Engineering Innovation",
     tagline: "Engineering Excellence",
     description: "Leverage deep engineering expertise to optimize costs, validate designs, and strategically source components with precision and efficiency. Our expert team delivers data-driven insights for competitive advantage.",
     gradient: "from-blue-500 via-cyan-500 to-teal-500",
@@ -60,63 +60,63 @@ const servicesData = [
         link: "/precision-engineering#expert-support",
       },
     ],
-    relatedCategories: ["Engineering Services"]
+    relatedCategories: ["Engineering Innovations"]
   }
 ];
 
 const showcaseItems = [
   {
     title: "Product Cost Estimation",
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     description: "Accurate cost analysis and estimation services to optimize your product development budget and maximize profitability.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
     link: "/precision-engineering#cost-estimation"
   },
   {
     title: "VAVE - Teardown & Benchmarking",
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     description: "Value Analysis and Value Engineering through comprehensive teardown studies and competitive benchmarking for cost optimization.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
     link: "/precision-engineering#vave"
   },
   {
     title: "Strategic Sourcing Support",
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     description: "Expert guidance in supplier selection and procurement strategy to ensure quality components at competitive prices.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
     link: "/precision-engineering#sourcing"
   },
   {
     title: "Expert Engineer Support",
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
     link: "/precision-engineering#expert-support"
   },
   {
     title: "On-Demand Manufacturing",
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     description: "Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
     link: "/manufacturing-services#on-demand"
   },
   {
     title: "Rapid Prototyping",
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     description: "Fast and efficient prototyping services from concept to completion with precision and cost optimization.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
     link: "/manufacturing-services#prototyping"
   },
   {
     title: "Custom Manufacturing",
-    category: "Manufacturing Services",
-    description: "Tailored manufacturing services meeting specific requirements with high-precision CNC machining capabilities.",
+    category: "Manufacturing Excellences",
+    description: "Tailored Manufacturing Excellences meeting specific requirements with high-precision CNC machining capabilities.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
     link: "/manufacturing-services#custom"
   },
   {
     title: "Production Scaling",
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
     link: "/manufacturing-services#scaling"

@@ -22,7 +22,7 @@ const growthStories = [
   {
     value: "850+",
     label: "Individual Projects Handled",
-    sublabel: "In Engineering Service", 
+    sublabel: "In Engineering Innovation", 
     category: "Our Expertise",
     description: "Complex engineering projects delivered from concept to completion with precision and cost optimization.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
@@ -30,7 +30,7 @@ const growthStories = [
   {
     value: "2500+",
     label: "Components Manufactured",
-    sublabel: "In Manufacturing Service", 
+    sublabel: "In Manufacturing Excellence", 
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
@@ -66,14 +66,14 @@ const AboutSection = () => {
             value: "120+",
             number: 120,
             label: "Individual Projects",
-            sublabel: "In Engineering Service",
+            sublabel: "In Engineering Innovation",
             category: "Our Expertise"
         },
         {
             value: "2500+",
             number: 2500,
             label: "Unique Components",
-            sublabel: "In Manufacturing Service",
+            sublabel: "In Manufacturing Excellence",
             category: "Our Production"
         }
     ];

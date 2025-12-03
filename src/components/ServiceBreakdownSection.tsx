@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const servicesData = [
   {
-    category: "Engineering Service",
+    category: "Engineering Innovation",
     items: [
       { name: "Product Cost Estimation", link: "/precision-engineering#cost-estimation" },
       { name: "VAVE - Teardown & Benchmarking", link: "/precision-engineering#vave" },
@@ -13,7 +13,7 @@ const servicesData = [
     ]
   },
   {
-    category: "Manufacturing Service",
+    category: "Manufacturing Excellence",
     items: [
       { name: "Rapid Prototyping", link: "/manufacturing-services#rapid-prototyping" },
       { name: "On-demand Manufacturing", link: "/manufacturing-services#on-demand-manufacturing" },

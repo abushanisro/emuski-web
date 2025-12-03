@@ -14,23 +14,48 @@ import {
   Award
 } from "lucide-react";
 
-import { EngineeringServiceCard } from "../components/EngineeringServiceCard";
-import { EngineeringServicesSection } from "../components/EngineeringServicesSection";
+import { EngineeringServicesTabs } from "../components/EngineeringServicesTabs";
 import SectorsServedSection from "../components/SectorsServedSection";
 
 export default function PrecisionEngineering() {
+  // Handle hash navigation
   useEffect(() => {
-    const hash = window.location.hash;
+    const hash = window.location.hash.replace('#', '');
     if (hash) {
-      setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          const offset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }
-      }, 100);
+      const tabMap: { [key: string]: string } = {
+        'cost-estimation': 'cost-estimation',
+        'vave': 'vave',
+        'sourcing': 'sourcing',
+        'expert-support': 'expert-support'
+      };
+
+      if (tabMap[hash]) {
+        setTimeout(() => {
+          const tabButton = document.querySelector(`[data-state][id*="${tabMap[hash]}"]`) as HTMLButtonElement;
+          if (tabButton) {
+            tabButton.click();
+          }
+
+          const element = document.querySelector('#engineering-services');
+          if (element) {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }, 200);
+      } else {
+        // Handle other hash links
+        setTimeout(() => {
+          const element = document.querySelector(`#${hash}`);
+          if (element) {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }, 100);
+      }
     }
   }, []);
 
@@ -52,10 +77,10 @@ export default function PrecisionEngineering() {
               End-to-End Engineering & Costing Solutions
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              From cost estimation to strategic sourcing and expert deployment, we deliver integrated engineering services that drive efficiency and accelerate time-to-market.
+              From cost estimation to strategic sourcing and expert deployment, we deliver integrated Engineering Innovations that drive efficiency and accelerate time-to-market.
             </p>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4">
-              <a href="#cost-estimation" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
+              <a href="#engineering-services" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
                 Our Services
               </a>
               <Link to="/contact" className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center">
@@ -66,51 +91,13 @@ export default function PrecisionEngineering() {
         </div>
       </section>
 
-      {/* Product Cost Estimation */}
-      <section id="cost-estimation" className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Product Cost Estimation
-            </h2>
-            <p className="text-lg text-gray-600">
-              Turning data into competitive advantage with real-time cost intelligence for smarter decisions throughout your product lifecycle.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center hover:bg-gray-100 hover:border-emuski-teal-dark transition-all duration-300">
-              <img src="/assets/engineering/designdecisions.svg" alt="Design decisions" className="w-24 h-24 mx-auto mb-4"/>
-              <h4 className="font-bold text-base text-gray-900 mb-2">Design Optimization</h4>
-              <p className="text-gray-600 text-sm">Engineer cost-effective products from concept</p>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center hover:bg-gray-100 hover:border-emuski-teal-dark transition-all duration-300">
-              <img src="/assets/engineering/costtransparency.svg" alt="Cost transparency" className="w-24 h-24 mx-auto mb-4"/>
-              <h4 className="font-bold text-base text-gray-900 mb-2">Cost Transparency</h4>
-              <p className="text-gray-600 text-sm">Reveal cost drivers and savings opportunities</p>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center hover:bg-gray-100 hover:border-emuski-teal-dark transition-all duration-300">
-              <img src="/assets/engineering/supplierevaluation.svg" alt="Supplier evaluation" className="w-24 h-24 mx-auto mb-4"/>
-              <h4 className="font-bold text-base text-gray-900 mb-2">Supplier Evaluation</h4>
-              <p className="text-gray-600 text-sm">Assess competitive pricing and value</p>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center hover:bg-gray-100 hover:border-emuski-teal-dark transition-all duration-300">
-              <img src="/assets/engineering/negotion.svg" alt="Negotiation leverage" className="w-24 h-24 mx-auto mb-4"/>
-              <h4 className="font-bold text-base text-gray-900 mb-2">Negotiation Power</h4>
-              <p className="text-gray-600 text-sm">Data-driven insights for better deals</p>
-            </div>
-          </div>
-
-          <div className="max-w-5xl mx-auto mt-12 p-8 bg-gray-50 border border-gray-200 rounded-xl">
-            <p className="text-gray-700 text-center leading-relaxed">
-              Our global cost database spans Western Europe, Eastern Europe, North America, Asia, and India—providing real-time insights that empower OEMs to optimize sourcing and production strategies with confidence.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Engineering Services Tabs */}
+      <div id="engineering-services">
+        <EngineeringServicesTabs />
+      </div>
 
       {/* Methodology Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Methodology</h2>
@@ -124,83 +111,17 @@ export default function PrecisionEngineering() {
         </div>
       </section>
 
-      {/* Core Engineering Services */}
-      <EngineeringServicesSection
-        id="vave"
-        title="Value Analysis & Value Engineering (VAVE)"
-        description="Comprehensive teardown benchmarking and cost optimization services to enhance product value."
-        variant="gradient"
-        columns={3}
-      >
-        <EngineeringServiceCard
-          icon={Layers}
-          title="Teardown Benchmarking"
-          description="Detailed product analysis comparing design, materials, and manufacturing processes against competitors."
-          variant="compact"
-        />
-        <EngineeringServiceCard
-          icon={Package}
-          title="BOM Data Capture"
-          description="Complete bill of materials documentation with accurate cost breakdowns and component analysis."
-          variant="compact"
-        />
-        <EngineeringServiceCard
-          icon={Calculator}
-          title="Should-Cost Analysis"
-          description="Independent cost modeling to validate supplier pricing and identify optimization opportunities."
-          variant="compact"
-        />
-        <EngineeringServiceCard
-          icon={TrendingDown}
-          title="Cost Reduction"
-          description="Systematic approach to reduce manufacturing costs while maintaining or improving quality."
-          variant="compact"
-        />
-        <EngineeringServiceCard
-          icon={Users}
-          title="Supplier Identification"
-          description="Global network access to find qualified suppliers that meet your quality and cost requirements."
-          variant="compact"
-        />
-        <EngineeringServiceCard
-          icon={Wrench}
-          title="Technical Tools"
-          description="3D scanning, CT analysis, material testing, and Costing 360 software for accurate assessments."
-          variant="compact"
-        />
-      </EngineeringServicesSection>
-
-      {/* Strategic Services */}
-      <EngineeringServicesSection
-        id="sourcing"
-        title="Strategic Sourcing & Expert Support"
-        description="End-to-end sourcing solutions and technical expertise to accelerate your projects."
-        variant="light"
-        columns={2}
-      >
-        <EngineeringServiceCard
-          icon={ShoppingCart}
-          title="Strategic Sourcing"
-          description="Comprehensive sourcing strategy including supplier scouting, negotiation support, quality audits, and supply chain optimization for cost-effective procurement."
-          features={[
-            "Global supplier network access",
-            "Negotiation and contracting support",
-            "Quality audits and compliance",
-            "Supply chain risk management"
-          ]}
-        />
-        <EngineeringServiceCard
-          icon={Award}
-          title="Expert Engineer Support"
-          description="Deploy specialized engineering resources—from should-cost analysts to VAVE engineers—directly into your team for focused, results-driven project execution."
-          features={[
-            "On-site technical resource deployment",
-            "Should-cost and VAVE specialists",
-            "Project-based or long-term engagement",
-            "Seamless team integration"
-          ]}
-        />
-      </EngineeringServicesSection>
+      {/* Global Cost Database */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-5xl mx-auto p-8 bg-gray-50 border border-gray-200 rounded-xl text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Cost Intelligence</h3>
+            <p className="text-gray-700 leading-relaxed">
+              Our global cost database spans Western Europe, Eastern Europe, North America, Asia, and India—providing real-time insights that empower OEMs to optimize sourcing and production strategies with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Costing 360 Software */}
       <section className="py-16 md:py-20 bg-white">

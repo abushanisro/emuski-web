@@ -52,7 +52,7 @@ export const HOME_FAQS: FAQItem[] = [
   }
 ];
 
-// Manufacturing Services page FAQs - Process-focused with service delivery intent
+// Manufacturing Excellences page FAQs - Process-focused with service delivery intent
 export const MANUFACTURING_SERVICES_FAQS: FAQItem[] = [
   {
     id: 'oem-manufacturing-process-flow',
@@ -137,7 +137,7 @@ export const INDUSTRIES_FAQS: FAQItem[] = [
   },
   {
     id: 'electronics-manufacturing-services',
-    question: 'Does EMUSKI provide electronics manufacturing services?',
+    question: 'Does EMUSKI provide electronics Manufacturing Excellences?',
     answer: 'Yes, we provide electronics manufacturing including precision housings, heat sinks, electromagnetic shielding components, connector assemblies, PCB mounting hardware, and enclosures for consumer and industrial electronics. We support both prototyping and high-volume production with ESD-safe manufacturing.',
     category: 'Electronics',
     keywords: ['electronics manufacturing India', 'precision housings manufacturing', 'heat sink manufacturing', 'EMI shielding components', 'electronics enclosures']
@@ -346,7 +346,7 @@ export const getFAQMetaForPage = (pathname: string) => {
       description: 'Advanced precision engineering capabilities including 5-axis CNC machining, ultra-tight tolerances, smart manufacturing, and cost engineering optimization.'
     },
     '/contact': {
-      title: 'How to Contact EMUSKI | Get Started with Manufacturing Services',
+      title: 'How to Contact EMUSKI | Get Started with Manufacturing Excellences',
       description: 'Contact EMUSKI manufacturing experts for project consultation, quotes, international support, and facility visits. 24/7 global client support available.'
     }
   };

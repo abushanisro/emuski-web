@@ -271,7 +271,7 @@ As manufacturing continues to evolve with Industry 4.0, sustainability requireme
 
 *Ready to optimize your product costs? Our expert team helps manufacturers achieve 20-30% cost reductions while maintaining quality. Schedule your cost estimation assessment today.*
     `,
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     author: "Sarah Chen",
     authorBio: "Sarah Chen is a Senior Cost Engineering Consultant with over 15 years of experience in manufacturing cost optimization. She specializes in automotive and industrial equipment cost analysis and has helped numerous Fortune 500 companies achieve significant cost savings through strategic cost estimation methodologies. Sarah holds a Master's degree in Industrial Engineering and is a certified Cost Engineering Professional (CEP).",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
@@ -668,7 +668,7 @@ The key to VAVE success lies in **systematic application**, **cross-functional c
 
 *Ready to unlock hidden value in your products? Our VAVE specialists help manufacturers achieve 25-40% cost reductions while improving quality and performance. Schedule your value engineering assessment today.*
     `,
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     author: "Michael Rodriguez",
     authorBio: "Michael Rodriguez is a Principal Value Engineering Consultant with 12 years of experience in VAVE methodology implementation across automotive, electronics, and industrial equipment sectors. He has led over 200 value engineering studies resulting in cumulative savings exceeding $50 million. Michael is a certified Value Specialist (CVS) and holds an MBA in Operations Management.",
     authorImage: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
@@ -1046,7 +1046,7 @@ The future belongs to manufacturers who can build **resilient**, **innovative**,
 
 *Ready to build a resilient, cost-effective supply chain? Our strategic sourcing specialists help manufacturers achieve 15-25% cost reductions while improving quality and reducing risk. Schedule your strategic sourcing assessment today.*
     `,
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     author: "David Kim",
     authorBio: "David Kim is a Strategic Sourcing Director with 14 years of experience in global procurement and supplier management across automotive, electronics, and industrial manufacturing sectors. He has led strategic sourcing transformations resulting in over $100 million in documented savings and significant supplier performance improvements. David holds an MBA in Supply Chain Management and is a certified Strategic Sourcing Professional (CSSP).",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0017.jpg",
@@ -1432,7 +1432,7 @@ The future belongs to organizations that can **leverage external expertise strat
 
 *Ready to scale your engineering capabilities? Our expert engineers help organizations achieve 35% faster project delivery while improving quality and reducing costs. Schedule your engineering capability assessment today.*
     `,
-    category: "Engineering Services",
+    category: "Engineering Innovations",
     author: "Lisa Thompson",
     authorBio: "Lisa Thompson is a Senior Engineering Manager with 16 years of experience leading technical teams and managing expert engineering support engagements across diverse manufacturing industries. She has successfully delivered over 150 engineering projects with an average 25% improvement in client technical capabilities. Lisa holds a Master's degree in Engineering Management and is a certified Project Management Professional (PMP).",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0018.jpg",
@@ -1845,7 +1845,7 @@ The future belongs to organizations that can **accelerate innovation cycles**, *
 
 *Ready to accelerate your innovation? Our advanced NPD centers help organizations reduce development time by 50% while improving quality and reducing costs. Schedule your rapid prototyping consultation today.*
     `,
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     author: "James Wilson",
     authorBio: "James Wilson is a Manufacturing Technology Director with 18 years of experience in advanced manufacturing and rapid prototyping across automotive, aerospace, and medical device industries. He has led the development of 12 state-of-the-art manufacturing facilities and holds 8 patents in additive manufacturing processes. James holds a PhD in Mechanical Engineering and is a certified Manufacturing Engineer (CMfgE).",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0019.jpg",
@@ -2291,7 +2291,7 @@ The convergence of **advanced manufacturing technologies**, **artificial intelli
 
 *Ready to implement flexible, scalable production? Our on-demand manufacturing specialists help organizations reduce inventory costs by 60% while improving responsiveness and customer satisfaction. Schedule your manufacturing transformation consultation today.*
     `,
-    category: "Manufacturing Services",
+    category: "Manufacturing Excellences",
     author: "Angela Martinez",
     authorBio: "Angela Martinez is a Manufacturing Systems Director with 14 years of experience in flexible manufacturing and digital production systems across automotive, electronics, and consumer goods industries. She has successfully implemented over 20 on-demand manufacturing transformations, resulting in an average 45% improvement in operational efficiency. Angela holds an MS in Industrial Engineering and is a certified Lean Six Sigma Black Belt.",
     authorImage: "/assets/componets/Part-Photos/IMG-20250519-WA0020.jpg",

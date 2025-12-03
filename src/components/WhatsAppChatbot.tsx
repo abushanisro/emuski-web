@@ -13,7 +13,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export const WhatsAppChatbot = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "918344474556"; // EMUSKI WhatsApp business number
-    const message = "Hi! I'm interested in learning more about EMUSKI's manufacturing services.";
+    const message = "Hi! I'm interested in learning more about EMUSKI's Manufacturing Excellences.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };

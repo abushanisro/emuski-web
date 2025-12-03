@@ -96,7 +96,7 @@ export default function PrecisionEngineering() {
               End-to-End Engineering & Costing Solutions
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market.
+              From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated Engineering Innovations that drive efficiency, reduce costs, and accelerate your time-to-market.
             </p>
             <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4">
               <a href="#services-section" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
@@ -112,7 +112,7 @@ export default function PrecisionEngineering() {
 
       
 
-      {/* Engineering Services Grid */}
+      {/* Engineering Innovations Grid */}
       <section id="services-section" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">

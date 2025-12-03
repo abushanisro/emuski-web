@@ -19,7 +19,7 @@ const featuredContent = [
       },
       {
         category: "Custom Manufacturing",
-        title: "Tailored Manufacturing Services",
+        title: "Tailored Manufacturing Excellences",
         description: "Customized manufacturing solutions meeting your specific requirements with precision engineering and quality assurance at every step.",
         image: "/assets/manufacturing/solution.svg",
         link: "/manufacturing-services#custom"
@@ -33,14 +33,14 @@ const featuredContent = [
       {
         category: "Product Cost Estimation",
         title: "End-to-End Engineering & Costing Solutions",
-        description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market",
+        description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated Engineering Innovations that drive efficiency, reduce costs, and accelerate your time-to-market",
         image: "/assets/engineering/car.png",
         link: "/precision-engineering#cost-estimation"
       },
       {
         category: "VAVE & Benchmarking",
         title: "Teardown & Value Engineering",
-        description: "Comprehensive teardown analysis and value engineering services to optimize product costs while maintaining quality standards and performance requirements.",
+        description: "Comprehensive teardown analysis and value Engineering Innovations to optimize product costs while maintaining quality standards and performance requirements.",
         image: "/assets/engineering/breadown.png",
         link: "/precision-engineering#vave"
       }
@@ -74,12 +74,12 @@ export const FeaturedTabs = () => {
   const [engineeringSlide, setEngineeringSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Manufacturing services images (11 slides)
-  const manufacturingSlides = Array.from({ length: 11 }, (_, i) =>
-    `/assets/manufacturingservices/${i + 1}.svg`
-  );
+  // Manufacturing Excellences images (10 slides, excluding slide 8)
+  const manufacturingSlides = Array.from({ length: 11 }, (_, i) => i + 1)
+    .filter(num => num !== 8)
+    .map(num => `/assets/manufacturingservices/${num}.svg`);
 
-  // Engineering services images (13 slides)
+  // Engineering Innovations images (13 slides)
   const engineeringSlides = Array.from({ length: 13 }, (_, i) =>
     `/assets/engineeringservices/${i + 1}.svg`
   );

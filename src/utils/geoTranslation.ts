@@ -405,7 +405,7 @@ export class GeoTranslationService {
     const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement;
     if (metaDesc && !metaDesc.content.includes(this.userLocation.country)) {
       const originalDesc = metaDesc.content;
-      metaDesc.content = `${originalDesc} Expert manufacturing services for ${this.userLocation.country} businesses.`;
+      metaDesc.content = `${originalDesc} Expert Manufacturing Excellences for ${this.userLocation.country} businesses.`;
     }
 
     // Set HTML lang attribute based on detected language
