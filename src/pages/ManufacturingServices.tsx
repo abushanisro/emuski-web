@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
@@ -6,10 +6,9 @@ import { TechnicalSpecsSection } from "../components/TechnicalSpecsSection";
 import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
 import ProductDeliverablesSection from "../components/ProductDeliverablesSection";
 import SectorsServedSection from "../components/SectorsServedSection";
-import { PartManufacturingServices } from "../components/PartManufacturingServices";
 import ManufacturingExcellenceSection from "../components/ManufacturingExcellenceSection";
 import { SolutionsOfferedSection } from "../components/SolutionsOfferedSection";
-import { Upload, X, FileText, AlertTriangle, Send } from "lucide-react";
+import { Upload, X, FileText, AlertTriangle, Send, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
@@ -21,7 +20,6 @@ export default function ManufacturingServices() {
     if (hash) {
       // Set active tab based on hash
       const tabMap: { [key: string]: string } = {
-        'oem': 'oem',
         'custom': 'custom',
         'prototyping': 'prototyping',
         'scaling': 'scaling',
@@ -232,6 +230,32 @@ export default function ManufacturingServices() {
     timeline: ""
   });
 
+  // Horizontal scroll state
+  const [showLeftGradient, setShowLeftGradient] = useState(false);
+  const [showRightGradient, setShowRightGradient] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (container) {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setShowLeftGradient(scrollLeft > 10);
+      setShowRightGradient(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scrollSection = (direction: 'left' | 'right') => {
+    const scrollContainer = scrollRef.current;
+    if (scrollContainer) {
+      const scrollAmount = direction === 'left' ? -600 : 600;
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
   // Security configurations
   const ALLOWED_FILE_TYPES = [
     'application/pdf',
@@ -425,125 +449,265 @@ export default function ManufacturingServices() {
       </section>
 
       {/* Manufacturing Services Quick Access */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Manufacturing Services</h2>
-            <p className="text-lg text-gray-600">Select a service to learn more</p>
+      <section className="py-12 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+        <div className="w-full px-4 sm:px-6">
+          {/* Section Navigation */}
+          <div className="flex items-center justify-end gap-2 mb-4">
+            <button
+              onClick={() => scrollSection('left')}
+              className="p-2.5 rounded-lg bg-emuski-teal-darker text-white shadow-md hover:shadow-lg transform hover:scale-110 transition-all duration-300"
+              aria-label="Scroll section left"
+            >
+              <ChevronLeft className="w-4 h-4" strokeWidth={2.5} />
+            </button>
+            <button
+              onClick={() => scrollSection('right')}
+              className="p-2.5 rounded-lg bg-emuski-teal-darker text-white shadow-md hover:shadow-lg transform hover:scale-110 transition-all duration-300"
+              aria-label="Scroll section right"
+            >
+              <ChevronRight className="w-4 h-4" strokeWidth={2.5} />
+            </button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <a
-              href="#oem"
-              onClick={(e) => {
-                e.preventDefault();
-                setTimeout(() => {
-                  const tabButton = document.querySelector('[data-state][id*="oem"]') as HTMLButtonElement;
-                  if (tabButton) tabButton.click();
-                  const element = document.querySelector('#manufacturing-tabs');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }, 100);
+
+          {/* Scrollable Section Wrapper */}
+          <div className="relative">
+            {/* Left Gradient Overlay */}
+            <div
+              className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showLeftGradient ? 'opacity-30' : 'opacity-0'}`}
+              style={{
+                maskImage: 'linear-gradient(to right, black, transparent)',
+                WebkitMaskImage: 'linear-gradient(to right, black, transparent)'
               }}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">OEM Manufacturing</h3>
-              <p className="text-gray-600 text-sm">Complete manufacturing solutions from concept to production</p>
-            </a>
-            <a
-              href="#custom"
-              onClick={(e) => {
-                e.preventDefault();
-                setTimeout(() => {
-                  const tabButton = document.querySelector('[data-state][id*="custom"]') as HTMLButtonElement;
-                  if (tabButton) tabButton.click();
-                  const element = document.querySelector('#manufacturing-tabs');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }, 100);
+            ></div>
+
+            {/* Right Gradient Overlay */}
+            <div
+              className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showRightGradient ? 'opacity-30' : 'opacity-0'}`}
+              style={{
+                maskImage: 'linear-gradient(to left, black, transparent)',
+                WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
               }}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
+            ></div>
+
+            {/* Horizontal Scroll Container */}
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+              style={{ scrollbarWidth: 'none' }}
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Custom Manufacturing</h3>
-              <p className="text-gray-600 text-sm">Tailored manufacturing services meeting specific requirements</p>
-            </a>
-            <a
-              href="#prototyping"
-              onClick={(e) => {
-                e.preventDefault();
-                setTimeout(() => {
-                  const tabButton = document.querySelector('[data-state][id*="prototyping"]') as HTMLButtonElement;
-                  if (tabButton) tabButton.click();
-                  const element = document.querySelector('#manufacturing-tabs');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Rapid Prototyping</h3>
-              <p className="text-gray-600 text-sm">Fast and efficient prototyping services</p>
-            </a>
-            <a
-              href="#scaling"
-              onClick={(e) => {
-                e.preventDefault();
-                setTimeout(() => {
-                  const tabButton = document.querySelector('[data-state][id*="scaling"]') as HTMLButtonElement;
-                  if (tabButton) tabButton.click();
-                  const element = document.querySelector('#manufacturing-tabs');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">Production Scaling</h3>
-              <p className="text-gray-600 text-sm">Seamless scaling from prototype to full production</p>
-            </a>
-            <a
-              href="#on-demand"
-              onClick={(e) => {
-                e.preventDefault();
-                setTimeout(() => {
-                  const tabButton = document.querySelector('[data-state][id*="on-demand"]') as HTMLButtonElement;
-                  if (tabButton) tabButton.click();
-                  const element = document.querySelector('#manufacturing-tabs');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-emuski-teal-dark cursor-pointer group"
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emuski-teal-dark transition-colors">On-Demand Manufacturing</h3>
-              <p className="text-gray-600 text-sm">Flexible manufacturing solutions as you need them</p>
-            </a>
+              {/* Service Section */}
+              <div className="flex gap-8 items-start min-w-full">
+                {/* Left Column - Service Info */}
+                <div className="flex-shrink-0 w-full lg:w-[400px]">
+                  <div className="space-y-4">
+                    {/* Category Title */}
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                      Manufacturing Services
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Transform your ideas into reality with rapid prototyping and on-demand manufacturing solutions that deliver quality, speed, and innovation across automotive, aerospace, and industrial sectors.
+                    </p>
+
+                    {/* Quick Links */}
+                    <div className="pt-2">
+                      <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <ChevronRight className="w-4 h-4 text-emuski-teal-darker" />
+                        Quick Links
+                      </h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <a
+                            href="#on-demand"
+                            className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
+                            <span className="text-sm font-medium">On-Demand Manufacturing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#prototyping"
+                            className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
+                            <span className="text-sm font-medium">Rapid Prototyping</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#custom"
+                            className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
+                            <span className="text-sm font-medium">Custom Manufacturing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#scaling"
+                            className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
+                            <span className="text-sm font-medium">Production Scaling</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Featured Projects */}
+                <div className="flex-shrink-0 w-full lg:w-auto">
+                  <div className="flex gap-6">
+                    {/* On-Demand Manufacturing Card */}
+                    <a
+                      href="/manufacturing-services#on-demand"
+                      className="flex-shrink-0 w-[340px] group"
+                    >
+                      <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                          <img
+                            src="/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg"
+                            alt="On-Demand Manufacturing"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute top-4 left-4 z-20">
+                            <span className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-xs font-bold text-gray-900 rounded-full shadow-xl">
+                              Manufacturing Services
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors line-clamp-2">
+                            On-Demand Manufacturing
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                            Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.
+                          </p>
+                          <div className="flex items-center gap-2 text-emuski-teal-darker font-semibold group-hover:gap-3 transition-all duration-300">
+                            <span className="text-sm">Learn More</span>
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      </div>
+                    </a>
+
+                    {/* Rapid Prototyping Card */}
+                    <a
+                      href="/manufacturing-services#prototyping"
+                      className="flex-shrink-0 w-[340px] group"
+                    >
+                      <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                          <img
+                            src="/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
+                            alt="Rapid Prototyping"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute top-4 left-4 z-20">
+                            <span className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-xs font-bold text-gray-900 rounded-full shadow-xl">
+                              Engineering Services
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors line-clamp-2">
+                            Rapid Prototyping
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                            Fast and efficient prototyping services from concept to completion with precision and cost optimization.
+                          </p>
+                          <div className="flex items-center gap-2 text-emuski-teal-darker font-semibold group-hover:gap-3 transition-all duration-300">
+                            <span className="text-sm">Learn More</span>
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      </div>
+                    </a>
+
+                    {/* Custom Manufacturing Card */}
+                    <a
+                      href="/manufacturing-services#custom"
+                      className="flex-shrink-0 w-[340px] group"
+                    >
+                      <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                          <img
+                            src="/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg"
+                            alt="Custom Manufacturing"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute top-4 left-4 z-20">
+                            <span className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-xs font-bold text-gray-900 rounded-full shadow-xl">
+                              Precision Engineering
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors line-clamp-2">
+                            Custom Manufacturing
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                            Tailored manufacturing services meeting specific requirements with high-precision CNC machining capabilities.
+                          </p>
+                          <div className="flex items-center gap-2 text-emuski-teal-darker font-semibold group-hover:gap-3 transition-all duration-300">
+                            <span className="text-sm">Learn More</span>
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      </div>
+                    </a>
+
+                    {/* Production Scaling Card */}
+                    <a
+                      href="/manufacturing-services#scaling"
+                      className="flex-shrink-0 w-[340px] group"
+                    >
+                      <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                          <img
+                            src="/assets/componets/Matica-Photos2/DSC_1008.JPG"
+                            alt="Production Scaling"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute top-4 left-4 z-20">
+                            <span className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-xs font-bold text-gray-900 rounded-full shadow-xl">
+                              Manufacturing Services
+                            </span>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors line-clamp-2">
+                            Production Scaling
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                            Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.
+                          </p>
+                          <div className="flex items-center gap-2 text-emuski-teal-darker font-semibold group-hover:gap-3 transition-all duration-300">
+                            <span className="text-sm">Learn More</span>
+                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      <div id="oem">
-        <PartManufacturingServices />
-      </div>
 
       <div id="custom">
         <ManufacturingExcellenceSection />

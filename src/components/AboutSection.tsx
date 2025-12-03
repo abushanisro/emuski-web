@@ -43,6 +43,9 @@ const AboutSection = () => {
     const [animatedValues, setAnimatedValues] = useState<{ [key: number]: number }>({});
     const [hasAnimated, setHasAnimated] = useState(false);
     const achievementsRef = useRef<HTMLDivElement>(null);
+    const [showLeftGradient, setShowLeftGradient] = useState(false);
+    const [showRightGradient, setShowRightGradient] = useState(true);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
     // Define specific achievements for the container
     const achievementsData = [
@@ -129,12 +132,26 @@ const AboutSection = () => {
         };
     }, [hasAnimated]);
 
+    // Initialize gradient states
+    useEffect(() => {
+        handleScroll();
+    }, [currentIndex]);
+
     const nextSlide = () => {
         setCurrentIndex(prev => Math.min(prev + 1, maxIndex));
     };
 
     const prevSlide = () => {
         setCurrentIndex(prev => Math.max(prev - 1, 0));
+    };
+
+    const handleScroll = () => {
+        const container = carouselRef.current;
+        if (container) {
+            const { scrollLeft, scrollWidth, clientWidth } = container;
+            setShowLeftGradient(scrollLeft > 10);
+            setShowRightGradient(scrollLeft < scrollWidth - clientWidth - 10);
+        }
     };
 
     return (
@@ -177,14 +194,14 @@ const AboutSection = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
-                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>
@@ -192,11 +209,35 @@ const AboutSection = () => {
                         </div>
 
                         {/* Carousel Container */}
-                        <div className="overflow-hidden">
-                            <div 
-                                className="flex transition-transform duration-300 ease-in-out"
-                                style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+                        <div className="relative">
+                            {/* Left Gradient Overlay */}
+                            <div
+                                className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showLeftGradient ? 'opacity-30' : 'opacity-0'}`}
+                                style={{
+                                    maskImage: 'linear-gradient(to right, black, transparent)',
+                                    WebkitMaskImage: 'linear-gradient(to right, black, transparent)'
+                                }}
+                            ></div>
+
+                            {/* Right Gradient Overlay */}
+                            <div
+                                className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showRightGradient ? 'opacity-30' : 'opacity-0'}`}
+                                style={{
+                                    maskImage: 'linear-gradient(to left, black, transparent)',
+                                    WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
+                                }}
+                            ></div>
+
+                            <div
+                                ref={carouselRef}
+                                onScroll={handleScroll}
+                                className="overflow-x-auto scrollbar-hide scroll-smooth"
+                                style={{ scrollbarWidth: 'none' }}
                             >
+                                <div
+                                    className="flex transition-transform duration-300 ease-in-out"
+                                    style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+                                >
                                 {growthStories.map((story, index) => (
                                     <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
                                         <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
@@ -263,6 +304,7 @@ const AboutSection = () => {
                                         </div>
                                     </div>
                                 ))}
+                                </div>
                             </div>
                         </div>
                          {/* Mobile Navigation */}
@@ -271,14 +313,14 @@ const AboutSection = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
-                                    className="h-10 w-10 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white border-emuski-teal disabled:opacity-50 inline-flex items-center justify-center rounded-md border transition-colors"
+                                    className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>
