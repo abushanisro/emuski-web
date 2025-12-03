@@ -171,7 +171,7 @@ export const DataCenterSection = () => {
                         <span className="flex-1 flex items-center font-medium">
                           {service.title}
                           {service.title === "Mithran AI Platform" && (
-                            <span className="ml-2 px-1.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-600 rounded border border-blue-200">
+                            <span className="ml-2 px-1.5 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded border border-slate-300">
                               BETA
                             </span>
                           )}

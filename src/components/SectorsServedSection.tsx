@@ -2,28 +2,28 @@ import React from 'react';
 
 const sectors = [
   {
-    name: "Machine/Equipment Details",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
-  },
-  {
-    name: "Printer Manufacture",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
-  },
-  {
-    name: "Robotics and Automation",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
-  },
-  {
-    name: "Industry machineries",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
+    name: "Automotive",
+    icon: "M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M5 17H4a1 1 0 01-1-1v-5.586a1 1 0 01.293-.707l2.414-2.414A1 1 0 016.414 7H19a2 2 0 012 2v7a1 1 0 01-1 1h-1"
   },
   {
     name: "Agriculture Devices",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
+    icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
   },
   {
-    name: "Consumer Product",
-    icon: "M12 8v4m0 4h.01M4.93 4.93l.707.707M18.36 18.36l.707.707M1 12h2m18 0h2M4.93 19.07l.707-.707M18.36 5.64l.707-.707"
+    name: "Robotics and Automation",
+    icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+  },
+  {
+    name: "Medical",
+    icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+  },
+  {
+    name: "Defence",
+    icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+  },
+  {
+    name: "Space & Aerospace",
+    icon: "M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
   }
 ];
 
@@ -31,7 +31,7 @@ const SectorsServedSection = () => {
   return (
     <section className="py-20 bg-industrial-dark">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">SECTORS WE SERVE</h2>
+        <h2 className="text-3xl font-bold text-center text-white mb-12">SECTORS WE SERVED</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sectors.map((sector, index) => (
             <div key={index} className="flex items-center">

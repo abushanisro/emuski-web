@@ -15,21 +15,21 @@ const servicesDropdown = {
     name: "Manufacturing Excellence",
     path: "/manufacturing-services",
     subItems: [
-      { name: "OEM Manufacturing", path: "/manufacturing-services#oem" },
-      { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
+      { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand" },
       { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping" },
+      { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
       { name: "Production Scaling", path: "/manufacturing-services#scaling" },
-      { name: "SaaS Mithran AI", path: "/solutions/ai", beta: true }
+      { name: "Mithran AI", path: "/solutions/ai", beta: true }
     ]
   },
   precisionEngineering: {
     name: "Engineering Innovation",
     path: "/precision-engineering",
     subItems: [
-      { name: "CNC Machining", path: "/precision-engineering#cnc" },
-      { name: "Component Design", path: "/precision-engineering#design" },
-      { name: "Quality Control", path: "/precision-engineering#quality" },
-      { name: "Engineering Consultation", path: "/precision-engineering#consultation" }
+      { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation" },
+      { name: "VAVE & Benchmarking", path: "/precision-engineering#vave" },
+      { name: "Strategic Sourcing", path: "/precision-engineering#sourcing" },
+      { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" }
     ]
   }
 };
@@ -37,7 +37,6 @@ const servicesDropdown = {
 const navigationConfig = {
   leftMenu: [
     { name: "Next-GenAI", path: "/solutions/ai" },
-    { name: "Industries", path: "/industries" },
     { name: "Blog", path: "/blog" }
   ],
   rightMenu: [
@@ -62,7 +61,6 @@ const navigationConfig = {
     {
       title: "General",
       items: [
-        { name: "Industries", path: "/industries" },
         { name: "Blog", path: "/blog" }
       ]
     },
@@ -81,7 +79,6 @@ const routeToPageName: Record<string, string> = {
   "/": "Home",
   "/manufacturing-services": "Manufacturing Excellence",
   "/precision-engineering": "Engineering Innovation", 
-  "/industries": "Industries",
   "/blog": "Blog",
   "/gallery": "Gallery",
   "/contact": "Contact",
@@ -214,7 +211,7 @@ onClick={() => setActiveServiceDropdown(null)}
 <div className="flex items-center justify-between">
 <span>{subItem.name}</span>
 {subItem.beta && (
-<span className="ml-2 px-2 py-0.5 bg-orange-100 text-orange-600 text-xs font-medium rounded-full border border-orange-200">
+<span className="ml-2 px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-300">
 BETA
 </span>
 )}

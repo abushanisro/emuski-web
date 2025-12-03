@@ -163,9 +163,9 @@ export const PRECISION_ENGINEERING_FAQS: FAQItem[] = [
   {
     id: 'precision-cnc-machining-technologies',
     question: 'What advanced CNC machining technologies does EMUSKI use for precision engineering?',
-    answer: 'EMUSKI utilizes state-of-the-art CNC technologies including 5-axis simultaneous machining centers, high-speed spindles (up to 24,000 RPM), multi-axis turning centers with live tooling, Swiss-type automatic lathes for complex geometries, and automated pallet systems for lights-out manufacturing. Our machines feature sub-micron positioning accuracy, thermal compensation, and real-time vibration monitoring for ultimate precision.',
+    answer: 'EMUSKI utilizes state-of-the-art CNC technologies including 4-axis simultaneous machining centers, high-speed spindles (up to 24,000 RPM), multi-axis turning centers with live tooling, Swiss-type automatic lathes for complex geometries, and automated pallet systems for lights-out manufacturing. Our machines feature sub-micron positioning accuracy, thermal compensation, and real-time vibration monitoring for ultimate precision.',
     category: 'CNC Technologies',
-    keywords: ['5-axis CNC machining', 'high-speed machining', 'Swiss machining', 'multi-axis turning', 'automated manufacturing', 'sub-micron precision']
+    keywords: ['4-axis CNC machining', 'high-speed machining', 'Swiss machining', 'multi-axis turning', 'automated manufacturing', 'sub-micron precision']
   },
   {
     id: 'ultra-precision-tolerance-capabilities',

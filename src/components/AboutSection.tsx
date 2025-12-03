@@ -20,7 +20,7 @@ const growthStories = [
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
   },
   {
-    value: "120+",
+    value: "850+",
     label: "Individual Projects Handled",
     sublabel: "In Engineering Service", 
     category: "Our Expertise",
@@ -30,6 +30,7 @@ const growthStories = [
   {
     value: "2500+",
     label: "Components Manufactured",
+    sublabel: "In Manufacturing Service", 
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
@@ -71,7 +72,8 @@ const AboutSection = () => {
         {
             value: "2500+",
             number: 2500,
-            label: "Components Manufactured",
+            label: "Unique Components",
+            sublabel: "In Manufacturing Service",
             category: "Our Production"
         }
     ];
@@ -156,7 +158,6 @@ const AboutSection = () => {
 
     return (
         <>
-            <div className="h-16" />
 
             <section className="py-16 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
                 {/* Background Elements */}

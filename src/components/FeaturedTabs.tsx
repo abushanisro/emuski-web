@@ -33,7 +33,7 @@ const featuredContent = [
       {
         category: "Product Cost Estimation",
         title: "End-to-End Engineering & Costing Solutions",
-        description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market.",
+        description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market",
         image: "/assets/engineering/car.png",
         link: "/precision-engineering#cost-estimation"
       },
@@ -214,7 +214,7 @@ export const FeaturedTabs = () => {
     <section className="py-20 bg-background">
       <div className="w-full px-4 sm:px-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center sm:justify-start bg-secondary border-b border-border rounded-none h-auto p-0 mb-8">
+          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center bg-secondary border-b border-border rounded-none h-auto p-0 mb-8">
             {featuredContent.map((tab) => (
               <TabsTrigger
                 key={tab.id}

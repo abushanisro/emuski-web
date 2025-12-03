@@ -11,7 +11,7 @@ const manufacturingExcellenceItems = [
   },
   {
     title: "Aerospace Innovation Story",
-    description: "Our 5-axis CNC capabilities enabled a aerospace client to reduce component weight by 35% while improving structural integrity for next-gen aircraft",
+    description: "Our 4-axis CNC capabilities enabled a aerospace client to reduce component weight by 35% while improving structural integrity for next-gen aircraft",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
     link: "/manufacturing-services"
   },

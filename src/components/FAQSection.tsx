@@ -329,7 +329,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             )}
 
             {/* FAQ Items */}
-            <div className="space-y-3">
+            <div className="space-y-3 max-w-4xl mx-auto">
               {filteredFAQs.length === 0 ? (
                 <div className="text-center py-12">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">No results found</h3>

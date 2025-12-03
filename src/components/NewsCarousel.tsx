@@ -14,29 +14,29 @@ const clientLogos = Array.from({ length: 16 }, (_, i) => ({
 const successStories = [
   {
     category: "Automotive Excellence",
-    title: "2M Parts. Zero Compromises. 99.9% On-Time.",
-    description: "From prototype to Tier-1 supplier status—delivering 2 million brake components annually to global automotive leaders. Your production deadlines met, your quality standards exceeded.",
+    title: "Tier-1 Supplier. Consistent Quality. On-Time Delivery.",
+    description: "From prototype to trusted supplier—delivering precision brake components to automotive leaders. Meeting production deadlines while maintaining rigorous quality standards.",
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
     link: "/industries#automotive"
   },
   {
     category: "Precision Engineering",
-    title: "When Precision Meets Speed: 25% Faster Production",
-    description: "Critical transmission components delivered with 99.8% quality standards while slashing production time by 25%. Your competitive edge, engineered to perfection.",
+    title: "Where Precision Meets Efficiency.",
+    description: "Critical transmission components delivered with exceptional quality standards while optimizing production workflows. Your competitive edge, engineered to perfection.",
     image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
     link: "/precision-engineering#services-section"
   },
   {
     category: "Smart Manufacturing",
-    title: "40% Faster Assembly. Same Quality. Higher Profits.",
-    description: "Custom fixture design that transformed an electronics manufacturer's peak season from bottleneck to breakthrough. Meet demand surges without sacrificing standards.",
+    title: "Optimized Assembly. Maintained Quality. Better Results.",
+    description: "Custom fixture design that transformed manufacturing workflows from bottleneck to streamlined efficiency. Meet demand surges without compromising standards.",
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
     link: "/manufacturing-services#custom"
   },
   {
     category: "Production Systems",
-    title: "Scale Smart: 100 to 10,000 Units Without Breaking Quality",
-    description: "Zero-defect quality maintained while scaling production 100x. 30% cost reduction per unit. Your growth ambitions, our manufacturing excellence.",
+    title: "Scalable Production. Unwavering Quality.",
+    description: "Successfully scaling production from low-volume to high-volume manufacturing while maintaining consistent quality metrics. Your growth, our expertise.",
     image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
     link: "/manufacturing-services#scaling"
   },
@@ -49,8 +49,8 @@ const successStories = [
   },
   {
     category: "Client Partnership",
-    title: "6 Months Ahead of Schedule. Market Leadership Secured.",
-    description: "Rapid prototyping and engineering validation that accelerated product launch by half a year. Your innovation, our speed—together, unstoppable.",
+    title: "Accelerated Time-to-Market. Strategic Advantage.",
+    description: "Rapid prototyping and engineering validation that accelerated product development timelines. Your innovation, our expertise—delivering results together.",
     image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
     link: "/industries#aerospace"
   }
@@ -68,7 +68,6 @@ export const NewsCarousel = () => {
 
   return (
     <>
-      <div className="h-16" />
 
       {/* Trusted by Clients Section */}
       <section className="py-8 border-b border-border/30 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>

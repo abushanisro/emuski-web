@@ -26,9 +26,9 @@ const slides: Slide[] = [
     image: "/assets/hero/engineering.svg",
     mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
     category: "Engineering Innovation",
-    title: "Mastering Value, Cost, and Supply Advantage",
+    title: "End-to-End Engineering & Costing Solutions",
     shortTitle: "Engineering Services",
-    description: "Precision costing, teardown intelligence, sourcing strength, and expert execution — All in One",
+    description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated engineering services that drive efficiency, reduce costs, and accelerate your time-to-market",
     link: "/precision-engineering",
   },
   {

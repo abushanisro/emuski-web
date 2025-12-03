@@ -60,31 +60,38 @@ const servicesData = [
         link: "/precision-engineering#expert-support",
       },
     ],
-    relatedCategories: ["Precision Engineering", "Engineering Services", "Quality Assurance"]
+    relatedCategories: ["Engineering Services"]
   }
 ];
 
 const showcaseItems = [
   {
-    title: "CNC Machining Excellence",
-    category: "Precision Engineering",
-    description: "High-precision CNC machining capabilities delivering complex geometries with tight tolerances for automotive and aerospace applications.",
-    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-    link: "/precision-engineering#cnc"
-  },
-  {
-    title: "Component Design & Validation",
+    title: "Product Cost Estimation",
     category: "Engineering Services",
-    description: "Complete product development lifecycle from concept to production, including rapid prototyping and validation services.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    link: "/precision-engineering#design"
+    description: "Accurate cost analysis and estimation services to optimize your product development budget and maximize profitability.",
+    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
+    link: "/precision-engineering#cost-estimation"
   },
   {
-    title: "Quality Control Systems",
-    category: "Quality Assurance",
-    description: "Advanced quality inspection and testing protocols ensuring every component meets exact specifications and industry standards.",
+    title: "VAVE - Teardown & Benchmarking",
+    category: "Engineering Services",
+    description: "Value Analysis and Value Engineering through comprehensive teardown studies and competitive benchmarking for cost optimization.",
+    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+    link: "/precision-engineering#vave"
+  },
+  {
+    title: "Strategic Sourcing Support",
+    category: "Engineering Services",
+    description: "Expert guidance in supplier selection and procurement strategy to ensure quality components at competitive prices.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
-    link: "/precision-engineering#quality"
+    link: "/precision-engineering#sourcing"
+  },
+  {
+    title: "Expert Engineer Support",
+    category: "Engineering Services",
+    description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
+    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    link: "/precision-engineering#expert-support"
   },
   {
     title: "On-Demand Manufacturing",
@@ -127,9 +134,17 @@ export const ServicesShowcase = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showLeftGradient, setShowLeftGradient] = useState<{ [key: string]: boolean }>({});
   const [showRightGradient, setShowRightGradient] = useState<{ [key: string]: boolean }>({});
+  const [expandedQuickLinks, setExpandedQuickLinks] = useState<{ [key: string]: boolean }>({});
   const scrollRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const sectionScrollRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const toggleQuickLinks = (serviceId: string) => {
+    setExpandedQuickLinks(prev => ({
+      ...prev,
+      [serviceId]: !prev[serviceId]
+    }));
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -202,14 +217,6 @@ export const ServicesShowcase = () => {
       </div>
 
       <div className="w-full px-4 sm:px-6 relative z-10">
-        {/* Component Title */}
-        <div className={`mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            Our Services
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-emuski-teal-darker to-blue-600 rounded-full"></div>
-        </div>
-
         {/* Services Sections */}
         <div className="space-y-10">
         {servicesData.map((service, serviceIndex) => {
@@ -241,23 +248,55 @@ export const ServicesShowcase = () => {
 
               {/* Scrollable Section Wrapper */}
               <div className="relative">
-                {/* Left Gradient Overlay */}
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showLeftGradient[service.id] ? 'opacity-30' : 'opacity-0'}`}
-                  style={{
-                    maskImage: 'linear-gradient(to right, black, transparent)',
-                    WebkitMaskImage: 'linear-gradient(to right, black, transparent)'
-                  }}
-                ></div>
 
-                {/* Right Gradient Overlay */}
-                <div
-                  className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showRightGradient[service.id] ? 'opacity-30' : 'opacity-0'}`}
-                  style={{
-                    maskImage: 'linear-gradient(to left, black, transparent)',
-                    WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
-                  }}
-                ></div>
+
+                {/* Service Info - Mobile First */}
+                <div className="lg:hidden mb-6">
+                  <div className="flex-shrink-0 w-full">
+                    <div className="space-y-4">
+                      {/* Category Title */}
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                        {service.category}
+                      </h2>
+
+                      {/* Description */}
+                      <p className="text-base text-gray-600 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* Quick Links */}
+                      <div className="pt-2">
+                        <h3
+                          className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2 cursor-pointer active:text-emuski-teal-darker transition-colors select-none"
+                          onClick={() => toggleQuickLinks(service.id)}
+                        >
+                          <ChevronRight className={`w-4 h-4 text-emuski-teal-darker transition-transform duration-200 ${expandedQuickLinks[service.id] ? 'rotate-90' : ''}`} />
+                          Quick Links
+                        </h3>
+                        <div className={`overflow-hidden transition-all duration-200 ease-in-out ${expandedQuickLinks[service.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                          <ul className="space-y-2 pb-2">
+                            {service.items.map((item, itemIndex) => (
+                              <li key={itemIndex}>
+                                <Link
+                                  to={item.link}
+                                  className="group flex items-center gap-2 text-gray-700 active:text-emuski-teal-darker transition-colors duration-200"
+                                >
+                                  <span className="w-1 h-1 rounded-full bg-gray-400 group-active:bg-emuski-teal-darker transition-colors"></span>
+                                  <span className="text-sm font-medium">{item.name}</span>
+                                  {item.beta && (
+                                    <span className="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded-full border border-slate-300">
+                                      BETA
+                                    </span>
+                                  )}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Horizontal Scroll Container */}
                 <div
@@ -269,8 +308,8 @@ export const ServicesShowcase = () => {
                   {/* Service Section */}
                   <div className="flex gap-8 items-start min-w-full">
 
-                    {/* Left Column - Service Info */}
-                    <div className="flex-shrink-0 w-full lg:w-[400px]">
+                    {/* Left Column - Service Info - Desktop Only */}
+                    <div className="hidden lg:block flex-shrink-0 w-full lg:w-[400px]">
                   <div className="space-y-4">
                     {/* Category Title */}
                     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
@@ -284,28 +323,34 @@ export const ServicesShowcase = () => {
 
                     {/* Quick Links */}
                     <div className="pt-2">
-                      <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">
-                        <ChevronRight className="w-4 h-4 text-emuski-teal-darker" />
+                      <h3
+                        className="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2 cursor-pointer hover:text-emuski-teal-darker transition-colors"
+                        onClick={() => toggleQuickLinks(service.id)}
+                        onMouseEnter={() => setExpandedQuickLinks(prev => ({ ...prev, [service.id]: true }))}
+                      >
+                        <ChevronRight className={`w-4 h-4 text-emuski-teal-darker transition-transform duration-300 ${expandedQuickLinks[service.id] ? 'rotate-90' : ''}`} />
                         Quick Links
                       </h3>
-                      <ul className="space-y-2">
-                        {service.items.map((item, itemIndex) => (
-                          <li key={itemIndex}>
-                            <Link
-                              to={item.link}
-                              className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
-                            >
-                              <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
-                              <span className="text-sm font-medium">{item.name}</span>
-                              {item.beta && (
-                                <span className="px-2 py-0.5 text-xs font-bold bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-full">
-                                  BETA
-                                </span>
-                              )}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className={`overflow-hidden transition-all duration-300 ${expandedQuickLinks[service.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <ul className="space-y-2">
+                          {service.items.map((item, itemIndex) => (
+                            <li key={itemIndex}>
+                              <Link
+                                to={item.link}
+                                className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
+                              >
+                                <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
+                                <span className="text-sm font-medium">{item.name}</span>
+                                {item.beta && (
+                                  <span className="px-2 py-0.5 text-xs font-medium bg-slate-100 text-slate-600 rounded-full border border-slate-300">
+                                    BETA
+                                  </span>
+                                )}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -332,12 +377,7 @@ export const ServicesShowcase = () => {
                                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                 />
 
-                                {/* Category Badge */}
-                                <div className="absolute top-4 left-4 z-20">
-                                  <span className="px-3 py-1.5 bg-white/95 backdrop-blur-md text-xs font-bold text-gray-900 rounded-full shadow-xl">
-                                    {project.category}
-                                  </span>
-                                </div>
+
                               </div>
 
                               {/* Project Content */}

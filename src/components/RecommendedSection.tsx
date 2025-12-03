@@ -11,9 +11,19 @@ const recommendations = [
     image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg"
   },
   {
-    title: "35% Lighter. Stronger Structure.",
-    description: "5-axis CNC precision reducing aircraft component weight while boosting structural integrity.",
+    title: "Electric Powertrain Revolution.",
+    description: "Next-gen EV components engineered for performance, efficiency, and sustainability in automotive evolution.",
     image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg"
+  },
+  {
+    title: "35% Lighter. Stronger Structure.",
+    description: "4-axis CNC precision reducing aircraft component weight while boosting structural integrity.",
+    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
+  },
+  {
+    title: "Mission-Critical Aerospace Parts.",
+    description: "Zero-tolerance manufacturing for satellite and launch vehicle systems meeting stringent space standards.",
+    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG"
   },
   {
     title: "FDA Approved 4 Months Early.",
@@ -21,19 +31,19 @@ const recommendations = [
     image: "/assets/componets/Matica-Photos2/DSC_1006.JPG"
   },
   {
-    title: "$12M Defense Contract. 5 Years.",
-    description: "Military-spec quality systems securing critical defense component partnership.",
+    title: "Surgical Precision. Patient Safety.",
+    description: "Biocompatible implants and instruments manufactured to exacting medical standards for critical applications.",
     image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg"
   },
   {
-    title: "45% Faster. 50% More Capacity.",
-    description: "Custom fixtures transforming electronics production from 800K to 1.2M units annually.",
+    title: "$12M Defense Contract. 5 Years.",
+    description: "Military-spec quality systems securing critical defense component partnership.",
     image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg"
   },
   {
-    title: "15 Iterations. 3 Weeks. 6 Months Saved.",
-    description: "Rapid prototyping accelerating Fortune 500 product launches in competitive markets.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg"
+    title: "Battle-Ready. Field-Tested.",
+    description: "Ruggedized components engineered for extreme conditions in defense and tactical applications.",
+    image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg"
   }
 ];
 
@@ -55,7 +65,9 @@ export const RecommendedSection = () => {
       
       <div className="w-full px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">Recommended For You</h2>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Recommended For You</h2>
+          </div>
           
           <div className="flex space-x-2">
             <Button
@@ -84,7 +96,7 @@ export const RecommendedSection = () => {
           {recommendations.map((item, index) => (
             <Link key={index} to="/gallery">
               <Card
-                className="flex-shrink-0 w-72 sm:w-80 h-[400px] group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                className="flex-shrink-0 w-72 sm:w-80 h-[400px] group overflow-hidden bg-card border-border hover:border-emuski-teal-darker transition-all duration-300 cursor-pointer"
               >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -94,9 +106,9 @@ export const RecommendedSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              
+
               <div className="p-6 flex flex-col h-[208px]">
-                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-emuski-teal-dark transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 group-hover:text-emuski-teal-darker transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

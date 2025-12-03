@@ -36,12 +36,17 @@ const AISolutions = () => {
             <img
               src="/assets/hero/genai.svg" // Using the general AI hero image
               alt="AI Solutions"
-              className="w-full h-full object-cover opacity-20"
+              className="hidden md:block w-full h-full object-cover opacity-60"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent"></div>
+            <img
+              src="/assets/hero-mobile/genai.svg"
+              alt="AI Solutions"
+              className="block md:hidden w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent"></div>
           </div>
           
-          <div className="container mx-auto px-4 sm:px-6 relative z-10 py-32">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10 py-24 md:py-32">
             <div className="max-w-3xl space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Next-GenAI - Mithran

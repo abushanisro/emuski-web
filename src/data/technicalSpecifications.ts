@@ -156,7 +156,7 @@ export const PERFORMANCE_METRICS = {
 // Process Capability Studies (Cpk Values)
 export const PROCESS_CAPABILITY = {
   cncMachining: [
-    { process: "5-Axis Milling", parameter: "Dimensional Accuracy", cpk: 2.1, sigma: "6.3σ" },
+    { process: "4-Axis Milling", parameter: "Dimensional Accuracy", cpk: 2.1, sigma: "6.3σ" },
     { process: "CNC Turning", parameter: "Concentricity", cpk: 1.8, sigma: "5.4σ" },
     { process: "Swiss Machining", parameter: "Position Tolerance", cpk: 2.3, sigma: "6.9σ" }
   ],
@@ -173,7 +173,7 @@ export const PROCESS_CAPABILITY = {
 // Equipment and Technology Specifications
 export const EQUIPMENT_SPECS = [
   {
-    category: "5-Axis CNC Machining Centers",
+    category: "4-Axis CNC Machining Centers",
     models: [
       {
         name: "DMG MORI DMU 50 ecoline",

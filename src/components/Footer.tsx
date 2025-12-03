@@ -13,9 +13,8 @@ export const Footer = () => {
             <h4 className="text-foreground font-semibold mb-4">Manufacturing Services</h4>
             <ul className="space-y-2">
               <li><Link to="/manufacturing-services" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">On-Demand Manufacturing</Link></li>
-              <li><Link to="/manufacturing-services#oem" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">OEM Manufacturing</Link></li>
-              <li><Link to="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Manufacturing</Link></li>
               <li><Link to="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping</Link></li>
+              <li><Link to="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Manufacturing</Link></li>
               <li><Link to="/manufacturing-services#scaling" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Production Scaling</Link></li>
             </ul>
           </div>
@@ -39,7 +38,7 @@ export const Footer = () => {
               <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Mithran AI Platform</Link></li>
               <li><Link to="/solutions/ai#mithran-overview" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Smart Sourcing</Link></li>
               <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Supply Chain Optimization</Link></li>
-              <li><Link to="/industries" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Industries We Serve</Link></li>
+
             </ul>
           </div>
 
@@ -110,8 +109,8 @@ export const Footer = () => {
             </div>
             
             <div className="text-center sm:text-right">
-              <p className="text-muted-foreground text-sm">Connect with EMUSKI Manufacturing</p>
-              <p className="text-muted-foreground text-xs mt-1">Latest CNC machining innovations & manufacturing insights</p>
+              <p className="text-muted-foreground text-sm">Connect with EMUSKI</p>
+              <p className="text-muted-foreground text-xs mt-1">Your One-Stop Solution for OEM in Bangalore, India</p>
             </div>
           </div>
         </div>
@@ -139,7 +138,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-6 mt-6">
           <div className="text-center px-2">
             <p className="text-muted-foreground text-xs leading-relaxed max-w-5xl mx-auto">
-              <span className="font-medium">Manufacturing & Engineering Excellence:</span> CNC Machining Bangalore | Precision Engineering India | On-Demand Manufacturing | OEM Manufacturing Solutions | Custom Metal Fabrication | Rapid Prototyping Services | Mass Production Manufacturing | Product Cost Estimation | VAVE & Benchmarking Analysis | Strategic Sourcing Support | AI-Powered Supply Chain | Mithran AI Platform | ISO 9001 Certified | Six Sigma Quality | Industry 4.0 Solutions | Smart Manufacturing | Design for Manufacturability | Lean Manufacturing | Contract Manufacturing | Automotive Components | Electronics Assembly | Medical Device Manufacturing | Aerospace Parts Production
+              <span className="font-medium">Manufacturing & Engineering Excellence:</span> CNC Machining Bangalore | Precision Engineering India | On-Demand Manufacturing | Custom Metal Fabrication | Rapid Prototyping Services | Mass Production Manufacturing | Product Cost Estimation | VAVE & Benchmarking Analysis | Strategic Sourcing Support | AI-Powered Supply Chain | Mithran AI Platform | ISO 9001 Certified | Six Sigma Quality | Industry 4.0 Solutions | Smart Manufacturing | Design for Manufacturability | Lean Manufacturing | Contract Manufacturing | Automotive Components | Electronics Assembly | Medical Device Manufacturing | Aerospace Parts Production
             </p>
           </div>
         </div>

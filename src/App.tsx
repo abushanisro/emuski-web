@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import AutonomousMachines from "./pages/AutonomousMachines";
-import Industries from "./pages/Industries";
+
 import AISolutions from "./pages/AISolutions";
 import NotFound from "./pages/NotFound";
 import ManufacturingServices from "./pages/ManufacturingServices";
@@ -70,7 +70,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/autonomous-machines" element={<AutonomousMachines />} />
-          <Route path="/industries" element={<Industries />} />
+
           <Route path="/solutions/ai" element={<AISolutions />} />
           <Route path="/manufacturing-services" element={<ManufacturingServices />} />
           <Route path="/precision-engineering" element={<PrecisionEngineering />} />
