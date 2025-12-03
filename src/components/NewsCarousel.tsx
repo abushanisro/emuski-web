@@ -119,7 +119,7 @@ export const NewsCarousel = () => {
         
         <div className="w-full px-4 sm:px-6 relative z-10">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Real Results. Real Impact. Real ROI.</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Success Story</h2>
           
           <div className="flex space-x-2">
             <Button
