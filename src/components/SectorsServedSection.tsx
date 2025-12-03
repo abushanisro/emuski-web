@@ -29,22 +29,30 @@ const sectors = [
 
 const SectorsServedSection = () => {
   return (
-    <section className="py-20 bg-industrial-dark">
-      <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">SECTORS WE SERVED</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sectors.map((sector, index) => (
-            <div key={index} className="flex items-center">
-              <div className="bg-emuski-teal-dark p-4 rounded-l-lg">
-                <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={sector.icon}></path>
-                </svg>
+    <section className="py-20 border-b border-border/30 relative overflow-hidden" style={{ backgroundColor: 'rgb(18, 26, 33)' }}>
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">SECTORS WE SERVED</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sectors.map((sector, index) => (
+              <div key={index} className="flex items-center hover:scale-105 transition-transform duration-300">
+                <div className="bg-emuski-teal-darker p-4 rounded-l-lg">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={sector.icon}></path>
+                  </svg>
+                </div>
+                <div className="bg-emuski-teal-darker p-4 rounded-r-lg w-full">
+                  <h3 className="text-xl font-semibold text-white">{sector.name}</h3>
+                </div>
               </div>
-              <div className="bg-emuski-teal-light p-4 rounded-r-lg w-full">
-                <h3 className="text-xl font-semibold text-gray-700">{sector.name}</h3>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

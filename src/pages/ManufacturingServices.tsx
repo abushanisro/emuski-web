@@ -4,40 +4,72 @@ import { Footer } from "../components/Footer";
 import { FAQSection } from "../components/FAQSection";
 import { ManufacturingServicesTabs } from "../components/ManufacturingServicesTabs";
 import ProductDeliverablesSection from "../components/ProductDeliverablesSection";
-import SectorsServedSection from "../components/SectorsServedSection";
-import { ManufacturingServiceCard } from "../components/ManufacturingServiceCard";
+import { ManufacturingServicesContent } from "../components/ManufacturingServicesContent";
 import { Link } from "react-router-dom";
-import { Package, Zap, Cog, TrendingUp } from "lucide-react";
 
 export default function ManufacturingServices() {
   // Handle hash navigation
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      const tabMap: { [key: string]: string } = {
-        'custom': 'custom',
-        'prototyping': 'prototyping',
-        'scaling': 'scaling',
-        'on-demand': 'on-demand'
-      };
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const tabMap: { [key: string]: string } = {
+          'custom': 'custom',
+          'prototyping': 'prototyping',
+          'scaling': 'scaling',
+          'on-demand': 'on-demand'
+        };
 
-      if (tabMap[hash]) {
-        setTimeout(() => {
-          const tabButton = document.querySelector(`[data-state][id*="${tabMap[hash]}"]`) as HTMLButtonElement;
-          if (tabButton) {
-            tabButton.click();
-          }
+        if (tabMap[hash]) {
+          setTimeout(() => {
+            // Try multiple selectors to find the tab button
+            let tabButton = document.querySelector(`button[value="${tabMap[hash]}"]`) as HTMLButtonElement;
 
-          const element = document.querySelector('#manufacturing-tabs');
-          if (element) {
-            const offset = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-          }
-        }, 200);
+            if (!tabButton) {
+              tabButton = document.querySelector(`button[role="tab"][id*="${tabMap[hash]}"]`) as HTMLButtonElement;
+            }
+
+            if (!tabButton) {
+              tabButton = document.querySelector(`[data-state][id*="${tabMap[hash]}"]`) as HTMLButtonElement;
+            }
+
+            if (tabButton) {
+              tabButton.click();
+
+              // Scroll to the detailed section after clicking
+              setTimeout(() => {
+                const detailElement = document.querySelector(`#${hash}-details`);
+                if (detailElement) {
+                  const offset = 80;
+                  const elementPosition = detailElement.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - offset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                } else {
+                  // Fallback to tabs section if detailed section not found
+                  const element = document.querySelector('#manufacturing-tabs');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+                }
+              }, 100);
+            }
+          }, 300);
+        }
       }
-    }
+    };
+
+    // Handle initial load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   // SEO Meta Tags
@@ -61,7 +93,7 @@ export default function ManufacturingServices() {
       <section className="relative bg-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img src="/assets/hero/manufaturing.svg" alt="Manufacturing background" className="hidden md:block w-full h-full object-cover opacity-60" />
-          <img src="/assets/hero-mobile/manufaturing.svg" alt="Manufacturing background" className="block md:hidden w-full h-full object-cover opacity-60" />
+          <img src="/assets/hero-mobile/manufaturingmobile.svg" alt="Manufacturing background" className="block md:hidden w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent"></div>
         </div>
 
@@ -86,63 +118,16 @@ export default function ManufacturingServices() {
         </div>
       </section>
 
-      {/* Manufacturing Excellences Overview */}
-      <section id="on-demand" className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Manufacturing Excellences
-            </h2>
-            <p className="text-lg text-gray-600">
-              Transform your ideas into reality with rapid prototyping and on-demand manufacturing solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            <ManufacturingServiceCard
-              icon={Zap}
-              title="On-Demand Manufacturing"
-              description="Flexible manufacturing solutions with high-precision components manufactured to demanding specifications."
-              link="/manufacturing-services#on-demand"
-              variant="compact"
-            />
-            <ManufacturingServiceCard
-              icon={Package}
-              title="Rapid Prototyping"
-              description="Fast and efficient prototyping from concept to completion with precision and cost optimization."
-              link="/manufacturing-services#prototyping"
-              variant="compact"
-            />
-            <ManufacturingServiceCard
-              icon={Cog}
-              title="Custom Manufacturing"
-              description="Tailored Manufacturing Excellences meeting specific requirements with high-precision CNC machining."
-              link="/manufacturing-services#custom"
-              variant="compact"
-            />
-            <ManufacturingServiceCard
-              icon={TrendingUp}
-              title="Production Scaling"
-              description="Seamless scaling from prototype to full production with advanced workflow optimization."
-              link="/manufacturing-services#scaling"
-              variant="compact"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Manufacturing Excellences Tabs */}
+      {/* Manufacturing Services Tabs */}
       <div id="manufacturing-tabs">
         <ManufacturingServicesTabs />
       </div>
 
+      {/* Detailed Service Content */}
+      <ManufacturingServicesContent />
+
       {/* Product Deliverables */}
       <ProductDeliverablesSection />
-
-      {/* Sectors Served */}
-      <div id="scaling">
-        <SectorsServedSection />
-      </div>
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">

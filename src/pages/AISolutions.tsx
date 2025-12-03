@@ -1,16 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-const aiSolutionsHero = "/ai-solutions-hero.jpg";
-import { Brain, Sparkles, Database, Network, Code, Rocket } from "lucide-react";
-import { useState, useEffect } from "react";
+import { AIServicesContent } from "@/components/AIServicesContent";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AISolutions = () => {
-  const [activeTab, setActiveTab] = useState("overview");
-
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -39,7 +33,7 @@ const AISolutions = () => {
               className="hidden md:block w-full h-full object-cover opacity-60"
             />
             <img
-              src="/assets/hero-mobile/genai.svg"
+              src="/assets/hero-mobile/genaimobile.svg"
               alt="AI Solutions"
               className="block md:hidden w-full h-full object-cover opacity-60"
             />
@@ -68,125 +62,31 @@ const AISolutions = () => {
           </div>
         </section>
 
-        {/* Mithran Overview Section */}
-        <section id="mithran-overview" className="py-20 bg-background">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-4xl font-bold text-foreground mb-6">
-                  What is Mithran?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  EMUSKI is building Mithran, a next-generation AI-driven engineering and manufacturing platform that acts as a digital backbone for OEMs. It is designed to simplify the entire product lifecycle—from design and costing to supplier management and project execution.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  By combining automation, artificial intelligence, supplier networking, and real-time monitoring, Mithran will transform traditional workflows into a smart, data-driven ecosystem.
-                </p>
-              </div>
-              </div>
-            
-            {/* How Mithran Will Work Section */}
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-foreground mb-8 text-center">How Mithran Will Work</h2>
-              <p className="text-xl text-muted-foreground mb-8 text-center">Mithran enables OEMs to:</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    Upload CAD drawings and automatically generate structured BOMs
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Streamlined design-to-BOM conversion process
-                  </p>
-                </Card>
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    Get AI-driven process planning and accurate cost estimation
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Smart cost optimization and planning automation
-                  </p>
-                </Card>
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    Identify capable suppliers, manage RFQs, and validate quotations
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Intelligent supplier network management
-                  </p>
-                </Card>
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    Collaborate on design-for-manufacturing reviews and finalize production-ready drawings
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Enhanced DFM collaboration workflows
-                  </p>
-                </Card>
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all">
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    Monitor projects and logistics in real time for faster, risk-free execution
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    Real-time project visibility and control
-                  </p>
-                </Card>
-              </div>
-            </div>
-
-            {/* Why It Matters Section */}
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Why It Matters</h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Mithran is being built to:
-                </p>
-                <ul className="list-disc list-inside space-y-2 pl-4 text-muted-foreground">
-                  <li>Accelerate design-to-production cycles</li>
-                  <li>Reduce manual effort and errors</li>
-                  <li>Optimize sourcing and cost validation</li>
-                  <li>Provide end-to-end visibility and smarter decision-making</li>
-                </ul>
-                <div className="mt-8 space-y-4">
-                  <div className="border-l-4 border-primary pl-4">
-                    <h4 className="font-bold text-foreground">30% faster sourcing cycles</h4>
-                    <p className="text-muted-foreground text-sm">Accelerated procurement and supplier validation</p>
-                  </div>
-                  <div className="border-l-4 border-primary pl-4">
-                    <h4 className="font-bold text-foreground">15% cost savings through accurate cost validation</h4>
-                    <p className="text-muted-foreground text-sm">AI-powered cost optimization and validation</p>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <img src="/assets/mitran/rawmaterial.jpeg" alt="Mithran Raw Material Analysis" className="rounded-lg shadow-lg" />
-                <img src="/assets/mitran/sourcing.jpeg" alt="Mithran Sourcing" className="rounded-lg shadow-lg" />
-              </div>
-            </div>
-
-            {/* Looking Ahead Section */}
-            <div className="mt-16 text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Looking Ahead</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                EMUSKI is building Mithran to help OEMs gain AI-powered intelligence, stronger control, and global competitiveness. Once launched, Mithran will be the platform that connects engineering precision with data-driven decision-making.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* AI Services Content */}
+        <AIServicesContent />
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary/10 border-t border-b border-primary/20">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Ready to Transform Your Manufacturing with AI?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Discover how Mithran can revolutionize your product development, supply chain, and cost optimization.
-            </p>
-            <Link to="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg">
-                Request a Demo
-              </Button>
-            </Link>
+        <section className="py-16 md:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
+          {/* Grid Pattern Overlay */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                Ready to Transform Your Manufacturing with AI?
+              </h2>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                Discover how Mithran can revolutionize your product development, supply chain, and cost optimization.
+              </p>
+              <div className="pt-4">
+                <Link to="/contact" className="inline-block bg-white text-emuski-teal-darker px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  Request a Demo
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>

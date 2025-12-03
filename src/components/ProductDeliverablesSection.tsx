@@ -66,7 +66,7 @@ const ProductDeliverablesSection = () => {
                   Download
                 </a>
               </div>
-              <div className="relative w-full" style={{ height: '600px' }}>
+              <div className="relative w-full h-[70vh] md:h-[600px] lg:h-[700px]">
                 <iframe
                   src="/casestudy/CASE STUDY - EXHAUST SYSTEM..pdf"
                   className="w-full h-full border-0"

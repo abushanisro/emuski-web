@@ -51,16 +51,29 @@ const navigationConfig = {
       ]
     },
     {
-      title: "Services",
+      title: "Manufacturing Excellence",
       items: [
-        { name: "Manufacturing Excellence", path: "/manufacturing-services" },
-        { name: "Engineering Innovation", path: "/precision-engineering" },
-        { name: "Next-GenAI", path: "/solutions/ai" }
+        { name: "Overview", path: "/manufacturing-services" },
+        { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand" },
+        { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping" },
+        { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
+        { name: "Production Scaling", path: "/manufacturing-services#scaling" }
+      ]
+    },
+    {
+      title: "Engineering Innovation",
+      items: [
+        { name: "Overview", path: "/precision-engineering" },
+        { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation" },
+        { name: "VAVE & Benchmarking", path: "/precision-engineering#vave" },
+        { name: "Strategic Sourcing", path: "/precision-engineering#sourcing" },
+        { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" }
       ]
     },
     {
       title: "General",
       items: [
+        { name: "Next-GenAI", path: "/solutions/ai" },
         { name: "Blog", path: "/blog" }
       ]
     },
@@ -165,12 +178,13 @@ className={`${getLinkClasses("/")} flex items-center space-x-1`}
 
 {/* Individual Service Dropdowns */}
 {Object.entries(servicesDropdown).map(([key, service]) => (
-<div key={key} className="relative">
-<div 
-className="flex items-center"
+<div
+key={key}
+className="relative"
 onMouseEnter={() => setActiveServiceDropdown(key)}
 onMouseLeave={() => setActiveServiceDropdown(null)}
 >
+<div className="flex items-center">
 <Link
 to={service.path}
 className={getLinkClasses(service.path)}
@@ -179,7 +193,10 @@ onClick={() => setActiveServiceDropdown(null)}
 {service.name}
 </Link>
 <button
-onClick={() => setActiveServiceDropdown(activeServiceDropdown === key ? null : key)}
+onClick={(e) => {
+e.preventDefault();
+setActiveServiceDropdown(activeServiceDropdown === key ? null : key);
+}}
 className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-colors"
 >
 <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeServiceDropdown === key ? 'rotate-180' : ''}`} />
@@ -187,16 +204,14 @@ className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-col
 </div>
 
 {activeServiceDropdown === key && (
-<div 
-className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
-onMouseEnter={() => setActiveServiceDropdown(key)}
-onMouseLeave={() => setActiveServiceDropdown(null)}
+<div
+className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
 style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
 >
 <div className="py-2">
 <Link
 to={service.path}
-className="block px-4 py-3 text-sm font-semibold text-emuski-teal-darker border-b border-gray-100"
+className="block px-4 py-3 text-sm font-semibold text-emuski-teal-darker border-b border-gray-100 hover:bg-emuski-teal/5"
 onClick={() => setActiveServiceDropdown(null)}
 >
 {service.name} Overview
@@ -277,17 +292,15 @@ className="inline-flex items-center justify-center gap-2 whitespace-nowrap round
 </div>
 </div>
 </div>
-<div className="p-4 space-y-2">
+<div className="p-4 space-y-2 max-h-[70vh] overflow-y-auto">
 {navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
-<div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : "mb-3"}>
-{sectionIndex === 0 && (
-<h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">{section.title}</h4>
-)}
+<div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-3 mt-3" : "mb-3"}>
+<h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">{section.title}</h4>
 {section.items.map((item) => (
-<Link 
+<Link
 key={item.path}
-to={item.path} 
-className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 hover:text-emuski-teal-darker transition-colors"
+to={item.path}
+className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
 onClick={() => setIsMenuOpen(false)}
 >
 {item.name}

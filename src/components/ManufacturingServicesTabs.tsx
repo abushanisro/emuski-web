@@ -91,15 +91,19 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
 
 export function ManufacturingServicesTabs() {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section id="manufacturing-tabs" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <Tabs defaultValue="on-demand" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto mb-12">
-            <TabsTrigger value="on-demand">On-Demand</TabsTrigger>
-            <TabsTrigger value="prototyping">Prototyping</TabsTrigger>
-            <TabsTrigger value="custom">Custom</TabsTrigger>
-            <TabsTrigger value="scaling">Scaling</TabsTrigger>
-          </TabsList>
+          <div className="relative max-w-4xl mx-auto mb-12">
+            {/* Liquid Glass Background with Flow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-emuski-teal-darker/30 via-emuski-teal-dark/20 to-emuski-teal-darker/30 rounded-lg blur-xl animate-pulse"></div>
+            <TabsList className="relative grid w-full grid-cols-2 md:grid-cols-4 bg-gradient-to-br from-emuski-teal-darker/15 via-emuski-teal-dark/10 to-emuski-teal-darker/15 backdrop-blur-xl border border-emuski-teal-dark/40 shadow-[0_8px_32px_0_rgba(79,211,212,0.2)] rounded-lg overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-200%] before:animate-[shimmer_3s_infinite]">
+              <TabsTrigger value="on-demand" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">On-Demand</TabsTrigger>
+              <TabsTrigger value="prototyping" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Prototyping</TabsTrigger>
+              <TabsTrigger value="custom" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Custom</TabsTrigger>
+              <TabsTrigger value="scaling" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Scaling</TabsTrigger>
+            </TabsList>
+          </div>
 
           {Object.entries(servicesData).map(([key, service]) => (
             <TabsContent key={key} value={key} className="mt-8 fade-in">
@@ -108,6 +112,16 @@ export function ManufacturingServicesTabs() {
           ))}
         </Tabs>
       </div>
+      <style>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-200%);
+          }
+          100% {
+            transform: translateX(200%);
+          }
+        }
+      `}</style>
     </section>
   );
 }
