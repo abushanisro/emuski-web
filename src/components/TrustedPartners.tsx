@@ -1,3 +1,5 @@
+'use client'
+
 export const TrustedPartners = () => {
   const partners = Array.from({ length: 16 }, (_, i) => i + 1);
 
@@ -15,8 +17,8 @@ export const TrustedPartners = () => {
             {partners.concat(partners).map((num, idx) => (
               <div key={idx} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
                 <img
-                  src={`/assets/Partners/${num}.svg`}
-                  alt={`Partner ${num}`}
+                  src={`/assets/partners/manufacturing-partner-logo-${num}.svg`}
+                  alt={`Manufacturing Partner ${num}`}
                   className="h-8 sm:h-12 w-auto object-contain filter brightness-0 invert"
                 />
               </div>

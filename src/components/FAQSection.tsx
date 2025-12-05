@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, Search, MessageCircle, HelpCircle } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
 import { getFAQsForPage, getFAQMetaForPage, type FAQItem } from '../data/pageSpecificFAQs';
 
 // Remove duplicate interface - using the one from pageSpecificFAQs.ts
@@ -161,12 +163,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   description,
   usePageSpecific = false
 }) => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
   const [currentFAQs, setCurrentFAQs] = useState<FAQItem[]>(FAQ_DATA);
-  const [pageMetaData, setPageMetaData] = useState({ 
+  const [pageMetaData, setPageMetaData] = useState({
     title: "Frequently Asked Questions",
     description: "Get answers to common questions about EMUSKI's Manufacturing Excellences, quality processes, and how we can help your business succeed."
   });
@@ -174,13 +176,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   // Update FAQs and meta data based on current page
   useEffect(() => {
     if (usePageSpecific) {
-      const pageSpecificFAQs = getFAQsForPage(location.pathname);
-      const pageMeta = getFAQMetaForPage(location.pathname);
+      const pageSpecificFAQs = getFAQsForPage(pathname);
+      const pageMeta = getFAQMetaForPage(pathname);
       setCurrentFAQs(pageSpecificFAQs);
       setPageMetaData(pageMeta);
-      
+
       // Update document meta for SEO if on main FAQ page
-      if (location.pathname === '/faq') {
+      if (pathname === '/faq') {
         document.title = pageMeta.title;
         let metaDescription = document.querySelector('meta[name="description"]');
         if (!metaDescription) {
@@ -191,7 +193,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
         metaDescription.setAttribute('content', pageMeta.description);
       }
     }
-  }, [location.pathname, usePageSpecific]);
+  }, [pathname, usePageSpecific]);
 
   // Use provided title/description or page-specific ones
   const displayTitle = title || (usePageSpecific ? pageMetaData.title : "Frequently Asked Questions");
@@ -247,14 +249,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": faq.answer,
-                "dateModified": new Date().toISOString(),
                 "author": {
                   "@type": "Organization",
                   "name": "EMUSKI Manufacturing Solutions"
                 }
               }
             })),
-            "dateModified": new Date().toISOString(),
             "inLanguage": "en-US",
             "publisher": {
               "@type": "Organization",
@@ -406,7 +406,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                             {/* Hidden SEO content for search engines and AI */}
                             <div className="sr-only">
                               <meta itemProp="about" content={faq.category} />
-                              <meta itemProp="dateModified" content={new Date().toISOString()} />
                               <span itemProp="author" itemScope itemType="https://schema.org/Organization">
                                 <meta itemProp="name" content="EMUSKI Manufacturing Solutions" />
                               </span>

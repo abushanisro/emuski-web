@@ -1,6 +1,8 @@
+'use client'
+
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface Slide {
   image: string;
@@ -14,8 +16,8 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "/assets/hero/manufaturing.svg",
-    mobileImage: "/assets/hero-mobile/manufaturingmobile.svg",
+    image: "/assets/hero/manufacturing-services-hero-banner.svg",
+    mobileImage: "/assets/hero-mobile/manufacturing-services-mobile-banner.svg",
     category: "Manufacturing Excellence",
     title: "You Design It, We Build It : Justified Cost, Peerless Quality", 
     shortTitle: "Manufacturing Excellences",
@@ -23,7 +25,7 @@ const slides: Slide[] = [
     link: "/manufacturing-services",
   },
   {
-    image: "/assets/hero/engineering.svg",
+    image: "/assets/hero/precision-engineering-hero-banner.svg",
     mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
     category: "Engineering Innovation",
     title: "End-to-End Engineering & Costing Solutions",
@@ -32,8 +34,8 @@ const slides: Slide[] = [
     link: "/precision-engineering",
   },
   {
-    image: "/assets/hero/genai.svg",
-    mobileImage: "/assets/hero-mobile/genaimobile.svg",
+    image: "/assets/hero/ai-mithran-hero-banner.svg",
+    mobileImage: "/assets/hero-mobile/ai-mithran-mobile-banner.svg",
     category: "Next-GenAI",
     title: "AI-Powered Intelligence for Tomorrow's Manufacturing",
     shortTitle: "Mithran",
@@ -135,7 +137,7 @@ export const HeroSection = () => {
                 </p>
                 <div className="pt-4 flex justify-center pointer-events-auto">
                   <Link
-                    to={slide.link}
+                    href={slide.link}
                     className="inline-flex items-center px-6 py-3 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-base rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
                   >
                     Learn More
@@ -182,7 +184,7 @@ export const HeroSection = () => {
                   </p>
                   <div className="pt-8">
                     <Link 
-                      to={slide.link}
+                      href={slide.link}
                       className="inline-flex items-center px-8 py-4 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold text-lg lg:text-xl rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
                     >
                       Learn More

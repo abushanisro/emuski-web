@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
 
@@ -7,7 +9,7 @@ const growthStories = [
     label: "Founder & CEO @EMUSKI",
     category: "Leadership",
     description: "\"Striving for Value-Driven Empowerment \"",
-    image: "/assets/team/founder.jpg",
+    image: "/assets/team/emuski-founder-ceo.jpg",
     linkedinUrl: "https://www.linkedin.com/in/singaravelan-srinivasan-emuski/",
     isFounder: true,
     location: "Bengaluru, Karnataka, India",
@@ -17,7 +19,7 @@ const growthStories = [
     label: "Strategic Partnerships",
     category: "Our Reach",
     description: "Trusted manufacturing partner for leading OEMs across automotive, aerospace, medical devices, and industrial sectors delivering critical project solutions with engineering excellence.",
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-19.jpeg",
   },
   {
     value: "850+",
@@ -25,7 +27,7 @@ const growthStories = [
     sublabel: "In Engineering Innovation", 
     category: "Our Expertise",
     description: "Complex engineering projects delivered from concept to completion with precision and cost optimization.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+    image: "/assets/engineering/cost-breakdown-engineering.png",
   },
   {
     value: "2500+",
@@ -33,14 +35,14 @@ const growthStories = [
     sublabel: "In Manufacturing Excellence", 
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
-    image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-3.jpeg",
   }
 ];
 
 const AboutSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerView = window.innerWidth < 1024 ? 1 : 3;
-    const maxIndex = Math.max(0, growthStories.length - itemsPerView);
+    const [itemsPerView, setItemsPerView] = useState(3);
+    const [maxIndex, setMaxIndex] = useState(0);
     const [animatedValues, setAnimatedValues] = useState<{ [key: number]: number }>({});
     const [hasAnimated, setHasAnimated] = useState(false);
     const achievementsRef = useRef<HTMLDivElement>(null);
@@ -48,7 +50,6 @@ const AboutSection = () => {
     const [showRightGradient, setShowRightGradient] = useState(true);
     const carouselRef = useRef<HTMLDivElement>(null);
 
-    // Define specific achievements for the container
     const achievementsData = [
         {
             value: "15+",
@@ -63,8 +64,8 @@ const AboutSection = () => {
             category: "Strategic Partnerships"
         },
         {
-            value: "120+",
-            number: 120,
+            value: "850+",
+            number: 850,
             label: "Individual Projects",
             sublabel: "In Engineering Innovation",
             category: "Our Expertise"
@@ -78,12 +79,23 @@ const AboutSection = () => {
         }
     ];
 
-    // Extract numbers from achievement values for animation
+    // Handle responsive itemsPerView and maxIndex calculation
+    useEffect(() => {
+        const handleResize = () => {
+            const items = window.innerWidth < 1024 ? 1 : 3;
+            setItemsPerView(items);
+            setMaxIndex(Math.max(0, growthStories.length - items));
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const getNumberFromValue = (achievement: any): number => {
         return achievement.number || 0;
     };
 
-    // Animate number counting
     const animateNumber = (finalValue: number, index: number, duration: number = 2000) => {
         const startTime = Date.now();
         const startValue = 0;
@@ -104,7 +116,6 @@ const AboutSection = () => {
         requestAnimationFrame(animate);
     };
 
-    // Intersection Observer for triggering animation
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -134,7 +145,6 @@ const AboutSection = () => {
         };
     }, [hasAnimated]);
 
-    // Initialize gradient states
     useEffect(() => {
         handleScroll();
     }, [currentIndex]);
@@ -157,17 +167,13 @@ const AboutSection = () => {
     };
 
     return (
-        <>
-
-            <section className="py-16 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
-                {/* Background Elements */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-                </div>
-                
-                <div className="w-full px-4 sm:px-6 relative z-10">
+        <section className="py-16 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            </div>
+            
+            <div className="w-full px-4 sm:px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                    {/* Left Side - Title and Description */}
                     <div className="lg:col-span-1 space-y-4">
                         <h2 className="text-3xl font-bold text-white">
                             About EMUSKI
@@ -187,9 +193,7 @@ const AboutSection = () => {
                         </div>
                     </div>
 
-                    {/* Right Side - Carousel and Navigation */}
                     <div className="lg:col-span-2">
-                        {/* Navigation Arrows */}
                         <div className="hidden lg:flex justify-end mb-4">
                             <div className="flex space-x-2">
                                 <button
@@ -209,9 +213,7 @@ const AboutSection = () => {
                             </div>
                         </div>
 
-                        {/* Carousel Container */}
                         <div className="relative">
-                            {/* Left Gradient Overlay */}
                             <div
                                 className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showLeftGradient ? 'opacity-30' : 'opacity-0'}`}
                                 style={{
@@ -220,7 +222,6 @@ const AboutSection = () => {
                                 }}
                             ></div>
 
-                            {/* Right Gradient Overlay */}
                             <div
                                 className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showRightGradient ? 'opacity-30' : 'opacity-0'}`}
                                 style={{
@@ -239,76 +240,77 @@ const AboutSection = () => {
                                     className="flex transition-transform duration-300 ease-in-out"
                                     style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
                                 >
-                                {growthStories.map((story, index) => (
-                                    <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
-                                        <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
-                                            <div className="relative h-48 overflow-hidden">
-                                                <img
-                                                    src={story.image}
-                                                    alt={story.label}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                                />
-                                            </div>
-                                            
-                                            <div className="p-4">
-                                                
-                                                <div className="flex items-start justify-between mb-2">
-                                                    <div className="flex-1">
-                                                        {story.isFounder ? (
-                                                            <>
-                                                                <h3 className="text-base font-bold text-gray-900 leading-tight mb-1">
-                                                                    {story.value}
-                                                                </h3>
-                                                                <p className="text-sm font-semibold text-emuski-teal-darker mb-1">
-                                                                    {story.label}
-                                                                </p>
-                                                                {story.location && (
-                                                                    <p className="text-xs text-gray-500 mb-2">
-                                                                        {story.location}
-                                                                    </p>
-                                                                )}
-                                                            </>
-                                                        ) : (
-                                                            <h3 className="text-lg font-bold text-gray-900 leading-tight">
-                                                                {story.value} {story.label}
-                                                            </h3>
-                                                        )}
-                                                    </div>
-                                                    {story.linkedinUrl && (
-                                                        <a 
-                                                            href={story.linkedinUrl}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors ml-2 flex-shrink-0"
-                                                            onClick={(e) => e.stopPropagation()}
-                                                            title="View LinkedIn Profile"
-                                                        >
-                                                            <Linkedin className="h-4 w-4" />
-                                                        </a>
-                                                    )}
+                                    {growthStories.map((story, index) => (
+                                        <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
+                                            <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
+                                                <div className="relative h-48 overflow-hidden">
+                                                    <img
+                                                        src={story.image}
+                                                        alt={story.label}
+                                                        className={`w-full h-full group-hover:scale-110 transition-transform duration-500 ${
+                                                          story.category === 'Our Expertise' ? 'object-contain p-4 bg-white' : 'object-cover'
+                                                        }`}
+                                                    />
                                                 </div>
                                                 
-                                                {story.description && (
-                                                    <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                                                        {story.isFounder ? (
-                                                            <span className="relative">
-                                                                <span className="text-xl text-gray-600 opacity-70 mr-1">"</span>
-                                                                <span className="italic">Striving for Value-Driven Empowerment</span>
-                                                                <span className="text-xl text-gray-600 opacity-70 ml-1">"</span>
-                                                            </span>
-                                                        ) : (
-                                                            story.description
+                                                <div className="p-4">
+                                                    <div className="flex items-start justify-between mb-2">
+                                                        <div className="flex-1">
+                                                            {story.isFounder ? (
+                                                                <>
+                                                                    <h3 className="text-base font-bold text-gray-900 leading-tight mb-1">
+                                                                        {story.value}
+                                                                    </h3>
+                                                                    <p className="text-sm font-semibold text-emuski-teal-darker mb-1">
+                                                                        {story.label}
+                                                                    </p>
+                                                                    {story.location && (
+                                                                        <p className="text-xs text-gray-500 mb-2">
+                                                                            {story.location}
+                                                                        </p>
+                                                                    )}
+                                                                </>
+                                                            ) : (
+                                                                <h3 className="text-lg font-bold text-gray-900 leading-tight">
+                                                                    {story.value} {story.label}
+                                                                </h3>
+                                                            )}
+                                                        </div>
+                                                        {story.linkedinUrl && (
+                                                            <a 
+                                                                href={story.linkedinUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors ml-2 flex-shrink-0"
+                                                                onClick={(e) => e.stopPropagation()}
+                                                                title="View LinkedIn Profile"
+                                                            >
+                                                                <Linkedin className="h-4 w-4" />
+                                                            </a>
                                                         )}
-                                                    </p>
-                                                )}
+                                                    </div>
+                                                    
+                                                    {story.description && (
+                                                        <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                                                            {story.isFounder ? (
+                                                                <span className="relative">
+                                                                    <span className="text-xl text-gray-600 opacity-70 mr-1">"</span>
+                                                                    <span className="italic">Striving for Value-Driven Empowerment</span>
+                                                                    <span className="text-xl text-gray-600 opacity-70 ml-1">"</span>
+                                                                </span>
+                                                            ) : (
+                                                                story.description
+                                                            )}
+                                                        </p>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
                                 </div>
                             </div>
                         </div>
-                         {/* Mobile Navigation */}
+
                         <div className="lg:hidden flex justify-center mt-4">
                             <div className="flex space-x-2">
                                 <button
@@ -329,11 +331,10 @@ const AboutSection = () => {
                         </div>
                     </div>
                 </div>
-                {/* Achievements Section - Both Mobile and Desktop */}
+
                 <div className="mt-8 lg:mt-12" ref={achievementsRef}>
                     <h3 className="text-xl lg:text-2xl font-bold text-white mb-6 text-center">Our Achievements</h3>
                     
-                    {/* Desktop Achievements - Horizontal Layout */}
                     <div className="hidden lg:grid lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                         {achievementsData.map((story, index) => {
                             const animatedValue = animatedValues[index] || 0;
@@ -352,7 +353,6 @@ const AboutSection = () => {
                         })}
                     </div>
                     
-                    {/* Mobile Achievements - 2x2 Grid */}
                     <div className="lg:hidden grid grid-cols-2 gap-4">
                         {achievementsData.map((story, index) => {
                             const animatedValue = animatedValues[index] || 0;
@@ -373,7 +373,6 @@ const AboutSection = () => {
                 </div>
             </div>
         </section>
-        </>
     );
 };
 

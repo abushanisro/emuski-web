@@ -75,18 +75,15 @@ export const ManufacturingServicesContent = () => {
                 </div>
               </div>
 
-              {/* Image */}
+              {/* Video */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/manufacturing/on-demand.jpg"
-                    alt="On-Demand Manufacturing"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EOn-Demand Manufacturing%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="https://drive.google.com/file/d/1J1Y9c5m6gJfavjiC2QmtuAAdBpRHmlNI/preview"
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
+                    allow="autoplay"
+                    title="On-Demand Manufacturing Video"
                   />
                 </div>
               </div>
@@ -100,18 +97,15 @@ export const ManufacturingServicesContent = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image - Left side */}
+              {/* Video - Left side */}
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/manufacturing/prototyping.jpg"
-                    alt="Rapid Prototyping"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3ERapid Prototyping%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="https://drive.google.com/file/d/1IToVhoglHSpsr5lWdr23I2g6_KbQFa0f/preview"
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
+                    allow="autoplay"
+                    title="Rapid Prototyping Video"
                   />
                 </div>
               </div>
@@ -269,18 +263,15 @@ export const ManufacturingServicesContent = () => {
                 </div>
               </div>
 
-              {/* Image */}
+              {/* Video */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/manufacturing/custom.jpg"
-                    alt="Custom Manufacturing"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3ECustom Manufacturing%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="https://drive.google.com/file/d/1mb6SBMeBNHNna40QWYUyyA45mA594Eqy/preview"
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
+                    allow="autoplay"
+                    title="Custom Manufacturing Video"
                   />
                 </div>
               </div>
@@ -299,7 +290,7 @@ export const ManufacturingServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/manufacturing/scaling.jpg"
+                    src="/assets/precision-engineering-icon.svg"
                     alt="Production Scaling"
                     className="w-full h-auto"
                     onError={(e) => {

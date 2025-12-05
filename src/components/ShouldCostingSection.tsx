@@ -19,8 +19,8 @@ export function ShouldCostingSection() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4">
-            <img src="/assets/engineering/cost360.png" alt="Costing 360" className="rounded-lg shadow-lg" />
-            <img src="/assets/engineering/cost360crm.png" alt="Costing 360 CRM" className="rounded-lg shadow-lg" />
+            <img src="/assets/engineering/cost360-platform-dashboard.png" alt="Costing 360" className="rounded-lg shadow-lg" />
+            <img src="/assets/engineering/cost360-crm-system.png" alt="Costing 360 CRM" className="rounded-lg shadow-lg" />
           </div>
         </div>
       </div>

@@ -1,5 +1,8 @@
+'use client'
+
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark, Twitter, Linkedin, Facebook, Mail, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -9,9 +12,10 @@ import { EmailSubscription } from "./EmailSubscription";
 import { BlogNotFoundPage, LoadingPage } from "./ui/error-pages";
 
 export const BlogPostComponent = () => {
-  const { slug } = useParams();
+  const params = useParams();
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
   const [isBookmarked, setIsBookmarked] = useState(false);
-  
+
   const { post, loading, error } = useBlogPost(slug || '');
   const { relatedPosts, loading: relatedLoading } = useRelatedPosts(post?.id || 0, 3);
 
@@ -99,7 +103,7 @@ export const BlogPostComponent = () => {
       <div className="border-b border-gray-100 py-4 bg-white sticky top-16 z-40">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
-            <Link to="/blog" className="flex items-center space-x-2 text-gray-600 hover:text-emuski-teal-dark transition-colors">
+            <Link href="/blog" className="flex items-center space-x-2 text-gray-600 hover:text-emuski-teal-dark transition-colors">
               <ArrowLeft className="h-4 w-4" />
               <span className="text-sm font-medium">Back to Blog</span>
             </Link>
@@ -248,7 +252,7 @@ export const BlogPostComponent = () => {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Related Articles</h3>
                   <div className="space-y-4">
                     {relatedPosts.map((relatedPost) => (
-                      <Link key={relatedPost.id} to={relatedPost.link} className="block group">
+                      <Link key={relatedPost.id} href={relatedPost.link} className="block group">
                         <div className="flex space-x-3">
                           <img
                             src={relatedPost.image}
@@ -276,15 +280,15 @@ export const BlogPostComponent = () => {
                 <Card className="p-6 bg-white border-gray-200 shadow-sm">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Links</h3>
                   <div className="space-y-3">
-                    <Link to="/manufacturing-services" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
+                    <Link href="/manufacturing-services" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Manufacturing Excellences</span>
                     </Link>
-                    <Link to="/precision-engineering" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
+                    <Link href="/precision-engineering" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Precision Engineering</span>
                     </Link>
-                    <Link to="/industries" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
+                    <Link href="/industries" className="flex items-center space-x-2 text-sm text-gray-600 hover:text-emuski-teal-dark transition-colors">
                       <ChevronRight className="h-3 w-3" />
                       <span>Industries</span>
                     </Link>

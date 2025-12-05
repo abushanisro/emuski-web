@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useMemo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Search, Filter, Calendar, User, Clock, ChevronRight, Tag } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
@@ -194,7 +196,7 @@ export const BlogPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
                 {featuredPosts.map((post) => (
-                  <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
                     <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
                     <div className="relative h-48 overflow-hidden">
                       <img
@@ -266,7 +268,7 @@ export const BlogPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
                 {regularPosts.map((post) => (
-                  <Link key={post.id} to={`/blog/${post.slug}`}>
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
                     <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
                     <div className="relative h-40 overflow-hidden">
                       <img

@@ -6,6 +6,7 @@ const servicesData = {
     title: "On-Demand Manufacturing",
     tagline: "Flexible production that adapts to your needs",
     description: "Agile manufacturing solutions designed for fluctuating demand and rapid market changes. From pilot runs to niche markets, we deliver precision without compromising flexibility.",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.jpeg",
     features: [
       { title: "Low-Volume Builds", desc: "Perfect for pilot runs and new product introductions" },
       { title: "Scalable Capacity", desc: "Seamless transition from small to large volumes" },
@@ -17,6 +18,7 @@ const servicesData = {
     title: "Rapid Prototyping",
     tagline: "From concept to reality in record time",
     description: "Accelerate your product development with advanced prototyping. Using CNC machining, 3D printing, and custom tooling, we help you test, validate, and refine designs faster.",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
     features: [
       { title: "Multi-Technology", desc: "CNC, 3D printing (SLA/SLS), vacuum casting" },
       { title: "Fast Turnaround", desc: "Rapid iterations to speed up development" },
@@ -28,6 +30,7 @@ const servicesData = {
     title: "Custom Manufacturing",
     tagline: "Tailored solutions for unique requirements",
     description: "High-precision custom manufacturing for specialized components. From complex geometries to strict tolerances, we deliver quality that meets your exact specifications.",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
     features: [
       { title: "Precision Machining", desc: "5-axis CNC for complex parts" },
       { title: "Material Expertise", desc: "Metals, plastics, and composites" },
@@ -39,6 +42,7 @@ const servicesData = {
     title: "Production Scaling",
     tagline: "Seamless transition from prototype to production",
     description: "Scale your production confidently with our proven process. We handle the complexity of ramping up volumes while maintaining quality and optimizing costs.",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
     features: [
       { title: "Capacity Planning", desc: "Strategic scaling without quality compromise" },
       { title: "Process Optimization", desc: "Lean manufacturing principles" },
@@ -62,6 +66,18 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
           {service.description}
         </p>
       </div>
+
+      {service.image && (
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {service.features.map((feature, idx) => (

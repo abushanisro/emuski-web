@@ -1,6 +1,8 @@
+'use client'
+
 import { ErrorPage } from "../ErrorPage";
 import { Button } from "./button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { RefreshCw, Wifi } from "lucide-react";
 
 // Pre-configured error page components for common use cases
@@ -11,7 +13,7 @@ export const BlogNotFoundPage = ({ description }: { description?: string }) => (
     title="Article Not Found"
     description={description || "The article you're looking for doesn't exist or may have been moved."}
     customActions={
-      <Link to="/blog">
+      <Link href="/blog">
         <Button className="bg-emuski-teal hover:bg-emuski-teal-dark text-white">
           Browse All Articles
         </Button>
@@ -74,7 +76,7 @@ export const UnauthorizedPage = () => (
     title="Access Denied"
     description="You don't have permission to access this page. Please contact support if you believe this is an error."
     customActions={
-      <Link to="/contact">
+      <Link href="/contact">
         <Button className="bg-emuski-teal hover:bg-emuski-teal-dark text-white">
           Contact Support
         </Button>

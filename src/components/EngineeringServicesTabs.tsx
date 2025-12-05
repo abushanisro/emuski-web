@@ -5,6 +5,8 @@ const servicesData = {
     title: "Product Cost Estimation",
     tagline: "Turning data into competitive advantage",
     description: "Real-time cost intelligence for smarter decisions throughout your product lifecycle with comprehensive analysis and optimization.",
+    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
+    pdfUrl: "/assets/documents/CostBreakDownReport.pdf",
     features: [
       { 
         title: "Design Optimization", 
@@ -32,6 +34,7 @@ const servicesData = {
     title: "VAVE - Teardown & Benchmarking",
     tagline: "Comprehensive teardown benchmarking and cost optimization",
     description: "Value Analysis and Value Engineering through detailed product analysis and competitive benchmarking to enhance product value.",
+    image: "/assets/engineering/product-teardown-analysis.png",
     features: [
       { 
         title: "Teardown Benchmarking", 
@@ -55,6 +58,7 @@ const servicesData = {
     title: "Strategic Sourcing Support",
     tagline: "End-to-end sourcing solutions",
     description: "Comprehensive sourcing strategy including supplier scouting, negotiation support, quality audits, and supply chain optimization.",
+    image: "/assets/engineering/strategic-sourcing-solutions.svg",
     features: [
       { 
         title: "Global Supplier Network", 
@@ -78,6 +82,7 @@ const servicesData = {
     title: "Expert Engineer Support",
     tagline: "Specialized engineering resources for your team",
     description: "Deploy specialized engineering resources directly into your team for focused, results-driven project execution and technical expertise.",
+    image: "/assets/engineering/supplier-management-system.png",
     features: [
       { 
         title: "On-site Deployment", 
@@ -99,7 +104,17 @@ const servicesData = {
   }
 };
 
-function ServiceTabContent({ service }: { service: typeof servicesData["cost-estimation"] }) {
+function ServiceTabContent({ service, serviceKey }: {
+  service: {
+    title: string;
+    tagline: string;
+    description: string;
+    image?: string;
+    pdfUrl?: string;
+    features: { title: string; desc: string; image?: string }[]
+  };
+  serviceKey: string;
+}) {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
@@ -114,19 +129,24 @@ function ServiceTabContent({ service }: { service: typeof servicesData["cost-est
         </p>
       </div>
 
+      {service.image && (
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-white">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {service.features.map((feature, idx) => (
           <div
             key={idx}
             className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center hover:bg-gray-100 hover:border-emuski-teal-dark transition-all duration-300"
           >
-            {feature.image && (
-              <img 
-                src={feature.image} 
-                alt={feature.title} 
-                className="w-24 h-24 mx-auto mb-4"
-              />
-            )}
             <h3 className="font-bold text-base text-gray-900 mb-2">
               {feature.title}
             </h3>
@@ -150,7 +170,7 @@ export function EngineeringServicesTabs() {
             <div className="absolute inset-0 bg-gradient-to-r from-emuski-teal-darker/30 via-emuski-teal-dark/20 to-emuski-teal-darker/30 rounded-lg blur-xl animate-pulse"></div>
             <TabsList className="relative grid w-full grid-cols-2 md:grid-cols-4 bg-gradient-to-br from-emuski-teal-darker/15 via-emuski-teal-dark/10 to-emuski-teal-darker/15 backdrop-blur-xl border border-emuski-teal-dark/40 shadow-[0_8px_32px_0_rgba(79,211,212,0.2)] rounded-lg overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-200%] before:animate-[shimmer_3s_infinite]">
               <TabsTrigger value="cost-estimation" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Cost Estimation</TabsTrigger>
-              <TabsTrigger value="vave" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">VAVE</TabsTrigger>
+              <TabsTrigger value="vave" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">VAVE - T & B</TabsTrigger>
               <TabsTrigger value="sourcing" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Sourcing</TabsTrigger>
               <TabsTrigger value="expert-support" className="relative z-10 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Expert Support</TabsTrigger>
             </TabsList>
@@ -158,7 +178,7 @@ export function EngineeringServicesTabs() {
 
           {Object.entries(servicesData).map(([key, service]) => (
             <TabsContent key={key} value={key} className="mt-8 fade-in">
-              <ServiceTabContent service={service} />
+              <ServiceTabContent service={service} serviceKey={key} />
             </TabsContent>
           ))}
         </Tabs>

@@ -1,5 +1,7 @@
+'use client'
+
 import { LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ManufacturingServiceCardProps {
   icon?: LucideIcon;
@@ -24,7 +26,7 @@ export function ManufacturingServiceCard({
   if (variant === "compact") {
     return (
       <Link
-        to={link}
+        href={link}
         className="group block p-6 bg-white border border-gray-200 rounded-xl hover:border-emuski-teal-darker/40 hover:shadow-lg transition-all duration-300"
       >
         {Icon && (
@@ -46,7 +48,7 @@ export function ManufacturingServiceCard({
   if (variant === "featured" && image) {
     return (
       <Link
-        to={link}
+        href={link}
         className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-emuski-teal-darker/40 hover:shadow-xl transition-all duration-300"
       >
         <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -93,7 +95,7 @@ export function ManufacturingServiceCard({
   // Default variant
   return (
     <Link
-      to={link}
+      href={link}
       className="group block p-6 bg-white border border-gray-200 rounded-xl hover:border-emuski-teal-darker/40 hover:shadow-lg transition-all duration-300"
     >
       {Icon && (

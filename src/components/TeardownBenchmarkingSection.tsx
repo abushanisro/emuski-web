@@ -8,7 +8,7 @@ import {
 const teardownPhases = [
   {
     title: "Pre-Teardown",
-    image: "/assets/engineering/car.png",
+    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
     content: (
       <div className="space-y-4">
         <p>Prior to disassembly, we conduct a comprehensive evaluation of the vehicle’s features at the overall product level. As the teardown progresses, we shift focus to analyzing features at the subsystem level. These identified features are then correlated with specific BOM components, enabling precise, feature-driven cost benchmarking.</p>

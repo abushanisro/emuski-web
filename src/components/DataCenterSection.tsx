@@ -1,8 +1,10 @@
+'use client'
+
 import { useState, useRef } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const serviceItems = [
   // Engineering Innovations
@@ -163,7 +165,7 @@ export const DataCenterSection = () => {
                   {quickLineupServices.map((service, index) => (
                     <Link 
                       key={index}
-                      to={service.link} 
+                      href={service.link} 
                       className="group flex flex-col py-2 px-3 -mx-2 rounded text-sm text-gray-600 hover:text-emuski-teal-darker hover:bg-emuski-teal/5 transition-all duration-200"
                     >
                       <div className="flex items-center">
@@ -242,7 +244,7 @@ export const DataCenterSection = () => {
               >
                 {serviceItems.map((item, index) => (
                   <Card key={index} className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal-darker/50 transition-all duration-300 cursor-pointer overflow-hidden">
-                    <Link to={item.link} className="block h-full hover:no-underline">
+                    <Link href={item.link} className="block h-full hover:no-underline">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={item.image}

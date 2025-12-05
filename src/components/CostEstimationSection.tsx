@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client'
+
+import Link from "next/link";
 import { Calculator, TrendingDown, Target, BarChart3, ArrowRight, CheckCircle } from "lucide-react";
 
 export const CostEstimationSection = () => {
@@ -189,14 +191,14 @@ export const CostEstimationSection = () => {
               </p>
             </div>
             <div className="flex justify-center">
-              <img src="/assets/infograpic/methodology.svg" alt="Our Methodology" className="max-w-full h-auto rounded-lg" />
+              <img src="/assets/infographic/manufacturing-methodology-infographic.svg" alt="Manufacturing Methodology Process" className="max-w-full h-auto rounded-lg" />
             </div>
           </div>
 
           {/* CTA */}
           <div className="text-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               Get Your Cost Estimate

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client'
+
+import Link from "next/link";
 import { ChevronRight, Home, ArrowLeft, Search, FileX, AlertCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
@@ -114,7 +116,7 @@ export const ErrorPage = ({
             )}
             
             {showHomeButton && (
-              <Link to="/">
+              <Link href="/">
                 <Button className="text-white hover:opacity-80" style={{backgroundColor: '#4fd3d4'}}>
                   <Home className="mr-2 h-4 w-4" />
                   Back to Home
@@ -142,7 +144,7 @@ export const ErrorPage = ({
               {popularPages.map((page) => (
                 <Link
                   key={page.href}
-                  to={page.href}
+                  href={page.href}
                   className="group flex items-center justify-between p-4 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 hover:border-white/30 transition-all duration-200"
                 >
                   <span className="font-medium text-white group-hover:text-white" style={{'--hover-color': '#4fd3d4'} as React.CSSProperties}>
@@ -159,7 +161,7 @@ export const ErrorPage = ({
                 <Search className="h-4 w-4" />
                 <span className="text-sm">
                   Still can't find what you're looking for? Try searching from our{" "}
-                  <Link to="/" className="font-medium hover:opacity-80" style={{color: '#4fd3d4'}}>
+                  <Link href="/" className="font-medium hover:opacity-80" style={{color: '#4fd3d4'}}>
                     homepage
                   </Link>
                 </span>

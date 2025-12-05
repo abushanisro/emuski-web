@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { AlertCircle, RefreshCw } from 'lucide-react';
+import ReCAPTCHAType from 'react-google-recaptcha';
 
 // Lazy load reCAPTCHA to prevent blocking page load
 const ReCAPTCHA = React.lazy(() => import('react-google-recaptcha'));
@@ -19,12 +20,12 @@ export const Recaptcha = ({
   className = '',
   theme = 'light',
   size = 'normal',
-  sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Test key
+  sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Test key
 }: RecaptchaProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isExpired, setIsExpired] = useState(false);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<ReCAPTCHAType>(null);
 
   const handleVerify = (token: string | null) => {
     setError(null);

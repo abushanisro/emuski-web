@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client'
+
+import Link from "next/link";
 import { Layers, Search, FileText, TrendingDown, ArrowRight, CheckCircle } from "lucide-react";
 
 export const VAVESection = () => {
@@ -180,7 +182,7 @@ export const VAVESection = () => {
           {/* CTA */}
           <div className="text-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               Start Your VAVE Project

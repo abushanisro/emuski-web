@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "engineering": "Präzisionstechnik",
+    "manufacturing": "Fertigung",
+    "solutions": "Lösungen",
+    "ai": "KI-Lösungen",
+    "industries": "Branchen",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "getQuote": "Angebot anfordern"
+  },
+  "hero": {
+    "heading": {
+      "line1": "Präzisionstechnik",
+      "highlight": "trifft Innovation",
+      "line2": "Fertigungsexzellenz geliefert"
+    },
+    "tagline": "Ihr vertrauenswürdiger Partner für Präzisionsfertigung und Engineering-Lösungen in Bangalore, Indien",
+    "description": "Von Rapid Prototyping bis zur Serienfertigung liefern wir kostenoptimierte OEM-Fertigungslösungen mit modernster Engineering-Expertise in den Bereichen Luft- und Raumfahrt, Automobil, Medizintechnik und Verteidigung.",
+    "cta": {
+      "primary": "Jetzt starten",
+      "secondary": "Dienstleistungen ansehen"
+    },
+    "stats": [
+      {
+        "value": "100+",
+        "label": "Projekte geliefert"
+      },
+      {
+        "value": "99,5%",
+        "label": "Qualitätsrate"
+      },
+      {
+        "value": "ISO 9001",
+        "label": "Zertifiziert"
+      },
+      {
+        "value": "24/7",
+        "label": "Support"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Unsere Dienstleistungen",
+    "subheading": "Umfassende Fertigungs- und Engineering-Lösungen, maßgeschneidert für Ihre Anforderungen",
+    "engineering": {
+      "title": "Engineering-Innovation",
+      "items": [
+        {
+          "name": "Produktkostenschätzung",
+          "description": "Echtzeit-Kostenintelligenz für intelligentere Entscheidungen während des gesamten Produktlebenszyklus"
+        },
+        {
+          "name": "VAVE - Teardown & Benchmarking",
+          "description": "Wertanalyse und Wertgestaltung durch detaillierte Produktanalyse"
+        },
+        {
+          "name": "Strategische Beschaffungsunterstützung",
+          "description": "End-to-End-Beschaffungslösungen mit Zugang zu globalem Lieferantennetzwerk"
+        },
+        {
+          "name": "Experten-Engineering-Support",
+          "description": "Spezialisierte Engineering-Ressourcen direkt in Ihrem Team eingesetzt"
+        }
+      ]
+    },
+    "manufacturing": {
+      "title": "Fertigungsexzellenz",
+      "items": [
+        {
+          "name": "Rapid Prototyping",
+          "description": "Schnelle Durchlaufzeit für Konzeptvalidierung und Designiteration"
+        },
+        {
+          "name": "On-Demand-Fertigung",
+          "description": "Flexible Produktionsvolumen von Prototypen bis zur Massenfertigung"
+        },
+        {
+          "name": "CNC-Bearbeitung",
+          "description": "Hochpräzise CNC-Bearbeitung für komplexe Komponenten"
+        },
+        {
+          "name": "Qualitätssicherung",
+          "description": "ISO 9001 zertifizierte Qualitätskontrollprozesse"
+        }
+      ]
+    },
+    "ai": {
+      "title": "KI-gestützte Lösungen",
+      "description": "Mithran KI-Plattform für intelligente Fertigungsoptimierung",
+      "features": [
+        {
+          "name": "Kostenoptimierung",
+          "description": "KI-gesteuerte Kostenanalyse und Reduktionsstrategien"
+        },
+        {
+          "name": "Lieferanten-Intelligence",
+          "description": "Intelligente Lieferantenbewertung und -verwaltung"
+        },
+        {
+          "name": "Beschaffungsautomatisierung",
+          "description": "Optimierte Beschaffung mit KI-Unterstützung"
+        }
+      ]
+    }
+  },
+  "industries": {
+    "heading": "Branchen, die wir bedienen",
+    "subheading": "Spezialisierte Expertise in hochpräzisen Sektoren",
+    "list": [
+      {
+        "name": "Luft- und Raumfahrt",
+        "description": "Kritische Aerospace-Komponenten mit strengsten Qualitätsstandards",
+        "icon": "plane"
+      },
+      {
+        "name": "Automobil",
+        "description": "Hochvolumige Automobilteile-Fertigung und Montage",
+        "icon": "car"
+      },
+      {
+        "name": "Medizintechnik",
+        "description": "Präzise Medizingeräte und Diagnostikinstrumente",
+        "icon": "medical"
+      },
+      {
+        "name": "Verteidigung",
+        "description": "Verteidigungsausrüstung und spezialisierte taktische Komponenten",
+        "icon": "shield"
+      },
+      {
+        "name": "Industrieanlagen",
+        "description": "Schwermaschinenbau und Industrieautomationskomponenten",
+        "icon": "factory"
+      }
+    ]
+  },
+  "methodology": {
+    "heading": "Unsere Methodik",
+    "subheading": "Systematischer Ansatz für Fertigungsexzellenz",
+    "steps": [
+      {
+        "title": "Anforderungsanalyse",
+        "description": "Detailliertes Verständnis Ihrer Produktspezifikationen und Qualitätsanforderungen"
+      },
+      {
+        "title": "Kostenschätzung",
+        "description": "Transparente Kostenaufschlüsselung mit Optimierungsmöglichkeiten"
+      },
+      {
+        "title": "Prototypenentwicklung",
+        "description": "Rapid Prototyping für Designvalidierung und Tests"
+      },
+      {
+        "title": "Produktion & Qualitätskontrolle",
+        "description": "Volumenfertigung mit strengen Qualitätsprüfungen"
+      },
+      {
+        "title": "Lieferung & Support",
+        "description": "Pünktliche Lieferung mit laufendem technischen Support"
+      }
+    ]
+  },
+  "capabilities": {
+    "heading": "Unsere Fähigkeiten",
+    "processes": [
+      {
+        "name": "CNC-Bearbeitung",
+        "description": "3-Achs-, 4-Achs- und 5-Achs-CNC-Bearbeitungszentren"
+      },
+      {
+        "name": "Spritzguss",
+        "description": "Kunststoffspritzguss für Hochvolumenproduktion"
+      },
+      {
+        "name": "Blechbearbeitung",
+        "description": "Laserschneiden, Biegen und Umformoperationen"
+      },
+      {
+        "name": "3D-Druck",
+        "description": "Additive Fertigung für Rapid Prototyping"
+      },
+      {
+        "name": "Oberflächenbehandlung",
+        "description": "Eloxieren, Pulverbeschichten und Galvanisierung"
+      },
+      {
+        "name": "Montage & Prüfung",
+        "description": "Komponentenmontage und Funktionstests"
+      }
+    ]
+  },
+  "quality": {
+    "heading": "Qualitätssicherung",
+    "certifications": [
+      {
+        "name": "ISO 9001:2015",
+        "description": "Qualitätsmanagementsystem zertifiziert"
+      },
+      {
+        "name": "ISO 14001",
+        "description": "Umweltmanagementsystem"
+      },
+      {
+        "name": "AS9100",
+        "description": "Aerospace-Qualitätsmanagement"
+      }
+    ],
+    "equipment": [
+      {
+        "name": "KMG (Koordinatenmessgerät)",
+        "description": "Hochpräzise dimensionale Inspektion"
+      },
+      {
+        "name": "Optische Inspektion",
+        "description": "Fortschrittliche visuelle Qualitätskontrollsysteme"
+      },
+      {
+        "name": "Materialprüfung",
+        "description": "Mechanisches und metallurgisches Prüflabor"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "heading": "Warum EMUSKI wählen?",
+    "subheading": "Ihr Partner für Fertigungsexzellenz",
+    "reasons": [
+      {
+        "title": "Branchenexpertise",
+        "description": "Jahrzehntelange Erfahrung in der Präzisionsfertigung über mehrere Branchen hinweg"
+      },
+      {
+        "title": "Kostenoptimierung",
+        "description": "KI-gesteuerte Kostenanalyse für wettbewerbsfähige Preise ohne Qualitätskompromisse"
+      },
+      {
+        "title": "Qualität zuerst",
+        "description": "ISO-zertifizierte Prozesse mit 99,5%+ Qualitätsakzeptanzrate"
+      },
+      {
+        "title": "Schnelle Durchlaufzeit",
+        "description": "Rapid Prototyping in Tagen, nicht Wochen. Serienfertigung wenn Sie es brauchen"
+      },
+      {
+        "title": "Technischer Support",
+        "description": "Dediziertes Engineering-Team für laufende technische Unterstützung"
+      },
+      {
+        "title": "Single Point of Contact",
+        "description": "Vom Design bis zur Lieferung, ein Partner für alle Ihre Fertigungsanforderungen"
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Was unsere Kunden sagen",
+    "items": [
+      {
+        "quote": "Die Präzisionstechnik-Expertise von EMUSKI half uns, Fertigungskosten um 30% zu reduzieren und gleichzeitig die Produktqualität zu verbessern.",
+        "author": "Fertigungsleiter",
+        "company": "Führendes Aerospace-Unternehmen"
+      },
+      {
+        "quote": "Ihre Rapid-Prototyping-Fähigkeiten beschleunigten unseren Produktentwicklungszyklus erheblich.",
+        "author": "Leiter F&E",
+        "company": "Medizintechnik-Hersteller"
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Bereit, Ihr Fertigungsprojekt zu starten?",
+    "subheading": "Kontaktieren Sie unser Engineering-Team für eine kostenlose Beratung und ein Angebot",
+    "button": "Angebot anfordern",
+    "features": [
+      "Kostenlose Kostenschätzung",
+      "Expertenberatung",
+      "Schnelle Reaktionszeit"
+    ]
+  },
+  "contact": {
+    "heading": "Kontakt aufnehmen",
+    "subheading": "Lassen Sie uns über Ihre Fertigungsanforderungen sprechen",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "company": "Firmenname",
+      "service": "Benötigte Dienstleistung",
+      "message": "Projektdetails",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet...",
+      "success": "Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    },
+    "info": {
+      "address": "Bangalore, Karnataka, Indien",
+      "email": "enquires@emuski.com",
+      "phone": "+91 83444 74556",
+      "hours": "Mo-Sa: 9:00 - 18:00 Uhr IST"
+    }
+  },
+  "footer": {
+    "tagline": "Präzisionstechnik. Fertigungsexzellenz.",
+    "quickLinks": "Schnelllinks",
+    "services": "Dienstleistungen",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "social": "Folgen Sie uns",
+    "copyright": "© 2025 EMUSKI. Alle Rechte vorbehalten.",
+    "links": {
+      "privacyPolicy": "Datenschutzerklärung",
+      "termsConditions": "Allgemeine Geschäftsbedingungen",
+      "cookiePolicy": "Cookie-Richtlinie"
+    }
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "readMore": "Weiterlesen",
+    "getStarted": "Jetzt starten",
+    "viewAll": "Alle anzeigen",
+    "loadMore": "Mehr laden",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "download": "Herunterladen",
+    "share": "Teilen",
+    "print": "Drucken"
+  }
+}

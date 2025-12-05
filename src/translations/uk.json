@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "engineering": "Precision Engineering",
+    "manufacturing": "Manufacturing",
+    "solutions": "Solutions",
+    "ai": "AI Solutions",
+    "industries": "Industries",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "getQuote": "Get Quote"
+  },
+  "hero": {
+    "heading": {
+      "line1": "Precision Engineering",
+      "highlight": "Meets Innovation",
+      "line2": "Manufacturing Excellence Delivered"
+    },
+    "tagline": "Your trusted partner for precision manufacturing and engineering solutions in Bangalore, India",
+    "description": "From rapid prototyping to volume production, we deliver cost-optimised OEM manufacturing solutions with cutting-edge engineering expertise across aerospace, automotive, medical, and defence industries.",
+    "cta": {
+      "primary": "Get Started",
+      "secondary": "View Services"
+    },
+    "stats": [
+      {
+        "value": "100+",
+        "label": "Projects Delivered"
+      },
+      {
+        "value": "99.5%",
+        "label": "Quality Rate"
+      },
+      {
+        "value": "ISO 9001",
+        "label": "Certified"
+      },
+      {
+        "value": "24/7",
+        "label": "Support"
+      }
+    ]
+  },
+  "services": {
+    "heading": "Our Services",
+    "subheading": "Comprehensive manufacturing and engineering solutions tailored to your needs",
+    "engineering": {
+      "title": "Engineering Innovation",
+      "items": [
+        {
+          "name": "Product Cost Estimation",
+          "description": "Real-time cost intelligence for smarter decisions throughout your product lifecycle"
+        },
+        {
+          "name": "VAVE - Teardown & Benchmarking",
+          "description": "Value Analysis and Value Engineering through detailed product analysis"
+        },
+        {
+          "name": "Strategic Sourcing Support",
+          "description": "End-to-end sourcing solutions with global supplier network access"
+        },
+        {
+          "name": "Expert Engineer Support",
+          "description": "Specialised engineering resources deployed directly into your team"
+        }
+      ]
+    },
+    "manufacturing": {
+      "title": "Manufacturing Excellence",
+      "items": [
+        {
+          "name": "Rapid Prototyping",
+          "description": "Quick turnaround for concept validation and design iteration"
+        },
+        {
+          "name": "On-demand Manufacturing",
+          "description": "Flexible production volumes from prototypes to mass production"
+        },
+        {
+          "name": "CNC Machining",
+          "description": "High-precision CNC machining for complex components"
+        },
+        {
+          "name": "Quality Assurance",
+          "description": "ISO 9001 certified quality control processes"
+        }
+      ]
+    },
+    "ai": {
+      "title": "AI-Powered Solutions",
+      "description": "Mithran AI Platform for intelligent manufacturing optimisation",
+      "features": [
+        {
+          "name": "Cost Optimisation",
+          "description": "AI-driven cost analysis and reduction strategies"
+        },
+        {
+          "name": "Supplier Intelligence",
+          "description": "Smart supplier evaluation and management"
+        },
+        {
+          "name": "Procurement Automation",
+          "description": "Streamlined procurement with AI assistance"
+        }
+      ]
+    }
+  },
+  "industries": {
+    "heading": "Industries We Serve",
+    "subheading": "Specialised expertise across high-precision sectors",
+    "list": [
+      {
+        "name": "Aerospace",
+        "description": "Critical aerospace components with stringent quality standards",
+        "icon": "plane"
+      },
+      {
+        "name": "Automotive",
+        "description": "High-volume automotive parts manufacturing and assembly",
+        "icon": "car"
+      },
+      {
+        "name": "Medical Devices",
+        "description": "Precision medical equipment and diagnostic devices",
+        "icon": "medical"
+      },
+      {
+        "name": "Defence",
+        "description": "Defence equipment and specialised tactical components",
+        "icon": "shield"
+      },
+      {
+        "name": "Industrial Equipment",
+        "description": "Heavy machinery and industrial automation components",
+        "icon": "factory"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "subheading": "Let's discuss your manufacturing requirements",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Telephone Number",
+      "company": "Company Name",
+      "service": "Service Required",
+      "message": "Project Details",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Thank you! We'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "address": "Bangalore, Karnataka, India",
+      "email": "enquires@emuski.com",
+      "phone": "+91 83444 74556",
+      "hours": "Mon-Sat: 9:00 AM - 6:00 PM IST"
+    }
+  },
+  "footer": {
+    "tagline": "Precision Engineering. Manufacturing Excellence.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "copyright": "© 2025 EMUSKI. All rights reserved.",
+    "links": {
+      "privacyPolicy": "Privacy Policy",
+      "termsConditions": "Terms & Conditions",
+      "cookiePolicy": "Cookie Policy"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "loadMore": "Load More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "download": "Download",
+    "share": "Share",
+    "print": "Print"
+  }
+}

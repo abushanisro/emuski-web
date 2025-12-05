@@ -67,9 +67,9 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/ai/mithran-overview.jpg"
+                    src="/assets/mitran/ai-mithran-platform-dashboard.jpeg"
                     alt="Mithran AI Platform"
-                    className="w-full h-auto"
+                    className="w-full h-auto object-cover scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EMithran AI Platform%3C/text%3E%3C/svg%3E";
@@ -172,9 +172,9 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/mitran/rawmaterial.jpeg"
+                    src="/assets/mitran/ai-raw-material-optimization.jpeg"
                     alt="Mithran AI Intelligence"
-                    className="w-full h-auto"
+                    className="w-full h-auto object-cover scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EMithran AI%3C/text%3E%3C/svg%3E";
@@ -227,13 +227,13 @@ export const AIServicesContent = () => {
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-200">
-                  <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-lg p-4 text-white">
-                    <div className="text-3xl font-bold mb-1">30%</div>
-                    <div className="text-sm text-white/90">Faster Sourcing Cycles</div>
+                  <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-lg p-4">
+                    <div className="text-3xl font-bold mb-1 text-white">30%</div>
+                    <div className="text-sm" style={{color: '#161615'}}>Faster Sourcing Cycles</div>
                   </div>
-                  <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-lg p-4 text-white">
-                    <div className="text-3xl font-bold mb-1">15%</div>
-                    <div className="text-sm text-white/90">Cost Savings</div>
+                  <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-lg p-4">
+                    <div className="text-3xl font-bold mb-1 text-white">15%</div>
+                    <div className="text-sm" style={{color: '#161615'}}>Cost Savings</div>
                   </div>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export const AIServicesContent = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-6">
-                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">The Future</p>
+                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">The Future- Mithran AI</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                   The Future of Manufacturing Intelligence
                 </h2>
@@ -262,23 +262,23 @@ export const AIServicesContent = () => {
 
                 {/* Vision Points */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">Mithran's Vision</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-bold mb-6 text-base">Mithran's Vision</h4>
+                  <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</div>
-                      <p className="text-sm text-white/90">Unite engineering, procurement, and manufacturing in one intelligent platform</p>
+                      <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-base font-bold" style={{color: '#161615'}}>1</div>
+                      <p className="text-base leading-relaxed" style={{color: '#161615'}}>Unite engineering, procurement, and manufacturing in one intelligent platform</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</div>
-                      <p className="text-sm text-white/90">Democratize access to world-class manufacturing intelligence for OEMs of all sizes</p>
+                      <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-base font-bold" style={{color: '#161615'}}>2</div>
+                      <p className="text-base leading-relaxed" style={{color: '#161615'}}>Democratize access to world-class manufacturing intelligence for OEMs of all sizes</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</div>
-                      <p className="text-sm text-white/90">Create a global ecosystem where suppliers and OEMs collaborate seamlessly</p>
+                      <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-base font-bold" style={{color: '#161615'}}>3</div>
+                      <p className="text-base leading-relaxed" style={{color: '#161615'}}>Create a global ecosystem where suppliers and OEMs collaborate seamlessly</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">4</div>
-                      <p className="text-sm text-white/90">Continuously learn and improve through AI, making every project smarter than the last</p>
+                      <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 text-base font-bold" style={{color: '#161615'}}>4</div>
+                      <p className="text-base leading-relaxed" style={{color: '#161615'}}>Continuously learn and improve through AI, making every project smarter than the last</p>
                     </div>
                   </div>
                 </div>
@@ -291,9 +291,9 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/ai/future-vision.jpg"
+                    src="/assets/mitran/ai-mitran-future.svg"
                     alt="Future of Manufacturing"
-                    className="w-full h-auto"
+                    className="w-full h-auto object-contain scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EFuture Vision%3C/text%3E%3C/svg%3E";

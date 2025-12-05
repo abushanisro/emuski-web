@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client'
+
+import Link from "next/link";
 import { Lightbulb, Layers, RefreshCw, CheckCircle, ArrowRight } from "lucide-react";
 
 export const RapidPrototypingSection = () => {
@@ -134,7 +136,7 @@ export const RapidPrototypingSection = () => {
           {/* CTA */}
           <div className="text-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               Start Your Prototyping Project

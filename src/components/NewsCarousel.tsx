@@ -1,12 +1,14 @@
+'use client'
+
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const clientLogos = Array.from({ length: 16 }, (_, i) => ({
   name: `Partner ${i + 1}`,
-  logo: `/assets/Partners/${i + 1}.svg`
+  logo: `/assets/partners/manufacturing-partner-logo-${i + 1}.svg`
 }));
 
 
@@ -16,43 +18,43 @@ const successStories = [
     category: "Automotive Excellence",
     title: "Tier-1 Supplier. Consistent Quality. On-Time Delivery.",
     description: "From prototype to trusted supplier—delivering precision brake components to automotive leaders. Meeting production deadlines while maintaining rigorous quality standards.",
-    image: "/assets/componets/Part-Photos/IMG-20250206-WA0025.jpg",
-    link: "/industries#automotive"
+    image: "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg",
+    link: "/gallery"
   },
   {
     category: "Precision Engineering",
     title: "Where Precision Meets Efficiency.",
     description: "Critical transmission components delivered with exceptional quality standards while optimizing production workflows. Your competitive edge, engineered to perfection.",
-    image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
-    link: "/precision-engineering#services-section"
+    image: "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
+    link: "/precision-engineering"
   },
   {
     category: "Smart Manufacturing",
     title: "Optimized Assembly. Maintained Quality. Better Results.",
     description: "Custom fixture design that transformed manufacturing workflows from bottleneck to streamlined efficiency. Meet demand surges without compromising standards.",
-    image: "/assets/componets/3-Oct-25/cent_fixture/WhatsApp Image 2025-10-27 at 3.21.23 PM.jpeg",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-7.jpeg",
     link: "/manufacturing-services#custom"
   },
   {
     category: "Production Systems",
     title: "Scalable Production. Unwavering Quality.",
     description: "Successfully scaling production from low-volume to high-volume manufacturing while maintaining consistent quality metrics. Your growth, our expertise.",
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-3.jpeg",
     link: "/manufacturing-services#scaling"
   },
   {
     category: "CNC Machining",
     title: "Complex Geometries. Tight Tolerances. Flawless Finishes.",
     description: "Advanced 5-axis CNC machining delivering aerospace-grade precision for automotive OEMs. When failure isn't an option, choose manufacturing that delivers.",
-    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
-    link: "/precision-engineering#cnc"
+    image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-20.jpeg",
+    link: "/precision-engineering"
   },
   {
     category: "Client Partnership",
     title: "Accelerated Time-to-Market. Strategic Advantage.",
     description: "Rapid prototyping and engineering validation that accelerated product development timelines. Your innovation, our expertise—delivering results together.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
-    link: "/industries#aerospace"
+    image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-12.jpeg",
+    link: "/gallery"
   }
 ];
 
@@ -150,7 +152,7 @@ export const NewsCarousel = () => {
               key={index}
               className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <Link to={item.link} className="block h-full hover:no-underline">
+              <Link href={item.link} className="block h-full hover:no-underline">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={item.image}

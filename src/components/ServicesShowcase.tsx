@@ -1,6 +1,8 @@
+'use client'
+
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight, ArrowRight, ChevronLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const servicesData = [
   {
@@ -69,63 +71,63 @@ const showcaseItems = [
     title: "Product Cost Estimation",
     category: "Engineering Innovations",
     description: "Accurate cost analysis and estimation services to optimize your product development budget and maximize profitability.",
-    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
+    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
     link: "/precision-engineering#cost-estimation"
   },
   {
     title: "VAVE - Teardown & Benchmarking",
     category: "Engineering Innovations",
     description: "Value Analysis and Value Engineering through comprehensive teardown studies and competitive benchmarking for cost optimization.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+    image: "/assets/engineering/product-teardown-analysis.png",
     link: "/precision-engineering#vave"
   },
   {
     title: "Strategic Sourcing Support",
     category: "Engineering Innovations",
     description: "Expert guidance in supplier selection and procurement strategy to ensure quality components at competitive prices.",
-    image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
+    image: "/assets/engineering/strategic-sourcing-solutions.svg",
     link: "/precision-engineering#sourcing"
   },
   {
     title: "Expert Engineer Support",
     category: "Engineering Innovations",
     description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    image: "/assets/engineering/supplier-management-system.png",
     link: "/precision-engineering#expert-support"
   },
   {
     title: "On-Demand Manufacturing",
     category: "Manufacturing Excellences",
     description: "Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.",
-    image: "/assets/componets/Part-Photos/IMG-20250519-WA0016.jpg",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.jpeg",
     link: "/manufacturing-services#on-demand"
   },
   {
     title: "Rapid Prototyping",
     category: "Manufacturing Excellences",
     description: "Fast and efficient prototyping services from concept to completion with precision and cost optimization.",
-    image: "/assets/componets/forus/WhatsApp Image 2025-08-23 at 10.06.37 PM.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
     link: "/manufacturing-services#prototyping"
   },
   {
     title: "Custom Manufacturing",
     category: "Manufacturing Excellences",
     description: "Tailored Manufacturing Excellences meeting specific requirements with high-precision CNC machining capabilities.",
-    image: "/assets/componets/Part-Photos/IMG-20250310-WA0011.jpg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
     link: "/manufacturing-services#custom"
   },
   {
     title: "Production Scaling",
     category: "Manufacturing Excellences",
     description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.",
-    image: "/assets/componets/Matica-Photos2/DSC_1008.JPG",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
     link: "/manufacturing-services#scaling"
   },
   {
     title: "Mithran AI Platform",
     category: "Next-GenAI",
     description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization delivering measurable results for OEMs.",
-    image: "/assets/componets/3-Oct-25/WhatsApp Image 2025-08-28 at 10.34.17 AM.jpeg",
+    image: "/assets/mitran/ai-mithran-platform-dashboard.jpeg",
     link: "/solutions/ai#mithran-overview"
   }
 ];
@@ -278,7 +280,7 @@ export const ServicesShowcase = () => {
                             {service.items.map((item, itemIndex) => (
                               <li key={itemIndex}>
                                 <Link
-                                  to={item.link}
+                                  href={item.link}
                                   className="group flex items-center gap-2 text-gray-700 active:text-emuski-teal-darker transition-colors duration-200"
                                 >
                                   <span className="w-1 h-1 rounded-full bg-gray-400 group-active:bg-emuski-teal-darker transition-colors"></span>
@@ -300,7 +302,7 @@ export const ServicesShowcase = () => {
 
                 {/* Horizontal Scroll Container */}
                 <div
-                  ref={(el) => (sectionScrollRefs.current[service.id] = el)}
+                  ref={(el) => { if (el) sectionScrollRefs.current[service.id] = el }}
                   onScroll={() => handleScroll(service.id)}
                   className="overflow-x-auto scrollbar-hide scroll-smooth pb-4"
                   style={{ scrollbarWidth: 'none' }}
@@ -336,7 +338,7 @@ export const ServicesShowcase = () => {
                           {service.items.map((item, itemIndex) => (
                             <li key={itemIndex}>
                               <Link
-                                to={item.link}
+                                href={item.link}
                                 className="group flex items-center gap-2 text-gray-700 hover:text-emuski-teal-darker transition-colors duration-200"
                               >
                                 <span className="w-1 h-1 rounded-full bg-gray-400 group-hover:bg-emuski-teal-darker transition-colors"></span>
@@ -364,7 +366,7 @@ export const ServicesShowcase = () => {
                         {filteredProjects.map((project, projectIndex) => (
                           <Link
                             key={projectIndex}
-                            to={project.link}
+                            href={project.link}
                             className="flex-shrink-0 w-[340px] group"
                           >
                             <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
@@ -374,7 +376,13 @@ export const ServicesShowcase = () => {
                                 <img
                                   src={project.image}
                                   alt={project.title}
-                                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                  className={`w-full h-full transform group-hover:scale-110 transition-transform duration-700 ${
+                                    project.category === 'Engineering Innovations' 
+                                      ? project.title === 'Product Cost Estimation' 
+                                        ? 'object-cover' 
+                                        : 'object-contain p-4'
+                                      : 'object-cover'
+                                  }`}
                                 />
 
 

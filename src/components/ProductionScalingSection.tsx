@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+'use client'
+
+import Link from "next/link";
 import { TrendingUp, BarChart3, Cog, ShieldCheck, ArrowRight, CheckCircle } from "lucide-react";
 
 export const ProductionScalingSection = () => {
@@ -213,7 +215,7 @@ export const ProductionScalingSection = () => {
           {/* CTA */}
           <div className="text-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               Plan Your Production Scale-Up

@@ -1,8 +1,10 @@
+'use client'
+
 import { useState, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const featuredContent = [
@@ -34,14 +36,14 @@ const featuredContent = [
         category: "Product Cost Estimation",
         title: "End-to-End Engineering & Costing Solutions",
         description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated Engineering Innovations that drive efficiency, reduce costs, and accelerate your time-to-market",
-        image: "/assets/engineering/car.png",
+        image: "/assets/engineering/automotive-engineering-cost-estimation.png",
         link: "/precision-engineering#cost-estimation"
       },
       {
         category: "VAVE & Benchmarking",
         title: "Teardown & Value Engineering",
         description: "Comprehensive teardown analysis and value Engineering Innovations to optimize product costs while maintaining quality standards and performance requirements.",
-        image: "/assets/engineering/breadown.png",
+        image: "/assets/engineering/product-teardown-analysis.png",
         link: "/precision-engineering#vave"
       }
     ]
@@ -54,14 +56,14 @@ const featuredContent = [
         category: "AI-Driven Platform",
         title: "Next-GenAI - Mithran",
         description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization. Transform traditional workflows into a smart, data-driven ecosystem.",
-        image: "/assets/mitran/dashboard.jpeg",
+        image: "/assets/mitran/ai-mithran-platform-dashboard.jpeg",
         link: "/solutions/ai#mithran-overview"
       },
       {
         category: "Smart Sourcing",
         title: "Intelligent Supplier Management",
         description: "AI-driven supplier identification, RFQ management, and quotation validation. Accelerate sourcing cycles by 30% with intelligent automation.",
-        image: "/assets/mitran/sourcing.jpeg",
+        image: "/assets/mitran/ai-intelligent-sourcing-system.jpeg",
         link: "/solutions/ai#mithran-overview"
       }
     ]
@@ -74,15 +76,36 @@ export const FeaturedTabs = () => {
   const [engineeringSlide, setEngineeringSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Manufacturing Excellences images (10 slides, excluding slide 8)
-  const manufacturingSlides = Array.from({ length: 11 }, (_, i) => i + 1)
-    .filter(num => num !== 8)
-    .map(num => `/assets/manufacturingservices/${num}.svg`);
+  // Manufacturing services carousel images with SEO-optimized names
+  const manufacturingSlides = [
+    '/assets/manufacturingservices/custom-manufacturing-solutions.svg',
+    '/assets/manufacturingservices/prototype-manufacturing-services.svg',
+    '/assets/manufacturingservices/production-scaling-capabilities.svg',
+    '/assets/manufacturingservices/on-demand-manufacturing.svg',
+    '/assets/manufacturingservices/cnc-machining-services.svg',
+    '/assets/manufacturingservices/sheet-metal-fabrication.svg',
+    '/assets/manufacturingservices/injection-molding-services.svg',
+    '/assets/manufacturingservices/quality-control-manufacturing.svg',
+    '/assets/manufacturingservices/assembly-services-manufacturing.svg',
+    '/assets/manufacturingservices/finishing-services-manufacturing.svg'
+  ];
 
-  // Engineering Innovations images (13 slides)
-  const engineeringSlides = Array.from({ length: 13 }, (_, i) =>
-    `/assets/engineeringservices/${i + 1}.svg`
-  );
+  // Engineering services carousel images with SEO-optimized names
+  const engineeringSlides = [
+    '/assets/engineeringservices/engineering-service-cost-estimation.svg',
+    '/assets/engineeringservices/engineering-service-value-analysis.svg',
+    '/assets/engineeringservices/engineering-service-design-optimization.svg',
+    '/assets/engineeringservices/engineering-service-supplier-sourcing.svg',
+    '/assets/engineeringservices/engineering-service-quality-assurance.svg',
+    '/assets/engineeringservices/engineering-service-process-improvement.svg',
+    '/assets/engineeringservices/engineering-service-technical-support.svg',
+    '/assets/engineeringservices/engineering-service-project-management.svg',
+    '/assets/engineeringservices/engineering-service-manufacturing-consulting.svg',
+    '/assets/engineeringservices/engineering-service-product-development.svg',
+    '/assets/engineeringservices/engineering-service-benchmarking-analysis.svg',
+    '/assets/engineeringservices/engineering-service-cost-modeling.svg',
+    '/assets/engineeringservices/engineering-service-supply-chain-optimization.svg'
+  ];
 
   const nextSlide = () => {
     if (activeTab === "manufacturing") {
@@ -149,13 +172,13 @@ export const FeaturedTabs = () => {
         {/* Image Display */}
         <div
           ref={carouselRef}
-          className="w-full min-h-[60vh] flex items-center justify-center bg-white"
+          className="w-full min-h-[60vh] flex items-center justify-center bg-white px-8 sm:px-12 md:px-0"
         >
           <img
             key={currentSlide}
             src={slides[currentSlide]}
-            alt={`Slide ${currentSlide + 1}`}
-            className="w-full h-auto object-contain max-h-[80vh] animate-fade-in"
+            alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
+            className="w-full h-auto object-contain max-h-[50vh] sm:max-h-[80vh] animate-fade-in"
           />
         </div>
 
@@ -264,7 +287,7 @@ export const FeaturedTabs = () => {
                           {item.description}
                         </p>
                         <Link
-                          to={
+                          href={
                             item.link ||
                             (tab.id === "engineering"
                               ? "/precision-engineering"

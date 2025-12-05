@@ -1,7 +1,9 @@
-import { Linkedin, Instagram, Twitter, BookOpen } from 'lucide-react';
-import { Link } from 'react-router-dom';
+'use client'
 
-const emuskiLogo = "/assets/emuskilogo.webp";
+import { Linkedin, Instagram, Twitter, BookOpen } from 'lucide-react';
+import Link from 'next/link';
+
+const emuskiLogo = "/assets/emuski-manufacturing-logo.webp";
 
 export const Footer = () => {
   return (
@@ -12,10 +14,10 @@ export const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">Manufacturing Excellences</h4>
             <ul className="space-y-2">
-              <li><Link to="/manufacturing-services" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">On-Demand Manufacturing</Link></li>
-              <li><Link to="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping</Link></li>
-              <li><Link to="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Manufacturing</Link></li>
-              <li><Link to="/manufacturing-services#scaling" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Production Scaling</Link></li>
+              <li><Link href="/manufacturing-services" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">On-Demand Manufacturing</Link></li>
+              <li><Link href="/manufacturing-services#prototyping" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Rapid Prototyping</Link></li>
+              <li><Link href="/manufacturing-services#custom" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Custom Manufacturing</Link></li>
+              <li><Link href="/manufacturing-services#scaling" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Production Scaling</Link></li>
             </ul>
           </div>
 
@@ -23,11 +25,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">Engineering Innovations</h4>
             <ul className="space-y-2">
-              <li><Link to="/precision-engineering" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Cost Precision</Link></li>
-              <li><Link to="/precision-engineering#cost-estimation" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Product Cost Estimation</Link></li>
-              <li><Link to="/precision-engineering#vave" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">VAVE & Benchmarking</Link></li>
-              <li><Link to="/precision-engineering#sourcing" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Strategic Sourcing</Link></li>
-              <li><Link to="/precision-engineering#expert-support" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Expert Engineer Support</Link></li>
+              <li><Link href="/precision-engineering" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Cost Precision</Link></li>
+              <li><Link href="/precision-engineering#cost-estimation" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Product Cost Estimation</Link></li>
+              <li><Link href="/precision-engineering#vave" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">VAVE & Benchmarking</Link></li>
+              <li><Link href="/precision-engineering#sourcing" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Strategic Sourcing</Link></li>
+              <li><Link href="/precision-engineering#expert-support" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Expert Engineer Support</Link></li>
             </ul>
           </div>
 
@@ -35,9 +37,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">AI & Technology</h4>
             <ul className="space-y-2">
-              <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Mithran AI Platform</Link></li>
-              <li><Link to="/solutions/ai#mithran-overview" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Smart Sourcing</Link></li>
-              <li><Link to="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Supply Chain Optimization</Link></li>
+              <li><Link href="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Mithran AI Platform</Link></li>
+              <li><Link href="/solutions/ai#mithran-overview" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Smart Sourcing</Link></li>
+              <li><Link href="/solutions/ai" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Supply Chain Optimization</Link></li>
 
             </ul>
           </div>
@@ -46,10 +48,10 @@ export const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/gallery" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Gallery</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Contact Us</Link></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Blog & Insights</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Get a Quote</Link></li>
+              <li><Link href="/gallery" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Gallery</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Contact Us</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Blog & Insights</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Get a Quote</Link></li>
             </ul>
           </div>
         </div>
@@ -99,7 +101,7 @@ export const Footer = () => {
                   </svg>
                 </a>
                 <Link 
-                  to="/blog" 
+                  href="/blog" 
                   className="text-muted-foreground hover:text-emuski-teal-darker transition-colors p-2 hover:bg-muted rounded-lg"
                   aria-label="Read EMUSKI Manufacturing Blog"
                 >
@@ -120,16 +122,16 @@ export const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 gap-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
               <div className="flex items-center space-x-2">
-                <img src={emuskiLogo} alt="EMUSKI Logo" className="h-6 w-auto" />
+                <img src={emuskiLogo} alt="EMUSKI Manufacturing Solutions Logo" className="h-6 w-auto" />
                 <span className="text-foreground font-bold text-lg">EMUSKI</span>
               </div>
               <span className="text-muted-foreground text-sm">© 2025 EMUSKI Corporation. All rights reserved.</span>
             </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-2">
-              <Link to="/privacy-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Privacy Policy</Link>
-              <Link to="/terms-and-conditions" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Terms of Service</Link>
-              <Link to="/cookie-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Cookie Policy</Link>
+              <Link href="/privacy-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Privacy Policy</Link>
+              <Link href="/terms-and-conditions" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Terms of Service</Link>
+              <Link href="/cookie-policy" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm">Cookie Policy</Link>
             </div>
           </div>
         </div>

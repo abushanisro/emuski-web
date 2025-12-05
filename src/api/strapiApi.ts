@@ -14,14 +14,14 @@ class StrapiApi {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+    this.baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
   }
 
   private async fetchFromStrapi(endpoint: string): Promise<any> {
     try {
       const response = await fetch(`${this.baseUrl}/api${endpoint}`, {
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN || ''}`,
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN || ''}`,
           'Content-Type': 'application/json',
         },
       });

@@ -1,8 +1,11 @@
+'use client'
+
 import { Menu, Home, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-const emuskiLogo = "/assets/emuskilogo.webp";
+const emuskiLogo = "/assets/emuski-manufacturing-logo.webp";
 
 interface NavItem {
   name: string;
@@ -103,7 +106,7 @@ export const Navbar = () => {
   const [activeServiceDropdown, setActiveServiceDropdown] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -125,11 +128,11 @@ export const Navbar = () => {
   }, [isMenuOpen, activeServiceDropdown]);
 
   const isActiveLink = (path: string) => {
-    return location.pathname === path;
+    return pathname === path;
   };
 
   const isActiveServiceLink = () => {
-    return Object.values(servicesDropdown).some(service => service.path === location.pathname);
+    return Object.values(servicesDropdown).some(service => service.path === pathname);
   };
 
   const getLinkClasses = (path: string) => {
@@ -149,7 +152,7 @@ export const Navbar = () => {
   };
 
   const getCurrentPageName = () => {
-    return routeToPageName[location.pathname] || "Page";
+    return routeToPageName[pathname] || "Page";
   };
 
   return (
@@ -157,10 +160,10 @@ export const Navbar = () => {
 <div className="w-full px-4 sm:px-6">
 <div className="flex items-center justify-between h-16">
 <div className="flex items-center space-x-8">
-<Link to="/" className="flex items-center space-x-2 group">
+<Link href="/" className="flex items-center space-x-2 group">
 <img 
   src={emuskiLogo} 
-  alt="EMUSKI Logo" 
+  alt="EMUSKI Manufacturing Solutions Logo" 
   className="h-8 sm:h-10 w-auto object-contain" 
   style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.1) brightness(1.05)' }}
 />
@@ -169,7 +172,7 @@ export const Navbar = () => {
 
 <div className="hidden md:flex items-center space-x-6" ref={servicesRef}>
 <Link 
-to="/" 
+href="/"
 className={`${getLinkClasses("/")} flex items-center space-x-1`}
 >
 <Home className="h-4 w-4" />
@@ -186,7 +189,7 @@ onMouseLeave={() => setActiveServiceDropdown(null)}
 >
 <div className="flex items-center">
 <Link
-to={service.path}
+href={service.path}
 className={getLinkClasses(service.path)}
 onClick={() => setActiveServiceDropdown(null)}
 >
@@ -210,7 +213,7 @@ style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(
 >
 <div className="py-2">
 <Link
-to={service.path}
+href={service.path}
 className="block px-4 py-3 text-sm font-semibold text-emuski-teal-darker border-b border-gray-100 hover:bg-emuski-teal/5"
 onClick={() => setActiveServiceDropdown(null)}
 >
@@ -219,7 +222,7 @@ onClick={() => setActiveServiceDropdown(null)}
 {service.subItems.map((subItem, index) => (
 <Link
 key={subItem.path}
-to={subItem.path}
+href={subItem.path}
 className="block px-4 py-3 text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
 onClick={() => setActiveServiceDropdown(null)}
 >
@@ -242,7 +245,7 @@ BETA
 {navigationConfig.leftMenu.map((item) => (
 <Link 
 key={item.path}
-to={item.path} 
+href={item.path} 
 className={getLinkClasses(item.path)}
 >
 {item.name}
@@ -256,7 +259,7 @@ className={getLinkClasses(item.path)}
 {navigationConfig.rightMenu.map((item) => (
 <Link 
 key={item.path}
-to={item.path} 
+href={item.path} 
 className={getLinkClasses(item.path)}
 >
 {item.name}
@@ -282,7 +285,7 @@ className="inline-flex items-center justify-center gap-2 whitespace-nowrap round
 <div className="flex items-center space-x-3">
 <img 
   src={emuskiLogo} 
-  alt="EMUSKI Logo" 
+  alt="EMUSKI Manufacturing Solutions Logo" 
   className="h-8 w-auto object-contain" 
   style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1)', opacity: 0.8 }}
 />
@@ -299,7 +302,7 @@ className="inline-flex items-center justify-center gap-2 whitespace-nowrap round
 {section.items.map((item) => (
 <Link
 key={item.path}
-to={item.path}
+href={item.path}
 className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
 onClick={() => setIsMenuOpen(false)}
 >

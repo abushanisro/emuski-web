@@ -89,18 +89,15 @@ export const EngineeringServicesContent = () => {
                 </div>
               </div>
 
-              {/* Image */}
+              {/* PDF Embed */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/engineering/cost-estimation.jpg"
-                    alt="Cost Estimation"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3ECost Estimation%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="/assets/documents/CostBreakDownReport.pdf"
+                    className="w-full h-[400px] md:h-[600px]"
+                    title="Manufacturing Cost Breakdown Report - Product Cost Estimation Analysis"
+                    aria-label="Interactive PDF viewer showing detailed manufacturing cost breakdown and product cost estimation analysis"
                   />
                 </div>
               </div>
@@ -115,7 +112,7 @@ export const EngineeringServicesContent = () => {
                 </p>
               </div>
               <div className="flex justify-center">
-                <img src="/assets/infograpic/methodology.svg" alt="Our Methodology" className="max-w-full h-auto rounded-lg" />
+                <img src="/assets/infographic/manufacturing-methodology-infographic.svg" alt="Engineering Methodology Process" className="max-w-full h-auto rounded-lg" />
               </div>
             </div>
           </div>
@@ -127,25 +124,22 @@ export const EngineeringServicesContent = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image - Left side */}
+              {/* PDF Embed - Left side */}
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/engineering/vave.jpg"
-                    alt="VAVE Analysis"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EVAVE Analysis%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="/assets/documents/Sample - Tear Down Report.pdf"
+                    className="w-full h-[400px] md:h-[600px]"
+                    title="VAVE Product Teardown Report - Value Engineering Benchmarking Analysis"
+                    aria-label="Interactive PDF viewer displaying comprehensive product teardown analysis and value engineering benchmarking report"
                   />
                 </div>
               </div>
 
               {/* Content - Right side */}
               <div className="space-y-6 order-1 lg:order-2">
-                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">VAVE Services</p>
+                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">VAVE - Teardown & Benchmarking</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                   Unlock Hidden Value Through Strategic Analysis
                 </h2>
@@ -326,18 +320,15 @@ export const EngineeringServicesContent = () => {
                 </div>
               </div>
 
-              {/* Image */}
+              {/* PDF Embed */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/engineering/sourcing.jpg"
-                    alt="Strategic Sourcing"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EStrategic Sourcing%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="/assets/documents/Sample Detailed Analysis Report.pdf"
+                    className="w-full h-[400px] md:h-[600px]"
+                    title="Strategic Sourcing Detailed Analysis Report - Supplier Evaluation and Cost Optimization"
+                    aria-label="Interactive PDF viewer showing detailed supplier analysis, strategic sourcing evaluation and cost optimization report"
                   />
                 </div>
               </div>
@@ -351,18 +342,15 @@ export const EngineeringServicesContent = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image - Left side */}
+              {/* PDF Embed - Left side */}
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="/assets/engineering/expert-support.jpg"
-                    alt="Expert Engineer Support"
-                    className="w-full h-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EExpert Support%3C/text%3E%3C/svg%3E";
-                    }}
+                  <iframe
+                    src="/assets/documents/CASE STUDY - EXHAUST SYSTEM..pdf"
+                    className="w-full h-[400px] md:h-[600px]"
+                    title="Engineering Case Study - Automotive Exhaust System Cost Reduction and Value Engineering"
+                    aria-label="Interactive PDF viewer presenting automotive exhaust system engineering case study with cost reduction and VAVE analysis"
                   />
                 </div>
               </div>

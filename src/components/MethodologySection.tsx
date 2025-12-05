@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 
 const MethodologySection = () => {
@@ -14,7 +16,7 @@ const MethodologySection = () => {
         </div>
         <div className="flex justify-center">
           <img 
-            src="/assets/infograpic/methodology.svg" 
+            src="/assets/infographic/manufacturing-methodology-infographic.svg" 
             alt="Our Methodology"
             className="max-w-full h-auto"
           />

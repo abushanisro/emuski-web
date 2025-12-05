@@ -45,7 +45,7 @@ const ProductDeliverablesSection = () => {
             </div>
           </div>
           <div className="space-y-6">
-            {/* Case Study PDF Viewer */}
+            {/* Project Delivery Report PDF Viewer */}
             <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden shadow-lg">
               <div className="bg-gradient-to-r from-emuski-teal-dark to-emuski-teal-darker p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -58,7 +58,7 @@ const ProductDeliverablesSection = () => {
                   </div>
                 </div>
                 <a
-                  href="/casestudy/CASE STUDY - EXHAUST SYSTEM..pdf"
+                  href="/assets/documents/Project_Delivery_Report.pdf"
                   download
                   className="inline-flex items-center gap-2 bg-white text-emuski-teal-darker px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-gray-100 transition-colors duration-300"
                 >
@@ -68,9 +68,10 @@ const ProductDeliverablesSection = () => {
               </div>
               <div className="relative w-full h-[70vh] md:h-[600px] lg:h-[700px]">
                 <iframe
-                  src="/casestudy/CASE STUDY - EXHAUST SYSTEM..pdf"
+                  src="/assets/documents/Project_Delivery_Report.pdf"
                   className="w-full h-full border-0"
-                  title="Case Study - Exhaust System"
+                  title="Project Delivery Report - Manufacturing Excellence and Quality Documentation"
+                  aria-label="Interactive PDF viewer displaying comprehensive project delivery report with manufacturing deliverables and quality assurance documentation"
                 />
               </div>
             </div>

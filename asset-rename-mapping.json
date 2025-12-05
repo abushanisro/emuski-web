@@ -1,0 +1,96 @@
+{
+  "engineering": {
+    "breadown.png": "product-teardown-analysis.png",
+    "breakdown.png": "cost-breakdown-engineering.png",
+    "bullet.png": "precision-manufacturing-bullet.png",
+    "car.png": "automotive-engineering-cost-estimation.png",
+    "cost360.png": "cost360-platform-dashboard.png",
+    "cost360crm.png": "cost360-crm-system.png",
+    "costtransparency.svg": "cost-transparency-engineering.svg",
+    "designdecisions.svg": "design-decisions-optimization.svg",
+    "mesurement.png": "precision-measurement-tools.png",
+    "negotion.svg": "supplier-negotiation-process.svg",
+    "reduction.png": "cost-reduction-strategies.png",
+    "scan.png": "3d-scanning-technology.png",
+    "sourcing.svg": "strategic-sourcing-solutions.svg",
+    "supplier.png": "supplier-management-system.png",
+    "supplierevaluation.svg": "supplier-evaluation-metrics.svg"
+  },
+  "engineeringservices": {
+    "1.svg": "engineering-service-cost-estimation.svg",
+    "2.svg": "engineering-service-value-analysis.svg",
+    "3.svg": "engineering-service-design-optimization.svg",
+    "4.svg": "engineering-service-supplier-sourcing.svg",
+    "5.svg": "engineering-service-quality-assurance.svg",
+    "6.svg": "engineering-service-process-improvement.svg",
+    "7.svg": "engineering-service-technical-support.svg",
+    "8.svg": "engineering-service-project-management.svg",
+    "9.svg": "engineering-service-manufacturing-consulting.svg",
+    "10.svg": "engineering-service-product-development.svg",
+    "11.svg": "engineering-service-benchmarking-analysis.svg",
+    "12.svg": "engineering-service-cost-modeling.svg",
+    "13.svg": "engineering-service-supply-chain-optimization.svg"
+  },
+  "hero": {
+    "engineering.svg": "precision-engineering-hero-banner.svg",
+    "genai.svg": "ai-mithran-hero-banner.svg",
+    "manufaturing.svg": "manufacturing-services-hero-banner.svg"
+  },
+  "hero-mobile": {
+    "engineeringmobile.svg": "precision-engineering-mobile-banner.svg",
+    "genaimobile.svg": "ai-mithran-mobile-banner.svg",
+    "manufaturingmobile.svg": "manufacturing-services-mobile-banner.svg"
+  },
+  "infograpic": {
+    "bussiness.svg": "business-operations-infographic.svg",
+    "delivery.svg": "delivery-process-infographic.svg",
+    "methodology.svg": "manufacturing-methodology-infographic.svg",
+    "operations.svg": "operations-workflow-infographic.svg",
+    "quality.svg": "quality-assurance-infographic.svg"
+  },
+  "manufacturingservices": {
+    "1.svg": "custom-manufacturing-solutions.svg",
+    "2.svg": "prototype-manufacturing-services.svg",
+    "3.svg": "production-scaling-capabilities.svg",
+    "4.svg": "on-demand-manufacturing.svg",
+    "5.svg": "cnc-machining-services.svg",
+    "6.svg": "sheet-metal-fabrication.svg",
+    "7.svg": "injection-molding-services.svg",
+    "9.svg": "quality-control-manufacturing.svg",
+    "10.svg": "assembly-services-manufacturing.svg",
+    "11.svg": "finishing-services-manufacturing.svg"
+  },
+  "mitran": {
+    "commodity.jpeg": "ai-commodity-management-dashboard.jpeg",
+    "dashboard.jpeg": "ai-mithran-platform-dashboard.jpeg",
+    "rawmaterial.jpeg": "ai-raw-material-optimization.jpeg",
+    "sourcing.jpeg": "ai-intelligent-sourcing-system.jpeg"
+  },
+  "Partners": {
+    "1.svg": "manufacturing-partner-logo-1.svg",
+    "2.svg": "manufacturing-partner-logo-2.svg",
+    "3.svg": "manufacturing-partner-logo-3.svg",
+    "4.svg": "manufacturing-partner-logo-4.svg",
+    "5.svg": "manufacturing-partner-logo-5.svg",
+    "6.svg": "manufacturing-partner-logo-6.svg",
+    "7.svg": "manufacturing-partner-logo-7.svg",
+    "8.svg": "manufacturing-partner-logo-8.svg",
+    "9.svg": "manufacturing-partner-logo-9.svg",
+    "10.svg": "manufacturing-partner-logo-10.svg",
+    "11.svg": "manufacturing-partner-logo-11.svg",
+    "12.svg": "manufacturing-partner-logo-12.svg",
+    "13.svg": "manufacturing-partner-logo-13.svg",
+    "14.svg": "manufacturing-partner-logo-14.svg",
+    "15.svg": "manufacturing-partner-logo-15.svg",
+    "16.svg": "manufacturing-partner-logo-16.svg"
+  },
+  "team": {
+    "founder.jpg": "emuski-founder-ceo.jpg"
+  },
+  "root": {
+    "AI-mitran.svg": "ai-mithran-logo.svg",
+    "emuskilogo.webp": "emuski-manufacturing-logo.webp",
+    "engineering.svg": "precision-engineering-icon.svg",
+    "Manufacturing.svg": "manufacturing-services-icon.svg"
+  }
+}
