@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 const clientLogos = Array.from({ length: 16 }, (_, i) => ({
   name: `Partner ${i + 1}`,
@@ -85,11 +86,15 @@ export const NewsCarousel = () => {
           <div className="relative overflow-hidden w-full">
             <div className="flex animate-scroll space-x-12 items-center">
               {clientLogos.concat(clientLogos).map((client, index) => (
-                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                  <img
+                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-12 sm:h-16 w-24">
+                  <Image
                     src={client.logo}
-                    alt={client.name}
-                    className="h-12 sm:h-16 w-auto object-contain filter brightness-0 invert"
+                    alt={`${client.name} - Manufacturing Partner`}
+                    fill
+                    className="object-contain filter brightness-0 invert"
+                    loading="lazy"
+                    quality={90}
+                    sizes="96px"
                   />
                 </div>
               ))}
@@ -154,10 +159,14 @@ export const NewsCarousel = () => {
             >
               <Link href={item.link} className="block h-full hover:no-underline">
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    alt={`${item.title} - Success Story`}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                   />
                 </div>
                 

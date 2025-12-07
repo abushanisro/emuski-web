@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell -Command \"Get-Item ''public/assets/documents/*.pdf'' -ErrorAction SilentlyContinue | Select-Object Name, @{Name=''Size'';Expression={''{0:N0} KB'' -f ($_Length/1KB)}} | Format-Table -AutoSize\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -3,13 +3,14 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight, ArrowRight, ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const servicesData = [
   {
     id: "manufacturing",
     category: "Manufacturing Excellence",
     tagline: "Precision at Scale",
-    description: "Transform your ideas into reality with rapid prototyping and on-demand manufacturing solutions that deliver quality, speed, and innovation across automotive, aerospace, and industrial sectors.",
+    description: "Through the EMUSKI NPD Innovation Center, we transform your concepts into market-ready products with rapid prototyping and on-demand manufacturing—delivering precision, speed, and scalability across automotive, aerospace, and industrial applications.",
     gradient: "from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker",
     accentColor: "bg-emuski-teal-darker",
     items: [
@@ -29,13 +30,8 @@ const servicesData = [
         name: "Production Scaling",
         link: "/manufacturing-services#scaling",
       },
-      {
-        name: "Mithran AI Platform",
-        link: "/solutions/ai#mithran-overview",
-        beta: true,
-      },
     ],
-    relatedCategories: ["Manufacturing Excellences", "Next-GenAI"]
+    relatedCategories: ["Manufacturing Excellences"]
   },
   {
     id: "engineering",
@@ -61,8 +57,13 @@ const servicesData = [
         name: "Expert Engineer Support",
         link: "/precision-engineering#expert-support",
       },
+      {
+        name: "Mithran AI Platform",
+        link: "/solutions/ai#mithran-overview",
+        beta: true,
+      },
     ],
-    relatedCategories: ["Engineering Innovations"]
+    relatedCategories: ["Engineering Innovations", "Next-GenAI"]
   }
 ];
 
@@ -373,16 +374,20 @@ export const ServicesShowcase = () => {
                               {/* Project Image */}
                               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
-                                <img
+                                <Image
                                   src={project.image}
-                                  alt={project.title}
-                                  className={`w-full h-full transform group-hover:scale-110 transition-transform duration-700 ${
-                                    project.category === 'Engineering Innovations' 
-                                      ? project.title === 'Product Cost Estimation' 
-                                        ? 'object-cover' 
+                                  alt={`${project.title} - ${project.category} Service`}
+                                  fill
+                                  className={`transform group-hover:scale-110 transition-transform duration-700 ${
+                                    project.category === 'Engineering Innovations'
+                                      ? project.title === 'Product Cost Estimation'
+                                        ? 'object-cover'
                                         : 'object-contain p-4'
                                       : 'object-cover'
                                   }`}
+                                  loading="lazy"
+                                  quality={80}
+                                  sizes="340px"
                                 />
 
 

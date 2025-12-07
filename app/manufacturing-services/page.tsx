@@ -1,73 +1,15 @@
 'use client'
 
-import { useEffect } from "react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { FAQSection } from "@/components/FAQSection"
-import { ManufacturingServicesTabs } from "@/components/ManufacturingServicesTabs"
 import ProductDeliverablesSection from "@/components/ProductDeliverablesSection"
 import { ManufacturingServicesContent } from "@/components/ManufacturingServicesContent"
+import { ManufacturingNPDSection } from "@/components/ManufacturingNPDSection"
+import { ManufacturingServicesTabs } from "@/components/ManufacturingServicesTabs"
 import Link from "next/link"
 
 export default function ManufacturingServices() {
-  // Handle hash navigation
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '')
-      if (hash) {
-        const tabMap: { [key: string]: string } = {
-          'custom': 'custom',
-          'prototyping': 'prototyping',
-          'scaling': 'scaling',
-          'on-demand': 'on-demand'
-        }
-
-        if (tabMap[hash]) {
-          setTimeout(() => {
-            let tabButton = document.querySelector(`button[value="${tabMap[hash]}"]`) as HTMLButtonElement
-
-            if (!tabButton) {
-              tabButton = document.querySelector(`button[role="tab"][id*="${tabMap[hash]}"]`) as HTMLButtonElement
-            }
-
-            if (!tabButton) {
-              tabButton = document.querySelector(`[data-state][id*="${tabMap[hash]}"]`) as HTMLButtonElement
-            }
-
-            if (tabButton) {
-              tabButton.click()
-
-              setTimeout(() => {
-                const detailElement = document.querySelector(`#${hash}-details`)
-                if (detailElement) {
-                  const offset = 80
-                  const elementPosition = detailElement.getBoundingClientRect().top
-                  const offsetPosition = elementPosition + window.pageYOffset - offset
-                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                } else {
-                  const element = document.querySelector('#manufacturing-tabs')
-                  if (element) {
-                    const offset = 80
-                    const elementPosition = element.getBoundingClientRect().top
-                    const offsetPosition = elementPosition + window.pageYOffset - offset
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                  }
-                }
-              }, 100)
-            }
-          }, 300)
-        }
-      }
-    }
-
-    handleHashChange()
-    window.addEventListener('hashchange', handleHashChange)
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange)
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -89,10 +31,7 @@ export default function ManufacturingServices() {
               Your one-stop strategic companion for AI-driven manufacturing excellence. Where cost and quality meet profitability—delivering straight to your door.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href="#manufacturing-tabs" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
-                Explore Services
-              </a>
-              <Link href="/contact" className="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors text-center">
+              <Link href="/contact" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
                 Get a Quote
               </Link>
             </div>
@@ -100,11 +39,26 @@ export default function ManufacturingServices() {
         </div>
       </section>
 
-      <div id="manufacturing-tabs">
-        <ManufacturingServicesTabs />
-      </div>
-
+      <ManufacturingServicesTabs />
       <ManufacturingServicesContent />
+
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Our Methodology
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              A structured, transparent process ensuring quality outcomes at every stage.
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            {/* <img src="/assets/manufacturingservices/Manufacturing_Services_Methodology.svg" alt="Our Methodology" className="w-full h-auto" /> */}
+          </div>
+        </div>
+      </section>
+
+      <ManufacturingNPDSection />
       <ProductDeliverablesSection />
 
       <section className="py-16 md:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">

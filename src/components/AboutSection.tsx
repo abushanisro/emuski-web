@@ -22,7 +22,7 @@ const growthStories = [
     image: "/assets/industry-components/defense-technology-manufacturing/defense-component-19.jpeg",
   },
   {
-    value: "850+",
+    value: "150+",
     label: "Individual Projects Handled",
     sublabel: "In Engineering Innovation", 
     category: "Our Expertise",
@@ -64,7 +64,7 @@ const AboutSection = () => {
             category: "Strategic Partnerships"
         },
         {
-            value: "850+",
+            value: "150+",
             number: 850,
             label: "Individual Projects",
             sublabel: "In Engineering Innovation",

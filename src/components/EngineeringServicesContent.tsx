@@ -1,4 +1,5 @@
 import { Calculator, TrendingDown, Target, BarChart3, CheckCircle, Scissors, DollarSign, FileSearch, ShoppingCart, Globe, Shield, Users, Briefcase, Clock, Award, Cog } from "lucide-react";
+import { LazyPDFViewer } from "./LazyPDFViewer";
 
 export const EngineeringServicesContent = () => {
   return (
@@ -92,12 +93,12 @@ export const EngineeringServicesContent = () => {
               {/* PDF Embed */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
+                <div className="relative bg-white rounded-2xl overflow-auto border border-gray-200">
+                  <LazyPDFViewer
                     src="/assets/documents/CostBreakDownReport.pdf"
-                    className="w-full h-[400px] md:h-[600px]"
-                    title="Manufacturing Cost Breakdown Report - Product Cost Estimation Analysis"
-                    aria-label="Interactive PDF viewer showing detailed manufacturing cost breakdown and product cost estimation analysis"
+                    title="Manufacturing Cost Breakdown Report"
+                    ariaLabel="Interactive PDF viewer showing detailed manufacturing cost breakdown and product cost estimation analysis"
+                    minHeight="500px"
                   />
                 </div>
               </div>
@@ -127,12 +128,12 @@ export const EngineeringServicesContent = () => {
               {/* PDF Embed - Left side */}
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
+                <div className="relative bg-gray-50 rounded-2xl overflow-auto border border-gray-200">
+                  <LazyPDFViewer
                     src="/assets/documents/Sample - Tear Down Report.pdf"
-                    className="w-full h-[400px] md:h-[600px]"
-                    title="VAVE Product Teardown Report - Value Engineering Benchmarking Analysis"
-                    aria-label="Interactive PDF viewer displaying comprehensive product teardown analysis and value engineering benchmarking report"
+                    title="VAVE Product Teardown Report"
+                    ariaLabel="Interactive PDF viewer displaying comprehensive product teardown analysis and value engineering benchmarking report"
+                    minHeight="500px"
                   />
                 </div>
               </div>
@@ -323,12 +324,12 @@ export const EngineeringServicesContent = () => {
               {/* PDF Embed */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
+                <div className="relative bg-white rounded-2xl overflow-auto border border-gray-200">
+                  <LazyPDFViewer
                     src="/assets/documents/Sample Detailed Analysis Report.pdf"
-                    className="w-full h-[400px] md:h-[600px]"
-                    title="Strategic Sourcing Detailed Analysis Report - Supplier Evaluation and Cost Optimization"
-                    aria-label="Interactive PDF viewer showing detailed supplier analysis, strategic sourcing evaluation and cost optimization report"
+                    title="Strategic Sourcing Detailed Analysis Report"
+                    ariaLabel="Interactive PDF viewer showing detailed supplier analysis, strategic sourcing evaluation and cost optimization report"
+                    minHeight="500px"
                   />
                 </div>
               </div>
@@ -345,12 +346,12 @@ export const EngineeringServicesContent = () => {
               {/* PDF Embed - Left side */}
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
+                <div className="relative bg-gray-50 rounded-2xl overflow-auto border border-gray-200">
+                  <LazyPDFViewer
                     src="/assets/documents/CASE STUDY - EXHAUST SYSTEM..pdf"
-                    className="w-full h-[400px] md:h-[600px]"
-                    title="Engineering Case Study - Automotive Exhaust System Cost Reduction and Value Engineering"
-                    aria-label="Interactive PDF viewer presenting automotive exhaust system engineering case study with cost reduction and VAVE analysis"
+                    title="Engineering Case Study - Automotive Exhaust System"
+                    ariaLabel="Interactive PDF viewer presenting automotive exhaust system engineering case study with cost reduction and VAVE analysis"
+                    minHeight="500px"
                   />
                 </div>
               </div>

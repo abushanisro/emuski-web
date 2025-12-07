@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Slide {
   image: string;
@@ -21,12 +22,12 @@ const slides: Slide[] = [
     category: "Manufacturing Excellence",
     title: "You Design It, We Build It : Justified Cost, Peerless Quality", 
     shortTitle: "Manufacturing Excellences",
-    description: "Your One-Stop Strategic Companion for AI-Driven Manufacturing Excellence. At EMuski, where cost and quality meets profitability - delivering straight to your door",
+    description: "Your One-Stop Strategic Companion for AI-Driven Manufacturing Excellence. At EMuski, where cost and quality meets profitability - delivering straight to your door Powered by the EMuski NPD Innovation Center, turning product ideas into profitable realities.",
     link: "/manufacturing-services",
   },
   {
     image: "/assets/hero/precision-engineering-hero-banner.svg",
-    mobileImage: "/assets/hero-mobile/engineeringmobile.svg",
+    mobileImage: "/assets/hero-mobile/precision-engineering-mobile-banner.svg",
     category: "Engineering Innovation",
     title: "End-to-End Engineering & Costing Solutions",
     shortTitle: "Engineering Innovations",
@@ -110,14 +111,16 @@ export const HeroSection = () => {
           {/* Mobile Layout - Text overlay on image */}
           <div className="sm:hidden h-full min-h-[80vh]">
             {/* Mobile Background Image */}
-            <div
-              className="absolute inset-0 w-full h-full min-h-[80vh] bg-no-repeat bg-center bg-cover pointer-events-none"
-              style={{
-                backgroundImage: `url(${slide.mobileImage})`,
-                backgroundPosition: 'center center',
-                backgroundSize: 'cover'
-              }}
-            />
+            <div className="absolute inset-0 w-full h-full min-h-[80vh] pointer-events-none">
+              <Image
+                src={slide.mobileImage}
+                alt={`${slide.category} - EMUSKI Manufacturing Solutions Mobile`}
+                fill
+                priority={index === 0}
+                quality={90}
+                className="object-cover"
+              />
+            </div>
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/40 transition-all duration-1500 ease-in-out" />
               <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/5 via-transparent to-transparent opacity-20 transition-opacity duration-2000" />
@@ -152,17 +155,16 @@ export const HeroSection = () => {
           <div className="hidden sm:block">
             {/* Desktop Background */}
             <div className="absolute inset-0">
-              <div 
-                className="w-full h-full bg-no-repeat bg-center bg-cover"
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                  backgroundPosition: 'center center',
-                  backgroundAttachment: 'scroll',
-                  backgroundSize: 'cover',
-                  minHeight: '100svh',
-                  height: '100svh'
-                }}
-              />
+              <div className="relative w-full h-full min-h-[100svh]">
+                <Image
+                  src={slide.image}
+                  alt={`${slide.category} - EMUSKI Manufacturing Solutions`}
+                  fill
+                  priority={index === 0}
+                  quality={90}
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent transition-all duration-1500 ease-in-out" />
               <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/5 via-transparent to-transparent opacity-10 transition-opacity duration-2000" />

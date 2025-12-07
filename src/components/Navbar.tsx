@@ -21,8 +21,7 @@ const servicesDropdown = {
       { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand" },
       { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping" },
       { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
-      { name: "Production Scaling", path: "/manufacturing-services#scaling" },
-      { name: "Mithran AI", path: "/solutions/ai", beta: true }
+      { name: "Production Scaling", path: "/manufacturing-services#scaling" }
     ]
   },
   precisionEngineering: {
@@ -32,7 +31,8 @@ const servicesDropdown = {
       { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation" },
       { name: "VAVE & Benchmarking", path: "/precision-engineering#vave" },
       { name: "Strategic Sourcing", path: "/precision-engineering#sourcing" },
-      { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" }
+      { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" },
+      { name: "Mithran AI", path: "/solutions/ai", beta: true }
     ]
   }
 };

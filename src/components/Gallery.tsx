@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Search, Filter, Grid, List, Eye, Download, Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 // Helper function to dynamically load industry images
 const loadIndustryImages = (industryPath: string, companyName: string) => {
@@ -315,10 +316,14 @@ export const Gallery = () => {
               onClick={() => openLightbox(item, index)}
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                <Image
                   src={item.thumbnail}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt={`${item.title} - ${item.category} Manufacturing Component`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -402,11 +407,18 @@ export const Gallery = () => {
 
             {/* Image Content */}
             <div className="bg-white rounded-lg overflow-hidden">
-              <img
-                src={getCurrentImage()}
-                alt={selectedImage.title}
-                className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain"
-              />
+              <div className="relative w-full" style={{ minHeight: '50vh' }}>
+                <Image
+                  src={getCurrentImage()}
+                  alt={`${selectedImage.title} - Full Resolution`}
+                  width={1600}
+                  height={1200}
+                  className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain"
+                  quality={90}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                />
+              </div>
               
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">

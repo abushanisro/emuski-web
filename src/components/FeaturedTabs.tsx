@@ -6,6 +6,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const featuredContent = [
   {
@@ -172,14 +173,20 @@ export const FeaturedTabs = () => {
         {/* Image Display */}
         <div
           ref={carouselRef}
-          className="w-full min-h-[60vh] flex items-center justify-center bg-white px-8 sm:px-12 md:px-0"
+          className="w-full flex items-center justify-center bg-white relative"
         >
-          <img
-            key={currentSlide}
-            src={slides[currentSlide]}
-            alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
-            className="w-full h-auto object-contain max-h-[50vh] sm:max-h-[80vh] animate-fade-in"
-          />
+          <div className="relative w-full h-[40vh] sm:h-[50vh]">
+            <Image
+              key={currentSlide}
+              src={slides[currentSlide]}
+              alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
+              fill
+              className="object-contain"
+              loading={currentSlide === 0 ? 'eager' : 'lazy'}
+              quality={85}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+            />
+          </div>
         </div>
 
         {/* Navigation Arrows */}
@@ -234,10 +241,10 @@ export const FeaturedTabs = () => {
   );
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-0 bg-background">
       <div className="w-full px-4 sm:px-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center bg-secondary border-b border-border rounded-none h-auto p-0 mb-8">
+          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center bg-secondary border-b border-border rounded-none h-auto p-0 mb-0">
             {featuredContent.map((tab) => (
               <TabsTrigger
                 key={tab.id}
@@ -263,14 +270,18 @@ export const FeaturedTabs = () => {
                       className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300"
                     >
                       <div className="relative h-64 overflow-hidden">
-                        <img
+                        <Image
                           src={item.image}
-                          alt={item.title}
-                          className={`w-full h-full ${
+                          alt={`${item.title} - ${item.category}`}
+                          fill
+                          className={`${
                             tab.id === "manufacturing"
                               ? "object-contain"
                               : "object-cover"
                           } group-hover:scale-105 transition-transform duration-500`}
+                          loading="lazy"
+                          quality={80}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute top-4 left-4">
                           <span className="inline-block px-3 py-1 bg-emuski-teal-darker text-white text-xs font-semibold rounded-sm">

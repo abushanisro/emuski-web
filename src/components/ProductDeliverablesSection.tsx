@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText, Download, Check } from 'lucide-react';
+import { LazyPDFViewer } from './LazyPDFViewer';
 
 const deliverables = [
   "Project Details",
@@ -66,14 +67,12 @@ const ProductDeliverablesSection = () => {
                   Download
                 </a>
               </div>
-              <div className="relative w-full h-[70vh] md:h-[600px] lg:h-[700px]">
-                <iframe
-                  src="/assets/documents/Project_Delivery_Report.pdf"
-                  className="w-full h-full border-0"
-                  title="Project Delivery Report - Manufacturing Excellence and Quality Documentation"
-                  aria-label="Interactive PDF viewer displaying comprehensive project delivery report with manufacturing deliverables and quality assurance documentation"
-                />
-              </div>
+              <LazyPDFViewer
+                src="/assets/documents/Project_Delivery_Report.pdf"
+                title="Case Study - Exhaust System Manufacturing"
+                ariaLabel="Interactive PDF viewer displaying comprehensive project delivery report with manufacturing deliverables and quality assurance documentation"
+                minHeight="500px"
+              />
             </div>
           </div>
         </div>
