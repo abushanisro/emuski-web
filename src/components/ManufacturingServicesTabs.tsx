@@ -5,7 +5,6 @@ const servicesData = {
   "prototyping": {
     title: "Rapid Prototyping",
     tagline: "From concept to reality in record time",
-    description: "Accelerate your product development with advanced prototyping. Using CNC machining, 3D printing, and custom tooling, we help you test, validate, and refine designs faster.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
     features: [
       { title: "Multi-Technology", desc: "CNC, 3D printing (SLA/SLS), vacuum casting" },
@@ -17,7 +16,6 @@ const servicesData = {
   "custom": {
     title: "Custom Manufacturing",
     tagline: "Tailored solutions for unique requirements",
-    description: "High-precision custom manufacturing for specialized components. From complex geometries to strict tolerances, we deliver quality that meets your exact specifications.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
     features: [
       { title: "Precision Machining", desc: "5-axis CNC for complex parts" },
@@ -29,7 +27,6 @@ const servicesData = {
   "scaling": {
     title: "Production Scaling",
     tagline: "Seamless transition from prototype to production",
-    description: "Scale your production confidently with our proven process. We handle the complexity of ramping up volumes while maintaining quality and optimizing costs.",
     image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
     features: [
       { title: "Capacity Planning", desc: "Strategic scaling without quality compromise" },
@@ -41,7 +38,6 @@ const servicesData = {
   "quality": {
     title: "Quality Assurance",
     tagline: "Excellence in every detail",
-    description: "Comprehensive quality control and assurance processes ensuring your products meet the highest standards. From incoming inspection to final verification, we guarantee excellence.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-1.jpeg",
     features: [
       { title: "Advanced Inspection", desc: "CMM, optical measurement, and testing" },
@@ -61,9 +57,6 @@ function ServiceTabContent({ service }: { service: typeof servicesData["prototyp
         </h2>
         <p className="text-lg text-emuski-teal-darker font-semibold mb-4">
           {service.tagline}
-        </p>
-        <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          {service.description}
         </p>
       </div>
 

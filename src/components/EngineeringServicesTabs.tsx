@@ -82,7 +82,7 @@ const servicesData = {
     title: "Expert Engineer Support",
     tagline: "Specialized engineering resources for your team",
     description: "Deploy specialized engineering resources directly into your team for focused, results-driven project execution and technical expertise.",
-    image: "/assets/engineering/supplier-management-system.png",
+    image: "/assets/engineering/supplier-management-system.avif",
     features: [
       { 
         title: "On-site Deployment", 

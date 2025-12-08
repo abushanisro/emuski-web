@@ -93,7 +93,7 @@ const showcaseItems = [
     title: "Expert Engineer Support",
     category: "Engineering Innovations",
     description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
-    image: "/assets/engineering/supplier-management-system.png",
+    image: "/assets/engineering/supplier-management-system.avif",
     link: "/precision-engineering#expert-support"
   },
   {
@@ -113,7 +113,7 @@ const showcaseItems = [
   {
     title: "Custom Manufacturing",
     category: "Manufacturing Excellences",
-    description: "Tailored Manufacturing Excellences meeting specific requirements with high-precision CNC machining capabilities.",
+    description: "Engineered manufacturing excellence designed around your requirements with precision and scalability.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
     link: "/manufacturing-services#custom"
   },

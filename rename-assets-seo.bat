@@ -21,7 +21,7 @@ if exist "negotion.svg" ren "negotion.svg" "supplier-negotiation-process.svg"
 if exist "reduction.png" ren "reduction.png" "cost-reduction-strategies.png"
 if exist "scan.png" ren "scan.png" "3d-scanning-technology.png"
 if exist "sourcing.svg" ren "sourcing.svg" "strategic-sourcing-solutions.svg"
-if exist "supplier.png" ren "supplier.png" "supplier-management-system.png"
+if exist "supplier.png" ren "supplier.png" "supplier-management-system.avif
 if exist "supplierevaluation.svg" ren "supplierevaluation.svg" "supplier-evaluation-metrics.svg"
 cd ..\..\..
 
