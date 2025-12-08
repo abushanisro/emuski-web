@@ -46,9 +46,9 @@ export const HOME_FAQS: FAQItem[] = [
   {
     id: 'EMUSKI-success-stories-achievements',
     question: 'What are EMUSKI\'s key achievements and success stories?',
-    answer: 'EMUSKI delivers measurable results: 15+ industries served, 75+ global clients, 150+ individual engineering projects, 2500+ unique components manufactured. Technical achievements include ISO 9001:2015/14001:2015/45001:2018 certifications, 98.7% on-time delivery rate, 99.5% quality acceptance rate, 15 PPM defect rate, Cpk values >2.0 for critical processes, and OEE of 87.3%. Cost engineering delivers 25-45% reductions while maintaining precision tolerances ±0.0025mm.',
+    answer: 'EMUSKI delivers measurable results: 15+ industries served, 75+ global clients, 150+ individual engineering projects, 4000+ unique components manufactured. Technical achievements include ISO 9001:2015/14001:2015/45001:2018 certifications, 98.7% on-time delivery rate, 99.5% quality acceptance rate, 15 PPM defect rate, Cpk values >2.0 for critical processes, and OEE of 87.3%. Cost engineering delivers 25-45% reductions while maintaining precision tolerances ±0.0025mm.',
     category: 'Success Stories',
-    keywords: ['15+ industries', '75+ clients', '150+ projects', '2500+ components', '98.7% on-time delivery', 'Cpk >2.0', 'OEE 87.3%']
+    keywords: ['15+ industries', '75+ clients', '150+ projects', '4000+ components', '98.7% on-time delivery', 'Cpk >2.0', 'OEE 87.3%']
   }
 ];
 

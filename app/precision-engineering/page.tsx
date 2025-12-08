@@ -226,7 +226,7 @@ export default function PrecisionEngineering() {
             </p>
             <div className="pt-4">
               <Link href="/contact" className="inline-block bg-white text-emuski-teal-darker px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Get Engineering Consultation
+                Request a Quote
               </Link>
             </div>
           </div>

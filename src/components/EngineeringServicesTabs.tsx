@@ -3,9 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const servicesData = {
   "cost-estimation": {
     title: "Product Cost Estimation",
-    tagline: "Turning data into competitive advantage",
-    description: "Real-time cost intelligence for smarter decisions throughout your product lifecycle with comprehensive analysis and optimization.",
-    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
+    tagline: "Turning data into competitive advantage",    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
     pdfUrl: "/assets/documents/CostBreakDownReport.pdf",
     features: [
       { 
@@ -33,7 +31,6 @@ const servicesData = {
   "vave": {
     title: "VAVE - Teardown & Benchmarking",
     tagline: "Comprehensive teardown benchmarking and cost optimization",
-    description: "Value Analysis and Value Engineering through detailed product analysis and competitive benchmarking to enhance product value.",
     image: "/assets/engineering/product-teardown-analysis.png",
     features: [
       { 
@@ -57,7 +54,6 @@ const servicesData = {
   "sourcing": {
     title: "Strategic Sourcing Support",
     tagline: "End-to-end sourcing solutions",
-    description: "Comprehensive sourcing strategy including supplier scouting, negotiation support, quality audits, and supply chain optimization.",
     image: "/assets/engineering/strategic-sourcing-solutions.svg",
     features: [
       { 
@@ -81,7 +77,6 @@ const servicesData = {
   "expert-support": {
     title: "Expert Engineer Support",
     tagline: "Specialized engineering resources for your team",
-    description: "Deploy specialized engineering resources directly into your team for focused, results-driven project execution and technical expertise.",
     image: "/assets/engineering/supplier-management-system.avif",
     features: [
       { 
@@ -107,9 +102,7 @@ const servicesData = {
 function ServiceTabContent({ service, serviceKey }: {
   service: {
     title: string;
-    tagline: string;
-    description: string;
-    image?: string;
+    tagline: string;    image?: string;
     pdfUrl?: string;
     features: { title: string; desc: string; image?: string }[]
   };
@@ -123,9 +116,6 @@ function ServiceTabContent({ service, serviceKey }: {
         </h2>
         <p className="text-lg text-emuski-teal-darker font-semibold mb-4">
           {service.tagline}
-        </p>
-        <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          {service.description}
         </p>
       </div>
 

@@ -100,35 +100,35 @@ const showcaseItems = [
     title: "On-Demand Manufacturing",
     category: "Manufacturing Excellences",
     description: "Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.jpeg",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.svg",
     link: "/manufacturing-services#on-demand"
   },
   {
     title: "Rapid Prototyping",
     category: "Manufacturing Excellences",
     description: "Fast and efficient prototyping services from concept to completion with precision and cost optimization.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg",
     link: "/manufacturing-services#prototyping"
   },
   {
     title: "Custom Manufacturing",
     category: "Manufacturing Excellences",
     description: "Engineered manufacturing excellence designed around your requirements with precision and scalability.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.svg",
     link: "/manufacturing-services#custom"
   },
   {
     title: "Production Scaling",
     category: "Manufacturing Excellences",
     description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-22.svg",
     link: "/manufacturing-services#scaling"
   },
   {
     title: "Mithran AI Platform",
     category: "Next-GenAI",
     description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization delivering measurable results for OEMs.",
-    image: "/assets/mitran/ai-mithran-platform-dashboard.jpeg",
+    image: "/assets/mitran/ai-mithran-platform-dashboard.svg",
     link: "/solutions/ai#mithran-overview"
   }
 ];

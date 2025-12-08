@@ -67,9 +67,9 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/mitran/ai-mithran-platform-dashboard.jpeg"
+                    src="/assets/mitran/ai-mithran-platform-dashboard.svg"
                     alt="Mithran AI Platform"
-                    className="w-full h-auto object-cover scale-110"
+                    className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EMithran AI Platform%3C/text%3E%3C/svg%3E";
@@ -172,9 +172,9 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
                   <img
-                    src="/assets/mitran/ai-raw-material-optimization.jpeg"
+                    src="/assets/mitran/ai-raw-material-optimization.svg"
                     alt="Mithran AI Intelligence"
-                    className="w-full h-auto object-cover scale-110"
+                    className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23ffffff' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EMithran AI%3C/text%3E%3C/svg%3E";
@@ -293,7 +293,7 @@ export const AIServicesContent = () => {
                   <img
                     src="/assets/mitran/ai-mitran-future.svg"
                     alt="Future of Manufacturing"
-                    className="w-full h-auto object-contain scale-110"
+                    className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23f3f4f6' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='system-ui' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EFuture Vision%3C/text%3E%3C/svg%3E";

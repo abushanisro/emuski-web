@@ -5,7 +5,7 @@ const servicesData = {
   "prototyping": {
     title: "Rapid Prototyping",
     tagline: "From concept to reality in record time",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg",
     features: [
       { title: "Multi-Technology", desc: "CNC, 3D printing (SLA/SLS), vacuum casting" },
       { title: "Fast Turnaround", desc: "Rapid iterations to speed up development" },
@@ -16,7 +16,7 @@ const servicesData = {
   "custom": {
     title: "Custom Manufacturing",
     tagline: "Tailored solutions for unique requirements",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.svg",
     features: [
       { title: "Precision Machining", desc: "5-axis CNC for complex parts" },
       { title: "Material Expertise", desc: "Metals, plastics, and composites" },
@@ -27,7 +27,7 @@ const servicesData = {
   "scaling": {
     title: "Production Scaling",
     tagline: "Seamless transition from prototype to production",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-22.svg",
     features: [
       { title: "Capacity Planning", desc: "Strategic scaling without quality compromise" },
       { title: "Process Optimization", desc: "Lean manufacturing principles" },
@@ -38,7 +38,7 @@ const servicesData = {
   "quality": {
     title: "Quality Assurance",
     tagline: "Excellence in every detail",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-1.jpeg",
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-9.svg",
     features: [
       { title: "Advanced Inspection", desc: "CMM, optical measurement, and testing" },
       { title: "Process Control", desc: "Statistical process control (SPC)" },

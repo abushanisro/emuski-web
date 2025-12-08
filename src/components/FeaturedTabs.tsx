@@ -57,7 +57,7 @@ const featuredContent = [
         category: "AI-Driven Platform",
         title: "Next-GenAI - Mithran",
         description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization. Transform traditional workflows into a smart, data-driven ecosystem.",
-        image: "/assets/mitran/ai-mithran-platform-dashboard.jpeg",
+        image: "/assets/mitran/ai-mithran-platform-dashboard.svg",
         link: "/solutions/ai#mithran-overview"
       },
       {

@@ -125,7 +125,7 @@ export const PERFORMANCE_METRICS = {
     { metric: "Industries Served", value: 15, unit: "+", period: "Active Verticals" },
     { metric: "Global Clients", value: 75, unit: "+", period: "International Partners" },
     { metric: "Engineering Projects", value: 120, unit: "+", period: "Individual Projects" },
-    { metric: "Components Manufactured", value: 2500, unit: "+", period: "Unique Parts Delivered" }
+    { metric: "Components Manufactured", value: 4000, unit: "+", period: "Unique Parts Delivered" }
   ],
   quality: [
     { metric: "First Pass Yield", value: 99.5, unit: "%", period: "2024 YTD" },

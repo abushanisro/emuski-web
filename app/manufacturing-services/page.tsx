@@ -53,7 +53,11 @@ export default function ManufacturingServices() {
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
-            {/* <img src="/assets/manufacturingservices/Manufacturing_Services_Methodology.svg" alt="Our Methodology" className="w-full h-auto" /> */}
+<img
+  src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
+  alt="Manufacturing Methodology"
+  className="w-full h-auto"
+/>
           </div>
         </div>
       </section>

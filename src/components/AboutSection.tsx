@@ -19,7 +19,7 @@ const growthStories = [
     label: "Strategic Partnerships",
     category: "Our Reach",
     description: "Trusted manufacturing partner for leading OEMs across automotive, aerospace, medical devices, and industrial sectors delivering critical project solutions with engineering excellence.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-19.jpeg",
+    image: "/assets/partners/manufacturing-partner-logo-all.svg",
   },
   {
     value: "150+",
@@ -30,12 +30,12 @@ const growthStories = [
     image: "/assets/engineering/cost-breakdown-engineering.png",
   },
   {
-    value: "2500+",
+    value: "4000+",
     label: "Components Manufactured",
     sublabel: "In Manufacturing Excellence", 
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-3.jpeg",
+    image: "/assets/industry-components/automotive-component-manufacturing/automotive-component-2.svg",
   }
 ];
 
@@ -65,14 +65,14 @@ const AboutSection = () => {
         },
         {
             value: "150+",
-            number: 850,
+            number: 150,
             label: "Individual Projects",
             sublabel: "In Engineering Innovation",
             category: "Our Expertise"
         },
         {
-            value: "2500+",
-            number: 2500,
+            value: "4000+",
+            number: 4000,
             label: "Unique Components",
             sublabel: "In Manufacturing Excellence",
             category: "Our Production"

@@ -117,31 +117,31 @@ export const ManufacturingServicesContent = () => {
                   From Concept to Reality in Days, Not Months
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Accelerate your product development with our multi-technology prototyping capabilities. We combine CNC machining, 3D printing, vacuum casting, and sheet metal fabrication to bring your designs to life quickly and accurately.
-                </p>
+                Fast and efficient prototyping services from concept to completion with precision and cost optimization.                </p>
 
                 {/* Technologies */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">Multi-Technology Approach</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-sm">CNC Machining</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-sm">3D Printing (SLA/SLS/FDM)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-sm">Vacuum Casting</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <span className="text-sm">Sheet Metal</span>
-                    </div>
-                  </div>
-                </div>
+  <h4 className="font-bold mb-4">Multi-Technology Approach</h4>
+  <div className="grid grid-cols-2 gap-4">
+    <div className="flex items-center gap-2">
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+      <span className="text-sm">Precision Machining</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+      <span className="text-sm">3D Printing (SLA / SLS / FDM)</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+      <span className="text-sm">Vacuum Casting</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+      <span className="text-sm">Sheet Metal Fabrication</span>
+    </div>
+  </div>
+</div>
+
 
                 {/* Process */}
                 <div className="grid grid-cols-4 gap-3 pt-4">

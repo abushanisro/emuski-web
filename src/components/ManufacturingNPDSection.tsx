@@ -6,22 +6,22 @@ const solutions = [
   {
     title: "On-Demand Manufacturing",
     description: "Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.jpeg"
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.svg"
   },
   {
     title: "Rapid Prototyping",
     description: "Fast and efficient prototyping services from concept to completion with precision and cost optimization.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg"
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg"
   },
   {
     title: "Custom Manufacturing",
     description: "Tailored manufacturing solutions meeting specific requirements with high-precision CNC machining capabilities.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg"
+    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.svg"
   },
   {
     title: "Production Scaling",
     description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg"
+    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-22.svg"
   }
 ];
 
