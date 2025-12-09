@@ -49,7 +49,7 @@ export function ManufacturingServiceCard({
     return (
       <Link
         href={link}
-        className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-emuski-teal-darker/40 hover:shadow-xl transition-all duration-300"
+        className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-emuski-teal-darker/40 hover:shadow-xl transition-all duration-300 h-full flex flex-col"
       >
         <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
           <img
@@ -60,7 +60,7 @@ export function ManufacturingServiceCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         </div>
 
-        <div className="p-6">
+        <div className="p-6 flex-1 flex flex-col">
           <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors">
             {title}
           </h3>
@@ -69,7 +69,7 @@ export function ManufacturingServiceCard({
           </p>
 
           {features && features.length > 0 && (
-            <ul className="space-y-2">
+            <ul className="space-y-2 mb-4">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
                   <div className="w-1.5 h-1.5 bg-emuski-teal-dark rounded-full mt-1.5 flex-shrink-0"></div>
@@ -79,7 +79,7 @@ export function ManufacturingServiceCard({
             </ul>
           )}
 
-          <div className="mt-4 flex items-center text-emuski-teal-darker font-semibold text-sm group-hover:gap-2 transition-all">
+          <div className="mt-auto flex items-center text-emuski-teal-darker font-semibold text-sm group-hover:gap-2 transition-all">
             <span>Learn More</span>
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

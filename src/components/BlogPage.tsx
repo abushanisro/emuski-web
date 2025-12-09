@@ -204,7 +204,7 @@ export const BlogPage = () => {
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
                       <div className="absolute top-4 left-4">
                         <span className="inline-block px-3 py-1 bg-emuski-teal/90 text-white text-xs font-medium rounded-full">
                           Featured
@@ -276,7 +276,7 @@ export const BlogPage = () => {
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
                     </div>
                     
                     <div className="p-5">

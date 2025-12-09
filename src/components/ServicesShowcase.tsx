@@ -72,7 +72,7 @@ const showcaseItems = [
     title: "Product Cost Estimation",
     category: "Engineering Innovations",
     description: "Accurate cost analysis and estimation services to optimize your product development budget and maximize profitability.",
-    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
+    image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
     link: "/precision-engineering#cost-estimation"
   },
   {
@@ -370,7 +370,7 @@ export const ServicesShowcase = () => {
                             href={project.link}
                             className="flex-shrink-0 w-[340px] group"
                           >
-                            <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div className="relative h-full bg-white overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
                               {/* Project Image */}
                               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
@@ -378,13 +378,7 @@ export const ServicesShowcase = () => {
                                   src={project.image}
                                   alt={`${project.title} - ${project.category} Service`}
                                   fill
-                                  className={`transform group-hover:scale-110 transition-transform duration-700 ${
-                                    project.category === 'Engineering Innovations'
-                                      ? project.title === 'Product Cost Estimation'
-                                        ? 'object-cover'
-                                        : 'object-contain p-4'
-                                      : 'object-cover'
-                                  }`}
+                                  className="transform group-hover:scale-110 transition-transform duration-700 object-cover"
                                   loading="lazy"
                                   quality={80}
                                   sizes="340px"
@@ -394,7 +388,7 @@ export const ServicesShowcase = () => {
                               </div>
 
                               {/* Project Content */}
-                              <div className="p-6">
+                              <div className="p-6 flex-1">
                                 <h4 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-darker transition-colors line-clamp-2">
                                   {project.title}
                                 </h4>

@@ -37,7 +37,7 @@ const featuredContent = [
         category: "Product Cost Estimation",
         title: "End-to-End Engineering & Costing Solutions",
         description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated Engineering Innovations that drive efficiency, reduce costs, and accelerate your time-to-market",
-        image: "/assets/engineering/automotive-engineering-cost-estimation.png",
+        image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
         link: "/precision-engineering#cost-estimation"
       },
       {

@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const servicesData = {
   "cost-estimation": {
     title: "Product Cost Estimation",
-    tagline: "Turning data into competitive advantage",    image: "/assets/engineering/automotive-engineering-cost-estimation.png",
+    tagline: "Turning data into competitive advantage",    image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
     pdfUrl: "/assets/documents/CostBreakDownReport.pdf",
     features: [
       { 

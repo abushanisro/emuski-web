@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable development indicators in production
+  // Disable development indicators
   devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
+    appIsrStatus: false,
   },
 
   images: {

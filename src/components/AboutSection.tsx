@@ -247,10 +247,11 @@ const AboutSection = () => {
                                                     <img
                                                         src={story.image}
                                                         alt={story.label}
-                                                        className={`w-full h-full group-hover:scale-110 transition-transform duration-500 ${
-                                                          story.category === 'Our Expertise' ? 'object-contain p-4 bg-white' : 'object-cover'
-                                                        }`}
+                                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                     />
+                                                    {story.category === 'Our Expertise' && (
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                                                    )}
                                                 </div>
                                                 
                                                 <div className="p-4">
