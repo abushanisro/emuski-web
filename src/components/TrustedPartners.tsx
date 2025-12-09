@@ -19,7 +19,7 @@ export const TrustedPartners = () => {
                 <img
                   src={`/assets/partners/manufacturing-partner-logo-${num}.svg`}
                   alt={`Manufacturing Partner ${num}`}
-                  className="h-8 sm:h-12 w-auto object-contain filter brightness-0 invert"
+                  className="h-20 sm:h-16 w-auto object-contain filter brightness-0 invert"
                 />
               </div>
             ))}
@@ -36,7 +36,12 @@ export const TrustedPartners = () => {
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 15s linear infinite;
+        }
+        @media (min-width: 640px) {
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
         }
       `}</style>
     </section>

@@ -84,9 +84,9 @@ export const NewsCarousel = () => {
           </div>
           
           <div className="relative overflow-hidden w-full">
-            <div className="flex animate-scroll space-x-12 items-center">
-              {clientLogos.concat(clientLogos).map((client, index) => (
-                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-12 sm:h-16 w-24">
+            <div className="flex animate-scroll-mobile sm:animate-scroll space-x-6 sm:space-x-12 items-center">
+              {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
+                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-16 sm:h-16 w-24 sm:w-24">
                   <Image
                     src={client.logo}
                     alt={`${client.name} - Manufacturing Partner`}
@@ -104,6 +104,14 @@ export const NewsCarousel = () => {
         
         <style dangerouslySetInnerHTML={{
           __html: `
+          @keyframes scroll-mobile {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-75%);
+            }
+          }
           @keyframes scroll {
             0% {
               transform: translateX(0);
@@ -112,8 +120,16 @@ export const NewsCarousel = () => {
               transform: translateX(-50%);
             }
           }
+          .animate-scroll-mobile {
+            animation: scroll-mobile 20s linear infinite;
+          }
           .animate-scroll {
             animation: scroll 30s linear infinite;
+          }
+          @media (min-width: 640px) {
+            .animate-scroll-mobile {
+              animation: scroll 30s linear infinite;
+            }
           }
           `
         }} />
