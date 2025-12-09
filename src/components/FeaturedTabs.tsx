@@ -83,7 +83,6 @@ export const FeaturedTabs = () => {
     '/assets/manufacturingservices/prototype-manufacturing-services.svg',
     '/assets/manufacturingservices/production-scaling-capabilities.svg',
     '/assets/manufacturingservices/on-demand-manufacturing.svg',
-    '/assets/manufacturingservices/cnc-machining-services.svg',
     '/assets/manufacturingservices/sheet-metal-fabrication.svg',
     '/assets/manufacturingservices/injection-molding-services.svg',
     '/assets/manufacturingservices/quality-control-manufacturing.svg',
