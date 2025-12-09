@@ -61,20 +61,22 @@ export const CostEstimationSection = () => {
           <StatsSection />
 
           {/* Our Methodology */}
-          <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-12">
-            <div className="text-center mb-8">
+          <div className="bg-gray-50 rounded-2xl mb-12 overflow-hidden">
+            <div className="text-center pt-8 md:pt-12 px-8 md:px-12 pb-8">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Methodology</h3>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 A structured, transparent process ensuring quality outcomes at every stage.
               </p>
             </div>
 
-            <div className="flex justify-center">
-              <img
-                src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
-                alt="Manufacturing Methodology"
-                className="w-full h-auto"
-              />
+            <div className="w-full">
+              <div className="aspect-[16/9] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative">
+                <img
+                  src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
+                  alt="Manufacturing Methodology"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 

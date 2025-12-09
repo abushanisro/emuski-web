@@ -297,7 +297,7 @@ export const INDUSTRY_REQUIREMENTS = {
   automotive: {
     standards: ["IATF 16949", "ISO 26262", "VDA 6.3", "AIAG"],
     materials: ["6061-T6 Al", "1018 Steel", "PA66-GF30", "ABS"],
-    tolerances: "±0.1mm typical, ±0.05mm critical features", 
+    tolerances: "±0.005mm typical, ±0.05mm critical features", 
     documentation: "PPAP, Control Plans, FMEA, MSA"
   }
 };

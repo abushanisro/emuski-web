@@ -37,7 +37,7 @@ export const CustomManufacturingSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Tight Tolerances</h4>
-                    <p className="text-sm text-gray-600">±0.01mm precision capabilities with 5-axis CNC</p>
+                    <p className="text-sm text-gray-600">±0.005mm precision capabilities with 5-axis CNC</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -142,7 +142,7 @@ export const CustomManufacturingSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-              <div className="text-3xl font-bold text-emuski-teal-darker mb-2">±0.01mm</div>
+              <div className="text-3xl font-bold text-emuski-teal-darker mb-2">±0.005mm</div>
               <div className="text-sm text-gray-600">Precision Level</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl border border-gray-200">

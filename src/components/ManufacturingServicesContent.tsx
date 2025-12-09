@@ -97,15 +97,13 @@ export const ManufacturingServicesContent = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Video - Left side */}
+              {/* Image - Left side */}
               <div className="relative order-2 lg:order-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
-                    src="https://drive.google.com/file/d/1IToVhoglHSpsr5lWdr23I2g6_KbQFa0f/preview"
-                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
-                    allow="autoplay"
-                    title="Rapid Prototyping Video"
+                <div className="aspect-[16/9] sm:aspect-[21/9] relative">
+                  <img
+                    src="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg"
+                    alt="Rapid Prototyping Manufacturing"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -174,7 +172,7 @@ export const ManufacturingServicesContent = () => {
                     <div className="text-xs text-gray-600">Materials Available</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.1mm</div>
+                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.005mm</div>
                     <div className="text-xs text-gray-600">Precision</div>
                   </div>
                 </div>
@@ -249,7 +247,7 @@ export const ManufacturingServicesContent = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.01mm</div>
+                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.005mm</div>
                     <div className="text-xs text-gray-600">Precision Level</div>
                   </div>
                   <div>

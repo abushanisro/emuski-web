@@ -18,20 +18,20 @@ const servicesDropdown = {
     name: "Manufacturing Excellence",
     path: "/manufacturing-services",
     subItems: [
-      { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand" },
-      { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping" },
-      { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
-      { name: "Production Scaling", path: "/manufacturing-services#scaling" }
+      { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand-details" },
+      { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping-details" },
+      { name: "Custom Manufacturing", path: "/manufacturing-services#custom-details" },
+      { name: "Production Scaling", path: "/manufacturing-services#scaling-details" }
     ]
   },
   precisionEngineering: {
     name: "Engineering Innovation",
     path: "/precision-engineering",
     subItems: [
-      { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation" },
-      { name: "VAVE & Benchmarking", path: "/precision-engineering#vave" },
-      { name: "Strategic Sourcing", path: "/precision-engineering#sourcing" },
-      { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" },
+      { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation-details" },
+      { name: "VAVE & Benchmarking", path: "/precision-engineering#vave-details" },
+      { name: "Strategic Sourcing", path: "/precision-engineering#sourcing-details" },
+      { name: "Expert Engineer Support", path: "/precision-engineering#expert-support-details" },
       { name: "Mithran AI", path: "/solutions/ai", beta: true }
     ]
   }
@@ -57,20 +57,20 @@ const navigationConfig = {
       title: "Manufacturing Excellence",
       items: [
         { name: "Overview", path: "/manufacturing-services" },
-        { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand" },
-        { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping" },
-        { name: "Custom Manufacturing", path: "/manufacturing-services#custom" },
-        { name: "Production Scaling", path: "/manufacturing-services#scaling" }
+        { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand-details" },
+        { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping-details" },
+        { name: "Custom Manufacturing", path: "/manufacturing-services#custom-details" },
+        { name: "Production Scaling", path: "/manufacturing-services#scaling-details" }
       ]
     },
     {
       title: "Engineering Innovation",
       items: [
         { name: "Overview", path: "/precision-engineering" },
-        { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation" },
-        { name: "VAVE & Benchmarking", path: "/precision-engineering#vave" },
-        { name: "Strategic Sourcing", path: "/precision-engineering#sourcing" },
-        { name: "Expert Engineer Support", path: "/precision-engineering#expert-support" }
+        { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation-details" },
+        { name: "VAVE & Benchmarking", path: "/precision-engineering#vave-details" },
+        { name: "Strategic Sourcing", path: "/precision-engineering#sourcing-details" },
+        { name: "Expert Engineer Support", path: "/precision-engineering#expert-support-details" }
       ]
     },
     {
@@ -167,7 +167,7 @@ export const Navbar = () => {
   className="h-8 sm:h-10 w-auto object-contain" 
   style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.1) brightness(1.05)' }}
 />
-<span className="text-lg sm:text-xl font-bold text-foreground group-hover:text-emuski-teal-darker transition-colors">EMUSKI</span>
+<span className="text-lg sm:text-xl font-bold text-foreground">EMUSKI</span>
 </Link>
 
 <div className="hidden md:flex items-center space-x-6" ref={servicesRef}>

@@ -35,7 +35,7 @@ const featuredContent = [
     items: [
       {
         category: "Product Cost Estimation",
-        title: "End-to-End Engineering & Costing Solutions",
+        title: "Mastering Costs Engineering Success",
         description: "From initial design and cost estimation to strategic sourcing and expert deployment, we provide integrated Engineering Innovations that drive efficiency, reduce costs, and accelerate your time-to-market",
         image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
         link: "/precision-engineering#cost-estimation"
@@ -168,22 +168,23 @@ export const FeaturedTabs = () => {
       tabIndex={0}
     >
       {/* Carousel Container */}
-      <div className="relative bg-white rounded-lg border border-border overflow-hidden">
+      <div className="relative bg-white rounded-md sm:rounded-lg border border-border overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
         {/* Image Display */}
         <div
           ref={carouselRef}
-          className="w-full flex items-center justify-center bg-white relative"
+          className="w-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative"
         >
-          <div className="relative w-full h-[40vh] sm:h-[50vh]">
+          <div className="relative w-full h-[45vh] min-h-[350px] xs:h-[48vh] xs:min-h-[380px] sm:h-[55vh] sm:min-h-[450px] md:h-[60vh] md:min-h-[500px] lg:h-[70vh] lg:min-h-[600px] xl:h-[75vh] xl:min-h-[650px] 2xl:h-[80vh] 2xl:max-h-[900px] py-3 xs:py-4 sm:py-6 md:py-8 lg:py-10">
             <Image
               key={currentSlide}
               src={slides[currentSlide]}
               alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
               fill
-              className="object-contain"
+              className="object-contain px-1 py-1 xs:p-2 sm:p-4 md:p-6"
               loading={currentSlide === 0 ? 'eager' : 'lazy'}
-              quality={85}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              quality={90}
+              sizes="(max-width: 480px) 100vw, (max-width: 640px) 98vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, (max-width: 1280px) 85vw, 1400px"
+              priority={currentSlide === 0}
             />
           </div>
         </div>
@@ -195,11 +196,11 @@ export const FeaturedTabs = () => {
             e.stopPropagation();
             prevSlide();
           }}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 active:bg-emuski-teal-darker/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all z-10 touch-manipulation"
+          className="absolute left-2 bottom-16 xs:bottom-20 sm:left-4 sm:top-1/2 sm:-translate-y-1/2 sm:bottom-auto md:left-6 lg:left-8 bg-emuski-teal-darker/90 hover:bg-emuski-teal-darker active:bg-emuski-teal-darker hover:scale-105 active:scale-95 text-white p-2 xs:p-2.5 sm:p-3 md:p-4 lg:p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-20 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Previous slide"
           type="button"
         >
-          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
         </button>
         <button
           onClick={nextSlide}
@@ -207,23 +208,23 @@ export const FeaturedTabs = () => {
             e.stopPropagation();
             nextSlide();
           }}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-emuski-teal-darker hover:bg-emuski-teal-darker/80 active:bg-emuski-teal-darker/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all z-10 touch-manipulation"
+          className="absolute right-2 bottom-16 xs:bottom-20 sm:right-4 sm:top-1/2 sm:-translate-y-1/2 sm:bottom-auto md:right-6 lg:right-8 bg-emuski-teal-darker/90 hover:bg-emuski-teal-darker active:bg-emuski-teal-darker hover:scale-105 active:scale-95 text-white p-2 xs:p-2.5 sm:p-3 md:p-4 lg:p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-20 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Next slide"
           type="button"
         >
-          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" />
         </button>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-2 xs:bottom-3 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3 z-10 bg-white/85 backdrop-blur-sm px-1.5 xs:px-2 sm:px-4 md:px-5 py-1 xs:py-1.5 sm:py-2.5 md:py-3 rounded-full shadow-md max-w-[calc(100vw-100px)] xs:max-w-[85vw] sm:max-w-none">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setSlide(index)}
-              className={`min-h-[20px] w-2.5 h-2.5 rounded-full transition-all touch-manipulation ${
+              className={`rounded-full transition-all duration-300 touch-manipulation ${
                 index === currentSlide
-                  ? 'bg-emuski-teal-darker w-8'
-                  : 'bg-gray-400 hover:bg-gray-600 active:bg-gray-700'
+                  ? 'bg-emuski-teal-darker w-4 xs:w-5 sm:w-8 md:w-10 h-1.5 xs:h-2 sm:h-3 md:h-3.5'
+                  : 'bg-gray-400 hover:bg-gray-600 active:bg-gray-700 w-1.5 xs:w-2 sm:w-3 md:w-3.5 h-1.5 xs:h-2 sm:h-3 md:h-3.5'
               }`}
               aria-label={`Go to slide ${index + 1}`}
               type="button"
@@ -232,7 +233,7 @@ export const FeaturedTabs = () => {
         </div>
 
         {/* Slide Counter */}
-        <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+        <div className="absolute top-2 xs:top-3 sm:top-6 md:top-8 right-2 xs:right-3 sm:right-6 md:right-8 bg-black/70 backdrop-blur-sm text-white px-2 xs:px-2.5 sm:px-4 md:px-5 py-1 xs:py-1.5 sm:py-2 md:py-2.5 rounded-full text-xs xs:text-sm sm:text-base md:text-lg font-semibold shadow-md z-10">
           {currentSlide + 1} / {slides.length}
         </div>
       </div>
@@ -240,15 +241,15 @@ export const FeaturedTabs = () => {
   );
 
   return (
-    <section className="py-0 bg-background">
-      <div className="w-full px-4 sm:px-6">
+    <section className="py-2 xs:py-3 sm:py-6 md:py-8 lg:py-10 bg-background">
+      <div className="w-full px-2 xs:px-3 sm:px-6 md:px-8 lg:px-10 max-w-[2000px] mx-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center bg-secondary border-b border-border rounded-none h-auto p-0 mb-0">
+          <TabsList className="w-full flex-wrap sm:flex-nowrap justify-center bg-secondary border-b border-border rounded-none h-auto p-0 mb-0 gap-0">
             {featuredContent.map((tab) => (
               <TabsTrigger
                 key={tab.id}
                 value={tab.id}
-                className="data-[state=active]:bg-emuski-teal-darker/10 data-[state=active]:border-b-2 data-[state=active]:border-emuski-teal-darker data-[state=active]:text-emuski-teal-darker rounded-none px-4 sm:px-6 py-4 text-sm sm:text-base font-medium backdrop-blur-sm transition-all"
+                className="data-[state=active]:bg-emuski-teal-darker/10 data-[state=active]:border-b-2 data-[state=active]:border-emuski-teal-darker data-[state=active]:text-emuski-teal-darker rounded-none px-3 xs:px-4 sm:px-6 py-3 xs:py-3.5 sm:py-4 text-xs xs:text-sm sm:text-base font-medium backdrop-blur-sm transition-all flex-1 sm:flex-initial whitespace-nowrap"
               >
                 {tab.label}
               </TabsTrigger>
@@ -256,19 +257,19 @@ export const FeaturedTabs = () => {
           </TabsList>
 
           {featuredContent.map((tab) => (
-            <TabsContent key={tab.id} value={tab.id} className="mt-0">
+            <TabsContent key={tab.id} value={tab.id} className="mt-4 sm:mt-6 md:mt-8">
               {tab.id === "manufacturing" ? (
                 renderCarousel(manufacturingSlides, manufacturingSlide, setManufacturingSlide)
               ) : tab.id === "engineering" ? (
                 renderCarousel(engineeringSlides, engineeringSlide, setEngineeringSlide)
               ) : (
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-3 xs:gap-4 sm:gap-6 md:gap-8">
                   {tab.items.map((item, index) => (
                     <Card
                       key={index}
-                      className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300"
+                      className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-md sm:rounded-lg"
                     >
-                      <div className="relative h-64 overflow-hidden">
+                      <div className="relative h-48 xs:h-56 sm:h-64 overflow-hidden">
                         <Image
                           src={item.image}
                           alt={`${item.title} - ${item.category}`}
@@ -282,18 +283,18 @@ export const FeaturedTabs = () => {
                           quality={80}
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute top-4 left-4">
-                          <span className="inline-block px-3 py-1 bg-emuski-teal-darker text-white text-xs font-semibold rounded-sm">
+                        <div className="absolute top-2 xs:top-3 sm:top-4 left-2 xs:left-3 sm:left-4">
+                          <span className="inline-block px-2 xs:px-2.5 sm:px-3 py-0.5 xs:py-1 bg-emuski-teal-darker text-white text-[10px] xs:text-xs font-semibold rounded-sm">
                             {item.category}
                           </span>
                         </div>
                       </div>
 
-                      <div className="p-6">
-                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-emuski-teal-darker transition-colors">
+                      <div className="p-3 xs:p-4 sm:p-5 md:p-6">
+                        <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 xs:mb-2.5 sm:mb-3 group-hover:text-emuski-teal-darker transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                        <p className="text-xs xs:text-sm sm:text-base text-muted-foreground mb-3 xs:mb-3.5 sm:mb-4 leading-relaxed">
                           {item.description}
                         </p>
                         <Link

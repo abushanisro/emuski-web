@@ -92,7 +92,7 @@ export default function PrecisionEngineering() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10 py-24 md:py-32">
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              End-to-End Engineering & Costing Solutions
+              Mastering Costs Engineering Success
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               From cost estimation to strategic sourcing and expert deployment, we deliver integrated Engineering Innovations that drive efficiency and accelerate time-to-market.

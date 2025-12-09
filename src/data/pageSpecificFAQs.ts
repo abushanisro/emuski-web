@@ -170,7 +170,7 @@ export const PRECISION_ENGINEERING_FAQS: FAQItem[] = [
   {
     id: 'ultra-precision-tolerance-capabilities',
     question: 'What are EMUSKI\'s ultra-precision tolerance capabilities and measurement systems?',
-    answer: 'EMUSKI achieves industry-leading precision tolerances: Micro-precision (±0.002mm), Ultra-precision (±0.005mm), High-precision (±0.01mm), and Standard precision (±0.05mm). Our metrology lab includes Coordinate Measuring Machines (CMM) with 0.001mm accuracy, optical comparators, surface roughness testers, hardness testers, and laser interferometry systems for dimensional verification and geometric analysis.',
+    answer: 'EMUSKI achieves industry-leading precision tolerances: Micro-precision (±0.002mm), Ultra-precision (±0.005mm), High-precision (±0.005mm), and Standard precision (±0.05mm). Our metrology lab includes Coordinate Measuring Machines (CMM) with 0.001mm accuracy, optical comparators, surface roughness testers, hardness testers, and laser interferometry systems for dimensional verification and geometric analysis.',
     category: 'Precision Tolerances',
     keywords: ['ultra precision machining', 'micro tolerance manufacturing', 'CMM inspection', 'metrology lab', 'dimensional accuracy', 'geometric tolerance']
   },
@@ -330,23 +330,23 @@ export const getFAQMetaForPage = (pathname: string) => {
   
   const metaMap = {
     '/': {
-      title: 'EMUSKI',
+      title: 'EMUSKI FAQ - Frequently Asked Questions',
       description: 'Learn about EMUSKI - leading manufacturing company in Bangalore with 15+ years expertise in precision engineering, AI-powered production and global manufacturing solutions.'
     },
     '/manufacturing-services': {
-      title: 'OEM Manufacturing Process & Services | How EMUSKI Works',
+      title: 'EMUSKI Manufacturing FAQ - OEM Process & Services Questions',
       description: 'Discover EMUSKI\'s OEM manufacturing process, custom manufacturing capabilities, rapid prototyping services, and production scaling solutions in Bangalore.'
     },
     '/industries': {
-      title: 'Industry Manufacturing Solutions | Healthcare, Aerospace, Defense',
+      title: 'EMUSKI Industries FAQ - Healthcare, Aerospace & Defense Solutions',
       description: 'Explore EMUSKI\'s specialized manufacturing solutions for healthcare, aerospace, defense, automotive, and electronics industries with regulatory compliance.'
     },
     '/precision-engineering': {
-      title: 'Precision CNC Machining & Engineering Capabilities | Ultra-Precision Manufacturing',
+      title: 'EMUSKI Engineering FAQ - Precision CNC & Machining Questions',
       description: 'Advanced precision engineering capabilities including 5-axis CNC machining, ultra-tight tolerances, smart manufacturing, and cost engineering optimization.'
     },
     '/contact': {
-      title: 'How to Contact EMUSKI | Get Started with Manufacturing Excellences',
+      title: 'EMUSKI Contact FAQ - How to Get Started with Manufacturing',
       description: 'Contact EMUSKI manufacturing experts for project consultation, quotes, international support, and facility visits. 24/7 global client support available.'
     }
   };

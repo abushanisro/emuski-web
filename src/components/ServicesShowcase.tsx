@@ -93,7 +93,7 @@ const showcaseItems = [
     title: "Expert Engineer Support",
     category: "Engineering Innovations",
     description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
-    image: "/assets/engineering/supplier-management-system.avif",
+    image: "/assets/engineering/supplier-management-system.svg",
     link: "/precision-engineering#expert-support"
   },
   {

@@ -4,21 +4,26 @@ import { useState, useEffect } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Recaptcha } from "./ui/recaptcha";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
-  MessageSquare, 
-  User, 
-  Building, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  MessageSquare,
+  User,
+  Building,
   Briefcase,
   CheckCircle,
   ArrowRight,
   Globe,
   Linkedin,
   Twitter,
+  Users,
+  MessageCircle,
+  Shield,
+  Settings,
+  Award,
 } from "lucide-react";
 
 const contactMethods = [
@@ -515,6 +520,51 @@ export const Contact = () => {
 
                 {/* Google Maps */}
                 
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Purchase Manager Section */}
+      <section className="py-8 sm:py-10 bg-gradient-to-r from-emuski-teal-darker to-emuski-teal-dark">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                Your Trusted Purchase Manager for Global On-Demand Manufacturing
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
+              {/* Skilled Workforce */}
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Skilled Workforce</span>
+              </div>
+
+              {/* Direct Communication */}
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Direct Communication</span>
+              </div>
+
+              {/* Robust IP Protection */}
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">IP Protection</span>
+              </div>
+
+              {/* Flexible Manufacturing */}
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Settings className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Low/High Volume</span>
+              </div>
+
+              {/* ISO Certified */}
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">ISO-Certified</span>
               </div>
             </div>
           </div>

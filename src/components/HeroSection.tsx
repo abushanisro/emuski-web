@@ -27,7 +27,7 @@ const slides: Slide[] = [
     image: "/assets/hero/precision-engineering-hero-banner.svg",
     mobileImage: "/assets/hero-mobile/precision-engineering-mobile-banner.svg",
     category: "Engineering Innovation",
-    title: "Mastering Costs Engineering Success!",
+    title: "Mastering Costs Engineering Success",
     shortTitle: "Engineering Innovations",
     description: "We drive value engineering through teardown analysis, design benchmarking and advanced cost modelling — helping you manufacture smarter and more profitable",
     link: "/precision-engineering",

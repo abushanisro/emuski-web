@@ -120,7 +120,7 @@ export const RapidPrototypingSection = () => {
               <div className="text-sm text-gray-600">Days Turnaround</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl border border-gray-200">
-              <div className="text-3xl font-bold text-emuski-teal-darker mb-2">±0.1mm</div>
+              <div className="text-3xl font-bold text-emuski-teal-darker mb-2">±0.005mm</div>
               <div className="text-sm text-gray-600">Tolerance</div>
             </div>
             <div className="text-center p-6 bg-white rounded-xl border border-gray-200">

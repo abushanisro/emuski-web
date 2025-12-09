@@ -52,12 +52,14 @@ export default function ManufacturingServices() {
               A structured, transparent process ensuring quality outcomes at every stage.
             </p>
           </div>
-          <div className="max-w-6xl mx-auto">
-<img
-  src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
-  alt="Manufacturing Methodology"
-  className="w-full h-auto"
-/>
+        </div>
+        <div className="w-full">
+          <div className="aspect-[16/9] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative">
+            <img
+              src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
+              alt="Manufacturing Methodology"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
