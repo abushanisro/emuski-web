@@ -1,141 +1,109 @@
-const caseStudies = [
+import Link from "next/link";
+import { Clock, User } from "lucide-react";
+import { Card } from "./ui/card";
+
+interface CaseStudy {
+  title: string;
+  client: string;
+  service: string;
+  excerpt: string;
+  image: string;
+  tags: string[];
+  readTime: string;
+  featured?: boolean;
+  slug: string;
+}
+
+const caseStudies: CaseStudy[] = [
   {
-    title: "New Product Development (NPD) – Accelerating Innovation",
-    client: "Tier-1 Automotive Supplier",
-    service: "New Product Development (NPD)",
-    challenge: "The client struggled with repeated design iterations and long lead times during the development of a next-gen engine component. This delayed validation and risked missing OEM program deadlines.",
-    approach: [
-      "Utilized EMUSKI’s NPD Center to run rapid design iterations.",
-      "Conducted in-house testing and validation, eliminating third-party delays.",
-      "Collaborated closely with client engineers to shorten feedback loops."
-    ],
-    outcome: [
-      "Reduced development cycle time by 35%.",
-      "Improved design quality with first-time-right prototypes.",
-      "Ensured on-time delivery to the OEM, securing the client’s business."
-    ]
+    title: "Accelerating Innovation: 500 Components in 30 Days",
+    client: "Opto Imaging Pioneer",
+    service: "NPD Center – End-to-End Manufacturing & Assembly",
+    excerpt: "A leading opto imaging company needed 500 intricate mechanical components and 10 complete devices within one month. They needed a partner to manage the entire supply chain, manufacturing, and assembly under extreme time pressure.",
+    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1200&q=80",
+    tags: ["Case Study", "NPD Center", "Manufacturing"],
+    readTime: "5 min read",
+    slug: "opto-imaging-pioneer-500-components-30-days"
   },
   {
-    title: "Rapid Prototyping & On-Demand Manufacturing – Faster Time-to-Market",
-    client: "Industrial Equipment OEM",
-    service: "Rapid Prototyping & On-Demand Manufacturing",
-    challenge: "The client needed quick turnaround prototypes for a critical product demo. Traditional manufacturing routes were too slow and costly for low-volume needs.",
-    approach: [
-      "Produced functional prototypes using in-house 3D printing and CNC machining.",
-      "Validated performance with real-world testing.",
-      "Transitioned seamlessly into on-demand manufacturing to support pilot builds."
-    ],
-    outcome: [
-      "Delivered prototypes in 7 days instead of 4 weeks.",
-      "Supported a successful product demo, helping the client secure new business.",
-      "Scaled into low-volume production without additional supplier onboarding."
-    ]
+    title: "Zero-Zero Tolerance: Engineering Solutions for Defense Criticality",
+    client: "Defense Sector Manufacturer",
+    service: "NPD Center – Precision Manufacturing & R&D",
+    excerpt: "A defense manufacturer needed components with incredibly tight tolerances for turret rotation, receivers, and barrel mount blocks. Previous suppliers failed to meet critical specifications before and after anodization, halting final assembly.",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
+    tags: ["Case Study", "Defense", "Precision Engineering"],
+    readTime: "4 min read",
+    slug: "defense-zero-zero-tolerance-engineering"
   },
   {
-    title: "VAVE – Teardown & Benchmarking – Driving Cost Competitiveness",
-    client: "Consumer Electronics Manufacturer",
-    service: "VAVE – Teardown & Benchmarking",
-    challenge: "High production costs made the client’s flagship product less competitive compared to rivals in the market.",
-    approach: [
-      "Conducted detailed teardown analysis at EMUSKI’s Teardown Center.",
-      "Benchmarked components against global competitors.",
-      "Recommended alternative materials, part redesign, and supplier re-sourcing."
-    ],
-    outcome: [
-      "Achieved 12% cost reduction per unit.",
-      "Simplified assembly process, reducing labor costs.",
-      "Enhanced competitiveness with improved cost-to-feature ratio."
-    ]
-  },
-  {
-    title: "Expert Engineer Support – Extending In-House Capabilities",
+    title: "Expert Engineer Support – Extending Capabilities",
     client: "Global Aerospace OEM",
     service: "Expert Engineer Support",
-    challenge: "The client lacked specialized cost engineers to evaluate complex supplier quotes and was facing project delays due to resource constraints.",
-    approach: [
-      "Deployed should-cost engineers and VAVE specialists to integrate with the client’s team.",
-      "Built detailed cost models and validated supplier quotations.",
-      "Assisted with supplier technical evaluations and design validation."
-    ],
-    outcome: [
-      "Reduced sourcing cycle time by 30%.",
-      "Identified cost-saving opportunities worth $2M annually.",
-      "Accelerated project timelines by supplementing client resources."
-    ]
-  },
-  {
-    title: "Supplier Development – Building Reliable Supply Chains in India",
-    client: "European Industrial OEM",
-    service: "Supplier Development (India sourcing)",
-    challenge: "The client wanted to diversify its supply base into India but faced challenges in identifying suppliers that met global quality standards.",
-    approach: [
-      "Mapped manufacturing clusters across India to identify potential suppliers.",
-      "Conducted supplier qualification audits and capability assessments.",
-      "Supported in contract finalization and pilot production runs."
-    ],
-    outcome: [
-      "Qualified 5 new suppliers aligned with global standards.",
-      "Reduced sourcing costs by 18% through Indian manufacturing clusters.",
-      "Improved supply chain resilience and reduced lead time risks."
-    ]
+    excerpt: "Resource constraints were causing project delays and complex quotes went unevaluated. Our embedded engineers became their extended team.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80",
+    tags: ["Case Study", "Engineering Services", "Aerospace"],
+    readTime: "5 min read",
+    slug: "aerospace-oem-expert-engineer-support"
   }
 ];
 
 export function SuccessStoriesSection() {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-4xl font-bold text-foreground">Our Success Stories</h2>
-          <div className="hidden sm:flex space-x-2">
-              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 border-border hover:bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left h-5 w-5"><path d="m15 18-6-6 6-6"></path></svg></button>
-              <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 border-border hover:bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right h-5 w-5"><path d="m9 18 6-6-6-6"></path></svg></button>
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="h-1 w-12 bg-emuski-teal-dark rounded"></div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Our Success Stories</h2>
           </div>
-      </div>
-      <div className="text-center max-w-4xl mx-auto">
-          <p className="text-xl text-muted-foreground">
-              Real Results. Expert Insights. Lasting Impact.
-          </p>
-          <p className="mt-6 text-muted-foreground max-w-3xl mx-auto">
-              At EMUSKI, we don’t just provide services—we deliver measurable outcomes. Our Success Stories showcase how OEMs have partnered with us to accelerate innovation, reduce costs, and strengthen competitiveness.
-          </p>
-          <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-              Alongside, our Blogs bring you expert perspectives, industry trends, and actionable strategies to help your business stay ahead in a fast-changing manufacturing landscape.
-          </p>
-          <p className="mt-4 text-muted-foreground max-w-3xl mx-auto">
-              Together, these stories and insights highlight what’s possible when OEMs collaborate with EMUSKI—achieving excellence in cost, quality, and speed.
-          </p>
-        </div>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
-            <div key={index} className="bg-card border border-border rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-2">{study.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4"><strong>Client:</strong> {study.client} | <strong>Service:</strong> {study.service}</p>
-              
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Challenge</h4>
-                  <p className="text-muted-foreground">{study.challenge}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Our Approach</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {study.approach.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {study.outcome.map((item, i) => <li key={i}>{item}</li>)}
-                  </ul>
-                </div>
-              </div>
-              <button className="mt-6 bg-emuski-teal-dark text-white px-6 py-2 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors">
-                Read Full Case Study
-              </button>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+            {caseStudies.map((study, index) => (
+              <Link key={index} href={`/blog/${study.slug}`}>
+                <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
+                  </div>
+
+                  <div className="p-6">
+                    <div className="flex items-center justify-end mb-3">
+                      <div className="flex items-center space-x-1 text-xs text-gray-500">
+                        <Clock className="h-3 w-3" />
+                        <span>{study.readTime}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emuski-teal-dark transition-colors line-clamp-2">
+                      {study.title}
+                    </h3>
+
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                      {study.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <User className="h-4 w-4 text-gray-500" />
+                        <span className="text-sm text-gray-600">EMUSKI Team | Case Study</span>
+                      </div>
+
+                      <div className="flex items-center text-emuski-teal-darker font-medium text-sm">
+                        Read More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-1">
+                          <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

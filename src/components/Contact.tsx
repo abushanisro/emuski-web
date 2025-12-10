@@ -435,7 +435,7 @@ export const Contact = () => {
       </section>
 
       {/* Trusted Purchase Manager Section */}
-      <section className="py-8 sm:py-10 bg-gradient-to-r from-emuski-teal-darker to-emuski-teal-dark">
+      <section className="py-8 sm:py-10 bg-emuski-teal-darker">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-6">
@@ -446,33 +446,33 @@ export const Contact = () => {
 
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
               {/* Skilled Workforce */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Skilled Workforce</span>
+              <div className="flex items-center gap-2 sm:gap-3 bg-white hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-emuski-teal-darker" />
+                <span className="text-emuski-teal-darker text-sm sm:text-base font-semibold whitespace-nowrap">Skilled Workforce</span>
               </div>
 
               {/* Direct Communication */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Direct Communication</span>
+              <div className="flex items-center gap-2 sm:gap-3 bg-white hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-emuski-teal-darker" />
+                <span className="text-emuski-teal-darker text-sm sm:text-base font-semibold whitespace-nowrap">Direct Communication</span>
               </div>
 
               {/* Robust IP Protection */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">IP Protection</span>
+              <div className="flex items-center gap-2 sm:gap-3 bg-white hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-emuski-teal-darker" />
+                <span className="text-emuski-teal-darker text-sm sm:text-base font-semibold whitespace-nowrap">IP Protection</span>
               </div>
 
               {/* Flexible Manufacturing */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <Settings className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">Low/High Volume</span>
+              <div className="flex items-center gap-2 sm:gap-3 bg-white hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                <Settings className="h-5 w-5 sm:h-6 sm:w-6 text-emuski-teal-darker" />
+                <span className="text-emuski-teal-darker text-sm sm:text-base font-semibold whitespace-nowrap">Low/High Volume</span>
               </div>
 
               {/* ISO Certified */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                <span className="text-white text-sm sm:text-base font-semibold whitespace-nowrap">ISO-Certified</span>
+              <div className="flex items-center gap-2 sm:gap-3 bg-white hover:bg-white/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-emuski-teal-darker" />
+                <span className="text-emuski-teal-darker text-sm sm:text-base font-semibold whitespace-nowrap">ISO-Certified</span>
               </div>
             </div>
           </div>

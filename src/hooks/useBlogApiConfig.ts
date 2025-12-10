@@ -131,7 +131,7 @@ export const useBlogCategories = () => {
         setLoading(true);
         setError(null);
         const response = await activeBlogApi.getCategories();
-        setCategories(['All', ...response.data]);
+        setCategories(response.data);
       } catch (err: any) {
         setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch categories');
         setCategories([]);

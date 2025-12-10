@@ -8,13 +8,13 @@ import { RefreshCw, Wifi } from "lucide-react";
 // Pre-configured error page components for common use cases
 
 export const BlogNotFoundPage = ({ description }: { description?: string }) => (
-  <ErrorPage 
+  <ErrorPage
     errorType="404"
     title="Article Not Found"
     description={description || "The article you're looking for doesn't exist or may have been moved."}
     customActions={
       <Link href="/blog">
-        <Button className="bg-emuski-teal hover:bg-emuski-teal-dark text-white">
+        <Button className="bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-3">
           Browse All Articles
         </Button>
       </Link>
@@ -34,15 +34,15 @@ export const LoadingPage = ({ title, description }: { title?: string; descriptio
 );
 
 export const ServerErrorPage = ({ description }: { description?: string }) => (
-  <ErrorPage 
+  <ErrorPage
     errorType="500"
     title="Something Went Wrong"
     description={description || "We're experiencing technical difficulties. Please try again later."}
     customActions={
-      <Button 
+      <Button
         onClick={() => window.location.reload()}
         variant="outline"
-        className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
+        className="border-emuski-teal/50 bg-emuski-teal/10 text-white hover:bg-emuski-teal hover:text-white hover:border-emuski-teal px-8 py-3"
       >
         <RefreshCw className="mr-2 h-4 w-4" />
         Refresh Page
@@ -52,15 +52,15 @@ export const ServerErrorPage = ({ description }: { description?: string }) => (
 );
 
 export const NetworkErrorPage = ({ onRetry }: { onRetry?: () => void }) => (
-  <ErrorPage 
+  <ErrorPage
     errorType="network"
     title="Connection Problem"
     description="Unable to connect to our servers. Please check your internet connection and try again."
     customActions={
       onRetry && (
-        <Button 
+        <Button
           onClick={onRetry}
-          className="bg-emuski-teal hover:bg-emuski-teal-dark text-white"
+          className="bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-3"
         >
           <Wifi className="mr-2 h-4 w-4" />
           Try Again
@@ -71,13 +71,13 @@ export const NetworkErrorPage = ({ onRetry }: { onRetry?: () => void }) => (
 );
 
 export const UnauthorizedPage = () => (
-  <ErrorPage 
+  <ErrorPage
     errorType="404"
     title="Access Denied"
     description="You don't have permission to access this page. Please contact support if you believe this is an error."
     customActions={
       <Link href="/contact">
-        <Button className="bg-emuski-teal hover:bg-emuski-teal-dark text-white">
+        <Button className="bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-3">
           Contact Support
         </Button>
       </Link>
@@ -86,17 +86,17 @@ export const UnauthorizedPage = () => (
 );
 
 export const MaintenancePage = () => (
-  <ErrorPage 
+  <ErrorPage
     errorType="500"
     title="Under Maintenance"
     description="We're currently performing scheduled maintenance. We'll be back shortly. Thank you for your patience."
     showBackButton={false}
     showSearchSuggestions={false}
     customActions={
-      <Button 
+      <Button
         onClick={() => window.location.reload()}
         variant="outline"
-        className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
+        className="border-emuski-teal/50 bg-emuski-teal/10 text-white hover:bg-emuski-teal hover:text-white hover:border-emuski-teal px-8 py-3"
       >
         <RefreshCw className="mr-2 h-4 w-4" />
         Check Again

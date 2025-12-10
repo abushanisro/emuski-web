@@ -9,6 +9,7 @@ import { useBlogPosts, useBlogCategories, useBlogTags } from "../hooks/useBlogAp
 import { BlogPostSummary } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
 import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
+import { SuccessStoriesSection } from "./SuccessStoriesSection";
 
 export const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -222,11 +223,6 @@ export const BlogPage = () => {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 bg-emuski-teal/90 text-white text-xs font-medium rounded-full">
-                          Featured
-                        </span>
-                      </div>
                     </div>
                     
                     <div className="p-6">
@@ -254,9 +250,9 @@ export const BlogPage = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                           <User className="h-4 w-4 text-gray-500" />
-                          <span className="text-sm text-gray-600">{post.author}</span>
+                          <span className="text-sm text-gray-600">{post.author} | {post.category === "Case Study" ? "Case Study" : "Blog"}</span>
                         </div>
-                        
+
                         <div className="flex items-center text-emuski-teal-darker font-medium text-sm">
                           Read More
                           <ChevronRight className="h-4 w-4 ml-1" />
@@ -308,16 +304,16 @@ export const BlogPage = () => {
                         {post.title}
                       </h3>
                       
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">
                         {post.excerpt}
                       </p>
 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                           <User className="h-4 w-4 text-gray-500" />
-                          <span className="text-xs text-gray-600">{post.author}</span>
+                          <span className="text-xs text-gray-600">{post.author} | {post.category === "Case Study" ? "Case Study" : "Blog"}</span>
                         </div>
-                        
+
                         <div className="flex items-center space-x-1 text-xs text-gray-500">
                           <Calendar className="h-3 w-3" />
                           <span>{new Date(post.publishDate).toLocaleDateString()}</span>
@@ -357,6 +353,9 @@ export const BlogPage = () => {
           </div>
         </section>
       )}
+
+      {/* Success Stories Section */}
+      <SuccessStoriesSection />
 
       {/* Newsletter Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">

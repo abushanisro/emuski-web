@@ -1,12 +1,12 @@
-import { blogPosts, relatedPosts } from '../data/blogData';
-import { 
-  BlogPost, 
-  BlogPostSummary, 
-  BlogListResponse, 
-  BlogPostResponse, 
-  BlogFilters, 
+import { allBlogPosts, relatedPosts } from '../data/blogData';
+import {
+  BlogPost,
+  BlogPostSummary,
+  BlogListResponse,
+  BlogPostResponse,
+  BlogFilters,
   RelatedPost,
-  ApiError 
+  ApiError
 } from './types';
 
 const API_BASE_URL = '/api/v1';
@@ -78,10 +78,10 @@ class BlogApi {
   async getAllPosts(filters: BlogFilters = {}): Promise<BlogListResponse> {
     try {
       const { page = 1, limit = 10, ...otherFilters } = filters;
-      
-      const filteredPosts = this.filterPosts(blogPosts, otherFilters);
-      
-      const sortedPosts = filteredPosts.sort((a, b) => 
+
+      const filteredPosts = this.filterPosts(allBlogPosts, otherFilters);
+
+      const sortedPosts = filteredPosts.sort((a, b) =>
         new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
       );
 
@@ -96,7 +96,7 @@ class BlogApi {
 
   async getFeaturedPosts(limit: number = 5): Promise<BlogListResponse> {
     try {
-      const featuredPosts = blogPosts
+      const featuredPosts = allBlogPosts
         .filter(post => post.featured)
         .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
         .slice(0, limit)
@@ -120,8 +120,8 @@ class BlogApi {
 
   async getPostBySlug(slug: string): Promise<BlogPostResponse> {
     try {
-      const post = blogPosts.find(p => p.slug === slug);
-      
+      const post = allBlogPosts.find(p => p.slug === slug);
+
       if (!post) {
         throw this.createApiError(`Post not found: ${slug}`, 'POST_NOT_FOUND');
       }
@@ -137,8 +137,8 @@ class BlogApi {
 
   async getPostById(id: number): Promise<BlogPostResponse> {
     try {
-      const post = blogPosts.find(p => p.id === id);
-      
+      const post = allBlogPosts.find(p => p.id === id);
+
       if (!post) {
         throw this.createApiError(`Post not found: ${id}`, 'POST_NOT_FOUND');
       }
@@ -154,16 +154,16 @@ class BlogApi {
 
   async getRelatedPosts(postId: number, limit: number = 3): Promise<{ data: RelatedPost[] }> {
     try {
-      const currentPost = blogPosts.find(p => p.id === postId);
-      
+      const currentPost = allBlogPosts.find(p => p.id === postId);
+
       if (!currentPost) {
         throw this.createApiError(`Post not found: ${postId}`, 'POST_NOT_FOUND');
       }
 
-      const related = blogPosts
-        .filter(post => 
-          post.id !== postId && 
-          (post.category === currentPost.category || 
+      const related = allBlogPosts
+        .filter(post =>
+          post.id !== postId &&
+          (post.category === currentPost.category ||
            post.tags.some(tag => currentPost.tags.includes(tag)))
         )
         .sort((a, b) => {
@@ -191,8 +191,9 @@ class BlogApi {
 
   async getCategories(): Promise<{ data: string[] }> {
     try {
-      const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-      return { data: categories.sort() };
+      const uniqueCategories = Array.from(new Set(allBlogPosts.map(post => post.category)));
+      const categories = ['All', ...uniqueCategories.filter(cat => cat !== 'All')];
+      return { data: categories };
     } catch (error) {
       throw this.createApiError('Failed to fetch categories', 'FETCH_CATEGORIES_ERROR', error);
     }
@@ -200,7 +201,7 @@ class BlogApi {
 
   async getTags(): Promise<{ data: string[] }> {
     try {
-      const tags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
+      const tags = Array.from(new Set(allBlogPosts.flatMap(post => post.tags)));
       return { data: tags.sort() };
     } catch (error) {
       throw this.createApiError('Failed to fetch tags', 'FETCH_TAGS_ERROR', error);
