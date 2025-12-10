@@ -1,6 +1,6 @@
 'use client'
 
-import { Linkedin, Instagram, Twitter, BookOpen } from 'lucide-react';
+import { Linkedin, Instagram, Twitter, BookOpen, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 const emuskiLogo = "/assets/emuski-manufacturing-logo.webp";
@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-background border-t border-border py-8 sm:py-12">
       <div className="w-full px-4 sm:px-6 lg:px-8 text-left max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Manufacturing Excellences */}
           <div>
             <h4 className="text-foreground font-semibold mb-4">Manufacturing Excellences</h4>
@@ -53,6 +53,48 @@ export const Footer = () => {
               <li><Link href="/blog" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Blog & Insights</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-emuski-teal-darker transition-colors text-sm block py-1">Get a Quote</Link></li>
             </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h4 className="text-foreground font-semibold mb-4">Our Locations</h4>
+            <div className="space-y-4">
+              {/* Headquarters */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-foreground">Headquarters</p>
+                <div className="flex items-start space-x-2">
+                  <MapPin className="h-3 w-3 text-emuski-teal-darker mt-0.5 flex-shrink-0" />
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    126, RNS Plaza, Electronic City Phase 2, Bangalore
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-3 w-3 text-emuski-teal-darker flex-shrink-0" />
+                  <a href="tel:+918344474556" className="text-xs text-muted-foreground hover:text-emuski-teal-darker transition-colors">
+                    +91 83444 74556
+                  </a>
+                </div>
+              </div>
+
+              {/* Manufacturing Facility */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-foreground">Manufacturing</p>
+                <div className="flex items-start space-x-2">
+                  <MapPin className="h-3 w-3 text-emuski-teal-darker mt-0.5 flex-shrink-0" />
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Hosur, Tamil Nadu
+                  </p>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center space-x-2">
+                <Mail className="h-3 w-3 text-emuski-teal-darker flex-shrink-0" />
+                <a href="mailto:enquiries@emuski.com" className="text-xs text-muted-foreground hover:text-emuski-teal-darker transition-colors">
+                  enquiries@emuski.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         

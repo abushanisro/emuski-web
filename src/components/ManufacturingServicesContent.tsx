@@ -98,14 +98,12 @@ export const ManufacturingServicesContent = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Image - Left side */}
-              <div className="relative order-2 lg:order-1">
-                <div className="aspect-[16/9] sm:aspect-[21/9] relative">
-                  <img
-                    src="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg"
-                    alt="Rapid Prototyping Manufacturing"
-                    className="absolute inset-0 w-full h-full object-contain"
-                  />
-                </div>
+              <div className="relative order-2 lg:order-1 h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+                <img
+                  src="/assets/rapid-proto.svg"
+                  alt="Rapid Prototyping Manufacturing"
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Content - Right side */}

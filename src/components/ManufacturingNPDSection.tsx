@@ -17,9 +17,9 @@ const solutions = [
     image: "/assets/engineeringservices/solution-we-offers/cnc-vmc-5-axis-precision-machining-prototypes.svg"
   },
   {
-    title: "Aluminum CNC",
+    title: "Turning Centre",
     subtitle: "Machining",
-    description: "Specialized aluminum CNC machining delivering lightweight, high-strength components for demanding applications.",
+    description: "Specialized Turning Centre machining delivering lightweight, high-strength components for demanding applications.",
     image: "/assets/engineeringservices/solution-we-offers/cnc-vmc-aluminum-machining-prototypes.svg"
   },
   {

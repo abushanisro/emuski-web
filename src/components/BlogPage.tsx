@@ -67,22 +67,54 @@ export const BlogPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-emuski-teal-darker text-white overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <section className="relative h-[50vh] min-h-[400px] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
+        {/* Desktop Background */}
+        <div className="hidden md:block absolute inset-0">
+          <img
+            src="/assets/pages/manufacturing-services-hero-page.svg"
+            alt="EMUSKI Insights - Manufacturing Blog"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 mt-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-              <span style={{color: 'rgb(18, 26, 33)'}}>EMUSKI</span> <span className="text-white">Insights</span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
-              Expert perspectives on engineering precision, manufacturing innovation, 
-              and the future of intelligent production systems.
-            </p>
-            <div className="h-1 w-24 bg-white rounded-full mx-auto"></div>
-            <div className="flex items-center justify-center text-sm text-white/80">
-              <span>Discover insights that drive manufacturing excellence</span>
+
+        {/* Mobile Background */}
+        <div className="md:hidden absolute inset-0">
+          <img
+            src="/assets/pages/manufacturing-services-hero-page.svg"
+            alt="EMUSKI Insights - Manufacturing Blog"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="space-y-4 sm:space-y-6">
+                {/* Category Badge */}
+                <div className="inline-flex items-center">
+                  <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                    Blog & Insights
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  EMUSKI Insights
+                </h1>
+
+                {/* Description */}
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                  Expert perspectives on engineering precision, manufacturing innovation, and the future of intelligent production systems.
+                </p>
+
+                {/* Subtitle */}
+                <p className="text-sm sm:text-base text-gray-400">
+                  Discover insights that drive manufacturing excellence
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -85,14 +85,10 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    title: "",
     phone: "",
-    subject: "",
-    message: "",
-    projectType: "",
-    timeline: ""
+    requirements: ""
   });
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
@@ -119,36 +115,20 @@ export const Contact = () => {
   };
 
 
-  const sendEmail = async (data: any, type: 'contact' | 'quote') => {
+  const sendEmail = async (data: any, file: File | null) => {
     // Email configuration
     const emailData = {
       to: 'abushan.isro@gmail.com',
       from: 'noreply@EMUSKI.com',
-      subject: type === 'contact' ? `New Contact Form Submission - ${data.subject}` : `New Quote Request - ${data.projectDescription}`,
-      html: type === 'contact' ? `
-        <h2>New Contact Form Submission</h2>
+      subject: `New Project Inquiry - ${data.name}`,
+      html: `
+        <h2>New Project Inquiry</h2>
         <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Company:</strong> ${data.company || 'Not provided'}</p>
-        <p><strong>Title:</strong> ${data.title || 'Not provided'}</p>
-        <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-        <p><strong>Project Type:</strong> ${data.projectType || 'Not specified'}</p>
-        <p><strong>Timeline:</strong> ${data.timeline || 'Not specified'}</p>
-        <p><strong>Subject:</strong> ${data.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${data.message}</p>
-        <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-      ` : `
-        <h2>New Quote Request</h2>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Company:</strong> ${data.company || 'Not provided'}</p>
-        <p><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
-        <p><strong>Quantity:</strong> ${data.quantity || 'Not specified'}</p>
-        <p><strong>Timeline:</strong> ${data.timeline || 'Not specified'}</p>
-        <p><strong>Project Description:</strong></p>
-        <p>${data.projectDescription}</p>
-        <p><strong>Files Attached:</strong> ${data.attachmentCount || 0}</p>
+        <p><strong>Company Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Requirements:</strong></p>
+        <p>${data.requirements || 'Not provided'}</p>
+        <p><strong>File Attached:</strong> ${file ? file.name : 'No file'}</p>
         <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       `
     };
@@ -156,56 +136,62 @@ export const Contact = () => {
     // For now, we'll store in localStorage and log the email data
     // In production, you would integrate with an email service like SendGrid, EmailJS, or Nodemailer
     console.log('📧 EMAIL TO SEND TO abushan.isro@gmail.com:', emailData);
-    
+    if (file) {
+      console.log('📎 FILE ATTACHED:', file.name, file.type, file.size);
+    }
+
     // You can integrate with EmailJS here:
     // const result = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData, 'YOUR_USER_ID');
-    
+
     return Promise.resolve({ success: true });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Check if reCAPTCHA is verified
     if (!recaptchaToken) {
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 5000);
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // Send email notification
-      await sendEmail(formData, 'contact');
-      
+      await sendEmail(formData, uploadedFile);
+
       // Store in localStorage as fallback
       const contacts = JSON.parse(localStorage.getItem("emuski_contacts") || "[]");
 
       const newContact = {
         id: Date.now().toString(),
         ...formData,
+        fileName: uploadedFile?.name || null,
         recaptchaToken,
         timestamp: new Date().toISOString(),
         status: "new"
       };
-      
+
       contacts.push(newContact);
       localStorage.setItem("emuski_contacts", JSON.stringify(contacts));
-      
+
       setSubmitStatus("success");
       setFormData({
         name: "",
         email: "",
-        company: "",
-        title: "",
         phone: "",
-        subject: "",
-        message: "",
-        projectType: "",
-        timeline: ""
+        requirements: ""
       });
+      setUploadedFile(null);
       setRecaptchaToken(null);
+
+      // Reset file input
+      const fileInput = document.getElementById('file') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = '';
+      }
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -217,20 +203,50 @@ export const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-emuski-teal-darker text-white pt-24 pb-16 sm:pt-32 sm:pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <section className="relative h-[50vh] min-h-[400px] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
+        {/* Desktop Background */}
+        <div className="hidden md:block absolute inset-0">
+          <img
+            src="/assets/pages/manufacturing-services-hero-page.svg"
+            alt="Contact EMUSKI Manufacturing"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
-            <span className="text-white/80 text-sm font-semibold tracking-wider uppercase">Get In Touch</span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold" style={{color: 'rgb(18, 26, 33)'}}>
-              Contact Us
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
-              Ready to transform your manufacturing? Let's discuss how we can help bring your vision to life.
-            </p>
-            <div className="h-1 w-16 sm:w-20 md:w-24 bg-white rounded-full mx-auto"></div>
+
+        {/* Mobile Background */}
+        <div className="md:hidden absolute inset-0">
+          <img
+            src="/assets/pages/manufacturing-services-hero-page.svg"
+            alt="Contact EMUSKI Manufacturing"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center py-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                {/* Category Badge */}
+                <div className="inline-flex items-center">
+                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                    Get In Touch
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                  Contact Us
+                </h1>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl">
+                  Ready to transform your manufacturing? Let's discuss how we can help bring your vision to life.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -242,194 +258,104 @@ export const Contact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
               {/* Contact Form */}
               <div>
-                <div className="mb-8">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    Send Us a Message
+                <div className="mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                    Tell us about your project!
                   </h2>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                  <p className="text-sm text-gray-600">
+                    Convert your idea into Marketable Products with our world-class engineers
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Name *
-                      </label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          autoComplete="name"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                          placeholder="Your full name"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email *
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          autoComplete="email"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                          placeholder="your.email@company.com"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company
-                      </label>
-                      <div className="relative">
-                        <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          autoComplete="organization"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                          placeholder="Your company name"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
-                        Job Title
-                      </label>
-                      <div className="relative">
-                        <Briefcase className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          id="title"
-                          name="title"
-                          value={formData.title}
-                          onChange={handleInputChange}
-                          autoComplete="organization-title"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                          placeholder="Your job title"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone
-                      </label>
-                      <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          autoComplete="tel"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                          placeholder="+1 (555) 123-4567"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
-                        Project Type
-                      </label>
-                      <select
-                        id="projectType"
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleInputChange}
-                        autoComplete="off"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                      >
-                        <option value="">Select project type</option>
-                        <option value="manufacturing">Manufacturing Excellences</option>
-                        <option value="engineering">Precision Engineering</option>
-                        <option value="ai-solutions">AI Solutions</option>
-                        <option value="consultation">Consultation</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                  </div>
-
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
+                    <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-1.5">
+                      Name *
                     </label>
                     <input
                       type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleInputChange}
                       required
-                      autoComplete="off"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                      placeholder="Brief description of your project"
+                      autoComplete="name"
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
+                      placeholder="Your full name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                    <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-1.5">
+                      Company Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      autoComplete="email"
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
+                      placeholder="your.email@company.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-xs font-medium text-gray-700 mb-1.5">
+                      Phone *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      autoComplete="tel"
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="requirements" className="block text-xs font-medium text-gray-700 mb-1.5">
+                      Requirements
                     </label>
                     <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                      id="requirements"
+                      name="requirements"
+                      value={formData.requirements}
                       onChange={handleInputChange}
-                      required
                       autoComplete="off"
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent resize-vertical"
-                      placeholder="Tell us more about your project requirements, timeline, and how we can help..."
+                      rows={4}
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent resize-vertical"
+                      placeholder="share your requirements..."
                     />
                   </div>
 
-
                   <div>
-                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Timeline
+                    <label htmlFor="file" className="block text-xs font-medium text-gray-700 mb-1.5">
+                      Upload file (optional)
                     </label>
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleInputChange}
-                      autoComplete="off"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="immediate">Immediate (Within 1 month)</option>
-                      <option value="short">Short term (1-3 months)</option>
-                      <option value="medium">Medium term (3-6 months)</option>
-                      <option value="long">Long term (6+ months)</option>
-                      <option value="flexible">Flexible</option>
-                    </select>
+                    <input
+                      type="file"
+                      id="file"
+                      name="file"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          setUploadedFile(file);
+                        }
+                      }}
+                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-emuski-teal/10 file:text-emuski-teal-darker hover:file:bg-emuski-teal/20"
+                    />
+                    {uploadedFile && (
+                      <p className="text-xs text-gray-600 mt-1.5">
+                        Selected: {uploadedFile.name}
+                      </p>
+                    )}
                   </div>
 
                   {/* reCAPTCHA */}
@@ -442,38 +368,35 @@ export const Contact = () => {
                     />
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
                     disabled={isSubmitting || submitStatus === "success" || !recaptchaToken}
-                    className="w-full bg-emuski-teal-dark hover:bg-emuski-teal/90 text-white font-semibold py-3 sm:py-4 text-base sm:text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="w-full bg-emuski-teal-dark hover:bg-emuski-teal/90 text-white font-semibold py-2.5 text-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
-                      "Sending..."
+                      "Submitting..."
                     ) : submitStatus === "success" ? (
                       <>
-                        <CheckCircle className="h-5 w-5 mr-2" />
-                        Message Sent!
+                        <CheckCircle className="h-4 w-4 mr-2" />
+                        Submitted!
                       </>
                     ) : (
-                      <>
-                        <Send className="h-5 w-5 mr-2" />
-                        Send Message
-                      </>
+                      "Submit"
                     )}
                   </Button>
 
                   {submitStatus === "success" && (
-                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                      <p className="text-green-800 text-sm">
+                    <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                      <p className="text-green-800 text-xs">
                         Thank you for your message! We'll get back to you within 24 hours.
                       </p>
                     </div>
                   )}
 
                   {submitStatus === "error" && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                      <p className="text-red-800 text-sm">
-                        {!recaptchaToken 
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-800 text-xs">
+                        {!recaptchaToken
                           ? "Please complete the security verification before submitting the form."
                           : "Sorry, there was an error sending your message. Please try again or contact us directly."
                         }
@@ -485,33 +408,33 @@ export const Contact = () => {
 
               {/* Contact Information */}
               <div>
-                <div className="mb-8">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                <div className="mb-6">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
                     Our Locations
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-sm text-gray-600">
                     Visit us at any of our facilities or connect with our team online.
                   </p>
                 </div>
 
-                <div className="space-y-6 sm:space-y-8">
+                <div className="space-y-4">
                   {offices.map((office, index) => (
-                    <Card key={index} className="p-6 border-2 border-gray-200 hover:border-emuski-teal/50 transition-colors">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">{office.city}</h3>
-                      <div className="space-y-3">
-                        <div className="flex items-start space-x-3">
-                          <MapPin className="h-5 w-5 text-emuski-teal-darker mt-0.5 flex-shrink-0" />
+                    <Card key={index} className="p-4 border-2 border-gray-200 hover:border-emuski-teal/50 transition-colors">
+                      <h3 className="text-base font-bold text-gray-900 mb-3">{office.city}</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-2">
+                          <MapPin className="h-4 w-4 text-emuski-teal-darker mt-0.5 flex-shrink-0" />
                           <div>
-                            <p className="text-gray-700 whitespace-pre-line">{office.address}</p>
+                            <p className="text-xs text-gray-700 whitespace-pre-line leading-relaxed">{office.address}</p>
                           </div>
                         </div>
-                        <div className="flex items-center space-x-3">
-                          <Phone className="h-5 w-5 text-emuski-teal-darker flex-shrink-0" />
-                          <p className="text-gray-700">{office.phone}</p>
+                        <div className="flex items-center space-x-2">
+                          <Phone className="h-4 w-4 text-emuski-teal-darker flex-shrink-0" />
+                          <p className="text-xs text-gray-700">{office.phone}</p>
                         </div>
-                        <div className="flex items-center space-x-3">
-                          <Mail className="h-5 w-5 text-emuski-teal-darker flex-shrink-0" />
-                          <p className="text-gray-700">{office.email}</p>
+                        <div className="flex items-center space-x-2">
+                          <Mail className="h-4 w-4 text-emuski-teal-darker flex-shrink-0" />
+                          <p className="text-xs text-gray-700">{office.email}</p>
                         </div>
                       </div>
                     </Card>

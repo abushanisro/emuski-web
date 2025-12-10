@@ -14,26 +14,44 @@ export default function ManufacturingServices() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/assets/hero/manufacturing-services-hero-banner.svg" alt="Manufacturing background" className="hidden md:block w-full h-full object-cover opacity-60" />
-          <img src="/assets/hero-mobile/manufacturing-services-mobile-banner.svg" alt="Manufacturing background" className="block md:hidden w-full h-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent"></div>
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
 
-        <div className="relative z-20 container mx-auto px-4 sm:px-6 py-24 md:py-32">
-          <div className="max-w-3xl space-y-6">
-            <span className="inline-block text-emuski-teal text-sm font-bold tracking-wider uppercase">Manufacturing Excellence</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              You Design It, We Build It
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Your one-stop strategic companion for AI-driven manufacturing excellence. Where cost and quality meet profitability—delivering straight to your door.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/contact" className="bg-emuski-teal-dark text-white px-8 py-3 rounded-lg font-semibold hover:bg-emuski-teal-darker transition-colors text-center">
-                Get a Quote
-              </Link>
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                {/* Category Badge */}
+                <div className="inline-flex items-center">
+                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    Manufacturing Excellence
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                  You Design It, We Build It
+                </h1>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                  Your one-stop strategic companion for AI-driven manufacturing excellence. Where cost and quality meet profitability—delivering straight to your door.
+                </p>
+
+                {/* CTA Button */}
+                <div className="pt-2 sm:pt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded transition-all duration-300"
+                  >
+                    Get a Quote
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
