@@ -31,7 +31,7 @@ export const RapidPrototypingSection = () => {
                   <p className="text-sm text-white/90">3-axis to 5-axis precision for metal and plastic prototypes</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <h5 className="font-semibold mb-2">3D Printing (SLA/SLS)</h5>
+                  <h5 className="font-semibold mb-2">3D Printing (SLA, SLS, FDM, MIF - metal)</h5>
                   <p className="text-sm text-white/90">Complex geometries and rapid iterations</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">

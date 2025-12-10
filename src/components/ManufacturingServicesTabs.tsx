@@ -18,7 +18,7 @@ const servicesData = {
     tagline: "From concept to reality in record time",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg",
     features: [
-      { title: "Multi-Technology", desc: "CNC, 3D printing (SLA/SLS), vacuum casting" },
+      { title: "Multi-Technology", desc: "CNC, 3D printing (SLA, SLS, FDM, MIF - metal), vacuum casting" },
       { title: "Fast Turnaround", desc: "Rapid iterations to speed up development" },
       { title: "Design Validation", desc: "Functional testing before production" },
       { title: "Cost Optimization", desc: "Value engineering from the start" }
@@ -29,7 +29,7 @@ const servicesData = {
     tagline: "Tailored solutions for unique requirements",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.svg",
     features: [
-      { title: "Precision Machining", desc: "5-axis CNC for complex parts" },
+      { title: "Precision Machining", desc: "VMC for complex parts" },
       { title: "Material Expertise", desc: "Metals, plastics, and composites" },
       { title: "Tight Tolerances", desc: "±0.005mm precision capabilities" },
       { title: "Custom Fixtures", desc: "Specialized tooling and jigs" }

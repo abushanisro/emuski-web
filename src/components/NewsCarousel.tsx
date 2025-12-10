@@ -46,7 +46,7 @@ const successStories = [
   {
     category: "CNC Machining",
     title: "Complex Geometries. Tight Tolerances. Flawless Finishes.",
-    description: "Advanced 5-axis CNC machining delivering aerospace-grade precision for automotive OEMs. When failure isn't an option, choose manufacturing that delivers.",
+    description: "Advanced VMC machining delivering aerospace-grade precision for automotive OEMs. When failure isn't an option, choose manufacturing that delivers.",
     image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-20.jpeg",
     link: "/precision-engineering"
   },

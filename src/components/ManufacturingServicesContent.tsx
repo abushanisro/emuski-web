@@ -202,7 +202,7 @@ export const ManufacturingServicesContent = () => {
                     <div className="flex items-start gap-2 bg-gray-50 rounded-lg p-3">
                       <CheckCircle className="w-5 h-5 text-emuski-teal-darker flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-gray-900">5-Axis CNC Machining</p>
+                        <p className="text-sm font-medium text-gray-900">VMC Machining</p>
                         <p className="text-xs text-gray-600">Complex geometries with tight tolerances</p>
                       </div>
                     </div>

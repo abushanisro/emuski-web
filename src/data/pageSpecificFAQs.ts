@@ -343,7 +343,7 @@ export const getFAQMetaForPage = (pathname: string) => {
     },
     '/precision-engineering': {
       title: 'EMUSKI Engineering FAQ - Precision CNC & Machining Questions',
-      description: 'Advanced precision engineering capabilities including 5-axis CNC machining, ultra-tight tolerances, smart manufacturing, and cost engineering optimization.'
+      description: 'Advanced precision engineering capabilities including VMC machining, ultra-tight tolerances, smart manufacturing, and cost engineering optimization.'
     },
     '/contact': {
       title: 'EMUSKI Contact FAQ - How to Get Started with Manufacturing',

@@ -37,7 +37,7 @@ export const CustomManufacturingSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Tight Tolerances</h4>
-                    <p className="text-sm text-gray-600">±0.005mm precision capabilities with 5-axis CNC</p>
+                    <p className="text-sm text-gray-600">±0.005mm precision capabilities with VMC</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -65,7 +65,7 @@ export const CustomManufacturingSection = () => {
               <h4 className="text-lg font-bold text-gray-900 mb-6">Our Capabilities:</h4>
               <div className="space-y-4">
                 <div className="border-l-4 border-emuski-teal-dark pl-4">
-                  <h5 className="font-semibold text-gray-900 mb-1">5-Axis CNC Machining</h5>
+                  <h5 className="font-semibold text-gray-900 mb-1">VMC Machining</h5>
                   <p className="text-sm text-gray-600">Complex parts with multiple features in a single setup</p>
                 </div>
                 <div className="border-l-4 border-emuski-teal-dark pl-4">

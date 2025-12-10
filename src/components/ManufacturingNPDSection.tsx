@@ -6,14 +6,14 @@ import Image from "next/image";
 const solutions = [
   {
     title: "3D Printing",
-    subtitle: "SLA/SLS",
-    description: "Advanced additive manufacturing with SLA and SLS technologies for rapid prototyping and functional parts.",
+    subtitle: "SLA, SLS, FDM, MIF - metal",
+    description: "Advanced additive manufacturing with SLA, SLS, FDM, MIF - metal technologies for rapid prototyping and functional parts.",
     image: "/assets/engineeringservices/solution-we-offers/3d-printing-sla-sls-prototypes.svg"
   },
   {
-    title: "5-Axis CNC",
+    title: "VMC",
     subtitle: "VMC Machining",
-    description: "High-precision 5-axis CNC machining for complex geometries and tight tolerances in critical applications.",
+    description: "High-precision VMC machining for complex geometries and tight tolerances in critical applications.",
     image: "/assets/engineeringservices/solution-we-offers/cnc-vmc-5-axis-precision-machining-prototypes.svg"
   },
   {

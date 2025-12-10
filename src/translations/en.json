@@ -170,7 +170,7 @@
     "processes": [
       {
         "name": "CNC Machining",
-        "description": "3-axis, 4-axis, and 5-axis CNC machining centers"
+        "description": "3-axis, 4-axis, and VMC machining centers"
       },
       {
         "name": "Injection Molding",
