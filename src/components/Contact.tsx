@@ -61,21 +61,21 @@ const offices = [
   {
     city: "Headquarters & Business Office",
     address: "Rudhra Coworks - Coworking Space\n126, RNS Plaza, KIADB Industrial Area, 1\nnear Tech Mahindra Gate, next to Hyderabad Magic\nElectronic City Phase 2\nBengaluru, Karnataka 560100",
-    phone: "+91 83444 74556",
+    phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
     mapUrl: "https://maps.google.com/maps?q=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     city: "Manufacturing Facility",
     address: "Ground floor, 5/541-1, Santhapuram road,\n1st cross, Kamaraj nagar, Chinna\nelasagiri, Hosur, Krishnagiri district,\nTamil Nadu-635126",
-    phone: "+91 83444 74556",
+    phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
     mapUrl: "https://maps.google.com/maps?q=Ground+floor+5/541-1+Santhapuram+road+1st+cross+Kamaraj+nagar+Chinna+elasagiri+Hosur+Krishnagiri+district+Tamil+Nadu+635126&t=&z=15&ie=UTF8&iwloc=&output=embed"
   },
   {
     city: "Registered Office",
     address: "3/5-264, Srinivasan, Desavilakku,\nManthivalvu, Tharamangalam,\nThuttampatti, Salem,\nTamil Nadu - 636 306",
-    phone: "+91 83444 74556",
+    phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
     mapUrl: "https://maps.google.com/maps?q=3/5-264+Srinivasan+Desavilakku+Manthivalvu+Tharamangalam+Thuttampatti+Salem+Tamil+Nadu+636306&t=&z=15&ie=UTF8&iwloc=&output=embed"
   }
@@ -203,35 +203,20 @@ export const Contact = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
-        {/* Desktop Background */}
-        <div className="hidden md:block absolute inset-0">
-          <img
-            src="/assets/pages/manufacturing-services-hero-page.svg"
-            alt="Contact EMUSKI Manufacturing"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        </div>
-
-        {/* Mobile Background */}
-        <div className="md:hidden absolute inset-0">
-          <img
-            src="/assets/pages/manufacturing-services-hero-page.svg"
-            alt="Contact EMUSKI Manufacturing"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center py-8">
+        <div className="relative z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 {/* Category Badge */}
-                <div className="inline-flex items-center">
-                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                <div className="flex justify-center">
+                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
                     Get In Touch
                   </span>
                 </div>
@@ -242,7 +227,7 @@ export const Contact = () => {
                 </h1>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   Ready to transform your manufacturing? Let's discuss how we can help bring your vision to life.
                 </p>
               </div>
@@ -371,7 +356,7 @@ export const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting || submitStatus === "success" || !recaptchaToken}
-                    className="w-full bg-emuski-teal-dark hover:bg-emuski-teal/90 text-white font-semibold py-2.5 text-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="w-full bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-bold py-3 text-sm sm:text-base rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:shadow-none"
                   >
                     {isSubmitting ? (
                       "Submitting..."
@@ -514,9 +499,9 @@ export const Contact = () => {
                     ></iframe>
                   </div>
                   <div className="mt-4 text-center">
-                    <Button 
-                      variant="outline" 
-                      className="border-emuski-teal text-emuski-teal-darker hover:bg-emuski-teal hover:text-white"
+                    <Button
+                      variant="outline"
+                      className="border-2 border-emuski-teal-darker text-emuski-teal-darker hover:bg-emuski-teal-darker hover:text-white font-bold rounded-lg transition-all duration-300"
                       onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100`, '_blank')}
                     >
                       <MapPin className="h-4 w-4 mr-2" />

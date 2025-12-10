@@ -67,51 +67,36 @@ export const BlogPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
-        {/* Desktop Background */}
-        <div className="hidden md:block absolute inset-0">
-          <img
-            src="/assets/pages/manufacturing-services-hero-page.svg"
-            alt="EMUSKI Insights - Manufacturing Blog"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        </div>
-
-        {/* Mobile Background */}
-        <div className="md:hidden absolute inset-0">
-          <img
-            src="/assets/pages/manufacturing-services-hero-page.svg"
-            alt="EMUSKI Insights - Manufacturing Blog"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="space-y-4 sm:space-y-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 {/* Category Badge */}
-                <div className="inline-flex items-center">
-                  <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                <div className="flex justify-center">
+                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
                     Blog & Insights
                   </span>
                 </div>
 
                 {/* Title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                   EMUSKI Insights
                 </h1>
 
                 {/* Description */}
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   Expert perspectives on engineering precision, manufacturing innovation, and the future of intelligent production systems.
                 </p>
 
                 {/* Subtitle */}
-                <p className="text-sm sm:text-base text-gray-400">
+                <p className="text-xs sm:text-sm md:text-base text-gray-400">
                   Discover insights that drive manufacturing excellence
                 </p>
               </div>
@@ -121,9 +106,9 @@ export const BlogPage = () => {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-12 border-b border-border relative overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+      <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -191,23 +176,23 @@ export const BlogPage = () => {
             {/* Active Filters */}
             {(selectedCategory !== "All" || selectedTag || searchTerm) && (
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="text-sm text-gray-400">Active filters:</span>
+                <span className="text-sm text-white/70">Active filters:</span>
                 {selectedCategory !== "All" && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     {selectedCategory}
-                    <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
+                    <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
                   </span>
                 )}
                 {selectedTag && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     {selectedTag}
-                    <button onClick={() => setSelectedTag("")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
+                    <button onClick={() => setSelectedTag("")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
                   </span>
                 )}
                 {searchTerm && (
-                  <span className="inline-flex items-center px-3 py-1 bg-emuski-teal/10 text-emuski-teal-darker rounded-full text-xs font-medium">
+                  <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     "{searchTerm}"
-                    <button onClick={() => setSearchTerm("")} className="ml-2 hover:bg-emuski-teal/20 rounded-full">×</button>
+                    <button onClick={() => setSearchTerm("")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
                   </span>
                 )}
               </div>

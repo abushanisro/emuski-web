@@ -23,10 +23,10 @@ export default function ManufacturingServices() {
         {/* Content */}
         <div className="relative z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 {/* Category Badge */}
-                <div className="inline-flex items-center">
+                <div className="flex justify-center">
                   <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
                     Manufacturing Excellence
                   </span>
@@ -38,15 +38,15 @@ export default function ManufacturingServices() {
                 </h1>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   Your one-stop strategic companion for AI-driven manufacturing excellence. Where cost and quality meet profitability—delivering straight to your door.
                 </p>
 
                 {/* CTA Button */}
-                <div className="pt-2 sm:pt-4">
+                <div className="pt-2 sm:pt-4 flex justify-center">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Get a Quote
                   </Link>
@@ -98,7 +98,7 @@ export default function ManufacturingServices() {
               Get in touch with our manufacturing experts to discuss your requirements and receive a customized quote.
             </p>
             <div className="pt-4">
-              <Link href="/contact" className="inline-block bg-white text-emuski-teal-darker px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-white text-emuski-teal-darker font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
                 Request a Quote
               </Link>
             </div>

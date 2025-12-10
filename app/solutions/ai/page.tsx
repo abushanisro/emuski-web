@@ -35,10 +35,10 @@ export default function AISolutions() {
           {/* Content */}
           <div className="relative z-10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl">
+              <div className="max-w-4xl mx-auto text-center">
                 <div className="space-y-3 sm:space-y-4 md:space-y-6">
                   {/* Category Badge */}
-                  <div className="inline-flex items-center">
+                  <div className="flex justify-center">
                     <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
                       Next-GenAI
                     </span>
@@ -50,21 +50,21 @@ export default function AISolutions() {
                   </h1>
 
                   {/* Description */}
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     Revolutionary AI solutions transforming product development, cost engineering and supply chain optimization - where artificial intelligence meets manufacturing excellence.
                   </p>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center">
                     <a
                       href="#mithran-overview"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       Learn More
                     </a>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-transparent border-2 border-emuski-teal text-emuski-teal font-bold text-sm sm:text-base rounded hover:bg-emuski-teal hover:text-white transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-transparent border-2 border-emuski-teal-darker text-emuski-teal hover:bg-emuski-teal-darker hover:text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300"
                     >
                       Contact Sales
                     </Link>
@@ -91,7 +91,7 @@ export default function AISolutions() {
                 Discover how Mithran can revolutionize your product development, supply chain, and cost optimization.
               </p>
               <div className="pt-4">
-                <Link href="/contact" className="inline-block bg-white text-emuski-teal-darker px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-white text-emuski-teal-darker font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
                   Request a Demo
                 </Link>
               </div>
