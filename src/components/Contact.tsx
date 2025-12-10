@@ -211,12 +211,12 @@ export const Contact = () => {
 
         {/* Content */}
         <div className="relative z-10">
-          <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-10 md:pt-12">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-4 sm:pt-5 md:pt-6">
             <div className="max-w-4xl mx-auto text-center">
               <div className="space-y-4 sm:space-y-5 md:space-y-6">
                 {/* Category Badge */}
                 <div className="flex justify-center">
-                  <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                  <span className="text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
                     Get In Touch
                   </span>
                 </div>
