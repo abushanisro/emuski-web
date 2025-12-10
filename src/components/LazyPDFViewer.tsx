@@ -70,23 +70,6 @@ export const LazyPDFViewer = ({
         </div>
       ) : (
         <div className="relative">
-          {/* Mobile Download Button */}
-          {isMobile && (
-            <div className="mb-4 p-4 bg-emuski-teal-darker/10 border border-emuski-teal rounded-lg">
-              <p className="text-sm text-gray-700 mb-2">
-                For better viewing experience on mobile, download the PDF:
-              </p>
-              <a
-                href={downloadUrl || src}
-                download
-                className="inline-flex items-center gap-2 px-4 py-2 bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-semibold text-sm rounded-lg transition-all duration-300"
-              >
-                <Download className="w-4 h-4" />
-                Download PDF
-              </a>
-            </div>
-          )}
-
           {/* PDF Viewer Container */}
           <div
             className="relative overflow-auto rounded-2xl border border-gray-200 bg-gray-50"

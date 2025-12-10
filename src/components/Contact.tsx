@@ -211,9 +211,9 @@ export const Contact = () => {
 
         {/* Content */}
         <div className="relative z-10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-8 sm:pt-10 md:pt-12">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6">
                 {/* Category Badge */}
                 <div className="flex justify-center">
                   <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-emuski-teal/20 border border-emuski-teal rounded text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
@@ -222,12 +222,12 @@ export const Contact = () => {
                 </div>
 
                 {/* Title */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight px-2">
                   Contact Us
                 </h1>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
                   Ready to transform your manufacturing? Let's discuss how we can help bring your vision to life.
                 </p>
               </div>

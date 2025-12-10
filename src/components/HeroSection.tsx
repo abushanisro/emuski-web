@@ -208,7 +208,7 @@ export const HeroSection = () => {
 
               {/* Gradient Overlays - Top dark, bottom visible */}
               <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-transparent" />
-              
+
               {/* Content - Overlay on Top */}
               <div className="relative z-20 h-full flex flex-col pt-20 px-6 pb-32">
                 <div className="space-y-3 pb-8">
@@ -222,7 +222,7 @@ export const HeroSection = () => {
                     {slide.description}
                   </p>
                   <div className="pt-2">
-                    <a 
+                    <a
                       href={slide.link}
                       className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm rounded transition-all duration-300 transform active:scale-95 shadow-lg"
                     >
@@ -231,7 +231,7 @@ export const HeroSection = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 {/* Spacer to push content to top and leave space for image visibility */}
                 <div className="flex-1" />
               </div>
