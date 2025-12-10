@@ -48,12 +48,6 @@ const navigationConfig = {
   ],
   mobileMenuSections: [
     {
-      title: "Navigation",
-      items: [
-        { name: "Home", path: "/" }
-      ]
-    },
-    {
       title: "Manufacturing Excellence",
       items: [
         { name: "Overview", path: "/manufacturing-services" },
