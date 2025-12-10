@@ -330,11 +330,11 @@ export const getFAQMetaForPage = (pathname: string) => {
   
   const metaMap = {
     '/': {
-      title: 'EMUSKI FAQ - Frequently Asked Questions',
+      title: 'FAQ - Frequently Asked Questions',
       description: 'Learn about EMUSKI - leading manufacturing company in Bangalore with 15+ years expertise in precision engineering, AI-powered production and global manufacturing solutions.'
     },
     '/manufacturing-services': {
-      title: 'EMUSKI Manufacturing FAQ - OEM Process & Services Questions',
+      title: 'Manufacturing FAQ - OEM Process & Services Questions',
       description: 'Discover EMUSKI\'s OEM manufacturing process, custom manufacturing capabilities, rapid prototyping services, and production scaling solutions in Bangalore.'
     },
     '/industries': {
@@ -342,11 +342,11 @@ export const getFAQMetaForPage = (pathname: string) => {
       description: 'Explore EMUSKI\'s specialized manufacturing solutions for healthcare, aerospace, defense, automotive, and electronics industries with regulatory compliance.'
     },
     '/precision-engineering': {
-      title: 'EMUSKI Engineering FAQ - Precision CNC & Machining Questions',
+      title: 'Engineering FAQ - Precision CNC & Machining Questions',
       description: 'Advanced precision engineering capabilities including VMC machining, ultra-tight tolerances, smart manufacturing, and cost engineering optimization.'
     },
     '/contact': {
-      title: 'EMUSKI Contact FAQ - How to Get Started with Manufacturing',
+      title: 'Contact FAQ - How to Get Started with Manufacturing',
       description: 'Contact EMUSKI manufacturing experts for project consultation, quotes, international support, and facility visits. 24/7 global client support available.'
     }
   };

@@ -378,7 +378,7 @@ export const ServicesShowcase = () => {
                                   src={project.image}
                                   alt={`${project.title} - ${project.category} Service`}
                                   fill
-                                  className="transform group-hover:scale-110 transition-transform duration-700 object-cover"
+                                  className="transform group-hover:scale-110 transition-transform duration-700 object-cover object-center"
                                   loading="lazy"
                                   quality={80}
                                   sizes="340px"

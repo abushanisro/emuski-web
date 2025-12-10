@@ -169,7 +169,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
   const [currentFAQs, setCurrentFAQs] = useState<FAQItem[]>(FAQ_DATA);
   const [pageMetaData, setPageMetaData] = useState({
-    title: "EMUSKI FAQ - Manufacturing & Engineering Questions",
+    title: "FAQ - Manufacturing & Engineering Questions",
     description: "Get answers to common questions about EMUSKI's Manufacturing Excellences, quality processes, and how we can help your business succeed."
   });
 
@@ -196,7 +196,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   }, [pathname, usePageSpecific]);
 
   // Use provided title/description or page-specific ones
-  const displayTitle = title || (usePageSpecific ? pageMetaData.title : "EMUSKI FAQ - Frequently Asked Questions");
+  const displayTitle = title || (usePageSpecific ? pageMetaData.title : "FAQ - Frequently Asked Questions");
   const displayDescription = description || (usePageSpecific ? pageMetaData.description : "Get answers to common questions about EMUSKI's Manufacturing Excellences, quality processes, and how we can help your business succeed.");
 
   let filteredFAQs = currentFAQs.filter(faq => {

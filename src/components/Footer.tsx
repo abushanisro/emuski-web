@@ -177,15 +177,6 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        
-        {/* SEO Keywords Footer */}
-        <div className="border-t border-border pt-6 mt-6">
-          <div className="text-center px-2">
-            <p className="text-muted-foreground text-xs leading-relaxed max-w-5xl mx-auto">
-              <span className="font-medium">Manufacturing & Engineering Excellence:</span> CNC Machining Bangalore | Precision Engineering India | On-Demand Manufacturing | Custom Metal Fabrication | Rapid Prototyping Services | Mass Production Manufacturing | Product Cost Estimation | VAVE & Benchmarking Analysis | Strategic Sourcing Support | AI-Powered Supply Chain | Mithran AI Platform | ISO 9001 Certified | Six Sigma Quality | Industry 4.0 Solutions | Smart Manufacturing | Design for Manufacturability | Lean Manufacturing | Contract Manufacturing | Automotive Components | Electronics Assembly | Medical Device Manufacturing | Aerospace Parts Production
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   );

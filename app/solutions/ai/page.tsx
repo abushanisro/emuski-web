@@ -8,6 +8,8 @@ import Link from "next/link"
 
 export default function AISolutions() {
   useEffect(() => {
+    document.title = "Next-GenAI | EMUSKI"
+
     const hash = window.location.hash
     if (hash) {
       setTimeout(() => {

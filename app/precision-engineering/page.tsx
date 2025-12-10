@@ -12,6 +12,8 @@ import { EngineeringServicesContent } from "@/components/EngineeringServicesCont
 
 export default function PrecisionEngineering() {
   useEffect(() => {
+    document.title = "Engineering Innovation | EMUSKI"
+
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '')
       if (hash) {

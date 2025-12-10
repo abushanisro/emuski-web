@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu, Home, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -171,12 +171,11 @@ export const Navbar = () => {
 </Link>
 
 <div className="hidden md:flex items-center space-x-6" ref={servicesRef}>
-<Link 
+<Link
 href="/"
-className={`${getLinkClasses("/")} flex items-center space-x-1`}
+className={getLinkClasses("/")}
 >
-<Home className="h-4 w-4" />
-<span>Home</span>
+Home
 </Link>
 
 {/* Individual Service Dropdowns */}
