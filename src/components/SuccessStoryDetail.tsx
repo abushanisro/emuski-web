@@ -317,7 +317,7 @@ export const SuccessStoryDetail = ({ story, relatedStories = [] }: SuccessStoryD
                 </Button>
               </Link>
               <Link href="/blog">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-emuski-teal-darker px-8 py-3">
+                <Button variant="outline" className="border-white/80 bg-white/10 text-white hover:bg-white hover:text-emuski-teal-darker px-8 py-3">
                   View All Stories
                 </Button>
               </Link>

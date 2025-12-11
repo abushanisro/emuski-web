@@ -33,6 +33,7 @@ export const useBlogPosts = (filters?: BlogFilters) => {
     };
 
     fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(filters)]);
 
   return { posts, loading, error, meta };
