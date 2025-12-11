@@ -1,4 +1,4 @@
-import { allBlogPosts, relatedPosts } from '../data/blogData';
+import { allBlogPosts } from '../data/blogData';
 import {
   BlogPost,
   BlogPostSummary,
