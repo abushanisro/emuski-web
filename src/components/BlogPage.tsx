@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Search, Filter, Calendar, User, Clock, ChevronRight, Tag } from "lucide-react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { useBlogPosts, useBlogCategories, useBlogTags } from "../hooks/useBlogApiConfig";
+import { useBloggerPosts } from "../hooks/useBloggerApi";
 import { BlogPostSummary } from "../api/types";
 import { EmailSubscription } from "./EmailSubscription";
 import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
@@ -14,24 +14,34 @@ import { SuccessStoriesSection } from "./SuccessStoriesSection";
 export const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedTag, setSelectedTag] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
 
-  const { categories } = useBlogCategories();
-  const { tags: allTags } = useBlogTags();
-  
-  const filters = useMemo(() => ({
-    search: searchTerm || undefined,
-    category: selectedCategory !== "All" ? selectedCategory : undefined,
-    tag: selectedTag || undefined,
-    page: currentPage,
-    limit: 10
-  }), [searchTerm, selectedCategory, selectedTag, currentPage]);
+  // Fetch posts from Blogger API
+  const { posts: allPosts, loading, error } = useBloggerPosts(20);
 
-  const { posts: allPosts, loading, error, meta } = useBlogPosts(filters);
-  
-  const featuredPosts = allPosts.filter(post => post.featured);
-  const regularPosts = allPosts.filter(post => !post.featured);
+  // Extract categories from posts
+  const categories = useMemo(() => {
+    const cats = new Set(['All']);
+    allPosts.forEach(post => {
+      if (post.category) cats.add(post.category);
+    });
+    return Array.from(cats);
+  }, [allPosts]);
+
+  // Filter posts based on search and category
+  const filteredPosts = useMemo(() => {
+    return allPosts.filter(post => {
+      const matchesSearch = !searchTerm ||
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+
+      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+  }, [allPosts, searchTerm, selectedCategory]);
+
+  const featuredPosts = filteredPosts.slice(0, 3); // First 3 as featured
+  const regularPosts = filteredPosts.slice(3); // Rest as regular
 
   // Set SEO meta tags for blog page
   useEffect(() => {
@@ -56,13 +66,66 @@ export const BlogPage = () => {
     metaKeywords.setAttribute('content', 'manufacturing blog, engineering precision, cost optimization, VAVE methodology, rapid prototyping, strategic sourcing, AI manufacturing, industrial engineering');
   }, []);
 
-  // Handle loading and error states
+  // Handle loading state
   if (loading) {
     return <LoadingPage title="Loading Articles" description="Please wait while we fetch the latest insights..." />;
   }
 
-  if (error) {
-    return <ServerErrorPage description={error} />;
+  // If error or no posts from API, show only success stories section
+  if (error || allPosts.length === 0) {
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-4 sm:pt-5 md:pt-6">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                  <div className="flex justify-center">
+                    <span className="text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                      Blog & Insights
+                    </span>
+                  </div>
+
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight px-2">
+                    EMUSKI Insights
+                  </h1>
+
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
+                    Expert perspectives on engineering precision, manufacturing innovation, and the future of intelligent production systems.
+                  </p>
+
+                  {error && (
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 max-w-2xl mx-auto">
+                      <p className="text-yellow-200 text-sm">
+                        We're currently updating our blog content. Meanwhile, explore our success stories below.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories Section */}
+        <SuccessStoriesSection />
+
+        {/* Newsletter Section */}
+        <section className="py-12 md:py-16 lg:py-20 bg-emuski-teal-darker text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <EmailSubscription variant="default" />
+          </div>
+        </section>
+      </div>
+    );
   }
 
   return (
@@ -113,9 +176,9 @@ export const BlogPage = () => {
         </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
               {/* Search Bar */}
-              <div className="md:col-span-2 lg:col-span-2">
+              <div className="md:col-span-2">
                 <label htmlFor="blog-search" className="block text-sm font-medium text-white mb-2">
                   Search Articles
                 </label>
@@ -152,42 +215,16 @@ export const BlogPage = () => {
                   ))}
                 </select>
               </div>
-
-              {/* Tag Filter */}
-              <div>
-                <label htmlFor="tag-filter" className="block text-sm font-medium text-white mb-2">
-                  Tags
-                </label>
-                <select
-                  id="tag-filter"
-                  name="tag"
-                  value={selectedTag}
-                  onChange={(e) => setSelectedTag(e.target.value)}
-                  autoComplete="off"
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent shadow-sm"
-                >
-                  <option value="">All Tags</option>
-                  {allTags.map(tag => (
-                    <option key={tag} value={tag}>{tag}</option>
-                  ))}
-                </select>
-              </div>
             </div>
 
             {/* Active Filters */}
-            {(selectedCategory !== "All" || selectedTag || searchTerm) && (
+            {(selectedCategory !== "All" || searchTerm) && (
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="text-sm text-white/70">Active filters:</span>
                 {selectedCategory !== "All" && (
                   <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     {selectedCategory}
                     <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
-                  </span>
-                )}
-                {selectedTag && (
-                  <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
-                    {selectedTag}
-                    <button onClick={() => setSelectedTag("")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
                   </span>
                 )}
                 {searchTerm && (
@@ -343,7 +380,6 @@ export const BlogPage = () => {
                 onClick={() => {
                   setSearchTerm("");
                   setSelectedCategory("All");
-                  setSelectedTag("");
                 }}
                 className="bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white px-8 py-3"
               >
