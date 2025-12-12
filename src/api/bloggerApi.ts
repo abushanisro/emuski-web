@@ -1,5 +1,9 @@
-const BLOGGER_API_KEY = 'AIzaSyAMGNkribakVu5-d7yT8B3WDA9x7PsgunA';
+const BLOGGER_API_KEY = process.env.NEXT_PUBLIC_BLOGGER_API_KEY || '';
 const BLOGGER_API_BASE = 'https://www.googleapis.com/blogger/v3';
+
+if (!BLOGGER_API_KEY) {
+  console.warn('Warning: NEXT_PUBLIC_BLOGGER_API_KEY is not set. Blogger API calls may fail.');
+}
 
 // Cache blog IDs by URL to support multiple blogs
 const BLOG_ID_CACHE = new Map<string, string>();
@@ -163,9 +167,15 @@ export function convertBloggerPostToLocalFormat(post: BloggerPost) {
   textContent = decodeHtmlEntities(textContent);
 
   // Find content after "Who the Client Was" - this is where the actual description starts
-  const whoClientMatch = textContent.match(/Who the Client Was\s+(.+?)(?=\s+What the Challenge|$)/is);
-  if (whoClientMatch && whoClientMatch[1]) {
-    textContent = whoClientMatch[1].trim();
+  const whoClientIndex = textContent.indexOf('Who the Client Was');
+  if (whoClientIndex !== -1) {
+    const afterWhoClient = textContent.substring(whoClientIndex + 'Who the Client Was'.length).trim();
+    const challengeIndex = afterWhoClient.indexOf('What the Challenge');
+    if (challengeIndex !== -1) {
+      textContent = afterWhoClient.substring(0, challengeIndex).trim();
+    } else {
+      textContent = afterWhoClient;
+    }
   } else {
     // Fallback: Remove common structural prefixes
     textContent = textContent

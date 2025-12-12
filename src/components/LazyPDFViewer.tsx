@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { FileText, Download } from 'lucide-react'
+import { FileText, Download, ExternalLink } from 'lucide-react'
 
 interface LazyPDFViewerProps {
   src: string
@@ -23,18 +23,22 @@ export const LazyPDFViewer = ({
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasIntersected, setHasIntersected] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isIOS, setIsIOS] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Detect mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+    // Detect mobile device and iOS
+    const checkDevice = () => {
+      const mobile = window.innerWidth < 768
+      const ios = /iPad|iPhone|iPod/.test(navigator.userAgent)
+      setIsMobile(mobile)
+      setIsIOS(ios)
     }
 
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
+    checkDevice()
+    window.addEventListener('resize', checkDevice)
 
-    return () => window.removeEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkDevice)
   }, [])
 
   useEffect(() => {
@@ -70,32 +74,55 @@ export const LazyPDFViewer = ({
         </div>
       ) : (
         <div className="relative">
-          {/* PDF Viewer Container */}
-          <div
-            className="relative overflow-auto rounded-2xl border border-gray-200 bg-gray-50"
-            style={{
-              height: mobileHeight,
-              WebkitOverflowScrolling: 'touch',
-              touchAction: 'auto'
-            }}
-          >
-            <iframe
-              src={`${src}#view=FitH&scrollbar=1&toolbar=1&navpanes=1&zoom=page-fit`}
-              className="w-full h-full border-0"
-              style={{
-                minHeight: mobileHeight,
-                touchAction: 'auto',
-                overflow: 'auto',
-                WebkitOverflowScrolling: 'touch'
-              }}
-              title={title}
-              aria-label={ariaLabel}
-              loading="lazy"
-              scrolling="yes"
-              onLoad={() => setIsLoaded(true)}
-              allow="fullscreen"
-            />
-          </div>
+          {/* Mobile/iOS: Show download/open button instead of iframe */}
+          {isMobile || isIOS ? (
+            <div
+              className="flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border-2 border-gray-200 p-8"
+              style={{ minHeight: mobileHeight }}
+            >
+              <FileText className="w-20 h-20 text-emuski-teal-darker mb-6" />
+              <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{title}</h3>
+              <p className="text-gray-600 text-center mb-6 max-w-sm">
+                View this PDF in your device's native PDF viewer for the best experience
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
+                <a
+                  href={src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  Open PDF
+                </a>
+                <a
+                  href={src}
+                  download
+                  className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-emuski-teal-darker font-semibold py-3 px-6 rounded-lg border-2 border-emuski-teal-dark transition-colors"
+                >
+                  <Download className="w-5 h-5" />
+                  Download
+                </a>
+              </div>
+            </div>
+          ) : (
+            /* Desktop: Show iframe PDF viewer */
+            <div
+              className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50"
+              style={{ height: minHeight }}
+            >
+              <iframe
+                src={`${src}#view=FitH&scrollbar=1&toolbar=1&navpanes=1`}
+                className="w-full h-full border-0"
+                style={{ minHeight }}
+                title={title}
+                aria-label={ariaLabel}
+                loading="lazy"
+                onLoad={() => setIsLoaded(true)}
+                allow="fullscreen"
+              />
+            </div>
+          )}
         </div>
       )}
     </div>
