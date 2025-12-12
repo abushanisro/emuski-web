@@ -1,8 +1,8 @@
 const BLOGGER_API_KEY = 'AIzaSyAMGNkribakVu5-d7yT8B3WDA9x7PsgunA';
 const BLOGGER_API_BASE = 'https://www.googleapis.com/blogger/v3';
 
-// Blog ID will be extracted from your blog URL
-let BLOG_ID: string | null = null;
+// Cache blog IDs by URL to support multiple blogs
+const BLOG_ID_CACHE = new Map<string, string>();
 
 export interface BloggerPost {
   id: string;
@@ -30,7 +30,10 @@ export interface BloggerResponse {
 
 // Get blog ID from blog URL
 export async function getBlogId(blogUrl: string): Promise<string> {
-  if (BLOG_ID) return BLOG_ID;
+  // Check if we already have this blog ID cached
+  if (BLOG_ID_CACHE.has(blogUrl)) {
+    return BLOG_ID_CACHE.get(blogUrl)!;
+  }
 
   try {
     const response = await fetch(
@@ -42,8 +45,9 @@ export async function getBlogId(blogUrl: string): Promise<string> {
     }
 
     const data = await response.json();
-    BLOG_ID = data.id;
-    return BLOG_ID;
+    // Cache the blog ID for this specific URL
+    BLOG_ID_CACHE.set(blogUrl, data.id);
+    return data.id;
   } catch (error) {
     console.error('Error fetching blog ID:', error);
     throw error;
@@ -146,7 +150,7 @@ export function convertBloggerPostToLocalFormat(post: BloggerPost) {
   const imgMatch = post.content.match(/<img[^>]+src="([^">]+)"/);
   const image = imgMatch ? imgMatch[1] : 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80';
 
-  // Extract full description from content
+  // Extract text description from content
   // Remove HTML tags, decode entities, and clean whitespace
   let textContent = post.content
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '') // Remove style tags
@@ -158,8 +162,28 @@ export function convertBloggerPostToLocalFormat(post: BloggerPost) {
   // Decode HTML entities
   textContent = decodeHtmlEntities(textContent);
 
-  // Use full text as excerpt (no truncation)
-  const excerpt = textContent;
+  // Find content after "Who the Client Was" - this is where the actual description starts
+  const whoClientMatch = textContent.match(/Who the Client Was\s+(.+?)(?=\s+What the Challenge|$)/is);
+  if (whoClientMatch && whoClientMatch[1]) {
+    textContent = whoClientMatch[1].trim();
+  } else {
+    // Fallback: Remove common structural prefixes
+    textContent = textContent
+      .replace(/^Title:\s*[^.!?]+[.!?]\s*/i, '') // Remove title line completely
+      .replace(/^Breaking the Barrier:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Zero-Zero Tolerance:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Sourcing the Impossible:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Accelerating Innovation:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/Who the Client Was\s*/gi, '')
+      .replace(/What the Challenge Was\s*/gi, '')
+      .replace(/What EMUSKI Did\s*/gi, '')
+      .replace(/The Result\s*/gi, '')
+      .trim();
+  }
+
+  // Extract first sentence for excerpt
+  const sentences = textContent.match(/[^.!?]+[.!?]+/g) || [];
+  const excerpt = sentences.length > 0 ? sentences[0].trim() : textContent.substring(0, 200).trim();
 
   // Generate slug from title
   const slug = post.title
@@ -189,6 +213,7 @@ export function convertBloggerPostToLocalFormat(post: BloggerPost) {
     featured: false,
     seoTitle: post.title,
     metaDescription: excerpt,
-    keywords: post.labels || []
+    keywords: post.labels || [],
+    bloggerUrl: post.url // Original Blogger post URL
   };
 }

@@ -1,0 +1,547 @@
+/* Blog Content - Enhanced Responsive Styles */
+
+.article-content {
+  /* Ensure proper text wrapping */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove extra spacing at article start */
+.article-content > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.article-content > div:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure sidebar sticky positioning works perfectly - Semrush style */
+@media (min-width: 1024px) {
+  /* Right Sidebar - Sticky Table of Contents - STAYS PINNED */
+  aside {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 6rem !important; /* 96px - Stick below navbar */
+    align-self: flex-start !important; /* Critical for sticky to work in grid */
+    height: fit-content !important;
+    max-height: calc(100vh - 7rem) !important;
+    will-change: transform;
+    z-index: 10;
+    overflow: visible !important; /* Prevent parent from scrolling */
+  }
+
+  /* TOC Container - stays pinned with sidebar */
+  aside > div {
+    position: relative;
+    max-height: calc(100vh - 8rem);
+    overflow: visible; /* Container itself doesn't scroll */
+  }
+
+  /* TOC Navigation - only this scrolls if content is too long */
+  aside nav {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: calc(100vh - 16rem) !important; /* Allow nav to scroll if needed */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(20, 184, 166, 0.3) transparent;
+  }
+
+  /* Webkit scrollbar styling */
+  aside nav::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  aside nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  aside nav::-webkit-scrollbar-thumb {
+    background: rgba(20, 184, 166, 0.3);
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  aside nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(20, 184, 166, 0.5);
+  }
+}
+
+/* Main content area - ensure proper scrolling */
+@media (min-width: 1024px) {
+  .article-main-content {
+    min-height: 150vh; /* Ensure enough height to scroll and trigger sticky */
+  }
+}
+
+/* Ensure grid container doesn't interfere with sticky */
+@media (min-width: 1024px) {
+  .lg\:grid {
+    display: grid;
+    position: relative;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure headings have proper scroll margin for sticky header - Semrush style */
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  scroll-margin-top: 105px; /* 105px for desktop navigation */
+}
+
+@media (max-width: 768px) {
+  .article-content h2,
+  .article-content h3,
+  .article-content h4 {
+    scroll-margin-top: 60px; /* 60px for mobile */
+  }
+}
+
+/* Smooth scroll behavior */
+nav {
+  scroll-behavior: smooth;
+}
+
+/* Override any inline styles from Google Docs/Blogger */
+.article-content * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure paragraphs have proper spacing and no overflow - Enhanced */
+.article-content p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: #171A22 !important;
+  font-size: 16px !important;
+}
+
+/* First paragraph - Make it stand out (Lead Paragraph) */
+.article-content > p:first-of-type,
+.article-content > div:first-child > p:first-of-type {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: #171A22 !important;
+  font-weight: 400 !important;
+  margin-bottom: 2rem !important;
+  margin-top: 1.5rem !important;
+}
+
+/* First paragraph drop cap effect */
+.article-content > p:first-of-type::first-letter,
+.article-content > div:first-child > p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  float: left;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  color: #0d9488;
+}
+
+/* First paragraph after heading */
+.article-content h1 + p,
+.article-content h2 + p,
+.article-content h3 + p,
+.article-content h4 + p {
+  margin-top: 0;
+}
+
+/* Enhanced heading spacing and styling - Bold & Professional */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  font-weight: 800 !important;
+  color: #171A22 !important;
+  line-height: 1.3;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  letter-spacing: -0.02em;
+}
+
+/* FAQ Questions - Extra Bold (Applied via JavaScript) */
+.article-content .faq-question {
+  font-weight: 900 !important;
+  color: #171A22 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Ensure all text inside FAQ questions is bold */
+.article-content .faq-question *,
+.article-content .faq-question strong,
+.article-content .faq-question b,
+.article-content .faq-question span,
+.article-content .faq-question em,
+.article-content .faq-question i {
+  font-weight: 900 !important;
+  font-style: normal !important;
+}
+
+/* FAQ Section Heading */
+.article-content h2.faq-question {
+  font-size: 34px !important;
+  font-weight: 900 !important;
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+/* FAQ H3 questions */
+.article-content h3.faq-question {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: #171A22 !important;
+}
+
+/* FAQ H4 questions */
+.article-content h4.faq-question {
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  color: #171A22 !important;
+}
+
+/* FAQ H5 questions */
+.article-content h5.faq-question {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  color: #171A22 !important;
+}
+
+.article-content h1 {
+  font-size: 42px !important;
+  font-weight: 900 !important;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content h2 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.article-content h3 {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-content h4 {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h5 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content h6 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* List styling improvements - Enhanced */
+.article-content ul,
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  max-width: 100%;
+  list-style-position: outside;
+}
+
+.article-content ul {
+  list-style-type: disc !important;
+}
+
+.article-content ol {
+  list-style-type: decimal !important;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: #171A22;
+  font-size: 16px;
+}
+
+/* Nested lists */
+.article-content ul ul,
+.article-content ol ol,
+.article-content ul ol,
+.article-content ol ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Remove list item nesting issues */
+.article-content li p {
+  margin: 0;
+  display: inline;
+}
+
+/* Links */
+.article-content a {
+  color: #0d9488;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.article-content a:hover {
+  color: #0f766e;
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+.article-content blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #14b8a6;
+  background: linear-gradient(to right, rgba(20, 184, 166, 0.05), transparent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Code blocks */
+.article-content code {
+  background-color: rgba(20, 184, 166, 0.1);
+  color: #115e59;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Consolas', monospace;
+  word-break: break-all;
+}
+
+.article-content pre {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.article-content pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+/* Tables - if present */
+.article-content table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.article-content table thead {
+  background-color: #f3f4f6;
+}
+
+.article-content table th,
+.article-content table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+/* Images - Enhanced Display with Error Handling */
+.article-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  display: block;
+  object-fit: contain;
+  background: #f3f4f6;
+}
+
+/* Ensure images from Blogger load properly */
+.article-content img[src*="blogger.googleusercontent.com"],
+.article-content img[src*="blogspot.com"],
+.article-content img[src*="bp.blogspot.com"],
+.article-content img[src*="ggpht.com"] {
+  max-width: 100% !important;
+  height: auto !important;
+  width: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Image lazy loading with placeholder */
+.article-content img[loading="lazy"] {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  min-height: 200px;
+}
+
+/* Remove any image wrapper constraints */
+.article-content a img,
+.article-content div img,
+.article-content span img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Strong/Bold text - Enhanced */
+.article-content strong,
+.article-content b {
+  font-weight: 900 !important;
+  color: #171A22 !important;
+}
+
+/* Bold text inside headings - Extra emphasis */
+.article-content h1 strong,
+.article-content h2 strong,
+.article-content h3 strong,
+.article-content h4 strong,
+.article-content h5 strong,
+.article-content h6 strong,
+.article-content h1 b,
+.article-content h2 b,
+.article-content h3 b,
+.article-content h4 b,
+.article-content h5 b,
+.article-content h6 b {
+  font-weight: 900 !important;
+  color: #171A22 !important;
+}
+
+/* Emphasis/Italic text */
+.article-content em,
+.article-content i {
+  font-style: italic !important;
+}
+
+/* Remove any absolute positioning */
+.article-content * {
+  position: static !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .article-content {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .article-content h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .article-content h4 {
+    font-size: 1.25rem;
+  }
+
+  .article-content p,
+  .article-content li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .article-content pre {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    margin: 1.5rem -1rem;
+    border-radius: 0;
+  }
+
+  .article-content blockquote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-content {
+    padding: 0;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.25rem;
+  }
+}
+
+/* Fix any Google Docs remnants */
+.article-content span[style],
+.article-content div[style],
+.article-content p[style] {
+  all: revert;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  background: none !important;
+}
+
+/* Remove separator divs */
+.article-content .separator {
+  display: none;
+}
+
+/* Ensure proper container behavior */
+.article-content > * {
+  max-width: 100%;
+}

@@ -251,7 +251,11 @@ export const BlogPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
                 {featuredPosts.map((post) => (
-                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                  <Link
+                    key={post.id}
+                    href={`/blog/${post.slug}`}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
                     <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
                     <div className="relative h-48 overflow-hidden">
                       <img
@@ -318,7 +322,11 @@ export const BlogPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
                 {regularPosts.map((post) => (
-                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                  <Link
+                    key={post.id}
+                    href={`/blog/${post.slug}`}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
                     <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
                     <div className="relative h-40 overflow-hidden">
                       <img

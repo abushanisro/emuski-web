@@ -266,7 +266,11 @@ export const SuccessStoryDetail = ({ story, relatedStories = [] }: SuccessStoryD
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedStories.map((relatedStory) => (
-                  <Link key={relatedStory.id} href={`/blog/${relatedStory.slug}`}>
+                  <Link
+                    key={relatedStory.id}
+                    href={`/blog/${relatedStory.slug}`}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
                     <Card className="group overflow-hidden bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full shadow-sm hover:shadow-md cursor-pointer">
                       <div className="relative h-48 overflow-hidden">
                         <img

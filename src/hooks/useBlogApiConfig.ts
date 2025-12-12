@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BlogPost, BlogPostSummary, BlogFilters, RelatedPost } from '../api/types';
-import { activeBlogApi, USE_STRAPI } from '../api/blogApiConfig';
+import { activeBlogApi } from '../api/blogApiConfig';
 
 // Universal hooks that work with both static data and Strapi
 export const useBlogPosts = (filters?: BlogFilters) => {
@@ -25,7 +25,7 @@ export const useBlogPosts = (filters?: BlogFilters) => {
         setPosts(response.data);
         setMeta(response.meta);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch blog posts');
+        setError(err.error?.message || err.message || 'Failed to fetch blog posts');
         setPosts([]);
       } finally {
         setLoading(false);
@@ -52,7 +52,7 @@ export const useBlogPost = (slug: string) => {
         const response = await activeBlogApi.getPostBySlug(slug);
         setPost(response.data);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch blog post');
+        setError(err.error?.message || err.message || 'Failed to fetch blog post');
         setPost(null);
       } finally {
         setLoading(false);
@@ -80,7 +80,7 @@ export const useFeaturedPosts = (limit?: number) => {
         const response = await activeBlogApi.getFeaturedPosts(limit);
         setPosts(response.data);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch featured posts');
+        setError(err.error?.message || err.message || 'Failed to fetch featured posts');
         setPosts([]);
       } finally {
         setLoading(false);
@@ -106,7 +106,7 @@ export const useRelatedPosts = (postId: number, limit?: number) => {
         const response = await activeBlogApi.getRelatedPosts(postId, limit);
         setRelatedPosts(response.data);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch related posts');
+        setError(err.error?.message || err.message || 'Failed to fetch related posts');
         setRelatedPosts([]);
       } finally {
         setLoading(false);
@@ -134,7 +134,7 @@ export const useBlogCategories = () => {
         const response = await activeBlogApi.getCategories();
         setCategories(response.data);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch categories');
+        setError(err.error?.message || err.message || 'Failed to fetch categories');
         setCategories([]);
       } finally {
         setLoading(false);
@@ -160,7 +160,7 @@ export const useBlogTags = () => {
         const response = await activeBlogApi.getTags();
         setTags(response.data);
       } catch (err: any) {
-        setError(USE_STRAPI ? err.message : err.error?.message || 'Failed to fetch tags');
+        setError(err.error?.message || err.message || 'Failed to fetch tags');
         setTags([]);
       } finally {
         setLoading(false);

@@ -39,6 +39,35 @@ const growthStories = [
   }
 ];
 
+const achievementsData = [
+    {
+        value: "15+",
+        number: 15,
+        label: "Industries",
+        category: "Our Reach"
+    },
+    {
+        value: "75+",
+        number: 75,
+        label: "Clients",
+        category: "Strategic Partnerships"
+    },
+    {
+        value: "150+",
+        number: 150,
+        label: "Individual Projects",
+        sublabel: "In Engineering Innovation",
+        category: "Our Expertise"
+    },
+    {
+        value: "4000+",
+        number: 4000,
+        label: "Unique Components",
+        sublabel: "In Manufacturing Excellence",
+        category: "Our Production"
+    }
+];
+
 const AboutSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerView, setItemsPerView] = useState(3);
@@ -49,35 +78,6 @@ const AboutSection = () => {
     const [showLeftGradient, setShowLeftGradient] = useState(false);
     const [showRightGradient, setShowRightGradient] = useState(true);
     const carouselRef = useRef<HTMLDivElement>(null);
-
-    const achievementsData = [
-        {
-            value: "15+",
-            number: 15,
-            label: "Industries",
-            category: "Our Reach"
-        },
-        {
-            value: "75+",
-            number: 75,
-            label: "Clients", 
-            category: "Strategic Partnerships"
-        },
-        {
-            value: "150+",
-            number: 150,
-            label: "Individual Projects",
-            sublabel: "In Engineering Innovation",
-            category: "Our Expertise"
-        },
-        {
-            value: "4000+",
-            number: 4000,
-            label: "Unique Components",
-            sublabel: "In Manufacturing Excellence",
-            category: "Our Production"
-        }
-    ];
 
     // Handle responsive itemsPerView and maxIndex calculation
     useEffect(() => {
@@ -134,13 +134,14 @@ const AboutSection = () => {
             { threshold: 0.3 }
         );
 
-        if (achievementsRef.current) {
-            observer.observe(achievementsRef.current);
+        const currentRef = achievementsRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (achievementsRef.current) {
-                observer.unobserve(achievementsRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [hasAnimated]);

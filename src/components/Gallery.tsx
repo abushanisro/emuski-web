@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Search, Filter, Grid, List, Eye, Download, Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
@@ -211,6 +211,27 @@ export const Gallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
+  const openLightbox = (item: typeof galleryItems[0], index: number) => {
+    setSelectedImage(item);
+    setCurrentImageIndex(index);
+    setCurrentGalleryIndex(0); // Start with first image in gallery
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    setCurrentImageIndex(0);
+    setCurrentGalleryIndex(0);
+  };
+
+  const navigateGallery = useCallback((direction: number) => {
+    if (!selectedImage || !selectedImage.images) return;
+
+    const newIndex = currentGalleryIndex + direction;
+    if (newIndex >= 0 && newIndex < selectedImage.images.length) {
+      setCurrentGalleryIndex(newIndex);
+    }
+  }, [selectedImage, currentGalleryIndex]);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (selectedImage) {
@@ -226,39 +247,18 @@ export const Gallery = () => {
 
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage, currentImageIndex, currentGalleryIndex]);
+  }, [selectedImage, currentImageIndex, currentGalleryIndex, navigateGallery]);
 
   // Set SEO meta tags for gallery page
   useEffect(() => {
     document.title = "EMUSKI Component Gallery - Manufacturing Excellence Showcase";
-    
+
     // Set meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Explore EMUSKI\'s comprehensive gallery of precision manufacturing components, engineering solutions, and production excellence. Showcasing automotive, aerospace, and industrial manufacturing capabilities.');
     }
   }, []);
-
-  const openLightbox = (item: typeof galleryItems[0], index: number) => {
-    setSelectedImage(item);
-    setCurrentImageIndex(index);
-    setCurrentGalleryIndex(0); // Start with first image in gallery
-  };
-
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    setCurrentImageIndex(0);
-    setCurrentGalleryIndex(0);
-  };
-
-  const navigateGallery = (direction: number) => {
-    if (!selectedImage || !selectedImage.images) return;
-    
-    const newIndex = currentGalleryIndex + direction;
-    if (newIndex >= 0 && newIndex < selectedImage.images.length) {
-      setCurrentGalleryIndex(newIndex);
-    }
-  };
 
   // Filter items based on search term and industry
   const filteredItems = galleryItems.filter(item => {

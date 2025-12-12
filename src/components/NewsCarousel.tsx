@@ -1,66 +1,23 @@
 'use client'
 
 import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import Link from "next/link";
 import Image from "next/image";
+import { useSuccessStoriesPosts } from "../hooks/useSuccessStoriesBlogger";
 
 const clientLogos = Array.from({ length: 16 }, (_, i) => ({
   name: `Partner ${i + 1}`,
   logo: `/assets/partners/manufacturing-partner-logo-${i + 1}.svg`
 }));
 
-
-
-const successStories = [
-  {
-    category: "Automotive Excellence",
-    title: "Tier-1 Supplier. Consistent Quality. On-Time Delivery.",
-    description: "From prototype to trusted supplier—delivering precision brake components to automotive leaders. Meeting production deadlines while maintaining rigorous quality standards.",
-    image: "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg",
-    link: "/gallery"
-  },
-  {
-    category: "Precision Engineering",
-    title: "Where Precision Meets Efficiency.",
-    description: "Critical transmission components delivered with exceptional quality standards while optimizing production workflows. Your competitive edge, engineered to perfection.",
-    image: "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
-    link: "/precision-engineering"
-  },
-  {
-    category: "Smart Manufacturing",
-    title: "Optimized Assembly. Maintained Quality. Better Results.",
-    description: "Custom fixture design that transformed manufacturing workflows from bottleneck to streamlined efficiency. Meet demand surges without compromising standards.",
-    image: "/assets/industry-components/defense-technology-manufacturing/defense-component-7.jpeg",
-    link: "/manufacturing-services#custom"
-  },
-  {
-    category: "Production Systems",
-    title: "Scalable Production. Unwavering Quality.",
-    description: "Successfully scaling production from low-volume to high-volume manufacturing while maintaining consistent quality metrics. Your growth, our expertise.",
-    image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-3.jpeg",
-    link: "/manufacturing-services#scaling"
-  },
-  {
-    category: "CNC Machining",
-    title: "Complex Geometries. Tight Tolerances. Flawless Finishes.",
-    description: "Advanced VMC machining delivering aerospace-grade precision for automotive OEMs. When failure isn't an option, choose manufacturing that delivers.",
-    image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-20.jpeg",
-    link: "/precision-engineering"
-  },
-  {
-    category: "Client Partnership",
-    title: "Accelerated Time-to-Market. Strategic Advantage.",
-    description: "Rapid prototyping and engineering validation that accelerated product development timelines. Your innovation, our expertise—delivering results together.",
-    image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-12.jpeg",
-    link: "/gallery"
-  }
-];
-
 export const NewsCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Fetch success stories from Blogger
+  const { posts: successStories, loading, error } = useSuccessStoriesPosts(10);
 
   const scroll = (direction: "left" | "right") => {
     if (containerRef.current) {
@@ -135,78 +92,98 @@ export const NewsCarousel = () => {
         }} />
       </section>
 
-      <section className="py-12 border-b border-border relative overflow-hidden bg-white">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        </div>
-        
-        <div className="w-full px-4 sm:px-6 relative z-10">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Success Story</h2>
-          
-          <div className="flex space-x-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("left")}
-              className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll("right")}
-              className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
+      {/* Only show success stories section if we have data */}
+      {!loading && successStories && successStories.length > 0 && (
+        <section className="py-12 border-b border-border relative overflow-hidden bg-white">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
           </div>
-        </div>
 
-        <div
-          ref={containerRef}
-          className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
-        >
-          {successStories.map((item, index) => (
-            <Card
-              key={index}
-              className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
+          <div className="w-full px-4 sm:px-6 relative z-10">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Success Stories</h2>
+
+              <div className="flex space-x-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("left")}
+                  className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("right")}
+                  className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+
+            <div
+              ref={containerRef}
+              className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-4 scrollbar-hide"
             >
-              <Link href={item.link} className="block h-full hover:no-underline">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={`${item.title} - Success Story`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-                  />
-                </div>
-                
-                <div className="p-4">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">{item.category}</span>
-                    <span className="text-gray-300">|</span>
-                    <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">Success Story</span>
-                  </div>
-                  
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-tight">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </Link>
-            </Card>
-          ))}
-        </div>
-      </div>
-      </section>
+              {successStories.map((story, index) => (
+                <Card
+                  key={story.id}
+                  className="flex-shrink-0 w-80 sm:w-96 group bg-white border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 cursor-pointer overflow-hidden"
+                >
+                  <Link
+                    href={`/blog/${story.slug}`}
+                    className="block h-full hover:no-underline"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={story.image}
+                        alt={`${story.title} - Success Story`}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        quality={75}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1200&q=80';
+                        }}
+                      />
+                    </div>
+
+                    <div className="p-4">
+                      <div className="flex items-center space-x-2 mb-3">
+                        <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">{story.category || 'Success Story'}</span>
+                        <span className="text-gray-300">|</span>
+                        <span className="text-xs font-medium text-gray-700 uppercase tracking-wider">{story.readTime}</span>
+                      </div>
+
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-tight line-clamp-2">
+                        {story.title}
+                      </h3>
+
+                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                        {story.excerpt}
+                      </p>
+                    </div>
+                  </Link>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Loading state */}
+      {loading && (
+        <section className="py-12 border-b border-border bg-white">
+          <div className="flex items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-emuski-teal-dark" />
+            <span className="ml-3 text-gray-600">Loading success stories...</span>
+          </div>
+        </section>
+      )}
     </>
   );
 };
