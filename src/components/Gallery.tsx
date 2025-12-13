@@ -35,6 +35,10 @@ const industryData = {
   "Defense": {
     description: "Defense technology components and military-grade manufacturing solutions",
     color: "bg-emuski-teal"
+  },
+  "Industrial Components": {
+    description: "High-quality industrial components for machinery, equipment and large-scale manufacturing applications",
+    color: "bg-emuski-teal"
   }
 };
 
@@ -46,15 +50,15 @@ const galleryItems = [
     title: "Space Technology Components",
     category: "Space",
     type: "gallery",
-    thumbnail: "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
+    thumbnail:  "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-4.jpeg",
     images: [
-      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
-      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-2.jpeg", 
-      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-3.jpeg",
       "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-4.jpeg",
       "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-5.jpeg",
+      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-7.jpeg", 
+      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
+      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-2.jpeg",
       "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-6.jpeg",
-      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-7.jpeg",
+      "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-3.jpeg",
       "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-8.jpeg"
     ],
     image: "/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
@@ -68,10 +72,10 @@ const galleryItems = [
     title: "Medical Device Manufacturing",
     category: "Medical",
     type: "gallery", 
-    thumbnail: "/assets/industry-components/medical-device-manufacturing/medical-device-component-1.jpeg",
+    thumbnail: "/assets/industry-components/medical-device-manufacturing/medical-device-component-11.jpeg",
     images: [
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-1.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-2.jpeg",
+      "/assets/industry-components/medical-device-manufacturing/medical-device-component-11.jpeg",
+      "/assets/industry-components/medical-device-manufacturing/medical-device-component-21.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-3.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-4.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-5.jpeg",
@@ -80,7 +84,7 @@ const galleryItems = [
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-8.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-9.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-10.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-11.jpeg",
+      "/assets/industry-components/medical-device-manufacturing/medical-device-component-1.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-12.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-13.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-14.jpeg",
@@ -90,19 +94,7 @@ const galleryItems = [
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-18.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-19.jpeg",
       "/assets/industry-components/medical-device-manufacturing/medical-device-component-20.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-21.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-22.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-23.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-24.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-25.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-26.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-27.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-28.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-29.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-30.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-31.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-32.jpeg",
-      "/assets/industry-components/medical-device-manufacturing/medical-device-component-33.jpeg"
+      "/assets/industry-components/medical-device-manufacturing/medical-device-component-2.jpeg",
     ],
     image: "/assets/industry-components/medical-device-manufacturing/medical-device-component-1.jpeg",
     description: "Precision medical device components and healthcare manufacturing solutions. Our expertise ensures compliance with strict medical industry standards and regulatory requirements.",
@@ -135,9 +127,11 @@ const galleryItems = [
     title: "Automotive Manufacturing",
     category: "Automotive",
     type: "gallery",
-    thumbnail: "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg",
+    thumbnail: "/assets/industry-components/automotive-component-manufacturing/automotive-component-3.jpg",
     images: [
-      "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg"
+      "/assets/industry-components/automotive-component-manufacturing/automotive-component-3.jpg",
+      "/assets/industry-components/automotive-component-manufacturing/automotive-component-2.jpg",
+      "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg",
     ],
     image: "/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg", 
     description: "Automotive manufacturing components and vehicle systems engineering. Our expertise in automotive manufacturing delivers precision vehicle component production.",
@@ -158,45 +152,36 @@ const galleryItems = [
       "/assets/industry-components/defense-technology-manufacturing/defense-component-4.jpeg",
       "/assets/industry-components/defense-technology-manufacturing/defense-component-5.jpeg",
       "/assets/industry-components/defense-technology-manufacturing/defense-component-6.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-7.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-8.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-9.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-10.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-11.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-12.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-13.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-14.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-15.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-16.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-17.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-18.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-19.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-20.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-component-21.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-1.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-2.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-3.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-4.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-5.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-1.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-2.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-3.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-4.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-5.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-6.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-7.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-8.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-9.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-10.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-11.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-12.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-13.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-14.jpeg",
-      "/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-15.jpeg"
     ],
     image: "/assets/industry-components/defense-technology-manufacturing/defense-component-1.jpeg",
     description: "Defense technology components and military-grade manufacturing solutions. Our capabilities deliver mission-critical components meeting stringent defense standards.",
     tags: ["Defense", "Military", "Technology", "Critical"]
+  },
+
+  //Industrial components
+  {
+    id: 6,
+    title: "Industrial Components",
+    category: "Industrial",
+    type: "gallery",
+    thumbnail: "/assets/industry-components/industrial-components/industrial-component-1.jpeg",
+    images: [
+      "/assets/industry-components/industrial-components/industrial-component-1.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-2.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-3.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-4.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-5.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-6.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-7.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-8.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-9.jpg",
+      "/assets/industry-components/industrial-components/industrial-component-10.jpg"
+    
+    ],
+    image: "/assets/industry-components/industrial-components/industrial-component-1.jpeg",
+    description: "Industrial components and manufacturing solutions. Our capabilities deliver high-performance components meeting stringent industrial standards.",
+    tags: ["Industrial", "Manufacturing", "Components", "Precision"]
+    
   }
 ];
 
