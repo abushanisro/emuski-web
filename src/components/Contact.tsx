@@ -60,7 +60,7 @@ const contactMethods = [
 const offices = [
   {
     city: "Headquarters & Business Office",
-    address: "Rudhra Coworks - Coworking Space\n126, RNS Plaza, KIADB Industrial Area, 1\nnear Tech Mahindra Gate, next to Hyderabad Magic\nElectronic City Phase 2\nBengaluru, Karnataka 560100",
+    address: "126, RNS Plaza, KIADB Industrial Area, 1\nnear Tech Mahindra Gate, next to Hyderabad Magic\nElectronic City Phase 2\nBengaluru, Karnataka 560100",
     phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
     mapUrl: "https://maps.google.com/maps?q=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100&t=&z=15&ie=UTF8&iwloc=&output=embed"

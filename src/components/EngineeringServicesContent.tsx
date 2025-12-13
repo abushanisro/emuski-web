@@ -104,18 +104,7 @@ export const EngineeringServicesContent = () => {
               </div>
             </div>
 
-            {/* Our Methodology */}
-            <div className="bg-gray-50 rounded-2xl p-8 md:p-12 mt-12">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Methodology</h3>
-                <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                  A structured, transparent process ensuring quality outcomes at every stage.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <img src="/assets/infographic/manufacturing-methodology-infographic.svg" alt="Engineering Methodology Process" className="max-w-full h-auto rounded-lg" />
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>

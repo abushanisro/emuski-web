@@ -64,27 +64,7 @@ export default function ManufacturingServices() {
       <ManufacturingServicesTabs />
       <ManufacturingServicesContent />
 
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Our Methodology
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              A structured, transparent process ensuring quality outcomes at every stage.
-            </p>
-          </div>
-        </div>
-        <div className="w-full">
-          <div className="aspect-[16/9] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative">
-            <img
-              src="/assets/manufacturingservices/manufacturing_services_methodology.svg"
-              alt="Manufacturing Methodology"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      
 
       <ManufacturingNPDSection />
       <ProductDeliverablesSection />

@@ -65,10 +65,10 @@ export const AIServicesContent = () => {
               {/* Image */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
+                <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 p-8">
                   <img
                     src="/assets/mitran/ai-mithran-platform-dashboard.svg"
-                    alt="Mithran AI Platform"
+                    alt="Mithran AI Platform Dashboard"
                     className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -249,7 +249,7 @@ export const AIServicesContent = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-6">
-                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">The Future- Mithran AI</p>
+                <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">The Future - Mithran AI</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                   The Future of Manufacturing Intelligence
                 </h2>
@@ -282,8 +282,6 @@ export const AIServicesContent = () => {
                     </div>
                   </div>
                 </div>
-
-
               </div>
 
               {/* Image */}
