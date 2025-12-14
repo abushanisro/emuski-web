@@ -437,10 +437,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                     Contact Our Experts
                   </a>
                   <a
-                    href="tel:+91-83444-74556"
+                    href="tel:+91=86670-88060"
                     className="border-2 border-emuski-teal text-emuski-teal-darker px-6 py-3 rounded-lg font-semibold hover:bg-emuski-teal/5 transition-colors inline-flex items-center justify-center"
                   >
-                    +91-83444-74556
+                    +91=86670-88060
                   </a>
                 </div>
               </div>

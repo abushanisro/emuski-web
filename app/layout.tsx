@@ -114,7 +114,7 @@ export default function RootLayout({
                   "contactPoint": [
                     {
                       "@type": "ContactPoint",
-                      "telephone": "+91-83444-74556",
+                      "telephone": "+91=86670-88060",
                       "contactType": "Customer Service",
                       "availableLanguage": ["English", "Hindi"],
                       "areaServed": "IN"

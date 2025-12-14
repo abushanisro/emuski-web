@@ -30,7 +30,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Call Us",
-    details: "+91-83444-74556",
+    details: "+91=86670-88060",
     description: "Speak directly with our sales team for immediate assistance.",
     link: "tel:+918344474556",
   },
