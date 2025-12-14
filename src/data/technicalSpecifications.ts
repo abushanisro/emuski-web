@@ -124,7 +124,7 @@ export const PERFORMANCE_METRICS = {
   businessMetrics: [
     { metric: "Industries Served", value: 15, unit: "+", period: "Active Verticals" },
     { metric: "Global Clients", value: 75, unit: "+", period: "International Partners" },
-    { metric: "Engineering Projects", value: 120, unit: "+", period: "Individual Projects" },
+    { metric: "Engineering Projects", value: 150, unit: "+", period: "Individual Projects" },
     { metric: "Components Manufactured", value: 4000, unit: "+", period: "Unique Parts Delivered" }
   ],
   quality: [
