@@ -109,8 +109,7 @@ export default function PrecisionEngineering() {
 
                 {/* Description */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                  From cost estimation to strategic sourcing and expert deployment, we deliver integrated Engineering Innovations that drive efficiency and accelerate time-to-market.
-                </p>
+                  We drive value engineering through teardown analysis, design benchmarking and advanced cost modelling — helping you manufacture smarter and more profitable                </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center">
