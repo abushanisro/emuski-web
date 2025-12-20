@@ -440,7 +440,7 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
                     Explore our latest insights and discover how EMUSKI can transform your manufacturing operations.
                 </p>
                 <a href="https://www.emuski.com/blog" class="cta-button">Read Latest Insights</a>
-                <a href="https://www.emuski.com/manufacturing-services" class="cta-button">Explore Manufacturing Services</a>
+                <a href="https://www.emuski.com/manufacturing-services" class="cta-button">Learn More</a>
                 <a href="https://www.emuski.com/precision-engineering" class="cta-button">Explore Precision Engineering</a>
             </div>
 
