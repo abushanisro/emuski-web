@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronRight, Loader2 } from 'lucide-react'
 import { Navbar } from '@/components/Navbar'
@@ -11,25 +10,6 @@ export default function Newsroom() {
   // Fetch news articles from Blogger using label "News" or "Press Release"
   const { posts: newsArticles, loading, error } = useBloggerPostsByLabel("News", 10);
 
-  useEffect(() => {
-    document.title = "Newsroom | EMUSKI Manufacturing Solutions"
-
-    let metaDescription = document.querySelector('meta[name="description"]')
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta')
-      metaDescription.setAttribute('name', 'description')
-      document.head.appendChild(metaDescription)
-    }
-    metaDescription.setAttribute('content', 'Latest news, updates, and insights from EMUSKI Manufacturing Solutions. Stay informed about our precision engineering innovations, manufacturing excellence, and industry leadership.')
-
-    let canonicalUrl = document.querySelector('link[rel="canonical"]')
-    if (!canonicalUrl) {
-      canonicalUrl = document.createElement('link')
-      canonicalUrl.setAttribute('rel', 'canonical')
-      document.head.appendChild(canonicalUrl)
-    }
-    canonicalUrl.setAttribute('href', 'https://www.emuski.com/newsroom')
-  }, [])
 
   return (
     <div className="min-h-screen bg-white">

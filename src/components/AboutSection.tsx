@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 
 const growthStories = [
   {
@@ -245,10 +246,14 @@ const AboutSection = () => {
                                         <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
                                             <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
                                                 <div className="relative h-48 overflow-hidden">
-                                                    <img
+                                                    <Image
                                                         src={story.image}
                                                         alt={story.label}
-                                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                        fill
+                                                        sizes="(max-width: 1024px) 100vw, 33vw"
+                                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                        quality={75}
+                                                        priority={index === 0}
                                                     />
                                                     {story.category === 'Our Expertise' && (
                                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>

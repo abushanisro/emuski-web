@@ -5,8 +5,11 @@ import { FAQSection } from "@/components/FAQSection"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact | EMUSKI',
-  description: 'Get in touch with EMUSKI for your manufacturing and engineering needs. Contact our experts today.',
+  title: 'Contact EMUSKI | Get In Touch - Manufacturing Solutions',
+  description: 'Contact EMUSKI for manufacturing solutions. Speak with our experts about your OEM manufacturing, precision engineering, and AI-powered production needs.',
+  alternates: {
+    canonical: 'https://www.emuski.com/contact',
+  },
 }
 
 export default function Contact() {

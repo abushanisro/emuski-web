@@ -1,33 +1,9 @@
 'use client'
 
-import { useEffect } from "react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 
 export default function CookiePolicy() {
-
-  useEffect(() => {
-    document.title = "Cookie Policy | EMUSKI"
-
-    let metaDescription = document.querySelector('meta[name="description"]')
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta')
-      metaDescription.setAttribute('name', 'description')
-      document.head.appendChild(metaDescription)
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Learn how EMUSKI uses cookies and similar technologies to enhance user experience, analyze traffic, and personalize services.'
-    )
-
-    let canonicalUrl = document.querySelector('link[rel="canonical"]')
-    if (!canonicalUrl) {
-      canonicalUrl = document.createElement('link')
-      canonicalUrl.setAttribute('rel', 'canonical')
-      document.head.appendChild(canonicalUrl)
-    }
-    canonicalUrl.setAttribute('href', 'https://www.emuski.com/cookie-policy')
-  }, [])
 
   return (
     <div className="min-h-screen bg-white">

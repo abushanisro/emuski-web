@@ -158,35 +158,33 @@ const galleryItems = [
     tags: ["Defense", "Military", "Technology", "Critical"]
   },
 
-  //Industrial components
+  // Industrial Components
   {
     id: 6,
     title: "Industrial Components",
     category: "Industrial",
     type: "gallery",
-    thumbnail: "/assets/industry-components/industrial-components/industrial-component-1.jpeg",
+    thumbnail: "/assets/industry-components/industrial-components-manufacturing/industrial-component-1.jpg",
     images: [
-      "/assets/industry-components/industrial-components/industrial-component-1.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-2.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-3.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-4.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-5.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-6.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-7.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-8.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-9.jpg",
-      "/assets/industry-components/industrial-components/industrial-component-10.jpg"
-    
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-1.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-2.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-3.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-4.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-5.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-6.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-7.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-8.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-9.jpg",
+      "/assets/industry-components/industrial-components-manufacturing/industrial-component-10.jpg"
     ],
-    image: "/assets/industry-components/industrial-components/industrial-component-1.jpeg",
+    image: "/assets/industry-components/industrial-components-manufacturing/industrial-component-1.jpg",
     description: "Industrial components and manufacturing solutions. Our capabilities deliver high-performance components meeting stringent industrial standards.",
     tags: ["Industrial", "Manufacturing", "Components", "Precision"]
-    
   }
 ];
 
 // Industry categories for tabbed interface
-const industryCategories = ["All", "Space", "Medical", "Aerospace", "Automotive", "Defense"];
+const industryCategories = ["All", "Space", "Medical", "Aerospace", "Automotive", "Defense", "Industrial"];
 
 export const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -234,16 +232,6 @@ export const Gallery = () => {
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, [selectedImage, currentImageIndex, currentGalleryIndex, navigateGallery]);
 
-  // Set SEO meta tags for gallery page
-  useEffect(() => {
-    document.title = "EMUSKI Component Gallery - Manufacturing Excellence Showcase";
-
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore EMUSKI\'s comprehensive gallery of precision manufacturing components, engineering solutions, and production excellence. Showcasing automotive, aerospace, and industrial manufacturing capabilities.');
-    }
-  }, []);
 
   // Filter items based on search term and industry
   const filteredItems = galleryItems.filter(item => {

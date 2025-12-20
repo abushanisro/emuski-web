@@ -15,6 +15,9 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
   title: 'Home | EMUSKI - Your One-Stop Solution for OEM',
   description: 'EMUSKI delivers world-class OEM manufacturing solutions, precision engineering, and AI-powered production systems in Bangalore, India.',
+  alternates: {
+    canonical: 'https://www.emuski.com/',
+  },
 }
 
 export default function Home() {

@@ -1,33 +1,10 @@
 'use client'
 
-import { useEffect } from "react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 
 export default function TermsAndConditions() {
 
-  useEffect(() => {
-    document.title = "Terms & Conditions – EMUSKI"
-
-    let metaDescription = document.querySelector('meta[name="description"]')
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta')
-      metaDescription.setAttribute('name', 'description')
-      document.head.appendChild(metaDescription)
-    }
-    metaDescription.setAttribute(
-      'content',
-      'Read the Terms & Conditions governing the use of EMUSKI platforms, services, and AI solutions.'
-    )
-
-    let canonicalUrl = document.querySelector('link[rel="canonical"]')
-    if (!canonicalUrl) {
-      canonicalUrl = document.createElement('link')
-      canonicalUrl.setAttribute('rel', 'canonical')
-      document.head.appendChild(canonicalUrl)
-    }
-    canonicalUrl.setAttribute('href', 'https://www.emuski.com/terms-and-conditions')
-  }, [])
 
   return (
     <div className="min-h-screen bg-white">

@@ -6,8 +6,12 @@ import { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Blog | EMUSKI',
-  description: 'Stay updated with the latest insights on manufacturing, engineering, and AI innovations from EMUSKI.',
+  title: 'Manufacturing Blog | Engineering Insights & AI Innovation | EMUSKI',
+  description: 'Discover expert insights on manufacturing excellence, Engineering Innovations, and AI-powered solutions. Learn from industry leaders about cost optimization, VAVE, rapid prototyping, and intelligent manufacturing.',
+  keywords: 'manufacturing blog, engineering precision, cost optimization, VAVE methodology, rapid prototyping, strategic sourcing, AI manufacturing, industrial engineering',
+  alternates: {
+    canonical: 'https://www.emuski.com/blog',
+  },
 }
 
 export default function Blog() {

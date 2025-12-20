@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Search, Filter, Calendar, User, Clock, ChevronRight, Tag } from "lucide-react";
 import { Card } from "./ui/card";
@@ -43,28 +43,6 @@ export const BlogPage = () => {
   const featuredPosts = filteredPosts.slice(0, 3); // First 3 as featured
   const regularPosts = filteredPosts.slice(3); // Rest as regular
 
-  // Set SEO meta tags for blog page
-  useEffect(() => {
-    document.title = "EMUSKI Manufacturing Blog | Engineering Precision & Manufacturing Innovation";
-    
-    // Update meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'Discover expert insights on manufacturing excellence, Engineering Innovations, and AI-powered solutions. Learn from industry leaders about cost optimization, VAVE, rapid prototyping, and intelligent manufacturing.');
-
-    // Update keywords
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', 'manufacturing blog, engineering precision, cost optimization, VAVE methodology, rapid prototyping, strategic sourcing, AI manufacturing, industrial engineering');
-  }, []);
 
   // Handle loading state
   if (loading) {
@@ -106,6 +84,61 @@ export const BlogPage = () => {
                       </p>
                     </div>
                   )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section - SEO Content */}
+        <section className="py-12 md:py-16 bg-gray-50">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="md:col-span-2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    Manufacturing Excellence Through Expert Insights
+                  </h2>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Welcome to the EMUSKI manufacturing blog, your comprehensive resource for engineering innovation, precision manufacturing, and AI-driven production strategies. Our expert team shares in-depth knowledge on cost optimization, VAVE methodology, rapid prototyping, and intelligent manufacturing solutions that empower OEMs across automotive, aerospace, medical devices, electronics, and industrial sectors.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Discover practical insights on design for manufacturing (DFM), strategic sourcing, supply chain optimization, and quality assurance. We explore cutting-edge topics including Industry 4.0 integration, smart manufacturing technologies, CNC machining innovations, injection molding best practices, and sheet metal fabrication techniques. Our articles provide actionable strategies for reducing manufacturing costs, improving product quality, and accelerating time-to-market.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    From teardown analysis and design benchmarking to advanced cost modeling and engineering consulting, our blog covers the full spectrum of manufacturing excellence. Whether you're seeking lean manufacturing principles, production optimization techniques, or insights into manufacturing automation, you'll find expert guidance to drive your operations forward.
+                  </p>
+                </div>
+                <div className="space-y-6">
+                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Topics We Cover</h3>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>Cost Engineering & VAVE</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>Precision Manufacturing</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>AI & Automation</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>Supply Chain Optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>Quality Assurance</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-emuski-teal mr-2">•</span>
+                        <span>Industry 4.0 Solutions</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,6 +196,61 @@ export const BlogPage = () => {
                 <p className="text-xs sm:text-sm md:text-base text-gray-400">
                   Discover insights that drive manufacturing excellence
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - SEO Content */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="md:col-span-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Manufacturing Excellence Through Expert Insights
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Welcome to the EMUSKI manufacturing blog, your comprehensive resource for engineering innovation, precision manufacturing, and AI-driven production strategies. Our expert team shares in-depth knowledge on cost optimization, VAVE methodology, rapid prototyping, and intelligent manufacturing solutions that empower OEMs across automotive, aerospace, medical devices, electronics, and industrial sectors.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Discover practical insights on design for manufacturing (DFM), strategic sourcing, supply chain optimization, and quality assurance. We explore cutting-edge topics including Industry 4.0 integration, smart manufacturing technologies, CNC machining innovations, injection molding best practices, and sheet metal fabrication techniques. Our articles provide actionable strategies for reducing manufacturing costs, improving product quality, and accelerating time-to-market.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  From teardown analysis and design benchmarking to advanced cost modeling and engineering consulting, our blog covers the full spectrum of manufacturing excellence. Whether you're seeking lean manufacturing principles, production optimization techniques, or insights into manufacturing automation, you'll find expert guidance to drive your operations forward.
+                </p>
+              </div>
+              <div className="space-y-6">
+                <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Topics We Cover</h3>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>Cost Engineering & VAVE</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>Precision Manufacturing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>AI & Automation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>Supply Chain Optimization</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>Quality Assurance</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-emuski-teal mr-2">•</span>
+                      <span>Industry 4.0 Solutions</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

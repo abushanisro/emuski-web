@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { FAQSection } from "@/components/FAQSection"
 import Link from "next/link"
+import Image from "next/image"
 import { useEffect } from "react"
 
 import { EngineeringServicesTabs } from "@/components/EngineeringServicesTabs"
@@ -12,8 +13,6 @@ import { EngineeringServicesContent } from "@/components/EngineeringServicesCont
 
 export default function PrecisionEngineering() {
   useEffect(() => {
-    document.title = "Engineering Innovation | EMUSKI"
-
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '')
       if (hash) {
@@ -214,18 +213,24 @@ export default function PrecisionEngineering() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                <img
+              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
+                <Image
                   src="/assets/engineering/cost360-platform-dashboard.png"
                   alt="Costing 360 Platform"
-                  className="w-full h-auto"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                  quality={80}
                 />
               </div>
-              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                <img
+              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
+                <Image
                   src="/assets/engineering/cost360-crm-system.png"
                   alt="Costing 360 CRM"
-                  className="w-full h-auto"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                  quality={80}
                 />
               </div>
             </div>

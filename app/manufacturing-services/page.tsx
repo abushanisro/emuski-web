@@ -8,12 +8,8 @@ import { ManufacturingServicesContent } from "@/components/ManufacturingServices
 import { ManufacturingNPDSection } from "@/components/ManufacturingNPDSection"
 import { ManufacturingServicesTabs } from "@/components/ManufacturingServicesTabs"
 import Link from "next/link"
-import { useEffect } from "react"
 
 export default function ManufacturingServices() {
-  useEffect(() => {
-    document.title = "Manufacturing Excellence | EMUSKI"
-  }, [])
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
