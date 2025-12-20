@@ -2,16 +2,6 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const hostname = request.headers.get('host')
-  const url = request.nextUrl.clone()
-
-  // Force www redirect
-  if (hostname === 'emuski.com') {
-    url.host = 'www.emuski.com'
-    url.protocol = 'https'
-    return NextResponse.redirect(url, 301)
-  }
-
   // Continue with security headers
   const response = NextResponse.next()
 
