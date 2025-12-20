@@ -7,6 +7,8 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Allowed quality values for Next.js 16 compatibility
+    qualities: [70, 75, 80, 85, 90],
     remotePatterns: [
       {
         protocol: 'https',
@@ -60,19 +62,7 @@ const nextConfig = {
   },
 
   async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'emuski.com',
-          },
-        ],
-        destination: 'https://www.emuski.com/:path*',
-        permanent: true,
-      },
-    ]
+    return []
   },
 }
 
