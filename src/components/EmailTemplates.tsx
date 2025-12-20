@@ -439,8 +439,9 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
                 <p style="color: #e6f9f9; margin-bottom: 25px;">
                     Explore our latest insights and discover how EMUSKI can transform your manufacturing operations.
                 </p>
-                <a href="https://EMUSKI.com/blog" class="cta-button">Read Latest Insights</a>
-                <a href="https://EMUSKI.com/services" class="cta-button">Explore Services</a>
+                <a href="https://www.emuski.com/blog" class="cta-button">Read Latest Insights</a>
+                <a href="https://www.emuski.com/manufacturing-services" class="cta-button">Explore Manufacturing Services</a>
+                <a href="https://www.emuski.com/precision-engineering" class="cta-button">Explore Precision Engineering</a>
             </div>
 
             <div style="text-align: center; margin: 30px 0; color: #718096;">
@@ -461,8 +462,8 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
                 Your Partner in Manufacturing Excellence
             </p>
             <div style="margin-top: 20px; font-size: 12px;">
-                <a href="https://EMUSKI.com/unsubscribe?email=${subscriberEmail}" style="color: #a0aec0;">Unsubscribe</a> | 
-                <a href="https://EMUSKI.com/privacy" style="color: #a0aec0;">Privacy Policy</a>
+                <a href="https://www.emuski.com/unsubscribe?email=${subscriberEmail}" style="color: #a0aec0;">Unsubscribe</a> | 
+                <a href="https://www.emuski.com/privacy" style="color: #a0aec0;">Privacy Policy</a>
             </div>
         </div>
     </div>
@@ -516,6 +517,6 @@ export const generateEmailContent = (templateType: 'daily' | 'welcome', data: an
       dailyInsights,
       marketUpdates[Math.floor(Math.random() * marketUpdates.length)]
     ),
-    text: `EMUSKI Daily Manufacturing Insights for ${today}\n\nFeatured: ${featuredArticle.title}\n${featuredArticle.excerpt}\n\nRead more at https://emuski.com/blog/${featuredArticle.slug}`
+    text: `EMUSKI Daily Manufacturing Insights for ${today}\n\nFeatured: ${featuredArticle.title}\n${featuredArticle.excerpt}\n\nRead more at https://www.emuski.com/blog/${featuredArticle.slug}`
   };
 };

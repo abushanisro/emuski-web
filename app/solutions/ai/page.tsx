@@ -51,7 +51,7 @@ export default function AISolutions() {
 
                   {/* Description */}
                   <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                    Revolutionary AI solutions transforming product development, cost engineering and supply chain optimization - where artificial intelligence meets manufacturing excellence.
+                    Our AI tools make product development, costing, and sourcing faster and simpler. They help your team reduce manual work, spot problems early, and make better decisions with real data.
                   </p>
 
                   {/* CTA Buttons */}

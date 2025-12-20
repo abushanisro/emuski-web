@@ -13,9 +13,20 @@ export default function TermsAndConditions() {
       <div className="text-gray-900 bg-white font-sans leading-normal tracking-normal pt-24 pb-12">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
           
-          <h2 className="text-3xl md:text-4xl font-bold text-left mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-left mb-8">
             Terms & Conditions
-          </h2>
+          </h1>
+
+          {/* Plain-language summary for readability */}
+          <div className="bg-emuski-teal/5 border border-emuski-teal/20 p-6 rounded-lg mb-8">
+            <h3 className="text-xl font-bold mb-3">In simple terms</h3>
+            <p className="text-gray-700 mb-3">
+              By using EMUSKI, you agree to use our services legally and respect our intellectual property.
+            </p>
+            <p className="text-gray-700">
+              We explain how accounts, data, and AI tools can be used, and what happens if someone breaks these rules. The full legal terms are written below for reference.
+            </p>
+          </div>
 
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
             <h3 className="text-xl font-bold mb-4">Agreement to Terms</h3>

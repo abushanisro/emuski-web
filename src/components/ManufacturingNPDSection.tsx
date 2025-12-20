@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import Image from "next/image";
 
 const solutions = [
   {
@@ -87,11 +88,13 @@ export const ManufacturingNPDSection = () => {
                         : 'ring-2 ring-gray-200 group-hover:ring-emuski-teal-darker/50 group-hover:shadow-lg'
                     }`}
                   >
-                    <img
+                    <Image
                       src={solution.image}
                       alt={solution.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                       loading="lazy"
+                      sizes="128px"
                     />
                     <div
                       className={`absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent transition-opacity duration-300 ${
@@ -136,10 +139,12 @@ export const ManufacturingNPDSection = () => {
                 <div className="flex items-start gap-4">
                   {/* Mini Icon */}
                   <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-emuski-teal-darker/20 flex-shrink-0">
-                    <img
+                    <Image
                       src={solutions[selectedIndex].image}
                       alt={solutions[selectedIndex].title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="64px"
                     />
                   </div>
 

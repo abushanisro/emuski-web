@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
@@ -175,12 +176,14 @@ export const FeaturedTabs = () => {
           className="w-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative"
         >
           <div className="relative w-full h-[45vh] min-h-[350px] xs:h-[48vh] xs:min-h-[380px] sm:h-[55vh] sm:min-h-[450px] md:h-[60vh] md:min-h-[500px] lg:h-[70vh] lg:min-h-[600px] xl:h-[75vh] xl:min-h-[650px] 2xl:h-[80vh] 2xl:max-h-[900px] py-3 xs:py-4 sm:py-6 md:py-8 lg:py-10 flex items-center justify-center">
-            <img
+            <Image
               key={currentSlide}
               src={slides[currentSlide]}
               alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
-              className="w-full h-full object-contain px-1 py-1 xs:p-2 sm:p-4 md:p-6"
+              fill
+              className="object-contain px-1 py-1 xs:p-2 sm:p-4 md:p-6"
               loading={currentSlide === 0 ? 'eager' : 'lazy'}
+              sizes="(max-width: 768px) 100vw, 70vw"
             />
           </div>
         </div>
@@ -266,15 +269,17 @@ export const FeaturedTabs = () => {
                       className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-md sm:rounded-lg"
                     >
                       <div className="relative h-48 xs:h-56 sm:h-64 overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-50 to-white">
-                        <img
+                        <Image
                           src={item.image}
                           alt={`${item.title} - ${item.category}`}
+                          fill
                           className={`${
                             tab.id === "manufacturing"
-                              ? "object-contain w-full h-full"
-                              : "object-cover w-full h-full"
-                          } group-hover:scale-105 transition-transform duration-500`}
+                              ? "object-contain"
+                              : "object-cover"
+                          } w-full h-full group-hover:scale-105 transition-transform duration-500`}
                           loading="lazy"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute top-2 xs:top-3 sm:top-4 left-2 xs:left-3 sm:left-4">
                           <span className="inline-block px-2 xs:px-2.5 sm:px-3 py-0.5 xs:py-1 bg-emuski-teal-darker text-white text-[10px] xs:text-xs font-semibold rounded-sm">

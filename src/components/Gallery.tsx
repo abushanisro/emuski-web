@@ -279,9 +279,14 @@ export const Gallery = () => {
                   Industry Portfolio Gallery
                 </h1>
 
+                {/* Section Heading for SEO */}
+                <h2 className="text-base sm:text-lg md:text-xl text-gray-200 font-semibold max-w-3xl mx-auto px-2">
+                  Precision Manufacturing Components by Industry
+                </h2>
+
                 {/* Description */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                  Explore EMUSKI's comprehensive manufacturing solutions across Space, Medical, Aerospace, Automotive, and Defense industries. Discover our partnerships and precision engineering capabilities.
+                  Explore real components we have built for Space, Medical, Aerospace, Automotive, Defense and Industrial customers. See the kind of parts and projects our team manufactures every day.
                 </p>
               </div>
             </div>

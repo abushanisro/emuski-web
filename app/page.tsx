@@ -25,6 +25,9 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16">
+        <h1 className="sr-only">
+          EMUSKI – OEM Manufacturing, Precision Engineering & AI Solutions in Bangalore, India
+        </h1>
         <HeroSection />
         <ServicesShowcase />
         <NewsCarousel />

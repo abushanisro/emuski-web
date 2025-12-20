@@ -1,4 +1,5 @@
 import { Brain, Sparkles, Database, Network, FileText, Zap, CheckCircle, TrendingUp, Shield, Clock, Target, Cpu } from "lucide-react";
+import Image from "next/image";
 
 export const AIServicesContent = () => {
   return (
@@ -66,9 +67,11 @@ export const AIServicesContent = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 p-8">
-                  <img
+                  <Image
                     src="/assets/mitran/ai-mithran-platform-dashboard.svg"
                     alt="Mithran AI Platform Dashboard"
+                    width={1600}
+                    height={900}
                     className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -171,9 +174,11 @@ export const AIServicesContent = () => {
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <img
+                  <Image
                     src="/assets/mitran/ai-raw-material-optimization.svg"
                     alt="Mithran AI Intelligence"
+                    width={1600}
+                    height={900}
                     className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -288,9 +293,11 @@ export const AIServicesContent = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
+                  <Image
                     src="/assets/mitran/ai-mitran-future.svg"
                     alt="Future of Manufacturing"
+                    width={1600}
+                    height={900}
                     className="w-full h-auto object-contain"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

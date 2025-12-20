@@ -39,7 +39,7 @@ export default function ManufacturingServices() {
 
                 {/* Description */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                  Your one-stop strategic companion for AI-driven manufacturing excellence. Where cost and quality meet profitability—delivering straight to your door.
+                  We are your manufacturing partner from design to delivery. Our team helps you balance cost and quality so every part is reliable, profitable, and on time.
                 </p>
 
                 {/* CTA Button */}

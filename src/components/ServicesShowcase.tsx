@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { ChevronRight, ArrowRight, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -257,9 +258,9 @@ export const ServicesShowcase = () => {
                   <div className="flex-shrink-0 w-full">
                     <div className="space-y-4">
                       {/* Category Title */}
-                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
                         {service.category}
-                      </h2>
+                      </h3>
 
                       {/* Description */}
                       <p className="text-base text-gray-600 leading-relaxed">
@@ -373,11 +374,13 @@ export const ServicesShowcase = () => {
                               {/* Project Image */}
                               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
-                                <img
+                                <Image
                                   src={project.image}
                                   alt={`${project.title} - ${project.category} Service`}
-                                  className="w-full h-full transform group-hover:scale-110 transition-transform duration-700 object-cover object-center"
+                                  fill
+                                  className="object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
                                   loading="lazy"
+                                  sizes="(max-width: 768px) 100vw, 33vw"
                                 />
 
 

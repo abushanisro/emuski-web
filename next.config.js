@@ -43,6 +43,23 @@ const nextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+        {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com https://blogger.googleusercontent.com https://www.blogger.com; font-src 'self' data:; connect-src 'self'; media-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';",
+          },
         ],
       },
       {
@@ -55,6 +72,15 @@ const nextConfig = {
           {
             key: 'X-Robots-Tag',
             value: 'noindex',
+          },
+        ],
+      },
+      {
+        source: '/assets/documents/Project_Delivery_Report.pdf',
+        headers: [
+          {
+            key: 'Link',
+            value: '</assets/documents/Project_Delivery_Report.pdf>; rel="canonical"',
           },
         ],
       },

@@ -18,27 +18,27 @@ const slides: Slide[] = [
     image: "/assets/hero/manufacturing-services-hero-banner.svg",
     mobileImage: "/assets/hero-mobile/manufacturing-services-mobile-banner.svg",
     category: "Manufacturing Excellence",
-    title: "You Design It, We Build It: Justified Cost, Peerless Quality",
+    title: "You Design It, We Build It",
     shortTitle: "Manufacturing Excellence",
-    description: "Your one-stop strategic partner for AI-driven manufacturing excellence. We turn product ideas into profitable realities, delivering from our NPD Innovation Center straight to your door.",
+    description: "We help you turn product ideas into real parts at the right cost and quality, delivered from our NPD Innovation Center straight to your door.",
     link: "/manufacturing-services",
   },
   {
     image: "/assets/hero/precision-engineering-hero-banner.svg",
     mobileImage: "/assets/hero-mobile/precision-engineering-mobile-banner.svg",
     category: "Engineering Innovation",
-    title: "Mastering Costs Engineering Success",
+    title: "Engineering That Reduces Your Costs",
     shortTitle: "Engineering Innovations",
-    description: "We drive value engineering through teardown analysis, design benchmarking and advanced cost modelling — helping you manufacture smarter and more profitable",
+    description: "We use teardown analysis, design benchmarking, and clear cost models to help you cut cost without sacrificing quality.",
     link: "/precision-engineering",
   },
   {
     image: "/assets/hero/ai-mithran-hero-banner.svg",
     mobileImage: "/assets/hero-mobile/ai-mithran-mobile-banner.svg",
     category: "Next-GenAI",
-    title: "AI-Powered Intelligence for the Future of Manufacturing",
+    title: "AI That Speeds Up Manufacturing",
     shortTitle: "Mithran",
-    description: "Revolutionary AI solutions transforming product development, cost engineering and supply chain optimization - where artificial intelligence meets manufacturing excellence",
+    description: "Our AI tools help you estimate cost faster, choose better suppliers, and spot risks early across your product lifecycle.",
     link: "/solutions/ai",
   },
 ];
@@ -132,9 +132,9 @@ export const HeroSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
+                    <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white leading-tight">
                       {slide.title}
-                    </h1>
+                    </h2>
 
                     {/* Description */}
                     <p className="text-base xl:text-lg text-gray-300 leading-relaxed max-w-xl">
@@ -176,9 +176,9 @@ export const HeroSection = () => {
                   <span className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-sm font-semibold tracking-wider uppercase">
                     {slide.category}
                   </span>
-                  <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                  <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                     {slide.title}
-                  </h1>
+                  </h2>
                   <p className="text-lg text-gray-300 leading-relaxed">
                     {slide.description}
                   </p>
@@ -215,9 +215,9 @@ export const HeroSection = () => {
                   <span className="inline-block px-3 py-1.5 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
                     {slide.category}
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight drop-shadow-lg">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight drop-shadow-lg">
                     {slide.title}
-                  </h1>
+                  </h2>
                   <p className="text-sm text-gray-200 leading-relaxed drop-shadow-md">
                     {slide.description}
                   </p>

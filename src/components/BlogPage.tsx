@@ -73,9 +73,9 @@ export const BlogPage = () => {
                     EMUSKI Insights
                   </h1>
 
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                    Expert perspectives on engineering precision, manufacturing innovation, and the future of intelligent production systems.
-                  </p>
+                  <h2 className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto px-2 font-semibold">
+                    Manufacturing Blog & Insights from EMUSKI
+                  </h2>
 
                   {error && (
                     <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 max-w-2xl mx-auto">
@@ -192,10 +192,10 @@ export const BlogPage = () => {
                   Expert perspectives on engineering precision, manufacturing innovation, and the future of intelligent production systems.
                 </p>
 
-                {/* Subtitle */}
-                <p className="text-xs sm:text-sm md:text-base text-gray-400">
-                  Discover insights that drive manufacturing excellence
-                </p>
+                {/* Section Heading for SEO */}
+                <h2 className="text-xs sm:text-sm md:text-base text-gray-200 font-semibold tracking-wide uppercase">
+                  Manufacturing Blog & Insights
+                </h2>
               </div>
             </div>
           </div>
@@ -212,13 +212,13 @@ export const BlogPage = () => {
                   Manufacturing Excellence Through Expert Insights
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Welcome to the EMUSKI manufacturing blog, your comprehensive resource for engineering innovation, precision manufacturing, and AI-driven production strategies. Our expert team shares in-depth knowledge on cost optimization, VAVE methodology, rapid prototyping, and intelligent manufacturing solutions that empower OEMs across automotive, aerospace, medical devices, electronics, and industrial sectors.
+                  Welcome to the EMUSKI manufacturing blog. Here we share clear, practical articles on engineering, production, and AI in manufacturing. Our goal is to help OEMs in automotive, aerospace, medical devices, electronics, and industrial sectors make better decisions and reduce cost.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Discover practical insights on design for manufacturing (DFM), strategic sourcing, supply chain optimization, and quality assurance. We explore cutting-edge topics including Industry 4.0 integration, smart manufacturing technologies, CNC machining innovations, injection molding best practices, and sheet metal fabrication techniques. Our articles provide actionable strategies for reducing manufacturing costs, improving product quality, and accelerating time-to-market.
+                  You will find posts on design for manufacturing (DFM), sourcing, supply chain, and quality. We also cover Industry 4.0, smart factories, CNC machining, injection molding, and sheet metal fabrication. Each article focuses on simple, real examples and actions you can apply in your own plant.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  From teardown analysis and design benchmarking to advanced cost modeling and engineering consulting, our blog covers the full spectrum of manufacturing excellence. Whether you're seeking lean manufacturing principles, production optimization techniques, or insights into manufacturing automation, you'll find expert guidance to drive your operations forward.
+                  We write about teardown analysis, design benchmarking, cost modeling, and engineering consulting. Whether you want to cut cost, improve quality, or launch faster, these insights are written for busy engineers and buyers, not academics.
                 </p>
               </div>
               <div className="space-y-6">

@@ -1,4 +1,5 @@
 import { CheckCircle, Zap, Layers, Cog, TrendingUp, Clock, Target, Award } from "lucide-react";
+import Image from "next/image";
 
 export const ManufacturingServicesContent = () => {
   return (
@@ -15,7 +16,7 @@ export const ManufacturingServicesContent = () => {
                   Manufacturing When You Need It, How You Need It
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  No minimum order quantities. No long lead times. Our on-demand manufacturing service gives you the flexibility to produce exactly what you need, precisely when you need it. Perfect for testing market demand, seasonal products, or managing inventory efficiently.
+                  We do not require minimum order quantities, and we keep lead times short. Our on-demand manufacturing service lets you order exactly what you need, when you need it. It is ideal for testing new products, handling seasonal demand, and keeping your inventory under control.
                 </p>
 
                 {/* Key Benefits */}
@@ -103,10 +104,13 @@ export const ManufacturingServicesContent = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Image - Left side */}
               <div className="relative order-2 lg:order-1 h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
-                <img
+                <Image
                   src="/assets/rapid-proto.svg"
                   alt="Rapid Prototyping Manufacturing"
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
 
@@ -293,9 +297,11 @@ export const ManufacturingServicesContent = () => {
               <div className="relative order-2 lg:order-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200">
-                  <img
+                  <Image
                     src="/assets/precision-engineering-icon.svg"
                     alt="Production Scaling"
+                    width={1200}
+                    height={800}
                     className="w-full h-auto"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

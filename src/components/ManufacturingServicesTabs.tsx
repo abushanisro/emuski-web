@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 const servicesData = {
   "on-demand": {
@@ -63,10 +64,13 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
       {service.image && (
         <div className="mb-8 max-w-3xl mx-auto">
           <div className="aspect-[16/9] sm:aspect-[21/9] relative">
-            <img
+            <Image
               src={service.image}
               alt={service.title}
-              className="absolute inset-0 w-full h-full object-contain"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 75vw"
+              loading="lazy"
             />
           </div>
         </div>

@@ -103,12 +103,13 @@ export default function PrecisionEngineering() {
 
                 {/* Title */}
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight px-2">
-                  Mastering Costs Engineering Success
+                  Engineering That Makes Products Cost Less
                 </h1>
 
                 {/* Description */}
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
-                  We drive value engineering through teardown analysis, design benchmarking and advanced cost modelling — helping you manufacture smarter and more profitable                </p>
+                  We break down your products, compare them with competitors, and build clear cost models. This helps you remove waste, simplify designs, and keep performance high while lowering cost.
+                </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center">
@@ -142,7 +143,7 @@ export default function PrecisionEngineering() {
           <div className="max-w-5xl mx-auto p-8 bg-gray-50 border border-gray-200 rounded-xl text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Cost Intelligence</h3>
             <p className="text-gray-700 leading-relaxed">
-              Our global cost database spans Western Europe, Eastern Europe, North America, Asia, and India—providing real-time insights that empower OEMs to optimize sourcing and production strategies with confidence.
+              We track real manufacturing costs across Western Europe, Eastern Europe, North America, Asia, and India. This helps you see what a part should cost in each region and choose the best place to build it.
             </p>
           </div>
         </div>

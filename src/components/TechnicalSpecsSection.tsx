@@ -37,7 +37,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Business Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <img src="/assets/infographic/business-operations-infographic.svg" alt="Business Impact Metrics" className="h-8 w-8 mr-3" />
+          <img src="/assets/infographic/business-operations-infographic.svg" alt="Business Impact Metrics" className="h-8 w-8 mr-3" width={32} height={32} />
           <h3 className="text-lg font-bold text-gray-900">Business Impact</h3>
         </div>
         <div className="space-y-3">
@@ -58,7 +58,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Quality Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <img src="/assets/infographic/quality-assurance-infographic.svg" alt="Quality Performance Metrics" className="h-8 w-8 mr-3" />
+          <img src="/assets/infographic/quality-assurance-infographic.svg" alt="Quality Performance Metrics" className="h-8 w-8 mr-3" width={32} height={32} />
           <h3 className="text-lg font-bold text-gray-900">Quality Performance</h3>
         </div>
         <div className="space-y-3">
@@ -79,7 +79,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Delivery Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <img src="/assets/infographic/delivery-process-infographic.svg" alt="Delivery Excellence Metrics" className="h-8 w-8 mr-3" />
+          <img src="/assets/infographic/delivery-process-infographic.svg" alt="Delivery Excellence Metrics" className="h-8 w-8 mr-3" width={32} height={32} />
           <h3 className="text-lg font-bold text-gray-900">Delivery Excellence</h3>
         </div>
         <div className="space-y-3">
@@ -100,7 +100,7 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
       {/* Efficiency Metrics */}
       <div className="bg-white border border-gray-200 p-6 rounded-lg">
         <div className="flex items-center mb-4">
-          <img src="/assets/infographic/operations-workflow-infographic.svg" alt="Operational Efficiency Metrics" className="h-8 w-8 mr-3" />
+          <img src="/assets/infographic/operations-workflow-infographic.svg" alt="Operational Efficiency Metrics" className="h-8 w-8 mr-3" width={32} height={32} />
           <h3 className="text-lg font-bold text-gray-900">Operational Efficiency</h3>
         </div>
         <div className="space-y-3">
