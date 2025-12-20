@@ -1,31 +1,21 @@
-'use client'
+import { redirect } from 'next/navigation'
+import { Metadata } from 'next'
 
-import { useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
-import { BlogPostComponent } from '@/components/BlogPost'
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
 
-export default function NewsroomSlug() {
-  const params = useParams()
-  const router = useRouter()
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug
+  return {
+    title: 'News Article | EMUSKI Newsroom',
+    description: 'Read the latest manufacturing innovations, company updates, and industry insights from EMUSKI.',
+    alternates: {
+      canonical: `https://www.emuski.com/blog/${slug}`,
+    },
+  };
+}
 
-  useEffect(() => {
-    // Redirect to blog post page since newsroom articles are stored as blog posts
-    if (slug) {
-      router.push(`/blog/${slug}`)
-    }
-  }, [slug, router])
+export default async function NewsroomSlug({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-
-      {/* Blog post component will handle the display */}
-      <BlogPostComponent />
-
-      <Footer />
-    </div>
-  )
+  // Redirect to blog post page since newsroom articles are stored as blog posts
+  redirect(`/blog/${slug}`)
 }

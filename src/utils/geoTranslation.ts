@@ -411,13 +411,15 @@ export class GeoTranslationService {
     // Set HTML lang attribute based on detected language
     document.documentElement.lang = this.currentLanguage;
 
-    // Add canonical URL with geo parameter for SEO
-    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (canonical && this.userLocation.countryCode) {
-      const url = new URL(canonical.href);
-      url.searchParams.set('geo', this.userLocation.countryCode.toLowerCase());
-      canonical.href = url.toString();
-    }
+    // DISABLED: Modifying canonical URLs with query parameters
+    // This can negatively impact SEO as search engines prefer clean canonical URLs
+    // Canonical URLs should remain static without geo parameters
+    // const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    // if (canonical && this.userLocation.countryCode) {
+    //   const url = new URL(canonical.href);
+    //   url.searchParams.set('geo', this.userLocation.countryCode.toLowerCase());
+    //   canonical.href = url.toString();
+    // }
   }
 
   private translatePage(languageCode: string): void {
