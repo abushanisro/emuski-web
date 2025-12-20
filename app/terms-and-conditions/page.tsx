@@ -19,7 +19,7 @@ export default function TermsAndConditions() {
 
           {/* Plain-language summary for readability */}
           <div className="bg-emuski-teal/5 border border-emuski-teal/20 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-bold mb-3">In simple terms</h3>
+            <h2 className="text-2xl font-bold mb-3">In simple terms</h2>
             <p className="text-gray-700 mb-3">
               By using EMUSKI, you agree to use our services legally and respect our intellectual property.
             </p>
@@ -29,7 +29,7 @@ export default function TermsAndConditions() {
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-bold mb-4">Agreement to Terms</h3>
+            <h2 className="text-2xl font-bold mb-4">Agreement to Terms</h2>
             <p className="mb-4 text-gray-700">
               By accessing or using EMUSKI platforms, services or AI tools, you agree to be bound by these Terms & Conditions. If you do not agree with these terms, please stop using our platform.
             </p>
@@ -42,7 +42,7 @@ export default function TermsAndConditions() {
           </div>
 
           {/* Section 1 */}
-          <h3 className="text-2xl font-bold mb-6">1. Use of Services</h3>
+          <h2 className="text-2xl font-bold mb-6">1. Use of Services</h2>
           <p className="text-gray-700 mb-4">
             You agree to use our Services only for lawful purposes. Misuse, abuse, or unauthorized exploitation is prohibited.
           </p>
@@ -53,7 +53,7 @@ export default function TermsAndConditions() {
           </ul>
 
           {/* Section 2 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">2. Accounts & Access</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">2. Accounts & Access</h2>
           <p className="text-gray-700 mb-4">
             Some Services require user accounts. You agree to maintain accurate information and secure login credentials.
           </p>
@@ -62,7 +62,7 @@ export default function TermsAndConditions() {
           </p>
 
           {/* Section 3 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">3. Intellectual Property</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">3. Intellectual Property</h2>
           <p className="text-gray-700 mb-4">
             All software, content, architecture, AI models, brand assets, and trademarks belong to EMUSKI or licensors.
           </p>
@@ -71,13 +71,13 @@ export default function TermsAndConditions() {
           </p>
 
           {/* Section 4 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">4. User Data & Processing</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">4. User Data & Processing</h2>
           <p className="text-gray-700 mb-4">
             You retain ownership of any data you submit. By using the platform, you grant EMUSKI permission to process, store, and analyze your data to operate Services and enhance AI capabilities.
           </p>
 
           {/* Section 5 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">5. AI & Automation Disclaimer</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">5. AI & Automation Disclaimer</h2>
           <p className="text-gray-700 mb-4">
             EMUSKI AI systems (including Mithran) provide insights and automation but results may not always be fully accurate.
           </p>
@@ -86,7 +86,7 @@ export default function TermsAndConditions() {
           </p>
 
           {/* Section 6 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">6. Payments & Subscriptions</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">6. Payments & Subscriptions</h2>
           <p className="text-gray-700 mb-4">
             Paid Services are billed per agreement or subscription plan. All payments are final unless otherwise stated.
           </p>
@@ -95,25 +95,25 @@ export default function TermsAndConditions() {
           </p>
 
           {/* Section 7 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">7. Limitation of Liability</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">7. Limitation of Liability</h2>
           <p className="text-gray-700 mb-4">
             EMUSKI is not liable for indirect losses, including loss of profits, data, business disruptions, or reliance damages.
           </p>
 
           {/* Section 8 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">8. Termination</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">8. Termination</h2>
           <p className="text-gray-700 mb-4">
             EMUSKI may suspend or terminate access for violations, misuse, fraud, or compliance reasons.
           </p>
 
           {/* Section 9 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">9. Governing Law</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">9. Governing Law</h2>
           <p className="text-gray-700 mb-4">
             These Terms shall be governed by the laws of India. Disputes will be resolved under jurisdiction of Indian courts.
           </p>
 
           {/* Section 10 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">10. Contact Information</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">10. Contact Information</h2>
           <p className="text-gray-700">
             For concerns or inquiries, please email: <a href="mailto:enquiries@emuski.com" className="underline">enquiries@emuski.com</a>
           </p>

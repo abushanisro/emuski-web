@@ -403,11 +403,11 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                                 </span>
                               ))}
                             </div>
-                            {/* Hidden SEO content for search engines and AI */}
+                            {/* Hidden SEO content for search engines and AI (without body-level <meta> tags) */}
                             <div className="sr-only">
-                              <meta itemProp="about" content={faq.category} />
+                              <span itemProp="about">{faq.category}</span>
                               <span itemProp="author" itemScope itemType="https://schema.org/Organization">
-                                <meta itemProp="name" content="EMUSKI Manufacturing Solutions" />
+                                <span itemProp="name">EMUSKI Manufacturing Solutions</span>
                               </span>
                             </div>
                           </div>

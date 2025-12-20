@@ -463,7 +463,8 @@ export const generateWelcomeEmailHTML = (subscriberEmail: string) => {
             </p>
             <div style="margin-top: 20px; font-size: 12px;">
                 <a href="https://www.emuski.com/unsubscribe?email=${subscriberEmail}" style="color: #a0aec0;">Unsubscribe</a> | 
-                <a href="https://www.emuski.com/privacy" style="color: #a0aec0;">Privacy Policy</a>
+                <!-- Use the correct privacy policy URL that exists on the site -->
+                <a href="https://www.emuski.com/privacy-policy" style="color: #a0aec0;">Privacy Policy</a>
             </div>
         </div>
     </div>

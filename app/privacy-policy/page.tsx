@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
           </h1>
 
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-bold mb-4">Note</h3>
+            <h2 className="text-2xl font-bold mb-4">Note</h2>
             <p className="mb-4 text-gray-700">
               Our privacy policy is subject to change at any time without notice. To make sure you are aware of any changes, please review this policy periodically.
             </p>
@@ -28,9 +28,9 @@ export default function PrivacyPolicy() {
             </p>
           </div>
 
-          <h3 className="text-3xl md:text-2xl font-bold text-left mb-8">
+          <h2 className="text-3xl md:text-2xl font-bold text-left mb-8">
             Collection Of Personally Identifiable Information And Other Information
-          </h3>
+          </h2>
           <p className="text-gray-700">
             When you use our Platform or mobile application, we collect and store your personal information provided by you from time to time. Our primary goal is to provide a safe, efficient, smooth, and customized experience. This enables us to deliver services and features tailored to your needs while collecting only the information necessary to achieve this purpose.
           </p>
@@ -56,9 +56,9 @@ export default function PrivacyPolicy() {
             We collect personally identifiable information (e.g., email address, name, phone number, payment details) when you set up a free account. Although you can browse parts of our Platform without registering, certain activities require registration.
           </p>
 
-          <h3 className="text-3xl md:text-2xl mt-10 font-bold text-left mb-8">
+          <h2 className="text-3xl md:text-2xl mt-10 font-bold text-left mb-8">
             Use Of Demographic / Profile Data / Your Information
-          </h3>
+          </h2>
           <p className="mt-5 text-gray-700">
             We use personal information to provide the services you request. When used for marketing, you have the ability to opt out. Your information helps us resolve disputes, troubleshoot problems, promote safe services, collect payments, gauge consumer interest, inform you about offers, customize your experience, detect errors or fraud, and enforce our terms.
           </p>
@@ -78,9 +78,9 @@ export default function PrivacyPolicy() {
             Cookies: A cookie is a small file stored by a web server on a browser that enables the server to later retrieve information specific to that user. We place both permanent and temporary cookies on your hard drive. These cookies do not contain personally identifiable information.
           </p>
 
-          <h3 className="text-3xl md:text-2xl mt-10 font-bold text-left mb-8">
+          <h2 className="text-3xl md:text-2xl mt-10 font-bold text-left mb-8">
             Sharing Of Personal Information
-          </h3>
+          </h2>
           <p className="mt-5 text-gray-700">
             We may share your personal information with our corporate entities and affiliates to help prevent identity theft, fraud, and other illegal acts, as well as to facilitate joint or co-branded services.
           </p>

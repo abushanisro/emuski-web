@@ -431,6 +431,13 @@ export const BlogPostComponent = () => {
                         html = html.replace(/\saria-level="[^"]*"/gi, '');
                         html = html.replace(/\sid="docs-internal-guid-[^"]*"/gi, '');
 
+                        // EXTRA HARDENING: strip any <meta> tags that may have been
+                        // pasted into the article HTML (including meta description
+                        // and OG tags). Meta tags belong in <head>; keeping them in
+                        // the article body can trigger SEO tools that check for
+                        // "meta description outside <head>".
+                        html = html.replace(/<meta[^>]*>/gi, '');
+
                         // First, extract images from anchor tags (Blogger often wraps images in links)
                         html = html.replace(/<a[^>]*>\s*(<img[^>]*>)\s*<\/a>/gi, '$1');
 
@@ -585,7 +592,8 @@ export const BlogPostComponent = () => {
                             Contact Us Today
                           </button>
                         </Link>
-                        <Link href="/services">
+                        {/* Use an existing, SEO-optimized services page instead of a non-existent /services route */}
+                        <Link href="/manufacturing-services">
                           <button className="bg-teal-700 text-white px-6 py-3 rounded font-bold hover:bg-teal-800 transition-colors border border-teal-500">
                             View Our Services
                           </button>

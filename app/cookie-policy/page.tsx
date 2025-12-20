@@ -18,7 +18,7 @@ export default function CookiePolicy() {
 
           {/* Plain-language summary for readability */}
           <div className="bg-emuski-teal/5 border border-emuski-teal/20 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-bold mb-3">In simple terms</h3>
+            <h2 className="text-2xl font-bold mb-3">In simple terms</h2>
             <p className="text-gray-700 mb-3">
               We use cookies to help the site work properly, remember your settings, and understand how people use EMUSKI.
             </p>
@@ -28,7 +28,7 @@ export default function CookiePolicy() {
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-bold mb-4">Introduction</h3>
+            <h2 className="text-2xl font-bold mb-4">Introduction</h2>
             <p className="mb-4 text-gray-700">
               This Cookie Policy explains how EMUSKI uses cookies and similar technologies when you access our website and platforms.
             </p>
@@ -38,13 +38,13 @@ export default function CookiePolicy() {
           </div>
 
           {/* Section 1 */}
-          <h3 className="text-2xl font-bold mb-6">1. What Are Cookies?</h3>
+          <h2 className="text-2xl font-bold mb-6">1. What Are Cookies?</h2>
           <p className="text-gray-700 mb-4">
             Cookies are small text files stored on your browser when you visit websites. They help recognize your device and enhance your browsing experience.
           </p>
 
           {/* Section 2 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">2. Types of Cookies We Use</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">2. Types of Cookies We Use</h2>
           <p className="text-gray-700 mb-4">We may use the following categories of cookies:</p>
           <ul className="list-disc ml-6 text-gray-700 space-y-2">
             <li><strong>Essential Cookies</strong> – Required for core functionality and security.</li>
@@ -55,7 +55,7 @@ export default function CookiePolicy() {
           </ul>
 
           {/* Section 3 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">3. Why We Use Cookies</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">3. Why We Use Cookies</h2>
           <p className="text-gray-700 mb-4">
             We use cookies to:
           </p>
@@ -68,7 +68,7 @@ export default function CookiePolicy() {
           </ul>
 
           {/* Section 4 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">4. Third-Party Cookies</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">4. Third-Party Cookies</h2>
           <p className="text-gray-700 mb-4">
             Some cookies are set by third parties including analytics tools, automation engines, embedded content, and integrations.
           </p>
@@ -77,19 +77,19 @@ export default function CookiePolicy() {
           </p>
 
           {/* Section 5 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">5. Managing & Disabling Cookies</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">5. Managing & Disabling Cookies</h2>
           <p className="text-gray-700 mb-4">
             You can manage or disable cookies through your browser settings. Note that disabling cookies may affect functionality or limit access to certain features.
           </p>
 
           {/* Section 6 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">6. Updates to This Policy</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">6. Updates to This Policy</h2>
           <p className="text-gray-700 mb-4">
             We may update this Cookie Policy periodically. Continued use indicates acceptance of any updated terms.
           </p>
 
           {/* Section 7 */}
-          <h3 className="text-2xl font-bold mt-10 mb-6">7. Contact Us</h3>
+          <h2 className="text-2xl font-bold mt-10 mb-6">7. Contact Us</h2>
           <p className="text-gray-700">
             For questions or concerns, email: <a href="mailto:enquiries@emuski.com" className="underline">enquiries@emuski.com</a>
           </p>

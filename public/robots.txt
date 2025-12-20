@@ -7,8 +7,6 @@ Allow: /
 
 # Primary Sitemap
 Sitemap: https://www.emuski.com/sitemap.xml
-Sitemap: https://www.emuski.com/sitemap-images.xml
-Sitemap: https://www.emuski.com/sitemap-news.xml
 
 # Crawl-delay for optimal performance
 Crawl-delay: 1
