@@ -2,13 +2,14 @@
 const nextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Limit the largest generated image width to 1920px to avoid very heavy 4K assets
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Allowed quality values for Next.js 16 compatibility
-    qualities: [70, 75, 80, 85, 90],
+    // Allowed quality values for Next.js 16 compatibility (we'll prefer 60–75 range in components)
+    qualities: [60, 65, 70, 75, 80],
     remotePatterns: [
       {
         protocol: 'https',

@@ -316,7 +316,7 @@ export const Gallery = () => {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
-                  quality={75}
+                  quality={65}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -408,7 +408,7 @@ export const Gallery = () => {
                   width={1600}
                   height={1200}
                   className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain"
-                  quality={90}
+                  quality={70}
                   priority
                   sizes="(max-width: 768px) 100vw, 80vw"
                 />

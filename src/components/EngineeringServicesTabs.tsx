@@ -130,6 +130,7 @@ function ServiceTabContent({ service, serviceKey }: {
               sizes="(max-width: 768px) 100vw, 75vw"
               className="object-contain"
               loading="lazy"
+              quality={60}
             />
           </div>
         </div>

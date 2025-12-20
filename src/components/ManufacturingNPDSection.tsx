@@ -91,8 +91,9 @@ export const ManufacturingNPDSection = () => {
                     <Image
                       src={solution.image}
                       alt={solution.title}
-                      fill
-                      className="object-cover"
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
                       loading="lazy"
                       sizes="128px"
                     />
@@ -142,8 +143,9 @@ export const ManufacturingNPDSection = () => {
                     <Image
                       src={solutions[selectedIndex].image}
                       alt={solutions[selectedIndex].title}
-                      fill
-                      className="object-cover"
+                      width={64}
+                      height={64}
+                      className="object-cover w-full h-full"
                       sizes="64px"
                     />
                   </div>

@@ -415,6 +415,15 @@ export const BlogPostComponent = () => {
                         // Clean up inline styles but preserve some important ones
                         html = html.replace(/\sstyle="[^"]*"/gi, '');
 
+                        // HARDENING: strip any stray <title>, <head>, or canonical tags that
+                        // might have been copied into the Blogger HTML. These belong in
+                        // the document <head>, not inside the article body, and some SEO
+                        // crawlers will flag them as "outside <head>" if they appear here.
+                        html = html.replace(/<title[^>]*>[\s\S]*?<\/title>/gi, '');
+                        html = html.replace(/<link[^>]+rel=["']canonical["'][^>]*>/gi, '');
+                        html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/gi, '');
+                        html = html.replace(/<html[^>]*>|<\/html>|<body[^>]*>|<\/body>/gi, '');
+
                         // Remove Google Docs specific attributes
                         html = html.replace(/\sface="[^"]*"/gi, '');
                         html = html.replace(/\sdir="[^"]*"/gi, '');

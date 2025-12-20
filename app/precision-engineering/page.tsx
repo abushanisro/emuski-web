@@ -221,7 +221,7 @@ export default function PrecisionEngineering() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
-                  quality={75}
+                  quality={60}
                 />
               </div>
               <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
@@ -231,7 +231,7 @@ export default function PrecisionEngineering() {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
-                  quality={75}
+                  quality={60}
                 />
               </div>
             </div>

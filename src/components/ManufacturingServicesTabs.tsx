@@ -67,8 +67,9 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
             <Image
               src={service.image}
               alt={service.title}
-              fill
-              className="object-contain"
+              width={1200}
+              height={675}
+              className="object-contain w-full h-auto"
               sizes="(max-width: 768px) 100vw, 75vw"
               loading="lazy"
             />

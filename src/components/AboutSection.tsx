@@ -249,10 +249,11 @@ const AboutSection = () => {
                                                     <Image
                                                         src={story.image}
                                                         alt={`${story.label} - ${story.category}`}
-                                                        fill
+                                                        width={600}
+                                                        height={400}
                                                         sizes="(max-width: 1024px) 100vw, 33vw"
-                                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                        quality={70}
+                                                        className="object-cover group-hover:scale-110 transition-transform duration-500 w-full h-auto"
+                                                        quality={60}
                                                         loading="lazy"
                                                     />
                                                     {story.category === 'Our Expertise' && (

@@ -180,8 +180,9 @@ export const FeaturedTabs = () => {
               key={currentSlide}
               src={slides[currentSlide]}
               alt={`${activeTab === 'manufacturing' ? 'Manufacturing' : 'Engineering'} Service ${currentSlide + 1} - Precision Manufacturing Solutions`}
-              fill
-              className="object-contain px-1 py-1 xs:p-2 sm:p-4 md:p-6"
+              width={1600}
+              height={900}
+              className="object-contain px-1 py-1 xs:p-2 sm:p-4 md:p-6 w-full h-auto"
               loading={currentSlide === 0 ? 'eager' : 'lazy'}
               sizes="(max-width: 768px) 100vw, 70vw"
             />
@@ -272,12 +273,13 @@ export const FeaturedTabs = () => {
                         <Image
                           src={item.image}
                           alt={`${item.title} - ${item.category}`}
-                          fill
+                          width={1200}
+                          height={675}
                           className={`${
                             tab.id === "manufacturing"
                               ? "object-contain"
                               : "object-cover"
-                          } w-full h-full group-hover:scale-105 transition-transform duration-500`}
+                          } w-full h-auto group-hover:scale-105 transition-transform duration-500`}
                           loading="lazy"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
