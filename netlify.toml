@@ -8,3 +8,16 @@
 # Next.js specific settings
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Redirect non-www to www for SEO consistency
+[[redirects]]
+  from = "http://emuski.com/*"
+  to = "https://www.emuski.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://emuski.com/*"
+  to = "https://www.emuski.com/:splat"
+  status = 301
+  force = true
