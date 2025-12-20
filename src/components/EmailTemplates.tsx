@@ -265,7 +265,6 @@ export const generateDailyNewsletterHTML = (date: string, featuredArticle: any, 
             <div class="footer-links">
                 <a href="https://EMUSKI.com/blog" class="footer-link">Blog</a>
                 <a href="https://EMUSKI.com/services" class="footer-link">Services</a>
-                <a href="https://EMUSKI.com/about" class="footer-link">About</a>
                 <a href="https://EMUSKI.com/contact" class="footer-link">Contact</a>
             </div>
             

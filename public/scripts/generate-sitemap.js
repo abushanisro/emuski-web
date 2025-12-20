@@ -24,9 +24,7 @@ const CONFIG = {
 // ========================================
 const STATIC_PAGES = [
   { path: '', priority: 1.0, changefreq: 'daily' },
-  { path: '/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/contact', priority: 0.7, changefreq: 'monthly' },
-  { path: '/services', priority: 0.9, changefreq: 'weekly' },
   { path: '/blog', priority: 0.8, changefreq: 'weekly' },
   
   // Add your static pages here
