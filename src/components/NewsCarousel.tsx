@@ -46,11 +46,11 @@ export const NewsCarousel = () => {
                 <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-16 sm:h-16 w-24 sm:w-24">
                   <Image
                     src={client.logo}
-                    alt={`${client.name} - Manufacturing Partner`}
+                    alt={`${client.name} - Manufacturing Partner Logo`}
                     fill
                     className="object-contain filter brightness-0 invert"
                     loading="lazy"
-                    quality={90}
+                    quality={75}
                     sizes="96px"
                   />
                 </div>

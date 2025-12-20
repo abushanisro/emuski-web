@@ -216,21 +216,21 @@ export default function PrecisionEngineering() {
               <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
                 <Image
                   src="/assets/engineering/cost360-platform-dashboard.png"
-                  alt="Costing 360 Platform"
+                  alt="Cost 360 Platform Dashboard - Advanced Cost Estimation Tool"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
-                  quality={80}
+                  quality={75}
                 />
               </div>
               <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
                 <Image
                   src="/assets/engineering/cost360-crm-system.png"
-                  alt="Costing 360 CRM"
+                  alt="Cost 360 CRM System - Client Relationship Management"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"
-                  quality={80}
+                  quality={75}
                 />
               </div>
             </div>

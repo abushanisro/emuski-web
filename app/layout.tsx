@@ -36,14 +36,9 @@ export const metadata: Metadata = {
     images: ['https://www.emuski.com/twitter-image.jpg'],
   },
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.svg', sizes: '16x16', type: 'image/png' },
-      { url: '/android-chrome-192x192.svg', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.svg', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.svg',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   other: {
     'geo.region': 'IN-KA',

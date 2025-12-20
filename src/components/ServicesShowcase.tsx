@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight, ArrowRight, ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const servicesData = [
   {
@@ -374,14 +373,11 @@ export const ServicesShowcase = () => {
                               {/* Project Image */}
                               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
-                                <Image
+                                <img
                                   src={project.image}
                                   alt={`${project.title} - ${project.category} Service`}
-                                  fill
-                                  className="transform group-hover:scale-110 transition-transform duration-700 object-cover object-center"
+                                  className="w-full h-full transform group-hover:scale-110 transition-transform duration-700 object-cover object-center"
                                   loading="lazy"
-                                  quality={80}
-                                  sizes="340px"
                                 />
 
 

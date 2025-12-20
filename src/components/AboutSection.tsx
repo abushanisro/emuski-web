@@ -248,12 +248,12 @@ const AboutSection = () => {
                                                 <div className="relative h-48 overflow-hidden">
                                                     <Image
                                                         src={story.image}
-                                                        alt={story.label}
+                                                        alt={`${story.label} - ${story.category}`}
                                                         fill
                                                         sizes="(max-width: 1024px) 100vw, 33vw"
                                                         className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                        quality={75}
-                                                        priority={index === 0}
+                                                        quality={70}
+                                                        loading="lazy"
                                                     />
                                                     {story.category === 'Our Expertise' && (
                                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>

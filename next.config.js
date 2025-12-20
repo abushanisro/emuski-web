@@ -7,10 +7,6 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Configure default quality for optimization
-    quality: 75,
-    // Configure quality levels for Next.js 16 compatibility
-    qualities: [75, 80, 85, 90, 95, 100],
     remotePatterns: [
       {
         protocol: 'https',
@@ -25,6 +21,8 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
+    // Default quality for PNG/JPG optimization (70-80 recommended for SEO)
+    unoptimized: false,
   },
 
   // Explicitly tell Next.js your project root
