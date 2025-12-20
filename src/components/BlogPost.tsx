@@ -509,6 +509,10 @@ export const BlogPostComponent = () => {
                         // Normalize multiple spaces
                         html = html.replace(/\s{2,}/g, ' ');
 
+                        // Remove internal links with no anchor text (e.g. <a href="/..."></a>)
+                        // This helps avoid "internal outlinks with no anchor text" SEO warnings from imported Blogger HTML
+                        html = html.replace(/<a([^>]*)>\s*<\/a>/gi, '');
+
                         // Remove empty tags but preserve structure (run twice for nested empties)
                         // BUT don't remove divs that might contain images
                         for (let i = 0; i < 2; i++) {
