@@ -79,12 +79,16 @@ export const ManufacturingServicesContent = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
-                    src="https://drive.google.com/file/d/1J1Y9c5m6gJfavjiC2QmtuAAdBpRHmlNI/preview"
-                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
-                    allow="autoplay"
-                    title="On-Demand Manufacturing Video"
-                  />
+                  <video
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+                    controls
+                    preload="metadata"
+                    aria-label="On-demand manufacturing capabilities video"
+                    poster="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg"
+                  >
+                    <source src="/video/manufacturing-video/ondemandmanufaturing.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -263,19 +267,23 @@ export const ManufacturingServicesContent = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <iframe
-                    src="https://drive.google.com/file/d/1mb6SBMeBNHNna40QWYUyyA45mA594Eqy/preview"
-                    className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
-                    allow="autoplay"
-                    title="Custom Manufacturing Video"
-                  />
+                  <video
+                    className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
+                    controls
+                    preload="metadata"
+                    aria-label="Custom manufacturing and precision engineering video"
+                    poster="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-1.jpeg"
+                  >
+                    <source src="/video/manufacturing-video/custummanufaturing.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      
       {/* Production Scaling */}
       <section id="scaling-details" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6">
