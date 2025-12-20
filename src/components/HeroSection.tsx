@@ -149,7 +149,11 @@ export const HeroSection = () => {
                         href={slide.link}
                         className="inline-flex items-center gap-2 px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-base rounded transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/50"
                       >
-                        Learn More
+                        {slide.link === '/manufacturing-services'
+                          ? 'Explore Manufacturing Services'
+                          : slide.link === '/precision-engineering'
+                          ? 'Explore Precision Engineering'
+                          : 'Explore Mithran AI Platform'}
                         <ChevronRight className="w-5 h-5" />
                       </a>
                     </div>
@@ -190,7 +194,11 @@ export const HeroSection = () => {
                     href={slide.link}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-base rounded transition-all duration-300 transform hover:scale-105"
                   >
-                    Learn More
+                    {slide.link === '/manufacturing-services'
+                      ? 'Explore Manufacturing Services'
+                      : slide.link === '/precision-engineering'
+                      ? 'Explore Precision Engineering'
+                      : 'Explore Mithran AI Platform'}
                     <ChevronRight className="w-5 h-5" />
                   </a>
                 </div>
@@ -232,7 +240,11 @@ export const HeroSection = () => {
                       href={slide.link}
                       className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm rounded transition-all duration-300 transform active:scale-95 shadow-lg"
                     >
-                      Learn More
+                      {slide.link === '/manufacturing-services'
+                        ? 'Explore Manufacturing Services'
+                        : slide.link === '/precision-engineering'
+                        ? 'Explore Precision Engineering'
+                        : 'Explore Mithran AI Platform'}
                       <ChevronRight className="w-4 h-4" />
                     </a>
                   </div>
