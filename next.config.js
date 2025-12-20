@@ -62,7 +62,20 @@ const nextConfig = {
   },
 
   async redirects() {
-    return []
+    return [
+      // Redirect non-www to www for SEO consistency
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'emuski.com',
+          },
+        ],
+        destination: 'https://www.emuski.com/:path*',
+        permanent: true, // 301 redirect
+      },
+    ]
   },
 }
 
