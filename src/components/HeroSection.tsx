@@ -114,6 +114,8 @@ export const HeroSection = () => {
                 <img
                   src={slide.image}
                   alt={`${slide.category} - EMUSKI Manufacturing Solutions`}
+                  width={1920}
+                  height={1080}
                   className="w-full h-full object-cover"
                 />
                 {/* Dark gradient overlay on left for text readability */}
@@ -165,6 +167,8 @@ export const HeroSection = () => {
                 <img
                   src={slide.image}
                   alt={`${slide.category}`}
+                  width={1920}
+                  height={1080}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30" />
@@ -202,6 +206,8 @@ export const HeroSection = () => {
                 <img
                   src={slide.mobileImage}
                   alt={`${slide.category}`}
+                  width={1080}
+                  height={1920}
                   className="w-full h-full object-cover object-center"
                 />
               </div>

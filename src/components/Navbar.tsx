@@ -158,6 +158,8 @@ export const Navbar = () => {
 <img 
   src={emuskiLogo} 
   alt="EMUSKI Manufacturing Solutions Logo" 
+  width={160} 
+  height={40} 
   className="h-8 sm:h-10 w-auto object-contain" 
   style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.1) brightness(1.05)' }}
 />
