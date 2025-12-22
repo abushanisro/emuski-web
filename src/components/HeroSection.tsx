@@ -116,10 +116,10 @@ export const HeroSection = () => {
                   alt={`${slide.category} - EMUSKI Manufacturing Solutions`}
                   width={1920}
                   height={1080}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover brightness-110"
                 />
-                {/* Dark gradient overlay on left for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+                {/* Lighter gradient overlay on left for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
               </div>
 
               {/* Content positioned on left */}
@@ -173,9 +173,9 @@ export const HeroSection = () => {
                   alt={`${slide.category}`}
                   width={1920}
                   height={1080}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover brightness-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
               </div>
 
               {/* Content */}
@@ -216,12 +216,12 @@ export const HeroSection = () => {
                   alt={`${slide.category}`}
                   width={1080}
                   height={1920}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center brightness-110"
                 />
               </div>
 
               {/* Gradient Overlays - Top dark, bottom visible */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
 
               {/* Content - Overlay on Top */}
               <div className="relative z-20 h-full flex flex-col pt-20 px-6 pb-32">
