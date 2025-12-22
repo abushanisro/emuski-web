@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Linkedin, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const growthStories = [
   {
@@ -245,19 +246,29 @@ const AboutSection = () => {
                                     {growthStories.map((story, index) => (
                                         <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
                                             <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
-                                                <div className="relative h-48 overflow-hidden">
+                                                <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
                                                     <Image
                                                         src={story.image}
                                                         alt={`${story.label} - ${story.category}`}
                                                         width={600}
                                                         height={400}
                                                         sizes="(max-width: 1024px) 100vw, 33vw"
-                                                        className="object-cover group-hover:scale-110 transition-transform duration-500 w-full h-auto"
+                                                        className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                                                         quality={60}
                                                         loading="lazy"
                                                     />
                                                     {story.category === 'Our Expertise' && (
                                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                                                    )}
+                                                    {story.category === 'Our Production' && (
+                                                        <Link href="/gallery">
+                                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                                                                <div className="bg-emuski-teal-darker text-white px-6 py-3 rounded-lg flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
+                                                                    <span className="font-semibold text-sm">View Gallery</span>
+                                                                    <ArrowRight className="w-4 h-4" />
+                                                                </div>
+                                                            </div>
+                                                        </Link>
                                                     )}
                                                 </div>
                                                 
@@ -310,6 +321,13 @@ const AboutSection = () => {
                                                                 story.description
                                                             )}
                                                         </p>
+                                                    )}
+
+                                                    {story.category === 'Our Production' && (
+                                                        <Link href="/gallery" className="inline-flex items-center gap-2 text-emuski-teal-darker font-semibold text-sm hover:gap-3 transition-all group-hover:text-emuski-teal">
+                                                            <span>View Gallery</span>
+                                                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                                                        </Link>
                                                     )}
                                                 </div>
                                             </div>

@@ -309,12 +309,12 @@ export const Gallery = () => {
               className="group overflow-hidden bg-white hover:shadow-lg transition-all duration-300 cursor-pointer"
               onClick={() => openLightbox(item, index)}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
                 <Image
                   src={item.thumbnail}
                   alt={`${item.title} - ${item.category} Manufacturing Component`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   quality={65}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -407,7 +407,7 @@ export const Gallery = () => {
                   alt={`${selectedImage.title} - Full Resolution`}
                   width={1600}
                   height={1200}
-                  className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain"
+                  className="w-full h-auto max-h-[50vh] sm:max-h-[60vh] object-contain object-center"
                   quality={70}
                   priority
                   sizes="(max-width: 768px) 100vw, 80vw"

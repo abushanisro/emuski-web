@@ -42,11 +42,11 @@ export function EngineeringServiceCard({
   if (variant === "featured" && image) {
     return (
       <div id={id} className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-emuski-teal-darker/40 hover:shadow-xl transition-all duration-300">
-        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
           />
         </div>
 
