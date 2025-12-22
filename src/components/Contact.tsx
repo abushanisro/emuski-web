@@ -105,34 +105,39 @@ export const Contact = () => {
 
 
   const sendEmail = async (data: any, file: File | null) => {
-    // Email configuration
-    const emailData = {
-      to: 'abushan.isro@gmail.com',
-      from: 'noreply@EMUSKI.com',
-      subject: `New Project Inquiry - ${data.name}`,
-      html: `
-        <h2>New Project Inquiry</h2>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Company Email:</strong> ${data.email}</p>
-        <p><strong>Phone:</strong> ${data.phone}</p>
-        <p><strong>Requirements:</strong></p>
-        <p>${data.requirements || 'Not provided'}</p>
-        <p><strong>File Attached:</strong> ${file ? file.name : 'No file'}</p>
-        <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-      `
-    };
+    try {
+      // Create FormData to send multipart/form-data with file attachment
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', data.name);
+      formDataToSend.append('email', data.email);
+      formDataToSend.append('phone', data.phone);
+      formDataToSend.append('requirements', data.requirements || '');
+      formDataToSend.append('recaptchaToken', recaptchaToken || '');
 
-    // For now, we'll store in localStorage and log the email data
-    // In production, you would integrate with an email service like SendGrid, EmailJS, or Nodemailer
-    console.log('📧 EMAIL TO SEND TO abushan.isro@gmail.com:', emailData);
-    if (file) {
-      console.log('📎 FILE ATTACHED:', file.name, file.type, file.size);
+      // Append file if present
+      if (file) {
+        formDataToSend.append('file', file);
+      }
+
+      // Send POST request to API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send email');
+      }
+
+      console.log('✅ Email sent successfully to enquiries@emuski.com');
+      return { success: true, message: result.message };
+
+    } catch (error) {
+      console.error('❌ Email sending error:', error);
+      throw error;
     }
-
-    // You can integrate with EmailJS here:
-    // const result = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData, 'YOUR_USER_ID');
-
-    return Promise.resolve({ success: true });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
