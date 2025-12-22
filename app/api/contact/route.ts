@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+import type { Transporter } from 'nodemailer';
 
 /**
  * Contact Form API Route
  *
  * Handles incoming contact form submissions and sends emails to enquiries@emuski.com
+ * Uses Nodemailer with Gmail SMTP for production-ready email delivery
  * Implements proper validation, error handling, and security measures
  *
  * @author Senior Software Engineer
- * @version 1.0.0
+ * @version 2.0.0 - Production Ready with Nodemailer
  */
 
 // Type definitions for better type safety
@@ -262,101 +265,197 @@ function generateEmailHtml(data: ContactFormData, hasAttachment: boolean): strin
 }
 
 /**
- * Sends email using configured email service
- * Currently set up for multiple providers - configure based on your needs
+ * Creates and configures SMTP transporter
+ * Production-ready configuration with connection pooling and security
  */
-async function sendEmail(payload: EmailPayload): Promise<{ success: boolean; error?: string }> {
-  // Option 1: Using Resend (Recommended - Modern, simple, reliable)
-  // Uncomment and install: npm install resend
-  /*
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  try {
-    await resend.emails.send({
-      from: 'EMUSKI Contact Form <noreply@emuski.com>',
-      to: [payload.to],
-      subject: payload.subject,
-      html: payload.html,
-      attachments: payload.attachments,
-    });
-    return { success: true };
-  } catch (error) {
-    console.error('Resend email error:', error);
-    return { success: false, error: 'Failed to send email via Resend' };
-  }
-  */
-
-  // Option 2: Using Nodemailer (Self-hosted SMTP)
-  // Uncomment and install: npm install nodemailer
-  // This example uses Gmail SMTP - configure your SMTP server
-  /*
-  const nodemailer = require('nodemailer');
-
-  const transporter = nodemailer.createTransporter({
+function createTransporter(): Transporter {
+  const config = {
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false,
+    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD,
     },
-  });
+    // Production-ready settings
+    pool: true, // Use connection pooling
+    maxConnections: 5, // Max concurrent connections
+    maxMessages: 100, // Max messages per connection
+    rateDelta: 1000, // Time between messages (1 second)
+    rateLimit: 5, // Max 5 messages per rateDelta
+    // TLS/SSL settings for security
+    tls: {
+      rejectUnauthorized: true, // Verify server certificate
+      minVersion: 'TLSv1.2', // Minimum TLS version
+    },
+    // Connection timeout settings
+    connectionTimeout: 10000, // 10 seconds
+    greetingTimeout: 10000, // 10 seconds
+    socketTimeout: 30000, // 30 seconds
+    // Logging for debugging (disable in production)
+    logger: process.env.NODE_ENV === 'development',
+    debug: process.env.NODE_ENV === 'development',
+  };
 
-  try {
-    await transporter.sendMail({
-      from: payload.from,
-      to: payload.to,
-      subject: payload.subject,
-      html: payload.html,
-      attachments: payload.attachments?.map(att => ({
-        filename: att.filename,
-        content: Buffer.from(att.content, att.encoding as BufferEncoding),
-      })),
-    });
-    return { success: true };
-  } catch (error) {
-    console.error('Nodemailer error:', error);
-    return { success: false, error: 'Failed to send email via SMTP' };
+  return nodemailer.createTransport(config);
+}
+
+/**
+ * Sends email using Nodemailer with SMTP
+ * Includes retry logic and comprehensive error handling
+ */
+async function sendEmail(
+  payload: EmailPayload,
+  maxRetries: number = 3
+): Promise<{ success: boolean; error?: string }> {
+  const transporter = createTransporter();
+
+  // Verify SMTP configuration
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
+
+  if (!smtpUser || !smtpPassword) {
+    console.error('❌ SMTP credentials not configured');
+    return {
+      success: false,
+      error: 'Email service not configured. Please contact administrator.',
+    };
   }
-  */
 
-  // Option 3: Using SendGrid
-  // Uncomment and install: npm install @sendgrid/mail
-  /*
-  const sgMail = require('@sendgrid/mail');
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  // Prepare email options
+  const mailOptions = {
+    from: `${process.env.SMTP_FROM_NAME || 'EMUSKI Contact Form'} <${process.env.SMTP_FROM_EMAIL || smtpUser}>`,
+    to: payload.to,
+    subject: payload.subject,
+    html: payload.html,
+    // Convert base64 attachments to Buffer
+    attachments: payload.attachments?.map((att) => ({
+      filename: att.filename,
+      content: Buffer.from(att.content, att.encoding as BufferEncoding),
+    })),
+    // Additional headers for better deliverability
+    headers: {
+      'X-Priority': '1',
+      'X-MSMail-Priority': 'High',
+      'Importance': 'high',
+      'X-Mailer': 'EMUSKI Contact Form System v2.0',
+    },
+  };
 
-  try {
-    await sgMail.send({
-      to: payload.to,
-      from: payload.from,
-      subject: payload.subject,
-      html: payload.html,
-      attachments: payload.attachments,
-    });
-    return { success: true };
-  } catch (error) {
-    console.error('SendGrid error:', error);
-    return { success: false, error: 'Failed to send email via SendGrid' };
+  // Retry logic for resilience
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      // Verify connection before sending (first attempt only)
+      if (attempt === 1) {
+        console.log('🔍 Verifying SMTP connection...');
+        await transporter.verify();
+        console.log('✅ SMTP connection verified successfully');
+      }
+
+      // Send email
+      console.log(`📤 Sending email (Attempt ${attempt}/${maxRetries})...`);
+      const info = await transporter.sendMail(mailOptions);
+
+      // Success!
+      console.log('✅ Email sent successfully via Nodemailer');
+      console.log('📧 Message ID:', info.messageId);
+      console.log('📬 To:', payload.to);
+      console.log('📎 Attachments:', payload.attachments?.length || 0);
+
+      // Close transporter
+      transporter.close();
+
+      return { success: true };
+
+    } catch (error: any) {
+      console.error(`❌ Email sending failed (Attempt ${attempt}/${maxRetries}):`, error);
+
+      // Check if we should retry
+      const shouldRetry = attempt < maxRetries && isRetryableError(error);
+
+      if (!shouldRetry) {
+        // Final failure - close transporter and return error
+        transporter.close();
+
+        const errorMessage = getErrorMessage(error);
+        return {
+          success: false,
+          error: errorMessage,
+        };
+      }
+
+      // Wait before retry (exponential backoff)
+      const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000); // Max 5 seconds
+      console.log(`⏳ Retrying in ${delay}ms...`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
   }
-  */
 
-  // Temporary logging until you configure an email service
-  console.log('='.repeat(80));
-  console.log('📧 EMAIL READY TO SEND');
-  console.log('='.repeat(80));
-  console.log('To:', payload.to);
-  console.log('From:', payload.from);
-  console.log('Subject:', payload.subject);
-  console.log('Has Attachments:', !!payload.attachments?.length);
-  console.log('='.repeat(80));
-  console.log('HTML Content:');
-  console.log(payload.html);
-  console.log('='.repeat(80));
+  // Should never reach here, but just in case
+  transporter.close();
+  return {
+    success: false,
+    error: 'Failed to send email after maximum retry attempts',
+  };
+}
 
-  // Return success for development
-  // TODO: Replace with actual email service before production deployment
-  return { success: true };
+/**
+ * Determines if an error is retryable
+ */
+function isRetryableError(error: any): boolean {
+  const retryableErrors = [
+    'ETIMEDOUT',
+    'ECONNRESET',
+    'ECONNREFUSED',
+    'EHOSTUNREACH',
+    'ENETUNREACH',
+    'EAI_AGAIN',
+  ];
+
+  return retryableErrors.some((code) => error.code === code || error.message?.includes(code));
+}
+
+/**
+ * Gets user-friendly error message from error object
+ */
+function getErrorMessage(error: any): string {
+  // Authentication errors
+  if (error.code === 'EAUTH' || error.responseCode === 535) {
+    return 'Email authentication failed. Please verify SMTP credentials.';
+  }
+
+  // Connection errors
+  if (error.code === 'ECONNECTION' || error.code === 'ECONNREFUSED') {
+    return 'Failed to connect to email server. Please try again later.';
+  }
+
+  // Timeout errors
+  if (error.code === 'ETIMEDOUT') {
+    return 'Email server connection timeout. Please try again.';
+  }
+
+  // TLS/SSL errors
+  if (error.message?.includes('SSL') || error.message?.includes('TLS')) {
+    return 'Secure connection to email server failed. Please contact administrator.';
+  }
+
+  // Rate limiting
+  if (error.responseCode === 450 || error.responseCode === 451) {
+    return 'Email server is busy. Please try again in a few minutes.';
+  }
+
+  // Mailbox errors
+  if (error.responseCode === 550) {
+    return 'Invalid recipient email address.';
+  }
+
+  // Generic SMTP errors
+  if (error.responseCode) {
+    return `Email server error (${error.responseCode}). Please contact administrator.`;
+  }
+
+  // Generic error
+  return 'Failed to send email. Please try again or contact administrator.';
 }
 
 /**

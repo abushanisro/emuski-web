@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Recaptcha } from "./ui/recaptcha";
+import { PhoneInputComponent } from "./ui/phone-input";
 import {
   Mail,
   Phone,
@@ -63,21 +64,24 @@ const offices = [
     address: "126, RNS Plaza, KIADB Industrial Area, 1\nnear Tech Mahindra Gate, next to Hyderabad Magic\nElectronic City Phase 2\nBengaluru, Karnataka 560100",
     phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
-    mapUrl: "https://maps.google.com/maps?q=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    coordinates: "12.8456,77.6811", // Electronic City Phase 2, Bangalore
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.5956!2d77.6788!3d12.8456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUwJzQ0LjIiTiA3N8KwNDAnNTIuMiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
   },
   {
     city: "Manufacturing Facility",
     address: "Ground floor, 5/541-1, Santhapuram road,\n1st cross, Kamaraj nagar, Chinna\nelasagiri, Hosur, Krishnagiri district,\nTamil Nadu-635126",
     phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
-    mapUrl: "https://maps.google.com/maps?q=Ground+floor+5/541-1+Santhapuram+road+1st+cross+Kamaraj+nagar+Chinna+elasagiri+Hosur+Krishnagiri+district+Tamil+Nadu+635126&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    coordinates: "12.7401,77.8259", // Hosur, Tamil Nadu
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.2!2d77.8259!3d12.7401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDQ0JzI0LjQiTiA3N8KwNDknMzMuMiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
   },
   {
     city: "Registered Office",
     address: "3/5-264, Srinivasan, Desavilakku,\nManthivalvu, Tharamangalam,\nThuttampatti, Salem,\nTamil Nadu - 636 306",
     phone: "+91 86670 88060",
     email: "enquiries@emuski.com",
-    mapUrl: "https://maps.google.com/maps?q=3/5-264+Srinivasan+Desavilakku+Manthivalvu+Tharamangalam+Thuttampatti+Salem+Tamil+Nadu+636306&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    coordinates: "11.6643,78.1348", // Salem, Tamil Nadu
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5!2d78.1348!3d11.6643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM5JzUxLjUiTiA3OMKwMDgnMDUuMyJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
   }
 ];
 
@@ -285,16 +289,18 @@ export const Contact = () => {
                     <label htmlFor="phone" className="block text-xs font-medium text-gray-700 mb-1.5">
                       Phone *
                     </label>
-                    <input
-                      type="tel"
+                    <PhoneInputComponent
                       id="phone"
                       name="phone"
                       value={formData.phone}
-                      onChange={handleInputChange}
+                      onChange={(value) => {
+                        setFormData(prev => ({
+                          ...prev,
+                          phone: value || ''
+                        }));
+                      }}
+                      placeholder="Enter phone number"
                       required
-                      autoComplete="tel"
-                      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
                     />
                   </div>
 
@@ -496,7 +502,7 @@ export const Contact = () => {
                     <Button
                       variant="outline"
                       className="border-2 border-emuski-teal-darker text-emuski-teal-darker hover:bg-emuski-teal-darker hover:text-white font-bold rounded-lg transition-all duration-300"
-                      onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=Rudhra+Coworks+Electronic+City+Phase+2+Bangalore+126+RNS+Plaza+KIADB+Industrial+Area+near+Tech+Mahindra+Gate+next+to+Hyderabad+Magic+Bengaluru+Karnataka+560100`, '_blank')}
+                      onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${offices[0].coordinates}`, '_blank')}
                     >
                       <MapPin className="h-4 w-4 mr-2" />
                       Get Directions

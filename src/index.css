@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* React Phone Number Input Styles */
+@import 'react-phone-number-input/style.css';
+
 /* Custom Fonts */
 @font-face {
     font-family: 'Inter Variable';
