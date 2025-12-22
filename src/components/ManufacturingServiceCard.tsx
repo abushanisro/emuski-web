@@ -80,7 +80,7 @@ export function ManufacturingServiceCard({
           )}
 
           <div className="mt-auto flex items-center text-emuski-teal-darker font-semibold text-sm group-hover:gap-2 transition-all">
-            <span>Learn More</span>
+            <span>Learn more</span>
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -124,7 +124,7 @@ export function ManufacturingServiceCard({
       )}
 
       <div className="mt-4 flex items-center text-emuski-teal-darker font-semibold text-sm group-hover:gap-2 transition-all">
-        <span>Explore Service</span>
+        <span>Learn more</span>
         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>

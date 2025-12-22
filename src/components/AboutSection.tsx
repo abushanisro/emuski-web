@@ -24,20 +24,20 @@ const growthStories = [
     image: "/assets/partners/manufacturing-partner-logo-all.svg",
   },
   {
-    value: "150+",
-    label: "Individual Projects Handled",
-    sublabel: "In Engineering Innovation", 
-    category: "Our Expertise",
-    description: "Complex engineering projects delivered from concept to completion with precision and cost optimization.",
-    image: "/assets/engineering/cost-breakdown-engineering.png",
-  },
-  {
     value: "4000+",
     label: "Components Manufactured",
-    sublabel: "In Manufacturing Excellence", 
+    sublabel: "In Manufacturing Excellence",
     category: "Our Production",
     description: "High-precision components manufactured to demanding specifications across diverse industrial applications.",
     image: "/assets/industry-components/automotive-component-manufacturing/automotive-component-2.svg",
+  },
+  {
+    value: "150+",
+    label: "Individual Projects Handled",
+    sublabel: "In Engineering Innovation",
+    category: "Our Expertise",
+    description: "Complex engineering projects delivered from concept to completion with precision and cost optimization.",
+    image: "/assets/engineering/cost-breakdown-engineering.png",
   }
 ];
 

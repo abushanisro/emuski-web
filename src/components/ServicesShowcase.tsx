@@ -397,7 +397,7 @@ export const ServicesShowcase = () => {
                                 </p>
 
                                 <div className="flex items-center gap-2 text-emuski-teal-darker font-semibold group-hover:gap-3 transition-all duration-300">
-                                  <span className="text-sm">Learn more about {project.title}</span>
+                                  <span className="text-sm">Learn more</span>
                                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                                 </div>
                               </div>
