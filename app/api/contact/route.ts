@@ -8,9 +8,10 @@ import type { Transporter } from 'nodemailer';
  * Handles incoming contact form submissions and sends emails to enquiries@emuski.com
  * Uses Nodemailer with Gmail SMTP for production-ready email delivery
  * Implements proper validation, error handling, and security measures
+ * Protected with Google reCAPTCHA v2 verification
  *
  * @author Senior Software Engineer
- * @version 2.0.0 - Production Ready with Nodemailer
+ * @version 2.1.0 - Production Ready with reCAPTCHA v2
  */
 
 // Type definitions for better type safety
@@ -63,45 +64,39 @@ function sanitizeHtml(text: string): string {
 }
 
 /**
- * Verifies reCAPTCHA Enterprise token with Google
+ * Verifies reCAPTCHA v2 token with Google
  */
-async function verifyRecaptchaEnterprise(
-  token: string,
-  expectedAction: string = 'CONTACT_FORM'
-): Promise<{ success: boolean; score?: number; reasons?: string[] }> {
-  const apiKey = process.env.RECAPTCHA_API_KEY;
-  const projectId = process.env.RECAPTCHA_PROJECT_ID || 'gen-lang-client-0965623259';
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LcIVzQsAAAAAMDJCiMdllNR_2WTF3tL535IlrPD';
+async function verifyRecaptchaV2(
+  token: string
+): Promise<{ success: boolean; reasons?: string[] }> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
-  if (!apiKey) {
-    console.error('❌ RECAPTCHA_API_KEY not configured');
-    return { success: false, reasons: ['API key not configured'] };
+  if (!secretKey) {
+    console.error('❌ RECAPTCHA_SECRET_KEY not configured');
+    return { success: false, reasons: ['Secret key not configured'] };
   }
 
   try {
-    const url = `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${apiKey}`;
+    const url = 'https://www.google.com/recaptcha/api/siteverify';
 
-    const requestBody = {
-      event: {
-        token: token,
-        expectedAction: expectedAction,
-        siteKey: siteKey,
-      }
-    };
+    const params = new URLSearchParams({
+      secret: secretKey,
+      response: token,
+    });
 
-    console.log('🔍 Verifying reCAPTCHA Enterprise token...');
+    console.log('🔍 Verifying reCAPTCHA v2 token...');
 
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify(requestBody),
+      body: params.toString(),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`❌ reCAPTCHA Enterprise API error (${response.status}):`, errorText);
+      console.error(`❌ reCAPTCHA v2 API error (${response.status}):`, errorText);
       return {
         success: false,
         reasons: [`API error: ${response.status}`]
@@ -110,52 +105,26 @@ async function verifyRecaptchaEnterprise(
 
     const data = await response.json();
 
+    console.log('reCAPTCHA v2 response:', data);
+
     // Check if token is valid
-    if (!data.tokenProperties?.valid) {
-      console.warn('⚠️ Invalid reCAPTCHA token:', data.tokenProperties?.invalidReason);
+    if (!data.success) {
+      console.warn('⚠️ Invalid reCAPTCHA token:', data['error-codes']);
       return {
         success: false,
-        reasons: [data.tokenProperties?.invalidReason || 'Invalid token']
+        reasons: data['error-codes'] || ['Invalid token']
       };
     }
 
-    // Verify action matches
-    if (data.tokenProperties?.action !== expectedAction) {
-      console.warn('⚠️ Action mismatch:', {
-        expected: expectedAction,
-        received: data.tokenProperties?.action
-      });
-      return {
-        success: false,
-        reasons: ['Action mismatch']
-      };
-    }
-
-    // Get risk score (0.0 - 1.0, where 1.0 is very likely a good interaction)
-    const score = data.riskAnalysis?.score || 0;
-    const reasons = data.riskAnalysis?.reasons || [];
-
-    console.log('✅ reCAPTCHA Enterprise verification successful:', {
-      score,
-      action: data.tokenProperties?.action,
-      reasons: reasons.length > 0 ? reasons : 'none'
-    });
-
-    // Consider score >= 0.5 as human (you can adjust this threshold)
-    const isHuman = score >= 0.5;
-
-    if (!isHuman) {
-      console.warn('⚠️ Low reCAPTCHA score:', score);
-    }
+    console.log('✅ reCAPTCHA v2 verification successful');
 
     return {
-      success: isHuman,
-      score,
-      reasons: isHuman ? [] : ['Low confidence score']
+      success: true,
+      reasons: []
     };
 
   } catch (error) {
-    console.error('❌ reCAPTCHA Enterprise verification failed:', error);
+    console.error('❌ reCAPTCHA v2 verification failed:', error);
     return {
       success: false,
       reasons: ['Verification error']
@@ -580,8 +549,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify reCAPTCHA Enterprise
-    const recaptchaResult = await verifyRecaptchaEnterprise(recaptchaToken, 'CONTACT_FORM');
+    // Verify reCAPTCHA v2
+    const recaptchaResult = await verifyRecaptchaV2(recaptchaToken);
     if (!recaptchaResult.success) {
       console.error('❌ reCAPTCHA verification failed:', recaptchaResult.reasons);
       return NextResponse.json(
@@ -594,7 +563,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('✅ reCAPTCHA verified - Score:', recaptchaResult.score);
+    console.log('✅ reCAPTCHA v2 verified successfully');
 
     // Prepare contact data
     const contactData: ContactFormData = {
