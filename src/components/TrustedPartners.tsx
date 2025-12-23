@@ -6,7 +6,13 @@ export const TrustedPartners = () => {
   return (
     <section className="py-10 sm:py-12 md:py-14 lg:py-16 border-b border-border/30 relative overflow-hidden" style={{ backgroundColor: 'rgb(18, 26, 33)' }}>
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #4fd3d4 1px, transparent 1px), linear-gradient(to bottom, #4fd3d4 1px, transparent 1px)',
+            backgroundSize: '4rem 4rem'
+          }}
+        ></div>
       </div>
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
         <div className="text-center mb-10 sm:mb-12 md:mb-14">

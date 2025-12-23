@@ -32,7 +32,13 @@ export const NewsCarousel = () => {
       {/* Trusted by Clients Section */}
       <section className="py-8 border-b border-border/30 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          <div
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #4fd3d4 1px, transparent 1px), linear-gradient(to bottom, #4fd3d4 1px, transparent 1px)',
+              backgroundSize: '4rem 4rem'
+            }}
+          ></div>
         </div>
         
         <div className="relative z-10">
@@ -43,7 +49,7 @@ export const NewsCarousel = () => {
           <div className="relative overflow-hidden w-full">
             <div className="flex animate-scroll-mobile sm:animate-scroll space-x-8 sm:space-x-12 md:space-x-16 items-center">
               {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
-                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-20 sm:h-24 md:h-24 lg:h-26 w-32 sm:w-36 md:w-36 lg:w-38">
+                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-20 sm:h-24 md:h-24 lg:h-28 w-32 sm:w-36 md:w-36 lg:w-40">
                   <Image
                     src={client.logo}
                     alt={`${client.name} - Manufacturing Partner Logo`}
@@ -52,7 +58,7 @@ export const NewsCarousel = () => {
                     loading="eager"
                     priority={index < 16}
                     quality={75}
-                    sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, 152px"
+                    sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, (max-width: 1024px) 144px, 160px"
                   />
                 </div>
               ))}
@@ -108,7 +114,13 @@ export const NewsCarousel = () => {
       {!loading && successStories && successStories.length > 0 && (
         <section className="py-12 border-b border-border relative overflow-hidden bg-white">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                backgroundImage: 'linear-gradient(to right, #4fd3d4 1px, transparent 1px), linear-gradient(to bottom, #4fd3d4 1px, transparent 1px)',
+                backgroundSize: '4rem 4rem'
+              }}
+            ></div>
           </div>
 
           <div className="w-full px-4 sm:px-6 relative z-10">

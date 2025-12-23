@@ -99,6 +99,20 @@ const config = {
             /scrollbar-thin/,
             /scrollbar-track-/,
             /scrollbar-thumb-/,
+            // Filters and effects
+            /^grayscale/,
+            /^brightness-/,
+            /^invert/,
+            /^filter/,
+            /^contrast-/,
+            /^saturate-/,
+            /^hue-rotate-/,
+            /^backdrop-/,
+            // Background utilities with arbitrary values
+            /^bg-\[/,
+            /^from-\[/,
+            /^to-\[/,
+            /^via-\[/,
           ],
           deep: [
             /PhoneInput/,

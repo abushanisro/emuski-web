@@ -48,6 +48,21 @@ const config: Config = {
     'scrollbar-hide',
     { pattern: /scrollbar-track-.+/ },
     { pattern: /scrollbar-thumb-.+/ },
+    // Filter classes
+    'grayscale',
+    'grayscale-0',
+    'brightness-0',
+    'invert',
+    'filter',
+    { pattern: /grayscale.*/ },
+    { pattern: /brightness-.+/ },
+    { pattern: /contrast-.+/ },
+    { pattern: /saturate-.+/ },
+    { pattern: /backdrop-.+/ },
+    // Animation classes
+    'animate-scroll',
+    'animate-scroll-mobile',
+    { pattern: /animate-scroll.*/ },
   ],
   theme: {
     extend: {
