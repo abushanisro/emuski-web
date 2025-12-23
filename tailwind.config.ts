@@ -10,12 +10,13 @@ const config: Config = {
   // Safelist important dynamic classes that might be purged
   safelist: [
     // Phone input classes
-    { pattern: /^PhoneInput/ },
-    // Radix UI dynamic classes
-    { pattern: /^data-\[state/ },
-    { pattern: /^data-\[orientation/ },
+    'PhoneInput',
+    'PhoneInputInput',
+    'PhoneInputCountry',
+    'PhoneInputCountrySelect',
+    'PhoneInputCountrySelectArrow',
     // Animation classes
-    { pattern: /^animate-/ },
+    { pattern: /animate-.+/ },
   ],
   theme: {
     extend: {

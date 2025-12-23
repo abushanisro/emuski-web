@@ -78,16 +78,14 @@ export default function RootLayout({
           as="image"
           href="/assets/hero-mobile/manufacturing-services-mobile-banner.webp"
           media="(max-width: 767px)"
-          // @ts-ignore
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <link
           rel="preload"
           as="image"
           href="/assets/hero/manufacturing-services-hero-banner.webp"
           media="(min-width: 768px)"
-          // @ts-ignore
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
