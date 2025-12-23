@@ -71,6 +71,7 @@ const navigationConfig = {
     {
       title: "General",
       items: [
+        { name: "Home", path: "/" },
         { name: "Next-GenAI", path: "/solutions/ai" },
         { name: "Blog", path: "/blog" }
       ]
