@@ -140,8 +140,10 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Script
-          src="https://www.google.com/recaptcha/enterprise.js?render=6LcIVzQsAAAAAMDJCiMdllNR_2WTF3tL535IlrPD"
-          strategy="lazyOnload"
+          src="https://www.google.com/recaptcha/enterprise.js"
+          strategy="afterInteractive"
+          async
+          defer
         />
         <Providers>{children}</Providers>
       </body>
