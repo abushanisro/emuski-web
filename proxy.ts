@@ -14,7 +14,7 @@ export function proxy(request: NextRequest) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https: blob:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      "connect-src 'self' https://www.googleapis.com https://www.blogger.com https://blogger.googleusercontent.com https://www.google-analytics.com",
+      "connect-src 'self' https://www.googleapis.com https://www.google.com https://www.gstatic.com https://www.blogger.com https://blogger.googleusercontent.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://*.google-analytics.com https://*.analytics.google.com",
       "frame-src 'self' https://www.google.com",
       "object-src 'none'",
       "base-uri 'self'",
