@@ -69,17 +69,11 @@ const navigationConfig = {
       ]
     },
     {
-      title: "General",
+      title: "Solutions",
       items: [
-        { name: "Home", path: "/" },
         { name: "Next-GenAI", path: "/solutions/ai" },
-        { name: "Blog", path: "/blog" }
-      ]
-    },
-    {
-      title: "Company",
-      items: [
         { name: "Gallery", path: "/gallery" },
+        { name: "Blog", path: "/blog" },
         { name: "Contact", path: "/contact" }
       ]
     }
@@ -282,37 +276,39 @@ export const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[9999]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
-                  <div className="p-6 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-b border-gray-100">
-                    <div className="flex items-center space-x-3">
-                      <Image 
-                        src={emuskiLogo} 
-                        alt="EMUSKI Manufacturing Solutions Logo" 
-                        width={80}
-                        height={40}
-                        className="h-8 w-auto object-contain [image-rendering:crisp-edges] contrast-[1.2] brightness-110 opacity-80" 
+                <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[9999]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
+                  <div className="p-3 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-b border-gray-100">
+                    <div className="flex items-center space-x-2">
+                      <Image
+                        src={emuskiLogo}
+                        alt="EMUSKI Manufacturing Solutions Logo"
+                        width={60}
+                        height={30}
+                        className="h-6 w-auto object-contain [image-rendering:crisp-edges] contrast-[1.2] brightness-110 opacity-80"
                         quality={75}
                       />
                       <div>
-                        <h3 className="font-bold text-gray-900">EMUSKI</h3>
-                        <p className="text-xs text-gray-600">One-stop solution for OEMs</p>
+                        <h3 className="text-sm font-bold text-gray-900">EMUSKI</h3>
+                        <p className="text-[10px] text-gray-600 leading-tight">One-stop solution for OEMs</p>
                       </div>
                     </div>
                   </div>
-                  <div className="p-4 space-y-2 max-h-[70vh] overflow-y-auto">
+                  <div className="py-2 max-h-[65vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                     {navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
-                      <div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-3 mt-3" : "mb-3"}>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">{section.title}</h4>
-                        {section.items.map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
+                      <div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : ""}>
+                        <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3">{section.title}</h4>
+                        <div className="space-y-0.5">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="block px-3 py-1.5 text-[13px] text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>

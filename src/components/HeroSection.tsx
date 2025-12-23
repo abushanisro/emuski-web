@@ -153,7 +153,7 @@ export const HeroSection = () => {
                   <div className="space-y-4">
                     {/* Category Badge */}
                     <div className="inline-flex items-center">
-                      <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                      <span className="text-cyan-400 text-xs font-semibold tracking-wider uppercase">
                         {slide.category}
                       </span>
                     </div>
@@ -206,7 +206,7 @@ export const HeroSection = () => {
               {/* Content */}
               <div className="relative z-20 h-full flex items-center px-10">
                 <div className="max-w-2xl space-y-5">
-                  <span className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-sm font-semibold tracking-wider uppercase">
+                  <span className="text-cyan-400 text-sm font-semibold tracking-wider uppercase">
                     {slide.category}
                   </span>
                   <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -251,7 +251,7 @@ export const HeroSection = () => {
               {/* Content - Overlay on Top */}
               <div className="relative z-20 h-full flex flex-col pt-20 px-6 pb-32">
                 <div className="space-y-3 pb-8">
-                  <span className="inline-block px-3 py-1.5 bg-cyan-500/20 border border-cyan-500/50 rounded text-cyan-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                  <span className="text-cyan-400 text-xs font-semibold tracking-wider uppercase">
                     {slide.category}
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight drop-shadow-lg">

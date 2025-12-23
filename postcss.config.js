@@ -93,9 +93,12 @@ const config = {
             /^shadow-/,
             /^rounded-/,
             /^blur-/,
-            // Overflow
+            // Overflow and scrollbar
             /^overflow-/,
             /^scrollbar-/,
+            /scrollbar-thin/,
+            /scrollbar-track-/,
+            /scrollbar-thumb-/,
           ],
           deep: [
             /PhoneInput/,

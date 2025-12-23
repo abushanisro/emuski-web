@@ -43,6 +43,11 @@ const config: Config = {
     { pattern: /scale-.+/ },
     { pattern: /translate-.+/ },
     { pattern: /rotate-.+/ },
+    // Scrollbar classes
+    'scrollbar-thin',
+    'scrollbar-hide',
+    { pattern: /scrollbar-track-.+/ },
+    { pattern: /scrollbar-thumb-.+/ },
   ],
   theme: {
     extend: {
