@@ -1,14 +1,12 @@
+/* All @import rules must come first, before any other rules */
+@import 'react-phone-number-input/style.css';
+@import './styles/performance.css';
+
 /* stylelint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 /* stylelint-enable */
-
-/* React Phone Number Input Styles - Imported after Tailwind for better specificity */
-@import 'react-phone-number-input/style.css';
-
-/* Performance optimizations */
-@import './styles/performance.css';
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
