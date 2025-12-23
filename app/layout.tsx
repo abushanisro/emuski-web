@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://www.emuski.com/og-image.jpg',
-        width: 1200,
-        height: 630,
+        width: 1050,
+        height: 600,
         alt: 'EMUSKI Manufacturing Solutions - Precision Engineering and AI-Powered Production',
       },
     ],
@@ -83,9 +83,9 @@ export default function RootLayout({
                   "url": "https://www.emuski.com/",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.emuski.com/logo.png",
-                    "width": 200,
-                    "height": 60
+                    "url": "https://www.emuski.com/logo.webp",
+                    "width": 3375,
+                    "height": 3375
                   },
                   "contactPoint": [
                     {
