@@ -64,20 +64,13 @@ export const RecaptchaEnterprise = ({
         return;
       }
 
-      // Debug logging
-      console.log(`🔍 Attempt ${loadAttemptRef.current}/${maxLoadAttempts}: Checking for reCAPTCHA...`);
-      console.log('   window.grecaptcha:', !!window.grecaptcha);
-      console.log('   window.grecaptcha.enterprise:', !!(window.grecaptcha && window.grecaptcha.enterprise));
-
       // Check if grecaptcha.enterprise is available
       if (window.grecaptcha && window.grecaptcha.enterprise) {
-        console.log('✅ reCAPTCHA Enterprise loaded successfully');
         if (checkInterval) clearInterval(checkInterval);
 
         // Wait for ready callback
         window.grecaptcha.enterprise.ready(() => {
           if (mounted) {
-            console.log('✅ reCAPTCHA ready callback fired');
             setIsLoaded(true);
             setError(null);
             renderRecaptcha();
@@ -85,11 +78,6 @@ export const RecaptchaEnterprise = ({
         });
       } else if (loadAttemptRef.current >= maxLoadAttempts) {
         // Timeout - reCAPTCHA failed to load
-        console.error('❌ reCAPTCHA Enterprise failed to load after', maxLoadAttempts * 500, 'ms');
-        console.error('   Check:');
-        console.error('   1. Network tab - is the script loading?');
-        console.error('   2. Console - any CSP or CORS errors?');
-        console.error('   3. Site key is valid:', sitekey);
         if (checkInterval) clearInterval(checkInterval);
 
         if (mounted) {
@@ -101,7 +89,6 @@ export const RecaptchaEnterprise = ({
     };
 
     // Start checking for reCAPTCHA
-    console.log('🔍 Initializing reCAPTCHA Enterprise with site key:', sitekey);
     checkRecaptchaReady(); // Check immediately
     checkInterval = setInterval(checkRecaptchaReady, 500); // Then check every 500ms
 
@@ -122,18 +109,15 @@ export const RecaptchaEnterprise = ({
 
   const renderRecaptcha = () => {
     if (!recaptchaRef.current || !window.grecaptcha?.enterprise) {
-      console.warn('⚠️ Cannot render reCAPTCHA - container or library not ready');
       return;
     }
 
     // Don't render if already rendered
     if (widgetIdRef.current !== null) {
-      console.log('ℹ️ reCAPTCHA already rendered');
       return;
     }
 
     try {
-      console.log('🎨 Rendering reCAPTCHA widget...');
       widgetIdRef.current = window.grecaptcha.enterprise.render(recaptchaRef.current, {
         sitekey,
         theme,
@@ -142,35 +126,23 @@ export const RecaptchaEnterprise = ({
         'expired-callback': handleExpired,
         'error-callback': handleError,
       });
-      console.log('✅ reCAPTCHA widget rendered successfully');
     } catch (e) {
-      console.error('❌ Error rendering reCAPTCHA:', e);
       handleError();
     }
   };
 
   const handleVerify = (token: string) => {
-    console.log('✅ reCAPTCHA verified successfully');
     setError(null);
     setIsExpired(false);
     onVerify(token);
   };
 
   const handleExpired = () => {
-    console.warn('⚠️ reCAPTCHA token expired');
     setIsExpired(true);
     onVerify(null);
   };
 
   const handleError = () => {
-    console.error('❌ reCAPTCHA error occurred');
-    console.error('Possible causes:');
-    console.error('1. Invalid site key:', sitekey);
-    console.error('2. Domain not authorized - check Google Cloud Console');
-    console.error('3. Network connectivity issues');
-    console.error('4. Site key might not be for Enterprise (check if it\'s v2/v3 instead)');
-    console.error('Current domain:', window.location.hostname);
-
     const errorMsg = 'Failed to load reCAPTCHA. Please check your internet connection and try again.';
     setError(errorMsg);
     if (onError) {
@@ -181,12 +153,10 @@ export const RecaptchaEnterprise = ({
   const handleReset = () => {
     if (widgetIdRef.current !== null && window.grecaptcha?.enterprise) {
       try {
-        console.log('🔄 Resetting reCAPTCHA...');
         window.grecaptcha.enterprise.reset(widgetIdRef.current);
         setError(null);
         setIsExpired(false);
       } catch (e) {
-        console.error('Error resetting reCAPTCHA:', e);
         setError('Failed to reset. Please refresh the page.');
       }
     }

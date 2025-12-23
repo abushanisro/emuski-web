@@ -84,8 +84,6 @@ async function verifyRecaptchaV2(
       response: token,
     });
 
-    console.log('🔍 Verifying reCAPTCHA v2 token...');
-
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -95,8 +93,6 @@ async function verifyRecaptchaV2(
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`❌ reCAPTCHA v2 API error (${response.status}):`, errorText);
       return {
         success: false,
         reasons: [`API error: ${response.status}`]
@@ -105,18 +101,13 @@ async function verifyRecaptchaV2(
 
     const data = await response.json();
 
-    console.log('reCAPTCHA v2 response:', data);
-
     // Check if token is valid
     if (!data.success) {
-      console.warn('⚠️ Invalid reCAPTCHA token:', data['error-codes']);
       return {
         success: false,
         reasons: data['error-codes'] || ['Invalid token']
       };
     }
-
-    console.log('✅ reCAPTCHA v2 verification successful');
 
     return {
       success: true,
@@ -124,7 +115,6 @@ async function verifyRecaptchaV2(
     };
 
   } catch (error) {
-    console.error('❌ reCAPTCHA v2 verification failed:', error);
     return {
       success: false,
       reasons: ['Verification error']
@@ -327,16 +317,16 @@ function createTransporter(): Transporter {
     rateLimit: 5, // Max 5 messages per rateDelta
     // TLS/SSL settings for security
     tls: {
-      rejectUnauthorized: true, // Verify server certificate
+      rejectUnauthorized: process.env.NODE_ENV === 'production', // Only verify in production
       minVersion: 'TLSv1.2' as const, // Minimum TLS version
     },
     // Connection timeout settings
     connectionTimeout: 10000, // 10 seconds
     greetingTimeout: 10000, // 10 seconds
     socketTimeout: 30000, // 30 seconds
-    // Logging for debugging (disable in production)
-    logger: process.env.NODE_ENV === 'development',
-    debug: process.env.NODE_ENV === 'development',
+    // Disable logging in production
+    logger: false,
+    debug: false,
   } as any;
 
   return nodemailer.createTransport(config);
@@ -389,20 +379,11 @@ async function sendEmail(
     try {
       // Verify connection before sending (first attempt only)
       if (attempt === 1) {
-        console.log('🔍 Verifying SMTP connection...');
         await transporter.verify();
-        console.log('✅ SMTP connection verified successfully');
       }
 
       // Send email
-      console.log(`📤 Sending email (Attempt ${attempt}/${maxRetries})...`);
       const info = await transporter.sendMail(mailOptions);
-
-      // Success!
-      console.log('✅ Email sent successfully via Nodemailer');
-      console.log('📧 Message ID:', info.messageId);
-      console.log('📬 To:', payload.to);
-      console.log('📎 Attachments:', payload.attachments?.length || 0);
 
       // Close transporter
       transporter.close();
@@ -410,8 +391,6 @@ async function sendEmail(
       return { success: true };
 
     } catch (error: any) {
-      console.error(`❌ Email sending failed (Attempt ${attempt}/${maxRetries}):`, error);
-
       // Check if we should retry
       const shouldRetry = attempt < maxRetries && isRetryableError(error);
 
@@ -428,7 +407,6 @@ async function sendEmail(
 
       // Wait before retry (exponential backoff)
       const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000); // Max 5 seconds
-      console.log(`⏳ Retrying in ${delay}ms...`);
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
@@ -552,7 +530,6 @@ export async function POST(request: NextRequest) {
     // Verify reCAPTCHA v2
     const recaptchaResult = await verifyRecaptchaV2(recaptchaToken);
     if (!recaptchaResult.success) {
-      console.error('❌ reCAPTCHA verification failed:', recaptchaResult.reasons);
       return NextResponse.json(
         {
           success: false,
@@ -562,8 +539,6 @@ export async function POST(request: NextRequest) {
         { status: 403 }
       );
     }
-
-    console.log('✅ reCAPTCHA v2 verified successfully');
 
     // Prepare contact data
     const contactData: ContactFormData = {
@@ -614,19 +589,11 @@ export async function POST(request: NextRequest) {
     const emailResult = await sendEmail(emailPayload);
 
     if (!emailResult.success) {
-      console.error('Email sending failed:', emailResult.error);
       return NextResponse.json(
         { success: false, error: 'Failed to send email' },
         { status: 500 }
       );
     }
-
-    // Log successful submission
-    console.log('✅ Contact form submission successful:', {
-      name,
-      email,
-      timestamp: new Date().toISOString(),
-    });
 
     // Return success response
     return NextResponse.json(

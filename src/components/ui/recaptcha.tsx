@@ -30,22 +30,17 @@ export const Recaptcha = ({
   const recaptchaRef = useRef<ReCAPTCHAType>(null);
 
   const handleVerify = (token: string | null) => {
-    console.log('✅ reCAPTCHA verified:', token ? 'Token received' : 'No token');
     setError(null);
     setIsExpired(false);
     onVerify(token);
   };
 
   const handleExpired = () => {
-    console.warn('⚠️ reCAPTCHA token expired');
     setIsExpired(true);
     onVerify(null);
   };
 
   const handleError = () => {
-    console.error('❌ reCAPTCHA error occurred');
-    console.error('Site key:', sitekey);
-    console.error('Current domain:', window.location.hostname);
     setError('Failed to load reCAPTCHA. Please check your internet connection and try again.');
     if (onError) {
       onError();
@@ -61,14 +56,11 @@ export const Recaptcha = ({
   };
 
   const handleLoad = () => {
-    console.log('✅ reCAPTCHA loaded successfully');
     setIsLoaded(true);
     setError(null);
   };
 
   useEffect(() => {
-    console.log('🔍 Initializing reCAPTCHA v2 with site key:', sitekey);
-
     // Cleanup function to reset state when component unmounts
     return () => {
       setError(null);
@@ -78,7 +70,6 @@ export const Recaptcha = ({
   }, [sitekey]);
 
   if (!sitekey) {
-    console.warn('⚠️ No reCAPTCHA site key provided');
     return (
       <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
         <p className="text-sm text-yellow-800">

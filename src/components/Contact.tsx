@@ -135,11 +135,9 @@ export const Contact = () => {
         throw new Error(result.error || 'Failed to send email');
       }
 
-      console.log('✅ Email sent successfully to enquiries@emuski.com');
       return { success: true, message: result.message };
 
     } catch (error) {
-      console.error('❌ Email sending error:', error);
       throw error;
     }
   };
