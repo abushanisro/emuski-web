@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 const emuskiLogo = "/assets/emuski-logo-optimized.webp";
 
 interface NavItem {
@@ -150,171 +151,175 @@ export const Navbar = () => {
   };
 
   return (
-<nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-<div className="w-full px-4 sm:px-6">
-<div className="flex items-center justify-between h-16">
-<div className="flex items-center space-x-8">
-<Link href="/" className="flex items-center space-x-2 group">
-<img 
-  src={emuskiLogo} 
-  alt="EMUSKI Manufacturing Solutions Logo" 
-  width={160} 
-  height={40} 
-  className="h-8 sm:h-10 w-auto object-contain" 
-  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.1) brightness(1.05)' }}
-/>
-<span className="text-lg sm:text-xl font-bold text-foreground">EMUSKI</span>
-</Link>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="w-full px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center space-x-8">
+            <Link href="/" className="flex items-center space-x-2 group">
+              <Image 
+                src={emuskiLogo} 
+                alt="EMUSKI Manufacturing Solutions Logo" 
+                width={80} 
+                height={40} 
+                className="h-8 sm:h-10 w-auto object-contain [image-rendering:crisp-edges] contrast-110 brightness-105" 
+                quality={75}
+                priority
+              />
+              <span className="text-lg sm:text-xl font-bold text-foreground">EMUSKI</span>
+            </Link>
 
-<div className="hidden md:flex items-center space-x-6" ref={servicesRef}>
-<Link
-href="/"
-className={`${getLinkClasses("/")} flex items-center gap-1`}
-title="Home"
->
-<Home className="h-4 w-4" />
-<span className="sr-only">Home</span>
-</Link>
+            <div className="hidden md:flex items-center space-x-6" ref={servicesRef}>
+              <Link
+                href="/"
+                className={`${getLinkClasses("/")} flex items-center gap-1`}
+                title="Home"
+              >
+                <Home className="h-4 w-4" />
+                <span className="sr-only">Home</span>
+              </Link>
 
-{/* Individual Service Dropdowns */}
-{Object.entries(servicesDropdown).map(([key, service]) => (
-<div
-key={key}
-className="relative"
-onMouseEnter={() => setActiveServiceDropdown(key)}
-onMouseLeave={() => setActiveServiceDropdown(null)}
->
-<div className="flex items-center">
-<Link
-href={service.path}
-className={getLinkClasses(service.path)}
-onClick={() => setActiveServiceDropdown(null)}
->
-{service.name}
-</Link>
-<button
-onClick={(e) => {
-e.preventDefault();
-setActiveServiceDropdown(activeServiceDropdown === key ? null : key);
-}}
-className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-colors"
->
-<ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeServiceDropdown === key ? 'rotate-180' : ''}`} />
-</button>
-</div>
+              {/* Individual Service Dropdowns */}
+              {Object.entries(servicesDropdown).map(([key, service]) => (
+                <div
+                  key={key}
+                  className="relative"
+                  onMouseEnter={() => setActiveServiceDropdown(key)}
+                  onMouseLeave={() => setActiveServiceDropdown(null)}
+                >
+                  <div className="flex items-center">
+                    <Link
+                      href={service.path}
+                      className={getLinkClasses(service.path)}
+                      onClick={() => setActiveServiceDropdown(null)}
+                    >
+                      {service.name}
+                    </Link>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActiveServiceDropdown(activeServiceDropdown === key ? null : key);
+                      }}
+                      className="ml-1 p-1 text-foreground hover:text-emuski-teal-darker transition-colors"
+                    >
+                      <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeServiceDropdown === key ? 'rotate-180' : ''}`} />
+                    </button>
+                  </div>
 
-{activeServiceDropdown === key && (
-<div
-className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
-style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
->
-<div className="py-2">
-<Link
-href={service.path}
-className="block px-4 py-3 text-sm font-semibold text-emuski-teal-darker border-b border-gray-100 hover:bg-emuski-teal/5"
-onClick={() => setActiveServiceDropdown(null)}
->
-{service.name} Overview
-</Link>
-{service.subItems.map((subItem, index) => (
-<Link
-key={subItem.path}
-href={subItem.path}
-className="block px-4 py-3 text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
-onClick={() => setActiveServiceDropdown(null)}
->
-<div className="flex items-center justify-between">
-<span>{subItem.name}</span>
-{subItem.beta && (
-<span className="ml-2 px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-300">
-BETA
-</span>
-)}
-</div>
-</Link>
-))}
-</div>
-</div>
-)}
-</div>
-))}
+                  {activeServiceDropdown === key && (
+                    <div
+                      className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
+                      style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
+                    >
+                      <div className="py-2">
+                        <Link
+                          href={service.path}
+                          className="block px-4 py-3 text-sm font-semibold text-emuski-teal-darker border-b border-gray-100 hover:bg-emuski-teal/5"
+                          onClick={() => setActiveServiceDropdown(null)}
+                        >
+                          {service.name} Overview
+                        </Link>
+                        {service.subItems.map((subItem, index) => (
+                          <Link
+                            key={subItem.path}
+                            href={subItem.path}
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
+                            onClick={() => setActiveServiceDropdown(null)}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span>{subItem.name}</span>
+                              {subItem.beta && (
+                                <span className="ml-2 px-2 py-0.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-300">
+                                  BETA
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
 
-{navigationConfig.leftMenu.map((item) => (
-<Link 
-key={item.path}
-href={item.path} 
-className={getLinkClasses(item.path)}
->
-{item.name}
-</Link>
-))}
-</div>
-</div>
+              {navigationConfig.leftMenu.map((item) => (
+                <Link 
+                  key={item.path}
+                  href={item.path} 
+                  className={getLinkClasses(item.path)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-<div className="flex items-center space-x-4">
-<div className="hidden md:flex items-center space-x-6">
-{navigationConfig.rightMenu.map((item) => (
-<Link 
-key={item.path}
-href={item.path} 
-className={getLinkClasses(item.path)}
->
-{item.name}
-</Link>
-))}
-</div>
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-6">
+              {navigationConfig.rightMenu.map((item) => (
+                <Link 
+                  key={item.path}
+                  href={item.path} 
+                  className={getLinkClasses(item.path)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
 
-<span className="sm:hidden transition-colors text-sm font-medium text-emuski-teal-darker">
-{getCurrentPageName()}
-</span>
+            <span className="sm:hidden transition-colors text-sm font-medium text-emuski-teal-darker">
+              {getCurrentPageName()}
+            </span>
 
-<div className="flex items-center space-x-2 relative md:hidden" ref={menuRef}>
-<button 
-onClick={() => setIsMenuOpen(!isMenuOpen)}
-className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-foreground hover:text-emuski-teal-darker">
-<Menu className="h-5 w-5" />
-</button>
+            <div className="flex items-center space-x-2 relative md:hidden" ref={menuRef}>
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-foreground hover:text-emuski-teal-darker"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
 
-{/* Dropdown Menu */}
-{isMenuOpen && (
-<div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[9999]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
-<div className="p-6 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-b border-gray-100">
-<div className="flex items-center space-x-3">
-<img 
-  src={emuskiLogo} 
-  alt="EMUSKI Manufacturing Solutions Logo" 
-  className="h-8 w-auto object-contain" 
-  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1)', opacity: 0.8 }}
-/>
-<div>
-<h3 className="font-bold text-gray-900">EMUSKI</h3>
-<p className="text-xs text-gray-600">One-stop solution for OEMs</p>
-</div>
-</div>
-</div>
-<div className="p-4 space-y-2 max-h-[70vh] overflow-y-auto">
-{navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
-<div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-3 mt-3" : "mb-3"}>
-<h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">{section.title}</h4>
-{section.items.map((item) => (
-<Link
-key={item.path}
-href={item.path}
-className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
-onClick={() => setIsMenuOpen(false)}
->
-{item.name}
-</Link>
-))}
-</div>
-))}
-</div>
-</div>
-)}
-</div>
-</div>
-</div>
-</div>
-</nav>
+              {/* Dropdown Menu */}
+              {isMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[9999]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
+                  <div className="p-6 bg-gradient-to-br from-emuski-teal/5 to-emuski-teal/10 border-b border-gray-100">
+                    <div className="flex items-center space-x-3">
+                      <Image 
+                        src={emuskiLogo} 
+                        alt="EMUSKI Manufacturing Solutions Logo" 
+                        width={80}
+                        height={40}
+                        className="h-8 w-auto object-contain [image-rendering:crisp-edges] contrast-[1.2] brightness-110 opacity-80" 
+                        quality={75}
+                      />
+                      <div>
+                        <h3 className="font-bold text-gray-900">EMUSKI</h3>
+                        <p className="text-xs text-gray-600">One-stop solution for OEMs</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 space-y-2 max-h-[70vh] overflow-y-auto">
+                    {navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
+                      <div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-3 mt-3" : "mb-3"}>
+                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">{section.title}</h4>
+                        {section.items.map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };

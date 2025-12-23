@@ -247,14 +247,14 @@ const AboutSection = () => {
                                         <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">
                                             <div className="bg-white rounded-lg shadow-sm border border-gray-200 hover:border-emuski-teal/50 transition-all duration-300 h-full group overflow-hidden cursor-pointer">
                                                 <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
-                                                    <Image
+<Image
                                                         src={story.image}
                                                         alt={`${story.label} - ${story.category}`}
                                                         width={600}
                                                         height={400}
                                                         sizes="(max-width: 1024px) 100vw, 33vw"
                                                         className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                                                        quality={60}
+                                                        quality={40}
                                                         loading="lazy"
                                                     />
                                                     {story.category === 'Our Expertise' && (

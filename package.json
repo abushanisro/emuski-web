@@ -2,8 +2,9 @@
   "name": "emuski-web",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -84,14 +85,14 @@
   },
   "browserslist": {
     "production": [
-      "chrome >= 87",
-      "edge >= 88",
-      "firefox >= 78",
-      "safari >= 14"
+      "chrome >= 92",
+      "edge >= 92", 
+      "firefox >= 90",
+      "safari >= 15.4"
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
+      "last 1 firefox version", 
       "last 1 safari version"
     ]
   }
