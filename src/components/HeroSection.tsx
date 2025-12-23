@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface Slide {
   image: string;
@@ -15,8 +16,8 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "/assets/hero/manufacturing-services-hero-banner.svg",
-    mobileImage: "/assets/hero-mobile/manufacturing-services-mobile-banner.svg",
+    image: "/assets/hero/manufacturing-services-hero-banner.webp",
+    mobileImage: "/assets/hero-mobile/manufacturing-services-mobile-banner.webp",
     category: "Manufacturing Excellence",
     title: "You Design It, We Build It",
     shortTitle: "Manufacturing Excellence",
@@ -24,8 +25,8 @@ const slides: Slide[] = [
     link: "/manufacturing-services",
   },
   {
-    image: "/assets/hero/precision-engineering-hero-banner.svg",
-    mobileImage: "/assets/hero-mobile/precision-engineering-mobile-banner.svg",
+    image: "/assets/hero/precision-engineering-hero-banner.webp",
+    mobileImage: "/assets/hero-mobile/precision-engineering-mobile-banner.webp",
     category: "Engineering Innovation",
     title: "Engineering That Reduces Your Costs",
     shortTitle: "Engineering Innovations",
@@ -33,8 +34,8 @@ const slides: Slide[] = [
     link: "/precision-engineering",
   },
   {
-    image: "/assets/hero/ai-mithran-hero-banner.svg",
-    mobileImage: "/assets/hero-mobile/ai-mithran-mobile-banner.svg",
+    image: "/assets/hero/ai-mithran-hero-banner.webp",
+    mobileImage: "/assets/hero-mobile/ai-mithran-mobile-banner.webp",
     category: "Next-GenAI",
     title: "AI That Speeds Up Manufacturing",
     shortTitle: "Mithran",
@@ -111,12 +112,14 @@ export const HeroSection = () => {
             <div className="relative h-full">
               {/* Full Width Background Image */}
               <div className="absolute inset-0">
-                <img
+                <Image
                   src={slide.image}
                   alt={`${slide.category} - EMUSKI Manufacturing Solutions`}
-                  width={1920}
-                  height={1080}
-                  className="w-full h-full object-cover brightness-110"
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  quality={85}
+                  className="object-cover brightness-110"
                 />
                 {/* Lighter gradient overlay on left for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
@@ -168,12 +171,14 @@ export const HeroSection = () => {
             <div className="relative h-full">
               {/* Background */}
               <div className="absolute inset-0">
-                <img
+                <Image
                   src={slide.image}
                   alt={`${slide.category}`}
-                  width={1920}
-                  height={1080}
-                  className="w-full h-full object-cover brightness-110"
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  quality={85}
+                  className="object-cover brightness-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
               </div>
@@ -211,12 +216,14 @@ export const HeroSection = () => {
             <div className="relative h-full">
               {/* Background Image - Full Screen */}
               <div className="absolute inset-0">
-                <img
+                <Image
                   src={slide.mobileImage}
                   alt={`${slide.category}`}
-                  width={1080}
-                  height={1920}
-                  className="w-full h-full object-cover object-center brightness-110"
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  quality={85}
+                  className="object-cover object-center brightness-110"
                 />
               </div>
 

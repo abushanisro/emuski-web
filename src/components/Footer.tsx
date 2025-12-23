@@ -3,7 +3,7 @@
 import { Linkedin, Instagram, Twitter, BookOpen, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
-const emuskiLogo = "/assets/emuski-manufacturing-logo.webp";
+const emuskiLogo = "/assets/emuski-logo-optimized.webp";
 
 export const Footer = () => {
   return (

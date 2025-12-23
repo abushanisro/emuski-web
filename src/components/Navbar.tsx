@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-const emuskiLogo = "/assets/emuski-manufacturing-logo.webp";
+const emuskiLogo = "/assets/emuski-logo-optimized.webp";
 
 interface NavItem {
   name: string;

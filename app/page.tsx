@@ -1,14 +1,16 @@
+import dynamicImport from 'next/dynamic'
 import { Navbar } from "@/components/Navbar"
 import { HeroSection } from "@/components/HeroSection"
 import { ServicesShowcase } from "@/components/ServicesShowcase"
-import { NewsCarousel } from "@/components/NewsCarousel"
-import { AboutSection } from "@/components/AboutSection"
-import { FeaturedTabs } from "@/components/FeaturedTabs"
-import { TechnicalSpecsSection } from "@/components/TechnicalSpecsSection"
 import { Footer } from "@/components/Footer"
-import { FAQSection } from "@/components/FAQSection"
-import MethodologySection from "@/components/MethodologySection"
 import { Metadata } from 'next'
+
+// Lazy load below-the-fold components
+const NewsCarousel = dynamicImport(() => import("@/components/NewsCarousel").then(mod => ({ default: mod.NewsCarousel })), { ssr: true })
+const AboutSection = dynamicImport(() => import("@/components/AboutSection").then(mod => ({ default: mod.AboutSection })), { ssr: true })
+const TechnicalSpecsSection = dynamicImport(() => import("@/components/TechnicalSpecsSection").then(mod => ({ default: mod.TechnicalSpecsSection })), { ssr: true })
+const FeaturedTabs = dynamicImport(() => import("@/components/FeaturedTabs").then(mod => ({ default: mod.FeaturedTabs })), { ssr: true })
+const FAQSection = dynamicImport(() => import("@/components/FAQSection").then(mod => ({ default: mod.FAQSection })), { ssr: true })
 
 export const dynamic = 'force-dynamic'
 
