@@ -41,17 +41,18 @@ export const NewsCarousel = () => {
           </div>
           
           <div className="relative overflow-hidden w-full">
-            <div className="flex animate-scroll-mobile sm:animate-scroll space-x-6 sm:space-x-12 items-center">
+            <div className="flex animate-scroll-mobile sm:animate-scroll space-x-8 sm:space-x-12 md:space-x-16 items-center">
               {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
-                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-16 sm:h-16 w-24 sm:w-24">
+                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 relative h-20 sm:h-24 md:h-24 lg:h-26 w-32 sm:w-36 md:w-36 lg:w-38">
                   <Image
                     src={client.logo}
                     alt={`${client.name} - Manufacturing Partner Logo`}
                     fill
                     className="object-contain filter brightness-0 invert"
-                    loading="lazy"
+                    loading="eager"
+                    priority={index < 16}
                     quality={75}
-                    sizes="96px"
+                    sizes="(max-width: 640px) 128px, (max-width: 768px) 144px, 152px"
                   />
                 </div>
               ))}
@@ -78,14 +79,25 @@ export const NewsCarousel = () => {
             }
           }
           .animate-scroll-mobile {
-            animation: scroll-mobile 20s linear infinite;
+            animation: scroll-mobile 50s linear infinite;
+          }
+          .animate-scroll-mobile:hover {
+            animation-play-state: paused;
           }
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            animation: scroll 35s linear infinite;
+          }
+          .animate-scroll:hover {
+            animation-play-state: paused;
           }
           @media (min-width: 640px) {
             .animate-scroll-mobile {
-              animation: scroll 30s linear infinite;
+              animation: scroll 35s linear infinite;
+            }
+          }
+          @media (min-width: 1024px) {
+            .animate-scroll {
+              animation: scroll 45s linear infinite;
             }
           }
           `
