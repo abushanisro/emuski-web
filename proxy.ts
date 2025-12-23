@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export function proxy(request: NextRequest) {
+export default function middleware(request: NextRequest) {
   // Continue with security headers
   const response = NextResponse.next()
 
