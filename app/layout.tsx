@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://www.emuski.com/og-image.jpg',
+        url: 'https://www.emuski.com/og-image.png',
         width: 1050,
         height: 600,
         alt: 'EMUSKI Manufacturing Solutions - Precision Engineering and AI-Powered Production',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     creator: '@emuski',
     title: 'EMUSKI - Your One-Stop Partner for OEM Excellence',
     description: 'World-class OEM manufacturing, precision engineering, and AI-powered production systems in Bangalore, India. Expert design-for-manufacturing and rapid prototyping services.',
-    images: ['https://www.emuski.com/twitter-image.jpg'],
+    images: ['https://www.emuski.com/twitter-image.png'],
   },
   icons: {
     icon: '/favicon.svg',
