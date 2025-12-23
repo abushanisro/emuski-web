@@ -51,12 +51,12 @@ const servicesData = {
 
 function ServiceTabContent({ service }: { service: typeof servicesData["on-demand"] }) {
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+    <div className="max-w-3xl mx-auto">
+      <div className="text-center mb-4">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
           {service.title}
         </h2>
-        <p className="text-base sm:text-lg text-emuski-teal-darker font-semibold">
+        <p className="text-sm sm:text-base text-emuski-teal-darker font-medium">
           {service.tagline}
         </p>
       </div>
@@ -67,9 +67,8 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
             <Image
               src={service.image}
               alt={service.title}
-              width={1200}
-              height={675}
-              className="object-contain w-full h-auto"
+              fill
+              className="object-contain"
               sizes="(max-width: 768px) 100vw, 75vw"
               loading="lazy"
             />
@@ -77,16 +76,16 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {service.features.map((feature, idx) => (
           <div
             key={idx}
-            className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-5 text-center hover:bg-gray-100 hover:border-emuski-teal-dark hover:shadow-md transition-all duration-300"
+            className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center hover:bg-gray-100 hover:border-emuski-teal-dark hover:shadow-md transition-all duration-200"
           >
-            <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-1.5 sm:mb-2">
+            <h3 className="font-semibold text-sm text-gray-900 mb-1">
               {feature.title}
             </h3>
-            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+            <p className="text-gray-600 text-xs leading-snug">
               {feature.desc}
             </p>
           </div>
@@ -98,36 +97,25 @@ function ServiceTabContent({ service }: { service: typeof servicesData["on-deman
 
 export function ManufacturingServicesTabs() {
   return (
-    <section id="manufacturing-tabs" className="py-12 md:py-16 bg-white">
+    <section id="manufacturing-tabs" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <Tabs defaultValue="on-demand" className="w-full">
-          <div className="relative max-w-3xl mx-auto mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-emuski-teal-darker/30 via-emuski-teal-dark/20 to-emuski-teal-darker/30 rounded-md blur-lg animate-pulse"></div>
-            <TabsList className="relative grid w-full grid-cols-2 md:grid-cols-4 bg-gradient-to-br from-emuski-teal-darker/15 via-emuski-teal-dark/10 to-emuski-teal-darker/15 backdrop-blur-xl border border-emuski-teal-dark/40 shadow-[0_8px_32px_0_rgba(79,211,212,0.2)] rounded-md overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-200%] before:animate-[shimmer_3s_infinite]">
-              <TabsTrigger value="on-demand" className="relative z-10 text-xs sm:text-sm px-2 sm:px-3 py-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">On-Demand</TabsTrigger>
-              <TabsTrigger value="prototyping" className="relative z-10 text-xs sm:text-sm px-2 sm:px-3 py-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Prototyping</TabsTrigger>
-              <TabsTrigger value="custom" className="relative z-10 text-xs sm:text-sm px-2 sm:px-3 py-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Custom</TabsTrigger>
-              <TabsTrigger value="scaling" className="relative z-10 text-xs sm:text-sm px-2 sm:px-3 py-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-emuski-teal-dark data-[state=active]:to-emuski-teal-darker data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:bg-white/10">Scaling</TabsTrigger>
+          <div className="max-w-2xl mx-auto mb-5">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gray-100/80 border border-gray-200 rounded-lg p-1">
+              <TabsTrigger value="on-demand" className="text-xs sm:text-sm px-2 py-1.5 data-[state=active]:bg-emuski-teal-dark data-[state=active]:text-white data-[state=active]:shadow-sm transition-all duration-200">On-Demand</TabsTrigger>
+              <TabsTrigger value="prototyping" className="text-xs sm:text-sm px-2 py-1.5 data-[state=active]:bg-emuski-teal-dark data-[state=active]:text-white data-[state=active]:shadow-sm transition-all duration-200">Prototyping</TabsTrigger>
+              <TabsTrigger value="custom" className="text-xs sm:text-sm px-2 py-1.5 data-[state=active]:bg-emuski-teal-dark data-[state=active]:text-white data-[state=active]:shadow-sm transition-all duration-200">Custom</TabsTrigger>
+              <TabsTrigger value="scaling" className="text-xs sm:text-sm px-2 py-1.5 data-[state=active]:bg-emuski-teal-dark data-[state=active]:text-white data-[state=active]:shadow-sm transition-all duration-200">Scaling</TabsTrigger>
             </TabsList>
           </div>
 
           {Object.entries(servicesData).map(([key, service]) => (
-            <TabsContent key={key} value={key} className="mt-6 fade-in">
+            <TabsContent key={key} value={key} className="mt-4 fade-in">
               <ServiceTabContent service={service} />
             </TabsContent>
           ))}
         </Tabs>
       </div>
-      <style>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-200%);
-          }
-          100% {
-            transform: translateX(200%);
-          }
-        }
-      `}</style>
     </section>
   );
 }
