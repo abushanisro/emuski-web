@@ -372,7 +372,7 @@ export const ServicesShowcase = () => {
                           >
                             <div className="relative h-full bg-white overflow-hidden border border-gray-200 hover:border-emuski-teal-darker/40 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
                               {/* Project Image */}
-                              <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
                                 <Image
                                   src={project.image}

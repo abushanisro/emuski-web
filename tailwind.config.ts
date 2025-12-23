@@ -17,6 +17,32 @@ const config: Config = {
     'PhoneInputCountrySelectArrow',
     // Animation classes
     { pattern: /animate-.+/ },
+    // EMUSKI color classes
+    { pattern: /bg-emuski-.+/ },
+    { pattern: /text-emuski-.+/ },
+    { pattern: /border-emuski-.+/ },
+    { pattern: /from-emuski-.+/ },
+    { pattern: /via-emuski-.+/ },
+    { pattern: /to-emuski-.+/ },
+    // Gradient classes
+    { pattern: /from-.+/ },
+    { pattern: /via-.+/ },
+    { pattern: /to-.+/ },
+    // Grid and layout classes
+    { pattern: /grid-.+/ },
+    { pattern: /gap-.+/ },
+    { pattern: /w-.+/ },
+    { pattern: /h-.+/ },
+    // Flex classes
+    { pattern: /flex-.+/ },
+    // Opacity classes
+    { pattern: /opacity-.+/ },
+    // Shadow classes
+    { pattern: /shadow-.+/ },
+    // Transform classes
+    { pattern: /scale-.+/ },
+    { pattern: /translate-.+/ },
+    { pattern: /rotate-.+/ },
   ],
   theme: {
     extend: {
