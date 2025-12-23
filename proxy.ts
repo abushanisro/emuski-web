@@ -11,8 +11,9 @@ export default function middleware(request: NextRequest) {
     [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com",
+      "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' data: https: blob:",
+      "img-src 'self' data: https: blob: https://www.google-analytics.com https://www.googletagmanager.com",
       "font-src 'self' data: https://fonts.gstatic.com",
       "connect-src 'self' https://www.googleapis.com https://www.google.com https://www.gstatic.com https://www.blogger.com https://blogger.googleusercontent.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://*.google-analytics.com https://*.analytics.google.com",
       "frame-src 'self' https://www.google.com",
