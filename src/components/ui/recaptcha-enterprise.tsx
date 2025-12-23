@@ -64,6 +64,11 @@ export const RecaptchaEnterprise = ({
         return;
       }
 
+      // Debug logging
+      console.log(`🔍 Attempt ${loadAttemptRef.current}/${maxLoadAttempts}: Checking for reCAPTCHA...`);
+      console.log('   window.grecaptcha:', !!window.grecaptcha);
+      console.log('   window.grecaptcha.enterprise:', !!(window.grecaptcha && window.grecaptcha.enterprise));
+
       // Check if grecaptcha.enterprise is available
       if (window.grecaptcha && window.grecaptcha.enterprise) {
         console.log('✅ reCAPTCHA Enterprise loaded successfully');
@@ -72,6 +77,7 @@ export const RecaptchaEnterprise = ({
         // Wait for ready callback
         window.grecaptcha.enterprise.ready(() => {
           if (mounted) {
+            console.log('✅ reCAPTCHA ready callback fired');
             setIsLoaded(true);
             setError(null);
             renderRecaptcha();
@@ -80,6 +86,10 @@ export const RecaptchaEnterprise = ({
       } else if (loadAttemptRef.current >= maxLoadAttempts) {
         // Timeout - reCAPTCHA failed to load
         console.error('❌ reCAPTCHA Enterprise failed to load after', maxLoadAttempts * 500, 'ms');
+        console.error('   Check:');
+        console.error('   1. Network tab - is the script loading?');
+        console.error('   2. Console - any CSP or CORS errors?');
+        console.error('   3. Site key is valid:', sitekey);
         if (checkInterval) clearInterval(checkInterval);
 
         if (mounted) {
@@ -91,7 +101,7 @@ export const RecaptchaEnterprise = ({
     };
 
     // Start checking for reCAPTCHA
-    console.log('🔍 Waiting for reCAPTCHA Enterprise to load...');
+    console.log('🔍 Initializing reCAPTCHA Enterprise with site key:', sitekey);
     checkRecaptchaReady(); // Check immediately
     checkInterval = setInterval(checkRecaptchaReady, 500); // Then check every 500ms
 
@@ -108,7 +118,7 @@ export const RecaptchaEnterprise = ({
         }
       }
     };
-  }, []);
+  }, [sitekey]);
 
   const renderRecaptcha = () => {
     if (!recaptchaRef.current || !window.grecaptcha?.enterprise) {
