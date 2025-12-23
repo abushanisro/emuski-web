@@ -60,18 +60,18 @@ export const ManufacturingServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">24-48h</div>
-                    <div className="text-xs text-gray-600">Lead Time</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">24-48h</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Lead Time</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">1-10k</div>
-                    <div className="text-xs text-gray-600">Unit Range</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">1-10k</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Unit Range</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">99.5%</div>
-                    <div className="text-xs text-gray-600">On-Time</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">99.5%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">On-Time</div>
                   </div>
                 </div>
               </div>
@@ -83,6 +83,7 @@ export const ManufacturingServicesContent = () => {
                   <video
                     className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
                     controls
+                    playsInline
                     preload="metadata"
                     aria-label="On-demand manufacturing capabilities video"
                     poster="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg"
@@ -168,18 +169,18 @@ export const ManufacturingServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">3-5 days</div>
-                    <div className="text-xs text-gray-600">Typical Lead Time</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">3-5 days</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Typical Lead Time</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">10+</div>
-                    <div className="text-xs text-gray-600">Materials Available</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">10+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Materials Available</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.005mm</div>
-                    <div className="text-xs text-gray-600">Precision</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">±0.005mm</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Precision</div>
                   </div>
                 </div>
               </div>
@@ -251,18 +252,18 @@ export const ManufacturingServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">±0.005mm</div>
-                    <div className="text-xs text-gray-600">Precision Level</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">±0.005mm</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Precision Level</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">50+</div>
-                    <div className="text-xs text-gray-600">Material Options</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">50+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Material Options</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">100%</div>
-                    <div className="text-xs text-gray-600">Inspection</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">100%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Inspection</div>
                   </div>
                 </div>
               </div>
@@ -274,6 +275,7 @@ export const ManufacturingServicesContent = () => {
                   <video
                     className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
                     controls
+                    playsInline
                     preload="metadata"
                     aria-label="Custom manufacturing and precision engineering video"
                     poster="/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-1.jpeg"
