@@ -164,6 +164,13 @@ export const RecaptchaEnterprise = ({
 
   const handleError = () => {
     console.error('❌ reCAPTCHA error occurred');
+    console.error('Possible causes:');
+    console.error('1. Invalid site key:', sitekey);
+    console.error('2. Domain not authorized - check Google Cloud Console');
+    console.error('3. Network connectivity issues');
+    console.error('4. Site key might not be for Enterprise (check if it\'s v2/v3 instead)');
+    console.error('Current domain:', window.location.hostname);
+
     const errorMsg = 'Failed to load reCAPTCHA. Please check your internet connection and try again.';
     setError(errorMsg);
     if (onError) {

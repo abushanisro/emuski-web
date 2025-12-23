@@ -140,7 +140,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Script
-          src="https://www.google.com/recaptcha/enterprise.js"
+          src="https://www.google.com/recaptcha/api.js"
           strategy="afterInteractive"
           async
           defer

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { RecaptchaEnterprise } from "./ui/recaptcha-enterprise";
+import { Recaptcha } from "./ui/recaptcha";
 import { PhoneInputComponent } from "./ui/phone-input";
 import {
   Mail,
@@ -343,14 +343,13 @@ export const Contact = () => {
                     )}
                   </div>
 
-                  {/* reCAPTCHA Enterprise */}
+                  {/* reCAPTCHA v2 */}
                   <div>
-                    <RecaptchaEnterprise
+                    <Recaptcha
                       onVerify={setRecaptchaToken}
                       onError={() => setRecaptchaToken(null)}
                       theme="light"
                       size="normal"
-                      action="CONTACT_FORM"
                     />
                   </div>
 

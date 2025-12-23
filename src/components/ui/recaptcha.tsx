@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 import ReCAPTCHAType from 'react-google-recaptcha';
@@ -20,7 +22,7 @@ export const Recaptcha = ({
   className = '',
   theme = 'light',
   size = 'normal',
-  sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Test key
+  sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
 }: RecaptchaProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,17 +30,22 @@ export const Recaptcha = ({
   const recaptchaRef = useRef<ReCAPTCHAType>(null);
 
   const handleVerify = (token: string | null) => {
+    console.log('✅ reCAPTCHA verified:', token ? 'Token received' : 'No token');
     setError(null);
     setIsExpired(false);
     onVerify(token);
   };
 
   const handleExpired = () => {
+    console.warn('⚠️ reCAPTCHA token expired');
     setIsExpired(true);
     onVerify(null);
   };
 
   const handleError = () => {
+    console.error('❌ reCAPTCHA error occurred');
+    console.error('Site key:', sitekey);
+    console.error('Current domain:', window.location.hostname);
     setError('Failed to load reCAPTCHA. Please check your internet connection and try again.');
     if (onError) {
       onError();
@@ -54,111 +61,115 @@ export const Recaptcha = ({
   };
 
   const handleLoad = () => {
+    console.log('✅ reCAPTCHA loaded successfully');
     setIsLoaded(true);
     setError(null);
   };
 
   useEffect(() => {
+    console.log('🔍 Initializing reCAPTCHA v2 with site key:', sitekey);
+
     // Cleanup function to reset state when component unmounts
     return () => {
       setError(null);
       setIsExpired(false);
       setIsLoaded(false);
     };
-  }, []);
+  }, [sitekey]);
 
-  const RecaptchaComponent = () => (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading security verification...</div>}>
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={sitekey}
-        onChange={handleVerify}
-        onExpired={handleExpired}
-        onError={handleError}
-        onLoad={handleLoad}
-        theme={theme}
-        size={size}
-      />
-    </Suspense>
-  );
-
-  // For development, automatically verify if no site key is configured
-  useEffect(() => {
-    if (!sitekey || sitekey === '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI') {
-      // Auto-verify with test token for development
-      setTimeout(() => {
-        onVerify('test-token-for-development');
-      }, 100);
-    }
-  }, [sitekey, onVerify]);
-
-  if (!sitekey || sitekey === '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI') {
-    return null; // Hide in development mode
+  if (!sitekey) {
+    console.warn('⚠️ No reCAPTCHA site key provided');
+    return (
+      <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <p className="text-sm text-yellow-800">
+          reCAPTCHA is not configured. Please add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to your environment variables.
+        </p>
+      </div>
+    );
   }
 
   return (
     <div className={`space-y-2 ${className}`}>
       <div className="recaptcha-container">
-        <RecaptchaComponent />
+        <Suspense fallback={
+          <div className="flex items-center space-x-2 text-sm text-gray-500 py-6">
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-emuski-teal"></div>
+            <span>Loading security verification...</span>
+          </div>
+        }>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={sitekey}
+            onChange={handleVerify}
+            onExpired={handleExpired}
+            onErrored={handleError}
+            theme={theme}
+            size={size}
+          />
+        </Suspense>
       </div>
-      
+
       {error && (
         <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 text-red-800">
-              <AlertCircle className="h-4 w-4" />
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
               <span className="text-sm">{error}</span>
             </div>
             <button
               onClick={handleReset}
-              className="text-red-600 hover:text-red-800 transition-colors"
+              className="text-red-600 hover:text-red-800 transition-colors ml-2"
               type="button"
+              aria-label="Retry"
             >
               <RefreshCw className="h-4 w-4" />
             </button>
           </div>
         </div>
       )}
-      
+
       {isExpired && (
         <div className="p-3 bg-orange-50 border border-orange-200 rounded-lg">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 text-orange-800">
-              <AlertCircle className="h-4 w-4" />
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
               <span className="text-sm">reCAPTCHA has expired. Please verify again.</span>
             </div>
             <button
               onClick={handleReset}
-              className="text-orange-600 hover:text-orange-800 transition-colors"
+              className="text-orange-600 hover:text-orange-800 transition-colors ml-2"
               type="button"
+              aria-label="Reset"
             >
               <RefreshCw className="h-4 w-4" />
             </button>
           </div>
         </div>
       )}
-      
-      <p className="text-xs text-gray-500">
-        This site is protected by reCAPTCHA and the Google{' '}
-        <a 
-          href="https://policies.google.com/privacy" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Privacy Policy
-        </a>{' '}
-        and{' '}
-        <a 
-          href="https://policies.google.com/terms" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Terms of Service
-        </a>{' '}
-        apply.
-      </p>
+
+      {isLoaded && !error && (
+        <p className="text-xs text-gray-500">
+          This site is protected by reCAPTCHA and the Google{' '}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Privacy Policy
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Terms of Service
+          </a>{' '}
+          apply.
+        </p>
+      )}
     </div>
   );
 };
