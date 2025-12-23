@@ -1,7 +1,22 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+  ],
+  // Safelist important dynamic classes that might be purged
+  safelist: [
+    // Phone input classes
+    { pattern: /^PhoneInput/ },
+    // Radix UI dynamic classes
+    { pattern: /^data-\[state/ },
+    { pattern: /^data-\[orientation/ },
+    // Animation classes
+    { pattern: /^animate-/ },
+  ],
   theme: {
     extend: {
       colors: {

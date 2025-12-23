@@ -109,6 +109,7 @@ export const NewsCarousel = () => {
                   size="icon"
                   onClick={() => scroll("left")}
                   className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
+                  aria-label="Scroll success stories left"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </Button>
@@ -117,6 +118,7 @@ export const NewsCarousel = () => {
                   size="icon"
                   onClick={() => scroll("right")}
                   className="border-emuski-teal-darker bg-emuski-teal-darker text-white hover:bg-emuski-teal-darker/80"
+                  aria-label="Scroll success stories right"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </Button>

@@ -4,7 +4,12 @@ import Script from 'next/script'
 import '@/index.css'
 import { Providers } from './providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', // Optimize font loading
+  preload: true,
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: 'EMUSKI - Your One-Stop Solution for OEM in Bangalore, India',
@@ -67,29 +72,59 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Preload critical hero images for faster LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/hero-mobile/manufacturing-services-mobile-banner.webp"
+          media="(max-width: 767px)"
+          // @ts-ignore
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/hero/manufacturing-services-hero-banner.webp"
+          media="(min-width: 768px)"
+          // @ts-ignore
+          fetchpriority="high"
+        />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-        {/* Google Analytics - Deferred for better performance */}
+        {/* Google Analytics - Lazy loaded after user interaction */}
         <script
-          defer
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QFDFYZLZPK');
 
-              // Load gtag script after page load
-              window.addEventListener('load', function() {
+              // Lazy load GA only after user interaction or 3 seconds
+              let gaLoaded = false;
+              function loadGA() {
+                if (gaLoaded) return;
+                gaLoaded = true;
+                gtag('js', new Date());
+                gtag('config', 'G-QFDFYZLZPK', {
+                  'send_page_view': false,
+                  'cookie_flags': 'SameSite=None;Secure'
+                });
                 var script = document.createElement('script');
                 script.async = true;
                 script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QFDFYZLZPK';
                 document.head.appendChild(script);
+              }
+
+              // Load on first interaction with passive listeners to reduce main-thread work
+              ['mousedown', 'touchstart'].forEach(function(event) {
+                window.addEventListener(event, loadGA, { once: true, passive: true });
               });
+              ['keydown', 'scroll'].forEach(function(event) {
+                window.addEventListener(event, loadGA, { once: true, passive: true });
+              });
+
+              // Fallback: load after 3 seconds
+              setTimeout(loadGA, 3000);
             `
           }}
         />
@@ -164,7 +199,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Script
           src="https://www.google.com/recaptcha/api.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
           defer
         />

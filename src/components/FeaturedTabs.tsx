@@ -57,7 +57,7 @@ const featuredContent = [
         category: "AI-Driven Platform",
         title: "Next-GenAI - Mithran",
         description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization. Transform traditional workflows into a smart, data-driven ecosystem.",
-        image: "/assets/mitran/ai-mithran-platform-dashboard.svg",
+        image: "/assets/mitran/ai-mithran-platform-dashboard.png",
         link: "/solutions/ai#mithran-overview"
       },
       {
@@ -216,19 +216,21 @@ export const FeaturedTabs = () => {
         </button>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-2 xs:bottom-3 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3 z-10 bg-white/85 backdrop-blur-sm px-1.5 xs:px-2 sm:px-4 md:px-5 py-1 xs:py-1.5 sm:py-2.5 md:py-3 rounded-full shadow-md max-w-[calc(100vw-100px)] xs:max-w-[85vw] sm:max-w-none">
+        <div className="absolute bottom-2 xs:bottom-3 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center gap-0 z-10 bg-white/85 backdrop-blur-sm px-1 xs:px-1.5 sm:px-2 md:px-3 py-1 xs:py-1.5 sm:py-2 md:py-3 rounded-full shadow-md max-w-[calc(100vw-100px)] xs:max-w-[85vw] sm:max-w-none">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setSlide(index)}
-              className={`rounded-full transition-all duration-300 touch-manipulation ${
+              className="p-2 sm:p-2.5 md:p-3 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label={`Go to slide ${index + 1}`}
+              type="button"
+            >
+              <span className={`rounded-full transition-all duration-300 ${
                 index === currentSlide
                   ? 'bg-emuski-teal-darker w-4 xs:w-5 sm:w-8 md:w-10 h-1.5 xs:h-2 sm:h-3 md:h-3.5'
                   : 'bg-gray-400 hover:bg-gray-600 active:bg-gray-700 w-1.5 xs:w-2 sm:w-3 md:w-3.5 h-1.5 xs:h-2 sm:h-3 md:h-3.5'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-              type="button"
-            />
+              }`} />
+            </button>
           ))}
         </div>
 

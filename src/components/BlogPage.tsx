@@ -312,13 +312,13 @@ export const BlogPage = () => {
                 {selectedCategory !== "All" && (
                   <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     {selectedCategory}
-                    <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
+                    <button onClick={() => setSelectedCategory("All")} className="ml-2 hover:bg-white/30 rounded-full transition-colors" aria-label="Clear category filter">×</button>
                   </span>
                 )}
                 {searchTerm && (
                   <span className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
                     "{searchTerm}"
-                    <button onClick={() => setSearchTerm("")} className="ml-2 hover:bg-white/30 rounded-full transition-colors">×</button>
+                    <button onClick={() => setSearchTerm("")} className="ml-2 hover:bg-white/30 rounded-full transition-colors" aria-label="Clear search term">×</button>
                   </span>
                 )}
               </div>

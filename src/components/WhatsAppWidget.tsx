@@ -45,7 +45,7 @@ const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({
               <p className="text-xs text-green-100">{replyTimeText}</p>
             </div>
           </div>
-          <button onClick={toggleChat} className="text-white/80 hover:text-white">
+          <button onClick={toggleChat} className="text-white/80 hover:text-white" aria-label="Close chat">
             <FaTimes className="w-5 h-5" />
           </button>
         </div>

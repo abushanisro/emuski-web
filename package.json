@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
+    "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -70,12 +71,15 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.16.5",
     "@types/nodemailer": "^7.0.4",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "autoprefixer": "^10.4.21",
+    "critters": "^0.0.23",
+    "cssnano": "^7.1.2",
     "eslint": "^9.32.0",
     "eslint-config-next": "^16.1.1",
     "lovable-tagger": "^1.1.11",
@@ -86,13 +90,13 @@
   "browserslist": {
     "production": [
       "chrome >= 92",
-      "edge >= 92", 
+      "edge >= 92",
       "firefox >= 90",
       "safari >= 15.4"
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version", 
+      "last 1 firefox version",
       "last 1 safari version"
     ]
   }

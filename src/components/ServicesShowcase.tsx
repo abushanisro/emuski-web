@@ -128,7 +128,7 @@ const showcaseItems = [
     title: "Mithran AI Platform",
     category: "Next-GenAI",
     description: "AI-powered intelligence for smarter product development, supply chain, and cost optimization delivering measurable results for OEMs.",
-    image: "/assets/mitran/ai-mithran-platform-dashboard.svg",
+    image: "/assets/mitran/ai-mithran-platform-dashboard.png",
     link: "/solutions/ai#mithran-overview"
   }
 ];

@@ -12,6 +12,7 @@ interface Slide {
   shortTitle: string;
   description: string;
   link: string;
+  ctaText: string;
 }
 
 const slides: Slide[] = [
@@ -23,6 +24,7 @@ const slides: Slide[] = [
     shortTitle: "Manufacturing Excellence",
     description: "We help you turn product ideas into real parts at the right cost and quality, delivered from our NPD Innovation Center straight to your door.",
     link: "/manufacturing-services",
+    ctaText: "Explore Manufacturing Services",
   },
   {
     image: "/assets/hero/precision-engineering-hero-banner.webp",
@@ -32,6 +34,7 @@ const slides: Slide[] = [
     shortTitle: "Engineering Innovations",
     description: "We use teardown analysis, design benchmarking, and clear cost models to help you cut cost without sacrificing quality.",
     link: "/precision-engineering",
+    ctaText: "Discover Engineering Solutions",
   },
   {
     image: "/assets/hero/ai-mithran-hero-banner.webp",
@@ -41,6 +44,7 @@ const slides: Slide[] = [
     shortTitle: "Mithran",
     description: "Our AI tools help you estimate cost faster, choose better suppliers, and spot risks early across your product lifecycle.",
     link: "/solutions/ai",
+    ctaText: "Learn About Mithran AI",
   },
 ];
 
@@ -52,6 +56,9 @@ export const HeroSection = () => {
   const SLIDE_DURATION = 5000;
 
   useEffect(() => {
+    // Defer animation to idle time to reduce main-thread blocking
+    let idleCallbackId: number;
+
     const animate = (timestamp: number) => {
       if (!startTimeRef.current) {
         startTimeRef.current = timestamp;
@@ -64,7 +71,12 @@ export const HeroSection = () => {
       if (elapsed < SLIDE_DURATION) {
         animationFrameRef.current = requestAnimationFrame(animate);
       } else {
-        handleNext();
+        // Use requestIdleCallback for slide transitions (non-critical)
+        if ('requestIdleCallback' in window) {
+          idleCallbackId = requestIdleCallback(() => handleNext(), { timeout: 100 });
+        } else {
+          handleNext();
+        }
       }
     };
 
@@ -73,6 +85,9 @@ export const HeroSection = () => {
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (idleCallbackId && 'cancelIdleCallback' in window) {
+        cancelIdleCallback(idleCallbackId);
       }
     };
   }, [currentSlide]);
@@ -100,13 +115,18 @@ export const HeroSection = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black">
       {/* Slides Container */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
+      {slides.map((slide, index) => {
+        // Only render current slide and adjacent slides for performance
+        const shouldRender = index === currentSlide || index === (currentSlide + 1) % slides.length || index === (currentSlide - 1 + slides.length) % slides.length;
+        if (!shouldRender && index !== 0) return null; // Always keep first slide rendered for initial load
+
+        return (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
           {/* Desktop Layout - Full Width with Left Text */}
           <div className="hidden lg:block h-full">
             <div className="relative h-full">
@@ -117,8 +137,10 @@ export const HeroSection = () => {
                   alt={`${slide.category} - EMUSKI Manufacturing Solutions`}
                   fill
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
                   sizes="100vw"
-                  quality={85}
+                  quality={75}
                   className="object-cover brightness-110"
                 />
                 {/* Lighter gradient overlay on left for text readability */}
@@ -148,11 +170,11 @@ export const HeroSection = () => {
 
                     {/* CTA Button */}
                     <div className="pt-4">
-                      <a 
+                      <a
                         href={slide.link}
                         className="inline-flex items-center gap-2 px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-base rounded transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/50"
                       >
-                        Learn More
+                        {slide.ctaText}
                         <ChevronRight className="w-5 h-5" />
                       </a>
                     </div>
@@ -172,8 +194,10 @@ export const HeroSection = () => {
                   alt={`${slide.category}`}
                   fill
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
                   sizes="100vw"
-                  quality={85}
+                  quality={75}
                   className="object-cover brightness-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
@@ -191,11 +215,11 @@ export const HeroSection = () => {
                   <p className="text-lg text-gray-300 leading-relaxed">
                     {slide.description}
                   </p>
-                  <a 
+                  <a
                     href={slide.link}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-base rounded transition-all duration-300 transform hover:scale-105"
                   >
-                    Learn More
+                    {slide.ctaText}
                     <ChevronRight className="w-5 h-5" />
                   </a>
                 </div>
@@ -213,8 +237,10 @@ export const HeroSection = () => {
                   alt={`${slide.category}`}
                   fill
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
                   sizes="100vw"
-                  quality={85}
+                  quality={75}
                   className="object-cover object-center brightness-110"
                 />
               </div>
@@ -239,7 +265,7 @@ export const HeroSection = () => {
                       href={slide.link}
                       className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-sm rounded transition-all duration-300 transform active:scale-95 shadow-lg"
                     >
-                      Learn More
+                      {slide.ctaText}
                       <ChevronRight className="w-4 h-4" />
                     </a>
                   </div>
@@ -251,7 +277,8 @@ export const HeroSection = () => {
             </div>
           </div>
         </div>
-      ))}
+        );
+      })}
 
       {/* Bottom Navigation */}
       <div className="absolute bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-t border-white/10">

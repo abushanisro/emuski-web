@@ -185,7 +185,7 @@ const AboutSection = () => {
                             One stop solution for OEM Manufacturing - We deliver precision engineering and manufacturing excellence for OEMs across industries.
                         </p>
                         <div className="mt-6 p-4 bg-gray-800/30 rounded-lg border border-emuski-teal/20">
-                            <h4 className="text-lg font-semibold text-emuski-teal mb-3">Technology-Driven Engineering, Manufacturing & Digital Excellence</h4>
+                            <h3 className="text-lg font-semibold text-emuski-teal mb-3">Technology-Driven Engineering, Manufacturing & Digital Excellence</h3>
                             <p className="text-sm text-gray-300 italic mb-3">"Empowering OEMs with intelligence, agility, and precision across the product lifecycle"</p>
                             <p className="text-sm text-gray-300 leading-relaxed">
                                 At EMUSKI, we combine engineering expertise, manufacturing mastery, and AI-driven digital innovation to support OEMs at every stage of their manufacturing lifecycle. Our services includes from design engineering to end-to-end value, cost efficiency, and speed to market.
@@ -203,6 +203,7 @@ const AboutSection = () => {
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
                                     className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
+                                    aria-label="Previous slide"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
@@ -210,6 +211,7 @@ const AboutSection = () => {
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
                                     className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
+                                    aria-label="Next slide"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>
@@ -343,6 +345,7 @@ const AboutSection = () => {
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
                                     className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
+                                    aria-label="Previous slide"
                                 >
                                     <ChevronLeft className="h-4 w-4" />
                                 </button>
@@ -350,6 +353,7 @@ const AboutSection = () => {
                                     onClick={nextSlide}
                                     disabled={currentIndex === maxIndex}
                                     className="h-10 w-10 bg-emuski-teal-darker hover:shadow-lg text-white disabled:opacity-50 inline-flex items-center justify-center rounded-md transition-all duration-300"
+                                    aria-label="Next slide"
                                 >
                                     <ChevronRight className="h-4 w-4" />
                                 </button>

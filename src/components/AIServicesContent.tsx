@@ -68,7 +68,7 @@ export const AIServicesContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden border border-gray-200 p-8">
                   <Image
-                    src="/assets/mitran/ai-mithran-platform-dashboard.svg"
+                    src="/assets/mitran/ai-mithran-platform-dashboard.png"
                     alt="Mithran AI Platform Dashboard"
                     width={1600}
                     height={900}

@@ -272,9 +272,10 @@ export const Navbar = () => {
             </span>
 
             <div className="flex items-center space-x-2 relative md:hidden" ref={menuRef}>
-              <button 
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-foreground hover:text-emuski-teal-darker"
+                aria-label="Open navigation menu"
               >
                 <Menu className="h-5 w-5" />
               </button>

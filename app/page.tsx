@@ -1,16 +1,17 @@
 import dynamicImport from 'next/dynamic'
 import { Navbar } from "@/components/Navbar"
 import { HeroSection } from "@/components/HeroSection"
-import { ServicesShowcase } from "@/components/ServicesShowcase"
 import { Footer } from "@/components/Footer"
+import { LazyRender } from "@/components/LazyRender"
 import { Metadata } from 'next'
 
-// Lazy load below-the-fold components
-const NewsCarousel = dynamicImport(() => import("@/components/NewsCarousel").then(mod => ({ default: mod.NewsCarousel })), { ssr: true })
-const AboutSection = dynamicImport(() => import("@/components/AboutSection").then(mod => ({ default: mod.AboutSection })), { ssr: true })
-const TechnicalSpecsSection = dynamicImport(() => import("@/components/TechnicalSpecsSection").then(mod => ({ default: mod.TechnicalSpecsSection })), { ssr: true })
-const FeaturedTabs = dynamicImport(() => import("@/components/FeaturedTabs").then(mod => ({ default: mod.FeaturedTabs })), { ssr: true })
-const FAQSection = dynamicImport(() => import("@/components/FAQSection").then(mod => ({ default: mod.FAQSection })), { ssr: true })
+// Lazy load below-the-fold components - use LazyRender for deferred client-side rendering
+const ServicesShowcase = dynamicImport(() => import("@/components/ServicesShowcase").then(mod => ({ default: mod.ServicesShowcase })))
+const NewsCarousel = dynamicImport(() => import("@/components/NewsCarousel").then(mod => ({ default: mod.NewsCarousel })))
+const AboutSection = dynamicImport(() => import("@/components/AboutSection").then(mod => ({ default: mod.AboutSection })))
+const TechnicalSpecsSection = dynamicImport(() => import("@/components/TechnicalSpecsSection").then(mod => ({ default: mod.TechnicalSpecsSection })))
+const FeaturedTabs = dynamicImport(() => import("@/components/FeaturedTabs").then(mod => ({ default: mod.FeaturedTabs })))
+const FAQSection = dynamicImport(() => import("@/components/FAQSection").then(mod => ({ default: mod.FAQSection })))
 
 export const dynamic = 'force-dynamic'
 
@@ -31,12 +32,30 @@ export default function Home() {
           EMUSKI – OEM Manufacturing, Precision Engineering & AI Solutions in Bangalore, India
         </h1>
         <HeroSection />
-        <ServicesShowcase />
-        <NewsCarousel />
-        <AboutSection />
-        <TechnicalSpecsSection focus="metrics" compact={true} />
-        <FeaturedTabs />
-        <FAQSection compact={true} maxItems={6} usePageSpecific={true} />
+
+        <LazyRender minHeight="500px">
+          <ServicesShowcase />
+        </LazyRender>
+
+        <LazyRender minHeight="300px">
+          <NewsCarousel />
+        </LazyRender>
+
+        <LazyRender minHeight="400px">
+          <AboutSection />
+        </LazyRender>
+
+        <LazyRender minHeight="300px">
+          <TechnicalSpecsSection focus="metrics" compact={true} />
+        </LazyRender>
+
+        <LazyRender minHeight="400px">
+          <FeaturedTabs />
+        </LazyRender>
+
+        <LazyRender minHeight="300px">
+          <FAQSection compact={true} maxItems={6} usePageSpecific={true} />
+        </LazyRender>
       </main>
       <Footer />
     </div>

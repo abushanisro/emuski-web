@@ -1,18 +1,14 @@
-/* React Phone Number Input Styles */
-@import 'react-phone-number-input/style.css';
-
+/* stylelint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable */
 
-/* Custom Fonts */
-@font-face {
-    font-family: 'Inter Variable';
-    src: url('/fonts/InterVariable.woff2') format('woff2-variations');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
+/* React Phone Number Input Styles - Imported after Tailwind for better specificity */
+@import 'react-phone-number-input/style.css';
+
+/* Performance optimizations */
+@import './styles/performance.css';
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -44,8 +40,8 @@ All colors MUST be HSL.
         --secondary-foreground: 220 39% 11%;
 
         --muted: 220 13% 91%;
-        --muted-foreground: 220 9% 46%;
-        /* #6b7280 - Text Gray */
+        --muted-foreground: 220 15% 35%;
+        /* Darker gray for WCAG AA contrast compliance */
 
         --accent: 181 66% 59%;
         /* EMUSKI Teal for accents */
@@ -71,8 +67,8 @@ All colors MUST be HSL.
         /* #6ee1e2 - Teal Light */
         --emuski-teal-dark: 181 66% 49%;
         /* #3bc5c6 - Teal Dark */
-        --emuski-teal-darker: 181 66% 35%;
-        /* #2a8d8f - Much darker teal for better contrast on white */
+        --emuski-teal-darker: 181 66% 25%;
+        /* Darker teal for WCAG AA contrast compliance on white */
 
         /* Dark & Industrial Colors */
         --emuski-dark: 210 30% 18%;
@@ -83,8 +79,8 @@ All colors MUST be HSL.
         /* #1a222d - Industrial Dark */
 
         /* Neutral Foundation (duplicated for clarity) */
-        --text-gray: 220 9% 46%;
-        /* #6b7280 - Secondary text */
+        --text-gray: 220 15% 35%;
+        /* Darker gray for WCAG AA contrast compliance */
         --border-gray: 220 13% 91%;
         /* #e5e7eb - Subtle borders */
         --dark-text: 220 39% 11%;
@@ -103,11 +99,11 @@ All colors MUST be HSL.
         /* Legacy compatibility (keeping for existing components) */
         --industrial-blue: 181 66% 59%;
         --industrial-blue-light: 181 66% 69%;
-        --industrial-gray: 220 9% 46%;
+        --industrial-gray: 220 15% 35%;
         --tech-green: 181 66% 59%;
         --tech-green-dark: 181 66% 49%;
         --tech-black: 210 30% 10%;
-        --tech-gray: 220 9% 46%;
+        --tech-gray: 220 15% 35%;
         --tech-light-gray: 220 13% 91%;
 
         --sidebar-background: 0 0% 98%;
@@ -142,8 +138,8 @@ All colors MUST be HSL.
         --secondary-foreground: 0 0% 98%;
 
         --muted: 210 25% 16%;
-        --muted-foreground: 220 9% 46%;
-        /* #6b7280 */
+        --muted-foreground: 220 13% 70%;
+        /* Lighter gray for better contrast on dark background */
 
         --accent: 181 66% 59%;
         --accent-foreground: 0 0% 100%;
@@ -178,7 +174,8 @@ All colors MUST be HSL.
     }
 
     body {
-        @apply bg-background text-foreground;
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
         font-family: 'Inter Variable', 'Inter', sans-serif;
         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
         font-variation-settings: normal;

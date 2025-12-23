@@ -1,0 +1,81 @@
+/* Performance optimizations for reducing main-thread work */
+
+/* Font Loading Optimization - Show fallback text immediately */
+body {
+  font-display: swap;
+}
+
+/* CSS Containment - Isolate components for better rendering performance */
+section,
+article,
+.card,
+[class*="container"] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Reduce paint area for position: fixed elements */
+header,
+nav,
+footer {
+  contain: layout style;
+}
+
+/* Optimize expensive paint operations */
+.animate-pulse,
+.transition-all,
+.hover\:scale-105:hover,
+.hover\:shadow-xl:hover {
+  will-change: transform, opacity;
+}
+
+/* Prevent layout shifts */
+img,
+video,
+iframe {
+  content-visibility: auto;
+}
+
+/* GPU acceleration for smooth animations */
+.transform,
+.transition-transform,
+[class*="animate-"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce repaints for fixed elements */
+.fixed,
+.sticky {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize scroll performance */
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Prevent layout thrashing on hover states */
+a,
+button {
+  contain: layout style paint;
+}
+
+/* Optimize large lists and grids */
+.grid,
+[class*="grid-cols"] {
+  contain: layout style paint;
+}
