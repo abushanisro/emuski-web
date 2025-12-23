@@ -49,9 +49,7 @@ const navigationConfig = {
   ],
   mobileMenuSections: [
     {
-      title: "Manufacturing Excellence",
       items: [
-        { name: "Overview", path: "/manufacturing-services" },
         { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand-details" },
         { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping-details" },
         { name: "Custom Manufacturing", path: "/manufacturing-services#custom-details" },
@@ -59,9 +57,7 @@ const navigationConfig = {
       ]
     },
     {
-      title: "Engineering Innovation",
       items: [
-        { name: "Overview", path: "/precision-engineering" },
         { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation-details" },
         { name: "VAVE & Benchmarking", path: "/precision-engineering#vave-details" },
         { name: "Strategic Sourcing", path: "/precision-engineering#sourcing-details" },
@@ -288,15 +284,16 @@ export const Navbar = () => {
                         quality={75}
                       />
                       <div>
-                        <h3 className="text-sm font-bold text-gray-900">EMUSKI</h3>
                         <p className="text-[10px] text-gray-600 leading-tight">One-stop solution for OEMs</p>
                       </div>
                     </div>
                   </div>
                   <div className="py-2 max-h-[65vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                     {navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
-                      <div key={section.title} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : ""}>
-                        <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3">{section.title}</h4>
+                      <div key={sectionIndex} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : ""}>
+                        {section.title && (
+                          <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3">{section.title}</h4>
+                        )}
                         <div className="space-y-0.5">
                           {section.items.map((item) => (
                             <Link

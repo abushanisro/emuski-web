@@ -172,7 +172,7 @@ const AboutSection = () => {
     return (
         <section className="py-16 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
             <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
             </div>
             
             <div className="w-full px-4 sm:px-6 relative z-10">
