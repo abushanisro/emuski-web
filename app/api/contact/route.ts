@@ -286,7 +286,7 @@ function createTransporter(): Transporter {
     // TLS/SSL settings for security
     tls: {
       rejectUnauthorized: true, // Verify server certificate
-      minVersion: 'TLSv1.2', // Minimum TLS version
+      minVersion: 'TLSv1.2' as const, // Minimum TLS version
     },
     // Connection timeout settings
     connectionTimeout: 10000, // 10 seconds
@@ -295,7 +295,7 @@ function createTransporter(): Transporter {
     // Logging for debugging (disable in production)
     logger: process.env.NODE_ENV === 'development',
     debug: process.env.NODE_ENV === 'development',
-  };
+  } as any;
 
   return nodemailer.createTransport(config);
 }
