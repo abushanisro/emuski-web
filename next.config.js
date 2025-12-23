@@ -47,7 +47,10 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production', // Remove console logs in production
   },
 
-  // Webpack optimizations
+  // Turbopack configuration (Next.js 16+)
+  turbopack: {},
+
+  // Webpack optimizations (fallback for webpack mode)
   webpack: (config, { isServer, dev }) => {
     if (!isServer && !dev) {
       // Optimize bundle splitting and reduce JS execution time
