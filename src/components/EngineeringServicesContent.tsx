@@ -74,18 +74,18 @@ export const EngineeringServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">±5%</div>
-                    <div className="text-xs text-gray-600">Accuracy Level</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">±5%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Accuracy Level</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">3-5 days</div>
-                    <div className="text-xs text-gray-600">Turnaround</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">3-5 days</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Turnaround</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">15-25%</div>
-                    <div className="text-xs text-gray-600">Avg. Savings</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">15-25%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Avg. Savings</div>
                   </div>
                 </div>
               </div>
@@ -196,18 +196,18 @@ export const EngineeringServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">2-3 wks</div>
-                    <div className="text-xs text-gray-600">Typical Duration</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">2-3 wks</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Typical Duration</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">50+</div>
-                    <div className="text-xs text-gray-600">Ideas Generated</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">50+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Ideas Generated</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">5-10x</div>
-                    <div className="text-xs text-gray-600">ROI</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">5-10x</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">ROI</div>
                   </div>
                 </div>
               </div>
@@ -294,18 +294,18 @@ export const EngineeringServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">500+</div>
-                    <div className="text-xs text-gray-600">Verified Suppliers</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">500+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Verified Suppliers</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">15-20%</div>
-                    <div className="text-xs text-gray-600">Cost Savings</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">15-20%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Cost Savings</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">95%</div>
-                    <div className="text-xs text-gray-600">Success Rate</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">95%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Success Rate</div>
                   </div>
                 </div>
               </div>
@@ -432,18 +432,18 @@ export const EngineeringServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">50+</div>
-                    <div className="text-xs text-gray-600">Expert Engineers</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">50+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Expert Engineers</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">3-5 days</div>
-                    <div className="text-xs text-gray-600">Deployment Time</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">3-5 days</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Deployment Time</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">98%</div>
-                    <div className="text-xs text-gray-600">Client Satisfaction</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">98%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Client Satisfaction</div>
                   </div>
                 </div>
               </div>

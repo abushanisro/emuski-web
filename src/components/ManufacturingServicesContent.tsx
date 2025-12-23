@@ -379,18 +379,18 @@ export const ManufacturingServicesContent = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">8-12 wks</div>
-                    <div className="text-xs text-gray-600">Scaling Timeline</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">8-12 wks</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Scaling Timeline</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">98%</div>
-                    <div className="text-xs text-gray-600">On-Time Delivery</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">98%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">On-Time Delivery</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emuski-teal-darker">50k+</div>
-                    <div className="text-xs text-gray-600">Units/Month Capacity</div>
+                    <div className="text-lg sm:text-xl font-bold text-emuski-teal-darker">50k+</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Units/Month Capacity</div>
                   </div>
                 </div>
               </div>
