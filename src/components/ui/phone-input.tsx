@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PhoneInput from 'react-phone-number-input';
+import flags from 'react-phone-number-input/flags'
 import 'react-phone-number-input/style.css';
 
 interface PhoneInputComponentProps {
@@ -38,6 +39,7 @@ export const PhoneInputComponent: React.FC<PhoneInputComponentProps> = ({
         disabled={disabled}
         id={id}
         name={name}
+        flags={flags}
         className="phone-input-custom"
         countrySelectProps={{
           className: 'country-select-custom',
@@ -89,6 +91,9 @@ export const PhoneInputComponent: React.FC<PhoneInputComponentProps> = ({
           border-radius: 0.25rem;
           overflow: hidden;
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .PhoneInputCountryIcon--border {
@@ -100,6 +105,15 @@ export const PhoneInputComponent: React.FC<PhoneInputComponentProps> = ({
           display: block;
           width: 100%;
           height: 100%;
+          object-fit: cover;
+        }
+
+        /* Ensure flag images load properly */
+        .PhoneInputCountryIcon img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         /* Country Select Button */

@@ -63,30 +63,103 @@ function sanitizeHtml(text: string): string {
 }
 
 /**
- * Verifies reCAPTCHA token with Google
+ * Verifies reCAPTCHA Enterprise token with Google
  */
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+async function verifyRecaptchaEnterprise(
+  token: string,
+  expectedAction: string = 'CONTACT_FORM'
+): Promise<{ success: boolean; score?: number; reasons?: string[] }> {
+  const apiKey = process.env.RECAPTCHA_API_KEY;
+  const projectId = process.env.RECAPTCHA_PROJECT_ID || 'gen-lang-client-0965623259';
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LcIVzQsAAAAAMDJCiMdllNR_2WTF3tL535IlrPD';
 
-  if (!secretKey) {
-    console.error('RECAPTCHA_SECRET_KEY not configured');
-    return false;
+  if (!apiKey) {
+    console.error('❌ RECAPTCHA_API_KEY not configured');
+    return { success: false, reasons: ['API key not configured'] };
   }
 
   try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    const url = `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${apiKey}`;
+
+    const requestBody = {
+      event: {
+        token: token,
+        expectedAction: expectedAction,
+        siteKey: siteKey,
+      }
+    };
+
+    console.log('🔍 Verifying reCAPTCHA Enterprise token...');
+
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
-      body: `secret=${secretKey}&response=${token}`,
+      body: JSON.stringify(requestBody),
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`❌ reCAPTCHA Enterprise API error (${response.status}):`, errorText);
+      return {
+        success: false,
+        reasons: [`API error: ${response.status}`]
+      };
+    }
+
     const data = await response.json();
-    return data.success === true;
+
+    // Check if token is valid
+    if (!data.tokenProperties?.valid) {
+      console.warn('⚠️ Invalid reCAPTCHA token:', data.tokenProperties?.invalidReason);
+      return {
+        success: false,
+        reasons: [data.tokenProperties?.invalidReason || 'Invalid token']
+      };
+    }
+
+    // Verify action matches
+    if (data.tokenProperties?.action !== expectedAction) {
+      console.warn('⚠️ Action mismatch:', {
+        expected: expectedAction,
+        received: data.tokenProperties?.action
+      });
+      return {
+        success: false,
+        reasons: ['Action mismatch']
+      };
+    }
+
+    // Get risk score (0.0 - 1.0, where 1.0 is very likely a good interaction)
+    const score = data.riskAnalysis?.score || 0;
+    const reasons = data.riskAnalysis?.reasons || [];
+
+    console.log('✅ reCAPTCHA Enterprise verification successful:', {
+      score,
+      action: data.tokenProperties?.action,
+      reasons: reasons.length > 0 ? reasons : 'none'
+    });
+
+    // Consider score >= 0.5 as human (you can adjust this threshold)
+    const isHuman = score >= 0.5;
+
+    if (!isHuman) {
+      console.warn('⚠️ Low reCAPTCHA score:', score);
+    }
+
+    return {
+      success: isHuman,
+      score,
+      reasons: isHuman ? [] : ['Low confidence score']
+    };
+
   } catch (error) {
-    console.error('reCAPTCHA verification failed:', error);
-    return false;
+    console.error('❌ reCAPTCHA Enterprise verification failed:', error);
+    return {
+      success: false,
+      reasons: ['Verification error']
+    };
   }
 }
 
@@ -507,14 +580,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify reCAPTCHA
-    const isHuman = await verifyRecaptcha(recaptchaToken);
-    if (!isHuman) {
+    // Verify reCAPTCHA Enterprise
+    const recaptchaResult = await verifyRecaptchaEnterprise(recaptchaToken, 'CONTACT_FORM');
+    if (!recaptchaResult.success) {
+      console.error('❌ reCAPTCHA verification failed:', recaptchaResult.reasons);
       return NextResponse.json(
-        { success: false, error: 'reCAPTCHA verification failed' },
+        {
+          success: false,
+          error: 'reCAPTCHA verification failed. Please try again.',
+          details: recaptchaResult.reasons
+        },
         { status: 403 }
       );
     }
+
+    console.log('✅ reCAPTCHA verified - Score:', recaptchaResult.score);
 
     // Prepare contact data
     const contactData: ContactFormData = {

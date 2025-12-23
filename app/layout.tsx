@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
+import Script from 'next/script'
 import '@/index.css'
 import { Providers } from './providers'
 
@@ -67,7 +68,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/assets/hero/manufacturing-services-hero-banner.webp" as="image" fetchPriority="high" type="image/webp" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
@@ -139,6 +139,10 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <Script
+          src="https://www.google.com/recaptcha/enterprise.js?render=6LcIVzQsAAAAAMDJCiMdllNR_2WTF3tL535IlrPD"
+          strategy="lazyOnload"
+        />
         <Providers>{children}</Providers>
       </body>
     </html>
