@@ -293,25 +293,46 @@ export const Navbar = () => {
                     </div>
                   </div>
                   <div className="py-2 max-h-[65vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-                    {navigationConfig.mobileMenuSections.map((section, sectionIndex) => (
-                      <div key={sectionIndex} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : ""}>
-                        {section.title && (
-                          <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3">{section.title}</h4>
-                        )}
-                        <div className="space-y-0.5">
-                          {section.items.map((item) => (
-                            <Link
-                              key={item.path}
-                              href={item.path}
-                              className="block px-3 py-1.5 text-[13px] text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
+                    {navigationConfig.mobileMenuSections.map((section, sectionIndex) => {
+                      // Get the link for section titles
+                      const getSectionLink = (title: string) => {
+                        if (title === "Manufacturing Excellence") return "/manufacturing-services";
+                        if (title === "Engineering Innovation") return "/precision-engineering";
+                        return null;
+                      };
+
+                      const sectionLink = section.title ? getSectionLink(section.title) : null;
+
+                      return (
+                        <div key={sectionIndex} className={sectionIndex > 0 ? "border-t border-gray-100 pt-2 mt-2" : ""}>
+                          {section.title && (
+                            sectionLink ? (
+                              <Link
+                                href={sectionLink}
+                                className="block text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3 hover:text-emuski-teal-darker transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {section.title}
+                              </Link>
+                            ) : (
+                              <h4 className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 px-3">{section.title}</h4>
+                            )
+                          )}
+                          <div className="space-y-0.5">
+                            {section.items.map((item) => (
+                              <Link
+                                key={item.path}
+                                href={item.path}
+                                className="block px-3 py-1.5 text-[13px] text-gray-700 hover:bg-emuski-teal/5 hover:text-emuski-teal-darker transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}

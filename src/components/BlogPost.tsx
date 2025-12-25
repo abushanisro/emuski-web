@@ -72,23 +72,34 @@ export const BlogPostComponent = () => {
     return headings;
   }, [post]);
 
-  // Scroll progress tracking
+  // Scroll progress tracking - optimized with requestAnimationFrame
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (!contentRef.current) return;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!contentRef.current) {
+            ticking = false;
+            return;
+          }
 
-      const contentElement = contentRef.current;
-      const contentRect = contentElement.getBoundingClientRect();
-      const contentHeight = contentElement.offsetHeight;
-      const viewportHeight = window.innerHeight;
+          const contentElement = contentRef.current;
+          const contentRect = contentElement.getBoundingClientRect();
+          const contentHeight = contentElement.offsetHeight;
+          const viewportHeight = window.innerHeight;
 
-      // Calculate progress based on content visibility
-      const contentTop = contentRect.top;
-      const scrolled = Math.max(0, -contentTop);
-      const totalScrollable = contentHeight - viewportHeight;
-      const scrollPercent = totalScrollable > 0 ? (scrolled / totalScrollable) * 100 : 0;
+          // Calculate progress based on content visibility
+          const contentTop = contentRect.top;
+          const scrolled = Math.max(0, -contentTop);
+          const totalScrollable = contentHeight - viewportHeight;
+          const scrollPercent = totalScrollable > 0 ? (scrolled / totalScrollable) * 100 : 0;
 
-      setScrollProgress(Math.min(100, Math.max(0, scrollPercent)));
+          setScrollProgress(Math.min(100, Math.max(0, scrollPercent)));
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     handleScroll();
@@ -176,13 +187,13 @@ export const BlogPostComponent = () => {
     }
   }, [post]);
 
-  // Auto-scroll active TOC item into view
+  // Auto-scroll active TOC item into view - NO smooth behavior to prevent glitching
   useEffect(() => {
     if (activeSection && tocNavRef.current) {
       const activeButton = tocNavRef.current.querySelector(`button[data-section="${activeSection}"]`);
       if (activeButton) {
         activeButton.scrollIntoView({
-          behavior: 'smooth',
+          behavior: 'auto',
           block: 'nearest',
           inline: 'nearest'
         });
@@ -253,14 +264,23 @@ export const BlogPostComponent = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 120; // Account for sticky navbar
+      const offset = 96; // Account for sticky navbar (64px navbar + 32px padding)
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const targetPosition = elementPosition - offset;
+
+      // Disable smooth scroll temporarily to prevent conflicts
+      const originalBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
 
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
       });
+
+      // Re-enable smooth scroll after navigation
+      setTimeout(() => {
+        document.documentElement.style.scrollBehavior = originalBehavior;
+      }, 50);
 
       // Update active section immediately for better UX
       setTimeout(() => setActiveSection(id), 100);
@@ -712,7 +732,7 @@ export const BlogPostComponent = () => {
               </div>
 
               {/* Right Sidebar - Table of Contents */}
-              <aside className={`${tocOpen ? 'fixed inset-0 bg-black/50 z-50 lg:relative lg:bg-transparent' : 'hidden'} lg:block lg:sticky lg:top-24 lg:self-start`}>
+              <aside className={`${tocOpen ? 'fixed inset-0 bg-black/50 z-50 lg:relative lg:bg-transparent' : 'hidden'} lg:block lg:sticky lg:top-20 lg:self-start`}>
                 <div className={`${tocOpen ? 'fixed left-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto p-6' : ''}`}>
                   {/* Mobile Close Button */}
                   {tocOpen && (

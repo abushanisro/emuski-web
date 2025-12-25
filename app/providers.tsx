@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { useState } from "react"
 import dynamic from "next/dynamic"
+import { ScrollRestoration } from "./scroll-restoration"
 
 // Lazy load WhatsApp widget - not critical for initial render
 const WhatsAppWidget = dynamic(() => import("@/components/WhatsAppWidget"), {
@@ -18,6 +19,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <ScrollRestoration />
         <Toaster />
         <Sonner />
         {children}
