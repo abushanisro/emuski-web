@@ -5,7 +5,6 @@ const servicesData = {
   "cost-estimation": {
     title: "Product Cost Estimation",
     tagline: "Turning data into competitive advantage",    image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
-    pdfUrl: "/assets/documents/CostBreakDownReport.pdf",
     features: [
       { 
         title: "Design Optimization", 
@@ -104,7 +103,6 @@ function ServiceTabContent({ service, serviceKey }: {
   service: {
     title: string;
     tagline: string;    image?: string;
-    pdfUrl?: string;
     features: { title: string; desc: string; image?: string }[]
   };
   serviceKey: string;

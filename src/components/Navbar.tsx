@@ -44,6 +44,7 @@ const navigationConfig = {
     { name: "Blog", path: "/blog" }
   ],
   rightMenu: [
+    { name: "Case Studies", path: "/case-studies" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact", hideOnMobile: true }
   ],
@@ -68,6 +69,7 @@ const navigationConfig = {
       title: "Solutions",
       items: [
         { name: "Next-GenAI", path: "/solutions/ai" },
+        { name: "Case Studies", path: "/case-studies" },
         { name: "Gallery", path: "/gallery" },
         { name: "Blog", path: "/blog" },
         { name: "Contact", path: "/contact" }
@@ -80,8 +82,9 @@ const navigationConfig = {
 const routeToPageName: Record<string, string> = {
   "/": "Home",
   "/manufacturing-services": "Manufacturing Excellence",
-  "/precision-engineering": "Engineering Innovation", 
+  "/precision-engineering": "Engineering Innovation",
   "/blog": "Blog",
+  "/case-studies": "Case Studies",
   "/gallery": "Gallery",
   "/contact": "Contact",
   "/solutions/ai": "Next-GenAI"

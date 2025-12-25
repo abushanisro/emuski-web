@@ -1,6 +1,8 @@
 /* All @import rules must come first, before any other rules */
 @import 'react-phone-number-input/style.css';
 @import './styles/performance.css';
+@import 'react-pdf/dist/Page/AnnotationLayer.css';
+@import 'react-pdf/dist/Page/TextLayer.css';
 
 /* stylelint-disable */
 @tailwind base;

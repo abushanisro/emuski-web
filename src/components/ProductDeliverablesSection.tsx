@@ -178,7 +178,7 @@ const ProductDeliverablesSection = () => {
               </div>
             </div>
             <LazyPDFViewer
-              src="/assets/documents/Project_Delivery_Report.pdf"
+              src="/docs/Project_Delivery_Report.pdf"
               title="Case Study -"
               ariaLabel="Interactive PDF viewer displaying comprehensive project delivery report with manufacturing deliverables and quality assurance documentation"
               minHeight="600px"

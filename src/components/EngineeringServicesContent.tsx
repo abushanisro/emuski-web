@@ -1,18 +1,23 @@
+'use client'
+
 import { Calculator, TrendingDown, Target, BarChart3, CheckCircle, Scissors, DollarSign, FileSearch, ShoppingCart, Globe, Shield, Users, Briefcase, Clock, Award, Cog } from "lucide-react";
-import { LazyPDFViewer } from "./LazyPDFViewer";
+import { ProductTeardownCarousel } from "./ProductTeardownCarousel";
+import { StrategicSourcingCarousel } from "./StrategicSourcingCarousel";
+import { AutomotiveCaseStudyCarousel } from "./AutomotiveCaseStudyCarousel";
+import { CostBreakdownCarousel } from "./CostBreakdownCarousel";
 
 export const EngineeringServicesContent = () => {
   return (
     <div className="space-y-0">
       {/* Cost Estimation */}
-      <section id="cost-estimation-details" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section id="cost-estimation-details" aria-labelledby="cost-estimation-heading" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-6">
                 <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">Product Cost Estimation</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 id="cost-estimation-heading" className="text-3xl md:text-4xl font-bold text-gray-900">
                   Know Your True Product Costs Before You Commit
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -21,7 +26,7 @@ export const EngineeringServicesContent = () => {
 
                 {/* What You Get */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">Complete Cost Intelligence</h4>
+                  <h3 className="font-bold mb-4">Complete Cost Intelligence</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -90,47 +95,29 @@ export const EngineeringServicesContent = () => {
                 </div>
               </div>
 
-              {/* PDF Embed */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-auto border border-gray-200">
-                  <LazyPDFViewer
-                    src="/assets/documents/CostBreakDownReport.pdf"
-                    title="Manufacturing Cost Breakdown Report"
-                    ariaLabel="Interactive PDF viewer showing detailed manufacturing cost breakdown and product cost estimation analysis"
-                    minHeight="500px"
-                  />
-                </div>
-              </div>
+              {/* Cost Breakdown Carousel */}
+              <CostBreakdownCarousel />
             </div>
 
-            
+
           </div>
         </div>
       </section>
 
       {/* VAVE */}
-      <section id="vave-details" className="py-16 md:py-20 bg-white">
+      <section id="vave-details" aria-labelledby="vave-heading" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* PDF Embed - Left side */}
-              <div className="relative order-2 lg:order-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-gray-50 rounded-2xl overflow-auto border border-gray-200">
-                  <LazyPDFViewer
-                    src="/assets/documents/Sample - Tear Down Report.pdf"
-                    title="VAVE Product Teardown Report"
-                    ariaLabel="Interactive PDF viewer displaying comprehensive product teardown analysis and value engineering benchmarking report"
-                    minHeight="500px"
-                  />
-                </div>
+              {/* Carousel - Left side */}
+              <div className="order-2 lg:order-1">
+                <ProductTeardownCarousel />
               </div>
 
               {/* Content - Right side */}
               <div className="space-y-6 order-1 lg:order-2">
                 <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">VAVE - Teardown & Benchmarking</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 id="vave-heading" className="text-3xl md:text-4xl font-bold text-gray-900">
                   Unlock Hidden Value Through Strategic Analysis
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -139,7 +126,7 @@ export const EngineeringServicesContent = () => {
 
                 {/* Approach */}
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900">Our VAVE Approach</h4>
+                  <h3 className="font-semibold text-gray-900">Our VAVE Approach</h3>
                   <div className="space-y-2">
                     <div className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
                       <div className="w-8 h-8 bg-emuski-teal-dark text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
@@ -174,7 +161,7 @@ export const EngineeringServicesContent = () => {
 
                 {/* Benefits */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">Tangible Outcomes</h4>
+                  <h3 className="font-bold mb-4">Tangible Outcomes</h3>
                   <div className="grid sm:grid-cols-2 gap-3">
                     <div className="flex items-center gap-2">
                       <DollarSign className="w-5 h-5 flex-shrink-0" />
@@ -217,14 +204,14 @@ export const EngineeringServicesContent = () => {
       </section>
 
       {/* Strategic Sourcing */}
-      <section id="sourcing-details" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section id="sourcing-details" aria-labelledby="sourcing-heading" className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-6">
                 <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">Strategic Sourcing</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 id="sourcing-heading" className="text-3xl md:text-4xl font-bold text-gray-900">
                   Connect with the Right Suppliers, Every Time
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -238,7 +225,7 @@ export const EngineeringServicesContent = () => {
                       <Globe className="w-5 h-5 text-emuski-teal-darker" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Global Network</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">Global Network</h3>
                       <p className="text-sm text-gray-600">500+ verified suppliers across 30+ countries</p>
                     </div>
                   </div>
@@ -247,7 +234,7 @@ export const EngineeringServicesContent = () => {
                       <Shield className="w-5 h-5 text-emuski-teal-darker" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Quality Assurance</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">Quality Assurance</h3>
                       <p className="text-sm text-gray-600">On-site audits and capability assessments</p>
                     </div>
                   </div>
@@ -256,7 +243,7 @@ export const EngineeringServicesContent = () => {
                       <Users className="w-5 h-5 text-emuski-teal-darker" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Negotiation Support</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">Negotiation Support</h3>
                       <p className="text-sm text-gray-600">Expert guidance for pricing and terms</p>
                     </div>
                   </div>
@@ -265,7 +252,7 @@ export const EngineeringServicesContent = () => {
                       <Target className="w-5 h-5 text-emuski-teal-darker" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Risk Mitigation</h4>
+                      <h3 className="font-semibold text-gray-900 mb-1">Risk Mitigation</h3>
                       <p className="text-sm text-gray-600">Supply chain resilience planning</p>
                     </div>
                   </div>
@@ -273,7 +260,7 @@ export const EngineeringServicesContent = () => {
 
                 {/* Process */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">End-to-End Sourcing Process</h4>
+                  <h3 className="font-bold mb-4">End-to-End Sourcing Process</h3>
                   <div className="space-y-2">
                     {[
                       { step: '1', title: 'Requirements Analysis', desc: 'Define technical, quality, and commercial needs' },
@@ -310,45 +297,29 @@ export const EngineeringServicesContent = () => {
                 </div>
               </div>
 
-              {/* PDF Embed */}
+              {/* Strategic Sourcing Carousel */}
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-auto border border-gray-200">
-                  <LazyPDFViewer
-                    src="/assets/documents/Sample Detailed Analysis Report.pdf"
-                    title="Strategic Sourcing Detailed Analysis Report"
-                    ariaLabel="Interactive PDF viewer showing detailed supplier analysis, strategic sourcing evaluation and cost optimization report"
-                    minHeight="500px"
-                  />
-                </div>
+                <StrategicSourcingCarousel />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Expert Support */}
-      <section id="expert-support-details" className="py-16 md:py-20 bg-white">
+      {/* Automotive Case Study */}
+      <section id="automotive-case-study" aria-labelledby="expert-support-heading" className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* PDF Embed - Left side */}
-              <div className="relative order-2 lg:order-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-emuski-teal/20 to-emuski-teal-dark/20 rounded-2xl blur-3xl"></div>
-                <div className="relative bg-gray-50 rounded-2xl overflow-auto border border-gray-200">
-                  <LazyPDFViewer
-                    src="/assets/documents/CASE STUDY - EXHAUST SYSTEM..pdf"
-                    title="Engineering Case Study - Automotive Exhaust System"
-                    ariaLabel="Interactive PDF viewer presenting automotive exhaust system engineering case study with cost reduction and VAVE analysis"
-                    minHeight="500px"
-                  />
-                </div>
+              {/* Carousel - Left side */}
+              <div className="order-2 lg:order-1">
+                <AutomotiveCaseStudyCarousel />
               </div>
 
               {/* Content - Right side */}
               <div className="space-y-6 order-1 lg:order-2">
                 <p className="text-sm font-semibold text-emuski-teal-darker uppercase tracking-wide">Expert Engineer Support</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 id="expert-support-heading" className="text-3xl md:text-4xl font-bold text-gray-900">
                   Specialized Talent, On-Demand
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -358,10 +329,10 @@ export const EngineeringServicesContent = () => {
                 {/* Expertise Areas */}
                 <div className="grid sm:grid-cols-2 gap-3">
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Calculator className="w-4 h-4 text-emuski-teal-darker" />
                       Cost Engineering
-                    </h4>
+                    </h3>
                     <ul className="space-y-1 text-xs text-gray-600">
                       <li>• Should-cost modeling</li>
                       <li>• Cost reduction initiatives</li>
@@ -369,10 +340,10 @@ export const EngineeringServicesContent = () => {
                     </ul>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Scissors className="w-4 h-4 text-emuski-teal-darker" />
                       Value Engineering
-                    </h4>
+                    </h3>
                     <ul className="space-y-1 text-xs text-gray-600">
                       <li>• VAVE workshops</li>
                       <li>• Product teardowns</li>
@@ -380,10 +351,10 @@ export const EngineeringServicesContent = () => {
                     </ul>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <ShoppingCart className="w-4 h-4 text-emuski-teal-darker" />
                       Sourcing Specialists
-                    </h4>
+                    </h3>
                     <ul className="space-y-1 text-xs text-gray-600">
                       <li>• Supplier identification</li>
                       <li>• RFQ management</li>
@@ -391,10 +362,10 @@ export const EngineeringServicesContent = () => {
                     </ul>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                       <Cog className="w-4 h-4 text-emuski-teal-darker" />
                       Manufacturing Engineers
-                    </h4>
+                    </h3>
                     <ul className="space-y-1 text-xs text-gray-600">
                       <li>• DFM reviews</li>
                       <li>• Process planning</li>
@@ -405,7 +376,7 @@ export const EngineeringServicesContent = () => {
 
                 {/* Engagement Models */}
                 <div className="bg-gradient-to-br from-emuski-teal-darker to-emuski-teal-dark rounded-xl p-6 text-white">
-                  <h4 className="font-bold mb-4">Flexible Engagement Models</h4>
+                  <h3 className="font-bold mb-4">Flexible Engagement Models</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <Briefcase className="w-5 h-5 flex-shrink-0 mt-0.5" />

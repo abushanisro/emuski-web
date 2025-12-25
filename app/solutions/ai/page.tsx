@@ -53,22 +53,6 @@ export default function AISolutions() {
                   <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
                     Our AI tools make product development, costing, and sourcing faster and simpler. They help your team reduce manual work, spot problems early, and make better decisions with real data.
                   </p>
-
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center">
-                    <a
-                      href="#mithran-overview"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
-                      Learn More
-                    </a>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-transparent border-2 border-emuski-teal-darker text-emuski-teal hover:bg-emuski-teal-darker hover:text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300"
-                    >
-                      Contact Sales
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
