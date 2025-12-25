@@ -11,6 +11,14 @@ import { EmailSubscription } from "./EmailSubscription";
 import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
 import { SuccessStoriesSection } from "./SuccessStoriesSection";
 
+// Helper function to extract first sentence
+const getFirstSentence = (text: string): string => {
+  if (!text) return '';
+  // Match first sentence ending with . ! or ?
+  const match = text.match(/^[^.!?]+[.!?]/);
+  return match ? match[0].trim() : text.split('.')[0].trim() + '.';
+};
+
 export const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -191,8 +199,8 @@ export const BlogPage = () => {
                           {post.title}
                         </h3>
 
-                        <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-1">
-                          {post.excerpt}
+                        <p className="text-sm text-gray-600 mb-4 flex-1">
+                          {getFirstSentence(post.excerpt)}
                         </p>
 
                         <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-gray-100">
@@ -315,8 +323,8 @@ export const BlogPage = () => {
                       {featuredPosts[0].title}
                     </h2>
 
-                    <p className="text-lg text-gray-600 mb-6 line-clamp-3 leading-relaxed">
-                      {featuredPosts[0].excerpt}
+                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                      {getFirstSentence(featuredPosts[0].excerpt)}
                     </p>
 
                     <div className="flex items-center space-x-6 text-sm text-gray-500 mb-6">
@@ -383,8 +391,8 @@ export const BlogPage = () => {
                       {post.title}
                     </h3>
 
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-1">
-                      {post.excerpt}
+                    <p className="text-sm text-gray-600 mb-4 flex-1">
+                      {getFirstSentence(post.excerpt)}
                     </p>
 
                     {/* Meta */}
@@ -539,8 +547,8 @@ export const BlogPage = () => {
                         {post.title}
                       </h3>
 
-                      <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-1">
-                        {post.excerpt}
+                      <p className="text-sm text-gray-600 mb-4 flex-1">
+                        {getFirstSentence(post.excerpt)}
                       </p>
 
                       {/* Meta */}

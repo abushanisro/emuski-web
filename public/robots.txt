@@ -116,7 +116,6 @@ Disallow: /
 
 # Manufacturing industry specific directives
 # Allow crawling of technical documentation
-Allow: /case-studies*
 Allow: /technical-specifications*
 Allow: /quality-certifications*
 Allow: /manufacturing-processes*

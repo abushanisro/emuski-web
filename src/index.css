@@ -10,11 +10,23 @@
 @tailwind utilities;
 /* stylelint-enable */
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
+    /* Smooth scroll behavior for better UX */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Disable smooth scroll for users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
     :root {
         /* Neutral Foundation */
         --background: 0 0% 98%;

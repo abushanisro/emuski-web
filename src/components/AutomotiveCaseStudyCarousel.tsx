@@ -78,20 +78,20 @@ export function AutomotiveCaseStudyCarousel({ className = '' }: AutomotiveCaseSt
       </Carousel>
 
       {/* Navigation Buttons & Progress Indicators - Below carousel */}
-      <div className="flex items-center justify-center gap-4 mt-6">
+      <div className="flex items-center justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
         {/* Previous Button */}
         <button
           onClick={scrollPrev}
-          className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border-2 border-gray-300 shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-gray-50 border-2 border-gray-300 shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5 text-gray-700" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
         </button>
 
         {/* Progress Indicators */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Page counter */}
-          <span className="text-sm font-medium text-gray-600">
+          <span className="text-xs sm:text-sm font-medium text-gray-600">
             {current + 1} / {pages.length}
           </span>
 
@@ -115,10 +115,10 @@ export function AutomotiveCaseStudyCarousel({ className = '' }: AutomotiveCaseSt
         {/* Next Button */}
         <button
           onClick={scrollNext}
-          className="w-10 h-10 rounded-full bg-white hover:bg-gray-50 border-2 border-gray-300 shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-gray-50 border-2 border-gray-300 shadow-lg flex items-center justify-center transition-all hover:scale-110 active:scale-95"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 text-gray-700" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
         </button>
       </div>
     </div>

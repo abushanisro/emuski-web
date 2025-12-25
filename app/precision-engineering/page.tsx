@@ -247,17 +247,17 @@ export default function PrecisionEngineering() {
                 </div>
 
                 {/* Title */}
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight px-2">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight px-2">
                   Engineering That Makes Products Cost Less
                 </h1>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
+                <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto px-2">
                   We break down your products, compare them with competitors, and build clear cost models. This helps you remove waste, simplify designs, and keep performance high while lowering cost.
                 </p>
 
                 {/* CTA Button */}
-                <div className="flex justify-center pt-2 sm:pt-4">
+                <div className="flex justify-center pt-2">
                   <Link
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-emuski-teal-darker hover:bg-emuski-teal-dark text-white font-bold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
