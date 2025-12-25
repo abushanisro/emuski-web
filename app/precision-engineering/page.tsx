@@ -228,7 +228,7 @@ export default function PrecisionEngineering() {
         </div>
       </nav>
 
-      <header className="relative py-16 sm:py-20 md:py-24 lg:py-32 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
+      <header className="relative py-12 sm:py-14 md:py-16 lg:py-20 border-b border-border/30 overflow-hidden" style={{backgroundColor: 'rgb(18, 26, 33)'}}>
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
@@ -236,9 +236,9 @@ export default function PrecisionEngineering() {
 
         {/* Content */}
         <div className="relative z-10">
-          <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-4 sm:pt-5 md:pt-6">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-12 pt-2 sm:pt-3 md:pt-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="space-y-4 sm:space-y-5 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
                 {/* Category Badge */}
                 <div className="flex justify-center">
                   <span className="text-emuski-teal text-xs sm:text-sm font-semibold tracking-wider uppercase" role="doc-subtitle">
