@@ -3,9 +3,11 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Twitter, Linkedin, Facebook, Mail, Menu, Share2, Bookmark } from "lucide-react";
+import Head from "next/head";
+import { ArrowLeft, Twitter, Linkedin, Facebook, Mail, Menu, Share2, Bookmark, Clock, Calendar, ChevronRight } from "lucide-react";
 import { useBloggerPosts } from "../hooks/useBloggerApi";
 import { useSuccessStoriesPosts } from "../hooks/useSuccessStoriesBlogger";
+import { useEngineeringPosts } from "../hooks/useEngineeringBlogger";
 import { BlogNotFoundPage, LoadingPage } from "./ui/error-pages";
 import "../styles/blog-content.css";
 
@@ -22,17 +24,18 @@ export const BlogPostComponent = () => {
   const tocNavRef = useRef<HTMLElement>(null);
   const mainContentRef = useRef<HTMLDivElement>(null);
 
-  // Fetch from both blogs
-  const { posts: blogPosts, loading: blogLoading, error: blogError } = useBloggerPosts(50);
+  // Fetch from all three blogs: Manufacturing, Engineering, and Success Stories
+  const { posts: manufacturingPosts, loading: mfgLoading, error: mfgError } = useBloggerPosts(50);
+  const { posts: engineeringPosts, loading: engLoading, error: engError } = useEngineeringPosts(50);
   const { posts: storyPosts, loading: storyLoading, error: storyError } = useSuccessStoriesPosts(50);
 
-  // Combine posts from both blogs
+  // Combine posts from all three blogs
   const allPosts = useMemo(() => {
-    return [...(blogPosts || []), ...(storyPosts || [])];
-  }, [blogPosts, storyPosts]);
+    return [...(manufacturingPosts || []), ...(engineeringPosts || []), ...(storyPosts || [])];
+  }, [manufacturingPosts, engineeringPosts, storyPosts]);
 
-  const loading = blogLoading || storyLoading;
-  const error = blogError || storyError;
+  const loading = mfgLoading || engLoading || storyLoading;
+  const error = mfgError || engError || storyError;
 
   const post = useMemo(() => {
     return allPosts.find(p => p.slug === slug);
@@ -129,25 +132,30 @@ export const BlogPostComponent = () => {
       headingElements.forEach((heading, index) => {
         heading.id = `heading-${index}`;
 
-        // Make FAQ questions extra bold
+        // Make FAQ questions extra bold - ONLY if it's an actual question with "?"
         const text = heading.textContent || '';
         const lowerText = text.toLowerCase();
 
-        if (text.includes('?') ||
-            lowerText.includes('faq') ||
-            lowerText.includes('frequently asked') ||
-            lowerText.startsWith('what ') ||
-            lowerText.startsWith('how ') ||
-            lowerText.startsWith('why ') ||
-            lowerText.startsWith('when ') ||
-            lowerText.startsWith('where ') ||
-            lowerText.startsWith('who ') ||
-            lowerText.startsWith('can ') ||
-            lowerText.startsWith('is ') ||
-            lowerText.startsWith('are ') ||
-            lowerText.startsWith('does ') ||
-            lowerText.startsWith('do ')) {
+        // Only apply extra bold if:
+        // 1. Contains a question mark AND starts with question words, OR
+        // 2. Explicitly mentions "FAQ" or "Frequently Asked"
+        const isQuestion = text.includes('?') && (
+          lowerText.startsWith('what ') ||
+          lowerText.startsWith('how ') ||
+          lowerText.startsWith('why ') ||
+          lowerText.startsWith('when ') ||
+          lowerText.startsWith('where ') ||
+          lowerText.startsWith('who ') ||
+          lowerText.startsWith('can ') ||
+          lowerText.startsWith('is ') ||
+          lowerText.startsWith('are ') ||
+          lowerText.startsWith('does ') ||
+          lowerText.startsWith('do ')
+        );
 
+        const isFAQSection = lowerText.includes('faq') || lowerText.includes('frequently asked');
+
+        if (isQuestion || isFAQSection) {
           (heading as HTMLElement).style.fontWeight = '900';
           (heading as HTMLElement).style.color = '#171A22';
           heading.classList.add('faq-question');
@@ -190,6 +198,37 @@ export const BlogPostComponent = () => {
     return <BlogNotFoundPage description={error} />;
   }
 
+  // Generate structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image,
+    "datePublished": post.publishDate,
+    "dateModified": post.publishDate,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "image": post.authorImage
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EMUSKI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.emuski.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.emuski.com/blog/${post.slug}`
+    },
+    "keywords": post.tags?.join(", "),
+    "articleSection": post.category,
+    "wordCount": post.fullContent.replace(/<[^>]*>/g, '').split(/\s+/).length
+  };
+
   const handleShare = (platform: string) => {
     const url = window.location.href;
     const title = post.title;
@@ -231,10 +270,16 @@ export const BlogPostComponent = () => {
 
   return (
     <article ref={articleRef} className="min-h-screen bg-white">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
         <div
-          className="h-full bg-teal-600 transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 transition-all duration-150 ease-out shadow-sm"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -319,51 +364,82 @@ export const BlogPostComponent = () => {
       </button>
 
       {/* Header */}
-      <section className="bg-white pt-24 pb-4">
-        <div className="container mx-auto px-6 lg:px-16 max-w-[1440px]">
+      <section className="bg-white pt-24 pb-6 md:pb-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1440px]">
           <div className="max-w-[885px] mx-auto">
+            {/* Breadcrumb Navigation */}
+            <nav className="mb-4 sm:mb-6" aria-label="Breadcrumb">
+              <ol className="flex items-center gap-2 text-sm text-gray-600">
+                <li><Link href="/" className="hover:text-teal-600 transition-colors">Home</Link></li>
+                <li><ChevronRight className="h-3 w-3" /></li>
+                <li><Link href="/blog" className="hover:text-teal-600 transition-colors">Blog</Link></li>
+                <li><ChevronRight className="h-3 w-3" /></li>
+                <li className="text-gray-900 font-medium line-clamp-1">{post.title}</li>
+              </ol>
+            </nav>
+
             {/* Category Badge */}
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 bg-teal-50 text-teal-700 text-sm font-medium rounded">
+            <div className="mb-4 sm:mb-5">
+              <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-teal-50 to-teal-100 text-teal-700 text-sm font-semibold rounded-full border border-teal-200">
                 {post.category}
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-[32px] sm:text-[42px] font-bold leading-[1.2] mb-5 text-[#171A22]">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-black leading-[1.15] mb-5 sm:mb-6 text-[#171A22] tracking-tight">
               {post.title}
             </h1>
 
+            {/* Excerpt */}
+            {post.excerpt && (
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8 font-normal">
+                {post.excerpt}
+              </p>
+            )}
+
             {/* Author & Meta Info */}
-            <div className="flex items-center gap-4 mb-6">
-              <img
-                src={post.authorImage || '/assets/authors/default.jpg'}
-                alt={post.author}
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div>
-                <p className="font-semibold text-[#171A22] text-base">{post.author}</p>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <time dateTime={post.publishDate}>
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <img
+                  src={post.authorImage || '/assets/authors/default.jpg'}
+                  alt={post.author}
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-teal-100"
+                />
+                <div>
+                  <p className="font-bold text-[#171A22] text-base sm:text-lg">{post.author}</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Manufacturing Expert</p>
+                </div>
+              </div>
+
+              <div className="h-10 w-px bg-gray-300 hidden sm:block"></div>
+
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4 text-teal-600" />
+                  <time dateTime={post.publishDate} className="font-medium">
                     {new Date(post.publishDate).toLocaleDateString('en-US', {
                       year: 'numeric',
-                      month: 'short',
+                      month: 'long',
                       day: 'numeric'
                     })}
                   </time>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
+                </div>
+                <span className="text-gray-400">•</span>
+                <div className="flex items-center gap-1.5">
+                  <Clock className="h-4 w-4 text-teal-600" />
+                  <span className="font-medium">{post.readTime}</span>
                 </div>
               </div>
             </div>
 
             {/* Featured Image */}
-            <div className="mb-0">
+            <div className="mb-0 relative group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-auto object-cover rounded-lg border border-gray-200"
-                style={{ maxHeight: '375px', objectFit: 'cover' }}
+                className="w-full h-auto object-cover rounded-xl shadow-lg border border-gray-200 transition-transform duration-300 group-hover:scale-[1.01]"
+                style={{ maxHeight: '500px', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -411,6 +487,22 @@ export const BlogPostComponent = () => {
                     dangerouslySetInnerHTML={{
                       __html: (() => {
                         let html = post.fullContent;
+
+                        // STEP 1: Preserve bold formatting - Convert all bold indicators to <strong>
+                        // This must happen BEFORE we remove inline styles
+                        // Handle font-weight in spans and divs
+                        html = html.replace(/<(span|div|p)([^>]*)\s*style="([^"]*font-weight:\s*(?:bold|700|800|900)[^"]*)"([^>]*)>([\s\S]*?)<\/\1>/gi,
+                          (match, tag, before, style, after, content) => {
+                            // If content is not already wrapped in strong/b, wrap it
+                            if (!content.includes('<strong>') && !content.includes('<b>')) {
+                              return `<${tag}${before}${after}><strong>${content}</strong></${tag}>`;
+                            }
+                            return `<${tag}${before}${after}>${content}</${tag}>`;
+                          });
+
+                        // Convert <b> tags to <strong> FIRST before any other processing
+                        html = html.replace(/<b(\s[^>]*)?>/gi, '<strong>');
+                        html = html.replace(/<\/b>/gi, '</strong>');
 
                         // Clean up inline styles but preserve some important ones
                         html = html.replace(/\sstyle="[^"]*"/gi, '');
@@ -481,24 +573,34 @@ export const BlogPostComponent = () => {
                         // Remove separator divs that blogger adds (but keep images inside)
                         html = html.replace(/<div[^>]*class=["'][^"']*separator[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi, '$1');
 
-                        // Convert <b> tags to <strong> for better semantic HTML (preserve ALL bold formatting)
-                        html = html.replace(/<b(\s[^>]*)?>([\s\S]+?)<\/b>/gi, '<strong>$2</strong>');
-
                         // Convert <i> tags to <em> for better semantic HTML
                         html = html.replace(/<i(\s[^>]*)?>([\s\S]+?)<\/i>/gi, '<em>$2</em>');
 
                         // Ensure FAQ questions have strong tags wrapped
-                        html = html.replace(/<(h[2-6])([^>]*)>([\s\S]*?(?:what|how|why|when|where|who|can|is|does|are)[\s\S]*?\?[\s\S]*?)<\/h[2-6]>/gi,
-                          (match, tag, attrs, content) => {
-                            // If not already wrapped in strong, wrap it
-                            if (!content.includes('<strong>')) {
-                              return `<${tag}${attrs}><strong>${content}</strong></${tag}>`;
+                        // Only wrap if it's a question (contains ?) AND starts with question words
+                        html = html.replace(/<(h[2-6])([^>]*)>([\s\S]*?)\?([^<]*)<\/h[2-6]>/gi,
+                          (match, tag, attrs, content, afterQuestion) => {
+                            const fullContent = content + '?' + afterQuestion;
+                            const lowerContent = fullContent.toLowerCase();
+
+                            // Check if it starts with question words
+                            const isQuestion = lowerContent.match(/^\s*(?:what|how|why|when|where|who|can|is|does|are|do)\s/i);
+                            const isFAQ = lowerContent.includes('faq') || lowerContent.includes('frequently asked');
+
+                            if (isQuestion || isFAQ) {
+                              // If not already wrapped in strong, wrap it
+                              if (!fullContent.includes('<strong>')) {
+                                return `<${tag}${attrs}><strong>${fullContent}</strong></${tag}>`;
+                              }
                             }
                             return match;
                           });
 
-                        // Clean up span tags - remove those with only formatting attributes, keep content
-                        html = html.replace(/<span[^>]*>(.*?)<\/span>/gi, '$1');
+                        // Clean up span tags - BUT preserve those with strong tags inside
+                        html = html.replace(/<span[^>]*>(.*?)<\/span>/gi, (match, content) => {
+                          // If the span contains strong or em tags, keep those tags but remove the span
+                          return content;
+                        });
 
                         // Clean up empty divs BUT preserve divs with images
                         html = html.replace(/<div([^>]*)>\s*<\/div>/gi, (match, attrs) => {
@@ -514,6 +616,10 @@ export const BlogPostComponent = () => {
 
                         // Fix list items - unwrap nested p tags
                         html = html.replace(/<li([^>]*)>\s*<p[^>]*>(.*?)<\/p>\s*<\/li>/gi, '<li$1>$2</li>');
+
+                        // Remove unwanted "Pasted text" artifacts from Google Docs
+                        html = html.replace(/\[Pasted text #?\d*\s*\+?\d*\s*lines?\]/gi, '');
+                        html = html.replace(/\[Pasted text[^\]]*\]/gi, '');
 
                         // Clean nbsp entities and unicode spaces
                         html = html.replace(/&nbsp;/g, ' ');
@@ -537,6 +643,7 @@ export const BlogPostComponent = () => {
 
                         // Trim whitespace between tags but keep single space
                         html = html.replace(/>\s+</g, '> <');
+
 
                         return html;
                       })()

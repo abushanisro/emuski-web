@@ -25,6 +25,7 @@ export interface BloggerPost {
   images?: {
     url: string;
   }[];
+  snippet?: string; // Custom description/snippet from Blogger
 }
 
 export interface BloggerResponse {
@@ -148,52 +149,137 @@ function decodeHtmlEntities(text: string): string {
     .replace(/&ldquo;/g, '"');
 }
 
+/**
+ * SEO-optimized description extraction
+ * Extracts a meaningful description following Google's best practices:
+ * - 150-160 characters for optimal search result display
+ * - First meaningful paragraph (skips headings, titles, etc.)
+ * - Clean, readable text without HTML or special formatting
+ *
+ * @param content - Raw HTML content from Blogger
+ * @returns Clean, SEO-friendly description
+ */
+function extractSEODescription(content: string): string {
+  // Remove script and style tags completely
+  let cleaned = content
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<head[^>]*>[\s\S]*?<\/head>/gi, '');
+
+  // Extract all paragraphs
+  const paragraphMatches = cleaned.match(/<p[^>]*>([\s\S]*?)<\/p>/gi) || [];
+
+  let description = '';
+
+  // Find the first meaningful paragraph
+  for (const para of paragraphMatches) {
+    // Remove HTML tags from paragraph
+    const text = para
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    // Decode HTML entities
+    const decoded = decodeHtmlEntities(text);
+
+    // Skip if it's too short (likely a heading or label)
+    if (decoded.length < 20) continue;
+
+    // Skip common structural elements
+    if (
+      /^(title|subtitle|heading|who the client|what the challenge|what emuski did|the result):/i.test(decoded) ||
+      /^(introduction|overview|summary):/i.test(decoded)
+    ) {
+      continue;
+    }
+
+    // This is likely our description
+    description = decoded;
+    break;
+  }
+
+  // If no good paragraph found, try getting first meaningful text block
+  if (!description) {
+    const textContent = cleaned
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    description = decodeHtmlEntities(textContent);
+
+    // Remove common prefixes
+    description = description
+      .replace(/^Title:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Breaking the Barrier:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Zero-Zero Tolerance:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Sourcing the Impossible:\s*[^.!?]+[.!?]\s*/i, '')
+      .replace(/^Accelerating Innovation:\s*[^.!?]+[.!?]\s*/i, '')
+      .trim();
+  }
+
+  // Optimize length for SEO (150-160 characters is ideal for meta descriptions)
+  if (description.length > 160) {
+    // Try to cut at sentence boundary
+    const sentences = description.match(/[^.!?]+[.!?]+/g) || [];
+    let optimized = '';
+
+    for (const sentence of sentences) {
+      if ((optimized + sentence).length <= 160) {
+        optimized += sentence;
+      } else {
+        break;
+      }
+    }
+
+    // If we have a good sentence-based description, use it
+    if (optimized.length >= 100) {
+      description = optimized.trim();
+    } else {
+      // Otherwise, cut at word boundary
+      description = description.substring(0, 157).trim();
+      const lastSpace = description.lastIndexOf(' ');
+      if (lastSpace > 100) {
+        description = description.substring(0, lastSpace) + '...';
+      } else {
+        description = description + '...';
+      }
+    }
+  }
+
+  return description;
+}
+
 // Convert Blogger post to our BlogPost format
 export function convertBloggerPostToLocalFormat(post: BloggerPost) {
   // Extract first image from content if available
   const imgMatch = post.content.match(/<img[^>]+src="([^">]+)"/);
   const image = imgMatch ? imgMatch[1] : 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80';
 
-  // Extract text description from content
-  // Remove HTML tags, decode entities, and clean whitespace
-  let textContent = post.content
-    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '') // Remove style tags
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags
-    .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-    .replace(/\s+/g, ' ') // Normalize whitespace
-    .trim();
+  // Use snippet/description if available from Blogger (Search Description)
+  // Otherwise use our SEO-optimized extraction algorithm
+  let excerpt = '';
+  if (post.snippet) {
+    // Use the custom description from Blogger
+    excerpt = decodeHtmlEntities(post.snippet.trim());
 
-  // Decode HTML entities
-  textContent = decodeHtmlEntities(textContent);
-
-  // Find content after "Who the Client Was" - this is where the actual description starts
-  const whoClientIndex = textContent.indexOf('Who the Client Was');
-  if (whoClientIndex !== -1) {
-    const afterWhoClient = textContent.substring(whoClientIndex + 'Who the Client Was'.length).trim();
-    const challengeIndex = afterWhoClient.indexOf('What the Challenge');
-    if (challengeIndex !== -1) {
-      textContent = afterWhoClient.substring(0, challengeIndex).trim();
-    } else {
-      textContent = afterWhoClient;
+    // Ensure it's within SEO-optimal length (150-160 characters)
+    if (excerpt.length > 160) {
+      const lastSpace = excerpt.substring(0, 157).lastIndexOf(' ');
+      excerpt = excerpt.substring(0, lastSpace > 100 ? lastSpace : 157) + '...';
     }
   } else {
-    // Fallback: Remove common structural prefixes
-    textContent = textContent
-      .replace(/^Title:\s*[^.!?]+[.!?]\s*/i, '') // Remove title line completely
-      .replace(/^Breaking the Barrier:\s*[^.!?]+[.!?]\s*/i, '')
-      .replace(/^Zero-Zero Tolerance:\s*[^.!?]+[.!?]\s*/i, '')
-      .replace(/^Sourcing the Impossible:\s*[^.!?]+[.!?]\s*/i, '')
-      .replace(/^Accelerating Innovation:\s*[^.!?]+[.!?]\s*/i, '')
-      .replace(/Who the Client Was\s*/gi, '')
-      .replace(/What the Challenge Was\s*/gi, '')
-      .replace(/What EMUSKI Did\s*/gi, '')
-      .replace(/The Result\s*/gi, '')
-      .trim();
+    // Use our intelligent SEO description extraction
+    excerpt = extractSEODescription(post.content);
   }
 
-  // Extract first sentence for excerpt
-  const sentences = textContent.match(/[^.!?]+[.!?]+/g) || [];
-  const excerpt = sentences.length > 0 ? sentences[0].trim() : textContent.substring(0, 200).trim();
+  // Extract full text content for word count
+  let textContent = post.content
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  textContent = decodeHtmlEntities(textContent);
 
   // Generate slug from title
   const slug = post.title

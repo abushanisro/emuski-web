@@ -15,54 +15,15 @@ const config: Config = {
     'PhoneInputCountry',
     'PhoneInputCountrySelect',
     'PhoneInputCountrySelectArrow',
-    // Animation classes
-    { pattern: /animate-.+/ },
-    // EMUSKI color classes
-    { pattern: /bg-emuski-.+/ },
-    { pattern: /text-emuski-.+/ },
-    { pattern: /border-emuski-.+/ },
-    { pattern: /from-emuski-.+/ },
-    { pattern: /via-emuski-.+/ },
-    { pattern: /to-emuski-.+/ },
-    // Gradient classes
-    { pattern: /from-.+/ },
-    { pattern: /via-.+/ },
-    { pattern: /to-.+/ },
-    // Grid and layout classes
-    { pattern: /grid-.+/ },
-    { pattern: /gap-.+/ },
-    { pattern: /w-.+/ },
-    { pattern: /h-.+/ },
-    // Flex classes
-    { pattern: /flex-.+/ },
-    // Opacity classes
-    { pattern: /opacity-.+/ },
-    // Shadow classes
-    { pattern: /shadow-.+/ },
-    // Transform classes
-    { pattern: /scale-.+/ },
-    { pattern: /translate-.+/ },
-    { pattern: /rotate-.+/ },
     // Scrollbar classes
     'scrollbar-thin',
     'scrollbar-hide',
-    { pattern: /scrollbar-track-.+/ },
-    { pattern: /scrollbar-thumb-.+/ },
     // Filter classes
     'grayscale',
     'grayscale-0',
     'brightness-0',
     'invert',
     'filter',
-    { pattern: /grayscale.*/ },
-    { pattern: /brightness-.+/ },
-    { pattern: /contrast-.+/ },
-    { pattern: /saturate-.+/ },
-    { pattern: /backdrop-.+/ },
-    // Animation classes
-    'animate-scroll',
-    'animate-scroll-mobile',
-    { pattern: /animate-scroll.*/ },
   ],
   theme: {
     extend: {

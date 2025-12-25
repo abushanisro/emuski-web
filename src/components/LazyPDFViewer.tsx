@@ -1,24 +1,20 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { FileText, Download, ExternalLink } from 'lucide-react'
+import { FileText, ExternalLink } from 'lucide-react'
 
 interface LazyPDFViewerProps {
   src: string
   title: string
   ariaLabel: string
   minHeight?: string
-  showDownload?: boolean
-  downloadUrl?: string
 }
 
 export const LazyPDFViewer = ({
   src,
   title,
   ariaLabel,
-  minHeight = '500px',
-  showDownload = false,
-  downloadUrl
+  minHeight = '500px'
 }: LazyPDFViewerProps) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasIntersected, setHasIntersected] = useState(false)
@@ -85,25 +81,15 @@ export const LazyPDFViewer = ({
               <p className="text-gray-600 text-center mb-6 max-w-sm">
                 View this PDF in your device's native PDF viewer for the best experience
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
-                <a
-                  href={src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  Open PDF
-                </a>
-                <a
-                  href={src}
-                  download
-                  className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-emuski-teal-darker font-semibold py-3 px-6 rounded-lg border-2 border-emuski-teal-dark transition-colors"
-                >
-                  <Download className="w-5 h-5" />
-                  Download
-                </a>
-              </div>
+              <a
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold py-3 px-6 rounded-lg transition-colors max-w-sm w-full"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Open PDF
+              </a>
             </div>
           ) : (
             /* Desktop: Show iframe PDF viewer */

@@ -7,11 +7,8 @@ import {
   Users,
   Mail,
   TrendingUp,
-  Download,
   Search,
-  Calendar,
   Eye,
-  MousePointer,
   UserMinus,
   UserCheck
 } from "lucide-react";
@@ -111,17 +108,6 @@ export const SubscriberDashboard = () => {
     ? emailCampaigns.reduce((acc, camp) => acc + camp.openRate, 0) / emailCampaigns.length
     : 0;
 
-  const exportSubscribers = () => {
-    const dataStr = JSON.stringify(filteredSubscribers, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-    const exportFileDefaultName = `emuski_subscribers_${new Date().toISOString().split('T')[0]}.json`;
-
-    const linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', exportFileDefaultName);
-    linkElement.click();
-  };
-
   const sendTestEmail = async () => {
     // Simulate sending test email
     alert("Test email sent to all active subscribers!");
@@ -136,16 +122,10 @@ export const SubscriberDashboard = () => {
             <h1 className="text-3xl font-bold text-gray-900">Subscriber Dashboard</h1>
             <p className="text-gray-600 mt-1">Monitor and manage your email subscribers</p>
           </div>
-          <div className="flex space-x-3">
-            <Button onClick={exportSubscribers} variant="outline" className="flex items-center space-x-2">
-              <Download className="h-4 w-4" />
-              <span>Export</span>
-            </Button>
-            <Button onClick={sendTestEmail} className="bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white flex items-center space-x-2">
-              <Mail className="h-4 w-4" />
-              <span>Send Test Email</span>
-            </Button>
-          </div>
+          <Button onClick={sendTestEmail} className="bg-emuski-teal-darker hover:bg-emuski-teal/90 text-white flex items-center space-x-2">
+            <Mail className="h-4 w-4" />
+            <span>Send Test Email</span>
+          </Button>
         </div>
 
         {/* Stats Cards */}

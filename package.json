@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "NODE_ENV=production next build",
-    "build:analyze": "ANALYZE=true npm run build",
+    "build": "next build",
+    "build:analyze": "next build",
     "start": "next start",
     "lint": "next lint"
   },

@@ -1,4 +1,11 @@
-/* Blog Content - Enhanced Responsive Styles */
+/* Blog Content - Professional Typography & Reading Experience */
+
+/* Optimize font rendering for better readability */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 
 .article-content {
   /* Ensure proper text wrapping */
@@ -8,6 +15,9 @@
   hyphens: auto;
   margin-top: 0 !important;
   padding-top: 0 !important;
+
+  /* Optimal line length for readability (50-75 characters per line) */
+  max-width: 72ch;
 }
 
 /* Remove extra spacing at article start */
@@ -544,4 +554,147 @@ nav {
 /* Ensure proper container behavior */
 .article-content > * {
   max-width: 100%;
+}
+
+/* Selection styling for better UX */
+.article-content ::selection {
+  background-color: rgba(20, 184, 166, 0.2);
+  color: #171A22;
+}
+
+.article-content ::-moz-selection {
+  background-color: rgba(20, 184, 166, 0.2);
+  color: #171A22;
+}
+
+/* Pull quotes - if using data-pullquote attribute */
+.article-content .pullquote {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #0d9488;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 5px solid #14b8a6;
+  background: linear-gradient(to right, rgba(20, 184, 166, 0.05), transparent);
+  font-style: italic;
+}
+
+/* Highlighted text */
+.article-content mark {
+  background: linear-gradient(to right, rgba(255, 229, 100, 0.3), rgba(255, 229, 100, 0.1));
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  color: #171A22;
+}
+
+/* Better hr styling */
+.article-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 3rem 0;
+}
+
+/* Footnotes/References */
+.article-content sup {
+  font-size: 0.75em;
+  color: #0d9488;
+  font-weight: 600;
+  margin-left: 0.1rem;
+}
+
+/* Subscript */
+.article-content sub {
+  font-size: 0.75em;
+}
+
+/* Better keyboard key styling */
+.article-content kbd {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
+  font-family: 'Monaco', 'Consolas', monospace;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Definition lists */
+.article-content dl {
+  margin: 1.5rem 0;
+}
+
+.article-content dt {
+  font-weight: 700;
+  color: #171A22;
+  margin-top: 1rem;
+}
+
+.article-content dd {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+/* Abbreviations */
+.article-content abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-color: #0d9488;
+}
+
+/* Better figure and figcaption */
+.article-content figure {
+  margin: 2rem 0;
+}
+
+.article-content figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Print styles for better printing experience */
+@media print {
+  .article-content {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .article-content h1 {
+    font-size: 24pt;
+  }
+
+  .article-content h2 {
+    font-size: 20pt;
+    page-break-after: avoid;
+  }
+
+  .article-content h3 {
+    font-size: 16pt;
+    page-break-after: avoid;
+  }
+
+  .article-content a {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  .article-content a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  .article-content img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
+
+/* Dark mode support (if implemented in future) */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark mode styles here */
 }

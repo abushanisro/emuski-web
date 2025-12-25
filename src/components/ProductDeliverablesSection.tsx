@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Download, Check, Package } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { LazyPDFViewer } from './LazyPDFViewer';
 
 const deliverables = [
@@ -166,7 +166,7 @@ const ProductDeliverablesSection = () => {
         {/* PDF Viewer */}
         <div className="max-w-5xl mx-auto">
           <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg">
-            <div className="bg-gradient-to-r from-emuski-teal-darker via-emuski-teal-dark to-emuski-teal p-5 flex items-center justify-between flex-wrap gap-4">
+            <div className="bg-gradient-to-r from-emuski-teal-darker via-emuski-teal-dark to-emuski-teal p-5">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <FileText className="w-6 h-6 text-white" />
@@ -176,14 +176,6 @@ const ProductDeliverablesSection = () => {
                   <p className="text-white/90 text-sm"></p>
                 </div>
               </div>
-              <a
-                href="/assets/documents/Project_Delivery_Report.pdf"
-                download
-                className="inline-flex items-center gap-2 bg-white text-emuski-teal-darker px-4 py-2 rounded-xl text-sm font-bold shadow-lg"
-              >
-                <Download className="w-4 h-4" />
-                Download
-              </a>
             </div>
             <LazyPDFViewer
               src="/assets/documents/Project_Delivery_Report.pdf"

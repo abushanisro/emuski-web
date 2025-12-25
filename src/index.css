@@ -29,8 +29,8 @@ All colors MUST be HSL.
         --popover-foreground: 220 39% 11%;
 
         /* Primary Brand Colors */
-        --primary: 181 66% 59%;
-        /* #4fd3d4 - EMUSKI Teal */
+        --primary: 181 70% 45%;
+        /* #17B8BA - EMUSKI Teal (darker for better contrast) */
         --primary-foreground: 0 0% 100%;
 
         --secondary: 220 13% 91%;
@@ -41,8 +41,8 @@ All colors MUST be HSL.
         --muted-foreground: 220 15% 35%;
         /* Darker gray for WCAG AA contrast compliance */
 
-        --accent: 181 66% 59%;
-        /* EMUSKI Teal for accents */
+        --accent: 181 70% 45%;
+        /* EMUSKI Teal for accents (darker for better contrast) */
         --accent-foreground: 0 0% 100%;
 
         /* System Colors */
@@ -53,20 +53,20 @@ All colors MUST be HSL.
         --border: 220 13% 91%;
         /* #e5e7eb - Border Gray */
         --input: 220 13% 91%;
-        --ring: 181 66% 59%;
-        /* EMUSKI Teal */
+        --ring: 181 70% 45%;
+        /* EMUSKI Teal (darker for better visibility) */
 
         --radius: 0.5rem;
 
         /* EMUSKI Brand Colors */
-        --emuski-teal: 181 66% 59%;
-        /* #4fd3d4 - Primary brand color */
-        --emuski-teal-light: 181 66% 69%;
-        /* #6ee1e2 - Teal Light */
-        --emuski-teal-dark: 181 66% 49%;
-        /* #3bc5c6 - Teal Dark */
-        --emuski-teal-darker: 181 66% 25%;
-        /* Darker teal for WCAG AA contrast compliance on white */
+        --emuski-teal: 181 70% 45%;
+        /* #17B8BA - Primary brand color (darker for better UI/UX) */
+        --emuski-teal-light: 181 68% 55%;
+        /* #2ACDCF - Teal Light */
+        --emuski-teal-dark: 181 72% 35%;
+        /* #139C9E - Teal Dark */
+        --emuski-teal-darker: 181 75% 22%;
+        /* #0B6365 - Darker teal for WCAG AA contrast compliance on white */
 
         /* Dark & Industrial Colors */
         --emuski-dark: 210 30% 18%;
@@ -95,11 +95,11 @@ All colors MUST be HSL.
         /* #ef4444 - Error */
 
         /* Legacy compatibility (keeping for existing components) */
-        --industrial-blue: 181 66% 59%;
-        --industrial-blue-light: 181 66% 69%;
+        --industrial-blue: 181 70% 45%;
+        --industrial-blue-light: 181 68% 55%;
         --industrial-gray: 220 15% 35%;
-        --tech-green: 181 66% 59%;
-        --tech-green-dark: 181 66% 49%;
+        --tech-green: 181 70% 45%;
+        --tech-green-dark: 181 72% 35%;
         --tech-black: 210 30% 10%;
         --tech-gray: 220 15% 35%;
         --tech-light-gray: 220 13% 91%;
@@ -111,7 +111,7 @@ All colors MUST be HSL.
         --sidebar-accent: 220 13% 91%;
         --sidebar-accent-foreground: 220 39% 11%;
         --sidebar-border: 220 13% 91%;
-        --sidebar-ring: 181 66% 59%;
+        --sidebar-ring: 181 70% 45%;
     }
 
     .dark {
@@ -127,8 +127,8 @@ All colors MUST be HSL.
         --popover: 210 30% 18%;
         --popover-foreground: 0 0% 98%;
 
-        --primary: 181 66% 59%;
-        /* #4fd3d4 - EMUSKI Teal */
+        --primary: 181 68% 55%;
+        /* #2ACDCF - EMUSKI Teal Light (for dark mode visibility) */
         --primary-foreground: 0 0% 100%;
 
         --secondary: 210 25% 16%;
@@ -139,7 +139,7 @@ All colors MUST be HSL.
         --muted-foreground: 220 13% 70%;
         /* Lighter gray for better contrast on dark background */
 
-        --accent: 181 66% 59%;
+        --accent: 181 68% 55%;
         --accent-foreground: 0 0% 100%;
 
         --destructive: 0 84% 60%;
@@ -147,16 +147,16 @@ All colors MUST be HSL.
 
         --border: 210 25% 25%;
         --input: 210 25% 25%;
-        --ring: 181 66% 59%;
+        --ring: 181 68% 55%;
 
         --sidebar-background: 210 30% 10%;
         --sidebar-foreground: 0 0% 98%;
-        --sidebar-primary: 181 66% 59%;
+        --sidebar-primary: 181 68% 55%;
         --sidebar-primary-foreground: 0 0% 100%;
         --sidebar-accent: 210 25% 16%;
         --sidebar-accent-foreground: 0 0% 98%;
         --sidebar-border: 210 25% 25%;
-        --sidebar-ring: 181 66% 59%;
+        --sidebar-ring: 181 68% 55%;
     }
 
     /* Global element styles */

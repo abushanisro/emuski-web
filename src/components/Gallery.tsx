@@ -2,17 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { Search, Filter, Grid, List, Eye, Download, Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-
-// Helper function to dynamically load industry images
-const loadIndustryImages = (industryPath: string, companyName: string) => {
-  const basePath = `/assets/industry-components/${industryPath}`;
-  // This would need to be populated dynamically in a real implementation
-  // For now, we'll use placeholder structure
-  return [];
-};
 
 // Industry-based gallery structure
 const industryData = {
@@ -183,13 +174,7 @@ const galleryItems = [
   }
 ];
 
-// Industry categories for tabbed interface
-const industryCategories = ["All", "Space", "Medical", "Aerospace", "Automotive", "Defense", "Industrial"];
-
 export const Gallery = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedIndustry, setSelectedIndustry] = useState("All");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
@@ -231,19 +216,6 @@ export const Gallery = () => {
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, [selectedImage, currentImageIndex, currentGalleryIndex, navigateGallery]);
-
-
-  // Filter items based on search term and industry
-  const filteredItems = galleryItems.filter(item => {
-    const matchesSearch = 
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesIndustry = selectedIndustry === "All" || item.category === selectedIndustry;
-    
-    return matchesSearch && matchesIndustry;
-  });
 
   const getCurrentImage = () => {
     if (!selectedImage) return "";
@@ -350,16 +322,6 @@ export const Gallery = () => {
           ))}
         </div>
 
-        {/* No Results */}
-        {filteredItems.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-400 mb-4">
-              <Search className="h-12 w-12 mx-auto" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No results found</h3>
-            <p className="text-gray-600">Try adjusting your search terms or category filter</p>
-          </div>
-        )}
       </div>
 
       {/* Lightbox Modal */}
@@ -415,19 +377,13 @@ export const Gallery = () => {
               </div>
               
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className={`px-3 py-1 text-white text-xs sm:text-sm font-medium rounded-full ${
-                      industryData[selectedImage.category as keyof typeof industryData]?.color || "bg-emuski-teal"
-                    }`}>
-                      {selectedImage.category}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{selectedImage.title}</h3>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download
-                  </Button>
+                <div className="mb-4">
+                  <span className={`px-3 py-1 text-white text-xs sm:text-sm font-medium rounded-full ${
+                    industryData[selectedImage.category as keyof typeof industryData]?.color || "bg-emuski-teal"
+                  }`}>
+                    {selectedImage.category}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{selectedImage.title}</h3>
                 </div>
                 <p className="text-gray-700 mb-4">{selectedImage.description}</p>
               </div>

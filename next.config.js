@@ -1,37 +1,206 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  poweredByHeader: false, // Remove X-Powered-By header
-  compress: true, // Enable gzip compression
+/**
+ * Next.js Configuration
+ *
+ * @see https://nextjs.org/docs/app/api-reference/next-config-js
+ * @type {import('next').NextConfig}
+ */
 
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'blogger.googleusercontent.com',
-        port: '',
-        pathname: '/**',
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// ES Module compatibility: Recreate __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Environment variables
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isProduction = process.env.NODE_ENV === 'production';
+
+/**
+ * Security Headers Configuration
+ * Implements OWASP best practices
+ */
+const securityHeaders = [
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'origin-when-cross-origin'
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()'
+  }
+];
+
+/**
+ * Image optimization configuration
+ * Allows images from trusted CDN sources only
+ */
+const imageConfig = {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'blogger.googleusercontent.com',
+      pathname: '/**',
+    },
+    {
+      protocol: 'https',
+      hostname: 'images.unsplash.com',
+      pathname: '/**',
+    },
+    {
+      protocol: 'https',
+      hostname: 'via.placeholder.com',
+      pathname: '/**',
+    },
+  ],
+  formats: ['image/webp', 'image/avif'],
+  deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+  imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  minimumCacheTTL: 60,
+};
+
+/**
+ * Webpack optimization for production builds
+ * Implements code splitting and tree shaking
+ */
+const configureWebpack = (config, { isServer, dev }) => {
+  // Production optimizations only
+  if (!isServer && !dev) {
+    config.optimization = {
+      ...config.optimization,
+      moduleIds: 'deterministic',
+      runtimeChunk: 'single',
+      minimize: true,
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: 25,
+        minSize: 20000,
+        maxSize: 244000,
+        cacheGroups: {
+          // Framework chunk (React, React-DOM)
+          framework: {
+            test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+            name: 'framework',
+            priority: 40,
+            enforce: true,
+            reuseExistingChunk: true,
+          },
+          // UI library chunks
+          radixUI: {
+            test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+            name: 'radix-ui',
+            priority: 35,
+            reuseExistingChunk: true,
+          },
+          // Icon library
+          icons: {
+            test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+            name: 'icons',
+            priority: 30,
+            reuseExistingChunk: true,
+          },
+          // Other vendor libraries
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              const packageName = module.context?.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )?.[1];
+              return packageName ? `vendor.${packageName.replace('@', '')}` : 'vendor';
+            },
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          // CSS optimization
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss|sass)$/,
+            chunks: 'all',
+            enforce: true,
+            priority: 10,
+          },
+          // Common code
+          common: {
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
       },
+      // Enable tree shaking
+      usedExports: true,
+      sideEffects: true,
+    };
+
+    // Skip parsing for known safe modules
+    config.module.noParse = /^(react|react-dom|scheduler)$/;
+  }
+
+  // Performance budgets
+  config.performance = {
+    hints: dev ? false : 'warning',
+    maxEntrypointSize: 512000, // 500KB
+    maxAssetSize: 512000,
+  };
+
+  return config;
+};
+
+/**
+ * Main Next.js Configuration
+ */
+const nextConfig = {
+  // Enable React Strict Mode for development best practices
+  reactStrictMode: true,
+
+  // Security: Remove X-Powered-By header
+  poweredByHeader: false,
+
+  // Enable gzip compression
+  compress: true,
+
+  // Explicitly set project root (prevents multi-lockfile warnings)
+  outputFileTracingRoot: __dirname,
+
+  // Custom headers for security and performance
+  async headers() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
+        source: '/:path*',
+        headers: securityHeaders,
       },
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-        port: '',
-        pathname: '/**',
-      },
-      // Add any other image domains you need here
-    ],
-    qualities: [40, 75, 85], // Support quality values used in your app
-    formats: ['image/webp'], // Use modern formats
+    ];
   },
 
+  // Image optimization
+  images: imageConfig,
+
+  // Experimental features
   experimental: {
-    optimizeCss: true, // Enable CSS optimization with critical CSS extraction
+    // Optimize CSS with critical CSS extraction
+    optimizeCss: true,
+
+    // Optimize package imports to reduce bundle size
     optimizePackageImports: [
       'lucide-react',
       '@radix-ui/react-tabs',
@@ -39,90 +208,23 @@ const nextConfig = {
       '@radix-ui/react-dialog',
       '@radix-ui/react-dropdown-menu',
       '@radix-ui/react-popover',
-      'react-phone-number-input'
+      'react-phone-number-input',
     ],
   },
 
+  // Compiler options
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production', // Remove console logs in production
+    // Remove console logs in production
+    removeConsole: isProduction ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
 
-  // Turbopack configuration (Next.js 16+)
+  // Turbopack configuration (Next.js 15+)
   turbopack: {},
 
-  // Webpack optimizations (fallback for webpack mode)
-  webpack: (config, { isServer, dev }) => {
-    if (!isServer && !dev) {
-      // Optimize bundle splitting and reduce JS execution time
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        runtimeChunk: 'single',
-        minimize: true,
-        splitChunks: {
-          chunks: 'all',
-          maxInitialRequests: 25,
-          minSize: 20000,
-          maxSize: 244000, // Split chunks larger than 244KB
-          cacheGroups: {
-            // React & React-DOM in separate chunk
-            react: {
-              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-              name: 'react-vendor',
-              priority: 30,
-              reuseExistingChunk: true,
-            },
-            // Separate vendor chunks
-            defaultVendors: {
-              test: /[\\/]node_modules[\\/]/,
-              priority: -10,
-              reuseExistingChunk: true,
-              name(module) {
-                // Get package name from node_modules path
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                // Split large libraries into separate chunks
-                if (['@radix-ui', 'react-phone-number-input', 'lucide-react'].some(lib => packageName.includes(lib))) {
-                  return `vendor.${packageName.replace('@', '')}`;
-                }
-                return 'vendor';
-              },
-            },
-            // CSS optimization
-            styles: {
-              name: 'styles',
-              test: /\.(css|scss)$/,
-              chunks: 'all',
-              enforce: true,
-              priority: 10,
-            },
-            // Common chunks
-            commons: {
-              minChunks: 2,
-              priority: -20,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-
-      // Tree shaking for unused exports
-      config.optimization.usedExports = true;
-      config.optimization.sideEffects = true;
-
-      // Reduce module parsing time
-      config.module.noParse = /^(react|react-dom|scheduler)$/;
-    }
-
-    // Performance hints
-    config.performance = {
-      ...config.performance,
-      hints: dev ? false : 'warning',
-      maxEntrypointSize: 512000, // 500KB
-      maxAssetSize: 512000,
-    };
-
-    return config;
-  },
+  // Webpack configuration
+  webpack: configureWebpack,
 };
 
 export default nextConfig;
