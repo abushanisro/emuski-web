@@ -146,17 +146,18 @@ export const Navbar = () => {
       <div className="w-full px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <Image 
-                src={emuskiLogo} 
-                alt="EMUSKI Manufacturing Solutions Logo" 
-                width={80} 
-                height={40} 
-                className="h-8 sm:h-10 w-auto object-contain [image-rendering:crisp-edges] contrast-110 brightness-105" 
+            <Link href="/" className="flex items-center space-x-1.5 group">
+              <Image
+                src={emuskiLogo}
+                alt="EMUSKI Manufacturing Solutions Logo"
+                width={32}
+                height={16}
+                style={{ width: 'auto', height: 'auto' }}
+                className="h-4 sm:h-5 w-auto object-contain [image-rendering:crisp-edges] contrast-110 brightness-105"
                 quality={75}
                 priority
               />
-              <span className="text-lg sm:text-xl font-bold text-foreground">EMUSKI</span>
+              <span className="text-base sm:text-lg font-bold text-foreground">EMUSKI</span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-6" ref={servicesRef}>
@@ -278,9 +279,10 @@ export const Navbar = () => {
                       <Image
                         src={emuskiLogo}
                         alt="EMUSKI Manufacturing Solutions Logo"
-                        width={60}
-                        height={30}
-                        className="h-6 w-auto object-contain [image-rendering:crisp-edges] contrast-[1.2] brightness-110 opacity-80"
+                        width={28}
+                        height={14}
+                        style={{ width: 'auto', height: 'auto' }}
+                        className="h-3.5 w-auto object-contain [image-rendering:crisp-edges] contrast-[1.2] brightness-110 opacity-80"
                         quality={75}
                       />
                       <div>

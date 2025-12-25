@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search, Filter, Calendar, User, Clock, ChevronRight } from "lucide-react";
+import { Filter, Calendar, User, Clock, ChevronRight } from "lucide-react";
 import { Card } from "./ui/card";
 import { useBloggerPosts } from "../hooks/useBloggerApi";
 import { useEngineeringPosts } from "../hooks/useEngineeringBlogger";
@@ -12,7 +12,6 @@ import { LoadingPage, ServerErrorPage } from "./ui/error-pages";
 import { SuccessStoriesSection } from "./SuccessStoriesSection";
 
 export const BlogPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -37,18 +36,13 @@ export const BlogPage = () => {
     return Array.from(cats);
   }, [allPosts]);
 
-  // Filter posts based on search and category
+  // Filter posts based on category
   const filteredPosts = useMemo(() => {
     return allPosts.filter(post => {
-      const matchesSearch = !searchTerm ||
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-
       const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-
-      return matchesSearch && matchesCategory;
+      return matchesCategory;
     });
-  }, [allPosts, searchTerm, selectedCategory]);
+  }, [allPosts, selectedCategory]);
 
   const featuredPosts = filteredPosts.slice(0, 3); // First 3 as featured
   const regularPosts = filteredPosts.slice(3); // Rest as regular
@@ -288,64 +282,6 @@ export const BlogPage = () => {
         </div>
       </section>
 
-      {/* Search Bar */}
-      <section className="bg-white border-b border-gray-200">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-6">
-          <div className="max-w-2xl">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-emuski-teal focus:border-transparent transition-all"
-              />
-            </div>
-
-            {/* Active Filters */}
-            {(selectedCategory !== "All" || searchTerm) && (
-              <div className="flex flex-wrap items-center gap-2 mt-4">
-                <span className="text-sm text-gray-500">Active filters:</span>
-                {selectedCategory !== "All" && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emuski-teal/10 text-emuski-teal-dark text-sm font-medium rounded-full">
-                    {selectedCategory}
-                    <button
-                      onClick={() => setSelectedCategory("All")}
-                      className="hover:bg-emuski-teal/20 rounded-full p-0.5 transition-colors"
-                      aria-label="Clear category filter"
-                    >
-                      <span className="text-base leading-none">×</span>
-                    </button>
-                  </span>
-                )}
-                {searchTerm && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full">
-                    "{searchTerm}"
-                    <button
-                      onClick={() => setSearchTerm("")}
-                      className="hover:bg-gray-200 rounded-full p-0.5 transition-colors"
-                      aria-label="Clear search term"
-                    >
-                      <span className="text-base leading-none">×</span>
-                    </button>
-                  </span>
-                )}
-                <button
-                  onClick={() => {
-                    setSearchTerm("");
-                    setSelectedCategory("All");
-                  }}
-                  className="text-sm text-emuski-teal-dark hover:text-emuski-teal-darker font-medium underline"
-                >
-                  Clear all
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* Hero Featured Post */}
       {featuredPosts.length > 0 && (
         <section className="bg-white py-12">
@@ -478,13 +414,10 @@ export const BlogPage = () => {
             <div className="max-w-2xl mx-auto text-center space-y-4">
               <h3 className="text-2xl font-bold text-gray-900">No articles found</h3>
               <p className="text-gray-600">
-                Try adjusting your search criteria or browse all articles by clearing the filters.
+                No articles available in this category. Browse all articles by clearing the filter.
               </p>
               <button
-                onClick={() => {
-                  setSearchTerm("");
-                  setSelectedCategory("All");
-                }}
+                onClick={() => setSelectedCategory("All")}
                 className="inline-flex items-center px-6 py-3 bg-emuski-teal-dark hover:bg-emuski-teal-darker text-white font-semibold rounded-lg transition-colors"
               >
                 Clear All Filters

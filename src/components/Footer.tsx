@@ -164,16 +164,17 @@ export const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 gap-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-<div className="flex items-center space-x-2">
-                <Image 
-                  src={emuskiLogo} 
-                  alt="EMUSKI Manufacturing Solutions Logo" 
-                  width={70} 
-                  height={35} 
-                  className="h-6 w-auto" 
+<div className="flex items-center space-x-1.5">
+                <Image
+                  src={emuskiLogo}
+                  alt="EMUSKI Manufacturing Solutions Logo"
+                  width={28}
+                  height={14}
+                  style={{ width: 'auto', height: 'auto' }}
+                  className="h-3.5 w-auto"
                   quality={75}
                 />
-                <span className="text-foreground font-bold text-lg">EMUSKI</span>
+                <span className="text-foreground font-bold text-sm">EMUSKI</span>
               </div>
               <span className="text-muted-foreground text-sm">© 2025 EMUSKI Corporation. All rights reserved.</span>
             </div>
