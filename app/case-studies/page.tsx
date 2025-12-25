@@ -1,46 +1,32 @@
 'use client'
 
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
-import { ProductionPDFViewer } from '@/components/ProductionPDFViewer'
-import { FileText, ChevronDown } from 'lucide-react'
+import { FileText, ChevronDown, Loader2 } from 'lucide-react'
+
+// Dynamic import to avoid SSR issues with PDF library (DOMMatrix, Canvas APIs)
+const ProductionPDFViewer = dynamic(
+  () => import('@/components/ProductionPDFViewer').then((mod) => ({ default: mod.ProductionPDFViewer })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex flex-col items-center justify-center bg-gray-50 rounded-xl border border-gray-200 p-8 min-h-[400px]">
+        <Loader2 className="w-12 h-12 md:w-16 md:h-16 text-blue-600 mb-4 animate-spin" />
+        <p className="text-gray-700 font-semibold text-sm md:text-base">Loading PDF Viewer...</p>
+      </div>
+    ),
+  }
+)
 
 const CASE_STUDIES = [
-  {
-    id: 'exhaust-system',
-    title: 'Exhaust System Case Study',
-    description: 'Comprehensive analysis of exhaust system engineering and manufacturing processes',
-    url: 'https://khvugugbswtbosjlzsml.supabase.co/storage/v1/object/public/emuski-pdf/pdf/CASE%20STUDY%20-%20EXHAUST%20SYSTEM..pdf',
-    category: 'Case Study',
-  },
-  {
-    id: 'cost-breakdown',
-    title: 'Cost Breakdown Report',
-    description: 'Detailed cost analysis and breakdown for manufacturing projects',
-    url: '/docs/CostBreakDownReport/CostBreakDownReport-1.png',
-    category: 'Financial Report',
-  },
   {
     id: 'project-delivery',
     title: 'Project Delivery Report',
     description: 'Complete project delivery documentation and performance metrics',
     url: '/docs/Project_Delivery_Report.pdf',
     category: 'Project Report',
-  },
-  {
-    id: 'tear-down',
-    title: 'Tear Down Analysis Report',
-    description: 'In-depth tear down analysis and component evaluation',
-    url: 'https://khvugugbswtbosjlzsml.supabase.co/storage/v1/object/public/emuski-pdf/pdf/Sample%20-%20Tear%20Down%20Report.pdf',
-    category: 'Technical Report',
-  },
-  {
-    id: 'detailed-analysis',
-    title: 'Detailed Analysis Report',
-    description: 'Comprehensive technical analysis and engineering insights',
-    url: 'https://khvugugbswtbosjlzsml.supabase.co/storage/v1/object/public/emuski-pdf/pdf/Sample%20Detailed%20Analysis%20Report.pdf',
-    category: 'Technical Report',
   },
 ]
 
