@@ -50,6 +50,7 @@ const navigationConfig = {
   ],
   mobileMenuSections: [
     {
+      title: "Manufacturing Excellence",
       items: [
         { name: "On-Demand Manufacturing", path: "/manufacturing-services#on-demand-details" },
         { name: "Rapid Prototyping", path: "/manufacturing-services#prototyping-details" },
@@ -58,6 +59,7 @@ const navigationConfig = {
       ]
     },
     {
+      title: "Engineering Innovation",
       items: [
         { name: "Product Cost Estimation", path: "/precision-engineering#cost-estimation-details" },
         { name: "VAVE & Benchmarking", path: "/precision-engineering#vave-details" },
