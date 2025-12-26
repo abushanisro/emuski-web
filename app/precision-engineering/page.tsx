@@ -354,25 +354,27 @@ export default function PrecisionEngineering() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
+              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 p-4">
                 <Image
                   src="/assets/engineering/cost360-platform-dashboard.png"
                   alt="Cost 360 Platform Dashboard - Advanced Cost Estimation Tool"
-                  fill
+                  width={1056}
+                  height={681}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
-                  quality={60}
+                  className="w-full h-auto"
+                  quality={90}
                   priority
                 />
               </div>
-              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 relative aspect-[16/10]">
+              <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 p-4">
                 <Image
                   src="/assets/engineering/cost360-crm-system.png"
                   alt="Cost 360 CRM System - Client Relationship Management"
-                  fill
+                  width={830}
+                  height={471}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
-                  quality={60}
+                  className="w-full h-auto"
+                  quality={90}
                   loading="lazy"
                 />
               </div>
