@@ -15,7 +15,7 @@ import { RegionDiscovery } from "@/components/RegionDiscovery"
 import { fetchAllBlogs } from "@/lib/api/blogger"
 
 export const metadata: Metadata = {
-  title: 'ISO Certified OEM Manufacturing & Precision Engineering | EMUSKI Bangalore',
+  title: 'EMUSKI | Precision OEM Manufacturing | Bangalore',
   description: 'ISO 9001:2015 certified OEM manufacturing and cost engineering partner in Bangalore. CNC machining, injection molding, rapid prototyping, VAVE analysis.',
   alternates: {
     canonical: 'https://www.emuski.com',
