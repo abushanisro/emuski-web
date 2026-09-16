@@ -1,0 +1,2755 @@
+{
+  "generatedAt": "2026-09-16T07:02:20.858Z",
+  "publicDirectory": "public",
+  "backupDirectory": "public_backup_20260916",
+  "settings": {
+    "minimumBytes": 51200,
+    "jpegQuality": 85,
+    "pngQuality": 90,
+    "webpQuality": 85,
+    "processOrder": "largest first",
+    "preserveOriginalWhenOutputIsNotSmaller": true
+  },
+  "summary": {
+    "totalImages": 307,
+    "eligibleImages": 238,
+    "optimizedImages": 126,
+    "skippedImages": 69,
+    "errors": 0,
+    "beforeBytes": 88567096,
+    "afterBytes": 46179442,
+    "savedBytes": 42387654,
+    "savedPercent": 47.86,
+    "beforeMB": 84.46,
+    "afterMB": 44.04
+  },
+  "results": [
+    {
+      "file": "public/country/hyderabtah.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 6009616,
+      "afterBytes": 1873194,
+      "savedBytes": 4136422,
+      "savedPercent": 68.83,
+      "status": "optimized"
+    },
+    {
+      "file": "public/country/usa.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 4852227,
+      "afterBytes": 1477509,
+      "savedBytes": 3374718,
+      "savedPercent": 69.55,
+      "status": "optimized"
+    },
+    {
+      "file": "public/og-image.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 4185060,
+      "afterBytes": 1429885,
+      "savedBytes": 2755175,
+      "savedPercent": 65.83,
+      "status": "optimized"
+    },
+    {
+      "file": "public/twitter-image.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 4185060,
+      "afterBytes": 1429885,
+      "savedBytes": 2755175,
+      "savedPercent": 65.83,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mitran/ai-raw-material-optimization.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 4096398,
+      "afterBytes": 3859208,
+      "savedBytes": 237190,
+      "savedPercent": 5.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/npdcentre/wireedm.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 3289484,
+      "afterBytes": 1128430,
+      "savedBytes": 2161054,
+      "savedPercent": 65.7,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/top-16-cnc-machine-manufacturers-bangalore.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 2280409,
+      "afterBytes": 284949,
+      "savedBytes": 1995460,
+      "savedPercent": 87.5,
+      "status": "optimized"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-01.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 2099832,
+      "afterBytes": 464792,
+      "savedBytes": 1635040,
+      "savedPercent": 77.87,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0043.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 1941600,
+      "afterBytes": 1941600,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/teardown-cost-benchmarking-design-teams.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 1876890,
+      "afterBytes": 158070,
+      "savedBytes": 1718820,
+      "savedPercent": 91.58,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/advanced-composites-aerospace-engineering-lightweight.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 1855260,
+      "afterBytes": 662981,
+      "savedBytes": 1192279,
+      "savedPercent": 64.26,
+      "status": "optimized"
+    },
+    {
+      "file": "public/country/UK.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 1754520,
+      "afterBytes": 589078,
+      "savedBytes": 1165442,
+      "savedPercent": 66.43,
+      "status": "optimized"
+    },
+    {
+      "file": "public/country/banaglore.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 1717659,
+      "afterBytes": 606561,
+      "savedBytes": 1111098,
+      "savedPercent": 64.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/npdcentre/vmc-3-axsis.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 1553935,
+      "afterBytes": 564695,
+      "savedBytes": 989240,
+      "savedPercent": 63.66,
+      "status": "optimized"
+    },
+    {
+      "file": "public/logo.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 1187788,
+      "afterBytes": 233551,
+      "savedBytes": 954237,
+      "savedPercent": 80.34,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0097.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 1076501,
+      "afterBytes": 1076501,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0071.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 1029984,
+      "afterBytes": 1029984,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/vave-engineering-value-analysis-benchmarking.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 1029356,
+      "afterBytes": 116418,
+      "savedBytes": 912938,
+      "savedPercent": 88.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/automotive-component-manufacturing/automotive-component-3.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 867160,
+      "afterBytes": 867160,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/efficient-manufacturing-execution-guide.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 838456,
+      "afterBytes": 133156,
+      "savedBytes": 705300,
+      "savedPercent": 84.12,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/what-is-smart-manufacturing-ai-quality.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 834724,
+      "afterBytes": 129641,
+      "savedBytes": 705083,
+      "savedPercent": 84.47,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/lean-manufacturing-eliminating-waste-efficiency.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 728311,
+      "afterBytes": 109158,
+      "savedBytes": 619153,
+      "savedPercent": 85.01,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/manufacturers-in-bangalore-guide-for-oems.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 720097,
+      "afterBytes": 103124,
+      "savedBytes": 616973,
+      "savedPercent": 85.68,
+      "status": "optimized"
+    },
+    {
+      "file": "public/social-banner.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 698649,
+      "afterBytes": 163660,
+      "savedBytes": 534989,
+      "savedPercent": 76.57,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/npdcentre/centerlessgrinding.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 659851,
+      "afterBytes": 211165,
+      "savedBytes": 448686,
+      "savedPercent": 68,
+      "status": "optimized"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-04.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 632839,
+      "afterBytes": 189336,
+      "savedBytes": 443503,
+      "savedPercent": 70.08,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/engineering/product-teardown-analysis.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 623547,
+      "afterBytes": 256328,
+      "savedBytes": 367219,
+      "savedPercent": 58.89,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/npdcentre/vmc-5-axis.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 608227,
+      "afterBytes": 231563,
+      "savedBytes": 376664,
+      "savedPercent": 61.93,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/what-is-advanced-manufacturing-precision-machining.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 594733,
+      "afterBytes": 76501,
+      "savedBytes": 518232,
+      "savedPercent": 87.14,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250320-WA0055.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 554766,
+      "afterBytes": 554766,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/kostenoptimierung-deutsche-automobilzulieferer-wertanalyse.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 538765,
+      "afterBytes": 84650,
+      "savedBytes": 454115,
+      "savedPercent": 84.29,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/dfm-secrets-manufacturing-cost.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 503198,
+      "afterBytes": 381066,
+      "savedBytes": 122132,
+      "savedPercent": 24.27,
+      "status": "optimized"
+    },
+    {
+      "file": "public/logo.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 492317,
+      "afterBytes": 220530,
+      "savedBytes": 271787,
+      "savedPercent": 55.21,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/defense-sector.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 487581,
+      "afterBytes": 69209,
+      "savedBytes": 418372,
+      "savedPercent": 85.81,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/precision-manufacturing-space-drone-components.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 478456,
+      "afterBytes": 283246,
+      "savedBytes": 195210,
+      "savedPercent": 40.8,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/titanium-compressor-blisk-aerospace-component.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 469828,
+      "afterBytes": 261733,
+      "savedBytes": 208095,
+      "savedPercent": 44.29,
+      "status": "optimized"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-08.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 464000,
+      "afterBytes": 145753,
+      "savedBytes": 318247,
+      "savedPercent": 68.59,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/engineering/automotive-engineering-cost-estimation.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 454857,
+      "afterBytes": 142239,
+      "savedBytes": 312618,
+      "savedPercent": 68.73,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/should-cost-analysis-product-cost-estimation.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 453751,
+      "afterBytes": 52152,
+      "savedBytes": 401599,
+      "savedPercent": 88.51,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/aerospace-component-suppliers-india-as9100.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 453478,
+      "afterBytes": 298557,
+      "savedBytes": 154921,
+      "savedPercent": 34.16,
+      "status": "optimized"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-05.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 424584,
+      "afterBytes": 132725,
+      "savedBytes": 291859,
+      "savedPercent": 68.74,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250313-WA0009.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 401715,
+      "afterBytes": 401715,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/top-10-electronics-manufacturing-bangalore.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 395567,
+      "afterBytes": 50145,
+      "savedBytes": 345422,
+      "savedPercent": 87.32,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/what-is-an-oem-manufacturer-aerospace-ev-medical.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 382997,
+      "afterBytes": 47855,
+      "savedBytes": 335142,
+      "savedPercent": 87.51,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/digital-prototyping-cut-physical-prototypes.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 381778,
+      "afterBytes": 238402,
+      "savedBytes": 143376,
+      "savedPercent": 37.55,
+      "status": "optimized"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-07.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 374299,
+      "afterBytes": 123347,
+      "savedBytes": 250952,
+      "savedPercent": 67.05,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250512-WA0005.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 373657,
+      "afterBytes": 373657,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/docs/cost-breakdown-analysis-report/cost-breakdown-analysis-page-03.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 367855,
+      "afterBytes": 116292,
+      "savedBytes": 251563,
+      "savedPercent": 68.39,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/strategic-sourcing-india-supplier-ecosystem.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 366560,
+      "afterBytes": 64638,
+      "savedBytes": 301922,
+      "savedPercent": 82.37,
+      "status": "optimized"
+    },
+    {
+      "file": "public/country/image.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 363921,
+      "afterBytes": 119924,
+      "savedBytes": 243997,
+      "savedPercent": 67.05,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/engineering/cost360-platform-dashboard.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 358841,
+      "afterBytes": 96187,
+      "savedBytes": 262654,
+      "savedPercent": 73.2,
+      "status": "optimized"
+    },
+    {
+      "file": "public/favicon-512x512.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 356528,
+      "afterBytes": 68848,
+      "savedBytes": 287680,
+      "savedPercent": 80.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/favicon_io/android-chrome-512x512.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 356528,
+      "afterBytes": 68848,
+      "savedBytes": 287680,
+      "savedPercent": 80.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/mstile-310x150.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 356528,
+      "afterBytes": 68848,
+      "savedBytes": 287680,
+      "savedPercent": 80.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/mstile-310x310.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 356528,
+      "afterBytes": 68848,
+      "savedBytes": 287680,
+      "savedPercent": 80.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/satellite-broadcast-sensor-components.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 317972,
+      "afterBytes": 46736,
+      "savedBytes": 271236,
+      "savedPercent": 85.3,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/supplier-engineering-strategic-sourcing-oems.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 317240,
+      "afterBytes": 50142,
+      "savedBytes": 267098,
+      "savedPercent": 84.19,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 308620,
+      "afterBytes": 308620,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/product-cost-optimisation-2026-ai-precision-engineering.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 298942,
+      "afterBytes": 65590,
+      "savedBytes": 233352,
+      "savedPercent": 78.06,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250602-WA0005.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 294734,
+      "afterBytes": 294734,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250317-WA0002 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 291717,
+      "afterBytes": 291717,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/cnc-vmc-milling-aluminum-component-coolant.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 279566,
+      "afterBytes": 199728,
+      "savedBytes": 79838,
+      "savedPercent": 28.56,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/ai-driven-cost-estimation-de-risk-engineering.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 272512,
+      "afterBytes": 188616,
+      "savedBytes": 83896,
+      "savedPercent": 30.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-5.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 272146,
+      "afterBytes": 272146,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250503-WA0003.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 270234,
+      "afterBytes": 270234,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/npdcentre/cnc.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 264188,
+      "afterBytes": 92557,
+      "savedBytes": 171631,
+      "savedPercent": 64.97,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/additive-manufacturing-3d-printing-product-development.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 252669,
+      "afterBytes": 46525,
+      "savedBytes": 206144,
+      "savedPercent": 81.59,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0078.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 251634,
+      "afterBytes": 251634,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/npdcentre/vmc-4-axis.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 237984,
+      "afterBytes": 91269,
+      "savedBytes": 146715,
+      "savedPercent": 61.65,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/product-cost-estimation-cnc-machining.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 234647,
+      "afterBytes": 171277,
+      "savedBytes": 63370,
+      "savedPercent": 27.01,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/opto-imaging-pioneer.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 232835,
+      "afterBytes": 34519,
+      "savedBytes": 198316,
+      "savedPercent": 85.17,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0061.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 230592,
+      "afterBytes": 230592,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0094.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 226434,
+      "afterBytes": 226434,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/design-for-manufacturing-dfm-npd-engineering.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 219846,
+      "afterBytes": 32680,
+      "savedBytes": 187166,
+      "savedPercent": 85.14,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250522-WA0014.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 217448,
+      "afterBytes": 217125,
+      "savedBytes": 323,
+      "savedPercent": 0.15,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250215-WA0011 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 213892,
+      "afterBytes": 213892,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250306-WA0003 (2).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 212454,
+      "afterBytes": 212454,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/product-cost-estimation-manufacturing-oem-guide.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 206529,
+      "afterBytes": 206529,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-3.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 206419,
+      "afterBytes": 206419,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/engineering/cost360-crm-system.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 187737,
+      "afterBytes": 53636,
+      "savedBytes": 134101,
+      "savedPercent": 71.43,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0155 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 187108,
+      "afterBytes": 187108,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/what-is-vave-manufacturing-save-oem-money.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 185649,
+      "afterBytes": 144706,
+      "savedBytes": 40943,
+      "savedPercent": 22.05,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250228-WA0003 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 179274,
+      "afterBytes": 179274,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-8.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 172991,
+      "afterBytes": 172991,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/engineering-secrets-dfm-design-cut-manufacturing-cost.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 171941,
+      "afterBytes": 126898,
+      "savedBytes": 45043,
+      "savedPercent": 26.2,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/engineering/cost-breakdown-engineering.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 170901,
+      "afterBytes": 46619,
+      "savedBytes": 124282,
+      "savedPercent": 72.72,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/team/emuski-founder-ceo.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 170590,
+      "afterBytes": 33430,
+      "savedBytes": 137160,
+      "savedPercent": 80.4,
+      "status": "optimized"
+    },
+    {
+      "file": "public/blog/images/precision-machined-parts-engineering-blueprint.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 168773,
+      "afterBytes": 128356,
+      "savedBytes": 40417,
+      "savedPercent": 23.95,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250303-WA0001 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 166529,
+      "afterBytes": 166529,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/image.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 164750,
+      "afterBytes": 49475,
+      "savedBytes": 115275,
+      "savedPercent": 69.97,
+      "status": "optimized"
+    },
+    {
+      "file": "public/image.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 163584,
+      "afterBytes": 53148,
+      "savedBytes": 110436,
+      "savedPercent": 67.51,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-21.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 160953,
+      "afterBytes": 160953,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/cnc-machining-die-casting-sheet-metal-guide.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 160633,
+      "afterBytes": 111346,
+      "savedBytes": 49287,
+      "savedPercent": 30.68,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0016.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 150974,
+      "afterBytes": 150974,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/75-units-to-the-usa-in-just-3-days.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 146554,
+      "afterBytes": 145914,
+      "savedBytes": 640,
+      "savedPercent": 0.44,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mission/groupphoto.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 146444,
+      "afterBytes": 145914,
+      "savedBytes": 530,
+      "savedPercent": 0.36,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 144731,
+      "afterBytes": 144731,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-5.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 144731,
+      "afterBytes": 144731,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250316-WA0019.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 143912,
+      "afterBytes": 143912,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0042 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 142268,
+      "afterBytes": 142268,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250320-WA0043.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 140070,
+      "afterBytes": 140070,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 138418,
+      "afterBytes": 138418,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/hero-mobile/manufacturing-services-mobile-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 134968,
+      "afterBytes": 130410,
+      "savedBytes": 4558,
+      "savedPercent": 3.38,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0006.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 133108,
+      "afterBytes": 133108,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0008.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 129377,
+      "afterBytes": 129377,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0027.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 128900,
+      "afterBytes": 128900,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0163.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 125281,
+      "afterBytes": 125281,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-20.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 124653,
+      "afterBytes": 124653,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250320-WA0041.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 124422,
+      "afterBytes": 124422,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250310-WA0021.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 121959,
+      "afterBytes": 121959,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-3.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 120637,
+      "afterBytes": 120637,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-2.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 120618,
+      "afterBytes": 120618,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250327-WA0007.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 120618,
+      "afterBytes": 120618,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/right-manufacturing-partner-india-precision.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 120166,
+      "afterBytes": 120166,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-2.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 117581,
+      "afterBytes": 117581,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-8.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 116680,
+      "afterBytes": 116680,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250509-WA0017.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 116680,
+      "afterBytes": 116680,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250709-WA0001.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 116426,
+      "afterBytes": 116426,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/testmonials/girl2.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 115662,
+      "afterBytes": 115662,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-4.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 115648,
+      "afterBytes": 115648,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/engineering/Mechanical-Power-Global-Sourcing-Company.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 113485,
+      "afterBytes": 54403,
+      "savedBytes": 59082,
+      "savedPercent": 52.06,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250228-WA0026.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 113443,
+      "afterBytes": 113443,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/automotive-component-manufacturing/automotive-component-2.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 112110,
+      "afterBytes": 112110,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250608-WA0035.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 111073,
+      "afterBytes": 111073,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0021.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 109617,
+      "afterBytes": 109617,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-4.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 109476,
+      "afterBytes": 109476,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-7.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 109159,
+      "afterBytes": 109159,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0015.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 108665,
+      "afterBytes": 108665,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/IMG-20250618-WA0003.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 108307,
+      "afterBytes": 108307,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-1.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 108307,
+      "afterBytes": 108307,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/hero/manufacturing-services-hero-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 107680,
+      "afterBytes": 103546,
+      "savedBytes": 4134,
+      "savedPercent": 3.84,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/testmonials/boy2.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 105622,
+      "afterBytes": 105622,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/testmonials/boy3.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 105164,
+      "afterBytes": 105164,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0025.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 103134,
+      "afterBytes": 103134,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/image copy.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 102993,
+      "afterBytes": 37770,
+      "savedBytes": 65223,
+      "savedPercent": 63.33,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/testmonials/boy4.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 102378,
+      "afterBytes": 102378,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250311-WA0001 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 101343,
+      "afterBytes": 101343,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0024.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 101071,
+      "afterBytes": 101071,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250621-WA0001.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 99798,
+      "afterBytes": 99798,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/mission/client.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 99239,
+      "afterBytes": 98172,
+      "savedBytes": 1067,
+      "savedPercent": 1.08,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250709-WA0003.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 98822,
+      "afterBytes": 98822,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/testmonials/girl3.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 98604,
+      "afterBytes": 98604,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-9.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 98317,
+      "afterBytes": 98317,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/testmonials/girl.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 97088,
+      "afterBytes": 97088,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0018.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 95394,
+      "afterBytes": 95394,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-4.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 94515,
+      "afterBytes": 94515,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-3.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 94399,
+      "afterBytes": 94399,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250312-WA0014.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 94342,
+      "afterBytes": 94342,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/blog/images/german-automotive-manufacturer-70-poc-ideas.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 94097,
+      "afterBytes": 94097,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0013.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 94024,
+      "afterBytes": 94024,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/mitran/ai-mithran-platform-dashboard.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 93959,
+      "afterBytes": 31522,
+      "savedBytes": 62437,
+      "savedPercent": 66.45,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-4.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 93504,
+      "afterBytes": 93504,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0124.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 93475,
+      "afterBytes": 93475,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/testmonials/boy.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 92805,
+      "afterBytes": 92470,
+      "savedBytes": 335,
+      "savedPercent": 0.36,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250614-WA0003.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 92226,
+      "afterBytes": 92226,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/country/germany.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 91435,
+      "afterBytes": 32361,
+      "savedBytes": 59074,
+      "savedPercent": 64.61,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/emuski-manufacturing-logo.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 90636,
+      "afterBytes": 90636,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/logo.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 90636,
+      "afterBytes": 90636,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250424-WA0002.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 90077,
+      "afterBytes": 89982,
+      "savedBytes": 95,
+      "savedPercent": 0.11,
+      "status": "optimized"
+    },
+    {
+      "file": "public/image copy 2.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 88975,
+      "afterBytes": 26721,
+      "savedBytes": 62254,
+      "savedPercent": 69.97,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250609-WA0015.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 88358,
+      "afterBytes": 88358,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250608-WA0011.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 87652,
+      "afterBytes": 87652,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250320-WA0008.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 86680,
+      "afterBytes": 86680,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0010.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 86485,
+      "afterBytes": 86485,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-7.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 86436,
+      "afterBytes": 84377,
+      "savedBytes": 2059,
+      "savedPercent": 2.38,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0026 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 85971,
+      "afterBytes": 85762,
+      "savedBytes": 209,
+      "savedPercent": 0.24,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250701-WA0017.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 85967,
+      "afterBytes": 85967,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250711-WA0009.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 85570,
+      "afterBytes": 85570,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250522-WA0003.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 85403,
+      "afterBytes": 85403,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250608-WA0033.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 84783,
+      "afterBytes": 84783,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0171.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 81870,
+      "afterBytes": 81870,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0069.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 81023,
+      "afterBytes": 81023,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250310-WA0027 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 80059,
+      "afterBytes": 79884,
+      "savedBytes": 175,
+      "savedPercent": 0.22,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250223-WA0014.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 79696,
+      "afterBytes": 79696,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/mission/meeting room.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 78746,
+      "afterBytes": 78746,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250714-WA0027.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 78528,
+      "afterBytes": 78528,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-3.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 78402,
+      "afterBytes": 55044,
+      "savedBytes": 23358,
+      "savedPercent": 29.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-15.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 78268,
+      "afterBytes": 78268,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0180.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 77748,
+      "afterBytes": 77748,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-3.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 77676,
+      "afterBytes": 77676,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0064.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 77643,
+      "afterBytes": 77643,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0017.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 77471,
+      "afterBytes": 77471,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250514-WA0004.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 77304,
+      "afterBytes": 77304,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/automotive-component-manufacturing/automotive-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 75953,
+      "afterBytes": 75953,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-5.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 75465,
+      "afterBytes": 49860,
+      "savedBytes": 25605,
+      "savedPercent": 33.93,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mitran/ai-raw-material-optimization.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 74730,
+      "afterBytes": 40857,
+      "savedBytes": 33873,
+      "savedPercent": 45.33,
+      "status": "optimized"
+    },
+    {
+      "file": "public/emuski-share.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 74271,
+      "afterBytes": 18363,
+      "savedBytes": 55908,
+      "savedPercent": 75.28,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mitran/ai-mitran-future.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 73240,
+      "afterBytes": 70838,
+      "savedBytes": 2402,
+      "savedPercent": 3.28,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/hero/cost-engineering-hero-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 71118,
+      "afterBytes": 66600,
+      "savedBytes": 4518,
+      "savedPercent": 6.35,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/space-satellite-manufacturing/space-satellite-component-6.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 70800,
+      "afterBytes": 70254,
+      "savedBytes": 546,
+      "savedPercent": 0.77,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-2.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 69707,
+      "afterBytes": 47134,
+      "savedBytes": 22573,
+      "savedPercent": 32.38,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/hero-mobile/cost-engineering-mobile-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 69310,
+      "afterBytes": 65390,
+      "savedBytes": 3920,
+      "savedPercent": 5.66,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0028.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 68750,
+      "afterBytes": 68350,
+      "savedBytes": 400,
+      "savedPercent": 0.58,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250602-WA0028.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 68603,
+      "afterBytes": 68603,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250701-WA0018.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 68530,
+      "afterBytes": 68530,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0083 (1).jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 68265,
+      "afterBytes": 67638,
+      "savedBytes": 627,
+      "savedPercent": 0.92,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0022.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 68220,
+      "afterBytes": 68220,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-5.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 67258,
+      "afterBytes": 65927,
+      "savedBytes": 1331,
+      "savedPercent": 1.98,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0014.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 67214,
+      "afterBytes": 65762,
+      "savedBytes": 1452,
+      "savedPercent": 2.16,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 66848,
+      "afterBytes": 66848,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0015.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 66822,
+      "afterBytes": 66822,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0012.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 66549,
+      "afterBytes": 64893,
+      "savedBytes": 1656,
+      "savedPercent": 2.49,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0118.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 66080,
+      "afterBytes": 65375,
+      "savedBytes": 705,
+      "savedPercent": 1.07,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mitran/ai-intelligent-sourcing-system.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 65468,
+      "afterBytes": 35494,
+      "savedBytes": 29974,
+      "savedPercent": 45.78,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-8.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 65189,
+      "afterBytes": 63464,
+      "savedBytes": 1725,
+      "savedPercent": 2.65,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-5.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 65135,
+      "afterBytes": 65135,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-2.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 64161,
+      "afterBytes": 62236,
+      "savedBytes": 1925,
+      "savedPercent": 3,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/mission/googlemeet.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 63893,
+      "afterBytes": 61533,
+      "savedBytes": 2360,
+      "savedPercent": 3.69,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-7.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 61578,
+      "afterBytes": 60347,
+      "savedBytes": 1231,
+      "savedPercent": 2,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0019.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 59727,
+      "afterBytes": 59306,
+      "savedBytes": 421,
+      "savedPercent": 0.7,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-14.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 59469,
+      "afterBytes": 58753,
+      "savedBytes": 716,
+      "savedPercent": 1.2,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-5.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 59453,
+      "afterBytes": 59237,
+      "savedBytes": 216,
+      "savedPercent": 0.36,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-18.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 59171,
+      "afterBytes": 58941,
+      "savedBytes": 230,
+      "savedPercent": 0.39,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-3.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 58602,
+      "afterBytes": 58602,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 58584,
+      "afterBytes": 56481,
+      "savedBytes": 2103,
+      "savedPercent": 3.59,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/production.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 58460,
+      "afterBytes": 56045,
+      "savedBytes": 2415,
+      "savedPercent": 4.13,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0129.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 57779,
+      "afterBytes": 57779,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-15.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 57526,
+      "afterBytes": 57526,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0016.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 57059,
+      "afterBytes": 56552,
+      "savedBytes": 507,
+      "savedPercent": 0.89,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-2.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 56954,
+      "afterBytes": 55849,
+      "savedBytes": 1105,
+      "savedPercent": 1.94,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0116.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 56595,
+      "afterBytes": 56387,
+      "savedBytes": 208,
+      "savedPercent": 0.37,
+      "status": "optimized"
+    },
+    {
+      "file": "public/favicon-192x192.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 56476,
+      "afterBytes": 11413,
+      "savedBytes": 45063,
+      "savedPercent": 79.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/favicon-96x96.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 56476,
+      "afterBytes": 11413,
+      "savedBytes": 45063,
+      "savedPercent": 79.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/favicon_io/android-chrome-192x192.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 56476,
+      "afterBytes": 11413,
+      "savedBytes": 45063,
+      "savedPercent": 79.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/mstile-150x150.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 56476,
+      "afterBytes": 11413,
+      "savedBytes": 45063,
+      "savedPercent": 79.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/mstile-70x70.png",
+      "format": "png",
+      "quality": 90,
+      "beforeBytes": 56476,
+      "afterBytes": 11413,
+      "savedBytes": 45063,
+      "savedPercent": 79.79,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0026.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 56066,
+      "afterBytes": 53281,
+      "savedBytes": 2785,
+      "savedPercent": 4.97,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0025.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 55711,
+      "afterBytes": 55609,
+      "savedBytes": 102,
+      "savedPercent": 0.18,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0149.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 55159,
+      "afterBytes": 55159,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-1.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 55037,
+      "afterBytes": 37592,
+      "savedBytes": 17445,
+      "savedPercent": 31.7,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-6.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 54710,
+      "afterBytes": 36646,
+      "savedBytes": 18064,
+      "savedPercent": 33.02,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-14.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 54457,
+      "afterBytes": 54457,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0022.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 53895,
+      "afterBytes": 53895,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0030.jpg",
+      "format": "jpg",
+      "quality": 85,
+      "beforeBytes": 53838,
+      "afterBytes": 51279,
+      "savedBytes": 2559,
+      "savedPercent": 4.75,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-11.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 53281,
+      "afterBytes": 52767,
+      "savedBytes": 514,
+      "savedPercent": 0.96,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/hero-mobile/ai-mithran-mobile-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 52800,
+      "afterBytes": 50788,
+      "savedBytes": 2012,
+      "savedPercent": 3.81,
+      "status": "optimized"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-10.jpeg",
+      "format": "jpeg",
+      "quality": 85,
+      "beforeBytes": 52740,
+      "afterBytes": 52740,
+      "savedBytes": 0,
+      "savedPercent": 0,
+      "status": "unchanged_not_smaller"
+    },
+    {
+      "file": "public/assets/hero/ai-mithran-hero-banner.webp",
+      "format": "webp",
+      "quality": 85,
+      "beforeBytes": 52210,
+      "afterBytes": 50056,
+      "savedBytes": 2154,
+      "savedPercent": 4.13,
+      "status": "optimized"
+    }
+  ],
+  "skipped": [
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0157.jpg",
+      "bytes": 50984,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-2.jpeg",
+      "bytes": 50767,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/apple-touch-icon-120x120.png",
+      "bytes": 50516,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/apple-touch-icon-152x152.png",
+      "bytes": 50516,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/apple-touch-icon.png",
+      "bytes": 50516,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/favicon_io/apple-touch-icon.png",
+      "bytes": 50516,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0085.jpg",
+      "bytes": 50289,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0104.jpg",
+      "bytes": 49788,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-6.jpeg",
+      "bytes": 49642,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-6.jpg",
+      "bytes": 49315,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0110.jpg",
+      "bytes": 48528,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-10.jpeg",
+      "bytes": 48068,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0029.jpg",
+      "bytes": 47678,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250519-WA0028.jpg",
+      "bytes": 47550,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250302-WA0019.jpg",
+      "bytes": 46827,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-13.jpeg",
+      "bytes": 46100,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0146.jpg",
+      "bytes": 46000,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250613-WA0019.jpg",
+      "bytes": 45333,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-16.jpeg",
+      "bytes": 44499,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-6.jpeg",
+      "bytes": 44221,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-17.jpeg",
+      "bytes": 43952,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-4.jpeg",
+      "bytes": 43567,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-component-4.jpeg",
+      "bytes": 43187,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/mitran/ai-commodity-management-dashboard.jpeg",
+      "bytes": 43015,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/blog/images/advanced-graphite-machining.jpg",
+      "bytes": 42167,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-7.jpg",
+      "bytes": 41335,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-1.jpeg",
+      "bytes": 40376,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-13.jpeg",
+      "bytes": 40082,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/mission/officepalce.jpeg",
+      "bytes": 39904,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-11.jpeg",
+      "bytes": 39699,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-12.jpeg",
+      "bytes": 39573,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-5.jpeg",
+      "bytes": 39196,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-2.jpeg",
+      "bytes": 39129,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250327-WA0004.jpg",
+      "bytes": 39127,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250310-WA0023 (1).jpg",
+      "bytes": 38854,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-8.jpeg",
+      "bytes": 38500,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/engineering/cost360-platform-dashboard.webp",
+      "bytes": 37850,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250529-WA0025.jpg",
+      "bytes": 36630,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250310-WA0017.jpg",
+      "bytes": 36024,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250529-WA0002.jpg",
+      "bytes": 35636,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0120.jpg",
+      "bytes": 35286,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/emuski-logo.png",
+      "bytes": 34868,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0090.jpg",
+      "bytes": 33754,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0060.jpg",
+      "bytes": 32909,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-3.jpeg",
+      "bytes": 32468,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-19.jpeg",
+      "bytes": 32399,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-7.jpeg",
+      "bytes": 31426,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250530-WA0007.jpg",
+      "bytes": 30759,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0015.jpg",
+      "bytes": 30684,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2023/defense-2023-component-4.jpeg",
+      "bytes": 30235,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/engineering/cost360-crm-system.webp",
+      "bytes": 29560,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/medical-device-manufacturing/medical-device-component-12.jpeg",
+      "bytes": 29527,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0013.jpg",
+      "bytes": 29224,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0142.jpg",
+      "bytes": 28273,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-9.jpg",
+      "bytes": 27608,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0055.jpg",
+      "bytes": 27498,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250406-WA0017.jpg",
+      "bytes": 26829,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/defense-technology-manufacturing/defense-project-2025/defense-2025-component-9.jpeg",
+      "bytes": 26141,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250716-WA0046.jpg",
+      "bytes": 24073,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/IMG-20250624-WA0003.jpg",
+      "bytes": 22553,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-10.jpg",
+      "bytes": 16035,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/industry-components/industrial-components-manufacturing/industrial-component-8.jpg",
+      "bytes": 15007,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/emuski-logo-optimized.webp",
+      "bytes": 7570,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/assets/mitran/ai-mithran-ai.webp",
+      "bytes": 5940,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/favicon-32x32.png",
+      "bytes": 2896,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/favicon_io/favicon-32x32.png",
+      "bytes": 2896,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/favicon-16x16.png",
+      "bytes": 973,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/favicon_io/favicon-16x16.png",
+      "bytes": 973,
+      "status": "skipped_under_50KB"
+    },
+    {
+      "file": "public/whatsapp-banner.jpg",
+      "bytes": 114,
+      "status": "skipped_under_50KB"
+    }
+  ]
+}

@@ -135,7 +135,8 @@
     "critters": "^0.0.23",
     "eslint": "^9.32.0",
     "eslint-config-next": "^16.1.1",
-    "lovable-tagger": "^1.1.11"
+    "lovable-tagger": "^1.1.11",
+    "sharp": "^0.35.4"
   },
   "browserslist": {
     "production": [
