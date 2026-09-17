@@ -195,6 +195,7 @@ export const Navbar = () => {
                         setActiveServiceDropdown(activeServiceDropdown === key ? null : key);
                       }}
                       className="ml-1 p-1 text-gray-400 hover:text-emuski-teal-darker transition-colors duration-150"
+                      aria-label={`${service.name} menu`}
                     >
                       <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeServiceDropdown === key ? 'rotate-180' : ''}`} />
                     </button>

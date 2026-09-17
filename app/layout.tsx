@@ -297,7 +297,7 @@ export default function RootLayout({
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -360,7 +360,7 @@ export default function RootLayout({
         {/* Minimal GA4 Config - Carbon Optimized */}
         <Script
           id="ga4-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `if(typeof gtag==='function')gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-QFDFYZLZPK'}',{send_page_view:true});`
           }}

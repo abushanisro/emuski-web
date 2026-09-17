@@ -246,13 +246,13 @@ export const ContactSection = () => {
 
                   {/* Social Icons */}
                   <div className="flex gap-2 mt-4">
-                    <a href="https://www.linkedin.com/company/e-muski" target="_blank" rel="noopener noreferrer" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <a href="https://www.linkedin.com/company/e-muski" target="_blank" rel="noopener noreferrer" aria-label="EMUSKI on LinkedIn" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
                       <Linkedin className="w-3 h-3 text-gray-600" />
                     </a>
-                    <a href="mailto:enquiries@emuski.com" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <a href="mailto:enquiries@emuski.com" aria-label="Email EMUSKI" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
                       <Mail className="w-3 h-3 text-gray-600" />
                     </a>
-                    <a href="tel:+918667088060" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+                    <a href="tel:+918667088060" aria-label="Call EMUSKI" className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
                       <Phone className="w-3 h-3 text-gray-600" />
                     </a>
                   </div>
@@ -272,7 +272,7 @@ export const ContactSection = () => {
                   <form onSubmit={handleSubmit} className="space-y-3">
                     <div>
                       <Select onValueChange={(value) => handleChange('category', value)}>
-                        <SelectTrigger className="w-full text-sm">
+                        <SelectTrigger aria-label="Type of process" className="w-full text-sm">
                           <SelectValue placeholder="Type of Process you are looking for" />
                         </SelectTrigger>
                         <SelectContent>
@@ -347,6 +347,7 @@ export const ContactSection = () => {
                           multiple
                           disabled={uploadedFiles.length >= 5}
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
+                          aria-label="Upload parts files"
                           accept=".step,.stp,.sldprt,.stl,.dxf,.iges,.x_b,.3dxml,.catpart,.prt,.sat,.3mf,.jt,.dwg,.pdf,.doc,.docx"
                         />
                         <Upload className="w-6 h-6 mx-auto mb-2 text-gray-400" />
@@ -355,7 +356,7 @@ export const ContactSection = () => {
                             ? 'Maximum 5 files allowed' 
                             : `Upload Parts Files (${uploadedFiles.length}/5)`}
                         </div>
-                        <div className="text-xs text-gray-400">
+                        <div className="text-xs text-gray-600">
                           Support All File Formats Including - STEP | STP | SLDPRT | STL | DXF | IGES |<br />
                           X_B | 3DXML | CATPART | PRT | SAT | 3MF | JT files
                         </div>
