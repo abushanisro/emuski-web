@@ -44,14 +44,10 @@ export const NewsCarousel = ({ initialPosts }: NewsCarouselProps = {}) => {
     <>
 
       {/* Trusted by Clients Section */}
-      <section className="py-8 border-b border-border/30 relative overflow-hidden" style={{ backgroundColor: '#121A21' }}>
+      <section className="py-8 border-b border-border/30 relative overflow-hidden bg-[#121A21]">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage: 'linear-gradient(to right, #4fd3d4 1px, transparent 1px), linear-gradient(to bottom, #4fd3d4 1px, transparent 1px)',
-              backgroundSize: '4rem 4rem'
-            }}
+            className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[length:4rem_4rem]"
           ></div>
         </div>
 
@@ -60,7 +56,7 @@ export const NewsCarousel = ({ initialPosts }: NewsCarouselProps = {}) => {
             <h2 className="text-lg font-semibold text-white/80 mb-4">Trusted by Industry Leaders</h2>
           </div>
 
-          <div className="relative overflow-x-auto md:overflow-hidden w-full scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="relative overflow-x-auto md:overflow-hidden w-full scrollbar-hide [-webkit-overflow-scrolling:touch]">
             <div className="flex animate-scroll-mobile sm:animate-scroll space-x-8 sm:space-x-12 md:space-x-14 items-center">
               {/* Quadruple the list for maximum smoothness - 88 total logos */}
               {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
@@ -130,11 +126,7 @@ export const NewsCarousel = ({ initialPosts }: NewsCarouselProps = {}) => {
         <section className="py-12 border-b border-border relative overflow-hidden bg-white">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div
-              className="absolute top-0 left-0 w-full h-full"
-              style={{
-                backgroundImage: 'linear-gradient(to right, #4fd3d4 1px, transparent 1px), linear-gradient(to bottom, #4fd3d4 1px, transparent 1px)',
-                backgroundSize: '4rem 4rem'
-              }}
+              className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[length:4rem_4rem]"
             ></div>
           </div>
 

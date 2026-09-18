@@ -76,7 +76,7 @@ export const ManufacturingNPDSection = () => {
           </h2>
           
           <p className="text-sm text-gray-600 max-w-3xl mx-auto">
-            Our <span className="font-semibold text-emuski-teal-darker">New Product Development Centre</span> houses world-class manufacturing equipment delivering micron-precision for Medical Devices, Aerospace, Defense & Automotive. <span className="font-semibold">Reduce your lead time by 60%</span> with all capabilities integrated in one facility.
+            Our <span className="font-semibold text-emuski-teal-darker">New Product Development Centre</span> houses world-class manufacturing equipment delivering micron-precision for Medical Devices, Aerospace, Defense & Automotive. <span className="font-semibold">Reduce your lead time by 60%</span> with all capabilities integrated in one facility. From 5-axis VMC machining holding ±2 micron accuracy in a single setup, to Mitsubishi wire EDM cutting hardened materials up to 65 HRC at ±1 micron, to CNC centerless grinding finishing to Ra 0.025 micron at 500+ parts per hour, every process on the floor is chosen to remove a handoff—and the time and tolerance risk that comes with it. Parts move between milling, turning, EDM, and grinding without leaving the building, so a design change during development doesn't mean re-routing work to a different vendor and resetting the schedule.
           </p>
         </div>
 

@@ -268,6 +268,9 @@ export const TechnicalSpecsSection: React.FC<TechnicalSpecsSectionProps> = ({
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Performance Metrics & KPIs</h2>
               <p className="text-xl text-gray-600">Data-driven excellence in manufacturing operations</p>
+              <p className="text-base text-gray-600 max-w-3xl mx-auto mt-4">
+                These figures come from our own production floor, not marketing estimates: a 99.5% first-pass yield and 15 PPM defect rate across CNC machining (±0.0025mm linear accuracy to ISO 2768-m), injection molding (±0.05mm tolerance), and sheet metal fabrication (±0.1mm), tracked across 4,000+ components delivered to 75+ global clients in 15+ industries. On-time delivery has held at 98.7% while average prototyping lead time has come down to 3.2 days, backed by ISO 9001:2015, AS9100D, and IATF 16949 certification.
+              </p>
             </div>
           )}
           <MetricsGrid />

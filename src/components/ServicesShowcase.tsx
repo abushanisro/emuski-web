@@ -10,7 +10,7 @@ const servicesData = [
     id: "manufacturing",
     category: "Manufacturing Excellence",
     tagline: "Precision at Scale",
-    description: "Through the EMUSKI NPD Innovation Center, we transform your concepts into market-ready products with rapid prototyping and on-demand manufacturing—delivering precision, speed, and scalability across automotive, aerospace, and industrial applications.",
+    description: "Through the EMUSKI NPD Innovation Center, we transform your concepts into market-ready products with rapid prototyping and on-demand manufacturing—delivering precision, speed, and scalability across automotive, aerospace, and industrial applications. Our Bangalore facility runs CNC machining to ±0.0025mm linear accuracy (ISO 2768-m) across aluminum, stainless steel, titanium, and Inconel; injection molding with tolerances to ±0.05mm across engineering plastics such as ABS, PC, PA66, and PEEK; and sheet metal fabrication up to 12mm thickness. Every process is backed by ISO 9001:2015, AS9100D, and IATF 16949 certification, with dimensional inspection traceable through our quality management system on every job.",
     gradient: "from-emuski-teal via-emuski-teal-dark to-emuski-teal-darker",
     accentColor: "bg-emuski-teal-darker",
     items: [
@@ -37,7 +37,7 @@ const servicesData = [
     id: "engineering",
     category: "Engineering Innovation",
     tagline: "Engineering Excellence",
-    description: "Leverage deep engineering expertise to optimize costs, validate designs, and strategically source components with precision and efficiency. Our expert team delivers data-driven insights for competitive advantage.",
+    description: "Leverage deep engineering expertise to optimize costs, validate designs, and strategically source components with precision and efficiency. Our expert team delivers data-driven insights for competitive advantage. We build bottom-up should-cost models from material cost, machining cycle-time, and machine-hour rate—cross-checked against local raw material pricing rather than a supplier's quote alone—typically identifying 15-25% BOM cost savings. Teardown and benchmarking studies (VAVE) validate whether a design's cost matches its function, and every project goes through a DFM review before tooling is locked, backed by a network of 500+ verified suppliers for sourcing support.",
     gradient: "from-blue-500 via-cyan-500 to-teal-500",
     accentColor: "bg-emuski-teal-darker",
     items: [
@@ -71,56 +71,56 @@ const showcaseItems = [
   {
     title: "Product Cost Estimation",
     category: "Engineering Innovations",
-    description: "Accurate cost analysis and estimation services to optimize your product development budget and maximize profitability.",
+    description: "Bottom-up should-cost modeling built from material cost, machining cycle-time, and machine-hour rate to give you an independent cost baseline before you commit to a supplier quote.",
     image: "/assets/engineering/automotive-engineering-cost-estimation.svg",
     link: "/cost-engineering#cost-estimation"
   },
   {
     title: "VAVE - Teardown & Benchmarking",
     category: "Engineering Innovations",
-    description: "Value Analysis and Value Engineering through comprehensive teardown studies and competitive benchmarking for cost optimization.",
+    description: "Value Analysis and Value Engineering through comprehensive teardown studies and competitive benchmarking, comparing your design line-by-line against alternatives to find where cost and function diverge.",
     image: "/assets/engineering/product-teardown-analysis.png",
     link: "/cost-engineering#vave"
   },
   {
     title: "Strategic Sourcing Support",
     category: "Engineering Innovations",
-    description: "Expert guidance in supplier selection and procurement strategy to ensure quality components at competitive prices.",
+    description: "Expert guidance in supplier selection and procurement strategy, backed by a network of 500+ verified suppliers, to ensure quality components at competitive, benchmarked prices.",
     image: "/assets/engineering/strategic-sourcing-solutions.svg",
     link: "/cost-engineering#sourcing"
   },
   {
     title: "Expert Engineer Support",
     category: "Engineering Innovations",
-    description: "Dedicated engineering expertise to solve complex technical challenges and accelerate your product development lifecycle.",
+    description: "Dedicated engineering expertise for DFM review, design validation, and troubleshooting, so manufacturability and cost are known before production starts, not discovered during it.",
     image: "/assets/engineering/supplier-management-system.svg",
     link: "/cost-engineering#expert-support"
   },
   {
     title: "On-Demand Manufacturing",
     category: "Manufacturing Excellences",
-    description: "Flexible manufacturing solutions as you need them with high-precision components manufactured to demanding specifications.",
+    description: "Flexible manufacturing solutions as you need them—CNC machined, injection molded, or sheet metal fabricated components manufactured to demanding specifications, from single-digit batches to production volumes.",
     image: "/assets/industry-components/defense-technology-manufacturing/defense-component-16.svg",
     link: "/manufacturing-services#on-demand"
   },
   {
     title: "Rapid Prototyping",
     category: "Manufacturing Excellences",
-    description: "Fast and efficient prototyping services from concept to completion with precision and cost optimization.",
+    description: "Fast, functional prototypes from concept to completion via CNC machining, 3D printing (SLA/SLS/FDM), and vacuum casting, validating fit, form, and function before you commit to tooling.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-10.svg",
     link: "/manufacturing-services#prototyping"
   },
   {
     title: "Custom Manufacturing",
     category: "Manufacturing Excellences",
-    description: "Engineered manufacturing excellence designed around your requirements with precision and scalability.",
+    description: "Engineered manufacturing excellence designed around your requirements, from material selection through final assembly, with precision and scalability built in from the first design review.",
     image: "/assets/industry-components/aerospace-engineering-manufacturing/aerospace-component-6.svg",
     link: "/manufacturing-services#custom"
   },
   {
     title: "Production Scaling",
     category: "Manufacturing Excellences",
-    description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization.",
+    description: "Seamless scaling from prototype to full production with advanced assembly stations and workflow optimization, maintaining the same dimensional and quality controls at every volume step.",
     image: "/assets/industry-components/defense-technology-manufacturing/production.jpg",
     link: "/manufacturing-services#scaling"
   },
@@ -293,7 +293,7 @@ const ServicesShowcase = memo(() => {
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-emuski-teal/10 via-blue-500/5 to-transparent rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/10 via-pink-500/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/10 via-pink-500/5 to-transparent rounded-full blur-3xl animate-pulse [animation-delay:1s]"></div>
       </div>
 
       <div className="w-full px-4 sm:px-6 relative z-10">
@@ -305,12 +305,12 @@ const ServicesShowcase = memo(() => {
           <div className="space-y-6">
           {servicesData.map((service, serviceIndex) => {
             const filteredProjects = getFilteredShowcaseItems(service.relatedCategories);
+            const transitionDelayClass = ['delay-0', 'delay-200', 'delay-300', 'delay-500', 'delay-700'][serviceIndex] ?? 'delay-1000';
 
             return (
               <div
                 key={service.id}
-                className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${serviceIndex * 200}ms` }}
+                className={`transition-all duration-700 ${transitionDelayClass} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               >
                 {/* Scrollable Section Wrapper */}
                 <div className="relative">
@@ -388,8 +388,7 @@ const ServicesShowcase = memo(() => {
                   <div
                     ref={(el) => { if (el) sectionScrollRefs.current[service.id] = el }}
                     onScroll={() => handleScroll(service.id)}
-                    className="overflow-x-auto scrollbar-hide scroll-smooth pb-4"
-                    style={{ scrollbarWidth: 'none' }}
+                    className="overflow-x-auto scrollbar-hide scroll-smooth pb-4 [scrollbar-width:none]"
                   >
                     {/* Service Section */}
                     <div className="flex gap-8 items-start min-w-full">

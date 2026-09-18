@@ -7,7 +7,7 @@ import { HomepageBelowFold } from "@/components/HomepageBelowFold"
 import { fetchAllBlogs } from "@/lib/api/blogger"
 
 export const metadata: Metadata = {
-  title: 'EMUSKI | Precision OEM Manufacturing | Bangalore',
+  title: 'OEM Manufacturing & Precision Engineering | EMUSKI Bangalore',
   description: 'ISO 9001:2015 certified OEM manufacturing and cost engineering partner in Bangalore. CNC machining, injection molding, rapid prototyping, VAVE analysis.',
   alternates: {
     canonical: 'https://www.emuski.com',
@@ -43,6 +43,7 @@ export default async function Home() {
             addressCountry: 'IN',
           },
           telephone: '+91-86670-88060',
+          dateModified: process.env.HOMEPAGE_CONTENT_DATE,
           geo: {
             '@type': 'GeoCoordinates',
             latitude: 12.8456,

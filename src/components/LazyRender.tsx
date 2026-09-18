@@ -5,21 +5,22 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 interface LazyRenderProps {
   children: ReactNode
   rootMargin?: string
-  placeholder?: ReactNode
-  minHeight?: string
+  /** Tailwind min-height class, e.g. "min-h-[400px]" */
+  minHeightClass?: string
 }
 
 /**
- * LazyRender component that uses Intersection Observer to defer rendering
- * until the component is near the viewport. Reduces initial main-thread work.
+ * LazyRender defers visual reveal (a fade-in) until the component is near the
+ * viewport, using CSS rather than conditional mounting so content — including
+ * text needed by crawlers and non-JS clients — is always present in the
+ * server-rendered HTML.
  */
 export function LazyRender({
   children,
   rootMargin = '200px',
-  placeholder = null,
-  minHeight = '400px'
+  minHeightClass = 'min-h-[400px]'
 }: LazyRenderProps) {
-  const [shouldRender, setShouldRender] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export function LazyRender({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setShouldRender(true)
+          setIsVisible(true)
           observer.disconnect()
         }
       },
@@ -47,8 +48,11 @@ export function LazyRender({
   }, [rootMargin])
 
   return (
-    <div ref={ref} style={{ minHeight: shouldRender ? 'auto' : minHeight }}>
-      {shouldRender ? children : placeholder}
+    <div
+      ref={ref}
+      className={`transition-opacity duration-500 ${minHeightClass} ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+    >
+      {children}
     </div>
   )
 }

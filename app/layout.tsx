@@ -3,7 +3,6 @@ import { Metadata, Viewport } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import '@/index.css'
 import { initializeCacheSystem } from '@/lib/cache'
-import '../src/app/globals' // Import PDF.js global config early
 
 // Initialize cache system on app startup (server-side only)
 if (typeof window === 'undefined') {
@@ -309,11 +308,11 @@ export default function RootLayout({
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-N27V6HNK"
-            height="0" 
-            width="0" 
-            style={{display:'none',visibility:'hidden'}}
+            height="0"
+            width="0"
+            className="hidden invisible"
           />
         </noscript>
 

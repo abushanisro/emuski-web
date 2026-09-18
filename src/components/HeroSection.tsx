@@ -286,7 +286,7 @@ export const HeroSection = () => {
         <div className="relative h-1 bg-white/20 overflow-hidden">
           <div className="absolute inset-0 flex">
             {slides.map((_, i) => (
-              <div key={i} className="flex-1 h-full bg-white/10" style={{ borderRight: i < slides.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none' }} />
+              <div key={i} className={`flex-1 h-full bg-white/10 ${i < slides.length - 1 ? 'border-r border-white/10' : ''}`} />
             ))}
           </div>
           <div 

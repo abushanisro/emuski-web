@@ -163,7 +163,7 @@ const AboutSection = () => {
     };
 
     return (
-        <section className="py-12 relative overflow-hidden" style={{backgroundColor: '#121A21'}}>
+        <section className="py-12 relative overflow-hidden bg-[#121A21]">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#4fd3d4_1px,transparent_1px),linear-gradient(to_bottom,#4fd3d4_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
             </div>
@@ -192,30 +192,23 @@ const AboutSection = () => {
                     <div className="lg:col-span-2">
                         <div className="relative">
                             <div
-                                className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showLeftGradient ? 'opacity-30' : 'opacity-0'}`}
-                                style={{
-                                    maskImage: 'linear-gradient(to right, black, transparent)',
-                                    WebkitMaskImage: 'linear-gradient(to right, black, transparent)'
-                                }}
+                                className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 [mask-image:linear-gradient(to_right,black,transparent)] [-webkit-mask-image:linear-gradient(to_right,black,transparent)] ${showLeftGradient ? 'opacity-30' : 'opacity-0'}`}
                             ></div>
 
                             <div
-                                className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 ${showRightGradient ? 'opacity-30' : 'opacity-0'}`}
-                                style={{
-                                    maskImage: 'linear-gradient(to left, black, transparent)',
-                                    WebkitMaskImage: 'linear-gradient(to left, black, transparent)'
-                                }}
+                                className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-emuski-teal via-emuski-teal-dark to-transparent pointer-events-none z-10 transition-opacity duration-500 [mask-image:linear-gradient(to_left,black,transparent)] [-webkit-mask-image:linear-gradient(to_left,black,transparent)] ${showRightGradient ? 'opacity-30' : 'opacity-0'}`}
                             ></div>
 
                             <div
                                 ref={carouselRef}
                                 onScroll={handleScroll}
-                                className="overflow-x-auto scrollbar-hide scroll-smooth"
-                                style={{ scrollbarWidth: 'none' }}
+                                className="overflow-x-auto scrollbar-hide scroll-smooth [scrollbar-width:none]"
                             >
+                                <style dangerouslySetInnerHTML={{
+                                    __html: `.about-carousel-track { transform: translateX(-${currentIndex * (100 / itemsPerView)}%); }`
+                                }} />
                                 <div
-                                    className="flex transition-transform duration-300 ease-in-out"
-                                    style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+                                    className="flex transition-transform duration-300 ease-in-out about-carousel-track"
                                 >
                                     {growthStories.map((story, index) => (
                                         <div key={index} className="w-full lg:w-1/3 flex-shrink-0 px-2">

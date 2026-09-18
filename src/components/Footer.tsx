@@ -172,8 +172,7 @@ export const Footer = () => {
                   alt="EMUSKI Manufacturing Solutions Logo"
                   width={28}
                   height={14}
-                  style={{ width: 'auto', height: 'auto' }}
-                  className="h-3.5 w-auto"
+                  className="h-auto w-auto"
                   quality={75}
                 />
                 <span className="text-foreground font-bold text-sm">EMUSKI</span>

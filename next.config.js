@@ -7,6 +7,7 @@
 
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -20,6 +21,47 @@ const isProduction = process.env.NODE_ENV === 'production';
 // ES Module compatibility: Recreate __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Homepage content freshness date, derived from git history at build/dev-start
+ * time (not request time — the deployed serverless bundle has no .git dir).
+ * Falls back to the current build time only if git history is unavailable,
+ * so it never ships as a hardcoded date that goes stale.
+ */
+function getHomepageContentDate() {
+  const contentFiles = [
+    'app/page.tsx',
+    'src/components/HeroSection.tsx',
+    'src/components/HomepageBelowFold.tsx',
+    'src/components/ServicesShowcase.tsx',
+    'src/components/ManufacturingNPDSection.tsx',
+    'src/components/TechnicalSpecsSection.tsx',
+    'src/components/AboutSection.tsx',
+    'src/components/FAQSection.tsx',
+    'src/data/pageSpecificFAQs.ts',
+    'src/data/technicalSpecifications.ts',
+  ];
+
+  try {
+    const timestamps = contentFiles.map((file) => {
+      const output = execSync(`git log -1 --format=%cI -- "${file}"`, {
+        cwd: __dirname,
+        encoding: 'utf8',
+      }).trim();
+      return output ? new Date(output).getTime() : 0;
+    });
+    const latest = Math.max(...timestamps, 0);
+    if (latest > 0) {
+      return new Date(latest).toISOString();
+    }
+  } catch (error) {
+    console.warn('[next.config.js] Could not read git history for content date, falling back to build time:', error.message);
+  }
+
+  return new Date().toISOString();
+}
+
+const HOMEPAGE_CONTENT_DATE = getHomepageContentDate();
 
 /**
  * Security Headers Configuration
@@ -423,6 +465,11 @@ const nextConfig = {
 
   // Image optimization
   images: imageConfig,
+
+  // Exposes the git-derived homepage content date for JSON-LD dateModified
+  env: {
+    HOMEPAGE_CONTENT_DATE,
+  },
 
   // Compiler options - Industry Standard: Zero console logs in production
   compiler: {

@@ -382,42 +382,48 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                       </div>
                     </button>
 
-                    {openItems.has(faq.id) && (
-                      <div className="px-6 pb-4 pt-2 border-t border-gray-100 bg-gray-50" itemScope itemType="https://schema.org/Answer">
-                        <div
-                          className={`text-gray-700 leading-relaxed ${compact ? 'text-sm' : 'text-base'}`}
-                          data-translate="faq_answer"
-                          itemProp="text"
-                        >
-                          {faq.answer}
-                        </div>
-
-                        {/* Keywords for SEO - Only show in full version */}
-                        {!compact && (
-                          <div className="mt-3 pt-3 border-t border-gray-200">
-                            <div className="flex flex-wrap gap-2">
-                              <span className="text-sm text-gray-500 mr-2">Related:</span>
-                              {faq.keywords.slice(0, 3).map((keyword, index) => (
-                                <span
-                                  key={index}
-                                  className="px-2 py-1 bg-emuski-teal/10 text-emuski-teal-darker text-xs rounded-md"
-                                  itemProp="keywords"
-                                >
-                                  {keyword}
-                                </span>
-                              ))}
-                            </div>
-                            {/* Hidden SEO content for search engines and AI (without body-level <meta> tags) */}
-                            <div className="sr-only">
-                              <span itemProp="about">{faq.category}</span>
-                              <span itemProp="author" itemScope itemType="https://schema.org/Organization">
-                                <span itemProp="name">EMUSKI Manufacturing Solutions</span>
-                              </span>
-                            </div>
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${openItems.has(faq.id) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                        }`}
+                      aria-hidden={!openItems.has(faq.id)}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-6 pb-4 pt-2 border-t border-gray-100 bg-gray-50" itemScope itemType="https://schema.org/Answer">
+                          <div
+                            className={`text-gray-700 leading-relaxed ${compact ? 'text-sm' : 'text-base'}`}
+                            data-translate="faq_answer"
+                            itemProp="text"
+                          >
+                            {faq.answer}
                           </div>
-                        )}
+
+                          {/* Keywords for SEO - Only show in full version */}
+                          {!compact && (
+                            <div className="mt-3 pt-3 border-t border-gray-200">
+                              <div className="flex flex-wrap gap-2">
+                                <span className="text-sm text-gray-500 mr-2">Related:</span>
+                                {faq.keywords.slice(0, 3).map((keyword, index) => (
+                                  <span
+                                    key={index}
+                                    className="px-2 py-1 bg-emuski-teal/10 text-emuski-teal-darker text-xs rounded-md"
+                                    itemProp="keywords"
+                                  >
+                                    {keyword}
+                                  </span>
+                                ))}
+                              </div>
+                              {/* Hidden SEO content for search engines and AI (without body-level <meta> tags) */}
+                              <div className="sr-only">
+                                <span itemProp="about">{faq.category}</span>
+                                <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+                                  <span itemProp="name">EMUSKI Manufacturing Solutions</span>
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 ))
               )}

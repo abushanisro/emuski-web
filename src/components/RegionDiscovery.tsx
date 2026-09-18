@@ -11,8 +11,7 @@ const regions = [
 export function RegionDiscovery() {
   return (
     <section
-      className="py-16 md:py-20 border-t border-b border-white/5 relative overflow-hidden"
-      style={{ backgroundColor: "rgb(18, 26, 33)" }}
+      className="py-16 md:py-20 border-t border-b border-white/5 relative overflow-hidden bg-[rgb(18,26,33)]"
       aria-labelledby="region-discovery-heading"
     >
       <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">

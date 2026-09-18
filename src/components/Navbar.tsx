@@ -204,8 +204,7 @@ export const Navbar = () => {
                   {activeServiceDropdown === key && (
                     <div className="absolute top-full right-0 pt-2 w-64 z-[60]">
                       <div
-                        className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden"
-                        style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
+                        className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]"
                       >
                         <div className="py-2">
                           {service.path !== "#" && (
@@ -255,8 +254,7 @@ export const Navbar = () => {
             {/* Request Quote CTA — far right corner */}
             <Link
               href="/contact"
-              className="group hidden md:inline-flex items-center gap-1.5 flex-shrink-0 text-white text-sm font-semibold px-4 py-2 rounded-md hover:opacity-85 transition-opacity whitespace-nowrap"
-              style={{ background: 'linear-gradient(135deg, oklch(0.68 0.13 180), oklch(0.55 0.16 185))' }}
+              className="group hidden md:inline-flex items-center gap-1.5 flex-shrink-0 text-white text-sm font-semibold px-4 py-2 rounded-md hover:opacity-85 transition-opacity whitespace-nowrap bg-[linear-gradient(135deg,oklch(0.68_0.13_180),oklch(0.55_0.16_185))]"
             >
               Request Quote
               <svg className="overflow-visible" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -282,7 +280,7 @@ export const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[70]" style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}>
+                <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-lg border border-gray-200 overflow-hidden z-[70] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]">
                   <div className="relative z-20 px-4 py-3 bg-white border-b border-gray-100 flex items-center space-x-3">
                     <Image
                       src={emuskiLogoMobile}
