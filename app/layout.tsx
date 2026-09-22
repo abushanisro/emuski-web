@@ -195,9 +195,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Critical resource preloads - Carbon Optimized */}
-        <link rel="preload" href="/assets/hero/manufacturing-services-hero-banner.svg" as="image" />
-
         {/* Favicon - Explicit links for best SEO and browser compatibility */}
         <link rel="icon" type="image/x-icon" href="/favicon-new.ico" sizes="48x48" />
         <link rel="icon" type="image/svg+xml" href="/favicon-new.svg" />
@@ -225,7 +222,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#17B8BA" />
 
         {/* Resource Preloading for Performance & Carbon Optimization */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         <link rel="preload" href="/assets/emuski-logo-optimized.webp" as="image" type="image/webp" />
         <link rel="preload" href="/assets/hero/manufacturing-services-hero-banner.webp" as="image" type="image/webp" />
@@ -356,15 +352,6 @@ export default function RootLayout({
           }}
         />
         
-        {/* Minimal GA4 Config - Carbon Optimized */}
-        <Script
-          id="ga4-config"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `if(typeof gtag==='function')gtag('config','${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-QFDFYZLZPK'}',{send_page_view:true});`
-          }}
-        />
-
         {/* Minimal Geo Config - Carbon Optimized */}
         <Script
           id="emuski-geo-config"
