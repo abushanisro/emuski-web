@@ -58,14 +58,17 @@ export const NewsCarousel = ({ initialPosts }: NewsCarouselProps = {}) => {
 
           <div className="relative overflow-x-auto md:overflow-hidden w-full scrollbar-hide [-webkit-overflow-scrolling:touch]">
             <div className="flex animate-scroll-mobile sm:animate-scroll space-x-8 sm:space-x-12 md:space-x-14 items-center">
-              {/* Quadruple the list for maximum smoothness - 88 total logos */}
+              {/* Quadruple the list for maximum smoothness - 88 total logos.
+                  Only the first copy is visible before the marquee animates;
+                  the 3 repeated copies exist purely for the seamless loop and
+                  don't need to compete with real above-the-fold resources. */}
               {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((client, index) => (
                 <div key={index} className="flex-shrink-0 grayscale opacity-70 h-16 sm:h-20 md:h-24 lg:h-28 w-28 sm:w-32 md:w-36 lg:w-40">
                   <img
                     src={client.logo}
                     alt={`${client.name} - Partner Logo`}
                     className="w-full h-full object-contain filter brightness-0 invert"
-                    loading="eager"
+                    loading={index < clientLogos.length ? "eager" : "lazy"}
                     decoding="async"
                   />
                 </div>
