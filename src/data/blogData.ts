@@ -1319,7 +1319,7 @@ D  = workpiece diameter in mm</code></pre>
 <h2>What an OEM Does in Manufacturing</h2>
 <p>A capable OEM manufacturing partner works across five layers, not just one.</p>
 <figure>
-<img src="https://images.unsplash.com/photo-1740209475472-aa7d280f7452?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Vertical machining centre cutting a metal part with coolant" />
+<img src="https://images.unsplash.com/photo-1713371398485-7bde1bde9def?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Milling head cutting a metal component with coolant spray in a machining centre" />
 <figcaption>Product realization: turning drawings and specifications into machined parts.</figcaption>
 </figure>
 <ul>
@@ -1511,7 +1511,7 @@ D  = workpiece diameter in mm</code></pre>
     authorImage: "/logo.webp",
     publishDate: "2026-09-24T00:00:00Z",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1769147339214-076740872485?w=1200&h=675&fit=crop&crop=entropy&q=80",
+    image: "https://images.unsplash.com/photo-1717386255767-52643970d483?w=1200&h=675&fit=crop&crop=entropy&q=80",
     tags: ["OEM Manufacturing", "OEM vs ODM", "Contract Manufacturing", "Build to Print", "Supplier Selection", "Cost Engineering", "DFM", "India Manufacturing"],
     featured: false,
     seoTitle: "OEM Meaning in Manufacturing: Buyer's Guide | EMUSKI",
