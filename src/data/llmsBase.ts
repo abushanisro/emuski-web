@@ -1,4 +1,5 @@
-# EMUSKI
+// Static introduction for /llms.txt. The article list is appended by app/llms.txt/route.ts.
+export const LLMS_BASE = `# EMUSKI
 
 > EMUSKI is an India-based turnkey precision engineering and contract manufacturing company specializing in CNC machining, sheet metal fabrication, sub-assemblies, and cost engineering (VAVE and should-cost analysis) for global OEMs.
 
@@ -26,3 +27,4 @@ Headquartered with manufacturing facilities in Bangalore, India, EMUSKI serves a
 
 - [Careers at EMUSKI](https://www.emuski.com/careers): Engineering, design, and operations job openings.
 - [Contact & RFQ Submission](https://www.emuski.com/contact): Direct request-for-quote (RFQ) submission portal for CAD models, 2D prints, and volume requirements.
+`

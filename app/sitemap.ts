@@ -17,18 +17,16 @@ export const revalidate = 3600; // 1 hour ISR, matches blog revalidation
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.emuski.com';
 
-  // Fixed dates for static pages - only update when pages actually change
-  // This prevents unnecessary crawling and crawl budget waste
-  const STATIC_PAGES_LASTMOD = '2026-05-18'; // Update this when you modify static pages
-  const LEGAL_PAGES_LASTMOD = '2024-11-01'; // Update this when legal pages change
-  const currentDate = new Date().toISOString(); // Only for dynamic blog listing
+  // Only pages with a known, accurate modification date carry a lastmod. Static pages are
+  // omitted rather than given a guessed date; the homepage date is derived from git history.
+  const HOMEPAGE_LASTMOD = process.env.HOMEPAGE_CONTENT_DATE;
 
   // Static pages with high priority (only include pages that actually exist)
   // 2026 SEO Best Practice: Strategic priority and change frequency optimization
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: STATIC_PAGES_LASTMOD,
+      lastModified: HOMEPAGE_LASTMOD,
       changeFrequency: 'weekly',
       priority: 1.0, // Homepage - highest priority
     },
@@ -38,105 +36,88 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Note: /services redirects to /manufacturing-services, so removed from sitemap
     {
       url: `${baseUrl}/manufacturing-services`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.99, // HIGHEST - Primary OEM manufacturing service page
     },
     {
       url: `${baseUrl}/cost-engineering`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.97, // SECOND - Cost engineering and VAVE services
     },
     {
       url: `${baseUrl}/cost-engineering-services`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.95, // Core service offering
     },
     {
       url: `${baseUrl}/manufacturing-engineering-solutions`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.92, // High priority engineering solutions
     },
     // Geographic-specific service pages
     {
       url: `${baseUrl}/manufacturing-in-bangalore`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.94, // Local SEO focus
     },
     {
       url: `${baseUrl}/cost-engineering-uk`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.93, // International market focus
     },
     {
       url: `${baseUrl}/cost-engineering-usa`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.93, // International market focus
     },
     {
       url: `${baseUrl}/cost-engineering-germany`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.93, // International market focus
     },
     // Innovation and technology pages
     {
       url: `${baseUrl}/solutions/ai`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/careers`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.8, // High priority - careers and hiring
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: currentDate, // Dynamic - changes when new posts are added
       changeFrequency: 'daily',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/gallery`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/interview-guide`,
-      lastModified: STATIC_PAGES_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: LEGAL_PAGES_LASTMOD,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/cookie-policy`,
-      lastModified: LEGAL_PAGES_LASTMOD,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-and-conditions`,
-      lastModified: LEGAL_PAGES_LASTMOD,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -150,11 +131,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     blogPages = allPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.lastModified || post.publishDate || currentDate,
+      lastModified: post.lastModified || post.publishDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     }));
 
+    const newest = allPosts
+      .map((post) => post.lastModified || post.publishDate)
+      .filter(Boolean)
+      .sort()
+      .pop();
+    const blogIndex = staticPages.find((page) => page.url === `${baseUrl}/blog`);
+    if (blogIndex && newest) blogIndex.lastModified = newest;
   } catch {
     // Return static pages even if blog fetch fails
   }
