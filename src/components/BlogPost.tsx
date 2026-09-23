@@ -10,14 +10,13 @@ import { trackClick, trackBlogEngagement } from "@/lib/analytics";
 import { tagToSlug } from "@/lib/utils/tags";
 import { useCSPNonce } from "@/components/security/NonceScript";
 import { getAuthorProfile, toAbsoluteUrl } from "@/config/authors";
+import { extractFaqs, type FAQItem } from "@/lib/blog/faq";
 import "../styles/blog-content.css";
 
 interface BlogPostComponentProps {
   post: BlogPost;
   allPosts: BlogPost[];
 }
-
-type FAQItem = { question: string; answer: string };
 
 function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -36,17 +35,20 @@ function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
                 onClick={() => setOpenIndex(isOpen ? -1 : i)}
                 className={`w-full flex items-center justify-between gap-4 py-4 px-3 text-left transition-colors hover:bg-gray-50 rounded-sm ${isOpen ? 'bg-teal-50/60' : ''}`}
                 aria-expanded={isOpen}
+                aria-controls={`faq-panel-${i}`}
               >
                 <span className="font-bold text-[#171A22] text-base sm:text-lg leading-snug">{faq.question}</span>
                 <ChevronDown
                   className={`h-5 w-5 flex-shrink-0 text-teal-600 transition-transform duration-200 ${isOpen ? '' : '-rotate-90'}`}
                 />
               </button>
-              {isOpen && (
-                <div className="px-3 pb-5 pt-1 text-gray-700 text-base leading-relaxed">
-                  {faq.answer}
-                </div>
-              )}
+              <div
+                id={`faq-panel-${i}`}
+                hidden={!isOpen}
+                className="px-3 pb-5 pt-1 text-gray-700 text-base leading-relaxed"
+              >
+                {faq.answer}
+              </div>
             </div>
           );
         })}
@@ -62,7 +64,6 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [tocOpen, setTocOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [faqItems, setFaqItems] = useState<FAQItem[]>([]);
   const contentRef = useRef<HTMLDivElement>(null);
   const articleRef = useRef<HTMLElement>(null);
   const tocNavRef = useRef<HTMLElement>(null);
@@ -272,42 +273,8 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
   const wordCount = post.fullContent.replace(/<[^>]*>/g, '').split(/\s+/).filter(word => word.length > 0).length;
   const readingTimeMinutes = Math.ceil(wordCount / 200); // Average reading speed: 200 words/minute
 
-  // Extract FAQ questions from content for FAQ schema
-  const extractFAQs = () => {
-    if (typeof document === 'undefined' || !isMounted) return [];
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = post.fullContent;
-    const faqQuestions: Array<{question: string, answer: string}> = [];
-
-    // Find headings that look like questions
-    const headings = tempDiv.querySelectorAll('h2, h3, h4');
-    headings.forEach((heading) => {
-      const text = heading.textContent || '';
-      if (text.includes('?')) {
-        let answer = '';
-        let nextEl = heading.nextElementSibling;
-        while (nextEl && !['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(nextEl.tagName)) {
-          answer += nextEl.textContent + ' ';
-          nextEl = nextEl.nextElementSibling;
-        }
-        if (answer.trim()) {
-          faqQuestions.push({
-            question: text.trim(),
-            answer: answer.trim().substring(0, 500)
-          });
-        }
-      }
-    });
-    return faqQuestions;
-  };
-
-  const faqs = useMemo(() => extractFAQs(), [post, isMounted]);
-
-  useEffect(() => {
-    if (isMounted) {
-      setFaqItems(extractFAQs());
-    }
-  }, [isMounted, post]);
+  // FAQs are parsed from the HTML string (not the DOM) so they render on the server
+  const faqs = useMemo(() => extractFaqs(post.fullContent), [post.fullContent]);
 
   // Split fullContent at the FAQ h2 so the accordion renders separately
   const bodyHtml = useMemo(() => {
@@ -499,10 +466,9 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
 
       {/* FAQ Schema - If FAQs exist */}
       {faqSchema && (
-        <Script
+        <script
           id="faq-schema"
           type="application/ld+json"
-          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
@@ -977,7 +943,7 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
                   />
 
                   {/* FAQ Accordion */}
-                  {faqItems.length > 0 && <FAQAccordion faqs={faqItems} />}
+                  {faqs.length > 0 && <FAQAccordion faqs={faqs} />}
 
                   {/* Tags - SEO Keywords */}
                   {post.tags && Array.isArray(post.tags) && post.tags.length > 0 && (
