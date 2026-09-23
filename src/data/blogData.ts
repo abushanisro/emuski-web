@@ -1009,8 +1009,8 @@ export const blogPosts: BlogPost[] = [
 <h2>Standard Cylindrical Machining Tolerances</h2>
 <p>This is where money is made or lost, and tighter is not always better.</p>
 <figure>
-<img src="https://images.unsplash.com/photo-1666634157070-6fd830fb5672?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Metal rod held in a lathe chuck being finish turned by a cutting tool" />
-<figcaption>Holding tolerance starts with rigid workholding and a tool that engages the part cleanly.</figcaption>
+<img src="https://images.unsplash.com/photo-1651713396955-1e1230cc31f6?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Turned precision shafts with splines and shoulders on a light background" />
+<figcaption>Turned shafts with splines and shoulders: features where tolerance and finish decisions matter most.</figcaption>
 </figure>
 <h3>IT grades, ISO 2768 and GD&amp;T for turned parts</h3>
 <ul>
@@ -3122,6 +3122,10 @@ D  = workpiece diameter in mm</code></pre>
     content: "An OEM (Original Equipment Manufacturer) is a company that produces components, subsystems, or complete products used or rebranded by another company in their final product. OEMs manufacture parts to exact specifications provided by their customers, with IP remaining with the customer. This guide covers the distinction between OEM and contract manufacturing, industry examples in aerospace, EV, and medical devices, and criteria for choosing the right OEM partner.",
     fullContent: `<h2>What is an OEM Manufacturer?</h2>
 <p>An <strong>OEM (Original Equipment Manufacturer)</strong> is a company that produces components, subsystems, or complete products that are used or rebranded by another company in their final product. OEMs manufacture parts to exact specifications provided by their customers.</p>
+<figure>
+<img src="https://images.unsplash.com/photo-1780034766288-9b436534d428?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Precision machined and turned metal components used in OEM assemblies" />
+<figcaption>Precision machined and turned components are typical OEM-built parts.</figcaption>
+</figure>
 <p><strong>Key characteristics:</strong></p>
 <ul>
 <li>Manufactures to customer designs and specifications</li>
@@ -3140,6 +3144,10 @@ D  = workpiece diameter in mm</code></pre>
 <p>Many modern manufacturers offer both OEM component production and contract manufacturing services. The terms increasingly overlap, especially in precision manufacturing where engineering support and design collaboration are standard.</p>
 <h2>OEM Manufacturing in Key Industries</h2>
 <h3>Aerospace OEM Manufacturers</h3>
+<figure>
+<img src="https://images.unsplash.com/photo-1694882432581-841a33d4ccce?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Close-up of the fan blades of a commercial jet engine" />
+<figcaption>Aerospace OEM components carry flight-critical requirements for traceability and certification.</figcaption>
+</figure>
 <p>Aerospace OEMs produce flight-critical components requiring extreme precision and rigorous certification:</p>
 <ul>
 <li><strong>Turbine components:</strong> Precision machined blades, vanes, and discs from titanium and Inconel alloys</li>
@@ -3149,6 +3157,10 @@ D  = workpiece diameter in mm</code></pre>
 </ul>
 <p><strong>Requirements:</strong> AS9100 certification, material traceability, NDT (non-destructive testing), extensive documentation, tight tolerances (often ±0.001" or better).</p>
 <h3>Electric Vehicle (EV) OEM Manufacturers</h3>
+<figure>
+<img src="https://images.unsplash.com/photo-1767990495521-95cceb571125?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Electric vehicle engine bay showing high-voltage wiring and battery components" />
+<figcaption>EV platforms rely on precision housings, brackets and cooling components from OEM partners.</figcaption>
+</figure>
 <p>The EV revolution creates massive demand for precision components:</p>
 <ul>
 <li><strong>Battery enclosures:</strong> Aluminum castings and fabrications protecting battery packs</li>
@@ -3158,6 +3170,10 @@ D  = workpiece diameter in mm</code></pre>
 </ul>
 <p><strong>Requirements:</strong> IATF 16949 for automotive quality, lightweight design expertise, thermal management understanding, high-volume production capability, cost optimization.</p>
 <h3>Medical Device OEM Manufacturers</h3>
+<figure>
+<img src="https://images.unsplash.com/photo-1514416309827-bfb0cf433a2d?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Surgical instruments hanging beside surgeons in an operating room" />
+<figcaption>Medical device OEMs work to biocompatibility, cleanliness and validation requirements.</figcaption>
+</figure>
 <p>Medical device OEMs produce components requiring biocompatibility and regulatory compliance:</p>
 <ul>
 <li><strong>Orthopedic implants:</strong> Titanium and cobalt-chrome implants for joint replacement</li>
@@ -3167,6 +3183,10 @@ D  = workpiece diameter in mm</code></pre>
 </ul>
 <p><strong>Requirements:</strong> ISO 13485 certification, FDA registration, biocompatible materials, clean room manufacturing, complete traceability, validation documentation.</p>
 <h2>Why Companies Choose OEM Manufacturing Partners</h2>
+<figure>
+<img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Industrial robots assembling a car body in a factory" />
+<figcaption>Working with an OEM partner avoids the capital cost of building every capability in-house.</figcaption>
+</figure>
 <p><strong>Capital Efficiency:</strong> Avoid massive investments in equipment, facilities, and tooling. Access advanced capabilities—multi-axis CNC machines, Wire EDM, 3D printing—without capital expenditure.</p>
 <p><strong>Specialized Expertise:</strong> OEM manufacturers develop deep process expertise. A precision machining specialist achieves tolerances and surface finishes difficult for companies where manufacturing isn't the core competency.</p>
 <p><strong>Scalability:</strong> Scale production from prototypes to thousands of units without building internal capacity.</p>
@@ -3185,6 +3205,11 @@ D  = workpiece diameter in mm</code></pre>
 <li><strong>Quality Assurance and Delivery:</strong> Final inspection, documentation packages, and shipment.</li>
 <li><strong>Continuous Improvement:</strong> Ongoing collaboration identifies cost reduction and quality enhancement opportunities.</li>
 </ol>
+<figure>
+<img src="https://images.unsplash.com/photo-1764737734436-7eb904d3a4ab?w=1200&h=675&fit=crop&crop=entropy&q=80" alt="Hands measuring a part with a dial caliper on top of technical drawings" />
+<figcaption>From RFQ to delivery, inspection against the drawing is what turns a prototype into a repeatable production part.</figcaption>
+</figure>
+<p>Buying rather than just learning the term? Our companion guide, <a href="/blog/oem-meaning-in-manufacturing-a-buyers-guide-to-how-it-works-risks-and-cost">OEM Meaning in Manufacturing: A Buyer's Guide to How It Works, Risks and Cost</a>, covers OEM vs ODM, who owns design and tooling, the key risks and how to choose an India-based partner.</p>
 <h2>Key Takeaways</h2>
 <ul>
 <li><strong>OEM manufacturers specialize</strong> in producing components to customer specifications with precision and consistency</li>
