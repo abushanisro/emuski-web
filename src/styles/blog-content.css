@@ -731,3 +731,63 @@ body {
 @media (prefers-color-scheme: dark) {
   /* Optional: Add dark mode styles here */
 }
+
+/* Call-to-action box used inside blog posts (see .blog-cta markup in blogData) */
+.article-content .blog-cta {
+  margin: 2rem 0;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  background: #171a22;
+  color: #ffffff;
+}
+
+.article-content .blog-cta p {
+  margin: 0 0 0.75rem;
+  color: #e5e7eb !important;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.article-content .blog-cta p.blog-cta__eyebrow {
+  margin-bottom: 0.5rem;
+  color: #5eead4 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.article-content .blog-cta p.blog-cta__title {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.article-content .blog-cta p.blog-cta__text {
+  margin-bottom: 1.25rem;
+}
+
+.article-content .blog-cta a.blog-cta__button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #14b8a6;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.article-content .blog-cta a.blog-cta__button:hover,
+.article-content .blog-cta a.blog-cta__button:focus-visible {
+  background: #0d9488;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .article-content .blog-cta {
+    padding: 2rem;
+  }
+}
