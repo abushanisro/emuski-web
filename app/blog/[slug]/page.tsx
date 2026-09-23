@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer"
 import { fetchPostBySlug, fetchAllBlogs, generateBlogStaticParams } from "@/lib/api/blogger"
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { getAuthorProfile } from '@/config/authors'
 
 // Enable ISR - Revalidate every 5 minutes for near real-time updates
 // Combined with webhook endpoint at /api/blogger-webhook for instant updates
@@ -43,6 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Prefer the curated seoTitle (kept close to Google's ~60-70 char display limit)
   // over mechanically appending a long suffix to the on-page H1.
   const isSuccessStory = post.category === 'Case Study' || post.category === 'Success Story';
+  const authorProfile = getAuthorProfile(post.author);
   const fallbackTitle = isSuccessStory
     ? `${post.title} | Manufacturing Success Story`
     : `${post.title} | Blog - Manufacturing Excellence Guide`;
@@ -70,7 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: seoTitle },
     description: metaDescription,
     keywords: keywords.join(', '),
-    authors: [{ name: post.author, url: 'https://www.emuski.com/about' }],
+    authors: [{ name: post.author, url: authorProfile?.linkedinUrl ?? 'https://www.emuski.com/about' }],
     creator: post.author,
     publisher: 'EMUSKI Manufacturing Solutions',
     category: post.category,
@@ -115,7 +117,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       expirationTime: undefined, // Article doesn't expire
       section: post.category,
       tags: post.tags,
-      authors: [post.author],
+      authors: [authorProfile?.linkedinUrl ?? post.author],
       images: [
         {
           url: post.image,
@@ -148,7 +150,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // Additional metadata for SEO
     other: {
       'article:publisher': 'https://www.emuski.com',
-      'article:author': post.author,
+      'article:author': authorProfile?.linkedinUrl ?? post.author,
       'article:section': post.category,
       'article:tag': post.tags.join(', '),
       'article:published_time': post.publishDate,
@@ -182,6 +184,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   // Check if this is a success story
   const isSuccessStory = post.category === 'Case Study' || post.category === 'Success Story';
+  const authorProfile = getAuthorProfile(post.author);
 
   // Calculate word count for enhanced schema
   const textContent = post.fullContent
@@ -214,7 +217,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         url: 'https://www.emuski.com',
       }),
       ...(!isSuccessStory && {
-        jobTitle: 'Manufacturing Expert',
+        jobTitle: authorProfile?.jobTitle ?? 'Manufacturing Expert',
+        ...(authorProfile && { url: authorProfile.linkedinUrl, sameAs: [authorProfile.linkedinUrl] }),
       }),
     },
     publisher: {

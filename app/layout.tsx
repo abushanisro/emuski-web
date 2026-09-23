@@ -263,7 +263,6 @@ export default function RootLayout({
         <meta property="og:updated_time" content="2026-02-07T00:00:00+00:00" />
 
         {/* Additional WhatsApp-specific meta tags */}
-        <meta property="article:author" content="EMUSKI" />
         <meta property="article:publisher" content="https://www.emuski.com" />
         <meta name="format-detection" content="telephone=no" />
 

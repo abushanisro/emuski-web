@@ -9,6 +9,7 @@ import { useBlogTracking } from "@/lib/hooks/useAnalytics";
 import { trackClick, trackBlogEngagement } from "@/lib/analytics";
 import { tagToSlug } from "@/lib/utils/tags";
 import { useCSPNonce } from "@/components/security/NonceScript";
+import { getAuthorProfile, toAbsoluteUrl } from "@/config/authors";
 import "../styles/blog-content.css";
 
 interface BlogPostComponentProps {
@@ -314,6 +315,8 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
     return markerIndex === -1 ? post.fullContent : post.fullContent.substring(0, markerIndex);
   }, [post.fullContent]);
 
+  const authorProfile = getAuthorProfile(post.author);
+
   // ENHANCED Article Schema with ALL SEO fields
   const articleSchema = {
     "@context": "https://schema.org",
@@ -336,13 +339,14 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
       "@type": "Person",
       "@id": "https://www.emuski.com/#author",
       "name": post.author,
-      "url": "https://www.emuski.com/about",
+      "url": authorProfile?.linkedinUrl ?? "https://www.emuski.com/about",
+      ...(authorProfile && { "sameAs": [authorProfile.linkedinUrl], "description": authorProfile.bio }),
       "image": {
         "@type": "ImageObject",
-        "url": post.authorImage || "https://www.emuski.com/assets/authors/default.jpg",
+        "url": toAbsoluteUrl(post.authorImage || "/assets/authors/default.jpg"),
         "caption": post.author
       },
-      "jobTitle": "Manufacturing Expert",
+      "jobTitle": authorProfile?.jobTitle ?? "Manufacturing Expert",
       "worksFor": {
         "@type": "Organization",
         "name": "EMUSKI"
@@ -653,8 +657,24 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
                   itemProp="image"
                 />
                 <div>
-                  <p className="font-bold text-[#171A22] text-base sm:text-lg" itemProp="name">{post.author}</p>
-                  <p className="text-xs sm:text-sm text-gray-600" itemProp="jobTitle">Manufacturing Expert</p>
+                  <p className="font-bold text-[#171A22] text-base sm:text-lg" itemProp="name">
+                    {authorProfile ? (
+                      <a
+                        href={authorProfile.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer author"
+                        itemProp="url"
+                        className="hover:text-teal-700 hover:underline"
+                      >
+                        {post.author}
+                      </a>
+                    ) : (
+                      post.author
+                    )}
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-600" itemProp="jobTitle">
+                    {authorProfile ? `${authorProfile.jobTitle}, EMUSKI` : 'Manufacturing Expert'}
+                  </p>
                 </div>
               </div>
 
@@ -993,11 +1013,25 @@ export const BlogPostComponent = ({ post, allPosts }: BlogPostComponentProps) =>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-base font-bold text-[#171A22] mb-2">About the Author</h4>
                         <p className="font-semibold text-[#171A22] mb-1" itemProp="name">{post.author}</p>
+                        {authorProfile && (
+                          <p className="text-xs text-gray-600 mb-2">{authorProfile.jobTitle}, EMUSKI</p>
+                        )}
                         <p className="text-sm text-gray-600 leading-relaxed" itemProp="description">
-                          Expert in manufacturing excellence and precision engineering with over 10 years of industry experience.
+                          {authorProfile?.bio ?? (post.authorBio || 'Expert in manufacturing excellence and precision engineering.')}
                         </p>
-                        <meta itemProp="jobTitle" content="Manufacturing Expert" />
-                        <meta itemProp="url" content="https://www.emuski.com/about" />
+                        <meta itemProp="jobTitle" content={authorProfile?.jobTitle ?? 'Manufacturing Expert'} />
+                        <meta itemProp="url" content={authorProfile?.linkedinUrl ?? 'https://www.emuski.com/about'} />
+                        {authorProfile && (
+                          <a
+                            href={authorProfile.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:underline"
+                          >
+                            <Linkedin className="h-4 w-4" aria-hidden="true" />
+                            Connect on LinkedIn
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
