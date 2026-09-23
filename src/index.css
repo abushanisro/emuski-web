@@ -187,7 +187,7 @@ All colors MUST be HSL.
     html {
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        overflow-x: clip;
         /* Let browser handle scroll naturally - no forced constraints */
     }
 
@@ -199,7 +199,7 @@ All colors MUST be HSL.
         font-family: 'Inter Variable', 'Inter', sans-serif;
         font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
         font-variation-settings: normal;
-        overflow-x: hidden;
+        overflow-x: clip;
         /* Remove all height/overflow constraints that break scroll */
         font-size: 16px;
         line-height: 1.6;
