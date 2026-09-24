@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: 'Leading cost engineering consultancy for German companies. Reduce product costs 25-45%. Save 40-60% vs German consultancy rates. German engineering standards (DIN, VDI). Serving Munich, Stuttgart, Frankfurt.',
     type: 'website',
     url: 'https://www.emuski.com/cost-engineering-germany',
+    images: ['/social-banner.jpg'],
     locale: 'de_DE'
   },
   alternates: {

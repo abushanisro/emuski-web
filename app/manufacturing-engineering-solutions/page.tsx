@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: 'Leading manufacturing and engineering solution providers worldwide. Best engineering manufacturing solutions company in Bangalore, India. ISO certified, 15+ years experience serving global clients.',
     type: 'website',
     url: 'https://www.emuski.com/manufacturing-engineering-solutions',
+    images: ['/social-banner.jpg'],
   },
   alternates: {
     canonical: 'https://www.emuski.com/manufacturing-engineering-solutions'

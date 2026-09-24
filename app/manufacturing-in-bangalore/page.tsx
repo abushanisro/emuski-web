@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     description: 'EMUSKI - ISO certified manufacturer in Electronic City, Bangalore. Leading manufacturing company specializing in OEM manufacturing, precision engineering, rapid prototyping for automotive, aerospace & electronics. 15+ years experience.',
     type: 'website',
     url: 'https://www.emuski.com/manufacturing-in-bangalore',
+    images: ['/social-banner.jpg'],
   },
   alternates: {
     canonical: 'https://www.emuski.com/manufacturing-in-bangalore'

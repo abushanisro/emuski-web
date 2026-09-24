@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: 'ISO certified cost engineering consultancy in India with UK team. Reduce product costs by 15–25% through VAVE, should cost analysis, and DFM optimization. Serving UK, USA, Germany, and global clients with proven results.',
     type: 'website',
     url: 'https://www.emuski.com/cost-engineering-services',
+    images: ['/social-banner.jpg'],
   },
   alternates: {
     canonical: 'https://www.emuski.com/cost-engineering-services',

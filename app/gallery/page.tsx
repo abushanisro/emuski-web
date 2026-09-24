@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description: 'Explore our precision manufacturing gallery showcasing automotive, aerospace, and industrial components.',
     type: 'website',
     url: 'https://www.emuski.com/gallery',
+    images: ['/social-banner.jpg'],
     siteName: 'EMUSKI',
   },
 }

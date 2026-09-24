@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: 'UK-based cost engineering consultancy with India delivery centre. Reduce product costs 25-45%. Save 40-60% vs UK consultancy rates. Serving London, Manchester, Birmingham, and nationwide.',
     type: 'website',
     url: 'https://www.emuski.com/cost-engineering-uk',
+    images: ['/social-banner.jpg'],
     locale: 'en_GB'
   },
   alternates: {

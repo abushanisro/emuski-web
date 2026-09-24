@@ -81,7 +81,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.emuski.com',
     siteName: 'EMUSKI - Engineering & Manufacturing',
     title: 'ISO Certified OEM Precision Manufacturing & Cost Engineering Partner | Bangalore, India',
     description: 'ISO 9001:2015 certified OEM precision manufacturing and cost engineering partner in Bangalore, India. World-class manufacturing solutions serving automotive, aerospace, medical device, and electronics industries globally.',
@@ -187,8 +186,6 @@ export default function RootLayout({
         <meta name="google" content="nositelinkssearchbox" />
 
         {/* Publisher and Content Classification */}
-        <meta property="article:publisher" content="https://www.emuski.com" />
-        <meta property="og:updated_time" content="2026-01-09T00:00:00+00:00" />
 
         {/* Business Verification Signals */}
         <meta name="company" content="EMUSKI Manufacturing Solutions" />
@@ -196,35 +193,7 @@ export default function RootLayout({
         <meta name="coverage" content="Worldwide" />
         <meta name="identifier-URL" content="https://www.emuski.com" />
 
-        {/* Open Graph / Facebook / WhatsApp Meta Tags */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.emuski.com/" />
-        <meta property="og:site_name" content="EMUSKI - Engineering & Manufacturing" />
-        <meta property="og:title" content="ISO Certified OEM Precision Manufacturing & Cost Engineering Partner | Bangalore, India" />
-        <meta property="og:description" content="ISO 9001:2015 certified OEM precision manufacturing and cost engineering partner in Bangalore, India. Expert design-for-manufacturing, rapid prototyping, cost optimization for automotive, electronics, medical devices, aerospace industries." />
-        <meta property="og:image" content="https://www.emuski.com/social-banner.jpg" />
-        <meta property="og:image:secure_url" content="https://www.emuski.com/social-banner.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="EMUSKI - ISO Certified Manufacturer in Bangalore | Precision Engineering Excellence" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:updated_time" content="2026-02-07T00:00:00+00:00" />
-
-        {/* Additional WhatsApp-specific meta tags */}
-        <meta property="article:publisher" content="https://www.emuski.com" />
-        <meta name="format-detection" content="telephone=no" />
-
         {/* Social banner will load when needed for sharing - no preload required */}
-
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@emuski" />
-        <meta name="twitter:creator" content="@emuski" />
-        <meta name="twitter:title" content="ISO Certified OEM Precision Manufacturing & Cost Engineering Partner" />
-        <meta name="twitter:description" content="ISO 9001:2015 certified OEM precision manufacturing and cost engineering partner with 15+ years of excellence in Bangalore, India." />
-        <meta name="twitter:image" content="https://www.emuski.com/social-banner.jpg" />
-        <meta name="twitter:image:alt" content="EMUSKI - ISO Certified OEM Precision Manufacturing & Cost Engineering Partner in Bangalore" />
 
         {/* Consent Mode Configuration moved to body */}
 

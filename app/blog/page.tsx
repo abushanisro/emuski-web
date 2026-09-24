@@ -30,11 +30,13 @@ export const metadata: Metadata = {
     description: 'Expert insights on manufacturing excellence, precision engineering, cost optimization, VAVE methodology, value engineering, rapid prototyping, and AI-powered solutions from EMUSKI.',
     type: 'website',
     url: 'https://www.emuski.com/blog',
+    images: ['/social-banner.jpg'],
     siteName: 'EMUSKI Manufacturing Solutions',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['/social-banner.jpg'],
     title: 'Manufacturing & Precision Engineering Blog | EMUSKI',
     description: 'Expert insights on manufacturing excellence, precision engineering, and cost optimization.',
   },

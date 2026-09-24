@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: 'Leading cost engineering consultancy for US companies. Reduce product costs 25-45%. Save 50-70% vs US consultancy rates. Serving Fortune 500 companies nationwide.',
     type: 'website',
     url: 'https://www.emuski.com/cost-engineering-usa',
+    images: ['/social-banner.jpg'],
     locale: 'en_US'
   },
   alternates: {

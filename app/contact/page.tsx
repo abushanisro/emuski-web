@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     description: 'Get in touch with EMUSKI for expert manufacturing and engineering solutions.',
     type: 'website',
     url: 'https://www.emuski.com/contact',
+    images: ['/social-banner.jpg'],
     siteName: 'EMUSKI',
   },
 }
